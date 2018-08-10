@@ -44,6 +44,13 @@ tb=[
     "<a href='https://xe.com/currencycharts/?from=CAD&to=USD&view=5Y'>CA Dollar</a>(0.75)"
     ,"<a href='https://tradingeconomics.com/canada/gdp-per-capita'>$42k</a>"
     ," Energy,wood,Mineral"
+    ," vancouver <a href='https://www.holiday-weather.com/vancouver/averages/'> 4 to 17 C</a> <br>"
+    +"  Toronto <a href='https://www.google.com/search?num=100&ei=fsNiW63pO8rX6ASMzqLYAw&q=temperature+graph+toronto&oq=temperature+graph+toronto'>C</a> ,"
+    + "<a href='https://toronto.weatherstats.ca/charts/relative_humidity-hourly.html'>(20-100%) </a>"+
+    " ,<a href='https://www.toronto.ca/311/knowledgebase/kb/docs/articles/information-and-technology/solutions-development/geospatial-competency-centre/torontos-elevationaltitude-above-sea-level.html'>76m<a>"
+    +" <br> Calgary <a href='https://www.holiday-weather.com/calgary/averages/'>-7 to 16 C</a> , "+
+    "<a href='https://calgary.weatherstats.ca/charts/relative_humidity-hourly.html'>40-60% </a> "
+    +"<br> Quebec state <a href='https://en.climate-data.org/region/62/#example0'> C</a> "
    ],
    [ "Ireland",
      "<a href='http://www.inis.gov.ie/en/INIS/Pages/Employment%20(Permits%20etc.)'>No</a>",
@@ -140,6 +147,7 @@ tb=[
    ,"<a href='https://www.xe.com/currencycharts/?from=FIM&to=USD&view=5Y'>FI Marka</a>(0.2)"
    ,"",
    "",""
+   ,"| Helsinki <a href='https://www.holiday-weather.com/helsinki/averages/'> -7 to 17 C</a>"
    ],
    [
    "England ",
@@ -239,14 +247,15 @@ tb=[
 	  <td>Language</td>
 	  <td> Currency/US$</td>
 	  <td>GDP/capita</td>
-	  <td>Exports</td>
+    <td>Exports</td>
+    <td>Major Cites climate</td>
 	</tr>
 	<script>
 		debugger;
 	   for(r=0;r<tb.length;r++)
 	   {
 		document.write("<tr>\r\n");
-		for( c=0;c<=8;c++)
+		for( c=0;c<=9;c++)
 		{
 		  document.write("<td>"+tb[r][c]+"</td>\r\n");
 		}
@@ -255,11 +264,7 @@ tb=[
 	</script>
 </table>
 
-|Country|Proof of fund for work|Years to citizenship|
-(<a href="https://www.google.com/search?num=100&ei=9rJlW429KIvNjgTr16qYCA&q=dual++citizenship&oq=dual++citizenship">dual</a>) 
-citizenships other conditions| U.S./Europe   |  Language |Currency/US$|GDP/capita|Exports|
-|-------|----|-----|-------------|---------------------|-----------|----|-----|-----|
- <h3>Freedom and Rights</h2> 
+<h3>Freedom and Rights</h2> 
   &nbsp;&nbsp; __Political freedom__
  <br>
   &nbsp;&nbsp; __Religional freedom__
@@ -290,11 +295,6 @@ citizenships other conditions| U.S./Europe   |  Language |Currency/US$|GDP/capit
 |City |Temperature| Humidity | Elevation |
 |-----|-----------|----------|-----------|
 | Tehran   | <a href="https://www.google.com/search?num=100&ei=xMJiW9OpM4Lt6ASs-o2wAw&q=+temperature+graph+tehran&oq=+temperature+graph+tehran">4 to 30 C</a>           |    <a href="https://www.weatheronline.co.uk/weather/maps/city?WMO=40754&CONT=asie&LAND=IR&ART=RLF&LEVEL=150"> (10%-25%) </a>       |  <a href="http://dateandtime.info/citycoordinates.php?id=112931">(1187m)</a>         |
-| Helsinki |<a href="https://www.holiday-weather.com/helsinki/averages/"> -7 to 17 C</a> | | |
-| vancouver |<a href="https://www.holiday-weather.com/vancouver/averages/"> 4 to 17 C</a> | | |
-| Toronto |<a href="https://www.google.com/search?num=100&ei=fsNiW63pO8rX6ASMzqLYAw&q=temperature+graph+toronto&oq=temperature+graph+toronto">  C</a> | <a href="https://toronto.weatherstats.ca/charts/relative_humidity-hourly.html">(20-100%) </a> |  <a href="https://www.toronto.ca/311/knowledgebase/kb/docs/articles/information-and-technology/solutions-development/geospatial-competency-centre/torontos-elevationaltitude-above-sea-level.html">76m<a>|
-| Calgary |<a href="https://www.holiday-weather.com/calgary/averages/">-7 to 16 C</a> | <a href="https://calgary.weatherstats.ca/charts/relative_humidity-hourly.html">40-60% </a>| |
-| Quebec state |<a href="ttps://en.climate-data.org/region/62/#example0"> C</a> | | |
 | Coimbatore,India |<a href="https://en.climate-data.org/location/2788/"> C</a> | | |
 | Vienna, Austria |||<a href="http://www.vienna.climatemps.com/map.php">200m</a>|
 | Berlin,Germany |<a href="https://www.holiday-weather.com/berlin/averages/"> C</a> | |<a href="http://dateandtime.info/citycoordinates.php?id=2950159">(43 m)</a>  |
