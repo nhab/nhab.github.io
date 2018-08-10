@@ -45,50 +45,26 @@ tb=[
     ,"<a href='https://tradingeconomics.com/canada/gdp-per-capita'>$42k</a>"
     ," Energy,wood,Mineral"
    ],
-    ["Ireland","<a href='http://www.inis.gov.ie/en/INIS/Pages/Employment%20(Permits%20etc.)'>No</a>",
+   ["Ireland","<a href='http://www.inis.gov.ie/en/INIS/Pages/Employment%20(Permits%20etc.)'>No</a>",
      "<a href='http://www.citizensinformation.ie/en/moving_country/irish_citizenship/becoming_an_irish_citizen_through_naturalisation.html'>5</a>"
      ,"out of 9 years",
      "<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Irish_citizens'>YES</a>"
      ,"English",
      "<a href='https://www.xe.com/currencycharts/?from=IEP&to=USD&view=10Y'>Irish pound</a>(1.5)"
      ,"<a href='https://www.ft.com/content/6c7a0c9a-1913-30a2-a317-24d2623e1865'>62k</a>"
+   ],
+   [
+   "Ireland"
+    ,"<a href='http://www.inis.gov.ie/en/INIS/Pages/Employment%20(Permits%20etc.)'>No</a>"
+    ,"<a href='http://www.citizensinformation.ie/en/moving_country/irish_citizenship/becoming_an_irish_citizen_through_naturalisation.html'>5</a>"
+    ,"out of 9 years</a>"
+    ,"<a href="https://en.wikipedia.org/wiki/Visa_requirements_for_Irish_citizens">YES</a>"
+    ,"English"
+    ,  "<a href="https://www.xe.com/currencycharts/?from=IEP&to=USD&view=10Y">Irish pound</a>(1.5)"
+    ,  "<a href="https://www.ft.com/content/6c7a0c9a-1913-30a2-a317-24d2623e1865">62k</a>" 
    ]
-];
-</script>
-<table >
-	<tr>
-	  <td>Country</td>
-	  <td>Proof of fund</td>
-	  <td>Years to citizenship</td>
-	  <td>citizenship othe conditions</td>
-	  <td>Visa Free to U.S./Europe </td>
-	  <td>Language</td>
-	  <td> Currency/US$</td>
-	  <td>GDP/capita</td>
-	  <td>Exports</td>
-	</tr>
-	<script>
-		debugger;
-	   for(r=0;r<3;r++)
-	   {
-		document.write("<tr>\r\n");
-		for( c=0;c<8;c++)
-		{
-		  document.write("<td>"+tb[r][c]+"</td>\r\n");
-		}
-		document.write("</tr>\r\n");
-	  }
-	</script>
-</table>
+	/*
 
-|Country|Proof of fund for work|Years to citizenship|
-(<a href="https://www.google.com/search?num=100&ei=9rJlW429KIvNjgTr16qYCA&q=dual++citizenship&oq=dual++citizenship">dual</a>) 
-citizenships other conditions| U.S./Europe   |  Language |Currency/US$|GDP/capita|Exports|
-|-------|----|-----|-------------|---------------------|-----------|----|-----|-----|
-|Iran  ||||||<a href="https://www.xe.com/currencycharts/?from=IRR&to=USD&view=10Y">Rial</a>(0.00001)|<a href="https://tradingeconomics.com/iran/gdp">400 billion$</a>|Oil|
-|New Zealand  <a href="https://www.immigration.govt.nz/new-zealand-visas/options/live-permanently">* </a> | |<a href="https://www.govt.nz/browse/nz-passports-and-citizenship/nz-citizenship/requirements-for-nz-citizenship/presence-requirements/">5 </a>|8 month/year|<a href="https://en.wikipedia.org/wiki/Visa_requirements_for_New_Zealand_citizens">YES</a>|English|<a href="https://www.xe.com/currencycharts/?from=NZD&to=USD&view=1D">NZ Dollar</a>(0.67)|<a href="https://tradingeconomics.com/new-zealand/gdp-per-capita">$40k</a>|<a href="https://globaledge.msu.edu/countries/new-zealand/tradestats">Diary,Food,wood</a>|
-|Canada |<a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/start-visa/eligibility.html?_ga=2.93708568.420621209.1533722461-1886814211.1533722461#money">16k$</a>|<a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-citizenship/become-canadian-citizen/eligibility.html">5</a>|(1095 days)|<a href="https://en.wikipedia.org/wiki/Visa_requirements_for_Canadian_citizens">YES</a>|English,french|<a href="https://xe.com/currencycharts/?from=CAD&to=USD&view=5Y">CA Dollar</a>(0.75)|  <a href="https://tradingeconomics.com/canada/gdp-per-capita">$42k</a>| Enery,wood,Mineral|
-|Ireland |<a href="http://www.inis.gov.ie/en/INIS/Pages/Employment%20(Permits%20etc.)">No</a>|<a href="http://www.citizensinformation.ie/en/moving_country/irish_citizenship/becoming_an_irish_citizen_through_naturalisation.html">5</a>|out of 9 years</a>|<a href="https://en.wikipedia.org/wiki/Visa_requirements_for_Irish_citizens">YES</a>|English|<a href="https://www.xe.com/currencycharts/?from=IEP&to=USD&view=10Y">Irish pound</a>(1.5)|<a href="https://www.ft.com/content/6c7a0c9a-1913-30a2-a317-24d2623e1865">62k</a>|
 |Malta|?|<a href="https://integration.gov.mt/en/ResidenceAndVisas/Pages/Citizenship.aspx">5</a>||<a href="https://en.wikipedia.org/wiki/Visa_requirements_for_Maltese_citizens">YES</a>|<a href="https://en.wikipedia.org/wiki/Languages_of_Malta">Maltese,English</a>|Euro|
 |Netherland|<a href="https://ind.nl/en/Pages/income.aspx">sufficiebt Income</a>|||<a href="https://en.wikipedia.org/wiki/Visa_requirements_for_Dutch_citizens">YES</a>|Dutch,English||
 |Switzerland|<a href="https://www.swissinfo.ch/eng/work-permits/29191706">No?</a>||<a href="https://en.wikipedia.org/wiki/Visa_requirements_for_Swiss_citizens">YES</a>|||
@@ -134,6 +110,40 @@ Belgium||||<a href="https://en.wikipedia.org/wiki/Visa_requirements_for_Belgian_
 |Armenia||||<a href="https://en.wikipedia.org/wiki/Visa_requirements_for_Armenian_citizens">No</a>|||
 |Morocco||||<a href="https://en.wikipedia.org/wiki/Visa_requirements_for_Moroccan_citizens">No</a>|||
 |United Arab Emirates||<a href="https://en.wikipedia.org/wiki/Emirati_nationality_law">30</a>||<a href="https://en.wikipedia.org/wiki/Visa_requirements_for_Emirati_citizens">canada,Europe</a>||||
+
+	*/
+];
+</script>
+<table >
+	<tr>
+	  <td>Country</td>
+	  <td>Proof of fund</td>
+	  <td>Years to citizenship</td>
+	  <td>citizenship othe conditions</td>
+	  <td>Visa Free to U.S./Europe </td>
+	  <td>Language</td>
+	  <td> Currency/US$</td>
+	  <td>GDP/capita</td>
+	  <td>Exports</td>
+	</tr>
+	<script>
+		debugger;
+	   for(r=0;r<3;r++)
+	   {
+		document.write("<tr>\r\n");
+		for( c=0;c<=8;c++)
+		{
+		  document.write("<td>"+tb[r][c]+"</td>\r\n");
+		}
+		document.write("</tr>\r\n");
+	  }
+	</script>
+</table>
+
+|Country|Proof of fund for work|Years to citizenship|
+(<a href="https://www.google.com/search?num=100&ei=9rJlW429KIvNjgTr16qYCA&q=dual++citizenship&oq=dual++citizenship">dual</a>) 
+citizenships other conditions| U.S./Europe   |  Language |Currency/US$|GDP/capita|Exports|
+|-------|----|-----|-------------|---------------------|-----------|----|-----|-----|
  <h3>Freedom and Rights</h2> 
   &nbsp;&nbsp; __Political freedom__
  <br>
