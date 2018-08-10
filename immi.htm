@@ -21,6 +21,35 @@ tr:nth-child(even) {
 &nbsp;&nbsp;__Inflation rate__:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.google.com/search?q=countries+inflation+rate&ie=utf-8&oe=utf-8&client=firefox-b-ab">
 List	</a>   , <a href="https://tradingeconomics.com/country-list/inflation-rate">Chart</a> <br>
+<script>
+tb=[
+    ["Iran","","","","","","<a href='https://www.xe.com/currencycharts/?from=IRR&to=USD&view=10Y'>Rial</a>(0.00001)",
+       "<a href='https://tradingeconomics.com/iran/gdp-per-capita'>7000$</a>","Oil"]
+    ,["New Zealand <a href='https://www.immigration.govt.nz/new-zealand-visas/options/live-permanently'>* </a> ",
+     "<a href='https://www.govt.nz/browse/nz-passports-and-citizenship/nz-citizenship/requirements-for-nz-citizenship/presence-requirements/'>5 </a>"
+     ,"8 month/year","<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_New_Zealand_citizens'>YES</a>"
+     ,"English","<a href='https://www.xe.com/currencycharts/?from=NZD&to=USD&view=1D'>NZ Dollar</a>(0.67)"
+     ,"<a href='https://tradingeconomics.com/new-zealand/gdp-per-capita'>$40k</a>"
+     ,"<a href='https://globaledge.msu.edu/countries/new-zealand/tradestats'>Diary,Food,wood</a>"
+    ] ,
+   ["Canada",
+    "<a href='https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/start-visa/eligibility.html?_ga=2.93708568.420621209.1533722461-1886814211.1533722461#money'>16k$</a>"
+    ,"<a href='https://www.canada.ca/en/immigration-refugees-citizenship/services/canadian-citizenship/become-canadian-citizen/eligibility.html'>5</a>"
+    ,"(1095 days)","<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Canadian_citizens'>YES</a>"
+    ,"English,french","<a href='https://xe.com/currencycharts/?from=CAD&to=USD&view=5Y'>CA Dollar</a>(0.75)"
+    ,"<a href='https://tradingeconomics.com/canada/gdp-per-capita'>$42k</a>"
+    ," Energy,wood,Mineral"
+   ],
+    ["Ireland","<a href='http://www.inis.gov.ie/en/INIS/Pages/Employment%20(Permits%20etc.)'>No</a>",
+     "<a href='http://www.citizensinformation.ie/en/moving_country/irish_citizenship/becoming_an_irish_citizen_through_naturalisation.html'>5</a>"
+     ,"out of 9 years",
+     "<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Irish_citizens'>YES</a>"
+     ,"English",
+     "<a href='https://www.xe.com/currencycharts/?from=IEP&to=USD&view=10Y'>Irish pound</a>(1.5)"
+     ,"<a href='https://www.ft.com/content/6c7a0c9a-1913-30a2-a317-24d2623e1865'>62k</a>
+   ]
+]
+</script>
 <table >
 	<tr>
 	  <td>Country</td>
@@ -33,61 +62,17 @@ List	</a>   , <a href="https://tradingeconomics.com/country-list/inflation-rate"
 	  <td>GDP/capita</td>
 	  <td>Exports</td>
 	</tr>
-	<tr>
-	  <td>|Iran </td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td> <a href="https://www.xe.com/currencycharts/?from=IRR&to=USD&view=10Y">Rial</a>(0.00001)</td>	
-	  <td><a href="https://tradingeconomics.com/iran/gdp-per-capita">7000$</a></td>
-	  <td>Oil</td>
-	</tr>
-	<tr>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	</tr>
-	<tr>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	</tr>
-	<tr>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	</tr>
-	<tr>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	  <td></td>
-	</tr>
+	<script>
+	   for(r=0;r<3;r++)
+	   {
+		document.write("<tr>\r\n");
+		for(int c=0;c<8;c++)
+		{
+		  document.write("<td>"+tb[r][c]+"</td>\r\n");
+		}
+		document.write("</tr>\r\n");
+	  }
+	</script>
 </table>
 
 |Country|Proof of fund for work|Years to citizenship|
