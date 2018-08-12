@@ -8,8 +8,11 @@ td, th {
     text-align: left;
     padding: 4px;
     white-space: nowrap;
-}
 
+}
+th{
+width:100px;
+}
 tr:nth-child(even) {
     background-color: #dddddd;
 }
