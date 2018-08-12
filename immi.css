@@ -1,7 +1,6 @@
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-   /* width: 100%;*/
 }
 
 td, th {
@@ -16,4 +15,10 @@ tr:nth-child(even) {
 }
 .ClimateCol{
 	width:25%;
+}
+.Desk {
+ width: 1600px;
+}
+.Mobile {
+   width: 100%;
 }
