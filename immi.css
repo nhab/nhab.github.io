@@ -11,7 +11,8 @@ td, th {
 
 }
 th{
-width:100px;
+	width:50px;
+	 word-wrap: break-word;
 }
 tr:nth-child(even) {
     background-color: #dddddd;
