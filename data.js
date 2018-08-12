@@ -1,6 +1,8 @@
 tb=[
     ["Iran","","","","","","","<a href='https://www.xe.com/currencycharts/?from=IRR&to=USD&view=10Y'>Rial</a>(0.00001)",
-       "<a href='https://tradingeconomics.com/iran/gdp-per-capita'>7000$</a>","Oil",
+       "<a href='https://tradingeconomics.com/iran/gdp-per-capita'>7000$</a>"
+     ,""
+    , "Oil",
     "Tehran <a href='https://www.holiday-weather.com/tehran/averages/'>0-40</a>"
     +"<a href='http://www.tehran.climatemps.com/'>20-70 % , 1200m</a><BR>"
     +"Sari <a href='https://en.climate-data.org/region/2183/'>5-30 C , 20-99%</a> ,"
@@ -15,6 +17,7 @@ tb=[
      ,"English",
       "<a href='https://www.xe.com/currencycharts/?from=NZD&to=USD&view=1D'>NZ Dollar</a>(0.67)"
      ,"<a href='https://tradingeconomics.com/new-zealand/gdp-per-capita'>$40k</a>"
+     ,""
      ,"<a href='https://globaledge.msu.edu/countries/new-zealand/tradestats'>Diary,Food,wood</a>"
      ,"Auckland <a href='https://en.climate-data.org/location/3605/'>6-20 C</a> ,"
      +"<a href='https://www.weatheronline.co.nz/weather/maps/city?WMO=93110&CONT=nznz&LAND=NZ8&ART=RLF&LEVEL=150'>Auckland 85% Avg.</a>"
@@ -32,6 +35,7 @@ tb=[
     ,"English,french",
     "<a href='https://xe.com/currencycharts/?from=CAD&to=USD&view=5Y'>CA Dollar</a>(0.75)"
     ,"<a href='https://tradingeconomics.com/canada/gdp-per-capita'>$42k</a>"
+    ,""
     ," Energy,wood,Mineral"
     ," vancouver <a href='https://www.holiday-weather.com/vancouver/averages/'> 4 to 17 C</a>,<a href='https://www.currentresults.com/Weather/Canada/Cities/humidity-annual-average.php'>70-86%</a> <br>"
     +"  Toronto <a href='https://www.google.com/search?num=100&ei=fsNiW63pO8rX6ASMzqLYAw&q=temperature+graph+toronto&oq=temperature+graph+toronto'>C</a> ,"
@@ -51,6 +55,7 @@ tb=[
      ,"<a href='https://www.xe.com/currencycharts/?from=IEP&to=USD&view=10Y'>Irish pound</a>(1.5)"
      ,"<a href='https://www.ft.com/content/6c7a0c9a-1913-30a2-a317-24d2623e1865'>62k</a>"
     ,""
+    ,""
     ,"Belfast <a href='https://en.climate-data.org/location/6014/'>4-15 C</a>, <a href='https://weather-and-climate.com/average-monthly-Humidity-perc,belfast-gb,United-Kingdom'>75-90 %</a>"
 
    ],
@@ -64,6 +69,7 @@ tb=[
    ,"Euro"
    ,""
    ,""
+   ,""
    ],
    [
     "Netherland"
@@ -73,6 +79,7 @@ tb=[
     ,""
     ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Dutch_citizens'>YES</a>"
     ,"Dutch,English"
+    ,""
     ,""
     ,""
     ,""
@@ -88,6 +95,7 @@ tb=[
     ,""
     ,""
     ,""
+    ,""	   
    ],
    [
     "Sweden",
@@ -96,14 +104,16 @@ tb=[
     ""
     ,"",
     "<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Swedish_citizens'>Yes</a>"
-    ,"","","",""
+    ,""
+     ,""
+   ,"","",""
    ],
    [
    "Norway"
    ,"<a href='https://www.udi.no/en/want-to-apply/work-immigration/?c=irn'>Skilled wworker</a>"
    , ""
    ,"","","<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Norwegian_citizens'>yes</a>"
-   ,"","","",""
+   ,"","","","",""
    ],
    [
     "Belgium"
@@ -117,6 +127,7 @@ tb=[
     ,""
     ,""
     ,""
+	,""
    ],
    [
     "Luxembourg",
@@ -128,6 +139,7 @@ tb=[
     "<a href='https://www.xe.com/currencycharts/?from=LUF&to=USD&view=5Y'>LUF</a>(0.28)",
     "",
     ""
+	   ,""
    ],
    [
     "Germany",
@@ -140,6 +152,7 @@ tb=[
     "<a href='https://www.xe.com/currencycharts/?from=DEM&to=USD&view=5Y'>DE Mark</a>(0.6)",
     ""
     ,""
+	   ,""
    ],
    [
    "Finland<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Finnish_citizens'>*</a>"
@@ -150,8 +163,9 @@ tb=[
    "YES"
    ,"Finish,Swedish"
    ,"<a href='https://www.xe.com/currencycharts/?from=FIM&to=USD&view=5Y'>FI Marka</a>(0.2)"
-   ,"",
-   "",""
+   ,""
+   ,""
+   ,""	   ,""
    ,"| Helsinki <a href='https://www.holiday-weather.com/helsinki/averages/'> -7 to 17 C</a>"
    ],
    [
@@ -159,7 +173,7 @@ tb=[
    "",
    ""
   , "<a href='https://iasservices.org.uk/indefinite-leave-to-remain/apply-for-indefinite-leave-to-remain/'>5</a> ",
-   "","","","","","",""
+   "","","","","","","",""
    ],
    [
    "France"
@@ -167,7 +181,7 @@ tb=[
 	   ,""
 	   ,""
 	   ,"","<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_French_citizens'>Yes</a>",
-   "","","","","",""
+   "","","","","","",""
    ],
    [
     "Czech Republic"
@@ -179,7 +193,7 @@ tb=[
     "",
     "",
     "",
-    ""
+    "",""
    ],
    [
     "Estonia",
@@ -191,7 +205,7 @@ tb=[
    ,""
    ,""
    ,""
-   ,""
+   ,"",""
   ],
   [
     "Greece",
@@ -203,7 +217,7 @@ tb=[
     "",
     "",
     "",
-    ""
+    "",""
 ],
 [
    "Hungary",
@@ -215,7 +229,7 @@ tb=[
    ,""
    ,""
    ,""
-   ,""
+   ,"",""
 ],
 [
 "Spain "
@@ -225,6 +239,7 @@ tb=[
 ,""
 ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Spanish_citizens'>YES</a>"
 ,"<a href='https://www.xe.com/currencycharts/?from=ESP&to=USD&view=10Y'>ES Peseta</a>(0.007),Euro"
+,""
 ],
 ["Italy"
  ,""
