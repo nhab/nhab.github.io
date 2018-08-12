@@ -1,10 +1,18 @@
 <head>
-<link rel="stylesheet" href="immiDesk.css">
+   <link rel="stylesheet" href="immiDesk.css">
+   <script>
+    function setStyleSheet(url){
+       var stylesheet = document.getElementById("stylesheet");
+       stylesheet.setAttribute('href', url);
+    }
+    </script>
 </head>
 
 <body>
 <h1>Imigration </h1>
-
+<a onclick="setStyleSheet('immiDesk.css')" href="#">desctop </a> , 
+  <a onclick="setStyleSheet('immiMobile.css')" href="#">mobile</a>
+	
 &nbsp;&nbsp;__Inflation rate__:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.google.com/search?q=countries+inflation+rate&ie=utf-8&oe=utf-8&client=firefox-b-ab">
 List	</a>   , <a href="https://tradingeconomics.com/country-list/inflation-rate">Chart</a> <br>
