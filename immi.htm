@@ -1,16 +1,21 @@
 <head>
    <link rel="stylesheet" href="immiDesk.css">
    <script>
-    function setStyleSheet(url){
-       document.getElementsByTagName('head')[0].getElementById('stylesheet').href=url;
-    }
+	function changeCSS(cssFile, cssLinkIndex) {
+	  var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
+  	  var newlink = document.createElement("link");
+  	  newlink.setAttribute("rel", "stylesheet");
+   	  newlink.setAttribute("type", "text/css");
+   	  newlink.setAttribute("href", cssFile);
+  	  document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+	}
     </script>
 </head>
 
 <body>
 <h1>Imigration </h1>
-<a onclick="setStyleSheet('immiDesk.css')" href="#">desctop </a> , 
-  <a onclick="setStyleSheet('immiMobile.css')" href="#">mobile</a>
+<a onclick="changeCSS('immiDesk.css',0)" href="#">desctop </a> , 
+  <a onclick="changeCSS('immiMobile.css',0)" href="#">mobile</a>
 	
 &nbsp;&nbsp;__Inflation rate__:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.google.com/search?q=countries+inflation+rate&ie=utf-8&oe=utf-8&client=firefox-b-ab">
