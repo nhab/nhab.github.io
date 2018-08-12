@@ -165,7 +165,7 @@ tb=[
    ,"<a href='https://www.xe.com/currencycharts/?from=FIM&to=USD&view=5Y'>FI Marka</a>(0.2)"
    ,""
    ,""
-   ,""	   ,""
+   ,""	  
    ,"| Helsinki <a href='https://www.holiday-weather.com/helsinki/averages/'> -7 to 17 C</a>"
    ],
    [
