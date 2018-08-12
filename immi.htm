@@ -1,14 +1,13 @@
 <head>
-   <link rel="stylesheet" href="immiDesk.css">
+   <link rel="stylesheet" href="immi.css">
    <script>
-	function changeCSS(cssFile, cssLinkIndex) {
+	function changeClass() {
 		debugger;
-	  var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
-  	  var newlink = document.createElement("link");
-  	  newlink.setAttribute("rel", "stylesheet");
-   	  newlink.setAttribute("type", "text/css");
-   	  newlink.setAttribute("href", cssFile);
-  	  document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+		var d = document.getElementsById("tb1");
+		if(d.className=="" or d.className=="Desk ")
+			d.className ="Mobile";
+		else
+			d.className="Desk";
 	}
     </script>
 </head>
@@ -293,7 +292,7 @@ tb=[
 	*/
 ];
 </script>
-<table >
+<table id="tb1" >
 	<tr>
 	  <td>Country</td>
 	  <td>Easiest visa Type</td>
