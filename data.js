@@ -238,6 +238,7 @@ tb=[
 ,"<a href='https://www.expatica.com/new/es/moving/citizenship/spain-citizenship-107634/'>5</a>"
 ,""
 ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Spanish_citizens'>YES</a>"
+,""
 ,"<a href='https://www.xe.com/currencycharts/?from=ESP&to=USD&view=10Y'>ES Peseta</a>(0.007),Euro"
 ,""
 ],
@@ -249,7 +250,7 @@ tb=[
 ,["Iceland"
   ,""
   ,"",
-  "","","<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Icelandic_citizens'>YES,</a>","","Icelandic"," " 
+  "","","<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Icelandic_citizens'>YES,</a>","Icelandic"," " 
 ]
 	/*
 "Austria""<a href='https://www.migration.gv.at/en/living-and-working-in-austria/integration-and-citizenship/citizenship/'>10</a>"German lang.""German,English""
