@@ -440,21 +440,24 @@ Function groups are containers for function modules.
 <br> All of the function modules in a function group can access the global data of the group.
 <br>Like executable programs (type 1) and module pools (type M), 
 <br>function groups can contain screens, selection screens, and lists.
+
 <h3>Points to Note</h3>
 <ul>
  <li>Function Groups cannot be executed.</li>
  <li>The name of a function group can be up to 26 characters long.</li>
  <li>When you create a function group or function module, the main program and include programs are generated automatically.</li>
  <li>Function groups encapsulate data.</li>
- <li>How to create a Function Group</li>
+</ul>
+ <h3>How to create a Function Group</h3>
+ <ul>
  <li>Goto Transaction SE80.</li>
  <li>Select Program in the DropDown.</li>
  <li>Write the name of the Function Group That you want to create.<br>
   Generally User made Function groups start with "Z". e.g. - <Z_FUNCTION_GROUP_NAME> . Hit Enter Key.</li>
 <li>Note that The TOP Include is create by default if the user checks the option of creating a TOP include.   </li>
 </ul>
+<h3>How to create a Function Module</h3>
 
-How to create a Function Module
 <ol>
         <li> Create a function Group (say "ZCAL").</li>   
         <li>    Create a function module, set the attributes like <br>
@@ -471,6 +474,24 @@ How to create a Function Module
         <li>   Testing the Function Module - Single Test & Debugging</li> 
         <li>  Documenting and Releasing a Function Module</li>  
 </ol>
+<h2>Open SQL & Native SQL </h2>
+In ABAP/4 programming language, there are two types of SQL being used.
+<ul>
+    <li>      NATIVE SQL   
+        <pre>
+                Open SQL allows you to access the database tables declared in the ABAP dictionary 
+                regardless of the database platform that the R/3 system is using.
+        </pre>
+    </li>
+    <li>    OPEN SQL. 
+        <pre>
+                Native SQL allows you to use database-specific SQL statements in an ABAP/4 program. 
+                This means that you can use database tables that are not administered by ABAP dictionary,
+                 and therefore integrate data that is not part of the R/3 system.
+        </pre>
+     </li>
+</ul>
+
 
 </body>
 </html>
