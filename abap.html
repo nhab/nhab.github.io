@@ -1,8 +1,19 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta itemprop="inLanguage" content="en-GB" />
   <style type="text/css">
+  body{
+    font-family: "Times New Roman", Times, serif;
+    font-size:18px;
+  }
+p{
+    font-size: 18px;
 
+}
+code,pre {
+     background-color: #eee; 
+margin: 4px,4px,4px,4px
+}
   </style>
 
   <title></title>
@@ -10,28 +21,30 @@
 
 <body>
 
-  <h1 itemprop="headline">Introduction to ABAP:<h1>
-    ABAP stands for - Advanced Business Application Programming.It is&nbsp;
-    a programming language for developing applications for the SAP R/3
-    system.
-    <br />  The latest version of ABAP is&nbsp; called&nbsp; ABAP Objects and supports
-  object-oriented programming.
-    <br />
- SAP will run applications written using
-  ABAP/4, the earlier ABAP version, as well as applications using ABAP
-  Objects.<br />
+  <h1 itemprop="headline">Introduction to ABAP:</h1>
+  <p>
+        ABAP stands for - Advanced Business Application Programming.
+        <br>It is&nbsp; a programming language for developing applications for the SAP R/3
+        system.
+        <br />  The latest version of ABAP is&nbsp; called&nbsp; ABAP Objects and supports
+         object-oriented programming.
+        <br />
+        SAP will run applications written using
+        ABAP/4, the earlier ABAP version, as well as applications using ABAP
+         Objects.<br />
+  </p>
+  
 
   <h2>Data Types</h2>
 
-  <p>Syntax to declare a variable in ABAP -</p>
-  <pre>
+  <p>Declaring variable :</p>
+  <code>
     DATA Variable_Name Type Variable_Type
-  </pre>
-
+  </code>
   <p>Example:</p>
-  <pre>
+  <code>
   DATA employee_number Type I.
-  </pre>
+  </code>
 
   <p>The following is a list of Data Types supported by ABAP</p>
 
@@ -40,127 +53,80 @@
     <tbody>
       <tr>
         <th style="width:12%"><strong>Data Type</strong></th>
-
         <th style="width:18%"><strong>Initial field length</strong></th>
-
         <th style="width:18%"><strong>Valid field length</strong></th>
-
         <th style="width:18%"><strong>Initial value</strong></th>
-
         <th><strong>Meaning</strong></th>
       </tr>
-
       <tr>
         <td colspan="5"><em><strong>Numeric types</strong></em></td>
       </tr>
-
       <tr>
         <td>I</td>
-
         <td>4</td>
-
         <td>4</td>
-
         <td>0</td>
-
         <td>Integer (whole number)</td>
       </tr>
-
       <tr>
         <td>F</td>
-
         <td>8</td>
-
         <td>8</td>
-
         <td>0</td>
-
         <td>Floating point number</td>
       </tr>
-
       <tr>
         <td>P</td>
-
         <td>8</td>
-
         <td>1 - 16</td>
-
         <td>0</td>
-
         <td>Packed number</td>
       </tr>
-
       <tr>
         <td colspan="5"><em><strong>Character types</strong></em></td>
       </tr>
-
       <tr>
         <td>C</td>
-
         <td>1</td>
-
         <td>1 - 65535</td>
-
         <td>' ... '</td>
-
         <td v="">Text field(alphanumeric characters)</td>
       </tr>
-
       <tr>
         <td>D</td>
-
         <td>8</td>
-
         <td>8</td>
-
         <td>'00000000'</td>
-
         <td>Date field(Format: YYYYMMDD)</td>
       </tr>
-
       <tr>
         <td>N</td>
-
         <td>1</td>
-
         <td>1 - 65535</td>
-
         <td>'0 ... 0'</td>
-
         <td>Numeric text field(numeric characters)</td>
       </tr>
-
       <tr>
         <td>T</td>
-
         <td>6</td>
-
         <td>6</td>
-
         <td>'000000'</td>
-
         <td>Time field(format: HHMMSS)</td>
       </tr>
-
       <tr>
         <td colspan="5"><em><strong>Hexadecimal type</strong></em></td>
       </tr>
-
       <tr>
         <td>X</td>
-
         <td>1</td>
-
         <td>1 - 65535</td>
-
         <td>X'0 ... 0'</td>
-
         <td>Hexadecimal field</td>
       </tr>
     </tbody>
   </table>
 
-  <p><strong>Processing Data</strong> <strong>-</strong> Assigning Values</p>
+  <h3> Assigning Values</h3>
   <pre>
   a=16.
 
@@ -169,14 +135,14 @@
   write a to b.
   </pre>
 
-  <p>- Arithmetic Operations</p>
-  <pre>
+  <h3>- Arithmetic Operations</h3>
+  <code>
   compute a = a*100.
-  </pre>
+  </code>
 
   <h2>Control Statements</h2>
 
-  <p>Following control statements can be used - - If ... EndIf Loop</p>
+  <h3> If ... EndIf Loop</h3>
 
 
   <pre>
@@ -189,7 +155,7 @@
   Endif.
   </pre>
 
-  <p>- Case statement</p>
+  <h3>- Case statement</h3>
   <pre>
   Case variable.
   when value1.
@@ -202,7 +168,7 @@
   Do.
   </pre>
 
-  <p>-While loop</p>
+  <h3>-While loop</h3>
   <pre>
   While &lt;logical expression&gt;.
   .....
@@ -210,7 +176,7 @@
   Endwhile.
   </pre>
 
-  <p>- Do loop</p>
+  <h3>- Do loop</h3>
   <pre>
   Do &lt;n&gt; times.
   .....
@@ -220,7 +186,7 @@
 
   <h2>Logical Operator</h2>
 
-  <p>A list of logical operators</p>
+  <h3>A list of logical operators</h3>
 
   <ul>
     <li>GE or &gt;=</li>
@@ -235,36 +201,50 @@
 
     <li>NE or &lt;&gt;</li>
   </ul>
-  What is Data Dictionary?
+  
+  <h2>What is Data Dictionary?</h2>
+<p>
+     Data Dictionary is a central source of information for the data in a information management system. 
+     <br>
+      Its main function is to support the <b>creation and management</b>  of data definitions (or <b>"metadata"</b>).
 
-  Data Dictionary is a central source of information for the data in a information management system. 
-  Its main function is to support the creation and management of data definitions (or "metadata").
+</p>
+ 
+ 
+  <h3>ABAP Dictionary 3 levels</h3>
+  <p>
+      Objects in the ABAP Dictionary resided on three levels that support their re-usability.
 
-  ABAP Dictionary 3 levels
-Objects in the ABAP Dictionary resided on three levels that support their re-usability. These levels are:
+  </p>
 
-Tables and structures
-Data elements
-Domains
-Lets look into them in detail -
+<br>
+These levels are:
+<br>
+<ul>
+  <li>Tables and structures</li>
+  <li>Data elements</li>
+  <li>Domains</li>
+  <li>Lets look into them in detail </li>
+</ul>
 
-Domains
+<h3>Domains</h3>
+
 Describes the technical characteristics of a table field
 Specifies a value range which describes allowed data values for the fields
 Fields referring to the same domain (via the data elements assigned to them) are changed when a change is made to the domain
 Ensures consistency
 
-Data Elements
+<h3>Data Elements</h3>
 Describes the role played by a field in a technical context
 Fields of same semantic meaning can refer to the same data element
 Contains the field information
 
-Tables
+<h3>Tables</h3>
 Represent the Database Tables where data actually resides.
 Tables can be defined independently of the database in the ABAP Dictionary.
 The fields of the table are defined with their (database-independent) SAP ABAP data types and lengths.
 
-Structures
+<h3>Structures</h3>
 Are record declarations that do NOT correspond to a Database Table.
 Just like user-defined data type.
 Defined like a table and can then be addressed from ABAP programs.
@@ -281,8 +261,10 @@ It is tailored to the needs of a specific application
 Search help is a tool to help you search for data records in the system
 An efficient and user-friendly search assists users where the key of a record is unknown
 <h3>Lock Objects</h3>
-Simultaneous accessing of the same data record by two users in the SAP system is synchronized by a lock mechanism.
-Locks are set and released by calling certain function modules. These function modules are generated automatically from the definition of so-called lock objects in the ABAP/4 Dictionary
+<pre>
+  Simultaneous accessing of the same data record by two users in the SAP system is synchronized by a lock mechanism.
+Locks are set and released by calling certain function modules. These function modules are generated automatically
+ from the definition of so-called lock objects in the ABAP/4 Dictionary
 
 Function modules : Enqueue_<obj name> - to lock the table dequeue_<obj name> - to release the lock
 
@@ -297,7 +279,9 @@ Function modules : Enqueue_<obj name> - to lock the table dequeue_<obj name> - t
   SE55 : Table View Maintenance
   SM30 : Table Maintenance
 
-  
+    
+</pre>
+
 
 </body>
 </html>
