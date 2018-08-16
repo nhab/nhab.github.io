@@ -1,0 +1,13 @@
+h1,h2,h3,  body{
+    font-family: 
+    "Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    
+  }
+p,div,span{
+    font-size: 18px;
+  margin-left: 20px;
+}
+code,pre {
+     background-color: #eee; 
+margin: 4px,4px,4px,4px
+}
