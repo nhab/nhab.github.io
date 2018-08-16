@@ -12,15 +12,46 @@
         ABAP stands for - Advanced Business Application Programming.
         <br>It is&nbsp; a programming language for developing applications for the SAP R/3
         system.
+        <br>All functional modules of SAP are written in ABAP.
         <br />  The latest version of ABAP is&nbsp; called&nbsp; ABAP Objects and supports
          object-oriented programming.
         <br />
         SAP will run applications written using
-        ABAP/4, the earlier ABAP version, as well as applications using ABAP
-         Objects.<br />
-  </p>
-  
+        ABA<span style="font-family: georgia,palatino;"><strong>Class Pool:-</strong> 
+            Class Pool are K programs type that represented with the keyword CLASS-POOL.</span>
+        P/4, the earlier ABAP version, as well as applications using ABAP         Objects.
+        <br />
+         <br>  SAP system provides various predefined reports and interface, 
+          but we can create  customized reports and interfaces as per business requirements.
 
+  </p>
+  <h2>Types of ABAP 4 Programs</h2>
+    <pre>
+    <strong>Executable Programs (ABAP Reports):</strong>
+        are I programs type that represented with the keyword REPORT
+
+    <strong>INCLUDE Program:-</strong>
+        are I programs type that represented with the keyword INCLUDE
+
+    <strong>Module Pool/Dialogue programs:</strong>
+        are type M programs represented with the keyword PROGRAM.
+
+    <strong>Sub-Routine Pool: </strong>
+        are S programs type that represented with the keyword PROGRAM.
+
+    <strong>Interface Pool:</strong>
+        are J programs type that represented with the keyword INTERFACE-POOL.
+
+    <strong>Class Pool:</strong>
+        are K programs type that represented with the keyword CLASS-POOL.    
+
+    <strong>Function Group:</strong>
+        are F programs type that represented with the keyword FUNCTION-POOL.
+
+    <strong>Type group:</strong> 
+        are represented with the keyword TYPE-POOL.
+    </pre>
+    
   <h2>Data Types</h2>
 
   <p>Declaring variable :</p>
@@ -141,7 +172,7 @@
   Endif.
   </pre>
 
-  <h3>- Case statement</h3>
+  <h3>Case statement</h3>
   <pre>
   Case variable.
   when value1.
@@ -154,7 +185,7 @@
   Do.
   </pre>
 
-  <h3>-While loop</h3>
+  <h3>While loop</h3>
   <pre>
   While &lt;logical expression&gt;.
   .....
@@ -162,7 +193,7 @@
   Endwhile.
   </pre>
 
-  <h3>- Do loop</h3>
+  <h3> Do loop</h3>
   <pre>
   Do &lt;n&gt; times.
   .....
@@ -190,51 +221,54 @@
   
   <h2>What is Data Dictionary?</h2>
 <p>
-     Data Dictionary is a central source of information for the data in a information management system. 
+     Data Dictionary is a central source of information for the data the system. 
      <br>
-      Its main function is to support the <b>creation and management</b>  of data definitions (or <b>"metadata"</b>).
-
+      Its main function is to support the <b>creation and management</b>  of data definitions
+      (or <b>"metadata"</b>).
 </p>
- 
  
   <h3>ABAP Dictionary 3 levels</h3>
   <p>
-      Objects in the ABAP Dictionary resided on three levels that support their re-usability.
-
+      Objects in the ABAP Dictionary resided on three levels that support their re-usability:
   </p>
+  <ul>
+    <li><b>Tables and structures</b>
+        <br>
+    <b>Tables</b>
+        <div class="width60Percent">
+            Represent the Database Tables where data actually resides.
+            <br>Tables can be defined independently of the database in the ABAP Dictionary.
+            <bt></bt>The fields of the table are defined with their (database-independent) SAP ABAP data types and lengths.        
+        </div>
 
-<br>
-These levels are:
-<br>
-<ul>
-  <li>Tables and structures</li>
-  <li>Data elements</li>
-  <li>Domains</li>
-  <li>Lets look into them in detail </li>
+    <b>Structures</b>
+        <div class="width60Percent">
+            Are record declarations that do NOT correspond to a Database Table.
+            <br>Just like user-defined data type.
+            <br>Defined like a table and can then be addressed from ABAP programs.
+            <br>Structures contain data only during the runtime of a program.        
+        </div>
+    </li>
+    <li><b>Data elements</b>
+        <div class="width60Percent">
+            Describes the role played by a field in a technical context
+            Fields of same semantic meaning can refer to the same data element
+            Contains the field information    
+        </div>
+        
+    </li>
+    <li><b>Domains</b>
+        <div class="width60Percent">
+            Describes the technical characteristics of a table field
+            Specifies a value range which describes allowed data values for the fields
+            Fields referring to the same domain (via the data elements assigned to them) are changed when a change is made to the domain
+            Ensures consistency    
+        </div>
+    </li>
 </ul>
 
-<h3>Domains</h3>
 
-Describes the technical characteristics of a table field
-Specifies a value range which describes allowed data values for the fields
-Fields referring to the same domain (via the data elements assigned to them) are changed when a change is made to the domain
-Ensures consistency
 
-<h3>Data Elements</h3>
-Describes the role played by a field in a technical context
-Fields of same semantic meaning can refer to the same data element
-Contains the field information
-
-<h3>Tables</h3>
-Represent the Database Tables where data actually resides.
-Tables can be defined independently of the database in the ABAP Dictionary.
-The fields of the table are defined with their (database-independent) SAP ABAP data types and lengths.
-
-<h3>Structures</h3>
-Are record declarations that do NOT correspond to a Database Table.
-Just like user-defined data type.
-Defined like a table and can then be addressed from ABAP programs.
-Structures contain data only during the runtime of a program.
 
 <h2>Aggregated Objects of ABAP Dictionary</h2>
 Aggregated means consisting of several components. In the ABAP Dictionary, aggregated objects are objects which come from several different transparent tables.
