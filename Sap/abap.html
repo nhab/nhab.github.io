@@ -219,14 +219,13 @@
     <li>NE or &lt;&gt;</li>
   </ul>
   
-  <h2>What is Data Dictionary?</h2>
-<p>
+<h2>What is Data Dictionary?</h2>
+<div>
      Data Dictionary is a central source of information for the data the system. 
      <br>
       Its main function is to support the <b>creation and management</b>  of data definitions
       (or <b>"metadata"</b>).
-</p>
- 
+
   <h3>ABAP Dictionary 3 levels</h3>
   <p>
       Objects in the ABAP Dictionary resided on three levels that support their re-usability:
@@ -266,30 +265,38 @@
         </div>
     </li>
 </ul>
-
+</div>
 
 
 
 <h2>Aggregated Objects of ABAP Dictionary</h2>
-Aggregated means consisting of several components. In the ABAP Dictionary, aggregated objects are objects which come from several different transparent tables.
-
+<div>
+Aggregated means consisting of several components.
+<br> In the ABAP Dictionary, aggregated objects are objects which come from several different 
+transparent tables.
+</div>
 <h3>Views</h3>
-Views in SAP _ ABAP are used to summarize data which is distributed among several tables
-The data of a view is not actually physically stored. The data of a view is instead derived from one or more other tables
+Views are used to summarize data which is distributed among several tables
+The data of a view is not actually physically stored.
+<br> The data of a view is instead derived from one or more other tables
 It is tailored to the needs of a specific application
 <h3>Search Help</h3>
 Search help is a tool to help you search for data records in the system
 An efficient and user-friendly search assists users where the key of a record is unknown
 <h3>Lock Objects</h3>
-<pre>
-  Simultaneous accessing of the same data record by two users in the SAP system is synchronized by a lock mechanism.
-Locks are set and released by calling certain function modules. These function modules are generated automatically
- from the definition of so-called lock objects in the ABAP/4 Dictionary
 
-Function modules : Enqueue_<obj name> - to lock the table dequeue_<obj name> - to release the lock
-
-  Important Transactions
-
+  <div>
+  Simultaneous accessing of the same data record by two users in the SAP system
+  is synchronized by a lock mechanism.
+  <br>Locks are set and released by calling certain function modules.
+  These function modules are generated automatically
+  from the definition of so-called lock objects in the ABAP/4 Dictionary
+  <br>Function modules :
+  <br>   Enqueue_<obj name> - to lock the table dequeue_<obj name> - to release the lock
+  </div>
+ 
+  <b>Important Transactions</b>
+  <pre>
   SE11 : Data Dictionary Initial Screen (SE12 Display only)
   SE13 : ABAP Dictionary : Technical Settings
   SE14 : Database Utility
@@ -299,12 +306,17 @@ Function modules : Enqueue_<obj name> - to lock the table dequeue_<obj name> - t
   SE55 : Table View Maintenance
   SM30 : Table Maintenance
 </pre>
-  <h2>Modules</h2>
-  When you modularize source code, you place a sequence of ABAP statements in a module.
-  <br> Then, instead of placing all of the statements in your main program, you just call the module.
-
+</div>
+<h2>Modules</h2>
+<pre>
+ When you modularize source code, you place a sequence of ABAP statements in a module.
+ <br> Then, instead of placing all of the statements in your main program,
+  you just call the module.
+      
+</pre>
+  
 <h2>macros</h2>
-
+<diV>
 If you want to reuse the same set of statements more than once in a program, you can include them in a macro.
 <br>
 You can only use a macro within the program in which it is defined, 
@@ -337,11 +349,11 @@ Macros can use Parameters &N where N = 1,2,3...
 
     WRITE number1.
 </pre>
-
+</diV>
 <h2>
 Include Programs
 </h2>
-
+<div>
 Include Programs are solely for modularizing source code, and have no parameter interface.
 <br> Include programs allow you to use the same source code in different programs. 
 <br>They  can be useful if you have lengthy data declarations that you want to use in different programs.
@@ -361,10 +373,11 @@ Include programs cannot call themselves.
         PROGRAM ZRPM0001.     
         INCLUDE ZILX0004.
 </pre>
+</div>
 <h2>
   Subroutines  
 </h2>
-
+<div>
 Subroutines are procedures that you can define in any ABAP program and also call from any program.
 <br> Subroutines are normally called internally, that is,
 <br> they contain sections of code or algorithms that are used frequently locally.
@@ -375,19 +388,20 @@ FORM < Subroutine > [< pass >].
     < Statement block >.   
 ENDFORM.
 </pre>
-
+</div>
 <h2>
-    Types of Subroutines
+Types of Subroutines
 </h2>
-
+<div>
 <h3>Internal</h3>
 Subroutine defined in same program being called.
 Can access all the data objects declared in the main ABAP/4 program.
 <h3>External</h3>
 Subroutine defined outside the program being called.
 Need to use the < pass > option or declare data objects in common parts of memory.
-
+</div>
 <h2> Calling a Subroutine Internal Subroutines</h2>
+<div>
 <pre>
       PERFORM < subroutine > [< pass >]
 </pre>
@@ -396,8 +410,9 @@ Need to use the < pass > option or declare data objects in common parts of memor
 <br><pass> = Parameters being passed
         
 <br>  Data declared in main program is automatically available.
-
+</div>
 <h2>External Subroutines</h2>
+<div>
 <pre>
    PERFORM < subroutine >(< Program>) [< pass>].
 
@@ -431,6 +446,7 @@ Syntax
         < Statements>  
         ENDFUNCTION
 </pre>
+</div>
 <h2>Important information Associated with Function Module</h2>
 <ul>
  <li>Administration</li>
@@ -496,17 +512,17 @@ Function groups are containers for function modules.
 <h2>Open SQL & Native SQL </h2>
 In ABAP/4 programming language, there are two types of SQL being used.
 <ul>
-    <li>      NATIVE SQL   
+    <li>  OPEN SQL   
         <pre>
-                Open SQL allows you to access the database tables declared in the ABAP dictionary 
-                regardless of the database platform that the R/3 system is using.
+        Open SQL allows you to access the database tables declared in the ABAP dictionary 
+        regardless of the database platform that the R/3 system is using.
         </pre>
     </li>
-    <li>    OPEN SQL. 
+    <li> NATIVE SQL. 
         <pre>
-                Native SQL allows you to use database-specific SQL statements in an ABAP/4 program. 
-                This means that you can use database tables that are not administered by ABAP dictionary,
-                 and therefore integrate data that is not part of the R/3 system.
+        Native SQL allows you to use database-specific SQL statements in an ABAP/4 program. 
+        This means that you can use database tables that are not administered by ABAP dictionary,
+         and therefore integrate data that is not part of the R/3 system.
         </pre>
      </li>
 </ul>
