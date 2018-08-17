@@ -115,5 +115,42 @@
         <br><img src="https://www.tutorialspoint.com/sap/images/human_resources.jpg" />
 
     </div>
-    
+    <h2>
+        what is a Client?
+    </h2>
+    <div>
+        A client is a logical portion of an SAP R/3 physical database. 
+        <br>From a business standpoint, a client can be interpreted as a logical group of companies.
+        <img src="https://www.tutorialspoint.com/sap/images/client.jpg">
+        <h3>Points</h3>
+        <ul>
+           <li>
+                All customizing (configuration) and development (ABAP) work in SAP R/3 is performed in a client.
+           </li>
+           <li>
+                However, the data from both customizing and development work may be stored 
+                within an individual client  (client dependent data)
+                <br> or among all clients  (client independent data) in the system.
+           </li>
+            
+        </ul>
+        <h3>Client-Dependent vs. Client-Independent</h3>
+        <ul>
+                <li>Client-dependent data</li> 
+                 is defined as data specific to an individual client. Examples of client-dependent data include number ranges, ABAP variants, and user masters as well as the data that is created or updated through SAP R/3 transactions.
+
+                <li>Client-independent data </li>can be defined as data contained across all clients in the system. Examples of client-independent data include data dictionary objects (tables, views), ABAP source code, screens, and menus.
+        </ul>
+        <h3>How to determine dependency or indendependency</h3>
+        <div>
+                Data resides in tables. To determine if a particular table is client-dependent
+                 or client-independent, the table structure needs to be reviewed.
+                 <br> The table structure can be viewed by the data dictionary (SE11).
+                 <br> If MANDT (client in German) is the first key field of the table,
+                 <br> then the table is client-dependent; otherwise, the table is client-independent.
+                <br>
+                For example, the TSTC table is client-independent;
+                <br> however, the USR01 table is client-dependent.
+        </div>
+    </div>
 </body>
