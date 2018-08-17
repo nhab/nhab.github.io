@@ -14,7 +14,9 @@ margin: 4px,4px,4px,4px
 pre{
   width:61%;
 }
-
+li{
+  font-weight: bolder;
+}
 .width60Percent{
   width:60%;
 }
