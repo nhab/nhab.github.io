@@ -252,6 +252,19 @@ tb=[
   ,"",
   "","","<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Icelandic_citizens'>YES,</a>","Icelandic"," " 
 ]
+	,
+	["India"
+	 ,
+	 ,
+	 ,
+	 ,
+	 ,
+	 ,
+	 ,
+	 ,
+	 ,
+	 ,"Coimbatore,India |<a href="https://en.climate-data.org/location/2788/"> C</a>"
+	 ]
 	/*
 "Austria""<a href='https://www.migration.gv.at/en/living-and-working-in-austria/integration-and-citizenship/citizenship/'>10</a>"German lang.""German,English""
 "Taiwan""<a href='https://en.wikipedia.org/wiki/Nationality_law_of_Taiwan'>5 </a>"Dual"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Taiwanese_citizens'>Yes,Even china</a>"<a href='https://en.wikipedia.org/wiki/Languages_of_Taiwan'>Chines manderin</a>""
