@@ -159,7 +159,7 @@ tb=[
     ,""
    ," Berlin,Germany |<a href='https://www.holiday-weather.com/berlin/averages/'> C</a> ,"+
 	   " <a href='http://dateandtime.info/citycoordinates.php?id=2950159'>(43 m)</a>  "+
-	" Munich  <a href="http://dateandtime.info/citycoordinates.php?id=2867714">519 m </a> "
+	" Munich  <a href='http://dateandtime.info/citycoordinates.php?id=2867714'>519 m </a> "
    ],
    [
    "Finland<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Finnish_citizens'>*</a>"
