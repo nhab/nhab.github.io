@@ -252,48 +252,135 @@ tb=[
   ,"",
   "","","<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Icelandic_citizens'>YES,</a>","Icelandic"," " 
 ]
-	,
-	["India"
-	 ,
-	 ,
-	 ,
-	 ,
-	 ,
-	 ,
-	 ,
-	 ,
-	 ,
-	 ,"Coimbatore,India |<a href="https://en.climate-data.org/location/2788/"> C</a>"
-	 ]
-	/*
-"Austria""<a href='https://www.migration.gv.at/en/living-and-working-in-austria/integration-and-citizenship/citizenship/'>10</a>"German lang.""German,English""
-"Taiwan""<a href='https://en.wikipedia.org/wiki/Nationality_law_of_Taiwan'>5 </a>"Dual"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Taiwanese_citizens'>Yes,Even china</a>"<a href='https://en.wikipedia.org/wiki/Languages_of_Taiwan'>Chines manderin</a>""
-"Denmark""<a href='https://www.justlanded.com/english/Denmark/Denmark-Guide/Visas-Permits/Citizenship'>9 </a>""<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Danish_citizens'>Yes</a>"""
-"Japan ""<a href='https://www.wikihow.com/Become-a-Japanese-Citizen'>5</a>""<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Japanese_citizens'>YES</a>"""
-"Cyprus""""<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Cypriot_citizens'>Canada,Europe"""
-"Croatia""""<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Croatian_citizens'>Canada,Europe</a>"""
-"HongKong""""<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Chinese_citizens_of_Hong_Kong'>Everywhere Except U.S.</a>"""
-"Georgia""""<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Georgian_citizens'>Eroupe,India</a>"""
-
-"Bulgaria""""<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Bulgarian_citizens'>No</a>""
-"Croatia""""<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Croatian_citizens'>No</a>""
-"Republic of Cyprus""""<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Cypriot_citizens'>No</a>""
-"Latvia""""""
-"Lithuania""""""
-"Poland""""""
-"Portugal""""""
-"Romania""""""
-"Slovakia""""""
-"Slovenia""""""
-"Panama ""0"1250$ retiree income/month"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Panamanian_citizens'>Europe</a>""US$" $44 B"<a href='https://en.wikipedia.org/wiki/Economy_of_Panama'>Antibitics,Fuel</a>"
-"Malaysia "<a href='https://www.justlanded.com/english/Malaysia/Malaysia-Guide/Visas-Permits/Malaysian-citizenship'>10 to 12</a>""<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Malaysian_citizens'>Europe</a>""<a href='https://www.xe.com/currencycharts/?from=MYR&to=USD&view=10Y'>MY Ringit</a>(0.25)""
-"China """"NO""<a href='https://www.xe.com/currencycharts/?from=USD&to=CNY&view=10Y'>CN Yuan</a>(0.13)""
-"Ecuador""<a href='https://translate.googleusercontent.com/translate_c?depth=1&rurl=translate.google.com&sl=auto&sp=nmt4&tl=en&u=https://www.cancilleria.gob.ec/obtencion-de-nacionalidad-ecuatoriana-mediante-carta-de-naturalizacion/&xid=17259,15700021,15700124,15700149,15700168,15700186,15700191,15700201,15700208&usg=ALkJrhguEYp7mmJGyyd-aHZgqXoilruutw'>3 years stay(275 days each)</a>"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Ecuadorian_citizens'>No ,China,India</a>""""
-"Belize  ""1""<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Belizean_citizens'>No</a>""<a href='https://www.xe.com/currencycharts/?from=BZD&to=USD&view=5Y'>Belize $</a>(0.5)""
-"Thailand" "<a href='https://www.justlanded.com/english/Thailand/Thailand-Guide/Visas-Permits/Thai-Citizenship'>5</a>"  tail lang"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Thai_citizens'>No</a>"""
-"Armenia""""<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Armenian_citizens'>No</a>"""
-"Morocco""""<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Moroccan_citizens'>No</a>"""
-"United Arab Emirates""<a href='https://en.wikipedia.org/wiki/Emirati_nationality_law'>30</a>""<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Emirati_citizens'>canada,Europe</a>""""
-
-	*/
+,
+["India"
+ ,
+ ,
+ ,
+ ,
+ ,
+ ,
+ ,
+ ,
+ ,
+ ,"Coimbatore,India |<a href="https://en.climate-data.org/location/2788/"> C</a>"
+ ]
+,
+["Austria"
+ ,"<a href='https://www.migration.gv.at/en/living-and-working-in-austria/integration-and-citizenship/citizenship/'>10</a>"German lang."
+ ,"German ,English"
+ ,""
+ ,
+,
+ ,
+ ,
+ ,
+ ,
+ ]
+,
+[
+"Taiwan"
+,"<a href='https://en.wikipedia.org/wiki/Nationality_law_of_Taiwan'>5 </a>",
+"Dual<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Taiwanese_citizens'>Yes,Even china</a>"
+,"<a href='https://en.wikipedia.org/wiki/Languages_of_Taiwan'>Chines manderin</a>""
+]
+,
+["Denmark"
+ ,"<a href='https://www.justlanded.com/english/Denmark/Denmark-Guide/Visas-Permits/Citizenship'>9 </a>"
+ ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Danish_citizens'>Yes</a>""
+]
+,
+[
+"Japan ",
+"<a href='https://www.wikihow.com/Become-a-Japanese-Citizen'>5</a>"
+,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Japanese_citizens'>YES</a>"
+]
+,
+[
+"Cyprus"
+,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Cypriot_citizens'>Canada,Europe"
+]
+,
+[
+"Croatia"
+,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Croatian_citizens'>Canada,Europe</a>""
+],
+[
+"HongKong"
+,"",
+,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Chinese_citizens_of_Hong_Kong'>Everywhere Except U.S.</a>"
+]
+,
+[
+"Georgia",
+""
+,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Georgian_citizens'>Eroupe,India</a>""
+]
+,
+["Bulgaria"
+ ,""
+ ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Bulgarian_citizens'>No</a>"
+ ]
+,["Croatia"
+  ,""
+  ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Croatian_citizens'>No</a>"
+  ]
+,[
+"Republic of Cyprus"
+,""
+,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Cypriot_citizens'>No</a>"
+],
+[
+"Latvia""""""	
+],
+["Lithuania"],
+["Poland"],
+["Portugal"],
+["Romania"],
+["Slovakia"],
+["Slovenia"],
+["Panama ",
+ "0",
+ "1250$ retiree income/month"
+ ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Panamanian_citizens'>Europe</a>"
+ ,"US$"
+ ,"$44 B"
+ ,"<a href='https://en.wikipedia.org/wiki/Economy_of_Panama'>Antibitics,Fuel</a>"
+],
+["Malaysia"
+ ,"<a href='https://www.justlanded.com/english/Malaysia/Malaysia-Guide/Visas-Permits/Malaysian-citizenship'>10 to 12</a>"
+ ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Malaysian_citizens'>Europe</a>"
+ ,"<a href='https://www.xe.com/currencycharts/?from=MYR&to=USD&view=10Y'>MY Ringit</a>(0.25)"
+],
+["China ",
+ ""
+ ,"NO"
+ ,"<a href='https://www.xe.com/currencycharts/?from=USD&to=CNY&view=10Y'>CN Yuan</a>(0.13)"
+],
+["Ecuador"
+ ,"<a href='https://translate.googleusercontent.com/translate_c?depth=1&rurl=translate.google.com&sl=auto&sp=nmt4&tl=en&u=https://www.cancilleria.gob.ec/obtencion-de-nacionalidad-ecuatoriana-mediante-carta-de-naturalizacion/&xid=17259,15700021,15700124,15700149,15700168,15700186,15700191,15700201,15700208&usg=ALkJrhguEYp7mmJGyyd-aHZgqXoilruutw'>3 years stay(275 days each)</a>"
+ ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Ecuadorian_citizens'>No ,China,India</a>"
+],
+["Belize  "
+ ,"1"
+ ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Belizean_citizens'>No</a>"
+ ,"<a href='https://www.xe.com/currencycharts/?from=BZD&to=USD&view=5Y'>Belize $</a>(0.5)"
+],
+["Thailand" 
+ ,"<a href='https://www.justlanded.com/english/Thailand/Thailand-Guide/Visas-Permits/Thai-Citizenship'>5</a>"
+ ,"tail lang"
+ ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Thai_citizens'>No</a>"
+],
+["Armenia"
+ ,""
+ ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Armenian_citizens'>No</a>"
+],
+["Morocco"
+ ,""
+ ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Moroccan_citizens'>No</a>"
+],
+["United Arab Emirates"
+ ,"<a href='https://en.wikipedia.org/wiki/Emirati_nationality_law'>30</a>"
+ ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Emirati_citizens'>canada,Europe</a>"
+],
 ];
