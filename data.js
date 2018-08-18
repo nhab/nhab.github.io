@@ -1,3 +1,4 @@
+
 tb=[
     ["Iran","","","","","","","<a href='https://www.xe.com/currencycharts/?from=IRR&to=USD&view=10Y'>Rial</a>(0.00001)",
        "<a href='https://tradingeconomics.com/iran/gdp-per-capita'>7000$</a>"
@@ -82,7 +83,7 @@ tb=[
     ,""
     ,""
     ,""
-    ,""
+    ,"|| Amsterdam |<a href='https://en.climate-data.org/location/3330/'> C</a> |"
    ],
    [
     "Switzerland",
@@ -96,6 +97,9 @@ tb=[
     ,""
     ,""
     ,""	   
+,"Bern,Switzerland <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2661552'>527</a>"+
+"Zurich,switzerland  <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2657896'>472m</a>"+
+"Geneve <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2660646'>375m</a>	"
    ],
    [
     "Sweden",
@@ -130,16 +134,17 @@ tb=[
 	,""
    ],
    [
-    "Luxembourg",
-    "","",
+    "Luxembourg"
+   , ""
+,"",
     "<a href='https://en.wikipedia.org/wiki/Luxembourgish_nationality_law'>5</a>",
     "language exam",
     "<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Luxembourgish_citizens'>YES</a>",
     "<a href='https://en.wikipedia.org/wiki/Languages_of_Luxembourg'>Luxembourgish</a>",
     "<a href='https://www.xe.com/currencycharts/?from=LUF&to=USD&view=5Y'>LUF</a>(0.28)",
-    "",
     ""
-	   ,""
+   , ""
+,"Luxamburg <a href='https://www.graphicmaps.com/luxembourg'>32 m</a>|"
    ],
    [
     "Germany",
@@ -152,7 +157,9 @@ tb=[
     "<a href='https://www.xe.com/currencycharts/?from=DEM&to=USD&view=5Y'>DE Mark</a>(0.6)",
     ""
     ,""
-	   ,""
+   ," Berlin,Germany |<a href='https://www.holiday-weather.com/berlin/averages/'> C</a> ,"+
+	   " <a href='http://dateandtime.info/citycoordinates.php?id=2950159'>(43 m)</a>  "+
+	" Munich  <a href="http://dateandtime.info/citycoordinates.php?id=2867714">519 m </a> "
    ],
    [
    "Finland<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Finnish_citizens'>*</a>"
@@ -241,6 +248,11 @@ tb=[
 ,""
 ,"<a href='https://www.xe.com/currencycharts/?from=ESP&to=USD&view=10Y'>ES Peseta</a>(0.007),Euro"
 ,""
+	,""
+	," Barcelona <a href='http://www.barcelona.climatemps.com/map.php'>5m</a>|"+
+, Madrid <a href='https://www.holiday-weather.com/madrid/averages/'> 5-25 C </a>|"+
+	"<a href='https://weather-and-climate.com/average-monthly-Humidity-perc,Madrid,Spain'>50-70%</a>|"
+	+"<a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=3117735'>638 m</a>"
 ],
 ["Italy"
  ,""
@@ -270,6 +282,14 @@ tb=[
  ,"<a href='https://www.migration.gv.at/en/living-and-working-in-austria/integration-and-citizenship/citizenship/'>10</a>"
  ,"German lang."
  ,"German ,English"
+ ,
+ ,
+ ,
+ ,
+ ,
+ ,
+ ,"Vienna, Austria |||<a href='http://www.vienna.climatemps.com/map.php'>200m</a>"
+
 ]
 ,
 [
@@ -345,6 +365,16 @@ tb=[
  ,"<a href='https://www.justlanded.com/english/Malaysia/Malaysia-Guide/Visas-Permits/Malaysian-citizenship'>10 to 12</a>"
  ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Malaysian_citizens'>Europe</a>"
  ,"<a href='https://www.xe.com/currencycharts/?from=MYR&to=USD&view=10Y'>MY Ringit</a>(0.25)"
+ ,
+ ,
+ ,
+ ,
+ ,
+ ,
+ , "Kuala lumpur <a href='https://www.holiday-weather.com/kuala_lumpur/averages'> C C</a> "+
+ "<a href='https://weather-and-climate.com/average-monthly-Rainfall-Temperature-Sunshine,Kuala-Lumpur,Malaysia'>80%</a>"+
+ "<a href='http://dateandtime.info/citycoordinates.php?id=1735161'>56m </a> ,"+
+ "Penang,Malaysia <a href='https://weather-and-climate.com/average-monthly-Rainfall-Temperature-Sunshine,Penang,Malaysia'>31-32 C C</a>"
 ],
 ["China ",
  ""
