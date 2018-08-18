@@ -249,8 +249,8 @@ tb=[
 ,"<a href='https://www.xe.com/currencycharts/?from=ESP&to=USD&view=10Y'>ES Peseta</a>(0.007),Euro"
 ,""
 	,""
-	," Barcelona <a href='http://www.barcelona.climatemps.com/map.php'>5m</a>|"+
-, "Madrid <a href='https://www.holiday-weather.com/madrid/averages/'> 5-25 C </a>|"+
+	," Barcelona <a href='http://www.barcelona.climatemps.com/map.php'>5m</a>  "+
+"Madrid <a href='https://www.holiday-weather.com/madrid/averages/'> 5-25 C </a>|"+
 	"<a href='https://weather-and-climate.com/average-monthly-Humidity-perc,Madrid,Spain'>50-70%</a>|"
 	+"<a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=3117735'>638 m</a>"
 ],
