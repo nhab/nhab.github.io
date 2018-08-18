@@ -270,13 +270,7 @@ tb=[
  ,"<a href='https://www.migration.gv.at/en/living-and-working-in-austria/integration-and-citizenship/citizenship/'>10</a>"German lang."
  ,"German ,English"
  ,""
- ,
-,
- ,
- ,
- ,
- ,
- ]
+]
 ,
 [
 "Taiwan"
@@ -287,7 +281,7 @@ tb=[
 ,
 ["Denmark"
  ,"<a href='https://www.justlanded.com/english/Denmark/Denmark-Guide/Visas-Permits/Citizenship'>9 </a>"
- ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Danish_citizens'>Yes</a>""
+ ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Danish_citizens'>Yes</a>"
 ]
 ,
 [
