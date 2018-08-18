@@ -263,7 +263,7 @@ tb=[
  ,
  ,
  ,
- ,"Coimbatore,India |<a href="https://en.climate-data.org/location/2788/"> C</a>"
+ ,"Coimbatore,India |<a href='https://en.climate-data.org/location/2788/'> C</a>"
  ]
 ,
 ["Austria"
