@@ -3,9 +3,14 @@ h1,h2,h3, pre, body{
     "Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     
   }
- h1,h2{
-  text-align: center;
+ h1,h2{/*center*/
+ display: flex;
+    justify-content: center;
+    align-items: center;
  }
+h2{
+   background-color:#c7d5ed;
+}
 p,div,span,li{
     font-size: 18px;
   margin-left: 20px;
