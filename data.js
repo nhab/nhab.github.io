@@ -1,22 +1,29 @@
 
 tb=[
-    ["Iran","","","","","","","<a href='https://www.xe.com/currencycharts/?from=IRR&to=USD&view=10Y'>Rial</a>(0.00001)",
+    ["Iran",
+     ""
+     ,""
+     ,""
+     ,""
+     ,""
+     ,""
+     ,"<a href='https://www.xe.com/currencycharts/?from=IRR&to=USD&view=10Y'>Rial</a>(0.00001)",
        "<a href='https://tradingeconomics.com/iran/gdp-per-capita'>7000$</a>"
      ,""
     , "Oil",
     "Tehran <a href='https://www.holiday-weather.com/tehran/averages/'>0-40</a>"
     +"<a href='http://www.tehran.climatemps.com/'>20-70 % , 1200m</a><BR>"
     +"Sari <a href='https://en.climate-data.org/region/2183/'>5-30 C , 20-99%</a> ,"
-    +"<a href='https://en.wikipedia.org/wiki/Sari,_Iran'>5-50m</a>"]
-	
+    +"<a href='https://en.wikipedia.org/wiki/Sari,_Iran'>5-50m</a>"
+    ]	
     ,["New Zealand <a href='https://www.immigration.govt.nz/new-zealand-visas/options/live-permanently'>* </a> "
       ,"<a href='https://www.immigration.govt.nz/new-zealand-visas/options/live-permanently/explore-visa-options-for-living-permanently'>Skilled Migrant </a>"
       ,""
     , "<a href='https://www.govt.nz/browse/nz-passports-and-citizenship/nz-citizenship/requirements-for-nz-citizenship/presence-requirements/'>5 </a>"
-     ,"8 month/year",
-      "<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_New_Zealand_citizens'>YES</a>"
-     ,"English",
-      "<a href='https://www.xe.com/currencycharts/?from=NZD&to=USD&view=1D'>NZ Dollar</a>(0.67)"
+     ,"8 month/year"
+     , "<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_New_Zealand_citizens'>YES</a>"
+     ,"English"
+      ,"<a href='https://www.xe.com/currencycharts/?from=NZD&to=USD&view=1D'>NZ Dollar</a>(0.67)"
      ,"<a href='https://tradingeconomics.com/new-zealand/gdp-per-capita'>$40k</a>"
      ,""
      ,"<a href='https://globaledge.msu.edu/countries/new-zealand/tradestats'>Diary,Food,wood</a>"
@@ -58,7 +65,6 @@ tb=[
     ,""
     ,""
     ,"Belfast <a href='https://en.climate-data.org/location/6014/'>4-15 C</a>, <a href='https://weather-and-climate.com/average-monthly-Humidity-perc,belfast-gb,United-Kingdom'>75-90 %</a>"
-
    ],
    ["Malta"
     ,"<a href='https://www.gov.mt/en/Life%20Events/Moving-to-Malta/Pages/Moving-to-Malta.aspx'>.</a>"
@@ -71,6 +77,7 @@ tb=[
    ,""
    ,""
    ,""
+    ,""
    ],
    [
     "Netherland"
@@ -84,6 +91,7 @@ tb=[
     ,""
     ,""
     ,"|| Amsterdam |<a href='https://en.climate-data.org/location/3330/'> C</a> |"
+    ,""
    ],
    [
     "Switzerland",
@@ -110,14 +118,25 @@ tb=[
     "<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Swedish_citizens'>Yes</a>"
     ,""
      ,""
-   ,"","",""
+   ,""
+  ,""
+  ,""
+,""
    ],
    [
    "Norway"
    ,"<a href='https://www.udi.no/en/want-to-apply/work-immigration/?c=irn'>Skilled wworker</a>"
    , ""
-   ,"","","<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Norwegian_citizens'>yes</a>"
-   ,"","","","",""
+   ,""
+,""
+	   ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Norwegian_citizens'>yes</a>"
+   ,""
+	   ,""
+	   ,""
+	   ,""
+	   ,""
+	     ,""
+	     ,""
    ],
    [
     "Belgium"
@@ -131,12 +150,12 @@ tb=[
     ,""
     ,""
     ,""
-	,""
+    ,""
    ],
    [
     "Luxembourg"
-   , ""
-,"",
+    , ""
+    ,"",
     "<a href='https://en.wikipedia.org/wiki/Luxembourgish_nationality_law'>5</a>",
     "language exam",
     "<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Luxembourgish_citizens'>YES</a>",
@@ -145,6 +164,7 @@ tb=[
     ""
    , ""
 ,"Luxamburg <a href='https://www.graphicmaps.com/luxembourg'>32 m</a>|"
+	   ,""
    ],
    [
     "Germany",
