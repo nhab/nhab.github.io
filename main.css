@@ -38,7 +38,7 @@ td, th {
     border: 1px solid #eeeeee;
     text-align: left;
     margin: 2px,2px,2px,2px;
-   /* white-space: nowrap;*/,
+   /* white-space: nowrap; padding: 8px;*/,
     width:70px;
     word-wrap: nowrap;
 }
@@ -47,6 +47,16 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 
+tr:hover {background-color: #ddd;}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+	
 .ClimateCol{
 	width:200px;
 	 min-width: 120px;
