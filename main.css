@@ -12,7 +12,7 @@ table tbody td {  font-size: 13px;}
 table tr:nth-child(even) {  background: #D0E4F5;}
 table thead th {  font-size: 15px;  font-weight: bold;   border-left: 2px solid #D0E4F5;}
 table thead th:first-child {  border-left: none;}
-th {padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #6699FF; color: white;}
+th {padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #29559b; color: white;}
 .ClimateCol{
 	width:200px;
 	 min-width: 120px;
