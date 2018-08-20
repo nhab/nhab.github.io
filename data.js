@@ -66,7 +66,7 @@ tb=[
     ,""
     ,""
     ,"Belfast , <a href='https://en.climate-data.org/location/6014/'>4-15 </a>,"+
-    "<a href='https://www.worldweatheronline.com/belfast-weather-averages/belfast/gb.aspx'>75-90 %</a>"
+    "<a href='https://www.worldweatheronline.com/belfast-weather-averages/belfast/gb.aspx'>75-90 %</a>,"
    ],
    ["Malta"
     ,"<a href='https://www.gov.mt/en/Life%20Events/Moving-to-Malta/Pages/Moving-to-Malta.aspx'>.</a>"
