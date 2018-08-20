@@ -103,8 +103,7 @@ tb=[
     ,""
     ,""
     ,""
-    ,""
-    ,""	   
+    ,"" 
 ,"Bern,Switzerland <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2661552'>527</a>"+
 "Zurich,switzerland  <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2657896'>472m</a>"+
 "Geneve <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2660646'>375m</a>	"
