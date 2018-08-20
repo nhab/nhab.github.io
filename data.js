@@ -89,9 +89,10 @@ tb=[
     ,"Dutch,English"
     ,""
     ,""
-    ,""
+    ,"" 
+,""
     ,"|| Amsterdam |<a href='https://en.climate-data.org/location/3330/'> C</a> |"
-    ,""
+  
    ],
    [
     "Switzerland",
@@ -162,8 +163,9 @@ tb=[
     "<a href='https://www.xe.com/currencycharts/?from=LUF&to=USD&view=5Y'>LUF</a>(0.28)",
     ""
    , ""
-,"Luxamburg <a href='https://www.graphicmaps.com/luxembourg'>32 m</a>|"
 	   ,""
+,"Luxamburg <a href='https://www.graphicmaps.com/luxembourg'>32 m</a>|"
+	 
    ],
    [
     "Germany",
@@ -176,6 +178,7 @@ tb=[
     "<a href='https://www.xe.com/currencycharts/?from=DEM&to=USD&view=5Y'>DE Mark</a>(0.6)",
     ""
     ,""
+    ,""   
    ," Berlin,Germany |<a href='https://www.holiday-weather.com/berlin/averages/'> C</a> ,"+
 	   " <a href='http://dateandtime.info/citycoordinates.php?id=2950159'>(43 m)</a>  "+
 	" Munich  <a href='http://dateandtime.info/citycoordinates.php?id=2867714'>519 m </a> "
