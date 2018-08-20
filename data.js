@@ -65,7 +65,7 @@ tb=[
      ,"<a href='https://www.ft.com/content/6c7a0c9a-1913-30a2-a317-24d2623e1865'>62k</a>"
     ,""
     ,""
-    ,"Belfast <a href='https://en.climate-data.org/location/6014/'>4-15 C</a>, <a href='https://weather-and-climate.com/average-monthly-Humidity-perc,belfast-gb,United-Kingdom'>75-90 %</a>"
+    ,"Belfast , <a href='https://en.climate-data.org/location/6014/'>4-15 C</a>, <a href='https://weather-and-climate.com/average-monthly-Humidity-perc,belfast-ie,Ireland'>75-90 %</a>"
    ],
    ["Malta"
     ,"<a href='https://www.gov.mt/en/Life%20Events/Moving-to-Malta/Pages/Moving-to-Malta.aspx'>.</a>"
