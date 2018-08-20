@@ -52,7 +52,7 @@ tb=[
     " ,<a href='https://www.toronto.ca/311/knowledgebase/kb/docs/articles/information-and-technology/solutions-development/geospatial-competency-centre/torontos-elevationaltitude-above-sea-level.html'>76m<a>"
     +"<br>Calgary ,<a href='https://www.holiday-weather.com/calgary/averages/'>-7 to 16 C</a> , "+
     "<a href='https://calgary.weatherstats.ca/charts/relative_humidity-hourly.html'>40-60% </a>, "
-    +"<br>Quebec state ,<a href='https://en.climate-data.org/region/62/#example0'> C</a> ,"
+    +"<br>Quebec state ,<a href='https://en.climate-data.org/region/62/#example0'> -15 - 25</a> ,"
    ],
    [ "Ireland"
     ,"<a href='http://workpermit.com/immigration/ireland/ireland-immigration'>job offer Based <\a>"
@@ -65,7 +65,8 @@ tb=[
      ,"<a href='https://www.ft.com/content/6c7a0c9a-1913-30a2-a317-24d2623e1865'>62k</a>"
     ,""
     ,""
-    ,"Belfast , <a href='https://en.climate-data.org/location/6014/'>4-15 C</a>, <a href='https://weather-and-climate.com/average-monthly-Humidity-perc,belfast-ie,Ireland'>75-90 %</a>"
+    ,"Belfast , <a href='https://en.climate-data.org/location/6014/'>4-15 </a>,"+
+    "<a href='https://weather-and-climate.com/average-monthly-Humidity-perc,belfast-ie,Ireland'>75-90 %</a>"
    ],
    ["Malta"
     ,"<a href='https://www.gov.mt/en/Life%20Events/Moving-to-Malta/Pages/Moving-to-Malta.aspx'>.</a>"
@@ -92,7 +93,7 @@ tb=[
     ,""
     ,"" 
 ,""
-    ,"Amsterdam |<a href='https://en.climate-data.org/location/3330/'>5-15</a> |"
+    ,"Amsterdam ,<a href='https://en.climate-data.org/location/3330/'>5-15</a> ,,"
   
    ],
    [
@@ -106,9 +107,9 @@ tb=[
     ,""
     ,""
     ,"" 
-,"Bern <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2661552'>527</a>"+
-"<br>Zurich  <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2657896'>472m</a>"+
-"<br>Geneve <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2660646'>375m</a>	"
+,"Bern, <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2661552'>527</a>,"+
+"<br>Zurich,  <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2657896'>472m</a>,"+
+"<br>Geneve ,<a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2660646'>375m</a>,	"
    ],
    [
     "Sweden",
@@ -165,7 +166,7 @@ tb=[
     ""
    , ""
 	   ,""
-,"Luxamburg <a href='https://www.graphicmaps.com/luxembourg'>32 m</a>|"
+,"Luxamburg ,,,<a href='https://www.graphicmaps.com/luxembourg'>32 m</a>|"
 	 
    ],
    [
@@ -180,9 +181,9 @@ tb=[
     ""
     ,""
     ,""   
-   ," Berlin,Germany |<a href='https://www.holiday-weather.com/berlin/averages/'> C</a> ,"+
-	   " <a href='http://dateandtime.info/citycoordinates.php?id=2950159'>(43 m)</a>  "+
-	" Munich  <a href='http://dateandtime.info/citycoordinates.php?id=2867714'>519 m </a> "
+   ," Berlin,<a href='https://www.holiday-weather.com/berlin/averages/'> C</a> ,"+
+	   " ,<a href='http://dateandtime.info/citycoordinates.php?id=2950159'>(43 m)</a>  "+
+	" <br>Munich ,,, <a href='http://dateandtime.info/citycoordinates.php?id=2867714'>519 m </a> "
    ],
    [
    "Finland<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Finnish_citizens'>*</a>"
@@ -196,7 +197,7 @@ tb=[
    ,""
    ,""
    ,""	  
-   ,"Helsinki <a href='https://www.holiday-weather.com/helsinki/averages/'> -7 to 17 C</a>"
+   ,"Helsinki ,<a href='https://www.holiday-weather.com/helsinki/averages/'> -7 to 17 C</a>"
    ],
    [
    "England ",
@@ -272,9 +273,9 @@ tb=[
 ,"<a href='https://www.xe.com/currencycharts/?from=ESP&to=USD&view=10Y'>ES Peseta</a>(0.007),Euro"
 ,""
 	,""
-	," Barcelona <a href='http://www.barcelona.climatemps.com/map.php'>5m</a>  "+
-"<br>Madrid <a href='https://www.holiday-weather.com/madrid/averages/'> 5-25 C </a>|"+
-"<a href='https://weather-and-climate.com/average-monthly-Humidity-perc,Madrid,Spain'>50-70%</a>|"
+	," Barcelona, <a href='http://www.barcelona.climatemps.com/map.php'>5m</a>  "+
+"<br>Madrid, <a href='https://www.holiday-weather.com/madrid/averages/'> 5-25 C </a>,"+
+"<a href='https://weather-and-climate.com/average-monthly-Humidity-perc,Madrid,Spain'>50-70%</a>,"
 +"<a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=3117735'>638 m</a>"
 ],
 ["Italy"
@@ -298,7 +299,7 @@ tb=[
  ,
  ,
  ,
- ,"Coimbatore |<a href='https://en.climate-data.org/location/2788/'> C</a>"
+ ,"Coimbatore ,<a href='https://en.climate-data.org/location/2788/'> C</a>,,"
  ]
 ,
 ["Austria"
@@ -311,7 +312,7 @@ tb=[
  ,
  ,
  ,
- ,"Vienna |||<a href='http://www.vienna.climatemps.com/map.php'>200m</a>"
+ ,"Vienna ,,,<a href='http://www.vienna.climatemps.com/map.php'>200m</a>"
 
 ]
 ,
