@@ -68,19 +68,7 @@ tb=[
     ,"Belfast , <a href='https://en.climate-data.org/location/6014/'>4-15 </a>,"+
     "<a href='https://www.worldweatheronline.com/belfast-weather-averages/belfast/gb.aspx'>75-90 %</a>,"
    ],
-   ["Malta"
-    ,"<a href='https://www.gov.mt/en/Life%20Events/Moving-to-Malta/Pages/Moving-to-Malta.aspx'>.</a>"
-    ,""
-    ,"<a href='https://integration.gov.mt/en/ResidenceAndVisas/Pages/Citizenship.aspx'>5</a>"
-   ,""
-   ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Maltese_citizens'>YES</a>"
-   ,"<a href='https://en.wikipedia.org/wiki/Languages_of_Malta'>Maltese,English</a>"
-   ,"Euro"
-   ,""
-   ,""
-   ,""
-    ,""
-   ],
+  
    [
     "Netherland"
     ,"<a href='https://ind.nl/en/work/Pages/Highly-skilled-migrant.aspx'>skilled work</a>"
@@ -110,6 +98,23 @@ tb=[
 ,"Bern,,, <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2661552'>527</a>"+
 "<br>Zurich,,,  <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2657896'>472m</a>"+
 "<br>Geneve,, ,<a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2660646'>375m</a>"
+   ],
+
+   [
+    "Germany",
+    "",
+    "",
+    "<a href='http://www.germany-visa.org/german-citizenship/'>6</a>"
+    ,"Language proficiency",
+    "<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_German_citizens'>YES</a>",
+    "German",
+    "<a href='https://www.xe.com/currencycharts/?from=DEM&to=USD&view=5Y'>DE Mark</a>(0.6)",
+    ""
+    ,""
+    ,""   
+   ,"Berlin,<a href='https://www.holiday-weather.com/berlin/averages/'> C</a> ,"+
+	   " ,<a href='http://dateandtime.info/citycoordinates.php?id=2950159'>(43 m)</a>  "+
+	" <br>Munich ,,, <a href='http://dateandtime.info/citycoordinates.php?id=2867714'>519 m </a> "
    ],
    [
     "Sweden",
@@ -169,21 +174,18 @@ tb=[
 ,"Luxamburg ,,,<a href='https://www.graphicmaps.com/luxembourg'>32 m</a>|"
 	 
    ],
-   [
-    "Germany",
-    "",
-    "",
-    "<a href='http://www.germany-visa.org/german-citizenship/'>6</a>"
-    ,"Language proficiency",
-    "<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_German_citizens'>YES</a>",
-    "German",
-    "<a href='https://www.xe.com/currencycharts/?from=DEM&to=USD&view=5Y'>DE Mark</a>(0.6)",
-    ""
+["Malta"
+    ,"<a href='https://www.gov.mt/en/Life%20Events/Moving-to-Malta/Pages/Moving-to-Malta.aspx'>.</a>"
     ,""
-    ,""   
-   ,"Berlin,<a href='https://www.holiday-weather.com/berlin/averages/'> C</a> ,"+
-	   " ,<a href='http://dateandtime.info/citycoordinates.php?id=2950159'>(43 m)</a>  "+
-	" <br>Munich ,,, <a href='http://dateandtime.info/citycoordinates.php?id=2867714'>519 m </a> "
+    ,"<a href='https://integration.gov.mt/en/ResidenceAndVisas/Pages/Citizenship.aspx'>5</a>"
+   ,""
+   ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Maltese_citizens'>YES</a>"
+   ,"<a href='https://en.wikipedia.org/wiki/Languages_of_Malta'>Maltese,English</a>"
+   ,"Euro"
+   ,""
+   ,""
+   ,""
+    ,""
    ],
    [
    "Finland<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Finnish_citizens'>*</a>"
