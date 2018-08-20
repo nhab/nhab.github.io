@@ -46,13 +46,13 @@ tb=[
     ,"<a href='https://tradingeconomics.com/canada/gdp-per-capita'>$42k</a>"
     ,""
     ," Energy,wood,Mineral"
-    ,"vancouver <a href='https://www.holiday-weather.com/vancouver/averages/'> 4 to 17 C</a>,<a href='https://www.currentresults.com/Weather/Canada/Cities/humidity-annual-average.php'>70-86%</a>,"
-    +"<br>Toronto <a href='https://www.google.com/search?num=100&ei=fsNiW63pO8rX6ASMzqLYAw&q=temperature+graph+toronto&oq=temperature+graph+toronto'>C</a> ,"
+    ,"vancouver ,<a href='https://www.holiday-weather.com/vancouver/averages/'> 4 to 17 C</a>,<a href='https://www.currentresults.com/Weather/Canada/Cities/humidity-annual-average.php'>70-86%</a>,"
+    +"<br>Toronto ,<a href='https://www.google.com/search?num=100&ei=fsNiW63pO8rX6ASMzqLYAw&q=temperature+graph+toronto&oq=temperature+graph+toronto'>C</a> ,"
     + "<a href='https://toronto.weatherstats.ca/charts/relative_humidity-hourly.html'>(20-100%) </a>"+
     " ,<a href='https://www.toronto.ca/311/knowledgebase/kb/docs/articles/information-and-technology/solutions-development/geospatial-competency-centre/torontos-elevationaltitude-above-sea-level.html'>76m<a>"
-    +"<br>Calgary <a href='https://www.holiday-weather.com/calgary/averages/'>-7 to 16 C</a> , "+
+    +"<br>Calgary ,<a href='https://www.holiday-weather.com/calgary/averages/'>-7 to 16 C</a> , "+
     "<a href='https://calgary.weatherstats.ca/charts/relative_humidity-hourly.html'>40-60% </a>, "
-    +"<br>Quebec state <a href='https://en.climate-data.org/region/62/#example0'> C</a> ,"
+    +"<br>Quebec state ,<a href='https://en.climate-data.org/region/62/#example0'> C</a> ,"
    ],
    [ "Ireland"
     ,"<a href='http://workpermit.com/immigration/ireland/ireland-immigration'>job offer Based <\a>"
