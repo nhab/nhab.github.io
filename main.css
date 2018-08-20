@@ -1,34 +1,11 @@
-body {
-    background-color: #ccd6c9;
-    font-family: arial, sans-serif;
-}
-h1,h2,h3, pre, body{
-    font-family: 
-    "Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-    
-  }
- h1,h2{/*center*/
- display: flex;
-    justify-content: center;
-    align-items: center;
- }
-h2{
-   background-color:#c7d5ed;
-}
-p,div,span,li{
-    font-size: 18px;
-  margin-left: 20px;
-}
-code,pre {
-     background-color: #eee; 
-margin: 4px,4px,4px,4px
-}
-pre{
-  width:70%;
-
-li{
-  font-weight: bolder;
-}
+body {    background-color: #ccd6c9;    font-family: arial, sans-serif;}
+h1,h2,h3, pre, body{font-family: "Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}
+h1,h2{ display: flex;justify-content: center; align-items: center; }
+h2{   background-color:#c7d5ed;}
+p,div,span,li{    font-size: 18px;  margin-left: 20px;}
+code,pre {     background-color: #eee; argin: 4px,4px,4px,4px}
+pre{  width:70%;}
+li{  font-weight: bolder;}
 /*
 table {      border-collapse: collapse;}
 td, th {    border: 1px solid black;  text-align: left; margin: 2px,2px,2px,2px;width:70px; word-wrap: nowrap;}
@@ -45,15 +22,8 @@ table thead {  background: #1C6EA4;  background: -moz-linear-gradient(top, #5592
   background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
   border-bottom: 2px solid #444444;
 }
-table thead th {
-  font-size: 15px;
-  font-weight: bold;
-  color: #FFFFFF;
-  border-left: 2px solid #D0E4F5;
-}
-table thead th:first-child {
-  border-left: none;
-}
+table thead th {  font-size: 15px;  font-weight: bold;  color: #FFFFFF;  border-left: 2px solid #D0E4F5;}
+table thead th:first-child {  border-left: none;}
 
 .ClimateCol{
 	width:200px;
