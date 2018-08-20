@@ -12,7 +12,7 @@
 <script type='text/javascript' src='fileOP.js'></script>
 
 <div >
-<table id="tb1" style="width: 100%;" >
+<table id="tb1" style="width: 100%;border: 1px solid black;" >
    <colgroup>
        <col span="1" style="width: 7%;">
        <col span="1" style="width: 7%;">
@@ -46,7 +46,7 @@
     	  <th>Exports</th>
 	   <th class="ClimateCol">Major Cities climate 
 		<br>
-		   <table style="border-style: solid; border-width: 1px;"><tr>
+		   <table style="border: 1px solid black;"><tr>
 			   <td class="ClimateCol">Temprature C</td>
 			 <td class="ClimateCol">Humidity</td>
 			<td class="ClimateCol">Elevation(Altitude) </td>
@@ -59,7 +59,7 @@
 		document.write("<tr>\r\n");
 		for( c=0;c<tb[0].length;c++)
 		{
-		  document.write("<td style='border-style: solid;border-width: 1px;'>"+tb[r][c]+"</td>\r\n");
+		  document.write("<td style=''>"+tb[r][c]+"</td>\r\n");
 		}
 		document.write("</tr>\r\n");
 	  }
