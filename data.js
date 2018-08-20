@@ -107,9 +107,9 @@ tb=[
     ,""
     ,""
     ,"" 
-,"Bern, <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2661552'>527</a>,"+
-"<br>Zurich,  <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2657896'>472m</a>,"+
-"<br>Geneve ,<a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2660646'>375m</a>,	"
+,"Bern,,, <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2661552'>527</a>"+
+"<br>Zurich,,,  <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2657896'>472m</a>"+
+"<br>Geneve,, ,<a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2660646'>375m</a>"
    ],
    [
     "Sweden",
@@ -181,7 +181,7 @@ tb=[
     ""
     ,""
     ,""   
-   ," Berlin,<a href='https://www.holiday-weather.com/berlin/averages/'> C</a> ,"+
+   ,"Berlin,<a href='https://www.holiday-weather.com/berlin/averages/'> C</a> ,"+
 	   " ,<a href='http://dateandtime.info/citycoordinates.php?id=2950159'>(43 m)</a>  "+
 	" <br>Munich ,,, <a href='http://dateandtime.info/citycoordinates.php?id=2867714'>519 m </a> "
    ],
