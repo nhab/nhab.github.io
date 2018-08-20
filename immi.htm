@@ -57,7 +57,7 @@
 		{
 		  document.write("<td style='border: 1px solid black;'>"+tb[r][c]+"</td>\r\n");
 		}
-		var res = tb[r][c].split("<br>");
+		var res = tb[r][tb[0].length-1].split("<br>");
 		for(c1=0;c1<res.length;c1++)
 		{
 		  s="<td><table><tr>";
