@@ -53,10 +53,20 @@
 	   for(r=0;r<tb.length;r++)
 	   {
 		document.write("<tr>\r\n");
-		for( c=0;c<tb[0].length;c++)
+		for( c=0;c<tb[0].length-1;c++)
 		{
 		  document.write("<td style='border: 1px solid black;'>"+tb[r][c]+"</td>\r\n");
 		}
+		var res = tb[r][c].split("\n");
+		for(c1=0;c1<res.length;c1++)
+		{
+		  s="<td><table><tr>";
+		  var n = res[c1].indexOf(" ");
+		  s+="<td>"+res[c1].substring(0,n)+"</td>";
+		  s+="<td>"+res[c1].substring(n,res[c1].length)+"</td>";
+		  s+="</tr></table></td>";
+		}	
+		 document.write(s);
 		document.write("</tr>\r\n");
 	  }
 	</script>
