@@ -45,7 +45,7 @@ tb=[
     ,"<a href='https://tradingeconomics.com/canada/gdp-per-capita'>$42k</a>"
     ,""
     ," Energy,wood,Mineral"
-    ," vancouver <a href='https://www.holiday-weather.com/vancouver/averages/'> 4 to 17 C</a>,<a href='https://www.currentresults.com/Weather/Canada/Cities/humidity-annual-average.php'>70-86%</a> <br>"
+    ,"vancouver <a href='https://www.holiday-weather.com/vancouver/averages/'> 4 to 17 C</a>,<a href='https://www.currentresults.com/Weather/Canada/Cities/humidity-annual-average.php'>70-86%</a> <br>"
     +"  Toronto <a href='https://www.google.com/search?num=100&ei=fsNiW63pO8rX6ASMzqLYAw&q=temperature+graph+toronto&oq=temperature+graph+toronto'>C</a> ,"
     + "<a href='https://toronto.weatherstats.ca/charts/relative_humidity-hourly.html'>(20-100%) </a>"+
     " ,<a href='https://www.toronto.ca/311/knowledgebase/kb/docs/articles/information-and-technology/solutions-development/geospatial-competency-centre/torontos-elevationaltitude-above-sea-level.html'>76m<a>"
@@ -91,7 +91,7 @@ tb=[
     ,""
     ,"" 
 ,""
-    ,"|| Amsterdam |<a href='https://en.climate-data.org/location/3330/'> C</a> |"
+    ,"Amsterdam |<a href='https://en.climate-data.org/location/3330/'>5-15</a> |"
   
    ],
    [
@@ -105,9 +105,9 @@ tb=[
     ,""
     ,""
     ,"" 
-,"Bern,Switzerland <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2661552'>527</a>"+
-"Zurich,switzerland  <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2657896'>472m</a>"+
-"Geneve <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2660646'>375m</a>	"
+,"Bern <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2661552'>527</a>"+
+"<br>Zurich  <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2657896'>472m</a>"+
+"<br>Geneve <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2660646'>375m</a>	"
    ],
    [
     "Sweden",
@@ -195,7 +195,7 @@ tb=[
    ,""
    ,""
    ,""	  
-   ,"| Helsinki <a href='https://www.holiday-weather.com/helsinki/averages/'> -7 to 17 C</a>"
+   ,"Helsinki <a href='https://www.holiday-weather.com/helsinki/averages/'> -7 to 17 C</a>"
    ],
    [
    "England ",
@@ -272,9 +272,9 @@ tb=[
 ,""
 	,""
 	," Barcelona <a href='http://www.barcelona.climatemps.com/map.php'>5m</a>  "+
-"Madrid <a href='https://www.holiday-weather.com/madrid/averages/'> 5-25 C </a>|"+
-	"<a href='https://weather-and-climate.com/average-monthly-Humidity-perc,Madrid,Spain'>50-70%</a>|"
-	+"<a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=3117735'>638 m</a>"
+"<br>Madrid <a href='https://www.holiday-weather.com/madrid/averages/'> 5-25 C </a>|"+
+"<a href='https://weather-and-climate.com/average-monthly-Humidity-perc,Madrid,Spain'>50-70%</a>|"
++"<a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=3117735'>638 m</a>"
 ],
 ["Italy"
  ,""
@@ -297,7 +297,7 @@ tb=[
  ,
  ,
  ,
- ,"Coimbatore,India |<a href='https://en.climate-data.org/location/2788/'> C</a>"
+ ,"Coimbatore |<a href='https://en.climate-data.org/location/2788/'> C</a>"
  ]
 ,
 ["Austria"
@@ -310,7 +310,7 @@ tb=[
  ,
  ,
  ,
- ,"Vienna, Austria |||<a href='http://www.vienna.climatemps.com/map.php'>200m</a>"
+ ,"Vienna |||<a href='http://www.vienna.climatemps.com/map.php'>200m</a>"
 
 ]
 ,
