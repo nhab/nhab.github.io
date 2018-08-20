@@ -29,7 +29,7 @@ tb=[
      ,"<a href='https://globaledge.msu.edu/countries/new-zealand/tradestats'>Diary,Food,wood</a>"
      ,"Auckland <a href='https://en.climate-data.org/location/3605/'>6-20 C</a> ,"
      +"<a href='https://www.weatheronline.co.nz/weather/maps/city?WMO=93110&CONT=nznz&LAND=NZ8&ART=RLF&LEVEL=150'>Auckland 85% Avg.</a>"
-      +"<br> Wellington <a href='https://en.climate-data.org/location/2/'>10-20 C</a> , "
+      +"<br>Wellington <a href='https://en.climate-data.org/location/2/'>10-20 C</a> , "
       +"<a href='https://www.weatheronline.co.nz/weather/maps/city?WMO=93439&CONT=nznz&LAND=NZ7&ART=RLF&LEVEL=150'>60-90%</a>,"
       +"<a href='http://dateandtime.info/citycoordinates.php?id=2179537'>31 m </a>"
     ] ,
@@ -45,13 +45,13 @@ tb=[
     ,"<a href='https://tradingeconomics.com/canada/gdp-per-capita'>$42k</a>"
     ,""
     ," Energy,wood,Mineral"
-    ,"vancouver <a href='https://www.holiday-weather.com/vancouver/averages/'> 4 to 17 C</a>,<a href='https://www.currentresults.com/Weather/Canada/Cities/humidity-annual-average.php'>70-86%</a> <br>"
-    +"  Toronto <a href='https://www.google.com/search?num=100&ei=fsNiW63pO8rX6ASMzqLYAw&q=temperature+graph+toronto&oq=temperature+graph+toronto'>C</a> ,"
+    ,"vancouver <a href='https://www.holiday-weather.com/vancouver/averages/'> 4 to 17 C</a>,<a href='https://www.currentresults.com/Weather/Canada/Cities/humidity-annual-average.php'>70-86%</a>"
+    +"<br>Toronto <a href='https://www.google.com/search?num=100&ei=fsNiW63pO8rX6ASMzqLYAw&q=temperature+graph+toronto&oq=temperature+graph+toronto'>C</a> ,"
     + "<a href='https://toronto.weatherstats.ca/charts/relative_humidity-hourly.html'>(20-100%) </a>"+
     " ,<a href='https://www.toronto.ca/311/knowledgebase/kb/docs/articles/information-and-technology/solutions-development/geospatial-competency-centre/torontos-elevationaltitude-above-sea-level.html'>76m<a>"
-    +" <br> Calgary <a href='https://www.holiday-weather.com/calgary/averages/'>-7 to 16 C</a> , "+
+    +"<br>Calgary <a href='https://www.holiday-weather.com/calgary/averages/'>-7 to 16 C</a> , "+
     "<a href='https://calgary.weatherstats.ca/charts/relative_humidity-hourly.html'>40-60% </a> "
-    +"<br> Quebec state <a href='https://en.climate-data.org/region/62/#example0'> C</a> "
+    +"<br>Quebec state <a href='https://en.climate-data.org/region/62/#example0'> C</a> "
    ],
    [ "Ireland"
     ,"<a href='http://workpermit.com/immigration/ireland/ireland-immigration'>job offer Based <\a>"
