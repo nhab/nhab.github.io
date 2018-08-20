@@ -13,7 +13,7 @@ tb=[
     , "Oil",
     "Tehran <a href='https://www.holiday-weather.com/tehran/averages/'>0-40</a>"
     +"<a href='http://www.tehran.climatemps.com/'>20-70 % , 1200m</a><BR>"
-    +"Sari <a href='https://en.climate-data.org/region/2183/'>5-30 C , 20-99%</a> ,"
+    +"<br>Sari <a href='https://en.climate-data.org/region/2183/'>5-30 C , 20-99%</a> ,"
     +"<a href='https://en.wikipedia.org/wiki/Sari,_Iran'>5-50m</a>"
     ]	
     ,["New Zealand <a href='https://www.immigration.govt.nz/new-zealand-visas/options/live-permanently'>* </a> "
