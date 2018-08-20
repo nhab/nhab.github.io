@@ -27,7 +27,13 @@ tb=[
      ,"<a href='https://tradingeconomics.com/new-zealand/gdp-per-capita'>$40k</a>"
      ,""
      ,"<a href='https://globaledge.msu.edu/countries/new-zealand/tradestats'>Diary,Food,wood</a>"
-     ,"Auckland <a href='https://en.climate-data.org/location/3605/'>6-20 C</a> ,"
+     ,
+      "Tehran <a href='https://www.holiday-weather.com/tehran/averages/'>0-40</a>"
+    +"<a href='http://www.tehran.climatemps.com/'>20-70 % , 1200m</a><BR>"
+    +"<br>Sari <a href='https://en.climate-data.org/region/2183/'>5-30 C , 20-99%</a> ,"
+    +"<a href='https://en.wikipedia.org/wiki/Sari,_Iran'>5-50m</a><br>"+
+    
+      "Auckland <a href='https://en.climate-data.org/location/3605/'>6-20 C</a> ,"
      +"<a href='https://www.weatheronline.co.nz/weather/maps/city?WMO=93110&CONT=nznz&LAND=NZ8&ART=RLF&LEVEL=150'>Auckland 85% Avg.</a>"
       +"<br>Wellington <a href='https://en.climate-data.org/location/2/'>10-20 C</a> , "
       +"<a href='https://www.weatheronline.co.nz/weather/maps/city?WMO=93439&CONT=nznz&LAND=NZ7&ART=RLF&LEVEL=150'>60-90%</a>,"
