@@ -42,7 +42,7 @@
 	   <th class="ClimateCol">Major Cities climate 
 		<br>
 		   <table style="border: 1px solid black;"><tr>
-			<td>City</td>
+			<td class="width20per">City</td>
 			<td class="ClimateCol">Temprature C</td>
 			<td class="ClimateCol">Humidity</td>
 			<td class="ClimateCol">Elevation(Altitude) </td>
@@ -63,8 +63,8 @@
 		{
 		  s+="<tr>";
 		  var n = res[c1].indexOf(" ");
-		  s+="<td>"+res[c1].substring(0,n)+"</td>";
-		  s+="<td>"+res[c1].substring(n,res[c1].length)+"</td>";
+		  s+="<td class="width20per">"+res[c1].substring(0,n)+"</td>";
+		  s+="<td class="width20per">"+res[c1].substring(n,res[c1].length)+"</td>";
 		  s+="</tr>";
 		}	;
 		 s+="</td></table>";
