@@ -18,7 +18,7 @@ table thead th {  font-size: 15px;  font-weight: bold;   border-left: 2px solid 
 table thead th:first-child {  border-left: none;}
 th {padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #29559b; color: white;}
 .ClimateCol{
-	width:200px;
+	width:120px;
 	 min-width: 120px;
 }
 .Desk {
