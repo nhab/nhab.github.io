@@ -128,7 +128,7 @@ tb=[
    ,""
   ,""
   ,""
-,""
+,"stockholm,,,<a href='https://en.wikipedia.org/wiki/List_of_cities_by_elevation'>10m</a>"
    ],
    [
    "Norway"
