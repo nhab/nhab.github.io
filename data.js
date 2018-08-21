@@ -34,7 +34,22 @@ tb=[
       +"<a href='https://www.weatheronline.co.nz/weather/maps/city?WMO=93439&CONT=nznz&LAND=NZ7&ART=RLF&LEVEL=150'>60-90%</a>,"
       +"<a href='http://dateandtime.info/citycoordinates.php?id=2179537'>31 m </a>"
     ] ,
-	
+	[
+    "Australia",
+    "",
+    "",
+    "",
+    
+    "",
+    "",
+    "",
+    "",
+    
+    "",
+    "",
+    "",
+    "Canberra,4C,73%,577m"
+  ],
    ["Canada"
     ,"<a href='http://www.immigration-quebec.gouv.qc.ca/en/immigrate-settle/permanent-workers/requirements-programs/index.html'>Quebec</a> <a href='https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/federal-skilled-workers.html'>Express entry</a>"
     ,"<a href='https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/start-visa/eligibility.html?_ga=2.93708568.420621209.1533722461-1886814211.1533722461#money'>16k$</a>"
@@ -52,6 +67,7 @@ tb=[
     " ,<a href='https://www.toronto.ca/311/knowledgebase/kb/docs/articles/information-and-technology/solutions-development/geospatial-competency-centre/torontos-elevationaltitude-above-sea-level.html'>76m<a>"
     +"<br>Calgary ,<a href='https://www.holiday-weather.com/calgary/averages/'>-7 to 19 C</a> , "+
     "<a href='https://calgary.weatherstats.ca/charts/relative_humidity-hourly.html'>37-60% </a>,1045m "
+    +"Edmonton,21C,45%,645M"
     +"<br>Quebec state ,<a href='https://en.climate-data.org/region/62/#example0'> -15 - 25</a> ,"
    ],
    [ "Ireland"
