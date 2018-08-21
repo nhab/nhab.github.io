@@ -48,7 +48,7 @@ tb=[
     "",
     "",
     "",
-    "Canberra,4C,73%,577m"+
+    "Canberra,4C,<a href='http://www.canberra.climatemps.com/humidity.php'>30-50%</a>,577m"+
     "<br>Brisbane,<a href='https://www.australia.com/en/facts-and-planning/weather-in-australia/weather-in-brisbane.html'>20-30C</a>,50-70%,20m"
   ],
    ["Canada"
