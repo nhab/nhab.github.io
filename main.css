@@ -4,7 +4,7 @@
   font-family: "Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 
 }
-body {    background-color: #ccd6c9;   font-weight:lighter;  }
+body,p,h1,h2,h3,h3div,pre,li,span,td {    background-color: #ccd6c9;   font-weight:lighter;  }
 
 h1,h2{ display: flex;justify-content: center; align-items: center; }
 h1{   background-color:#5342f4;color:#cfc9fc;}
