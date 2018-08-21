@@ -50,8 +50,8 @@ tb=[
     +"<br>Toronto ,<a href='https://www.google.com/search?num=100&ei=fsNiW63pO8rX6ASMzqLYAw&q=temperature+graph+toronto&oq=temperature+graph+toronto'>C</a>"
     + ",<a href='https://toronto.weatherstats.ca/charts/relative_humidity-hourly.html'>(20-100%) </a>"+
     " ,<a href='https://www.toronto.ca/311/knowledgebase/kb/docs/articles/information-and-technology/solutions-development/geospatial-competency-centre/torontos-elevationaltitude-above-sea-level.html'>76m<a>"
-    +"<br>Calgary ,<a href='https://www.holiday-weather.com/calgary/averages/'>-7 to 16 C</a> , "+
-    "<a href='https://calgary.weatherstats.ca/charts/relative_humidity-hourly.html'>40-60% </a>, "
+    +"<br>Calgary ,<a href='https://www.holiday-weather.com/calgary/averages/'>-7 to 19 C</a> , "+
+    "<a href='https://calgary.weatherstats.ca/charts/relative_humidity-hourly.html'>37-60% </a>,1045m "
     +"<br>Quebec state ,<a href='https://en.climate-data.org/region/62/#example0'> -15 - 25</a> ,"
    ],
    [ "Ireland"
@@ -171,7 +171,7 @@ tb=[
     ""
    , ""
 	   ,""
-,"Luxamburg ,,,<a href='https://www.graphicmaps.com/luxembourg'>32 m</a>|"
+,"Luxamburg ,,,<a href='https://www.graphicmaps.com/luxembourg'>32 m</a>"
 	 
    ],
    [
@@ -186,8 +186,21 @@ tb=[
      ,""
      ,""
      ,""
-     
      ,"Johannesburg,22C,22%,1753m"
+   ],
+   [
+     "brazil"
+     ,""
+     ,""
+     ,""
+     ,""
+     ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Brazilian_citizens'>Europe,new zeland</a>"
+     ,""
+     ,""
+     ,""
+     ,""
+     ,""
+     ,"Brasília,27°C,29%,1079m"
    ],
 ["Malta"
     ,"<a href='https://www.gov.mt/en/Life%20Events/Moving-to-Malta/Pages/Moving-to-Malta.aspx'>.</a>"
