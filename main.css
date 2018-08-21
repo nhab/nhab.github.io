@@ -14,7 +14,7 @@ code,pre {     background-color: #eee; argin: 4px,4px,4px,4px}
 pre{  width:70%;}
 li{  font-weight: bolder;}
 ul{
-  margin-left:4px;
+  margin-left:10px;
 }
 table { border: 1px solid #444444; background-color: #EEEEEE; width: 100%; text-align: left; border-collapse: collapse;}
 table td, table th {  border: 1px solid #444444; padding: 3px 2px;}
