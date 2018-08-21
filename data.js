@@ -136,18 +136,17 @@ tb=[
    [
      "Chile"
     ,""
-  ,""
-,"<a href='https://www.justlanded.com/english/Chile/Chile-Guide/Visas-Permits/Chilean-citizenship'>5</a> dual"
-,""
-,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Chilean_citizens'>YES</a>"]
-,""
-,""
-,""
-,""
-,""
-,"Santiago,22C,20%,570m"
-]
-,
+    ,""
+    ,"<a href='https://www.justlanded.com/english/Chile/Chile-Guide/Visas-Permits/Chilean-citizenship'>5</a> dual"
+    ,""
+    ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Chilean_citizens'>YES</a>"]
+    ,""
+    ,""
+    ,""
+    ,""
+    ,""
+    ,"Santiago,22C,20%,570m"
+  ],
    [
     "Sweden",
     "<a href='https://sweden.se/society/obtaining-a-work-permit/'>job offer based</a>"
@@ -492,5 +491,5 @@ tb=[
 ["United Arab Emirates"
  ,"<a href='https://en.wikipedia.org/wiki/Emirati_nationality_law'>30</a>"
  ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Emirati_citizens'>canada,Europe</a>"
-],
+]
 ];
