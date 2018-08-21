@@ -174,6 +174,21 @@ tb=[
 ,"Luxamburg ,,,<a href='https://www.graphicmaps.com/luxembourg'>32 m</a>|"
 	 
    ],
+   [
+     "South africa",
+     ,""
+     ,""
+     ,""
+     ,""
+     ,""
+     ,""
+     ,""
+     ,""
+     ,""
+     ,""
+     ,""
+     ,"Johannesburg,22C,22%,1753m"
+   ],
 ["Malta"
     ,"<a href='https://www.gov.mt/en/Life%20Events/Moving-to-Malta/Pages/Moving-to-Malta.aspx'>.</a>"
     ,""
