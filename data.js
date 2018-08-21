@@ -139,7 +139,7 @@ tb=[
     ,""
     ,"<a href='https://www.justlanded.com/english/Chile/Chile-Guide/Visas-Permits/Chilean-citizenship'>5</a> dual"
     ,""
-    ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Chilean_citizens'>YES</a>"]
+    ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Chilean_citizens'>YES</a>"
     ,""
     ,""
     ,""
@@ -488,8 +488,8 @@ tb=[
  ,""
  ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Moroccan_citizens'>No</a>"
 ],
-["United Arab Emirates"
- ,"<a href='https://en.wikipedia.org/wiki/Emirati_nationality_law'>30</a>"
- ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Emirati_citizens'>canada,Europe</a>"
-]
+  ["United Arab Emirates"
+  ,"<a href='https://en.wikipedia.org/wiki/Emirati_nationality_law'>30</a>"
+  ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Emirati_citizens'>canada,Europe</a>"
+  ]
 ];
