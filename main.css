@@ -9,6 +9,7 @@ body,p,h1,h2,h3,h3div,pre,li,span,td {    background-color: #ccd6c9;   font-weig
 h1,h2{ display: flex;justify-content: center; align-items: center; }
 h1{   background-color:#5342f4;color:#cfc9fc;}
 h2{   background-color:#c7d5ed;}
+h3{font-weight:bolder;}
 p,div,span,li{    font-size: 18px;  margin-left: 20px;}
 code,pre {     background-color: #eee; argin: 4px,4px,4px,4px}
 pre{  width:70%;}
