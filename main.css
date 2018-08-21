@@ -6,6 +6,7 @@
 body {    background-color: #ccd6c9;   }
 
 h1,h2{ display: flex;justify-content: center; align-items: center; }
+h1{   background-color:#5342f4;color:#cfc9fc;}
 h2{   background-color:#c7d5ed;}
 p,div,span,li{    font-size: 18px;  margin-left: 20px;}
 code,pre {     background-color: #eee; argin: 4px,4px,4px,4px}
