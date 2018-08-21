@@ -48,7 +48,8 @@ tb=[
     "",
     "",
     "",
-    "Canberra,4C,73%,577m"
+    "Canberra,4C,73%,577m"+
+    "<br>Brisbane,<a href='https://www.australia.com/en/facts-and-planning/weather-in-australia/weather-in-brisbane.html'>20-30C</a>,50-70%,20m"
   ],
    ["Canada"
     ,"<a href='http://www.immigration-quebec.gouv.qc.ca/en/immigrate-settle/permanent-workers/requirements-programs/index.html'>Quebec</a> <a href='https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/federal-skilled-workers.html'>Express entry</a>"
@@ -67,7 +68,7 @@ tb=[
     " ,<a href='https://www.toronto.ca/311/knowledgebase/kb/docs/articles/information-and-technology/solutions-development/geospatial-competency-centre/torontos-elevationaltitude-above-sea-level.html'>76m<a>"
     +"<br>Calgary ,<a href='https://www.holiday-weather.com/calgary/averages/'>-7 to 19 C</a> , "+
     "<a href='https://calgary.weatherstats.ca/charts/relative_humidity-hourly.html'>37-60% </a>,1045m "
-    +"Edmonton,21C,45%,645M"
+    +"<br>Edmonton,21C,45%,645M"
     +"<br>Quebec state ,<a href='https://en.climate-data.org/region/62/#example0'> -15 - 25</a> ,"
    ],
    [ "Ireland"
