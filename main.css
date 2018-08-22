@@ -4,6 +4,9 @@
   font-family: "Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 
 }
+html {
+  word-break: break-all;
+}
 body,p,h1,h2,h3,h3div,pre,li,span,td {    background-color: #ccd6c9;   font-weight:lighter;  }
 
 h1,h2{ display: flex;justify-content: center; align-items: center; }
@@ -37,6 +40,21 @@ table tr:nth-child(even) {  background: #D0E4F5;}
 table thead th {  font-size: 16px;  font-weight: bold;   border: 2px solid ;border-color:#444444;}
 table thead th:first-child {  border-left: none;}
 th {padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #29559b; color: white;}
+
+/* unvisited link */
+a:link {
+  color: rgb(23, 12, 114);
+}
+
+/* visited link */
+a:visited {
+  color: rgb(73, 22, 83);
+}
+
+/* mouse over link */
+a:hover {
+  color: rgb(190, 97, 190);
+
 .ClimateCol{
 	width:180px;
 	 min-width: 120px;
