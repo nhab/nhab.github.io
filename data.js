@@ -173,7 +173,7 @@ tb=[
       +"<br>Wellington ,<a href='https://en.climate-data.org/location/2/'>10-20 C</a> , "
       +"<a href='https://www.weatheronline.co.nz/weather/maps/city?WMO=93439&CONT=nznz&LAND=NZ7&ART=RLF&LEVEL=150'>60-90%</a>"
       +",<a href='http://dateandtime.info/citycoordinates.php?id=2179537'>31 m </a>"
-      +", <a href='https://www.expatistan.com/cost-of-living/wellington'>(~4700 NZD /Month)</a>";
+      +", <a href='https://www.expatistan.com/cost-of-living/wellington'>(~4700 NZD /Month)</a>"
       +", <a href='https://www.payscale.com/research/NZ/Location=Wellington/Salary'> (NZ$45,700 and NZ$79,575 /Year</a>"
       ,"<a href='https://globaledge.msu.edu/countries/new-zealand/tradestats'>Diary,Food,wood</a>"
       ,""
