@@ -29,9 +29,10 @@ tb=[
     
     "",
     "",
-    "",
+   "", 
     "Canberra,4C,<a href='http://www.canberra.climatemps.com/humidity.php'>30-50%</a>,577m"+
     "<br>Brisbane,<a href='https://www.australia.com/en/facts-and-planning/weather-in-australia/weather-in-brisbane.html'>20-30C</a>,50-70%,20m"
+  ,""
   ],
    ["Canada"
     ,"<a href='http://www.immigration-quebec.gouv.qc.ca/en/immigrate-settle/permanent-workers/requirements-programs/index.html'>Quebec</a> <a href='https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/federal-skilled-workers.html'>Express entry</a>"
@@ -43,7 +44,7 @@ tb=[
     "<a href='https://xe.com/currencycharts/?from=CAD&to=USD&view=5Y'>CA Dollar</a>(0.75)"
     ,"<a href='https://tradingeconomics.com/canada/gdp-per-capita'>$42k</a>"
     ,""
-    ," Energy,wood,Mineral"
+    ,""
     ,"vancouver ,<a href='https://www.holiday-weather.com/vancouver/averages/'> 4 to 17 C</a>,<a href='https://www.currentresults.com/Weather/Canada/Cities/humidity-annual-average.php'>70-86%</a>,0"
     +"<br>Toronto ,<a href='https://www.google.com/search?num=100&ei=fsNiW63pO8rX6ASMzqLYAw&q=temperature+graph+toronto&oq=temperature+graph+toronto'>C</a>"
     + ",<a href='https://toronto.weatherstats.ca/charts/relative_humidity-hourly.html'>(20-100%) </a>"+
@@ -52,6 +53,7 @@ tb=[
     "<a href='https://calgary.weatherstats.ca/charts/relative_humidity-hourly.html'>37-60% </a>,1045m "
     +"<br>Edmonton,21C,45%,645M"
     +"<br>Quebec state ,<a href='https://en.climate-data.org/region/62/#example0'> -15 - 25</a> ,"
+    ," Energy,wood,Mineral"
    ],
    [ "Ireland"
     ,"<a href='http://workpermit.com/immigration/ireland/ireland-immigration'>job offer Based <\a>"
@@ -66,6 +68,7 @@ tb=[
     ,""
     ,"Belfast , <a href='https://en.climate-data.org/location/6014/'>4-15 </a>,"+
     "<a href='https://www.worldweatheronline.com/belfast-weather-averages/belfast/gb.aspx'>75-90 %</a>,"
+    ,""
    ],
   
    [
@@ -79,9 +82,9 @@ tb=[
     ,""
     ,""
     ,"" 
-,""
+    ,""
     ,"Amsterdam ,<a href='https://en.climate-data.org/location/3330/'>5-15</a> ,,"
-  
+    ,""
    ],
    [
     "Switzerland",
@@ -97,6 +100,7 @@ tb=[
 ,"Bern,,, <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2661552'>527</a>"+
 "<br>Zurich,,,  <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2657896'>472m</a>"+
 "<br>Geneve,, ,<a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2660646'>375m</a>"
+,""
    ],
 
    [
@@ -113,7 +117,8 @@ tb=[
     ,""   
    ,"Berlin,<a href='https://www.holiday-weather.com/berlin/averages/'> C</a> ,"+
 	   " ,<a href='http://dateandtime.info/citycoordinates.php?id=2950159'>(43 m)</a>  "+
-	" <br>Munich ,,, <a href='http://dateandtime.info/citycoordinates.php?id=2867714'>519 m </a> "
+  " <br>Munich ,,, <a href='http://dateandtime.info/citycoordinates.php?id=2867714'>519 m </a> "
+  ,""
    ],
    [
      "Chile"
@@ -126,8 +131,9 @@ tb=[
     ,""
     ,""
     ,""
-    ,""
+    ,"ozone"
     ,"Santiago,22C,20%,570m"
+    ,""
   ],
 	["New Zealand <a href='https://www.immigration.govt.nz/new-zealand-visas/options/live-permanently'>* </a> "
       ,"<a href='https://www.immigration.govt.nz/new-zealand-visas/options/live-permanently/explore-visa-options-for-living-permanently'>Skilled Migrant </a>"
@@ -146,6 +152,7 @@ tb=[
       +"<br>Wellington ,<a href='https://en.climate-data.org/location/2/'>10-20 C</a> , "
       +"<a href='https://www.weatheronline.co.nz/weather/maps/city?WMO=93439&CONT=nznz&LAND=NZ7&ART=RLF&LEVEL=150'>60-90%</a>,"
       +"<a href='http://dateandtime.info/citycoordinates.php?id=2179537'>31 m </a>"
+      ,""
     ] ,
 	
    [
@@ -161,6 +168,7 @@ tb=[
   ,""
   ,""
 ,"stockholm,,,<a href='https://en.wikipedia.org/wiki/List_of_cities_by_elevation'>10m</a>"
+,""
    ],
    [
    "Norway"
@@ -175,7 +183,8 @@ tb=[
 	   ,""
 	   ,""
 	     ,""
-	     ,""
+       ,""
+       ,""
    ],
    [
     "Belgium"
@@ -185,6 +194,7 @@ tb=[
    , ""
     ,""
     ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Belgian_citizens'>Yes+</a>"
+    ,""
     ,""
     ,""
     ,""
@@ -204,7 +214,7 @@ tb=[
    , ""
 	   ,""
 ,"Luxamburg ,,,<a href='https://www.graphicmaps.com/luxembourg'>32 m</a>"
-	 
+,""
    ],
    [
      "South africa"
@@ -219,6 +229,7 @@ tb=[
      ,""
      ,""
      ,"Johannesburg,22C,22%,1753m"
+     ,""
    ],
    [
      "brazil"
@@ -233,6 +244,7 @@ tb=[
      ,""
      ,""
      ,"Brasília,27°C,29%,1079m"
+     ,""
    ],
 ["Malta"
     ,"<a href='https://www.gov.mt/en/Life%20Events/Moving-to-Malta/Pages/Moving-to-Malta.aspx'>.</a>"
@@ -245,6 +257,7 @@ tb=[
    ,""
    ,""
    ,""
+    ,""
     ,""
    ],
    [
@@ -260,6 +273,7 @@ tb=[
    ,""
    ,""	  
    ,"Helsinki ,<a href='https://www.holiday-weather.com/helsinki/averages/'> -7 to 17 C</a>"
+   ,""
    ],
    [
    "England ",
@@ -267,6 +281,7 @@ tb=[
    ""
   , "<a href='https://iasservices.org.uk/indefinite-leave-to-remain/apply-for-indefinite-leave-to-remain/'>5</a> ",
    "","","","","","","",""
+   ,""
    ],
    [
    "France"
@@ -275,6 +290,7 @@ tb=[
 	   ,""
 	   ,"","<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_French_citizens'>Yes</a>",
    "","","","","","",""
+   ,""
    ],
    [
     "Czech Republic"
@@ -287,6 +303,7 @@ tb=[
     "",
     "",
     "",""
+    ,""
    ],
    [
     "Estonia",
@@ -298,7 +315,9 @@ tb=[
    ,""
    ,""
    ,""
-   ,"",""
+   ,""
+   ,""
+   ,""
   ],
   [
     "Greece",
@@ -310,7 +329,9 @@ tb=[
     "",
     "",
     "",
-    "",""
+    ""
+    ,""
+    ,""
 ],
 [
    "Hungary",
@@ -322,7 +343,9 @@ tb=[
    ,""
    ,""
    ,""
-   ,"",""
+   ,""
+   ,""
+   ,""
 ],
 [
 "Spain "
@@ -339,16 +362,35 @@ tb=[
 "<br>Madrid, <a href='https://www.holiday-weather.com/madrid/averages/'> 5-25 C </a>,"+
 "<a href='https://weather-and-climate.com/average-monthly-Humidity-perc,Madrid,Spain'>50-70%</a>,"
 +"<a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=3117735'>638 m</a>"
+,""
 ],
 ["Italy"
  ,""
  ,""
- ,"","","<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Italian_citizens'>YES</a>",""
+ ,""
+ ,""
+ ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Italian_citizens'>YES</a>"
+ ,""
+ ,""
+ ,""
+ ,""
+ ,""
+ ,""
+ ,""
 ]
 ,["Iceland"
   ,""
   ,"",
-  "","","<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Icelandic_citizens'>YES,</a>","Icelandic"," " 
+  "",
+  ""
+  ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Icelandic_citizens'>YES,</a>"
+  ,"Icelandic"
+  ," "
+  ,""
+  ,""
+  ,""
+  ,""
+  ,"" 
 ]
 ,
 ["India"
@@ -362,6 +404,7 @@ tb=[
  ,
  ,
  ,"Coimbatore ,<a href='https://en.climate-data.org/location/2788/'> C</a>,,"
+ ,""
  ]
 ,
 ["Austria"
@@ -375,7 +418,7 @@ tb=[
  ,
  ,
  ,"Vienna ,,,<a href='http://www.vienna.climatemps.com/map.php'>200m</a>"
-
+ ,""
 ]
 ,
 [
@@ -383,17 +426,46 @@ tb=[
 ,"<a href='https://en.wikipedia.org/wiki/Nationality_law_of_Taiwan'>5 </a>"
 ,"Dual<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Taiwanese_citizens'>Yes,Even china</a>"
 ,"<a href='https://en.wikipedia.org/wiki/Languages_of_Taiwan'>Chines manderin</a>"
+,""
+,""
+,""
+,""
+,""
+,""
+,""
+,""
+,""
 ]
 ,
 ["Denmark"
  ,"<a href='https://www.justlanded.com/english/Denmark/Denmark-Guide/Visas-Permits/Citizenship'>9 </a>"
  ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Danish_citizens'>Yes</a>"
+ ,""
+ ,""
+ ,""
+ ,""
+ ,""
+ ,""
+ ,""
+ ,""
+ ,""
+ ,""
 ]
 ,
 [
 "Japan ",
 "<a href='https://www.wikihow.com/Become-a-Japanese-Citizen'>5</a>"
 ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Japanese_citizens'>YES</a>"
+,""
+,""
+,""
+,""
+,""
+,""
+,""
+,""
+,""
+,""
 ]
 ,
 [
