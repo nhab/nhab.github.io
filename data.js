@@ -84,34 +84,17 @@ tb=[
     ,""
     ,""
     ,""
-   ],
-  
-   [
-    "Netherland"
-    ,"<a href='https://ind.nl/en/work/Pages/Highly-skilled-migrant.aspx'>skilled work</a>"
-    ,"<a href='https://ind.nl/en/Pages/income.aspx'>sufficiebt Income</a>"
-    ,""
-    ,""
-    ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Dutch_citizens'>YES</a>"
-    ,"Dutch,English"
-    ,""
-    ,""
-    ,"" 
-    ,""
-    ,"Amsterdam ,<a href='https://en.climate-data.org/location/3330/'>5-15</a> ,,"
-    ,""
-    ,""
-    ,""
-    ,""
-   ],
+   ]
+   ,
    [
     "Switzerland",
     ,"<a href='https://www.expatica.com/ch/visas-and-permits/Moving-to-Switzerland-Swiss-visas-and-permits_107631.html'>Employment based</a>"
     ,"<a href='https://www.swissinfo.ch/eng/work-permits/29191706'>No?</a>"
     ,""
-    ,""
+    
     ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Swiss_citizens'>YES</a>"
-    ,"german,french,italian,m..."
+    ,"german,<br>french,<br>italian,m..."
+    ,""
     ,"<a "
     ,""
     ,"" 
@@ -183,7 +166,25 @@ tb=[
       ,""
       ,""
     ] ,
-	
+    
+    [
+     "Netherland"
+     ,"<a href='https://ind.nl/en/work/Pages/Highly-skilled-migrant.aspx'>skilled work</a>"
+     ,"<a href='https://ind.nl/en/Pages/income.aspx'>sufficiebt Income</a>"
+     ,""
+     ,""
+     ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Dutch_citizens'>YES</a>"
+     ,"Dutch,English"
+     ,""
+     ,""
+     ,"" 
+     ,""
+     ,"Amsterdam ,<a href='https://en.climate-data.org/location/3330/'>5-15</a> ,,"
+     ,""
+     ,""
+     ,""
+     ,""
+    ],
    [
     "Sweden",
     "<a href='https://sweden.se/society/obtaining-a-work-permit/'>job offer based</a>"

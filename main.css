@@ -19,9 +19,9 @@ ul{
 }
 table { border: 1px solid #444444; background-color: #EEEEEE; width: 100%; text-align: left; border-collapse: collapse;}
 table td, table th {  border: 1px solid #444444; padding: 3px 2px;}
-table tbody td {  font-size: 13px;}
+table tbody td { margin-left: 3px; font-size: 16px;}
 table tr:nth-child(even) {  background: #D0E4F5;}
-table thead th {  font-size: 15px;  font-weight: bold;   border-left: 2px solid #44444;}
+table thead th {  font-size: 16px;  font-weight: bold;   border: 2px solid ;border-color:#444444;}
 table thead th:first-child {  border-left: none;}
 th {padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #29559b; color: white;}
 .ClimateCol{
