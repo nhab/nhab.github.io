@@ -14,9 +14,9 @@ tb=[
      ,""
     , "",
     "Tehran ,<a href='https://www.holiday-weather.com/tehran/averages/'>0-40</a>"
-    +",<a href='http://www.tehran.climatemps.com/'>20-70 % , 1200m</a><BR>"
-    +"<br>Sari ,<a href='https://en.climate-data.org/region/2183/'>5-30 C</a> , 20-99% ,"
-    +"<a href='https://en.wikipedia.org/wiki/Sari_Iran'>5-50m</a>"
+    +",<a href='http://www.tehran.climatemps.com/'>20-70 % , 1200m</a><BR>,'',''"
+    +"<br>Sari ,<a href='https://en.climate-data.org/region/2183/'>5-30 C</a> , 20-99% "
+    +",<a href='https://en.wikipedia.org/wiki/Sari_Iran'>5-50m</a>,'',''"
     ,"Oil"
     ,""
     ,""
@@ -35,8 +35,8 @@ tb=[
     "",
     "",
    "", 
-    "Canberra,4C,<a href='http://www.canberra.climatemps.com/humidity.php'>30-50%</a>,577m"+
-    "<br>Brisbane,<a href='https://www.australia.com/en/facts-and-planning/weather-in-australia/weather-in-brisbane.html'>20-30C</a>,50-70%,20m"
+    "Canberra,4C,<a href='http://www.canberra.climatemps.com/humidity.php'>30-50%</a>,577m,'',''"+
+    "<br>Brisbane,<a href='https://www.australia.com/en/facts-and-planning/weather-in-australia/weather-in-brisbane.html'>20-30C</a>,50-70%,20m,'',''"
   ,""
   ,""
   ,""
@@ -52,14 +52,18 @@ tb=[
     ,"<a href='https://tradingeconomics.com/canada/gdp-per-capita'>$42k</a>"
     ,""
     ,""
-    ,"vancouver ,<a href='https://www.holiday-weather.com/vancouver/averages/'> 4 to 17 C</a>,<a href='https://www.currentresults.com/Weather/Canada/Cities/humidity-annual-average.php'>70-86%</a>,0"
-    +"<br>Toronto ,<a href='https://www.google.com/search?num=100&ei=fsNiW63pO8rX6ASMzqLYAw&q=temperature+graph+toronto&oq=temperature+graph+toronto'>C</a>"
-    + ",<a href='https://toronto.weatherstats.ca/charts/relative_humidity-hourly.html'>(20-100%) </a>"+
-    " ,<a href='https://www.toronto.ca/311/knowledgebase/kb/docs/articles/information-and-technology/solutions-development/geospatial-competency-centre/torontos-elevationaltitude-above-sea-level.html'>76m<a>"
-    +"<br>Calgary ,<a href='https://www.holiday-weather.com/calgary/averages/'>-7 to 19 C</a> , "+
-    "<a href='https://calgary.weatherstats.ca/charts/relative_humidity-hourly.html'>37-60% </a>,1045m "
-    +"<br>Edmonton,21C,45%,645M"
-    +"<br>Quebec state ,<a href='https://en.climate-data.org/region/62/#example0'> -15 - 25</a> ,"
+    ,"vancouver ,<a href='https://www.holiday-weather.com/vancouver/averages/'> 4 to 17 C</a>,"
+       +"<a href='https://www.currentresults.com/Weather/Canada/Cities/humidity-annual-average.php'>70-86%</a>,0,'',''"
+    +"<br>Toronto ,<a href='https://www.google.com/search?num=100&ei=fsNiW63pO8rX6ASMzqLYAw&q=temperature+";
+       +"graph+toronto&oq=temperature+graph+toronto'>C</a>"
+       + ",<a href='https://toronto.weatherstats.ca/charts/relative_humidity-hourly.html'>(20-100%) </a>"+
+       " ,<a href='https://www.toronto.ca/311/knowledgebase/kb/docs/articles/information-and-technology"
+       +"solutions-development/geospatial-competency-centre/torontos-elevationaltitude-above-sea-level.html'>76m<a>"
+    +"<br>Calgary ,<a href='https://www.holiday-weather.com/calgary/averages/'>-7 to 19 C</a> , "
+      +"<a href='https://calgary.weatherstats.ca/charts/relative_humidity-hourly.html'>37-60% </a>"
+      +",1045m,'','' "
+      +"<br>Edmonton,21C,45%,645M"
+    +"<br>Quebec state ,<a href='https://en.climate-data.org/region/62/#example0'> -15 - 25</a> ,'','','',''"
     ," Energy,wood,Mineral"
     ,""
     ,""
