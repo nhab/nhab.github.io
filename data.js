@@ -18,6 +18,8 @@ tb=[
     +"<br>Sari ,<a href='https://en.climate-data.org/region/2183/'>5-30 C</a> , 20-99% ,"
     +"<a href='https://en.wikipedia.org/wiki/Sari_Iran'>5-50m</a>"
     ,"Oil"
+    ,""
+    ,""
     ]	
     ,[
     "Australia",
@@ -35,6 +37,8 @@ tb=[
    "", 
     "Canberra,4C,<a href='http://www.canberra.climatemps.com/humidity.php'>30-50%</a>,577m"+
     "<br>Brisbane,<a href='https://www.australia.com/en/facts-and-planning/weather-in-australia/weather-in-brisbane.html'>20-30C</a>,50-70%,20m"
+  ,""
+  ,""
   ,""
   ],
    ["Canada"
@@ -57,6 +61,8 @@ tb=[
     +"<br>Edmonton,21C,45%,645M"
     +"<br>Quebec state ,<a href='https://en.climate-data.org/region/62/#example0'> -15 - 25</a> ,"
     ," Energy,wood,Mineral"
+    ,""
+    ,""
    ],
    [ "Ireland"
     ,"<a href='http://workpermit.com/immigration/ireland/ireland-immigration'>job offer Based <\a>"
@@ -71,6 +77,8 @@ tb=[
     ,""
     ,"Belfast , <a href='https://en.climate-data.org/location/6014/'>4-15 </a>,"+
     "<a href='https://www.worldweatheronline.com/belfast-weather-averages/belfast/gb.aspx'>75-90 %</a>,"
+    ,""
+    ,""
     ,""
    ],
   
@@ -88,6 +96,9 @@ tb=[
     ,""
     ,"Amsterdam ,<a href='https://en.climate-data.org/location/3330/'>5-15</a> ,,"
     ,""
+    ,""
+    ,""
+    ,""
    ],
    [
     "Switzerland",
@@ -100,10 +111,13 @@ tb=[
     ,"<a "
     ,""
     ,"" 
-,"Bern,,, <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2661552'>527</a>"+
-"<br>Zurich,,,  <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2657896'>472m</a>"+
-"<br>Geneve,, ,<a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2660646'>375m</a>"
-,""
+  ,"Bern,,, <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2661552'>527</a>"+
+  "<br>Zurich,,,  <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2657896'>472m</a>"+
+  "<br>Geneve,, ,<a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2660646'>375m</a>"
+  ,""
+  ,""
+  ,""
+
    ],
 
    [
@@ -120,8 +134,10 @@ tb=[
     ,""   
    ,"Berlin,<a href='https://www.holiday-weather.com/berlin/averages/'> C</a> ,"+
 	   " ,<a href='http://dateandtime.info/citycoordinates.php?id=2950159'>(43 m)</a>  "+
-  " <br>Munich ,,, <a href='http://dateandtime.info/citycoordinates.php?id=2867714'>519 m </a> "
-  ,""
+    " <br>Munich ,,, <a href='http://dateandtime.info/citycoordinates.php?id=2867714'>519 m </a> "
+    ,""
+    ,""
+    ,""
    ],
    [
      "Chile"
@@ -137,6 +153,8 @@ tb=[
     ,"ozone"
     ,"Santiago,22C,20%,570m"
     ,""
+    ,""    
+    ,""
   ],
 	["New Zealand <a href='https://www.immigration.govt.nz/new-zealand-visas/options/live-permanently'>* </a> "
       ,"<a href='https://www.immigration.govt.nz/new-zealand-visas/options/live-permanently/explore-visa-options-for-living-permanently'>Skilled Migrant </a>"
@@ -148,13 +166,17 @@ tb=[
       ,"<a href='https://www.xe.com/currencycharts/?from=NZD&to=USD&view=1D'>NZ Dollar</a>(0.67)"
      ,"<a href='https://tradingeconomics.com/new-zealand/gdp-per-capita'>$40k</a>"
      ,""
-     ,"<a href='https://globaledge.msu.edu/countries/new-zealand/tradestats'>Diary,Food,wood</a>"
+     ,"ozone"
      ,
       "Auckland ,<a href='https://en.climate-data.org/location/3605/'>6-20 C</a> ,"
      +"<a href='https://www.weatheronline.co.nz/weather/maps/city?WMO=93110&CONT=nznz&LAND=NZ8&ART=RLF&LEVEL=150'>Auckland 85% Avg.</a>, "
       +"<br>Wellington ,<a href='https://en.climate-data.org/location/2/'>10-20 C</a> , "
-      +"<a href='https://www.weatheronline.co.nz/weather/maps/city?WMO=93439&CONT=nznz&LAND=NZ7&ART=RLF&LEVEL=150'>60-90%</a>,"
-      +"<a href='http://dateandtime.info/citycoordinates.php?id=2179537'>31 m </a>"
+      +"<a href='https://www.weatheronline.co.nz/weather/maps/city?WMO=93439&CONT=nznz&LAND=NZ7&ART=RLF&LEVEL=150'>60-90%</a>"
+      +",<a href='http://dateandtime.info/citycoordinates.php?id=2179537'>31 m </a>"
+      +", <a href='https://www.expatistan.com/cost-of-living/wellington'>(~4700 NZD /Month)</a>";
+      +", <a href='https://www.payscale.com/research/NZ/Location=Wellington/Salary'> (NZ$45,700 and NZ$79,575 /Year</a>"
+      ,"<a href='https://globaledge.msu.edu/countries/new-zealand/tradestats'>Diary,Food,wood</a>"
+      ,""
       ,""
     ] ,
 	
