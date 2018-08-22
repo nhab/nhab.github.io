@@ -16,25 +16,7 @@ tb=[
     +"<br>Sari ,<a href='https://en.climate-data.org/region/2183/'>5-30 C</a> , 20-99% ,"
     +"<a href='https://en.wikipedia.org/wiki/Sari_Iran'>5-50m</a>"
     ]	
-    ,["New Zealand <a href='https://www.immigration.govt.nz/new-zealand-visas/options/live-permanently'>* </a> "
-      ,"<a href='https://www.immigration.govt.nz/new-zealand-visas/options/live-permanently/explore-visa-options-for-living-permanently'>Skilled Migrant </a>"
-      ,""
-    , "<a href='https://www.govt.nz/browse/nz-passports-and-citizenship/nz-citizenship/requirements-for-nz-citizenship/presence-requirements/'>5 </a>"
-     ,"8 month/year"
-     , "<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_New_Zealand_citizens'>YES</a>"
-     ,"English"
-      ,"<a href='https://www.xe.com/currencycharts/?from=NZD&to=USD&view=1D'>NZ Dollar</a>(0.67)"
-     ,"<a href='https://tradingeconomics.com/new-zealand/gdp-per-capita'>$40k</a>"
-     ,""
-     ,"<a href='https://globaledge.msu.edu/countries/new-zealand/tradestats'>Diary,Food,wood</a>"
-     ,
-      "Auckland ,<a href='https://en.climate-data.org/location/3605/'>6-20 C</a> ,"
-     +"<a href='https://www.weatheronline.co.nz/weather/maps/city?WMO=93110&CONT=nznz&LAND=NZ8&ART=RLF&LEVEL=150'>Auckland 85% Avg.</a>, "
-      +"<br>Wellington ,<a href='https://en.climate-data.org/location/2/'>10-20 C</a> , "
-      +"<a href='https://www.weatheronline.co.nz/weather/maps/city?WMO=93439&CONT=nznz&LAND=NZ7&ART=RLF&LEVEL=150'>60-90%</a>,"
-      +"<a href='http://dateandtime.info/citycoordinates.php?id=2179537'>31 m </a>"
-    ] ,
-	[
+    ,[
     "Australia",
     "",
     "",
@@ -108,8 +90,8 @@ tb=[
     ,""
     ,""
     ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Swiss_citizens'>YES</a>"
-    ,""
-    ,""
+    ,"german,french,italian,m..."
+    ,"<a "
     ,""
     ,"" 
 ,"Bern,,, <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2661552'>527</a>"+
@@ -147,6 +129,25 @@ tb=[
     ,""
     ,"Santiago,22C,20%,570m"
   ],
+	["New Zealand <a href='https://www.immigration.govt.nz/new-zealand-visas/options/live-permanently'>* </a> "
+      ,"<a href='https://www.immigration.govt.nz/new-zealand-visas/options/live-permanently/explore-visa-options-for-living-permanently'>Skilled Migrant </a>"
+      ,""
+    , "<a href='https://www.govt.nz/browse/nz-passports-and-citizenship/nz-citizenship/requirements-for-nz-citizenship/presence-requirements/'>5 </a>"
+     ,"8 month/year"
+     , "<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_New_Zealand_citizens'>YES</a>"
+     ,"English"
+      ,"<a href='https://www.xe.com/currencycharts/?from=NZD&to=USD&view=1D'>NZ Dollar</a>(0.67)"
+     ,"<a href='https://tradingeconomics.com/new-zealand/gdp-per-capita'>$40k</a>"
+     ,""
+     ,"<a href='https://globaledge.msu.edu/countries/new-zealand/tradestats'>Diary,Food,wood</a>"
+     ,
+      "Auckland ,<a href='https://en.climate-data.org/location/3605/'>6-20 C</a> ,"
+     +"<a href='https://www.weatheronline.co.nz/weather/maps/city?WMO=93110&CONT=nznz&LAND=NZ8&ART=RLF&LEVEL=150'>Auckland 85% Avg.</a>, "
+      +"<br>Wellington ,<a href='https://en.climate-data.org/location/2/'>10-20 C</a> , "
+      +"<a href='https://www.weatheronline.co.nz/weather/maps/city?WMO=93439&CONT=nznz&LAND=NZ7&ART=RLF&LEVEL=150'>60-90%</a>,"
+      +"<a href='http://dateandtime.info/citycoordinates.php?id=2179537'>31 m </a>"
+    ] ,
+	
    [
     "Sweden",
     "<a href='https://sweden.se/society/obtaining-a-work-permit/'>job offer based</a>"
