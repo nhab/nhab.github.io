@@ -4,17 +4,20 @@ tb=[
      ""
      ,""
      ,""
+
      ,""
      ,""
      ,""
      ,"<a href='https://www.xe.com/currencycharts/?from=IRR&to=USD&view=10Y'>Rial</a>(0.00001)",
        "<a href='https://tradingeconomics.com/iran/gdp-per-capita'>7000$</a>"
+
      ,""
-    , "Oil",
+    , "",
     "Tehran ,<a href='https://www.holiday-weather.com/tehran/averages/'>0-40</a>"
     +",<a href='http://www.tehran.climatemps.com/'>20-70 % , 1200m</a><BR>"
     +"<br>Sari ,<a href='https://en.climate-data.org/region/2183/'>5-30 C</a> , 20-99% ,"
     +"<a href='https://en.wikipedia.org/wiki/Sari_Iran'>5-50m</a>"
+    ,"Oil"
     ]	
     ,[
     "Australia",
