@@ -7,14 +7,19 @@
 html {
   word-break: break-all;
 }
-body,p,h1,h2,h3,h3div,pre,li,span,td {    background-color: #ccd6c9;   font-weight:lighter;  }
-
-h1,h2{ display: flex;justify-content: center; align-items: center; }
-h1{   background-color:#5342f4;color:#cfc9fc;}
-h2{   background-color:#c7d5ed;
+body,p,div,pre,li,span,td {
+   background-color: #ccd6c9;   font-weight:lighter;  
+}
+h1{display: flex;justify-content: center; align-items: center;
+     background-color:#5342f4;color:#cfc9fc;
+     font-weight:lighter;}
+h2{
+  display: flex;justify-content: center; align-items: center;
+  background-color:#c7d5ed;
   border-color:black;
   border-style: solid;
   border-width: 1px;
+  font-weight:lighter;
 }
 h3{font-weight:bolder;
  /* display:inline;*/
@@ -24,10 +29,10 @@ h3{font-weight:bolder;
   padding: 10px ;
   border-color:black;
   border-style: solid;
-  border-width: 1px;
+  border-width: 1px; font-weight:lighter;
 }
 p,div,span,li{    font-size: 18px;  margin-left: 20px;}
-code,pre {     background-color: #eee; margin: 4px,4px,4px,4px}
+code,pre {     background-color: #eeeeee; margin: 4px 4px 4px 4px;}
 pre{  width:70%;}
 li{  font-weight: bolder;}
 ul{
@@ -40,12 +45,10 @@ table tr:nth-child(even) {  background: #D0E4F5;}
 table thead th {  font-size: 16px;  font-weight: bold;   border: 2px solid ;border-color:#444444;}
 table thead th:first-child {  border-left: none;}
 th {padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #29559b; color: white;}
-
 /* unvisited link */
 a:link {
   color: rgb(23, 12, 114);
 }
-
 /* visited link */
 a:visited {
   color: rgb(73, 22, 83);
@@ -53,15 +56,28 @@ a:visited {
 /* mouse over link */
 a:hover {
   color: rgb(190, 97, 190);
-
 }
-  header {
+.header {
     background-color: #666;
     padding: 30px;
     text-align: center;
     font-size: 35px;
     color: white;
-
+    width:100%;
+}
+.inALine{
+  display:inline-block;
+  border-width:1px;
+  border-style:solid;
+}
+.in_a_Line{
+  display:flex;
+  border-width:1px;
+  border-style:solid;
+}
+.FlexBox1{
+  display:flex;
+  flex-direction:row;
 }
 .ClimateCol{
 	width:180px;
