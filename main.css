@@ -50,11 +50,19 @@ a:link {
 a:visited {
   color: rgb(73, 22, 83);
 }
-
 /* mouse over link */
 a:hover {
   color: rgb(190, 97, 190);
 
+}
+  header {
+    background-color: #666;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+
+}
 .ClimateCol{
 	width:180px;
 	 min-width: 120px;
