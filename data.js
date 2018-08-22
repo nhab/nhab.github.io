@@ -54,7 +54,7 @@ tb=[
     ,""
     ,"vancouver ,<a href='https://www.holiday-weather.com/vancouver/averages/'> 4 to 17 C</a>,"
        +"<a href='https://www.currentresults.com/Weather/Canada/Cities/humidity-annual-average.php'>70-86%</a>,0,'',''"
-    +"<br>Toronto ,<a href='https://www.google.com/search?num=100&ei=fsNiW63pO8rX6ASMzqLYAw&q=temperature+";
+    +"<br>Toronto ,<a href='https://www.google.com/search?num=100&ei=fsNiW63pO8rX6ASMzqLYAw&q=temperature+"
        +"graph+toronto&oq=temperature+graph+toronto'>C</a>"
        + ",<a href='https://toronto.weatherstats.ca/charts/relative_humidity-hourly.html'>(20-100%) </a>"+
        " ,<a href='https://www.toronto.ca/311/knowledgebase/kb/docs/articles/information-and-technology"
@@ -177,8 +177,8 @@ tb=[
       +"<br>Wellington ,<a href='https://en.climate-data.org/location/2/'>10-20 C</a> , "
       +"<a href='https://www.weatheronline.co.nz/weather/maps/city?WMO=93439&CONT=nznz&LAND=NZ7&ART=RLF&LEVEL=150'>60-90%</a>"
       +",<a href='http://dateandtime.info/citycoordinates.php?id=2179537'>31 m </a>"
-      +", <a href='https://www.expatistan.com/cost-of-living/wellington'>(~4700 NZD /Month)</a>"
-      +", <a href='https://www.payscale.com/research/NZ/Location=Wellington/Salary'> (NZ$45,700 and NZ$79,575 /Year</a>"
+      +", <a href='https://www.expatistan.com/cost-of-living/wellington'>4700 NZD /Mon</a>"
+      +", <a href='https://www.payscale.com/research/NZ/Location=Wellington/Salary'>NZ$45k to NZ$80k /Year</a>"
       ,"<a href='https://globaledge.msu.edu/countries/new-zealand/tradestats'>Diary,Food,wood</a>"
       ,""
       ,""

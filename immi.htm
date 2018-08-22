@@ -47,7 +47,6 @@
 			<td class="width20per">Humidity</td>
 			<td class="width20per"><a href="https://en.wikipedia.org/wiki/List_of_cities_by_elevation">Elevation</a><br>(Altitude) </td>
 			<td class="width20per">Monthly Expenses</td>
-
 			<td>Average Salary</td> 
 
 		  </tr></table>
@@ -55,35 +54,45 @@
 	<th>Exports</th>
 	<th>Political<br>/expat rights</th>
 	<th>Religional</th>
-	<th></th>
+	<th>Food /Water/Fruites Taste and Health</th>
+	<h2> Spirtual awakening /Culture/Gurus/Energoic places </h2>
+	<h2>Nature : Sun,Snow,Wind,Rain Beach,Lake,river,mountain </h2>
+
 	</tr>
 	<script>
 	   //debugger;
 	   for(r=0;r<tb.length;r++)
 	   {
 		document.write("<tr>\r\n");
-		for( c=0;c<tb[0].length-1;c++)
+		for( c=0;c<tb[0].length;c++)
 		{
-		  document.write("<td style='border: 1px solid black;'>"+tb[r][c]+"</td>\r\n");
+			if(c!=11)//
+			{
+				  document.write("<td style='border: 1px solid black;'>"+tb[r][c]+"</td>\r\n");
+			}else
+			{
+				var res = tb[r][c].split("<br>");
+				s="<td><table>";
+				for(c1=0;c1<res.length;c1++)
+				{
+				s+="<tr>";
+				/*
+				var n = res[c1].indexOf(" ");
+				s+="<td class='width20per'>"+res[c1].substring(0,n)+"</td>";
+				s+="<td class='width20per'>"+res[c1].substring(n,res[c1].length)+"</td>";
+				*/
+				var sd= res[c1].split(",");
+				for(c2=0;c2<sd.length;c2++)
+				s+="<td class='width20per'>"+sd[c2]+"</td>";
+				s+="</tr>";
+				}	;
+				
+				s+="</table></td>";
+				document.write(s);
+
+			}
 		}
-		var res = tb[r][tb[0].length-1].split("<br>");
-		s="<td><table>";
-		 for(c1=0;c1<res.length;c1++)
-		{
-		  s+="<tr>";
-		  /*
-		  var n = res[c1].indexOf(" ");
-		  s+="<td class='width20per'>"+res[c1].substring(0,n)+"</td>";
-		  s+="<td class='width20per'>"+res[c1].substring(n,res[c1].length)+"</td>";
-		  */
-		  var sd= res[c1].split(",");
-		  for(c2=0;c2<sd.length;c2++)
-		   s+="<td class='width20per'>"+sd[c2]+"</td>";
-		  s+="</tr>";
-		}	;
 		
-		 s+="</table></td>";
-		 document.write(s);
 		document.write("</tr>\r\n");
 	  }
 	</script>
@@ -107,25 +116,7 @@
 <a href="https://www.google.com/search?q=broad-spectrum+sunscreens&oq=broad-spectrum+sunscreens&aqs=chrome..69i57j0l5.436j0j7&sourceid=chrome&ie=UTF-8"> for UV Protection see Sunscreen products</a>
 <br>
 	
- &nbsp;&nbsp;__Sun,Snow,Wind,Rain__ 
- &nbsp;&nbsp; __Beach,Lake,river__ <br>
- <h2> Food /Water/Fruites Taste and Health</h2>
- <h2>Financial :</h2>
- 
+&nbsp;&nbsp; Buying /Savings Power is Income - expenses <br>
 
-&nbsp;&nbsp; __Initial Expenses to immigrate/Proof of fund__:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Canada:
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/documents/proof-funds.html"> Skilled immigrant in Canada need fund</a>, but with a <a href="http://www.cic.gc.ca/english/helpcentre/answer.asp?qnum=695&top=29&_ga=2.119675712.957029425.1533227914-289267728.1533227914"> valid job offer</a>
-you may not need fund.
-<br> 
- <br>
-&nbsp;&nbsp; __Savings Power__ <br>
-&nbsp;&nbsp; __Buying Power__ <br>
-
-
-<h2> Culture </h2>
-<h2> Spirtual awakening and The Environment/Energy/Atmosphere </h2>
-<h2> job market / Bussiness ease </h2>
-<h2> Ease of Enterance/Exit /Relocation /Trip </h2>
 
 </body>
