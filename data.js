@@ -100,7 +100,8 @@ tb=[
     ,"" 
   ,"Bern,,, <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2661552'>527</a>"+
   "<br>Zurich,,,  <a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2657896'>472m</a>"+
-  "<br>Geneve,, ,<a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2660646'>375m</a>"
+  "<br>Geneve,, ,<a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=2660646'>375m</a>"+
+  "Romanshorn,<a href='https://www.worldweatheronline.com/romanshorn-weather-averages/ch.aspx'>-1 - 25</a>,65-80%,406m"
   ,""
   ,""
   ,""
@@ -197,8 +198,7 @@ tb=[
    ,""
   ,""
   ,""
-,"Romanshorn,<a href='https://www.worldweatheronline.com/romanshorn-weather-averages/ch.aspx'>-1 - 25</a>,65-80%,406m"
-	   +"<br>stockholm,,,<a href='https://en.wikipedia.org/wiki/List_of_cities_by_elevation'>10m</a>"
+,"<br>stockholm,,,<a href='https://en.wikipedia.org/wiki/List_of_cities_by_elevation'>10m</a>"
 ,""
    ],
    [
