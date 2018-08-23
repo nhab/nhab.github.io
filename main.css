@@ -92,15 +92,11 @@ a:hover {
   flex-direction:row;
 }
 .ClimateCol{
-	width:180px;
-	 min-width: 120px;
+	width:480px;
 }
 .Desk {
  width: 1600px;
 }
 .Mobile {
    width: 100%;
-}
-.width20per{
-width:20%;
 }

@@ -197,7 +197,7 @@ tb=[
    ,""
   ,""
   ,""
-,"Romanshorn,-1 - 25,65-80%,406m"
+,"Romanshorn,<a href='https://www.worldweatheronline.com/romanshorn-weather-averages/ch.aspx'>-1 - 25</a>,65-80%,406m"
 	   +"<br>stockholm,,,<a href='https://en.wikipedia.org/wiki/List_of_cities_by_elevation'>10m</a>"
 ,""
    ],
