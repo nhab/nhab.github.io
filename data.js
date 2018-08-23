@@ -197,7 +197,8 @@ tb=[
    ,""
   ,""
   ,""
-,"stockholm,,,<a href='https://en.wikipedia.org/wiki/List_of_cities_by_elevation'>10m</a>"
+,"Romanshorn,-1 - 25,65-80%,406m"
+	   +"<br>stockholm,,,<a href='https://en.wikipedia.org/wiki/List_of_cities_by_elevation'>10m</a>"
 ,""
    ],
    [
