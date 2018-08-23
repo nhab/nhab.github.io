@@ -10,20 +10,32 @@ html {
 body,p,div,pre,li,span,td {
    background-color: #ccd6c9;   font-weight:lighter;  
 }
-h1{display: flex;justify-content: center; align-items: center;
-     background-color:#5342f4;color:#cfc9fc;
-     font-weight:lighter;}
+div{
+  background-color: #ccd6c9;   font-weight:lighter;  white-space: pre-line;
+}
+h1{display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#5342f4;
+  color:#cfc9fc;
+  font-weight:lighter;}
 h2{
-  display: flex;justify-content: center; align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color:#c7d5ed;
+  font-weight:lighter;
   border-color:black;
   border-style: solid;
   border-width: 1px;
-  font-weight:lighter;
 }
-h3{font-weight:bolder;
+h3{
+  font-weight:bolder;
  /* display:inline;*/
-  display: inline-block;
+  display: block;
+  width:50%;
+  text-align: center;
+  margin-left:25px;
   background-color:lightblue;
   color:darkblue;
   padding: 10px ;
