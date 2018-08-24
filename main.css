@@ -69,6 +69,14 @@ a:visited {
 a:hover {
   color: rgb(190, 97, 190);
 }
+b{
+  background-color: #d7d7d7;
+  border: 1px solid #a5a3ab;
+  padding-left: 5PX;
+  padding-right: 5PX;
+  font-weight:bolder;
+}
+/******************************************* Classes **********************************************/
 .header {
     background-color: #666;
     padding: 30px;

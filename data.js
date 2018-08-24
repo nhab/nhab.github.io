@@ -313,7 +313,9 @@ tb=[
   , "<a href='https://iasservices.org.uk/indefinite-leave-to-remain/apply-for-indefinite-leave-to-remain/'>5</a> ",
    "","",
    "",""
-   ,"","","","leicester ,19,57%,62m"
+   ,"","","",
+   "leicester ,19,57%,62m"+
+    "<br>Liverpool,17,70%,70m"
    ,""
    ],
    [
