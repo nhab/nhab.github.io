@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   font-family: "Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-
+  
 }
 html {
   word-break: break-all;
@@ -79,7 +79,7 @@ b{
 /******************************************* Classes **********************************************/
 .header {
     background-color: #666;
-    padding: 30px;
+    padding: 10px;
     text-align: center;
     font-size: 25px;
     color: white;
@@ -95,16 +95,18 @@ b{
   border-width:1px;
   border-style:solid;
 }
-.FlexBox1{
+.FlexBox{
   display:flex;
   flex-direction:row;
 }
-.ClimateCol{
-	width:480px;
-}
-.Desk {
- width: 1600px;
-}
-.Mobile {
-   width: 100%;
-}
+.ClimateCol{	width:480px;}
+.Desk { width: 1600px;}
+.Mobile {   width: 100%;}
+.bordered{  border: 1px solid #333333;}
+.padding5{padding:5px;}
+.padding10{padding:10px;}
+.top  {   display: inline-block;vertical-align:top; }
+.textCenter{text-align: center;}
+.font25x{font-size: 25px;}
+.width100{width:100%}
+.colorWhite{color:white;}
