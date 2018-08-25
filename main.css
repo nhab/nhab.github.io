@@ -46,9 +46,9 @@ h3{
 p,div,span,li{    font-size: 18px;  margin-left: 20px;}
 code,pre {     background-color: #eeeeee; margin: 4px 4px 4px 4px;}
 pre{  width:70%;}
-li{  font-weight: bolder;}
+li{  font-weight: normal;}
 ul{
-  margin-left:10px;
+  margin-left:25px;
 }
 table { border: 1px solid #444444; background-color: #EEEEEE; width: 100%; text-align: left; border-collapse: collapse;}
 table td, table th {  border: 1px solid #444444; padding: 3px 2px;}

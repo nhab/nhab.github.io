@@ -477,23 +477,24 @@ PERFORM < index> OF < subroutine1> < subroutine2> < subroutine3> [< pass>].
     </div>
         
     <h3>How to create a Function Module</h3>
-
-    <ol>
-        <li> Create a function Group (say "ZCAL").</li>   
-        <li>    Create a function module, set the attributes like <br>
-        (Function group, Application, Short Text and Process Type) and Save.</li>
-        <li>Include file "LZCALU01" will have source code of first function module.</li>    
-        <li>Include file "LZCALTOP" will have global data.</li>    
-        <li>  Main program "SAPLZCAL" contains</li>  
-        <li> Global data Include file "LZCALTOP"</li>   
-        <li>Function modules include file "LZCALUXX"</li>    
-        <li>   User defined Include files "LZCALF..", "LZCALO.." and "LZCALI.."</li> 
-        <li>   Define interface parameters and Exceptions</li> 
-        <li>   Write the source code</li> 
-        <li> Activate Function Module</li>   
-        <li>   Testing the Function Module - Single Test & Debugging</li> 
-        <li>  Documenting and Releasing a Function Module</li>  
-    </ol>
+    <div>
+        <ol>
+            <li> Create a function Group (say "ZCAL").</li>   
+            <li>    Create a function module, set the attributes like <br>
+            (Function group, Application, Short Text and Process Type) and Save.</li>
+            <li>Include file "LZCALU01" will have source code of first function module.</li>    
+            <li>Include file "LZCALTOP" will have global data.</li>    
+            <li>  Main program "SAPLZCAL" contains</li>  
+            <li> Global data Include file "LZCALTOP"</li>   
+            <li>Function modules include file "LZCALUXX"</li>    
+            <li>   User defined Include files "LZCALF..", "LZCALO.." and "LZCALI.."</li> 
+            <li>   Define interface parameters and Exceptions</li> 
+            <li>   Write the source code</li> 
+            <li> Activate Function Module</li>   
+            <li>   Testing the Function Module - Single Test & Debugging</li> 
+            <li>  Documenting and Releasing a Function Module</li>  
+        </ol>
+    </div>
 </div>
 <h2>Function Groups</h2>
 <div>
@@ -586,9 +587,9 @@ PERFORM < index> OF < subroutine1> < subroutine2> < subroutine3> [< pass>].
             All Open SQL statements fill the following two system fields with return codes :
             <b>SY-SUBRC</b>
             After every Open SQL statement,
-            the system field SY-SUBRC contains the value 0 if the operation was successful, a value other than 0 if not.
+            the system field SY-SUBRC contains the <b>value 0 if the operation was successful</b>, a value other than 0 if not.
             <b>SY-DBCNT</b>
-            After an Open SQL statement, the system field SY-DBCNT contains the number of database lines processed.    
+            After an Open SQL statement, the system field SY-DBCNT contains the <b>number of database lines processed</b>.    
             <br>    
         </div>
     </div>
@@ -601,9 +602,7 @@ PERFORM < index> OF < subroutine1> < subroutine2> < subroutine3> [< pass>].
         Syntax
         <pre>
             EXEC SQL [PERFORMING < form>].
-
                 < Native SQL statement>
-                
             ENDEXEC.
         </pre>
         . There is no <b>period</b> after Native SQL statements. 
@@ -626,14 +625,16 @@ PERFORM < index> OF < subroutine1> < subroutine2> < subroutine3> [< pass>].
         To improve the performance of the SQL and in turn of the ABAP program, one should take care of the following rules :
 
         <h3>Keep the Result Set Small</h3>
-        Using the where clause
-        <br>If only one record is required from the database, use SELECT SINGLE whenever possible
+           Using the where clause
+           If only one record is required from the database, use SELECT SINGLE whenever possible
+
         <h3>Minimize the Amount of Data Transferred</h3>
         <ul> <li>Restrict the number of lines</li>
             <li>If only certain fields are required from a table, use the SELECT &lt;field1&gt; &lt;field2&gt; INTO ... statement</li>
             <li>Restrict no of columns</li>
             <li>Use aggregate functions</li>
         </ul>
+        <br>
         <h3>Minimize the Number of Data Transfers</h3>
             <ul> <li>Avoid nested select loops</li>
                 <li>An alternative option is to use the SELECT .. FOR ALL ENTRIES statement.
@@ -645,12 +646,12 @@ PERFORM < index> OF < subroutine1> < subroutine2> < subroutine3> [< pass>].
                 <li>Use Joins in the FROM clause</li> 
                 <li>Use subqueries in the where clause</li> 
             </ul>
-
+        <br>
         <h3>Minimize the Search Overhead</h3>
             <ul> <li>Use index fields in the where clause</li>
                 <li>When accessing databases, always ensure that the correct index is being used .</li>
             </ul>
-
+        <br>
         <h3>Reduce the Database Load</h3>
             <ul>
                 <li>Buffering</li> <li>Logical databases</li> <li>Avoid repeated database access</li>
@@ -929,11 +930,13 @@ PERFORM < index> OF < subroutine1> < subroutine2> < subroutine3> [< pass>].
         <br>
     </div>
 <h2 > SAP ABAP Table Control  </h2>
-<div> Table controls and step loops 
+<div>
+    . Table controls and step loops 
     are objects for screen table display that you add to a screen in the Screen Painter.
-From a programming standpoint, table controls and step loops are almost exactly the same.
- Table controls are simply improved step loops that display data with the look and feel associated with tables in desktop applications.
- With table controls, the user can:
+   . From a programming standpoint, table controls and step loops are almost exactly the same.
+   . Table controls are simply improved step loops that display data with the look and feel associated with tables in desktop applications.
+   
+   . With table controls, the user can:
 
 <ul> 
     <li> Scroll through the table vertically and horizontally</li> 
@@ -943,16 +946,18 @@ From a programming standpoint, table controls and step loops are almost exactly 
     <li> Re-order the sequence of columns</li> 
     <li> Save the current display settings for future use</li>
 </ul>
-<p> Table controls also offer special formatting features (some automatic, some optional) that make tables easier 
-    to look at and use. Table Control provides -
-</p>
+<br>
+ Table controls also offer special formatting features .
+ Table Control provides :
+
 <ul> 
     <li> automatic table resizing (vertical and horizontal) when the user resizes the window</li>
     <li> separator lines between rows and between columns (vertical and horizontal)</li> 
     <li> column header fields for all columns</li> 
 </ul>
+<br>
 <p> 
-    One feature of step loops is that their table rows can span more than one line on the screen.
+    Step loops  table rows can span more than one line on the screen.
     A row of a table control, on the other hand, must always be contained in a single line 
     (although scrolling is possible).
     
@@ -1045,11 +1050,15 @@ Example (Transaction TZ60)
     </pre>
 </div>
 
-<h1 itemprop="headline"> All About ABAP Report Programming </h1> 
-        <p> SAP-ABAP supports two types of Programs -&nbsp; Report Programs &amp; Dialog Programs.
-                Report Programs are used when large amounts of data needs to be displayed
-        </p>
-        <p><b>Purpose/Use of Report Programs</b> </p>
+<h1 itemprop="headline"> ABAP Report Programming </h1> 
+    <div> 
+        SAP-ABAP supports two types of Programs :
+        -&nbsp; Report Programs &amp; Dialog Programs.
+    
+        Report Programs are used when large amounts of data needs to be displayed
+        
+
+        <b>Purpose/Use of Report Programs</b> 
         <ul>
             <li> They are used&nbsp; when data from a number of tables have to be selected
             and processed before presenting</li>
@@ -1057,15 +1066,14 @@ Example (Transaction TZ60)
             <li> Used when the report has to be downloaded from SAP to an Excel sheet to be distributed across.</li> 
             <li> Used when the report has to be mailed to a particular person.</li>
         </ul>
-        <p> <b>Important Points to Note About Report Program</b> </p>
-        
+        <br>
+         <b>Important Points to Note About Report Program</b> 
+
         <ul>
             <li> Report Programs are always Executable Programs. Program Type is always 1.</li>
             <li> Every Report program corresponds to a particular Application Type i.e. 
             either with Sales &amp; Distribution, FI - CO etc. It can also be Cross Application i.e. type '*'.</li> 
             <li> Report Programming is an Event-driven programming.</li>
-        </ul>
-        <ul>
             <li> The first line of a report program is always Report <em><strong>&lt;report-name&gt;.</strong></em>
             </li>
                 <li> To suppress the list heading or the name of the program the addition <em><strong>
@@ -1076,7 +1084,9 @@ Example (Transaction TZ60)
             </em>. N is the number of lines for the page and N1 is the number of lines reserved for the page footer.</li>
                 <li> To display any information or error message we add a message class to the program using the addition:
                     <em><strong>Message-id &lt;message class name&gt;. </strong></em>Message classes are maintained in SE91.</li> 
-        </ul> Therefore an ideal report program should start with:
+        </ul> 
+        <br>
+        Therefore an ideal report program should start with:
         <pre>Report &lt;report name&gt; no standard page heading
         line-size &lt;size&gt;
 
@@ -1084,7 +1094,7 @@ Example (Transaction TZ60)
         
         message-id &lt;message class&gt;.
         </pre>
-    
+    </div>
             
     <h2> Selection Screen</h2>
     <div> "Selection screen"&nbsp; is the screen where one specifies the input values for which the program should run.
@@ -1095,52 +1105,57 @@ Example (Transaction TZ60)
             <li> Select-Options</li>
         </ol>
         
-        <p> Syntax </p>
+        <b> Syntax </b>
         <pre>Selection-screen begin of screen &lt;screen #&gt;
             selection-screen begin of block &lt;#&gt;&nbsp; with frame title &lt;text&gt;
             .........
             .........
             selection-screen end of block &lt;#&gt;
-            selection-screen end of screen &lt;screen #&gt;</pre><p> <em><strong>Parameters</strong></em><br> <br>
-            Parameters help one to do dynamic selection. They can accommodate only one value for one cycle of execution of the program.<br>
-            <br> Syntax<br> <br> Defining parameters as a data type 
-            </p>
+            selection-screen end of screen &lt;screen #&gt;
+        </pre>
+        <b>Parameters</b>
+            Parameters help one to do dynamic selection. They can accommodate only one value for one cycle of execution of the program.
+            <b> Syntax</b>
+             Defining parameters as a data type 
+            
             <pre>Parameters p_id(30) type c.</pre>
-            <br><p> Defining parameters like a table field.</p>
+            
+            <b> Defining parameters like a table field:</b>
             <pre>Parameter p_id like &lt;table name&gt;-&lt;field name&gt;.</pre>
-            <p> Parameters can be Checkboxes as well as Radiobuttons. </p>
+            <b> Parameters can be Checkboxes as well as Radiobuttons: </b>
             <pre>Parameters p_id as checkbox.Parameters p_id1 radiobutton group &lt;group name&gt;.
-             Parameters p_id2&nbsp; radiobutton group &lt;group name&gt;.</pre> <br><p> Parameters can be listbox.
-            </p>
+             Parameters p_id2&nbsp; radiobutton group &lt;group name&gt;.
+            </pre>
+            <b> Parameters can be listbox. </b>
             <pre>
                 Parameter p_id like &lt;table name&gt;-&lt;field name&gt; as listbox
             </pre>
         
-            <strong>Select Options</strong>
-                A Select-Option is used to input a range of values or a set of values to a
-            program
-            Syntax 
+            <b>Select Options</b>
+                A Select-Option is used to input a range of values or a set of values to a  program
+            <b>Syntax </b>
             <pre>select-options s_vbeln for vbak-vbeln.</pre>
-            <p> You can also define a select option like a variable </p>
+            <br> You can also define a select option like a variable 
             <pre>select-options s_vbeln for vbak-vbeln no intervals no-extension</pre>
             <br>
     </div>
 
     <h2><a id="2"></a> Events in an ABAP Report Program</h2>
     <div>
-        <p> ABAP report programs are <em><strong>event driven programs</strong></em>. 
-            The different events in a report Program are:<br> <br>
-             <em><strong>Load-of-program
-            </strong></em>
-         </p>
+        ABAP report programs are <em><b>event driven programs</b></em>. 
+            The different events in a report Program are:
+        <br>
+        
+        <b>Load-of-program </b>
+         
         <ul>
-                <li> Triggers the associated event in an internal session after loading a program of type 1, M, F, or S.</li>
+            <li> Triggers the associated event in an internal session after loading a program of type 1, M, F, or S.</li>
             <li> Also runs the associated processing block once and once only for each program and internal session.</li>
             <li> The processing block LOAD-OF-PROGRAM has roughly the same function for an ABAP program of type 1, M, F or S
                 as a constructor has for classes in ABAP Objects</li>
         </ul>
 
-        <em><strong>Initialization.</strong></em> 
+        <b>Initialization.</b> 
         
         <ul> 
             <li> This event is executed before the selection screen is displayed .</li>
@@ -1148,23 +1163,22 @@ Example (Transaction TZ60)
             <li> You can assign different values other than the values defaulted on the selection screen .</li>
                 <li> You can fill your selection screen with some values at runtime.</li>
         </ul>
-        <p> <em><strong>At Selection-Screen.</strong></em> </p>
+        <b>At Selection-Screen.</b>
         <ul> 
             <li> The event is processed when the selection screen has been processed (at the end of PAI ).</li>
             <li> Validation &amp; Checks of inputted values happen here</li>
             </ul>
-        <p> <em><strong>Start-of-Selection.</strong></em>
+        <b>Start-of-Selection.</b>
         </p>
         <ul> <li> Here the program starts selecting values from tables.</li>
         </ul>
-        <p> <em><strong>End-of-selection.</strong></em>
+        <b>End-of-selection.</b>
         </p>
         <ul> 
             <li> After all the data has been selected this event writes the data to the screen.</li> 
         </ul>
-        <p>
-            <em><strong>Interactive Events</strong></em> 
-        </p>
+        <b>Interactive Events</b> 
+        
         <ul>
             <li> Used for interactive reporting. It is used to create a detailed list from a basic list.</li> 
         </ul>
@@ -1273,19 +1287,22 @@ If your ABAP program demands user input , Dialog programming is used.
                 
 
 <h2> Components of Dialog Program</h2>
-        <p> Unlike report which generally entails the creation of one autonomous program which can be executed independently
-            of other objects, dialog program development entails development of multiple objects none of which can be executed 
-            on it's own.<strong><em> Instead all objects are linked hierarchically to the main program and and are executed
-                in a sequence dictated by the Dialog Main Program</em></strong>.<br> <br> The components of a dialog program 
-                are:<br> <br> <strong>Transaction code</strong>
-        </p>
+    <div> Unlike report which generally entails the creation of one autonomous program which can be executed independently of other objects, 
+    dialog program development entails development of multiple objects none of which can be executed on it's own.
+    <strong><em> Instead all objects are linked hierarchically to the main program and and are executed
+                in a sequence dictated by the Dialog Main Program</em></strong>.
+    <br>  The components of a dialog program  are:
+    <br> <br>
+     <b>Transaction code</b>
+     
         <ul> 
             <li> The transaction code starts a screen sequence.</li> 
         <li> You create transaction codes in the Repository Browser in the ABAP Workbench or using Transaction SE93.</li>
             <li> A transaction code is linked to an ABAP program and an initial screen.</li>
             <li> You can start a screen sequence from any ABAP program using the CALL SCREEN statement.</li>
         </ul>
-        <p> <strong>Screens</strong> </p>
+    
+        <b>Screens</b>
         <ul> <li> Each dialog in an SAP system is controlled by one or more screens.</li>
             <li> You create screens using the Screen Painter in the ABAP Workbench through transaction SE51</li> 
             <li> Each screen belongs to an ABAP program.</li>
@@ -1294,14 +1311,15 @@ If your ABAP program demands user input , Dialog programming is used.
                 such as checkboxes and radio buttons. A flow logic determines the logical processing within screen.</li> 
             </ul>
                         
-            <p> <strong>GUI status</strong> </p>
+            <b>GUI status</b>
             <ul>
                  <li> Each screen has a GUI status(es) which are independent components of a program.</li>
                 <li> This controls the <em>menu bars, standard toolbar, application toolbar</em> , 
                  with which the user can choose functions in the application.</li>
                 <li> You create them in the ABAP Workbench using the Menu Painter.</li>
             </ul>
-             <p> <strong>ABAP Program</strong> </p>
+            
+            <b>ABAP Program</b>
             <ul>
                     <li> Each screen and GUI status in the R/3 System belongs to one ABAP program.</li>
                 <li> The ABAP program contains the dialog modules that are called by the screen flow logic,
@@ -1313,58 +1331,43 @@ If your ABAP program demands user input , Dialog programming is used.
                             then called differently; for example, by the runtime environment or a procedure 
                             call. The screen sequence is then started using the CALL SCREEN statement.</li> 
             </ul>
-                    <p> <strong>Screen Flow Logic</strong><br>
-                            <br> Screen Flow logic is primarily divided into four components.
-                    </p>
-                    <ul> 
-                        <li> Process Before Output (<strong>PBO</strong>)
-                            event: which is processed before the screen is displayed</li> 
-                            <li> Process After Input (<strong>PAI</strong>) event: which is 
-                            processed after a user action on the screen</li> 
-                            <li> Process on help request (<strong>POH</strong>):
-                                    which is processed when F1 is pressed</li> 
-                            <li> Process on value request (<strong>POV</strong>):
-                                which is processed when F4 is pressed</li>
-                    </ul>
-                    <p> <strong>Dynpro </strong></p>
-                    <div>
-                    <ul>
-                        <li> A screen together with its Flow logic&nbsp; is called a Dynpro ("Dynamic Program" since the screen flow logic 
-                            influences the program flow)</li>
-                            <li> Each dynpro controls exactly one step of your Dialog Program.</li> 
-                            <li> The screens belonging to a program are <strong>numbered</strong>. The&nbsp; screen flow sequence 
-                            can be either linear or cyclic. From within a screen chain, you can even call another screen chain and, 
-                            after processing it, return to the original chain. You can also override the statically-defined next
-                                screen from within the dialog modules of the ABAP program.</li> 
-                    </ul>
-                    <p> <strong>ABAP Module Pool</strong> </p>
-                        <ul> 
-                            <li> On a PBO or PAI event a Dynpro calls an ABAP dialog program.&nbsp; 
-                            Collection of such programs is called the ABAP module pool.</li>
-                            <li> For example modules called at the PAI event are used to check the user input and to trigger
-                                    appropriate dialog steps, such as the update task.</li>
-                            <li> All dynpros to be called from within <strong>one</strong> transaction refer to a common module pool.</li>
-                        </ul>
-                    <p>
-                        <em><strong>Structure of a Dialog Program</strong></em>
-                    </p>
-                    <p style="text-align: center;"> <a href="file://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js/images/sap/2011/01/sap-dialog-programming2.png"></a>
-                    <a href="file://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js/images/sap/2011/01/sap-dialog-programming2.png" class="jh-image-popup-colorbox cboxElement">
-                        <img alt="Dialog Programming Tutorial: Module Pool in SAP ABAP" class="aligncenter  wp-image-946" 
-                        height="402" src="file://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js/images/sap/2011/01/sap-dialog-programming2.png" title="sap-dialog-programming"
-                            width="600"></a> </p><p> <em><strong>Process Flow for a Dialog Program</strong></em>
-                        </p>
-                    <p style="text-align: center;"> <a href="file://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js/images/sap/2011/01/sap-dialog-programming3.png"></a>
-                        <a href="file://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js/images/sap/2011/01/sap-dialog-programming3.png" class="jh-image-popup-colorbox cboxElement">
-                        <img alt="Dialog Programming Tutorial: Module Pool in SAP ABAP" class="aligncenter  wp-image-951"
-                        height="332" src="file://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js/images/sap/2011/01/sap-dialog-programming3.png" title="sap-dialog-programming"
-                        width="600"></a> 
-                    </p>
-                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <b>Screen Flow Logic</b>
+                    <br> Screen Flow logic is primarily divided into four components.
+            </p>
+            <ul> 
+                <li> Process Before Output (<strong>PBO</strong>)
+                    event: which is processed before the screen is displayed</li> 
+                    <li> Process After Input (<strong>PAI</strong>) event: which is 
+                    processed after a user action on the screen</li> 
+                    <li> Process on help request (<strong>POH</strong>):
+                            which is processed when F1 is pressed</li> 
+                    <li> Process on value request (<strong>POV</strong>):
+                        which is processed when F4 is pressed</li>
+            </ul>
+            <b>Dynpro </b>
+            <ul>
+                <li> A screen together with its Flow logic&nbsp; is called a Dynpro ("Dynamic Program" since the screen flow logic 
+                    influences the program flow)
+                </li>
+                <li> Each dynpro controls exactly one step of your Dialog Program.</li> 
+                <li> The screens belonging to a program are <strong>numbered</strong>. The&nbsp; screen flow sequence 
+                can be either linear or cyclic. From within a screen chain, you can even call another screen chain and, 
+                after processing it, return to the original chain. You can also override the statically-defined next
+                    screen from within the dialog modules of the ABAP program.
+                </li> 
+            </ul>
+            <b>ABAP Module Pool</b>
+                <ul> 
+                    <li> On a PBO or PAI event a Dynpro calls an ABAP dialog program.&nbsp; 
+                    Collection of such programs is called the ABAP module pool.</li>
+                    <li> For example modules called at the PAI event are used to check the user input and to trigger
+                            appropriate dialog steps, such as the update task.</li>
+                    <li> All dynpros to be called from within <strong>one</strong> transaction refer to a common module pool.</li>
+                </ul>
+            
+            <h3>Structure of a Dialog Program</h3>            
+            <img src="https://www.guru99.com/images/sap/2011/01/sap-dialog-programming2.png" width="500px">
+        </div>        
 
 <h1 > ABAP Subscreens Tutorial: Call Subscreen in SAP </h1>
 <h2> CALL SUBSCREEN</h2>
@@ -1553,6 +1556,1022 @@ If your ABAP program demands user input , Dialog programming is used.
                 </div>
             </div>
         </div>
-<a href="https://www.guru99.com/alv-list-view-programming.html">Next</a>
- </body>
+<h2>
+    ALV Reports in SAP Tutorial - ABAP List Viewer
+</h2>
+<div>
+
+ The common desired  features of any  report are "column alignment", sorting, filtering, subtotals, totals etc.
+ To implement these from scratch , a lot of coding effort  is to be put.
+ To avoid that we can use a concept called ABAP List Viewer (ALV).
+
+ Each of these reports provide function modules which help in producing desired output without much effort.
+
+ <h3>simple report:</h3>
+
+Important function modules in these report are -
+
+    Reuse_alv_fieldcatalog_merge
+    Reuse_alv_list_display
+    Reuse_alv_events_get
+    Reuse_alv_grid_display
+    Reuse_alv_commentary_write
+
+REUSE_ALV_FIELDCATALOG_MERGE
+
+    This function module is used to populate a field catalog which is essential to display the data in ALV.
+
+    If the output data is from a single dictionary table and all the columns are selected, 
+    then we need not exclusively create the field catalog. 
+    Its enough to mention the table name as a parameter (I_structure_name) in the REUSE_ALV_LIST_DISPLAY.
+    But in other cases we need to create it.
+
+    Note : Fieldcatalog can be filled manually also by filling up all the required details into the internal table
+
+    Important parameters in are:
+
+    1. Export:
+
+        I_program_name : report id
+        I_internal_tabname : the internal output table
+        I_inclname : include or the report name where all the dynamic forms are handled.
+
+    2. Changing
+
+        ct_fieldcat : an internal table with the type SLIS_T_FIELDCAT_ALV which is declared in the type pool SLIS.
+
+REUSE_ALV_LIST_DISPLAY
+
+    This is the function module which prints the data.
+
+    The important parameters are:
+
+    1. Export:
+
+        I_callback_program : report id
+        I_bypassing_buffer : 'X'
+        I_buffer_active : ' '
+        I_callback_pf_status_set : routine where a user can set his own pf status or change the functionality of the existing pf status.
+        I_callback_user_command : routine where the function codes are handled.
+
+        I_structure name : name of the dictionary table
+        Is_Layout : structure to set the layout of the report
+        It_fieldcat : internal table with the list of all fields and their attributes which are to be printed (this table can be populated automatically by the function)
+        It_events : internal table with a list of all possible events of ALV and their corresponding form names.
+
+    2. Tables:
+
+        a. t_outtab : internal table with the data to be output
+
+REUSE_ALV_EVENTS_GET:
+
+    Returns table of possible events for a a list type
+
+    1. Import:
+
+    Et_Events :The event table is returned with all possible CALLBACK events for the specified list type (column 'NAME'). For events to be processed by the Callback, their 'FORM' field must be filled. If the field is initialized, the event is ignored. The entry can be read from the event table, the field 'FORM' filled and the entry modified using constants from the type pool SLIS.
+
+    2. Export:
+
+    I_list_type: 0 = simple list REUSE_ALV_LIST_DISPLAY
+
+    1 = hierarchical-sequential list  REUSE_ALV_HIERSEQ_LIST_DISPLAY
+
+    2 = simple block list REUSE_ALV_BLOCK_LIST_APPEND
+
+    3 = hierarchical-sequential block list   REUSE_ALV_BLOCK_LIST_HS_APPEND
+
+REUSE_ALV_GRID_DISPLAY
+
+    A new function from ABAP4.6 version, to display the results in grid rather than a preview.
+
+    Parameters : same as reuse_alv_list_display
+
+        Note:Grid cannot handle high volumes. Functions like sort, scrolling down consumes a lot of resources / time if the volume of data to be displayed is high. There is no clear cut definition such that if the amount of data is X go for list or grid  but the developer has to take a call based on his experience. If not sure, then list is the better option
+
+REUSE_ALV_COMMENTARY_WRITE
+
+    This is used in the Top-of-page event to print the headings and other comments for the list.
+
+    Important Parameters
+
+        It_list_commentary : Internal table with the headings of the type slis_t_listheader.
+
+    This internal table has three fields:
+
+        Typ : 'H' - header, 'S' - selection, 'A' - action
+        Key : only when typ is 'S'.
+        Info : the text to be printed
+
+<h3>Block Report</h3>
+
+This looks like a simple report but this report has the features of sorting and filtering only.This report is used if you have to display more than one report on the output. Technically speaking if you have multiple internal table with data to be displayed as separate blocks then we go for block report of ALV.
+
+The important functions used for creating this report are:
+
+    REUSE_ALV_BLOCK_LIST_INIT
+    REUSE_ALV_BLOCK_LIST_APPEND
+    REUSE_ALV_BLOCK_LIST_DISPLAY
+
+REUSE_ALV_BLOCK_LIST_INIT
+
+This function module is used to set the default gui status etc. The parameters are similar to the one used in reuse_alv_list_display or reuse_alv_grid_display
+
+REUSE_ALV_BLOCK_LIST_APPEND
+
+This function module adds the data to the block.
+
+Important Parameters
+
+1.Export :
+
+    is_layout : layout settings for block
+    it_fieldcat : field catalog
+    I_tabname : internal table name with all all possible events
+
+2.Tables :
+
+    t_outtab : internal table with output data.
+
+REUSE_ALV_BLOCK_LIST_DISPLAY
+
+This function module display the list with data appended by the above function.
+
+Parameters : All the parameters are optional.
+<h3>Hierarchical Reports</h3>
+
+Hierarchical display is used for displaying data that are related. Like sales order and item details. Here sales order details can be the header data whereas them items in the sales order can be the item data
+
+The function module used for this is
+
+REUSE_ALV_HIERSEQ_LIST_DISPLAY
+
+Export:
+
+    I_CALLBACK_PROGRAM
+    I_CALLBACK_PF_STATUS_SET
+    I_CALLBACK_USER_COMMAND
+    IS_LAYOUT
+    It_fieldcat
+    It_events
+    I_tabname_header : Name of the internal table in the program containing the output data of the highest hierarchy level.
+    I_tabname_item : Name of the internal table in the program containing the output data of the lowest hierarchy level.
+    Is_keyinfo : This structure contains the header and item table field names which link the two tables (shared key).
+
+Tables
+
+    t_outtab_header : Header table with data to be output
+    t_outtab_item : Name of the internal table in the program containing the output data of the lowest hierarchy level.
+
+All the definitions of internal tables, structures and constants are declared in a type-pool called SLIS. This internal table can be populated automatically by using REUSE_ALV_FIELDCATALOG_MERGE'.
+<h3>Display Variants</h3>
+
+    Display variants are used to set the default properties of an alv output like sort criteria, filtering criteria, totaling and subtotaling etc
+    Display varian`ts can be user specific and standard (standard variants can be used by any user )
+    Kind of display variants that can be saved is controlled by the parameter i_save that is passed in function modules  reuse_alv_list_display / reuse_alv_grid_display
+    You can provide an option on the selection screen to select what display variant to be used
+
+The common function modules related to selecting / validating display variants are
+
+    Reuse_alv_variant_default_get
+    Reuse_alv_variant_f4
+    Reuse_alv_variant_existence
+
+</div>
+
+
+
+<h2>SAP Scripts Tutorial: SE71, SE78, SCC1, VF03, SO10</h2>
+<div>
+    SAP script is the SAP System's own text-processing system.
+    It is used to print preformatted text in pre-formatted forms.
+
+    <h3>Components of SAPScript</h3>
+
+    SAP Scripts comprises of 5 main components:
+    <div>
+        . An editor for entering and editing the lines of a text
+        . Styles and layout sets for print layout. These are created independent of the individual texts
+           using the corresponding maintenance transactions and are allocated to the texts later
+        . The composer is a central output module. The SAP script composer is invisible to the outside
+        . A programming interface that allows you to include SAP script components into your own application programs
+           and to control the output of layout sets from within the programs
+        . Several database tables for storing texts, styles and layout sets
+    </div>
+
+    <h3>Layout Set</h3>
+    <div>
+        To output documents using the programming interface, R/3 application programs need so-called layout sets (a kind of form).
+        In SAP script a layout set describes the layout of the individual print pages and
+         uses text elements to supply definable output blocks, which a print program can call.
+         A layout set can be defined as a page design for a document
+
+        Layout set on its own doesn't contain any data. The selection of data for the document is done through the print program.
+           The print program selects the data from database table and feeds it to the layout set. 
+           When the print program is executed the document is printed on the screen, printer.
+
+        Usually a SAPScript Layout consists of following components
+        <div>
+            <b>Header Data</b>: 
+                Header data is used for information and control of SAP printing. The header data comprises of 2 parts - Device Independent - Stores information like Start page , Default paragraph ,Language Attributes etc. And Device Dependent stores information like Page format ,Orientation Lines per inch etc
+            <b>Paragraph and Character Formats</b>:
+                Paragraphs are formatted using various attributes. For instance Standard paragraph attributes specify Left or Right margin, Alignment ,Line spacing etc. Font attributes specify Font family ,Font size etc. Character formats allow to format entire blocks of text within a paragraph
+            <b>Windows and Text Elements</b>: 
+                Windows are individual text areas (header address, date, footer) in a page . 
+                It helps combine the information contained in a document into certain groups and make each group appear on the printed page in an individual area.
+                 You can define text elements (window texts) for each window.
+                  The print program accesses text elements by name, formats them and prints them in the respective window.
+                   The paragraph and the character formats used must be defined in the form.
+            <b>Pages:</b> 
+                They are individual pages of a document and must have a unique name. You will often find different layouts 
+                for individual pages: 
+                
+                The first page of an invoice differs from the subsequent pages,
+                 on which you need not repeat general information, such as address or customer data.
+            <b>Page Windows:</b>
+            While defining windows and pages, you do not yet determine the position and spacing of the texts to be output.
+            A page window defines the rectangular output area in the output medium by specifying the left upper edge of the output area 
+            and its width and height
+        </div>
+    </div>
+    <h3>Control Commands</h3>
+    <div>
+        The purpose of "control commands" is to allow control of the output formatting.
+        These commands are not interpreted by the SAP script editor, but are passed through to the SAP script Composer for processing. 
+        This includes, for example, line and page formatting, the formatting of text according to the paragraph and character formats specified.
+
+        <b>Syntax</b>
+        <pre>
+            Enter /: in the paragraph format
+        </pre>
+        <br>
+
+        <b>Examples</b>
+        <pre>
+            NEW-PAGE - Explicit page break
+            PROTECT .........ENDPROTECT - To print complete paragraph in one page.
+            INCLUDE - To include the content of another text into current text
+            PERFORM - To call a subroutine of any ABAP program
+        </pre>
+    </div>
+    <h3>Print Program</h3>
+    <div>
+        The execution of script is done through an ABAP program, which is referred as Print Program.
+        Each print program should have an ENTRY form , which will be called from customization.
+
+        For a standard configuration we can see the form name (script name), print program name and output type in the table TNAPR.
+        The print program uses the Form control functions to call the script.
+
+        The print program call either all or some of the form control functions to execute the script
+
+            OPEN_FORM (Mandatory) Opens the layout set output
+            CLOSE_FORM (Mandatory) Ends the layout set output
+            START_FORM (Optional) Starts a new layout set
+            WRITE_FORM (Mandatory) Calls a layout set element
+            END_FORM (Optional) Ends the current layout set
+    </div>
+    <h3>Output Types</h3>
+    <div>
+        The output type can specify, a printed form that you need for internal use or a form that you want to send to a customer or vendor .
+         The output type can also be an internal electronic mail message that you want to send to staff in another department.
+
+        For example "Print out" can be classified as one output type of a billing document,
+         i.e. when this output type is executed the billing document is printed.
+         Similarly "Fax" can be an output type, i.e. when this output type is executed a fax of the billing document is sent
+
+        All the output types for any document (e.g. billing document) will be stored in the table NAST.
+        Output types are executed through the program RSNAST00 .
+
+        Example : Output type in a billing document-
+
+            Go to VF03
+            Enter billing document number and press enter again
+            Chose Output under the menu Goto -> Header
+            Here Z101 is an output type of a print output
+    </div>
+    <h3>Standard Texts and Graphics</h3>
+    <div>
+        Standard Texts for your report can be created using transaction SO10
+
+        Graphics and printer macros are uploaded with report RSTXLDMC into individual standard text documents
+        or through transaction SE78. Graphics are uploaded  in "Baseline TIFF 6.0" format (.tif files on PC)
+
+        SAP Script & Standard text elements can exported or imported between two systems using RSTXSCRP program
+
+        <b>Copying Scripts Across clients:</b>
+
+        SAP Script is a client dependent object.Unlike programs, changes done to SAP script in one client will not be reflected in other clients.
+        For copying script from one client to another, go to SE71 and
+        use "Copy from Client" option available under Utilities menu or import the transport request, 
+        in which the script is saved, from the original client using the transaction SCC1 .
+
+        <b>Important Points to Note</b>
+
+            SAP script does not maintain any versions. So when modifying the SAP script , ensure that the changes are well documented in script.
+            This applies to the standard texts too.
+            The output of the form will differ when viewed on the screen and on the printer. So always test the output of the script on the printer.
+    </div>
+
+</div>
+
+<h2> Smart Forms in SAP ABAP</h2>
+<div>
+        SAP Smart Forms is used to create and maintain forms for mass printing in SAP Systems.
+        As output medium SAP Smart Forms support a printer, a fax, e-mail, or the Internet (by using the generated XML output).
+        
+        SAP introduced SmartForms in 1998 to overcome the limitations in SAP Scripts.
+         SmartForms are easier to develop, maintain and transport than SAP Script.
+        
+        
+        <h3>Smart Forms and  SapScripts Comparison</h3>
+        <div>
+            Multiple page formats are possible in SmartForms which is not the case in SAPScripts
+            It is possible to have a SmartForm without a main window.
+            Routines can be written in SmartForms tool.
+            SmartForms generates a function module when activated.
+            Labels cannot be created in SmartForms.
+        </div>
+        <h3>Advanatges of Smart Forms</h3>
+        <div>
+            They  help adapting forms without any programming knowledge due to entirely graphical user interface
+            When activating the smart form the system automatically generates the function module and at the runtime .
+            To make any changes we have to use the Drag & Drop, Cut & Paste. 
+            These actions do not include writing of coding lines or using a script language.
+            We can insert static and dynamic tables.
+             These include the line feeds in the individual table cells, triggering events for table headings and subtotals 
+             and sorting data before output.
+            The smart forms allow the user to include graphics, which can be displayed as a part of the form or as background graphics.
+             During printout the user can suppress the background graphic as and when necessary.
+            Web Publishing is possible using the generated XML output
+        </div>
+        <h3>Architecture of SAP Smart Form</h3>
+        <img src="https://www.guru99.com/images/sap/2011/02/smartformpdf2.jpg">
+        <h3>Smartforms Guide</h3>
+        
+            1. Enter transaction SMARTFORMS in the transaction code box.
+            2. In the next screen , enter a Form name and click create
+        
+            <img src="https://www.guru99.com/images/sap/2011/01/sap-smart-form1.jpg">
+        
+            The next screen is divided into three sections-
+        
+            <img src="https://www.guru99.com/images/sap/2011/02/sap-smart-forms2.png">
+        
+        <b>Navigation window</b> consist of nodes and sub nodes.
+         They contain all the elements (text, window etc) that belong to sap forms
+        <div>
+            . Maintenance window shows attributes of the elements
+            . Form printer window shows the layout of the page
+        </div>
+        Whenever we create smart forms, SAP creates/generates a function module.Unlike SAPscripts , SAP FORMS allow you to change language.
+        
+        In the navigation window  you will find
+        
+        <b>Global Data Declarations: </b> The Data defined here can be used throughout the smartform for coding purposes.
+        
+        <b>Form Interface :</b> Here all the data which will be passed to the smartform from the Print program is defined.
+        
+        <img src="https://www.guru99.com/images/sap/2011/02/Copy-of-1.png">
+        
+        Right-Clicking on the Pages will allow creation of New Page, Window, Graphic or Address.
+        
+        <img src="https://www.guru99.com/images/sap/2011/02/sap-smart-forms4.png">
+        
+        Printing will take place on the basis of 'next page' field.
+        
+        But processing will happen as per the sequence in navigation window!
+        
+        <img src="https://www.guru99.com/images/sap/2011/02/sap-smart-forms7.png">
+        
+        For background picture and graphics you can pick up either black and white or color bitmap images and
+         are stored in the form of standard texts.
+          You may take a detour from the smartform screen and open Form Graphics screen. Transaction code: Se78
+         
+        <img src="https://www.guru99.com/images/sap/2011/02/sap-smart-forms8.png">
+        
+        Setting in the Graphics in  Smart Form Window-
+        
+        <img src="https://www.guru99.com/images/sap/2011/02/sap-smart-forms9.png">
+        
+        <h3>Windows in Smart Forms</h3>
+        <img src="https://www.guru99.com/images/sap/2011/02/sap-smart-forms10.png">
+        
+        There are two types of Windows
+        <div>
+                1.Main
+                2.Secondary    
+        </div>
+            
+        <b>Important Points to Note</b>
+        <div>
+            . You cannot have more than 1 main window in a page. You can have multiple secondary windows
+            .Whatever you print in secondary window...it has to be static.
+             (If u have 20 lines in a PO and there is page constraint the lines get carried forward to next page in the main window. 
+             i.e. In a predecessor and successor type of content, they will be printed in sequence in main window. 
+             This is not allowed in Secondary windows.
+        </div>
+        <img src="https://www.guru99.com/images/sap/2011/02/sap-smart-forms11.png">
+        
+        Inside the main window we can add text as introduction to customize the form output.
+        <img src="https://www.guru99.com/images/sap/2011/02/rsz_sap-smart-forms.png">
+        
+        The Output options on each window determine the Line size, Width, Colors and background to be put.
+        
+        <img src="https://www.guru99.com/images/sap/2011/02/1.png">
+        
+        Smartforms gives the option of giving the address number which is maintained in the central address management. 
+        The address will be directly taken from ADRC table and will be populated in the form.
+        
+        <img src="https://www.guru99.com/images/sap/2011/02/2.png">
+        The two different editors are available in Smartforms viz. Normal Editor
+        <img src="https://www.guru99.com/images/sap/2011/02/3.png">
+        
+        and the Graphics Editor.
+        
+        
+        <img src="https://www.guru99.com/images/sap/2011/02/51.png">
+        This setting can be changed using the Configure editor in Utilities.
+        
+        In Table painter, you can draw the format as per client requirement (e.g. Heading, Sub Heading, Item, Sub Total, Grand Total etc.)
+        
+        You can use the table layout to determine:
+        <div>
+            . The number of lines and cells
+            . The height of each line
+            . The width of each cell
+            . The alignment of the table in the window
+        </div>
+        <img src="https://www.guru99.com/images/sap/2011/02/11.png"> 
+        
+        The Table shows the different line types which will be used in the table.
+         The Line types define the size of each cell and the number of cells in each line.
+        
+        <img src="https://www.guru99.com/images/sap/2011/02/21.png">
+        <h3>Smart Forms Programming Flow</h3>
+        
+        When an SAP Smart Form template is created, a user creates the form layout, defines the required fields, conditions,
+         and special programming instructions in the Smart Form template using the Smart Form Builder.
+        
+        After the form design is complete, the form needs to be activated before it can be tested or accessed by the print programs.
+        Activating the form initiates the generation of a function module that handles all of the form's processing.
+        
+        This function module interacts with the application program/print program to create the output in the user-defined output 
+        media for the specified device.
+        
+        In case of smart forms, we use 2 function modules for the processing of the smart form. To the first function module ,
+         we pass the name of the smart form as the import parameter. 
+         This then returns the name of the dynamically generated function module which will actually call the smartform.
+        
+        The smartform name can be passed on to the function Module - 'SSF_FUNCTION_MODULE_NAME'
+        
+        <img src="https://www.guru99.com/images/sap/2011/02/12.png">
+        This will return the Function module name of the smartform which is referenced.
+        
+        <img src="https://www.guru99.com/images/sap/2011/02/22.png">
+        The Print program will be calling the FM 'SSF_FUNCTION_MODULE_NAME' to get the Function module name at Runtime. 
+        Therafter it will call the Function module thus obtained to execute the smartform.
+        
+        <img src="https://www.guru99.com/images/sap/2011/02/32.png">
+        <h3>Templates</h3>
+        
+        Template can be  used when you know the exact size of the output or the output is in a fixed format.
+        
+        E.g. Tax form/ cheques /airline form/railway ticket: all these use templates.
+        
+        The big  between table and template is that in a Table the height changes dynamically.We call a row a 'line' in template.
+        
+        <img src="https://www.guru99.com/images/sap/2011/02/52.png">
+        SMART Styles
+        
+        A Smart Style contains:
+        <div>
+            . Header data containing the default values of a Smart Style
+            . Paragraph formats including indents and spacing, font attributes, tabs, and outline and numbering
+            . Character formats including effects (superscript, subscript), barcode and font attributes
+            . Colors and underlines for a paragraph or character format
+        </div>
+        You can use the transaction 'smartforms' / 'smartstyles' to create a smart style.
+        <img src="https://www.guru99.com/images/sap/2011/02/Copy-of-7.png">
+</div>
+    
+<h2>What is User Exits and Customer Exits in SAP ABAB</h2>
+    <div>
+        <h3>What is Customer Exits ?</h3>
+        <div>
+                Customer exits are "hooks" provided by SAP within many standard programs, 
+                screens and menus on which customers may "hang" custom functionality
+                to meet business requirements.  
+        </div>
+        <h3> Types of Customer Exits</h3>
+        <div>
+            1. <b>   Function Module Exits</b>
+            <div>
+                    It  allows customer to add code via a function module at a specific location in an SAP application program 
+                    <pre>
+                            Syntax: CALL CUSTOMER-FUNCTION '004'
+                    </pre>
+            </div>
+            2.<b>    Screen Exits</b>
+            <div>
+                    :  It allows customer to add fields to a screen in an SAP program via a subscreen.
+                     The subscreen is called within the standard screen's flow logic.
+                     <pre>
+                            Format: CALL CUSTOMER-SUBSCREEN CUSTSCR2
+                     </pre>
+            </div>
+            3.<b>    Menu exits</b>
+            <div>
+                    It  allows customer to add items to a pulldown menu in a standard SAP program. 
+                    These items may be used to call add-on programs or custom screens.
+                    <pre>
+                            Format: +CUS ( additional item in GUI status )
+                    </pre>
+            </div>
+        </div>
+        <h3> Examples of Customer Exits</h3>
+            <b>Example of a Screen Exit</b>
+            <div>
+                    In transaction CAT2 - Time Sheet Entry,
+                     HR wishes to include an interactive acknowledgment that knowingly submitting incorrect data is grounds for dismissal. 
+                     <img src="https://www.guru99.com/images/sap/2011/01/16.png">
+            </div>
+            <b>Example of a Menu Exit</b>
+            <div>
+                    In transaction SE38 - ABAP Editor, the development team wishes to include a menu link to transaction SE80 - 
+                    Object Navigator for ease of use.
+                    <b>Befor:</b>
+                    <img src="https://www.guru99.com/images/sap/2011/01/25.png">
+                    <b>After:</b>
+                    <img src="https://www.guru99.com/images/sap/2011/01/34.png">
+            </div>
+            <b>Example of a Function Module Exit</b>
+            <div>
+                The company wants the bank details of the Vendors in the Vendor creation to be mandatory event .
+                So it must flash a error message that 'Please Enter the bank details'
+                <b>Before:</b>
+                <img src="https://www.guru99.com/images/sap/2011/01/43.png">
+                <b>After:</b>
+                <img  src="https://www.guru99.com/images/sap/2011/01/52.png">
+            </div>
+        <h3> Locating Customer Exits</h3>
+        <div>
+                In transaction SMOD and look into the details
+                <img src="https://www.guru99.com/images/sap/2011/02/6.png">
+                Or in transaction SE81 you can use the appropriate application area
+                <img src="https://www.guru99.com/images/sap/2011/01/72.png">
+        </div>
+        <h3> Create a Customer Exit</h3>
+        <div>
+            To create a customer exit you first need to create a project in transaction CMOD
+
+            What is User Exits and Customer Exits in SAP ABAB
+            <img src="https://www.guru99.com/images/sap/2011/01/82.png">
+            Later you assign the Customer Exit to your project. 
+        </div>
+        <h3> What is a USER EXIT?</h3>
+        <div>
+            User Exit serve the same purpose as Customer Exits but they are available only for the SD module.
+             The exit is implemented as a call to a Function Module.
+             The code is written by the developer.
+
+            Well know User Exit in SD is MV45AFZZ
+            <pre>                
+                USEREXIT_FIELD_MODIFICATION - To modify screen attributes
+                USEREXIT_SAVE_DOCUMENT - To perform operations when user hits Save
+                USEREXIT_SAVE_DOCUMENT_PREPARE
+                USEREXIT_MOVE_FIELD_TO_VBAK - When user header changes are moved to header work area.
+                USEREXIT_MOVE_FIELD_TO_VBAP - When user item changes are moved to SAP item work area
+            </pre>
+        </div>
+
+    <h2>What is BADI? </h2>
+    <div>
+            BADI stands for Business Add Ins Just like Customer Exits , BADI  help hook custom enhancements to SAP functionality.
+            Example of a BADI: In transaction CAT2 - Time Sheet Entry, HR wishes to include an interactive acknowledgment
+            that knowingly submitting incorrect data is grounds for dismissal.
+            This can be achieved using BADI
+            <h4>befor:</h4>
+            <img src="https://www.guru99.com/images/sap/2011/01/17.png">
+            <h4>After:</h4>
+            <img src="https://www.guru99.com/images/sap/2011/01/17.png">
+        <h3>Features:</h3>
+        <div>            
+            . BADI's are Object Oriented
+            . They can be implemented multiple times
+            . It does not require SAP Software Change Registration
+            . No effect on release upgraded on the functioning of BADI's
+        </div>
+        <h3>Define and Implement a BADI</h3>
+        <div>
+                This involved three steps
+
+                Step 1 Creating BADI Definition : Transaction SE18
+                <img src="https://www.guru99.com/images/sap/2011/01/18.png">
+
+                Step 2 Define BADI interface: Transaction SE19
+                <img src="https://www.guru99.com/images/sap/2011/01/26.png">
+
+                Step 3 Define a class implements the interface :
+                 During implementation creation, a class for implementing the enhancement's interface is also created
+        </div>    
+    </div>
+</div>
+
+<h2>ABAP Query Tutorial in SAP: SQ01, SQ02, SQ03</h2>
+<div>
+    The ABAP Query application is used to create reports not already present in SAP system.
+        It has been designed for users with little or no knowledge of the ABAP programming. 
+        ABAP Query offers users a broad range of ways to define reports and create different types of reports such as 
+        basic lists, statistics, and ranked lists.
+    
+    The ABAP Query comprises four components:
+    <div>
+        
+        1.Queries
+        2.InfoSets
+        3.User Groups
+        4.Translation of Query
+
+    </div>
+    <h3>Queries</h3>
+    <div>
+        The Queries component is used by end users to maintain queries.
+            One can create queries,change queries and execute queries. Transaction SQ01
+            <img src="https://www.guru99.com/images/sap/2011/01/14.png">
+    </div>
+    <h3>InfoSets</h3>
+    <div>
+            InfoSets are special views of data sources.
+             An InfoSet describes which fields of a data source can be reported on in queries. 
+             An InfoSet can be assigned to several roles or user groups.
+
+            Advantages-
+            
+                By creating InfoSets and assigning them to roles or user groups,
+                 the system administrator determines the range of reports that the individual application departments
+                  or end-users are able to generate using the SAP Query.
+                End-users are able to work only with those InfoSets that are relevant to their particular area, 
+                as designated by the role or user group that they are assigned to.            
+    </div>
+    <h3>USER Groups</h3>
+    <div>
+            The User Groups component is used to maintain user groups (from a security standpoint).
+
+            Users working in the same application are assigned to the same user group.
+            It does not matter who actually defined a query in a user group.
+             Every user assigned to the user group is able to execute the query.
+            
+            Users in a user group need to have the necessary authorizations before they are able to change or redefine a query. 
+            Every user in a system can be assigned to several user groups.
+
+    </div>
+
+    <h3>Translation/QUERY Component</h3>
+    <div>
+            A lot of texts are generated when defining queries, InfoSets, and user groups.
+            These texts are displayed in the language that we chose when we log on to the SAP system.
+            We can compare the text/languages using this component. 
+    </div>
+
+    <h3> Data processing in Queries        </h3>
+    <div>
+        Data can be processed and presented in 3 ways:-
+        <div>
+            <b>BASIC LIST</b> - Presents data in the order defined by the functional area ( supports sorting and summation ).
+            <b>STATISTIC</b> - Shows the statistical figures calculated from the basic data.
+            <b>RANKED LIST </b>- A ranked list is a specialization of a statistic. E.x. Top ten customers of a travel agency.
+        </div>
+        A query can have one  basic list , upto nine statistics and upto nine ranked lists.
+        
+    </div>
+
+    <h3>CREATING A QUERY</h3>
+    <div>
+        Step 1. Goto SQ01. Give a name to the query and click on the Create button
+        <img src="https://www.guru99.com/images/sap/2011/01/24.png">
+        
+        Step 2. Give the description of the query in the next screen. 
+        Specify the output length and select the processing option from the Further Processing Options box.
+            The data can be displayed in various formats such as table, download to a file, and display in Word etc.
+        <img src="https://www.guru99.com/images/sap/2011/01/33.png">
+
+        Step 3.  Click on the next screen, select the field group to be used.
+        <img src="https://www.guru99.com/images/sap/2011/01/42.png">
+        Step 4. Click on the next screen, select the fields you want displayed
+        <img src="https://www.guru99.com/images/sap/2011/01/51.png">
+        Step 5. On the next screen, select the selection fields and then chose one of the output types ( basic, statistics, ranked ).
+        In each of the lists, you can select various options.
+        ( eg. Sort order of fields, change output length, column color,totals,page header, page footer etc.).
+        <img src="https://www.guru99.com/images/sap/2011/01/64.png">
+        Step 6. After providing all the above options you can save the query and execute it .
+        <img src="https://www.guru99.com/images/sap/2011/01/81.png">
+    </div>
+
+</div>
+<h2>SAP ABAP BDC (Batch Data Communication) </h2>
+<div>
+    <h3>Introduction to Batch input</h3>
+    <div>
+
+    </div>
+    Batch input is typically used to transfer data from non-R/3 systems to R/3 systems or to transfer data between R/3 systems.
+    
+    It is a data transfer technique that allows you to transfer datasets automatically to screens belonging to transactions,
+        and thus to an SAP system. Batch input is controlled by a batch input session.
+
+    <b>Batch input session</b>
+    Groups a series of transaction calls together with input data and user actions .
+    A batch input session can be used to execute a dialog transaction in batch input,
+    where some or all the screens are processed by the session. 
+    Batch input sessions are stored in the database as database tables and can be used within a program as internal tables
+    when accessing transactions.
+
+    <b>Points to note        </b>
+    <div>    
+        . BDI works by carrying out normal SAP transactions just as a user would but it execute the transaction automatically.
+        All the screen validations and business logic validation will be done while using Batch Data Input.
+        . It is suitable for entering large amount of data.
+        . No manual interaction is required
+    </div>
+    
+    <h3> Methods of Batch Input        </h3>
+    <div>
+        SAP provide two basic methods for transferring legacy data in to the R/3 System.
+        <div>
+            1.Classical Batch Input method.
+            2.Call Transaction Method.        
+        </div>
+        
+        <b>Classical Batch Input method</b>
+        
+        In this method an ABAP/4 program reads the external data to the SAP System and stores in a batch input session.
+        
+        After creating the session, you can run the session to execute the SAP transaction in it.
+        
+        This method uses the function modules BDC_ OPEN, BDC_INSERT and BDC_CLOSE
+        
+        Batch Input Session can be process in 3 ways
+        
+            1.In the foreground
+            2.In the background
+            3.During processing, with error display
+        
+        You should process batch input sessions in the foreground or using the error display if you want to test the data transfer.
+        
+        If you want to execute the data transfer or test its performance, you should process the sessions in the background.
+        
+        <b>Points to note about Classical Batch Input method</b>
+        
+            . Asynchronous processing
+            . Transfer data for multiple transactions.
+            . Synchronous database update.
+            . A batch input process log is generated for each session.
+            . Session cannot be generated in parallel.    
+        
+        <b>Call Transaction Method</b>
+        <div>
+            In this method ABAP/4 program uses CALL TRANSACTION USING statement to run an SAP transaction.
+            Entire batch input process takes place online in the program     
+            <img src="https://www.guru99.com/images/sap/2011/01/sap-bdc.png">
+            Points to Note:
+            <div>
+            . Faster processing of data
+            . Synchronous processing
+            . Transfer data for a single transaction.
+            . No batch input processing log is generated.
+            </div>
+
+        </div>
+
+        
+    </div>
+    <h3> Batch Input Procedures</h3>
+    <div>
+        <img src="https://www.guru99.com/images/sap/2011/01/sap-bdc1.jpg">
+        You will typically observe the following sequence of steps to develop Batch Input for your organization
+        <div>           
+            1. Analysis of the legacy data. Determine how the data to be transferred is to be mapped in to the SAP Structure.
+              Also take note of necessary data type or data length conversions.
+            2. Generate SAP data structures for using in export programs.
+            3. Export the data in to a sequential file. Note that character format is required by predefined SAP batch input programs.
+            4. If the SAP supplied BDC programs are not used, code your own batch input program. 
+              Choose an appropriate batch input method according to the situation.
+            5. Process the data and add it to the SAP System.
+            6. Analyze the process log. For the CALL TRANSACTION method, where no proper log is created, 
+              use the messages collected by your program.
+            7. From the results of the process analysis, correct and reprocess the erroneous data.
+        </div>
+        
+    </div>
+    <h3> Writing BDC program </h3>
+    <div>
+        You may observe the following process to write your BDC program
+        <div>
+            1.Analyze the transaction(s) to process batch input data.
+            2.Decide on the batch input method to use.
+            3.Read data from a sequential file
+            4.Perform data conversion or error checking.
+            5.Storing the data in the batch input structure,BDCDATA.
+            6.Generate a batch input session for classical batch input,or process the data directly with CALL TRANSACTION USING statement.
+        </div>
+        <b>Batch Input Data Structure</b>
+        <div>
+            Declaration of batch input data structure
+            <pre>
+                    DATA : BEGIN OF < bdc table>
+
+                    OCCURS <occurs parameters>.
+                    
+                    INCLUDE STRUCTURE BDCDATA.
+                    
+                    DATA:END OF <bdc table>.
+            </pre>
+            <br>
+            <table >
+                <thead>
+                    <tr>
+                         <th> Field name</th>
+                        <th> Type</th>
+                        <th> Length</th>
+                        <th> Description</th>
+                    </tr> 
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> PROGRAM</td>
+                        <td> CHAR</td>
+                        <td> 8</td>
+                        <td> Module pool</td>
+                    </tr>
+                    <tr>
+                        <td> DYNPRO</td>
+                        <td> NUMC</td>
+                        <td> 4</td>
+                        <td> Dynpro number</td>
+                    </tr>
+                    <tr> 
+                        <td> DYNBEGIN</td> 
+                        <td> CHAR</td> 
+                        <td> 1</td> 
+                        <td> Starting a dynpro</td> 
+                    </tr> 
+                    <tr> <td> FNAM</td> <td> CHAR</td> <td> 35</td> <td> Field name</td> </tr>
+                     <tr> <td> FVAL</td> <td> CHAR</td> <td> 80</td> <td> Field value</td> </tr>
+                </tbody>
+            </table>
+            The order of fields within the data for a particular screen is not of any significance
+            <b>Points to Note</b>
+            <div>
+                
+                . While populating the BDC Data make sure that you take into consideration the user settings. This is specially relevant for filling fields which involves numbers ( Like quantity, amount ). It is the user setting which decides on what is the grouping character for numbers E.g.: A number fifty thousand can be written as 50,000.00 or 50.000,00 based on the user setting.
+                . Condense the FVAL field for amount and quantity fields so that they are left aligned.
+                . Note that all the fields that you are populating through BDC should be treated as character type fields while populating the BDC Data table.
+                . In some screens when you are populating values in a table control using BDC you have to note how many number of rows are present on a default size of the screen and code for as many rows. If you have to populate more rows then you have to code for "Page down" functionality as you would do when you are populating the table control manually.
+                . Number of lines that would appear in the above scenario will differ based on the screen size that the user uses. So always code for standard screen size and make your BDC work always in standard screen size irrespective of what the user keeps his screen size as.
+
+            </div>
+
+        </div>
+    </div>
+    <h3> Creating Batch Input Session  </h3>
+    <div>
+            
+        1. Open the batch input session session using function module BDC_OPEN_GROUP.
+        2. For each transaction in the session:
+        . Fill the BDCDATA with values for all screens and fields processed in the transaction.
+        . Transfer the transaction to the session with BDC_INSERT.
+        3. Close the batch input session with BDC_CLOSE_GROUP
+    </div>
+    <h3> Batch Input Recorder</h3>
+    <div>
+            Batch input recorder (System > Services > Batch input > Recorder) 
+            records transactions which are manually entered and creates a batch input session which can be executed later using SM35.
+            <img src="https://www.guru99.com/images/sap/2011/01/sap-bdc2.jpg">
+            <div>
+                
+                <b>.</b> Begin the batch input recorder by selecting the Recording pushbutton from the batch input initial screen.
+                <b>.</b> The recording name is a user defined name and can match the batch input session name which can be created from the recording.
+                <b>.</b> Enter a SAP transaction and begin posting the transaction.
+                <b>.</b> After you have completed posting a SAP transaction you either choose Get Transaction and Save to end the recording or
+                 Next Transaction and post another transaction.
+                 <b>.</b> Once you have saved the recording you can create a batch input session from the recording and/or generate 
+                a batch input program from the recording.
+                <b>.</b> The batch input session you created can now be analyzed just like any other batch input session.
+                <b>.</b> The program which is generated by the function of the batch input recorder is a powerful tool for
+                 the data interface programmer. It provides a solid base which can then be altered according to customer requirements.
+
+            </div>
+    </div>
+</div>
+<h2>ALE, EDI & IDocs</h2>
+<div>
+    EDI, stands for Electronic Data Interchange, is the electronic exchange of structured business data between different applications.
+    <b>EDI Architecture consists of</b>
+    <div>            
+        1. EDI-enabled applications :They support the automatic processing of business transactions.
+        2. The IDoc interface: This was designed as an open interface. The IDoc interface consists of IDoc types 
+        and function modules that form the interface to the application.
+        3. The EDI subsystem: This converts the IDoc types into EDI message types and vice versa. 
+        This component of the EDI architecture is not supplied by SAP.
+    </div>
+    <b>Advantages of EDI process</b>
+    <div>        
+        <b>.</b> Reduced data Entry Errors
+        <b>.</b> Reduced Processing cycle time
+        <b>.</b> Availability of data electronic form
+        <b>.</b> Reduced Paper Work
+        <b>.</b> Reduced Cost
+        <b>.</b> Reduced Inventories and Better Planning
+        <b>.</b> Standard Means of Communicating
+        <b>.</b> Better Business Processes
+        <b>.</b> Competitive Advantage
+    </div>
+    <h3>What is ALE</h3>
+    <div>
+            ALE supports the distribution of the business functions and process across loosely coupled SAP R/3 systems (different versions of SAP R/3). Connections from R/2 and non SAP systems is also supported.
+
+            ALE supports-
+            
+                Distribution of applications between different releases of R/3 Systems
+                Continued data exchange after a release upgrade without requiring special maintenance
+                Customer-specific extensions.
+                Communication interfaces that allow connections to non-SAP systems.
+                Coupling of R/3 and R/2 Systems.            
+    </div>
+    <h3>Difference between ALE and EDI ?</h3>
+    <div>
+            ALE is used to support distributed yet integrated processes across several SAP systems whereas EDI is used for the exchange of business documents between the systems of business partners (could be non-SAP systems)
+
+            ALE is SAP's technology for supporting a distributed environment whereas EDI is a process used for exchange of business documents which now have been given a standard format
+            
+            Both ALE and EDI require data exchange. An Idoc is a data container which is used for data exchange by both EDI and ALE processes.
+    </div>
+    <h2>What is IDOC?</h2>
+    <div>
+            IDOC is simply a data container used to exchange information between any two processes that can understand the syntax and 
+            semantics of the data.
+
+            In simple words , an idoc is like a data file with a specified format which is exchanged between 2 systems which
+             know how to interpret that data.
+            
+            IDOC stands for " Intermediate Document"
+            
+            When we execute an outbound ALE or EDI Process, an IDOC is created.In an inbound ALE or EDI process, 
+            an IDOC serves as input to create an application document.In the SAP System, IDOCs are stored in database.
+            Every IDOC has an unique number(within a client).
+            
+            IDOCs are based on EDI standards, ANSI ASC X12 and EDIFACT. In case of any conflict in data size, it adopts one with greater length.
+            IDOCs are independent of the direction of data exchange e.g. ORDERS01 : Purchasing module : Inbound and Outbound.
+            IDOCs can be viewed in a text editor.
+            Data is stored in character format instead of binary format.
+            IDOCs are independent of the sending and receiving systems.(SAP-to-SAP as well as Non-SAP)   
+            <h3>Key Features</h3>
+            <div>                
+                <b>.</b> IDOCs are independent of the sending and receiving systems.(SAP-to-SAP as well as Non-SAP)
+                <b>.</b> IDOCs are based on EDI standards, ANSI ASC X12 and EDIFACT. In a case of any conflict in data size, it adopts one with greater length.
+                <b>.</b> IDOCs are independent of the direction of data exchange e.g. ORDERS01: Purchasing module: Inbound and Outbound
+                <b>.</b> IDOCs can be viewed in a text editor. Data is stored in character format instead of binary format.
+            </div>       
+            <a href="https://www.guru99.com/all-about-idocdefinition-architecture-implementation.html">More Info..</a>  
+    </div>
+    <h2>What is BAPI?</h2>
+    <div>
+            Business Application Programming Interface(BAPI) are standardized programming interfaces (methods) 
+            enabling external applications to access business processes and data in the R/3 System.
+
+            They provide stable and standardized methods to achieve seamless integration between the R/3 System and external applications,
+             legacy systems and add-ons.
+            
+            BAPIs are defined in the  BOR(Business object repository) as methods of SAP business object types that carry out 
+            specific business functions.They  are implemented as RFC-enabled function modules and are created in the Function
+             Builder of the ABAP Workbench.
+            
+            
+            Some BAPIs and methods provide basic functions and can be used for most SAP Business Objects.These are called STANDARDIZED BAPI's.
+            
+            List of Standardized BAPIs:
+            
+                BAPIs for Reading Data - GetList() , GetDetail() , GetStatus() , ExistenceCheck()
+                BAPIs for Creating or Changing Data- Create() ,Change(),Delete() and Undelete() ,
+                BAPIs for Mass Processing -ChangeMultiple(), CreateMultiple(), DeleteMultiple().           
+        <a href="https://www.guru99.com/all-about-bapi.html">More Info</a>
+    </div>
+    <h2>Remote Function Call (RFC)</h2>
+    <div>
+            What is RFC?
+
+            RFC is a mechanism that allows business applications to communicate and exchange information (in pre-defined formats) with other systems. RFC stands for 'Remote Function Call'
+            
+            RFC consists of two interfaces:
+            
+                A calling interface for ABAP Programs
+                A calling interface for Non-SAP programs.
+            
+            Any ABAP program can call a remote function using the CALL FUNCTION...DESTINATION statement.
+             The DESTINATION parameter tells the SAP System that the called function runs in a system other than the callers.
+        <a href="https://www.guru99.com/rfc-remote-function-call.html">More Info..</a>
+    </div>
+
+</div>
+</body>
 </html>
