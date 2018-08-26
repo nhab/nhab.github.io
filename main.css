@@ -7,12 +7,23 @@
 html {
   word-break: break-all;
 }
-body,p,div,pre,li,span,td {
-   background-color: #ccd6c9;   font-weight:lighter;  
+body{
+  background-color: #ccd6c9;  
+  font-weight:lighter;  
+
+  height:100%;
+	overflow-y:auto;
+}
+
+p,pre,li,span,td {
+   background-color: #ccd6c9;  
+    font-weight:lighter;  	
 }
 div{
   background-color: #ccd6c9;   font-weight:lighter;  white-space: pre-line;
+
 }
+
 h1{display: flex;
   justify-content: center;
   align-items: center;
