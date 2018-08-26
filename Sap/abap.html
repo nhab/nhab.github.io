@@ -8,9 +8,11 @@
       $(document).ready(function(){
          $('#content1').jqTOC({tocContainer:'abc',tocShow:'show'});
          $('#content').jqTOC({
-      tocWidth:800,
-      tocTitle: "Table of Contents",
-   });
+                tocWidth:800,
+                tocTitle: "Table of Contents",
+                tocStart: 1,
+                tocEnd  : 3
+        });
       });
    </script>
 </head>
@@ -33,7 +35,9 @@
     <br>  Class Pool are K programs type that represented with the keyword CLASS-POOL.
     <br> P/4, the earlier ABAP version, as well as applications using ABAP         Objects.
     </div>
+    
     <h2>Types of ABAP 4 Programs</h2>
+    <div>
         <pre>
         <strong>Executable Programs (ABAP Reports):</strong>
             are I programs type that represented with the keyword REPORT
@@ -59,144 +63,149 @@
         <strong>Type group:</strong> 
             are represented with the keyword TYPE-POOL.
         </pre>
-    <h2>Data Types</h2>
-    <h3>Declaring variable :</h3>
-    <code>
-        DATA Variable_Name Type Variable_Type
-    </code>
-    <p>Example:</p>
-    <code>
-    DATA employee_number Type I.
-    </code>
-    <br>
-    <p>The following is a list of Data Types supported by ABAP</p>
-    <br>
-    <table border="1" cellspacing="1" class="table table-striped" style=
-    " display: block; overflow: scroll;overflow-x: auto;overflow-y: auto;">
-        <tbody>
-        <tr>
-            <th style="width:12%"><strong>Data Type</strong></th>
-            <th style="width:18%"><strong>Initial field length</strong></th>
-            <th style="width:18%"><strong>Valid field length</strong></th>
-            <th style="width:18%"><strong>Initial value</strong></th>
-            <th><strong>Meaning</strong></th>
-        </tr>
-        <tr>
-            <td colspan="5"><em><strong>Numeric types</strong></em></td>
-        </tr>
-        <tr>
-            <td>I</td>
-            <td>4</td>
-            <td>4</td>
-            <td>0</td>
-            <td>Integer (whole number)</td>
-        </tr>
-        <tr>
-            <td>F</td>
-            <td>8</td>
-            <td>8</td>
-            <td>0</td>
-            <td>Floating point number</td>
-        </tr>
-        <tr>
-            <td>P</td>
-            <td>8</td>
-            <td>1 - 16</td>
-            <td>0</td>
-            <td>Packed number</td>
-        </tr>
-        <tr>
-            <td colspan="5"><em><strong>Character types</strong></em></td>
-        </tr>
-        <tr>
-            <td>C</td>
-            <td>1</td>
-            <td>1 - 65535</td>
-            <td>' ... '</td>
-            <td v="">Text field(alphanumeric characters)</td>
-        </tr>
-        <tr>
-            <td>D</td>
-            <td>8</td>
-            <td>8</td>
-            <td>'00000000'</td>
-            <td>Date field(Format: YYYYMMDD)</td>
-        </tr>
-        <tr>
-            <td>N</td>
-            <td>1</td>
-            <td>1 - 65535</td>
-            <td>'0 ... 0'</td>
-            <td>Numeric text field(numeric characters)</td>
-        </tr>
-        <tr>
-            <td>T</td>
-            <td>6</td>
-            <td>6</td>
-            <td>'000000'</td>
-            <td>Time field(format: HHMMSS)</td>
-        </tr>
-        <tr>
-            <td colspan="5"><em><strong>Hexadecimal type</strong></em></td>
-        </tr>
-        <tr>
-            <td>X</td>
-            <td>1</td>
-            <td>1 - 65535</td>
-            <td>X'0 ... 0'</td>
-            <td>Hexadecimal field</td>
-        </tr>
-        </tbody>
-    </table>
-    <h3> Assigning Values</h3>
-    <pre>
-    a=16.
+    </div>
+    <h2>Variables and Data Types</h2>
+    <div>
+        <h3>Declaring variable :</h3>
+        <code>
+            DATA Variable_Name Type Variable_Type
+        </code>
+        <p>Example:</p>
+        <code>
+        DATA employee_number Type I.
+        </code>
+        <br>
+        <p>The following is a list of Data Types supported by ABAP</p>
+        <br>
+        <table border="1" cellspacing="1" class="table table-striped" style=
+        " display: block; overflow: scroll;overflow-x: auto;overflow-y: auto;">
+            <tbody>
+            <tr>
+                <th style="width:12%"><strong>Data Type</strong></th>
+                <th style="width:18%"><strong>Initial field length</strong></th>
+                <th style="width:18%"><strong>Valid field length</strong></th>
+                <th style="width:18%"><strong>Initial value</strong></th>
+                <th><strong>Meaning</strong></th>
+            </tr>
+            <tr>
+                <td colspan="5"><em><strong>Numeric types</strong></em></td>
+            </tr>
+            <tr>
+                <td>I</td>
+                <td>4</td>
+                <td>4</td>
+                <td>0</td>
+                <td>Integer (whole number)</td>
+            </tr>
+            <tr>
+                <td>F</td>
+                <td>8</td>
+                <td>8</td>
+                <td>0</td>
+                <td>Floating point number</td>
+            </tr>
+            <tr>
+                <td>P</td>
+                <td>8</td>
+                <td>1 - 16</td>
+                <td>0</td>
+                <td>Packed number</td>
+            </tr>
+            <tr>
+                <td colspan="5"><em><strong>Character types</strong></em></td>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td>1</td>
+                <td>1 - 65535</td>
+                <td>' ... '</td>
+                <td v="">Text field(alphanumeric characters)</td>
+            </tr>
+            <tr>
+                <td>D</td>
+                <td>8</td>
+                <td>8</td>
+                <td>'00000000'</td>
+                <td>Date field(Format: YYYYMMDD)</td>
+            </tr>
+            <tr>
+                <td>N</td>
+                <td>1</td>
+                <td>1 - 65535</td>
+                <td>'0 ... 0'</td>
+                <td>Numeric text field(numeric characters)</td>
+            </tr>
+            <tr>
+                <td>T</td>
+                <td>6</td>
+                <td>6</td>
+                <td>'000000'</td>
+                <td>Time field(format: HHMMSS)</td>
+            </tr>
+            <tr>
+                <td colspan="5"><em><strong>Hexadecimal type</strong></em></td>
+            </tr>
+            <tr>
+                <td>X</td>
+                <td>1</td>
+                <td>1 - 65535</td>
+                <td>X'0 ... 0'</td>
+                <td>Hexadecimal field</td>
+            </tr>
+            </tbody>
+        </table>
+        <h3> Assigning Values</h3>
+        <pre>
+        a=16.
 
-    move 16 to a.
+        move 16 to a.
 
-    write a to b.
-    </pre>
-    <h3>- Arithmetic Operations</h3>
-    <code>
-    compute a = a*100.
-    </code>
+        write a to b.
+        </pre>
+        <h3>- Arithmetic Operations</h3>
+        <code>
+        compute a = a*100.
+        </code>
+    </div>
     <h2>Control Statements</h2>
-    <h3> If ... EndIf Loop</h3>
-    <pre>
-    if [not] exp [ and / or [not] exp ].
-    ........
-    [elseif exp.
-    .......]
-    [else.
-    .......]
-    Endif.
-    </pre>
-    <h3>Case statement</h3>
-    <pre>
-    Case variable.
-    when value1.
-    .........
-    when value2.
-    .........
-    [ when others.
-    .........]
-    Endcase.
-    Do.
-    </pre>
-    <h3>While loop</h3>
-    <pre>
-    While &lt;logical expression&gt;.
-    .....
-    .....
-    Endwhile.
-    </pre>
-    <h3> Do loop</h3>
-    <pre>
-    Do &lt;n&gt; times.
-    .....
-    .....
-    Enddo.
-    </pre>
+    <div>
+        <h3> If ... EndIf Loop</h3>
+        <pre>
+        if [not] exp [ and / or [not] exp ].
+        ........
+        [elseif exp.
+        .......]
+        [else.
+        .......]
+        Endif.
+        </pre>
+        <h3>Case statement</h3>
+        <pre>
+        Case variable.
+        when value1.
+        .........
+        when value2.
+        .........
+        [ when others.
+        .........]
+        Endcase.
+        Do.
+        </pre>
+        <h3>While loop</h3>
+        <pre>
+        While &lt;logical expression&gt;.
+        .....
+        .....
+        Endwhile.
+        </pre>
+        <h3> Do loop</h3>
+        <pre>
+        Do &lt;n&gt; times.
+        .....
+        .....
+        Enddo.
+        </pre>
+    </div>
     <h2>Logical Operator</h2>
     <h3>A list of logical operators</h3>
     <ul>
@@ -212,6 +221,7 @@
 
         <li>NE or &lt;&gt;</li>
     </ul>
+
     <h2>What is Data Dictionary?</h2>
     <div>
         Data Dictionary is a central source of information for the data the system. 
@@ -265,41 +275,42 @@
         </li>
     </ul>
     </div>
+    
     <h2>Aggregated Objects of ABAP Dictionary</h2>
     <div>
         .Aggregated means consisting of several components.
         .In the ABAP Dictionary, aggregated objects are objects which come from several different 
         transparent tables.
 
-    </div>
-    <h3>Views</h3>
-    <div>
-        . Are same as database views.
-        . Views are used to summarize data which is distributed among several tables
-        . The data of a view is not actually physically stored.
-        . The data of a view is instead derived from one or more other tables
-        , It is tailored to the needs of a specific application
+        
+        <h3>Views</h3>
+        <div>
+            . Are same as database views.
+            . Views are used to summarize data which is distributed among several tables
+            . The data of a view is not actually physically stored.
+            . The data of a view is instead derived from one or more other tables
+            , It is tailored to the needs of a specific application
 
-    </div>
-    <h3>Search Help</h3>
-    <div>
-            . Search help is a tool to help you search for data records in the system
-            . An efficient and user-friendly search assists users where the key of a record is unknown
+        </div>
+        <h3>Search Help</h3>
+        <div>
+                . Search help is a tool to help you search for data records in the system
+                . An efficient and user-friendly search assists users where the key of a record is unknown
 
-    </div>
-    <h3>Lock Objects</h3>
-    <div>
-    . Simultaneous accessing of the same data record by two users is synchronized by a lock mechanism.
-    . Locks are set and released by calling certain function modules.
-    . These function modules are generated automatically from the definition of so-called lock objects in the ABAP/4 Dictionary.
-    
-    <h4>Function modules :</h4>
-        <b>Enqueue_<obj name></obj></b> : to lock the table
-        <b>dequeue_<obj name></obj></b> : to release the lock
+        </div>
+        <h3>Lock Objects</h3>
+        <div>
+        . Simultaneous accessing of the same data record by two users is synchronized by a lock mechanism.
+        . Locks are set and released by calling certain function modules.
+        . These function modules are generated automatically from the definition of so-called lock objects in the ABAP/4 Dictionary.
+        
+        <h4>Function modules :</h4>
+            <b>Enqueue_<obj name></obj></b> : to lock the table
+            <b>dequeue_<obj name></obj></b> : to release the lock
 
+        </div>
     </div>
-    
-    <h3>Important Transactions</h3>
+    <h2>Important Transactions</h2>
     <div>
             <table style="width:50%">
                 <tr><td>SE11</td><td>Data Dictionary Initial Screen (SE12 Display only)</td></tr>  
@@ -350,9 +361,7 @@
         </pre>
         
     </diV>
-    <h2>
-    Include Programs
-    </h2>
+    <h2> Include Programs</h2>
     <div>
         . Include Programs are solely for modularizing source code, and have no parameter interface.
         . they  allow use of the same source code in different programs. 
@@ -374,6 +383,7 @@
         </pre>
     
     </div>
+    
     <h2>  Subroutines  </h2>
     <div>
         . Subroutines are procedures defined and used in program.
@@ -387,6 +397,7 @@
         </pre>
         <br>
     </div>
+    
     <h2> Types of Subroutines </h2>
     <div>
         <h3>Internal</h3>
@@ -404,6 +415,7 @@
         </div>
         
     </div>
+    
     <h2> Calling a Subroutine Internal Subroutines</h2>
     <div>
         <pre>
@@ -416,31 +428,31 @@
         . Data declared in main program is automatically available.
 
     </div>
+    
     <h2>External Subroutines</h2>
     <div>
-    <pre>
-    PERFORM < subroutine >(< Program>) [< pass>].
+        <pre>
+        PERFORM < subroutine >(< Program>) [< pass>].
 
-    PERFORM < subroutine> (< Program>) [< pass>] [IF FOUND].
+        PERFORM < subroutine> (< Program>) [< pass>] [IF FOUND].
 
-    PERFORM (< subroutine>) IN PROGRAM  (< Program>) [< pass>] [IF FOUND].
+        PERFORM (< subroutine>) IN PROGRAM  (< Program>) [< pass>] [IF FOUND].
 
-    PERFORM < index> OF < subroutine1> < subroutine2> < subroutine3> [< pass>]. 
-    </pre>
-    </div>
-    <h3>
-    Points to Note 
-    </h3>
-    <div>
-            . <b>Nested calls</b> are allowed in subroutines (i.e. PERFORM within a FORM ... ENDFORM ).
-            . <b>Recursive calls</b> are also possible.
-            . To define <b>local data</b>, use the DATA statement after FORM .
-            . To define <b>global data</b> used within a subroutine, use the LOCAL statement after FORM . 
-            . The values are saved when you enter the subroutine and then released at the end (from the stack)
-            . Each time you enter the subroutine,
-            the data is recreated   (with an initial value)
-            and released at the end (from the stack).
+        PERFORM < index> OF < subroutine1> < subroutine2> < subroutine3> [< pass>]. 
+        </pre>
+        
+        <h3>    Points to Note    </h3>
+        <div>
+                . <b>Nested calls</b> are allowed in subroutines (i.e. PERFORM within a FORM ... ENDFORM ).
+                . <b>Recursive calls</b> are also possible.
+                . To define <b>local data</b>, use the DATA statement after FORM .
+                . To define <b>global data</b> used within a subroutine, use the LOCAL statement after FORM . 
+                . The values are saved when you enter the subroutine and then released at the end (from the stack)
+                . Each time you enter the subroutine,
+                the data is recreated   (with an initial value)
+                and released at the end (from the stack).
 
+        </div>
     </div>
 
     <h2>Function Modules</h2>
@@ -489,6 +501,7 @@
             </ol>
         </div>
     </div>
+    
     <h2>Function Groups</h2>
     <div>
         . Function groups <b>are containers</b> for function modules.
@@ -516,6 +529,7 @@
         </ul>
         <br>
     </div>
+
     <h2>Open SQL & Native SQL </h2>
     <div>
         <h3>Types of SQL</h3>
@@ -611,314 +625,315 @@
     </div>
 
     <h2>Open SQL - Performance Rules</h2>
-        <div>
-            To improve the performance of the SQL and in turn of the ABAP program, one should take care of the following rules :
+    <div>
+        To improve the performance of the SQL and in turn of the ABAP program, one should take care of the following rules :
 
-            <h3>Keep the Result Set Small</h3>
-            Using the where clause
-            If only one record is required from the database, use SELECT SINGLE whenever possible
+        <h3>Keep the Result Set Small</h3>
+        Using the where clause
+        If only one record is required from the database, use SELECT SINGLE whenever possible
 
-            <h3>Minimize the Amount of Data Transferred</h3>
-            <ul> <li>Restrict the number of lines</li>
-                <li>If only certain fields are required from a table, use the SELECT &lt;field1&gt; &lt;field2&gt; INTO ... statement</li>
-                <li>Restrict no of columns</li>
-                <li>Use aggregate functions</li>
+        <h3>Minimize the Amount of Data Transferred</h3>
+        <ul> <li>Restrict the number of lines</li>
+            <li>If only certain fields are required from a table, use the SELECT &lt;field1&gt; &lt;field2&gt; INTO ... statement</li>
+            <li>Restrict no of columns</li>
+            <li>Use aggregate functions</li>
+        </ul>
+        <br>
+        <h3>Minimize the Number of Data Transfers</h3>
+            <ul> <li>Avoid nested select loops</li>
+                <li>An alternative option is to use the SELECT .. FOR ALL ENTRIES statement.
+                    This statement can often be a lot more efficient than performing a large number 
+                    of SELECT or SELECT SINGLE statements during a LOOP of an internal table.</li> 
             </ul>
-            <br>
-            <h3>Minimize the Number of Data Transfers</h3>
-                <ul> <li>Avoid nested select loops</li>
-                    <li>An alternative option is to use the SELECT .. FOR ALL ENTRIES statement.
-                        This statement can often be a lot more efficient than performing a large number 
-                        of SELECT or SELECT SINGLE statements during a LOOP of an internal table.</li> 
-                </ul>
-                <ul>
-                    <li>Use dictionary views</li>
-                    <li>Use Joins in the FROM clause</li> 
-                    <li>Use subqueries in the where clause</li> 
-                </ul>
-            <br>
-            <h3>Minimize the Search Overhead</h3>
-                <ul> <li>Use index fields in the where clause</li>
-                    <li>When accessing databases, always ensure that the correct index is being used .</li>
-                </ul>
-            <br>
-            <h3>Reduce the Database Load</h3>
-                <ul>
-                    <li>Buffering</li> <li>Logical databases</li> <li>Avoid repeated database access</li>
-                </ul>
+            <ul>
+                <li>Use dictionary views</li>
+                <li>Use Joins in the FROM clause</li> 
+                <li>Use subqueries in the where clause</li> 
+            </ul>
+        <br>
+        <h3>Minimize the Search Overhead</h3>
+            <ul> <li>Use index fields in the where clause</li>
+                <li>When accessing databases, always ensure that the correct index is being used .</li>
+            </ul>
+        <br>
+        <h3>Reduce the Database Load</h3>
+            <ul>
+                <li>Buffering</li> <li>Logical databases</li> <li>Avoid repeated database access</li>
+            </ul>
 
-                <h3>Using Internal Tables to Buffer Records</h3>
-                <ul> <li>To avoid executing the same SELECT multiple times (and therefore have duplicate selects),
-                    an internal table of type HASHED can be used to improve performance.</li>
-                </ul>
-        </div>
+            <h3>Using Internal Tables to Buffer Records</h3>
+            <ul> <li>To avoid executing the same SELECT multiple times (and therefore have duplicate selects),
+                an internal table of type HASHED can be used to improve performance.</li>
+            </ul>
+    </div>
 
     <h2> Internal Table</h2>
-        <div> Internal tables are <b>used to obtain data</b> from a fixed structure for dynamic use in ABAP.
+    <div> Internal tables are <b>used to obtain data</b> from a fixed structure for dynamic use in ABAP.
                 Each line in the internal table has the same field structure. 
                 The main use for internal tables is for storing and formatting data from a database table 
                 within a program. 
-        </div>
 
-        <h2> Work Area </h2>
+        <h3> Work Area </h3>
         <div> Work areas are single rows of data. 
-                They should have the same format as any of the internal tables. 
-                It is used to process the data in an internal table  one line at a time.
+                    They should have the same format as any of the internal tables. 
+                    It is used to process the data in an internal table  one line at a time.
         </div>
 
-    <h2> Difference Between Internal Table and a Work Area ?</h2>
-    <div>
-        <p align="center"> <a href="http://guru99.com/images/sap/2011/01/sap-internal-table.jpg" class="jh-image-popup-colorbox cboxElement">
-            <img alt="SAP ABAP Internal Table: Create, Read, Populate, Copy &amp; Delete" class="aligncenter size-full wp-image-974"
-            height="273" src="http://guru99.com/images/sap/2011/01/sap-internal-table.jpg" title="sap-internal-table" width="413">
-            </a>
-        </p>
-    </div>
-
-    <h2>Types of Internal Tables</h2>
-    <div>
-        There are 2 types of internal tables. 
-
-        <ol>
-            <li> Internal tables <b> with HEADER line</b></li> 
-            <li> Internal tables <b>without HEADER line.</b></li>
-        </ol>
-        
-        <h3>Internal Tables with Header Line </h3> 
-        <ul>
-            <li> Here the system automatically creates the work area.</li> 
-            <li> The work area has the same data type as internal table.</li>
-            <li> This work area is called the HEADER line.</li>
-            <li> It is here that all the changes or any of the action on the contents of the table are done.
-                As a result of this, records can be directly inserted into the table or accessed from the internal table directly.
-
-            </li> 
-        </ul>
-        <h3> Internal Tables without Header Line: </h3>
-        <ul> 
-            <li> Here there is no work area associated with the table.
-            </li>
-            <li> Work area is to be explicitly specified when we need to access such tables.
-            </li>
-            <li> Hence these tables cannot be accessed directly.</li>
-        </ul>
-    </div> 
-    
-    <h2> Creating Internal Tables</h2>
-    <div>
-        There are <b> many</b> ways to create an Internal Table :
-        
-        <b>1.By Using the Type Statement</b>
+        <h3> Difference Between Internal Table and a Work Area ?</h3>
         <div>
-            Let us now create a Internal table <em>itab </em>using the TYPE statement.
-        
-            <strong>syntax :</strong>
-            <pre>
-                Types : begin of line,
-                column1 type I,
-                column2 type I,
-                end of line.
-            </pre>
-            <br>
-            <p> Example: </p>
-            <pre>
-                TYPES : begin of line,
-                empno		type I,
-                empname(20)   	type c	,
-                end of line.
-            </pre>
-            <br>
-            <p>
-                The TYPES statement creates a structure <em>line </em>as defined.
-                To actually create an Internal Table 
-                <em>itab</em> use the following command-<br> &nbsp;
+            <p align="center"> <a href="http://guru99.com/images/sap/2011/01/sap-internal-table.jpg" class="jh-image-popup-colorbox cboxElement">
+                <img alt="SAP ABAP Internal Table: Create, Read, Populate, Copy &amp; Delete" class="aligncenter size-full wp-image-974"
+                height="273" src="http://guru99.com/images/sap/2011/01/sap-internal-table.jpg" title="sap-internal-table" width="413">
+                </a>
             </p>
-            <pre>
-                Data itab type line occurs 10.
-            </pre>
-            <br>
-            An internal table <em>itab </em>is created with the structure of line.
-                Besides declaring the structure of an internal table, the OCCURS clause also 
-                defines how many table entries are maintained in main storage(in this case 10).
-                Extra records are written out to paging area and can effect performance
-        </div>   
-        <b>2.By referring to another Table</b>
-        <div>
-            You can&nbsp; create an internal table by referring to an existing table.
-            The existing table could be a standard SAP table, a Z table or another internal table.<br> 
-            <b> Syntax :</b>
-                <pre>Data &lt;f&gt; &lt;type&gt; [with header line].
-
-                </pre>
-                
-            <p> Example- </p>
-                <pre>DATA itab TYPE line OCCURS 10 with header line.</pre>
-
-            Here an internal table <em>itab </em>is created of the type line with a header line. Please note
-                    "with header line" is optional
-        </div>          
-        <b>3.By referring to existing Structure </b>
-        <div>
-            Syntax-
-            </p>
-            <pre>Data	&lt;f&gt; LIKE &lt;struct&gt; occurs n [with header line].
-                
-            </pre>
-            <br><p> Example- </p><pre>DATA itab LIKE sline OCCURS 10.
-            </pre>
-            <br><p> Here&nbsp; a table <em>itab </em>is created having a structure same as that of sline
         </div>
-        <b>4.By creating a new Structure</b>
-        <div>
-            Let us now create an internal table with a structure of our own.
-            Here the table is created with an Header line, <strong>by default</strong>.
-            <br> Syntax -
-            <pre>Data : Begin of &lt;f&gt; occurs &lt;n&gt;,
-                &lt;component declaration&gt;,          
-                .................................,
-                End of &lt;f&gt;.
-            </pre>
-            <br><p> Example - </p>
-            <pre>Data : Begin of itab occurs 10,
-                
-                column1       type I,
-                
-                column2(4)  type C,
-                
-                column3      like  mara-ernam,
-                
-                End of itab.
-            </pre>
-            <br><p> Internal table <em>itab </em>is created </p>
-        </div>   
-    </div>     
 
-    <h2>Populating Internal Tables</h2>
-        <div>  
-                Now that we have successfully created some internal tables, let us see how do we populate them with some records.
-                There are various methods available to populate tables
-                <br>
-                <b>1.Append Data line by line</b>
+        <h3>Types of Internal Tables</h3>
+        <div>
+            There are 2 types of internal tables. 
+
+            <ol>
+                <li> Internal tables <b> with HEADER line</b></li> 
+                <li> Internal tables <b>without HEADER line.</b></li>
+            </ol>
             
-                <div>
-                    The first method available is the use of the APPEND statement.
-                    Using the APPEND statement we can either add one line from another work area to the internal table or 
-                    we can add one initial line to the internal table..
-                    
-                    Syntax :
-                    <pre>APPEND [&lt;wa&gt; TO / INITIAL LINE TO] &lt;itable&gt;.</pre> 
-                    
-                    Here work area <em>&lt;wa&gt; </em>or the Initial Line is appended to the internal table <em>&lt;itable&gt;.</em>
-                    The system variable <em>SY-TABIX</em> contains the index of the appended line.
-                    <br> <br> Example:<br> 
-                    <pre>
-                        Data: Begin of itab occurs 10,
-                        col1 type C,
-                        col2 type I,
-                        end of itab.
-                    
-                        Append initial line to itab.
-                    </pre> 
-                    <br>
-                        Results : ' ' '0'
-                    <br> Initial lines adds a line initialized with the correct value for its type to the table. 
-                    Here ,&nbsp; col1 is an integer and col2 is a character. 
-                    Then APPEND initial line , adds a line initialized with respect to the data type of the columns, 
-                    i.e. 0 for Col1 and space for Col2. 
-                </div>
-                <b>2.Using COLLECT statement</b>
-                <div>
-                <br> &nbsp;</div><div> COLLECT is another form of statement used for populating the internal tables.
-                        Generally COLLECT is used while inserting lines into an internal table with unique standard key.
-                        <br> <br> Syntax-<br>
-                        <pre>
-                            COLLECT [&lt;wa&gt; INTO] &lt;itable&gt;.
+            <h3>Internal Tables with Header Line </h3> 
+            <ul>
+                <li> Here the system automatically creates the work area.</li> 
+                <li> The work area has the same data type as internal table.</li>
+                <li> This work area is called the HEADER line.</li>
+                <li> It is here that all the changes or any of the action on the contents of the table are done.
+                    As a result of this, records can be directly inserted into the table or accessed from the internal table directly.
 
-                        </pre> 
-                        Incase of tables with Header line, INTO option is omitted. 
-                        Suppose there is already an entry having a key same as the one you are trying to append,
-                            then a new line is not added to the table,
-                            but the numeric fields of both the entries are added and only one entry corresponding to the key is present.
-                            Value of SY-TABIX is changed to the row of the original entry. 
-                            Else COLLECT acts similar to APPEND and SY-TABIX contains the index of the processed line.
-                </div>
-                <b> 3.<strong>Using INSERT statement</b>
-                <div>
-                    INSERT statement adds a line/work area to the internal table.
-                    You can specify the position at which the new line is to be added 
-                    by using the <em>INDEX </em>clause with the INSERT statement.
-                    Syntax<br> <br>
-                    <pre>INSERT [&lt;wa&gt; INTO / INITIAL LINE INTO] &lt;itable&gt; [index &lt;idx&gt;].
+                </li> 
+            </ul>
+            <h3> Internal Tables without Header Line: </h3>
+            <ul> 
+                <li> Here there is no work area associated with the table.
+                </li>
+                <li> Work area is to be explicitly specified when we need to access such tables.
+                </li>
+                <li> Hence these tables cannot be accessed directly.</li>
+            </ul>
+        </div> 
+        
+        <h3> Creating Internal Tables</h3>
+        <div>
+            There are <b> many</b> ways to create an Internal Table :
+            
+            <b>1.By Using the Type Statement</b>
+            <div>
+                Let us now create a Internal table <em>itab </em>using the TYPE statement.
+            
+                <strong>syntax :</strong>
+                <pre>
+                    Types : begin of line,
+                    column1 type I,
+                    column2 type I,
+                    end of line.
+                </pre>
+                <br>
+                <p> Example: </p>
+                <pre>
+                    TYPES : begin of line,
+                    empno		type I,
+                    empname(20)   	type c	,
+                    end of line.
+                </pre>
+                <br>
+                <p>
+                    The TYPES statement creates a structure <em>line </em>as defined.
+                    To actually create an Internal Table 
+                    <em>itab</em> use the following command-<br> &nbsp;
+                </p>
+                <pre>
+                    Data itab type line occurs 10.
+                </pre>
+                <br>
+                An internal table <em>itab </em>is created with the structure of line.
+                    Besides declaring the structure of an internal table, the OCCURS clause also 
+                    defines how many table entries are maintained in main storage(in this case 10).
+                    Extra records are written out to paging area and can effect performance
+            </div>   
+            <b>2.By referring to another Table</b>
+            <div>
+                You can&nbsp; create an internal table by referring to an existing table.
+                The existing table could be a standard SAP table, a Z table or another internal table.<br> 
+                <b> Syntax :</b>
+                    <pre>Data &lt;f&gt; &lt;type&gt; [with header line].
 
                     </pre>
-                Here,&nbsp; the work area <em>&lt;wa&gt;</em> or INITIAL LINE is inserted into internal table &lt;<em>itable&gt;</em> 
-                at index <em>&lt;idx&gt;</em>.
-                </div>
-        </div>
-        <h2><a id="7"></a> Copying Internal Tables</h2>
-        <div>
-            The contents of one internal table can be copied to another by using the APPEND LINES or INSERT LINES statement. 
-            A more simpler way is to usetany of the following syntax's.<br> 
-            <pre>MOVE  &lt;itab1&gt; To &lt;itab2&gt;.
-                
-                OR
-                
-                &lt;itab1&gt; = &lt;itab2&gt;.
-            </pre> 
-            These copy the contents of ITAB1 to ITAB2. Incase of internal tables with header line we have to use [] 
-            inorder to distinguish from work area.
-                So, to copy contents of internal tables with header line the syntax becomes,
-                <pre>itab1[] = itab2[].
-                </pre>
-        </div>
+                    
+                <p> Example- </p>
+                    <pre>DATA itab TYPE line OCCURS 10 with header line.</pre>
 
-    <h2> Read Internal Tables</h2>  
-        <div>
+                Here an internal table <em>itab </em>is created of the type line with a header line. Please note
+                        "with header line" is optional
+            </div>          
+            <b>3.By referring to existing Structure </b>
+            <div>
+                Syntax-
+                </p>
+                <pre>Data	&lt;f&gt; LIKE &lt;struct&gt; occurs n [with header line].
+                    
+                </pre>
+                <br><p> Example- </p><pre>DATA itab LIKE sline OCCURS 10.
+                </pre>
+                <br><p> Here&nbsp; a table <em>itab </em>is created having a structure same as that of sline
+            </div>
+            <b>4.By creating a new Structure</b>
+            <div>
+                Let us now create an internal table with a structure of our own.
+                Here the table is created with an Header line, <strong>by default</strong>.
+                <br> Syntax -
+                <pre>Data : Begin of &lt;f&gt; occurs &lt;n&gt;,
+                    &lt;component declaration&gt;,          
+                    .................................,
+                    End of &lt;f&gt;.
+                </pre>
+                <br><p> Example - </p>
+                <pre>Data : Begin of itab occurs 10,
+                    
+                    column1       type I,
+                    
+                    column2(4)  type C,
+                    
+                    column3      like  mara-ernam,
+                    
+                    End of itab.
+                </pre>
+                <br><p> Internal table <em>itab </em>is created </p>
+            </div>   
+        </div>     
+
+        <h3>Populating Internal Tables</h3>
+            <div>  
+                    Now that we have successfully created some internal tables, let us see how do we populate them with some records.
+                    There are various methods available to populate tables
+                    <br>
+                    <b>1.Append Data line by line</b>
+                
+                    <div>
+                        The first method available is the use of the APPEND statement.
+                        Using the APPEND statement we can either add one line from another work area to the internal table or 
+                        we can add one initial line to the internal table..
+                        
+                        Syntax :
+                        <pre>APPEND [&lt;wa&gt; TO / INITIAL LINE TO] &lt;itable&gt;.</pre> 
+                        
+                        Here work area <em>&lt;wa&gt; </em>or the Initial Line is appended to the internal table <em>&lt;itable&gt;.</em>
+                        The system variable <em>SY-TABIX</em> contains the index of the appended line.
+                        <br> <br> Example:<br> 
+                        <pre>
+                            Data: Begin of itab occurs 10,
+                            col1 type C,
+                            col2 type I,
+                            end of itab.
+                        
+                            Append initial line to itab.
+                        </pre> 
+                        <br>
+                            Results : ' ' '0'
+                        <br> Initial lines adds a line initialized with the correct value for its type to the table. 
+                        Here ,&nbsp; col1 is an integer and col2 is a character. 
+                        Then APPEND initial line , adds a line initialized with respect to the data type of the columns, 
+                        i.e. 0 for Col1 and space for Col2. 
+                    </div>
+                    <b>2.Using COLLECT statement</b>
+                    <div>
+                    <br> &nbsp;</div><div> COLLECT is another form of statement used for populating the internal tables.
+                            Generally COLLECT is used while inserting lines into an internal table with unique standard key.
+                            <br> <br> Syntax-<br>
+                            <pre>
+                                COLLECT [&lt;wa&gt; INTO] &lt;itable&gt;.
+
+                            </pre> 
+                            Incase of tables with Header line, INTO option is omitted. 
+                            Suppose there is already an entry having a key same as the one you are trying to append,
+                                then a new line is not added to the table,
+                                but the numeric fields of both the entries are added and only one entry corresponding to the key is present.
+                                Value of SY-TABIX is changed to the row of the original entry. 
+                                Else COLLECT acts similar to APPEND and SY-TABIX contains the index of the processed line.
+                    </div>
+                    <b> 3.<strong>Using INSERT statement</b>
+                    <div>
+                        INSERT statement adds a line/work area to the internal table.
+                        You can specify the position at which the new line is to be added 
+                        by using the <em>INDEX </em>clause with the INSERT statement.
+                        Syntax<br> <br>
+                        <pre>INSERT [&lt;wa&gt; INTO / INITIAL LINE INTO] &lt;itable&gt; [index &lt;idx&gt;].
+
+                        </pre>
+                    Here,&nbsp; the work area <em>&lt;wa&gt;</em> or INITIAL LINE is inserted into internal table &lt;<em>itable&gt;</em> 
+                    at index <em>&lt;idx&gt;</em>.
+                    </div>
+            </div>
+        <h3> Copying Internal Tables</h3>
+            <div>
+                The contents of one internal table can be copied to another by using the APPEND LINES or INSERT LINES statement. 
+                A more simpler way is to usetany of the following syntax's.<br> 
+                <pre>MOVE  &lt;itab1&gt; To &lt;itab2&gt;.
+                    
+                    OR
+                    
+                    &lt;itab1&gt; = &lt;itab2&gt;.
+                </pre> 
+                These copy the contents of ITAB1 to ITAB2. Incase of internal tables with header line we have to use [] 
+                inorder to distinguish from work area.
+                    So, to copy contents of internal tables with header line the syntax becomes,
+                    <pre>itab1[] = itab2[].
+                    </pre>
+            </div>
+
+        <h3> Read Internal Tables</h3>  
+            <div>
+                
+                <b> 1. Using Loop -Endloop </b>
+                One of the ways of accessing or reading the internal table is by using LOOP-ENDLOOP.
+                <br> Syntax
+                <pre>LOOP AT &lt;itable&gt; [INTO &lt;wa&gt;]           
+                        ...................................
+                        ENDLOOP.
+                </pre>
+                
+                Here when you say LOOP AT ITABLE, then the internal table ITABLE is read line by line.
+                You can access the values of the columns for that line during any part of the LOOP-ENDLOOP structure. 
+                The value of the <em>SY-SUBRC</em> is set to <strong>0</strong>,
+                even if only one record is read.
+                
+                <b>2. Using READ</b>
+                
+                The other method of reading the internal table is by using the READ statement.
+                <br> <br> Syntax-<br> 
+                <pre>
+                    READ TABLE &lt;itable&gt; [INTO &lt;wa&gt;] INDEX &lt;idx&gt;.
+                </pre> 
+                This statement reads the current line or line as&nbsp; specified by index <em>&lt;idx&gt;</em>. 
+                The value of <em>SY-TABIX </em>is the index of the line read. If an entry with the specified index is found,
+                then <em>SY-SUBRC</em> is set to 0. If the specified index is less than 0, then run-time error occurs. 
+                If the specified index exceeds table size then SY-SUBRC is set to 4.
+            </div>
             
-            <b> 1. Using Loop -Endloop </b>
-            One of the ways of accessing or reading the internal table is by using LOOP-ENDLOOP.
-            <br> Syntax
-            <pre>LOOP AT &lt;itable&gt; [INTO &lt;wa&gt;]           
-                    ...................................
-                    ENDLOOP.
-            </pre>
-            
-            Here when you say LOOP AT ITABLE, then the internal table ITABLE is read line by line.
-            You can access the values of the columns for that line during any part of the LOOP-ENDLOOP structure. 
-            The value of the <em>SY-SUBRC</em> is set to <strong>0</strong>,
-            even if only one record is read.
-            
-            <b>2. Using READ</b>
-            
-            The other method of reading the internal table is by using the READ statement.
-            <br> <br> Syntax-<br> 
-            <pre>
-                READ TABLE &lt;itable&gt; [INTO &lt;wa&gt;] INDEX &lt;idx&gt;.
-            </pre> 
-            This statement reads the current line or line as&nbsp; specified by index <em>&lt;idx&gt;</em>. 
-            The value of <em>SY-TABIX </em>is the index of the line read. If an entry with the specified index is found,
-            then <em>SY-SUBRC</em> is set to 0. If the specified index is less than 0, then run-time error occurs. 
-            If the specified index exceeds table size then SY-SUBRC is set to 4.
-        </div>
-        
-    <h2> Deleting Internal Tables</h2>
-        <div>
-            There are many ways for deleting lines from an internal table.
-            <b>1.Deleting lines in a loop.</b>
-            <br> This is the simplest way for deleting lines.<br> <br> 
-            Sytax
-                <pre>DELETE &lt;ITABLE&gt;.</pre> 
-            This statement works only within a loop. 
-            It deletes the current line. You can delete the lines in a loop conditionally 
-            by adding the WHERE clause.
-            <b>2.Deleting lines using the index.</b>
-            This is used to delete 
-            a line from internal table at any know index.
-            Syntax :
-            <pre>DELETE &lt;ITABLE&gt; INDEX &lt;IDX&gt;.</pre>
-            The line with the index &lt;IDX&gt; is deleted. The index of the following line is decremented by 1.
-            <br>
-        </div>
+        <h3> Deleting Internal Tables</h3>
+            <div>
+                There are many ways for deleting lines from an internal table.
+                <b>1.Deleting lines in a loop.</b>
+                <br> This is the simplest way for deleting lines.<br> <br> 
+                Sytax
+                    <pre>DELETE &lt;ITABLE&gt;.</pre> 
+                This statement works only within a loop. 
+                It deletes the current line. You can delete the lines in a loop conditionally 
+                by adding the WHERE clause.
+                <b>2.Deleting lines using the index.</b>
+                This is used to delete 
+                a line from internal table at any know index.
+                Syntax :
+                <pre>DELETE &lt;ITABLE&gt; INDEX &lt;IDX&gt;.</pre>
+                The line with the index &lt;IDX&gt; is deleted. The index of the following line is decremented by 1.
+                <br>
+            </div>
+    </div>
+
     <h2 > SAP ABAP Table Control  </h2>
     <div>
         . Table controls and step loops 
@@ -1040,139 +1055,140 @@
         </pre>
     </div>
 
-    <h1 itemprop="headline"> ABAP Report Programming </h1> 
-        <div> 
-            SAP-ABAP supports two types of Programs :
-            -&nbsp; Report Programs &amp; Dialog Programs.
+    <h2 itemprop="headline"> ABAP Report Programming </h2> 
+    <div> 
+        SAP-ABAP supports two types of Programs :
+        -&nbsp; Report Programs &amp; Dialog Programs.
+    
+        Report Programs are used when large amounts of data needs to be displayed
         
-            Report Programs are used when large amounts of data needs to be displayed
+
+        <b>Purpose/Use of Report Programs</b> 
+        <ul>
+            <li> They are used&nbsp; when data from a number of tables have to be selected
+            and processed before presenting</li>
+            <li> Used when reports demand&nbsp; a special format</li> 
+            <li> Used when the report has to be downloaded from SAP to an Excel sheet to be distributed across.</li> 
+            <li> Used when the report has to be mailed to a particular person.</li>
+        </ul>
+        <br>
+        <b>Important Points to Note About Report Program</b> 
+
+        <ul>
+            <li> Report Programs are always Executable Programs. Program Type is always 1.</li>
+            <li> Every Report program corresponds to a particular Application Type i.e. 
+            either with Sales &amp; Distribution, FI - CO etc. It can also be Cross Application i.e. type '*'.</li> 
+            <li> Report Programming is an Event-driven programming.</li>
+            <li> The first line of a report program is always Report <em><strong>&lt;report-name&gt;.</strong></em>
+            </li>
+                <li> To suppress the list heading or the name of the program the addition <em><strong>
+                    No Standard Page Heading </strong></em>is used.</li>
+            <li> The line size for a particular report can be set by using the addition <em><strong>
+                line-size &lt;size&gt;.</strong></em></li> 
+            <li> The line count for a particular page can be set by using the addition <em><strong>line-count n(n1)</strong>
+            </em>. N is the number of lines for the page and N1 is the number of lines reserved for the page footer.</li>
+                <li> To display any information or error message we add a message class to the program using the addition:
+                    <em><strong>Message-id &lt;message class name&gt;. </strong></em>Message classes are maintained in SE91.</li> 
+        </ul> 
+        
+        Therefore an ideal report program should start with:
+        <pre>Report &lt;report name&gt; no standard page heading
+        line-size &lt;size&gt;
+
+        line-count &lt;n(n1)&gt;
+        
+        message-id &lt;message class&gt;.
+        </pre>
+    </div>
             
-
-            <b>Purpose/Use of Report Programs</b> 
-            <ul>
-                <li> They are used&nbsp; when data from a number of tables have to be selected
-                and processed before presenting</li>
-                <li> Used when reports demand&nbsp; a special format</li> 
-                <li> Used when the report has to be downloaded from SAP to an Excel sheet to be distributed across.</li> 
-                <li> Used when the report has to be mailed to a particular person.</li>
-            </ul>
-            <br>
-            <b>Important Points to Note About Report Program</b> 
-
-            <ul>
-                <li> Report Programs are always Executable Programs. Program Type is always 1.</li>
-                <li> Every Report program corresponds to a particular Application Type i.e. 
-                either with Sales &amp; Distribution, FI - CO etc. It can also be Cross Application i.e. type '*'.</li> 
-                <li> Report Programming is an Event-driven programming.</li>
-                <li> The first line of a report program is always Report <em><strong>&lt;report-name&gt;.</strong></em>
-                </li>
-                    <li> To suppress the list heading or the name of the program the addition <em><strong>
-                        No Standard Page Heading </strong></em>is used.</li>
-                <li> The line size for a particular report can be set by using the addition <em><strong>
-                    line-size &lt;size&gt;.</strong></em></li> 
-                <li> The line count for a particular page can be set by using the addition <em><strong>line-count n(n1)</strong>
-                </em>. N is the number of lines for the page and N1 is the number of lines reserved for the page footer.</li>
-                    <li> To display any information or error message we add a message class to the program using the addition:
-                        <em><strong>Message-id &lt;message class name&gt;. </strong></em>Message classes are maintained in SE91.</li> 
-            </ul> 
-            <br>
-            Therefore an ideal report program should start with:
-            <pre>Report &lt;report name&gt; no standard page heading
-            line-size &lt;size&gt;
-
-            line-count &lt;n(n1)&gt;
+    <h2> Selection Screen</h2>
+    <div> "Selection screen"&nbsp; is the screen where one specifies the input values for which the program should run.
+        The selection screen is normally generated from the :
+        
+        <ol>
+            <li> Parameters</li>
+            <li> Select-Options</li>
+        </ol>
+        
+        <b> Syntax </b>
+        <pre>Selection-screen begin of screen &lt;screen #&gt;
+            selection-screen begin of block &lt;#&gt;&nbsp; with frame title &lt;text&gt;
+            .........
+            .........
+            selection-screen end of block &lt;#&gt;
+            selection-screen end of screen &lt;screen #&gt;
+        </pre>
+        <b>Parameters</b>
+            Parameters help one to do dynamic selection. They can accommodate only one value for one cycle of execution of the program.
+            <b> Syntax</b>
+            Defining parameters as a data type 
             
-            message-id &lt;message class&gt;.
+            <pre>Parameters p_id(30) type c.</pre>
+            
+            <b> Defining parameters like a table field:</b>
+            <pre>Parameter p_id like &lt;table name&gt;-&lt;field name&gt;.</pre>
+            <b> Parameters can be Checkboxes as well as Radiobuttons: </b>
+            <pre>Parameters p_id as checkbox.Parameters p_id1 radiobutton group &lt;group name&gt;.
+            Parameters p_id2&nbsp; radiobutton group &lt;group name&gt;.
             </pre>
-        </div>
-                
-        <h2> Selection Screen</h2>
-        <div> "Selection screen"&nbsp; is the screen where one specifies the input values for which the program should run.
-            The selection screen is normally generated from the :
-            
-            <ol>
-                <li> Parameters</li>
-                <li> Select-Options</li>
-            </ol>
-            
-            <b> Syntax </b>
-            <pre>Selection-screen begin of screen &lt;screen #&gt;
-                selection-screen begin of block &lt;#&gt;&nbsp; with frame title &lt;text&gt;
-                .........
-                .........
-                selection-screen end of block &lt;#&gt;
-                selection-screen end of screen &lt;screen #&gt;
+            <b> Parameters can be listbox. </b>
+            <pre>
+                Parameter p_id like &lt;table name&gt;-&lt;field name&gt; as listbox
             </pre>
-            <b>Parameters</b>
-                Parameters help one to do dynamic selection. They can accommodate only one value for one cycle of execution of the program.
-                <b> Syntax</b>
-                Defining parameters as a data type 
-                
-                <pre>Parameters p_id(30) type c.</pre>
-                
-                <b> Defining parameters like a table field:</b>
-                <pre>Parameter p_id like &lt;table name&gt;-&lt;field name&gt;.</pre>
-                <b> Parameters can be Checkboxes as well as Radiobuttons: </b>
-                <pre>Parameters p_id as checkbox.Parameters p_id1 radiobutton group &lt;group name&gt;.
-                Parameters p_id2&nbsp; radiobutton group &lt;group name&gt;.
-                </pre>
-                <b> Parameters can be listbox. </b>
-                <pre>
-                    Parameter p_id like &lt;table name&gt;-&lt;field name&gt; as listbox
-                </pre>
-            
-                <b>Select Options</b>
-                    A Select-Option is used to input a range of values or a set of values to a  program
-                <b>Syntax </b>
-                <pre>select-options s_vbeln for vbak-vbeln.</pre>
-                <br> You can also define a select option like a variable 
-                <pre>select-options s_vbeln for vbak-vbeln no intervals no-extension</pre>
-                <br>
-        </div>
-
-        <h2><a id="2"></a> Events in an ABAP Report Program</h2>
-        <div>
-            ABAP report programs are <em><b>event driven programs</b></em>. 
-                The different events in a report Program are:
+        
+            <b>Select Options</b>
+                A Select-Option is used to input a range of values or a set of values to a  program
+            <b>Syntax </b>
+            <pre>select-options s_vbeln for vbak-vbeln.</pre>
+            <br> You can also define a select option like a variable 
+            <pre>select-options s_vbeln for vbak-vbeln no intervals no-extension</pre>
             <br>
-            
-            <b>Load-of-program </b>
-            
-            <ul>
-                <li> Triggers the associated event in an internal session after loading a program of type 1, M, F, or S.</li>
-                <li> Also runs the associated processing block once and once only for each program and internal session.</li>
-                <li> The processing block LOAD-OF-PROGRAM has roughly the same function for an ABAP program of type 1, M, F or S
-                    as a constructor has for classes in ABAP Objects</li>
-            </ul>
+    </div>
 
-            <b>Initialization.</b> 
-            
-            <ul> 
-                <li> This event is executed before the selection screen is displayed .</li>
-                <li> Initialization of all the values.</li> 
-                <li> You can assign different values other than the values defaulted on the selection screen .</li>
-                    <li> You can fill your selection screen with some values at runtime.</li>
+    <h2><a id="2"></a> Events in an ABAP Report Program</h2>
+    <div>
+        ABAP report programs are <em><b>event driven programs</b></em>. 
+            The different events in a report Program are:
+        <br>
+        
+        <b>Load-of-program </b>
+        
+        <ul>
+            <li> Triggers the associated event in an internal session after loading a program of type 1, M, F, or S.</li>
+            <li> Also runs the associated processing block once and once only for each program and internal session.</li>
+            <li> The processing block LOAD-OF-PROGRAM has roughly the same function for an ABAP program of type 1, M, F or S
+                as a constructor has for classes in ABAP Objects</li>
+        </ul>
+
+        <b>Initialization.</b> 
+        
+        <ul> 
+            <li> This event is executed before the selection screen is displayed .</li>
+            <li> Initialization of all the values.</li> 
+            <li> You can assign different values other than the values defaulted on the selection screen .</li>
+                <li> You can fill your selection screen with some values at runtime.</li>
+        </ul>
+        <b>At Selection-Screen.</b>
+        <ul> 
+            <li> The event is processed when the selection screen has been processed (at the end of PAI ).</li>
+            <li> Validation &amp; Checks of inputted values happen here</li>
             </ul>
-            <b>At Selection-Screen.</b>
-            <ul> 
-                <li> The event is processed when the selection screen has been processed (at the end of PAI ).</li>
-                <li> Validation &amp; Checks of inputted values happen here</li>
-                </ul>
-            <b>Start-of-Selection.</b>
-            </p>
-            <ul> <li> Here the program starts selecting values from tables.</li>
-            </ul>
-            <b>End-of-selection.</b>
-            </p>
-            <ul> 
-                <li> After all the data has been selected this event writes the data to the screen.</li> 
-            </ul>
-            <b>Interactive Events</b> 
-            
-            <ul>
-                <li> Used for interactive reporting. It is used to create a detailed list from a basic list.</li> 
-            </ul>
-        </div>
+        <b>Start-of-Selection.</b>
+        </p>
+        <ul> <li> Here the program starts selecting values from tables.</li>
+        </ul>
+        <b>End-of-selection.</b>
+        </p>
+        <ul> 
+            <li> After all the data has been selected this event writes the data to the screen.</li> 
+        </ul>
+        <b>Interactive Events</b> 
+        
+        <ul>
+            <li> Used for interactive reporting. It is used to create a detailed list from a basic list.</li> 
+        </ul>
+    </div>
+
     <h2>Formatting the report            </h2>
     <div>
         <p> ABAP allows the reports to be formatted as the user wants it to be.
@@ -1241,39 +1257,42 @@
         <p id="slidetag">&nbsp;</p>
     </div>
 
+    <h2 > Dialog Programming Tutorial: Module Pool in SAP ABAP </h2>
+    <div>                   
+        SAP-ABAP supports two types of programs - Report Program and Dialog Program.
+        If your ABAP program demands user input , Dialog programming is used.
 
-    <h1 > Dialog Programming Tutorial: Module Pool in SAP ABAP </h1>
-                        
-    <p> SAP-ABAP supports two types of programs - Report Program and Dialog Program.
-    If your ABAP program demands user input , Dialog programming is used.
-
-
-    <br> A&nbsp; user dialog is any form of interaction between the user and the program and could be any of the following 
-    <ul> 
-        <li> Entering data</li>
-        <li> Choosing a menu item</li> 
-        <li> Clicking a button</li>
-        <li> Clicking or double clicking an entry</li>
-    </ul>
-        <p> Dialog program is also used when we need to navigate back and forth between screens<br> 
-        <br> Dialog programs are created with type as 'M' - Module Pool. They cannot be executed independently 
-        and must be attached to at least one transaction code in which you specify an initial screen. </p>
+        A user dialog is any form of interaction between the user and the program and could be any of the following 
+        <ul> 
+            <li> Entering data</li>
+            <li> Choosing a menu item</li> 
+            <li> Clicking a button</li>
+            <li> Clicking or double clicking an entry</li>
+        </ul>
+         <p> Dialog program is also used when we need to navigate back and forth between screens
+            Dialog programs are created with type as 'M' - Module Pool. They cannot be executed independently 
+            and must be attached to at least one transaction code in which you specify an initial screen.
+        </p>
+    </div> 
 
     <h2> Difference between Report and Dialog Programs</h2>
-        <p style="text-align: center;"> 
+    <div> 
             <img alt="Dialog Programming Tutorial: Module Pool in SAP ABAP" class="aligncenter  wp-image-944" 
             height="337"
             src="http://guru99.com/images/sap/2011/01/sap-dialog-programming.png"
-                title="sap-dialog-programming" width="600"></a> 
-            </p>
-            <p> <em><strong>Report Program:</strong></em><br>
-                    <br> A report is a program that typically reads and analyzes data in database tables without 
-                    changing the database.<br> <br> 
-                    <em><strong>Dialog Program:</strong></em><br> <br> A dialog program allows you to work interactively with 
-                    the system and to change the contents of the database tables. Each dialog program has a certain sequence
-                    of screens that are processed by the system one after the other. </p>
-                    <h2><a id="2"></a> A Sample transaction processing in Dialog Programming</h2>
-                    <p style="text-align: center;"> <a href="http://guru99.com/images/sap/2011/01/sap-dialog-programming1.jpg"></a>
+                title="sap-dialog-programming" width="600"> 
+        
+        <p> <em><strong>Report Program:</strong></em><br>
+                <br> A report is a program that typically reads and analyzes data in database tables without 
+                changing the database.<br> <br> 
+                <em><strong>Dialog Program:</strong></em><br> <br> A dialog program allows you to work interactively with 
+                the system and to change the contents of the database tables. Each dialog program has a certain sequence
+                of screens that are processed by the system one after the other.
+        </p>
+    </div>
+
+    <h2> A Sample transaction processing in Dialog Programming</h2>
+    <img src="http://guru99.com/images/sap/2011/01/sap-dialog-programming1.jpg">
                     
 
     <h2> Components of Dialog Program</h2>
@@ -1282,10 +1301,10 @@
         dialog program development entails development of multiple objects none of which can be executed on it's own.
         <strong><em> Instead all objects are linked hierarchically to the main program and and are executed
                     in a sequence dictated by the Dialog Main Program</em></strong>.
-        <br>  The components of a dialog program  are:
-        <br> <br>
-        <b>Transaction code</b>
         
+        The components of a dialog program  are:
+        
+        <b>Transaction code</b>
         <ul> 
             <li> The transaction code starts a screen sequence.</li> 
         <li> You create transaction codes in the Repository Browser in the ABAP Workbench or using Transaction SE93.</li>
@@ -1362,37 +1381,37 @@
 
     <h1 > ABAP Subscreens Tutorial: Call Subscreen in SAP </h1>
     <h2> CALL SUBSCREEN</h2>
-    <ul> <li> A subscreen is an independent screen that is displayed in an area of another ("main") screen.</li> 
+    <div>
+        <ul> 
+            <li> A subscreen is an independent screen that is displayed in an area of another ("main") screen.</li> 
         <li> Subscreens allow you to embed one screen within another at runtime. You can include multiple sub-screens on main screen.</li>
         <li> The term subscreen applies both to the screen that you embed, and the area on the main screen in which you place it.
             This tutorial is about subscreen areas. The actual screens created through SE51 transaction, 
             are called subscreen screens if defined in screen attributes.</li>
         <li> When you use a subscreen, the flow logic of the embedded screen is also embedded in the flow logic of the main screen.
             Hence, Using subscreens on screens is like using includes in ABAP programs.</li> 
-    </ul>
-    <p> To use a subscreen, you must follow three simple steps </p>
-    <ol>
-        <li> Define the subscreen area(s) on a screen</li> 
-        <li> Define suitable subscreen screens</li> 
-        <li> Include the subscreen screen in the subscreen area.</li>
-    </ol>
-    <p> Also, you need to adjust the frame of sub-screen and main screen. You need to name it in the field name field.
+        </ul>
+        <p> To use a subscreen, you must follow three simple steps </p>
+        <ol>
+            <li> Define the subscreen area(s) on a screen</li> 
+            <li> Define suitable subscreen screens</li> 
+            <li> Include the subscreen screen in the subscreen area.</li>
+        </ol>
+        Also, you need to adjust the frame of sub-screen and main screen. You need to name it in the field name field.
         <br> Further, you also need to adjust the fields within the subscreen to make them appear in main screen. 
         In case the sub-screen is defined to be larger than the available area in the main screen,
         only the part of subscreen will be visible that fits in the the area available. 
         The area is always measured from the top left corner of screen.
         Hence you should take adequate care while defining sub-screen areas and creating sub-screens.
         
-        <br> <br> <strong> EXAMPLE</strong>
-        <br> <br> For instance here we have defined two sub-screen areas on main screen and have attached 
+        <strong> EXAMPLE</strong>
+         For instance here we have defined two sub-screen areas on main screen and have attached 
         two different Sub-screen to corresponding areas. Whenever main screen is called, the PBO of main screen is called.
         But before display, the PBO's of each screen attached with sub-screen areas on main screen are also called.
-        </p>
-        <p style="text-align: center;"> <a href="http://guru99.com/images/sap/2011/01/sap-subscreen.jpg"></a>
-            <a href="http://guru99.com/images/sap/2011/01/sap-subscreen.jpg" >
-                <img alt="ABAP Subscreens Tutorial: Call  Subscreen in SAP"  
-                src="http:/guru99.com/images/sap/2011/01/sap-subscreen.jpg" title="sap-subscreen"></a>
-        </p>
+        
+        <img alt="ABAP Subscreens Tutorial: Call  Subscreen in SAP"  
+                src="http:/guru99.com/images/sap/2011/01/sap-subscreen.jpg" title="sap-subscreen">
+        
         <p> You can include a subscreen screen using the CALL SUBSCREEN statement in the flow logic of the main screen.
                 <br> <br> To include a subscreen screen in the subscreen area of the main screen and call its PBO flow logic, 
                 use the following statement in the PBO event of the main screen:
@@ -1401,8 +1420,25 @@
         <pre>
             PROCESS BEFORE OUTPUT.
 
-            CALL SUBSCREEN &lt;area&gt; INCLUDING [&lt;prog&gt;] &lt;dynp&gt;.</pre><p> This statement assigns the subscreen screen with number &lt;dynp&gt; to the subscreen area called &lt;area&gt;. You can also specify the program in which the subscreen screen is defined (optional). If you do not specify the program explicitly, the system looks for the subscreen screen in the same ABAP program as the main program. If it does not find a corresponding subscreen screen, a runtime error occurs. The PBO flow logic of the subscreen screen is also included at the same point. This can call PBO modules of the ABAP program in which the subscreen screen is defined. At the end of the subscreen PBO, the global fields from the program are passed to any identically-named screen fields in the subscreen screen. The PBO flow logic of the subscreen screen can itself include further subscreens.<br> <br> The name &lt;area&gt; of the subscreen area must be entered directly without inverted commas. You can specify the names &lt;prog&gt; and &lt;dynp&gt; either as literals or variables. If you use variables, you must declare and fill identically-named variables in the ABAP program. The screen number &lt;dynp&gt; must be 4 characters long. If you do not assign a subscreen screen to an area, it remains empty.<br> <br> To call the PAI flow logic of the subscreen screen, use the following statement in the PAI flow logic of the main screen: </p><pre>PROCESS AFTER INPUT.
-            
+            CALL SUBSCREEN &lt;area&gt; INCLUDING [&lt;prog&gt;] &lt;dynp&gt;.
+        </pre>
+        <p> 
+            This statement assigns the subscreen screen with number &lt;dynp&gt; to the subscreen area called &lt;area&gt;.
+             You can also specify the program in which the subscreen screen is defined (optional).
+              If you do not specify the program explicitly, the system looks for the subscreen screen in the same ABAP program
+               as the main program. If it does not find a corresponding subscreen screen, a runtime error occurs. 
+               The PBO flow logic of the subscreen screen is also included at the same point.
+                This can call PBO modules of the ABAP program in which the subscreen screen is defined.
+                 At the end of the subscreen PBO, the global fields from the program are passed to any identically-named screen fields
+                  in the subscreen screen. The PBO flow logic of the subscreen screen can itself include further subscreens.
+                  <br> <br> The name &lt;area&gt; of the subscreen area must be entered directly without inverted commas. 
+                  You can specify the names &lt;prog&gt; and &lt;dynp&gt; either as literals or variables.
+                   If you use variables, you must declare and fill identically-named variables in the ABAP program. 
+                   The screen number &lt;dynp&gt; must be 4 characters long. If you do not assign a subscreen screen to an area,
+                    it remains empty.<br> <br> To call the PAI flow logic of the subscreen screen, 
+                    use the following statement in the PAI flow logic of the main screen: 
+        </p>
+        <pre>PROCESS AFTER INPUT.    
             CALL SUBSCREEN &lt;area&gt;.
         </pre>
         <p> This statement includes the PAI flow logic of the subscreen screen
@@ -1428,51 +1464,55 @@
                     <li> If using subscreens from another dialog program the data transfer will not happen unless
                             you add specific code.</li>
         </ul>
+    </div>
         
-
     <h1 > SAP Process On Value &amp; Process On Help-Request </h1>
 
     <h2>Process on Help-Request (POH) : F1 Help</h2>
-        <ul>
-            <li>Whenever F1 is pressed the POH event&nbsp; for the specified data element&nbsp; is executed.</li>
-            <li>If the PROCESS ON HELP-REQUEST event does not exist in the process logic of a screen,
-                the documentation of the field in the ABAP Dictionary is taken as a basis and displayed.&nbsp;
-                Even if that does not exit no help is displayed.</li>
-            <li>To display field help documentation, you must code the following screen flow logic in the POH event:</li> 
-        </ul>
-        <pre>PROCESS ON HELP-REQUEST
-                    FIELD &amp;lt;f&amp;gt; [MODULE &amp;lt;mod&amp;gt;] WITH &amp;lt;num&amp;gt;
-        </pre>
-        <ul> 
-            <li>If there is screen-specific data element documentation for the field <em>&lt;f&gt;</em>,
-                you can display it by specifying its number <em>&lt;num&gt;</em>.
-                </li>
-            <li>The number &lt;num&gt; can be a literal or a variable. The variable must be declared and filled in the corresponding ABAP program.</li> 
-            <li>Note, the FIELD statement does not transfer the contents of the screen field <em>&lt;f&gt; </em>
-                to the ABAP program in the PROCESS ON HELP-REQUEST event. It just shows help documentation. That's it.</li> 
-        </ul> 
-        The module <em>&lt;mod&gt;</em> is defined in the ABAP program like a normal PAI module.
-        The processing logic of the module must ensure that adequate help is displayed for the field in question. 
-        Instead of calling an extra screen with text fields, you should use one of the following function modules 
-        to display a suitable SAPscript document
-        <p> <em><strong>HELP_OBJECT_SHOW_FOR_FIELD</strong></em> 
-        </p>
-        <ul>
-            <li>This function module displays the data element documentation for components of any 
-                structure or database table from the ABAP Dictionary.
-                </li>
-            <li>You pass the name of the component and structure or table to the import parameters FIELD and TABLE.</li>
-        </ul>
-        <em><strong>HELP_OBJECT_SHOW</strong></em>
-        <ul>
-            <li>Use this function module to display any SAPscript document.</li>
+        <div>
+            <ul>
+                <li>Whenever F1 is pressed the POH event&nbsp; for the specified data element&nbsp; is executed.</li>
+                <li>If the PROCESS ON HELP-REQUEST event does not exist in the process logic of a screen,
+                    the documentation of the field in the ABAP Dictionary is taken as a basis and displayed.&nbsp;
+                    Even if that does not exit no help is displayed.</li>
+                <li>To display field help documentation, you must code the following screen flow logic in the POH event:</li> 
+            </ul>
+            <pre>PROCESS ON HELP-REQUEST
+                        FIELD &amp;lt;f&amp;gt; [MODULE &amp;lt;mod&amp;gt;] WITH &amp;lt;num&amp;gt;
+            </pre>
+            <ul> 
+                <li>If there is screen-specific data element documentation for the field <em>&lt;f&gt;</em>,
+                    you can display it by specifying its number <em>&lt;num&gt;</em>.
+                    </li>
+                <li>The number &lt;num&gt; can be a literal or a variable. The variable must be declared and filled in the corresponding ABAP program.</li> 
+                <li>Note, the FIELD statement does not transfer the contents of the screen field <em>&lt;f&gt; </em>
+                    to the ABAP program in the PROCESS ON HELP-REQUEST event. It just shows help documentation. That's it.</li> 
+            </ul> 
+            The module <em>&lt;mod&gt;</em> is defined in the ABAP program like a normal PAI module.
+            The processing logic of the module must ensure that adequate help is displayed for the field in question. 
+            Instead of calling an extra screen with text fields, you should use one of the following function modules 
+            to display a suitable SAPscript document
+            <p> <em><strong>HELP_OBJECT_SHOW_FOR_FIELD</strong></em> 
+            </p>
+            <ul>
+                <li>This function module displays the data element documentation for components of any 
+                    structure or database table from the ABAP Dictionary.
+                    </li>
+                <li>You pass the name of the component and structure or table to the import parameters FIELD and TABLE.</li>
+            </ul>
+            <em><strong>HELP_OBJECT_SHOW</strong></em>
+            <ul>
+                <li>Use this function module to display any SAPscript document.</li>
                 <li> You must pass the document class (for example, TX for general texts, DE for data element documentation)
                     and the name of the document to the import parameters DOKCLASS and DOKNAME.
                     </li> 
                 <li> For technical reasons, you must also pass an empty internal table with the line type TLINE 
                     to the tables parameter of the function module.</li> 
-                </ul>
-        <h2>Process on Value (POV): F4</h2>
+            </ul>
+        </div>
+
+    <h2>Process on Value (POV): F4</h2>
+    <div>
         <ul>
             <li>When the user chooses the function Possible entries (F4), the system displays the possible input values for a field 
                 (values, check table, matchcode), provided they were stored by the developer.
@@ -1542,195 +1582,190 @@
                         <p id="slidetag">&nbsp;
 
                         </p>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    </div>
+                  
     <h2>
         ALV Reports in SAP Tutorial - ABAP List Viewer
     </h2>
     <div>
 
-    The common desired  features of any  report are "column alignment", sorting, filtering, subtotals, totals etc.
-    To implement these from scratch , a lot of coding effort  is to be put.
-    To avoid that we can use a concept called ABAP List Viewer (ALV).
+        The common desired  features of any  report are "column alignment", sorting, filtering, subtotals, totals etc.
+        To implement these from scratch , a lot of coding effort  is to be put.
+        To avoid that we can use a concept called ABAP List Viewer (ALV).
 
-    Each of these reports provide function modules which help in producing desired output without much effort.
+        Each of these reports provide function modules which help in producing desired output without much effort.
 
-    <h3>simple report:</h3>
+        <h3>simple report:</h3>
 
-    Important function modules in these report are -
+        Important function modules in these report are -
 
-        Reuse_alv_fieldcatalog_merge
-        Reuse_alv_list_display
-        Reuse_alv_events_get
-        Reuse_alv_grid_display
-        Reuse_alv_commentary_write
+            Reuse_alv_fieldcatalog_merge
+            Reuse_alv_list_display
+            Reuse_alv_events_get
+            Reuse_alv_grid_display
+            Reuse_alv_commentary_write
 
-    REUSE_ALV_FIELDCATALOG_MERGE
+        REUSE_ALV_FIELDCATALOG_MERGE
 
-        This function module is used to populate a field catalog which is essential to display the data in ALV.
+            This function module is used to populate a field catalog which is essential to display the data in ALV.
 
-        If the output data is from a single dictionary table and all the columns are selected, 
-        then we need not exclusively create the field catalog. 
-        Its enough to mention the table name as a parameter (I_structure_name) in the REUSE_ALV_LIST_DISPLAY.
-        But in other cases we need to create it.
+            If the output data is from a single dictionary table and all the columns are selected, 
+            then we need not exclusively create the field catalog. 
+            Its enough to mention the table name as a parameter (I_structure_name) in the REUSE_ALV_LIST_DISPLAY.
+            But in other cases we need to create it.
 
-        Note : Fieldcatalog can be filled manually also by filling up all the required details into the internal table
+            Note : Fieldcatalog can be filled manually also by filling up all the required details into the internal table
 
-        Important parameters in are:
+            Important parameters in are:
 
-        1. Export:
+            1. Export:
 
-            I_program_name : report id
-            I_internal_tabname : the internal output table
-            I_inclname : include or the report name where all the dynamic forms are handled.
+                I_program_name : report id
+                I_internal_tabname : the internal output table
+                I_inclname : include or the report name where all the dynamic forms are handled.
 
-        2. Changing
+            2. Changing
 
-            ct_fieldcat : an internal table with the type SLIS_T_FIELDCAT_ALV which is declared in the type pool SLIS.
+                ct_fieldcat : an internal table with the type SLIS_T_FIELDCAT_ALV which is declared in the type pool SLIS.
 
-    REUSE_ALV_LIST_DISPLAY
+        REUSE_ALV_LIST_DISPLAY
 
-        This is the function module which prints the data.
+            This is the function module which prints the data.
 
-        The important parameters are:
+            The important parameters are:
 
-        1. Export:
+            1. Export:
 
-            I_callback_program : report id
-            I_bypassing_buffer : 'X'
-            I_buffer_active : ' '
-            I_callback_pf_status_set : routine where a user can set his own pf status or change the functionality of the existing pf status.
-            I_callback_user_command : routine where the function codes are handled.
+                I_callback_program : report id
+                I_bypassing_buffer : 'X'
+                I_buffer_active : ' '
+                I_callback_pf_status_set : routine where a user can set his own pf status or change the functionality of the existing pf status.
+                I_callback_user_command : routine where the function codes are handled.
 
-            I_structure name : name of the dictionary table
-            Is_Layout : structure to set the layout of the report
-            It_fieldcat : internal table with the list of all fields and their attributes which are to be printed (this table can be populated automatically by the function)
-            It_events : internal table with a list of all possible events of ALV and their corresponding form names.
+                I_structure name : name of the dictionary table
+                Is_Layout : structure to set the layout of the report
+                It_fieldcat : internal table with the list of all fields and their attributes which are to be printed (this table can be populated automatically by the function)
+                It_events : internal table with a list of all possible events of ALV and their corresponding form names.
 
-        2. Tables:
+            2. Tables:
 
-            a. t_outtab : internal table with the data to be output
+                a. t_outtab : internal table with the data to be output
 
-    REUSE_ALV_EVENTS_GET:
+        REUSE_ALV_EVENTS_GET:
 
-        Returns table of possible events for a a list type
+            Returns table of possible events for a a list type
 
-        1. Import:
+            1. Import:
 
-        Et_Events :The event table is returned with all possible CALLBACK events for the specified list type (column 'NAME'). For events to be processed by the Callback, their 'FORM' field must be filled. If the field is initialized, the event is ignored. The entry can be read from the event table, the field 'FORM' filled and the entry modified using constants from the type pool SLIS.
+            Et_Events :The event table is returned with all possible CALLBACK events for the specified list type (column 'NAME'). For events to be processed by the Callback, their 'FORM' field must be filled. If the field is initialized, the event is ignored. The entry can be read from the event table, the field 'FORM' filled and the entry modified using constants from the type pool SLIS.
 
-        2. Export:
+            2. Export:
 
-        I_list_type: 0 = simple list REUSE_ALV_LIST_DISPLAY
+            I_list_type: 0 = simple list REUSE_ALV_LIST_DISPLAY
 
-        1 = hierarchical-sequential list  REUSE_ALV_HIERSEQ_LIST_DISPLAY
+            1 = hierarchical-sequential list  REUSE_ALV_HIERSEQ_LIST_DISPLAY
 
-        2 = simple block list REUSE_ALV_BLOCK_LIST_APPEND
+            2 = simple block list REUSE_ALV_BLOCK_LIST_APPEND
 
-        3 = hierarchical-sequential block list   REUSE_ALV_BLOCK_LIST_HS_APPEND
+            3 = hierarchical-sequential block list   REUSE_ALV_BLOCK_LIST_HS_APPEND
 
-    REUSE_ALV_GRID_DISPLAY
+        REUSE_ALV_GRID_DISPLAY
 
-        A new function from ABAP4.6 version, to display the results in grid rather than a preview.
+            A new function from ABAP4.6 version, to display the results in grid rather than a preview.
 
-        Parameters : same as reuse_alv_list_display
+            Parameters : same as reuse_alv_list_display
 
-            Note:Grid cannot handle high volumes. Functions like sort, scrolling down consumes a lot of resources / time if the volume of data to be displayed is high. There is no clear cut definition such that if the amount of data is X go for list or grid  but the developer has to take a call based on his experience. If not sure, then list is the better option
+                Note:Grid cannot handle high volumes. Functions like sort, scrolling down consumes a lot of resources / time if the volume of data to be displayed is high. There is no clear cut definition such that if the amount of data is X go for list or grid  but the developer has to take a call based on his experience. If not sure, then list is the better option
 
-    REUSE_ALV_COMMENTARY_WRITE
+        REUSE_ALV_COMMENTARY_WRITE
 
-        This is used in the Top-of-page event to print the headings and other comments for the list.
+            This is used in the Top-of-page event to print the headings and other comments for the list.
+
+            Important Parameters
+
+                It_list_commentary : Internal table with the headings of the type slis_t_listheader.
+
+            This internal table has three fields:
+
+                Typ : 'H' - header, 'S' - selection, 'A' - action
+                Key : only when typ is 'S'.
+                Info : the text to be printed
+
+        <h3>Block Report</h3>
+
+        This looks like a simple report but this report has the features of sorting and filtering only.This report is used if you have to display more than one report on the output. Technically speaking if you have multiple internal table with data to be displayed as separate blocks then we go for block report of ALV.
+
+        The important functions used for creating this report are:
+
+            REUSE_ALV_BLOCK_LIST_INIT
+            REUSE_ALV_BLOCK_LIST_APPEND
+            REUSE_ALV_BLOCK_LIST_DISPLAY
+
+        REUSE_ALV_BLOCK_LIST_INIT
+
+        This function module is used to set the default gui status etc. The parameters are similar to the one used in reuse_alv_list_display or reuse_alv_grid_display
+
+        REUSE_ALV_BLOCK_LIST_APPEND
+
+        This function module adds the data to the block.
 
         Important Parameters
 
-            It_list_commentary : Internal table with the headings of the type slis_t_listheader.
+        1.Export :
 
-        This internal table has three fields:
+            is_layout : layout settings for block
+            it_fieldcat : field catalog
+            I_tabname : internal table name with all all possible events
 
-            Typ : 'H' - header, 'S' - selection, 'A' - action
-            Key : only when typ is 'S'.
-            Info : the text to be printed
+        2.Tables :
 
-    <h3>Block Report</h3>
+            t_outtab : internal table with output data.
 
-    This looks like a simple report but this report has the features of sorting and filtering only.This report is used if you have to display more than one report on the output. Technically speaking if you have multiple internal table with data to be displayed as separate blocks then we go for block report of ALV.
-
-    The important functions used for creating this report are:
-
-        REUSE_ALV_BLOCK_LIST_INIT
-        REUSE_ALV_BLOCK_LIST_APPEND
         REUSE_ALV_BLOCK_LIST_DISPLAY
 
-    REUSE_ALV_BLOCK_LIST_INIT
+        This function module display the list with data appended by the above function.
 
-    This function module is used to set the default gui status etc. The parameters are similar to the one used in reuse_alv_list_display or reuse_alv_grid_display
+        Parameters : All the parameters are optional.
+        <h3>Hierarchical Reports</h3>
 
-    REUSE_ALV_BLOCK_LIST_APPEND
+        Hierarchical display is used for displaying data that are related. Like sales order and item details. Here sales order details can be the header data whereas them items in the sales order can be the item data
 
-    This function module adds the data to the block.
+        The function module used for this is
 
-    Important Parameters
+        REUSE_ALV_HIERSEQ_LIST_DISPLAY
 
-    1.Export :
+        Export:
 
-        is_layout : layout settings for block
-        it_fieldcat : field catalog
-        I_tabname : internal table name with all all possible events
+            I_CALLBACK_PROGRAM
+            I_CALLBACK_PF_STATUS_SET
+            I_CALLBACK_USER_COMMAND
+            IS_LAYOUT
+            It_fieldcat
+            It_events
+            I_tabname_header : Name of the internal table in the program containing the output data of the highest hierarchy level.
+            I_tabname_item : Name of the internal table in the program containing the output data of the lowest hierarchy level.
+            Is_keyinfo : This structure contains the header and item table field names which link the two tables (shared key).
 
-    2.Tables :
+        Tables
 
-        t_outtab : internal table with output data.
+            t_outtab_header : Header table with data to be output
+            t_outtab_item : Name of the internal table in the program containing the output data of the lowest hierarchy level.
 
-    REUSE_ALV_BLOCK_LIST_DISPLAY
+        All the definitions of internal tables, structures and constants are declared in a type-pool called SLIS. This internal table can be populated automatically by using REUSE_ALV_FIELDCATALOG_MERGE'.
+        <h3>Display Variants</h3>
 
-    This function module display the list with data appended by the above function.
+            Display variants are used to set the default properties of an alv output like sort criteria, filtering criteria, totaling and subtotaling etc
+            Display varian`ts can be user specific and standard (standard variants can be used by any user )
+            Kind of display variants that can be saved is controlled by the parameter i_save that is passed in function modules  reuse_alv_list_display / reuse_alv_grid_display
+            You can provide an option on the selection screen to select what display variant to be used
 
-    Parameters : All the parameters are optional.
-    <h3>Hierarchical Reports</h3>
+        The common function modules related to selecting / validating display variants are
 
-    Hierarchical display is used for displaying data that are related. Like sales order and item details. Here sales order details can be the header data whereas them items in the sales order can be the item data
-
-    The function module used for this is
-
-    REUSE_ALV_HIERSEQ_LIST_DISPLAY
-
-    Export:
-
-        I_CALLBACK_PROGRAM
-        I_CALLBACK_PF_STATUS_SET
-        I_CALLBACK_USER_COMMAND
-        IS_LAYOUT
-        It_fieldcat
-        It_events
-        I_tabname_header : Name of the internal table in the program containing the output data of the highest hierarchy level.
-        I_tabname_item : Name of the internal table in the program containing the output data of the lowest hierarchy level.
-        Is_keyinfo : This structure contains the header and item table field names which link the two tables (shared key).
-
-    Tables
-
-        t_outtab_header : Header table with data to be output
-        t_outtab_item : Name of the internal table in the program containing the output data of the lowest hierarchy level.
-
-    All the definitions of internal tables, structures and constants are declared in a type-pool called SLIS. This internal table can be populated automatically by using REUSE_ALV_FIELDCATALOG_MERGE'.
-    <h3>Display Variants</h3>
-
-        Display variants are used to set the default properties of an alv output like sort criteria, filtering criteria, totaling and subtotaling etc
-        Display varian`ts can be user specific and standard (standard variants can be used by any user )
-        Kind of display variants that can be saved is controlled by the parameter i_save that is passed in function modules  reuse_alv_list_display / reuse_alv_grid_display
-        You can provide an option on the selection screen to select what display variant to be used
-
-    The common function modules related to selecting / validating display variants are
-
-        Reuse_alv_variant_default_get
-        Reuse_alv_variant_f4
-        Reuse_alv_variant_existence
+            Reuse_alv_variant_default_get
+            Reuse_alv_variant_f4
+            Reuse_alv_variant_existence
 
     </div>
-
-
 
     <h2>SAP Scripts Tutorial: SE71, SE78, SCC1, VF03, SO10</h2>
     <div>

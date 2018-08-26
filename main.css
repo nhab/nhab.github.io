@@ -123,7 +123,7 @@ b{
 .colorWhite{color:white;}
 .gridContainer {
   display: grid;
-  grid-template-columns: 250px 250px;
+  grid-template-columns: 250px 250px 250px;
   /*grid-template-rows: 100px 50px;*/
   grid-column-gap: 25px;
   grid-row-gap: 25px;
