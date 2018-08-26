@@ -15,13 +15,11 @@
    </script>
 </head>
 <body id="content1">
-    <div id="content">
-
+<div id="content">
     <h1  itemprop="headline">Introduction to  &nbsp;<b>ABAP</b>
         ( <b>A</b>dvanced &nbsp;<b>B</b>usiness &nbsp;<b>A</b>pplication &nbsp;<b>P</b>rogramming. ):
     </h1>
-    
-        <ul>
+    <ul>
         <li>It is&nbsp; a programming language for developing applications for the <b>SAP R/3  system</b>.</li>
         <li>All functional modules of SAP are written in ABAP.</li>
         <li> The latest version of ABAP is&nbsp; called&nbsp; ABAP Objects and supports
@@ -35,7 +33,6 @@
     <br>  Class Pool are K programs type that represented with the keyword CLASS-POOL.
     <br> P/4, the earlier ABAP version, as well as applications using ABAP         Objects.
     </div>
-    
     <h2>Types of ABAP 4 Programs</h2>
         <pre>
         <strong>Executable Programs (ABAP Reports):</strong>
@@ -62,9 +59,7 @@
         <strong>Type group:</strong> 
             are represented with the keyword TYPE-POOL.
         </pre>
-        
     <h2>Data Types</h2>
-
     <h3>Declaring variable :</h3>
     <code>
         DATA Variable_Name Type Variable_Type
@@ -153,7 +148,6 @@
         </tr>
         </tbody>
     </table>
-
     <h3> Assigning Values</h3>
     <pre>
     a=16.
@@ -162,17 +156,12 @@
 
     write a to b.
     </pre>
-
     <h3>- Arithmetic Operations</h3>
     <code>
     compute a = a*100.
     </code>
-
     <h2>Control Statements</h2>
-
     <h3> If ... EndIf Loop</h3>
-
-
     <pre>
     if [not] exp [ and / or [not] exp ].
     ........
@@ -182,7 +171,6 @@
     .......]
     Endif.
     </pre>
-
     <h3>Case statement</h3>
     <pre>
     Case variable.
@@ -195,7 +183,6 @@
     Endcase.
     Do.
     </pre>
-
     <h3>While loop</h3>
     <pre>
     While &lt;logical expression&gt;.
@@ -203,7 +190,6 @@
     .....
     Endwhile.
     </pre>
-
     <h3> Do loop</h3>
     <pre>
     Do &lt;n&gt; times.
@@ -211,11 +197,8 @@
     .....
     Enddo.
     </pre>
-
     <h2>Logical Operator</h2>
-
     <h3>A list of logical operators</h3>
-
     <ul>
         <li>GE or &gt;=</li>
 
@@ -229,7 +212,6 @@
 
         <li>NE or &lt;&gt;</li>
     </ul>
-    
     <h2>What is Data Dictionary?</h2>
     <div>
         Data Dictionary is a central source of information for the data the system. 
@@ -283,7 +265,6 @@
         </li>
     </ul>
     </div>
-
     <h2>Aggregated Objects of ABAP Dictionary</h2>
     <div>
         .Aggregated means consisting of several components.
@@ -306,7 +287,6 @@
             . An efficient and user-friendly search assists users where the key of a record is unknown
 
     </div>
-
     <h3>Lock Objects</h3>
     <div>
     . Simultaneous accessing of the same data record by two users is synchronized by a lock mechanism.
@@ -332,7 +312,6 @@
                 <tr><td>SM30</td><td>Table Maintenance</td></tr>  
             </table>
     </div>
-
 
     <h2>Module</h2>
     <div>
@@ -537,9 +516,6 @@
         </ul>
         <br>
     </div>
-
-
-
     <h2>Open SQL & Native SQL </h2>
     <div>
         <h3>Types of SQL</h3>
@@ -1301,7 +1277,8 @@
                     
 
     <h2> Components of Dialog Program</h2>
-        <div> Unlike report which generally entails the creation of one autonomous program which can be executed independently of other objects, 
+    <div>
+        Unlike report which generally entails the creation of one autonomous program which can be executed independently of other objects, 
         dialog program development entails development of multiple objects none of which can be executed on it's own.
         <strong><em> Instead all objects are linked hierarchically to the main program and and are executed
                     in a sequence dictated by the Dialog Main Program</em></strong>.
@@ -1309,79 +1286,79 @@
         <br> <br>
         <b>Transaction code</b>
         
+        <ul> 
+            <li> The transaction code starts a screen sequence.</li> 
+        <li> You create transaction codes in the Repository Browser in the ABAP Workbench or using Transaction SE93.</li>
+            <li> A transaction code is linked to an ABAP program and an initial screen.</li>
+            <li> You can start a screen sequence from any ABAP program using the CALL SCREEN statement.</li>
+        </ul>
+    
+        <b>Screens</b>
+        <ul> <li> Each dialog in an SAP system is controlled by one or more screens.</li>
+            <li> You create screens using the Screen Painter in the ABAP Workbench through transaction SE51</li> 
+            <li> Each screen belongs to an ABAP program.</li>
+            <li> These screens consist of a "screen mask" or "layout" and its flow logic. The screen has a 
+                layout that determines the positions of input/output fields and other graphical elements 
+                such as checkboxes and radio buttons. A flow logic determines the logical processing within screen.</li> 
+        </ul>
+                        
+        <b>GUI status</b>
+        <ul>
+            <li> Each screen has a GUI status(es) which are independent components of a program.</li>
+            <li> This controls the <em>menu bars, standard toolbar, application toolbar</em> , 
+            with which the user can choose functions in the application.</li>
+            <li> You create them in the ABAP Workbench using the Menu Painter.</li>
+        </ul>
+        
+        <b>ABAP Program</b>
+        <ul>
+            <li> Each screen and GUI status in the R/3 System belongs to one ABAP program.</li>
+            <li> The ABAP program contains the dialog modules that are called by the screen flow logic,
+                and also process the user input from the GUI status.</li>
+                <li> ABAP programs that use screens are also known as dialog programs.</li>
+                <li> In a module pool (type M program); the first processing block to be called 
+                    is always a dialog module. However, you can also use screens in other ABAP programs, 
+                    such as executable programs or function modules. The first processing block is
+                        then called differently; for example, by the runtime environment or a procedure 
+                        call. The screen sequence is then started using the CALL SCREEN statement.</li> 
+        </ul>
+        <b>Screen Flow Logic</b>
+            <br> Screen Flow logic is primarily divided into four components.
+        </p>
+        <ul> 
+            <li> Process Before Output (<strong>PBO</strong>)
+                event: which is processed before the screen is displayed</li> 
+                <li> Process After Input (<strong>PAI</strong>) event: which is 
+                processed after a user action on the screen</li> 
+                <li> Process on help request (<strong>POH</strong>):
+                        which is processed when F1 is pressed</li> 
+                <li> Process on value request (<strong>POV</strong>):
+                    which is processed when F4 is pressed</li>
+        </ul>
+        <b>Dynpro </b>
+        <ul>
+            <li> A screen together with its Flow logic&nbsp; is called a Dynpro ("Dynamic Program" since the screen flow logic 
+                influences the program flow)
+            </li>
+            <li> Each dynpro controls exactly one step of your Dialog Program.</li> 
+            <li> The screens belonging to a program are <strong>numbered</strong>. The&nbsp; screen flow sequence 
+            can be either linear or cyclic. From within a screen chain, you can even call another screen chain and, 
+            after processing it, return to the original chain. You can also override the statically-defined next
+                screen from within the dialog modules of the ABAP program.
+            </li> 
+        </ul>
+        <b>ABAP Module Pool</b>
             <ul> 
-                <li> The transaction code starts a screen sequence.</li> 
-            <li> You create transaction codes in the Repository Browser in the ABAP Workbench or using Transaction SE93.</li>
-                <li> A transaction code is linked to an ABAP program and an initial screen.</li>
-                <li> You can start a screen sequence from any ABAP program using the CALL SCREEN statement.</li>
+                <li> On a PBO or PAI event a Dynpro calls an ABAP dialog program.&nbsp; 
+                Collection of such programs is called the ABAP module pool.</li>
+                <li> For example modules called at the PAI event are used to check the user input and to trigger
+                        appropriate dialog steps, such as the update task.</li>
+                <li> All dynpros to be called from within <strong>one</strong> transaction refer to a common module pool.</li>
             </ul>
         
-            <b>Screens</b>
-            <ul> <li> Each dialog in an SAP system is controlled by one or more screens.</li>
-                <li> You create screens using the Screen Painter in the ABAP Workbench through transaction SE51</li> 
-                <li> Each screen belongs to an ABAP program.</li>
-                <li> These screens consist of a "screen mask" or "layout" and its flow logic. The screen has a 
-                    layout that determines the positions of input/output fields and other graphical elements 
-                    such as checkboxes and radio buttons. A flow logic determines the logical processing within screen.</li> 
-                </ul>
-                            
-                <b>GUI status</b>
-                <ul>
-                    <li> Each screen has a GUI status(es) which are independent components of a program.</li>
-                    <li> This controls the <em>menu bars, standard toolbar, application toolbar</em> , 
-                    with which the user can choose functions in the application.</li>
-                    <li> You create them in the ABAP Workbench using the Menu Painter.</li>
-                </ul>
-                
-                <b>ABAP Program</b>
-                <ul>
-                        <li> Each screen and GUI status in the R/3 System belongs to one ABAP program.</li>
-                    <li> The ABAP program contains the dialog modules that are called by the screen flow logic,
-                        and also process the user input from the GUI status.</li>
-                        <li> ABAP programs that use screens are also known as dialog programs.</li>
-                        <li> In a module pool (type M program); the first processing block to be called 
-                            is always a dialog module. However, you can also use screens in other ABAP programs, 
-                            such as executable programs or function modules. The first processing block is
-                                then called differently; for example, by the runtime environment or a procedure 
-                                call. The screen sequence is then started using the CALL SCREEN statement.</li> 
-                </ul>
-                <b>Screen Flow Logic</b>
-                        <br> Screen Flow logic is primarily divided into four components.
-                </p>
-                <ul> 
-                    <li> Process Before Output (<strong>PBO</strong>)
-                        event: which is processed before the screen is displayed</li> 
-                        <li> Process After Input (<strong>PAI</strong>) event: which is 
-                        processed after a user action on the screen</li> 
-                        <li> Process on help request (<strong>POH</strong>):
-                                which is processed when F1 is pressed</li> 
-                        <li> Process on value request (<strong>POV</strong>):
-                            which is processed when F4 is pressed</li>
-                </ul>
-                <b>Dynpro </b>
-                <ul>
-                    <li> A screen together with its Flow logic&nbsp; is called a Dynpro ("Dynamic Program" since the screen flow logic 
-                        influences the program flow)
-                    </li>
-                    <li> Each dynpro controls exactly one step of your Dialog Program.</li> 
-                    <li> The screens belonging to a program are <strong>numbered</strong>. The&nbsp; screen flow sequence 
-                    can be either linear or cyclic. From within a screen chain, you can even call another screen chain and, 
-                    after processing it, return to the original chain. You can also override the statically-defined next
-                        screen from within the dialog modules of the ABAP program.
-                    </li> 
-                </ul>
-                <b>ABAP Module Pool</b>
-                    <ul> 
-                        <li> On a PBO or PAI event a Dynpro calls an ABAP dialog program.&nbsp; 
-                        Collection of such programs is called the ABAP module pool.</li>
-                        <li> For example modules called at the PAI event are used to check the user input and to trigger
-                                appropriate dialog steps, such as the update task.</li>
-                        <li> All dynpros to be called from within <strong>one</strong> transaction refer to a common module pool.</li>
-                    </ul>
-                
-                <h3>Structure of a Dialog Program</h3>            
-                <img src="https://www.guru99.com/images/sap/2011/01/sap-dialog-programming2.png" width="500px">
-            </div>        
+        <h3>Structure of a Dialog Program</h3>            
+        <img src="https://www.guru99.com/images/sap/2011/01/sap-dialog-programming2.png" width="500px">
+    </div>        
 
     <h1 > ABAP Subscreens Tutorial: Call Subscreen in SAP </h1>
     <h2> CALL SUBSCREEN</h2>

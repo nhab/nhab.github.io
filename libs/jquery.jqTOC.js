@@ -27,7 +27,7 @@ $.fn.jqTOC = function(settings) {
 
    $('#'+settings.tocContainer).css('width',settings.tocWidth).append(
       (settings.tocTitle?'<div class="toc_header">'+ settings.tocTitle + '</div>':'') +
-      '<div class="toc_content"></div>'
+      '<div class="toc_content" ></div>'
    );
 
    var t = $('#'+settings.tocContainer+' .toc_content');
