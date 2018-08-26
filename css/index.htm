@@ -48,22 +48,25 @@
       <a href="https://www.google.com/search?num=100&ei=7A55W-OcGqSRrgSi3YawCQ&q=css+centering+site%3Ahttps%3A%2F%2Fjsfiddle.net&oq=css+centering+site%3Ahttps%3A%2F%2Fjsfiddle.net"> [your question] site:https://jsfiddle.net"</a>
       <a href="https://www.google.com/search?num=100&q=divs+side+by+side+site%3Ahttps%3A%2F%2Fcodepen.io&oq=divs+side+by+side+site%3Ahttps%3A%2F%2Fcodepen.io">  [your question] site:https://codepen.io</a>
    </div>
-
-   <h2 id="terms-and-concepts">Terms and concepts</h2>
+<h1>Concepts</h1>
+   <h3 id="comments">Comments</h3>
+   <p>starts with /* and ends with */</p>
    <table>
-       <tr>
-           <td>
-                <h3 id="padding">padding</h3>
-                <p>distance between borders  and <b>neighbouring</b> objects.</p>
-                <h3 id="margin">margin</h3>
-                <p>distance between borders and <b>internal</b> objects.</p>
-           </td>
-           <td>
-               
-                <img src="pics\margin-padding.gif">
-           </td>
-        </tr>
-   </table>
+        <tr>
+            <td>
+                 <h3 id="padding">padding</h3>
+                 <p>distance between borders  and <b>neighbouring</b> objects.</p>
+                 <h3 id="margin">margin</h3>
+                 <p>distance between borders and <b>internal</b> objects.</p>
+            </td>
+            <td>
+                
+                 <img src="pics\margin-padding.gif">
+            </td>
+         </tr>
+    </table>
+    
+   <h2 id="terms-and-concepts">Selecting elements</h2>
    
    <h3 id="selectors">Selectors</h3>
    <div>
@@ -79,8 +82,6 @@
         <a href="selector.htm">Other Selector Types</a>
     </div>
 <br>
-   <h3 id="comments">Comments</h3>
-   <p>starts with /* and ends with */</p>
    
    <h3 id="rule-set">Rule-set</h3>
    <div>
@@ -154,13 +155,65 @@
    :X ::selection {   color: red;  background: yellow;}
    </code></pre>
 
-   <h2>Positions /layout</h2>
+   <h2>Positions</h2>
    <pre><code class="lang-css">        right  : 0px;/*the distance of the element from right is 0px*/
            left   : 0px;/*the distance of the element from left is 0px*/
            top    : 0px;/*the distance of the element from the top is 0px*/
            bottom : 0px;/*the distance of the element from the bottom is 0px*/
    </code></pre>
 
+   <h1>CSS Layout</h1>
+   <div>
+       <h2>Layouting systems:</h2>
+        First, we used <b>tables</b>, 
+        then <b>floats</b>, 
+        <b>positioning</b> 
+        and <b>inline-block</b>,
+            but all of these methods were essentially hacks and left out a lot of important functionality (vertical centering, for instance).
+       
+        <b>Flexbox</b> helped out, but it's intended for simpler one-dimensional layouts, not complex two-dimensional ones 
+        (Flexbox and Grid actually work very well together). 
+        
+        <b>Grid</b> is the very first CSS module created specifically to solve the layout problems .
+   </div>
+   <h2>grid lyout</h2>
+   <pre>
+        container {
+            display: grid;
+            grid-template-columns: 100px 200px;
+            grid-template-rows: 100px 50px;
+            grid-column-gap: 25px;
+            grid-row-gap: 25px;
+          }
+          
+   </pre>
+   <img src="pics\gridLayout.png">
+   <a href="https://flaviocopes.com/css-grid/">Read more</a>
+   <h2>FlexBox</h2>
+   <div>
+        flexbox is a one-dimensional layout model. It will control the layout based on a row or on a column, but not together at the same time.
+
+        The main goal of flexbox is to allow items to fill the whole space offered by their container, depending on some rules you set.
+        
+        Unless you need to support old browsers like IE8 and IE9, Flexbox is the tool that lets you forget about using
+        
+        Table layouts
+        Floats
+        clearfix hacks
+        display: table hacks
+        <h3>ENABLE FLEXBOX</h3>
+        <div>
+                A flexbox layout is applied to a container, by setting
+
+                display: flex;
+                or
+                display: inline-flex;
+
+                the content inside the container will be aligned using flexbox.                
+        </div>
+        <a href="https://flaviocopes.com/flexbox/">read more</a>
+        <a href="https://flexbox.help/">see in action</a>
+   </div>
    <h2 >display</h2>
    <div> this  is the most important CSS property for <b>controlling layout</b>
      - The display property specifies if/how an element is displayed.
@@ -373,7 +426,7 @@
        resize>: none;
    }
    </code></pre>
-   
+
    <h3 >Image Sprites</h3>
    <div>
        <table><tr>
@@ -434,6 +487,7 @@
         </tbody>
    </table>
    
+
    <h3 >CSS Functions</h3>
    <table>
        <tr>
@@ -473,6 +527,32 @@
                 in> both directions</td> <td></td> </tr>
        <tr><td>content</td><td>Inserts generated content</td><td>section { content : counter(my-awesome-counter); }</td></tr>
    </table>
+
+ <h3>Variables</h3>
+ <div>
+        
+        A CSS Variable is defined with a special syntax, prepending two dashes to a name (--variable-name), then a colon and a value.
+        Like this:
+        
+        :root {
+          --primary-color: yellow;
+        }
+        (more on :root later)
+        
+        You can access the variable value using var():
+        
+        p {
+          color: var(--primary-color)
+        }
+        The variable value can be any valid CSS value, for example:
+        
+        :root {
+          --default-padding: 30px 30px 20px 20px;
+          --default-color: red;
+          --default-background: #fff;
+        }
+    <a href="https://flaviocopes.com/css-variables/">Read more..</a>
+    </div>  
 
    <h3 >opacity</h3>
    <div>To add <b>transparency</b> to the background of an element.
