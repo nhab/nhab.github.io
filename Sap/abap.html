@@ -6,12 +6,12 @@
    <script type="text/javascript" src="..\libs\jquery.jqTOC.js"></script>
    <script type="text/javascript">
       $(document).ready(function(){
-         $('#content1').jqTOC({tocContainer:'abc',tocShow:'show'});
+         //$('#content1').jqTOC({tocContainer:'abc',tocShow:'show'});
          $('#content').jqTOC({
                 tocWidth:800,
                 tocTitle: "Table of Contents",
                 tocStart: 1,
-                tocEnd  : 3
+                tocEnd  : 4
         });
       });
    </script>
@@ -672,22 +672,20 @@
                 Each line in the internal table has the same field structure. 
                 The main use for internal tables is for storing and formatting data from a database table 
                 within a program. 
-
         <h3> Work Area </h3>
         <div> Work areas are single rows of data. 
                     They should have the same format as any of the internal tables. 
                     It is used to process the data in an internal table  one line at a time.
         </div>
-
         <h3> Difference Between Internal Table and a Work Area ?</h3>
         <div>
-            <p align="center"> <a href="http://guru99.com/images/sap/2011/01/sap-internal-table.jpg" class="jh-image-popup-colorbox cboxElement">
+            <p align="center">
+                 <a href="http://guru99.com/images/sap/2011/01/sap-internal-table.jpg" class="jh-image-popup-colorbox cboxElement">
                 <img alt="SAP ABAP Internal Table: Create, Read, Populate, Copy &amp; Delete" class="aligncenter size-full wp-image-974"
                 height="273" src="http://guru99.com/images/sap/2011/01/sap-internal-table.jpg" title="sap-internal-table" width="413">
                 </a>
             </p>
         </div>
-
         <h3>Types of Internal Tables</h3>
         <div>
             There are 2 types of internal tables. 
@@ -716,7 +714,6 @@
                 <li> Hence these tables cannot be accessed directly.</li>
             </ul>
         </div> 
-        
         <h3> Creating Internal Tables</h3>
         <div>
             There are <b> many</b> ways to create an Internal Table :
@@ -744,7 +741,7 @@
                 <p>
                     The TYPES statement creates a structure <em>line </em>as defined.
                     To actually create an Internal Table 
-                    <em>itab</em> use the following command-<br> &nbsp;
+                    <em>itab</em> use the following command- &nbsp;
                 </p>
                 <pre>
                     Data itab type line occurs 10.
@@ -805,14 +802,11 @@
                 <br><p> Internal table <em>itab </em>is created </p>
             </div>   
         </div>     
-
         <h3>Populating Internal Tables</h3>
             <div>  
                     Now that we have successfully created some internal tables, let us see how do we populate them with some records.
                     There are various methods available to populate tables
-                    <br>
                     <b>1.Append Data line by line</b>
-                
                     <div>
                         The first method available is the use of the APPEND statement.
                         Using the APPEND statement we can either add one line from another work area to the internal table or 
@@ -823,7 +817,7 @@
                         
                         Here work area <em>&lt;wa&gt; </em>or the Initial Line is appended to the internal table <em>&lt;itable&gt;.</em>
                         The system variable <em>SY-TABIX</em> contains the index of the appended line.
-                        <br> <br> Example:<br> 
+                        Example:
                         <pre>
                             Data: Begin of itab occurs 10,
                             col1 type C,
@@ -841,7 +835,7 @@
                     </div>
                     <b>2.Using COLLECT statement</b>
                     <div>
-                    <br> &nbsp;</div><div> COLLECT is another form of statement used for populating the internal tables.
+                         COLLECT is another form of statement used for populating the internal tables.
                             Generally COLLECT is used while inserting lines into an internal table with unique standard key.
                             <br> <br> Syntax-<br>
                             <pre>
@@ -855,17 +849,17 @@
                                 Value of SY-TABIX is changed to the row of the original entry. 
                                 Else COLLECT acts similar to APPEND and SY-TABIX contains the index of the processed line.
                     </div>
-                    <b> 3.<strong>Using INSERT statement</b>
+                    <b> 3.Using INSERT statement</b>
                     <div>
                         INSERT statement adds a line/work area to the internal table.
                         You can specify the position at which the new line is to be added 
                         by using the <em>INDEX </em>clause with the INSERT statement.
-                        Syntax<br> <br>
+                        <b>Syntax</b>
                         <pre>INSERT [&lt;wa&gt; INTO / INITIAL LINE INTO] &lt;itable&gt; [index &lt;idx&gt;].
 
                         </pre>
-                    Here,&nbsp; the work area <em>&lt;wa&gt;</em> or INITIAL LINE is inserted into internal table &lt;<em>itable&gt;</em> 
-                    at index <em>&lt;idx&gt;</em>.
+                        Here,&nbsp; the work area <em>&lt;wa&gt;</em> or INITIAL LINE is inserted into internal table &lt;<em>itable&gt;</em> 
+                        at index <em>&lt;idx&gt;</em>.
                     </div>
             </div>
         <h3> Copying Internal Tables</h3>
@@ -884,7 +878,6 @@
                     <pre>itab1[] = itab2[].
                     </pre>
             </div>
-
         <h3> Read Internal Tables</h3>  
             <div>
                 
@@ -912,8 +905,7 @@
                 The value of <em>SY-TABIX </em>is the index of the line read. If an entry with the specified index is found,
                 then <em>SY-SUBRC</em> is set to 0. If the specified index is less than 0, then run-time error occurs. 
                 If the specified index exceeds table size then SY-SUBRC is set to 4.
-            </div>
-            
+            </div>         
         <h3> Deleting Internal Tables</h3>
             <div>
                 There are many ways for deleting lines from an internal table.
@@ -934,45 +926,45 @@
             </div>
     </div>
 
-    <h2 > SAP ABAP Table Control  </h2>
+    <h2> SAP ABAP Table Control  </h2>
     <div>
         . Table controls and step loops 
         are objects for screen table display that you add to a screen in the Screen Painter.
-    . From a programming standpoint, table controls and step loops are almost exactly the same.
-    . Table controls are simply improved step loops that display data with the look and feel associated with tables in desktop applications.
-    
-    . With table controls, the user can:
-
-    <ul> 
-        <li> Scroll through the table vertically and horizontally</li> 
-        <li> Re-size the width of a column</li> 
-        <li> Scroll wi  thin a field (when field contents are wider than the field)</li>
-        <li> Select table rows or columns</li> 
-        <li> Re-order the sequence of columns</li> 
-        <li> Save the current display settings for future use</li>
-    </ul>
-    <br>
-    Table controls also offer special formatting features .
-    Table Control provides :
-
-    <ul> 
-        <li> automatic table resizing (vertical and horizontal) when the user resizes the window</li>
-        <li> separator lines between rows and between columns (vertical and horizontal)</li> 
-        <li> column header fields for all columns</li> 
-    </ul>
-    <br>
-    <p> 
-        Step loops  table rows can span more than one line on the screen.
-        A row of a table control, on the other hand, must always be contained in a single line 
-        (although scrolling is possible).
+        . From a programming standpoint, table controls and step loops are almost exactly the same.
+        . Table controls are simply improved step loops that display data with the look and feel associated with tables in desktop applications.
         
-        <em><strong>
-        In general, many of the features provided by the table control are handled locally by your system's SAPgui frontend,
-            so you do not need to program them yourself. The only notable exception to this is vertical scrolling</strong>
-        </em>.
-    </p>    
-    Example (Transaction TZ60)
-        
+        . With table controls, the user can:
+
+        <ul> 
+            <li> Scroll through the table vertically and horizontally</li> 
+            <li> Re-size the width of a column</li> 
+            <li> Scroll wi  thin a field (when field contents are wider than the field)</li>
+            <li> Select table rows or columns</li> 
+            <li> Re-order the sequence of columns</li> 
+            <li> Save the current display settings for future use</li>
+        </ul>
+        <br>
+        Table controls also offer special formatting features .
+        Table Control provides :
+
+        <ul> 
+            <li> automatic table resizing (vertical and horizontal) when the user resizes the window</li>
+            <li> separator lines between rows and between columns (vertical and horizontal)</li> 
+            <li> column header fields for all columns</li> 
+        </ul>
+        <br>
+        <p> 
+            Step loops  table rows can span more than one line on the screen.
+            A row of a table control, on the other hand, must always be contained in a single line 
+            (although scrolling is possible).
+            
+            <em><strong>
+            In general, many of the features provided by the table control are handled locally by your system's SAPgui frontend,
+                so you do not need to program them yourself. The only notable exception to this is vertical scrolling</strong>
+            </em>.
+        </p>    
+        Example (Transaction TZ60)
+            
         <b>Syntax  </b>
         To handle table controls in ABAP programs, you must declare a control in the declaration part of the program 
             for each table control using the following statement:<br>
@@ -1055,7 +1047,7 @@
         </pre>
     </div>
 
-    <h2 itemprop="headline"> ABAP Report Programming </h2> 
+    <h2 > ABAP Report Programming </h2> 
     <div> 
         SAP-ABAP supports two types of Programs :
         -&nbsp; Report Programs &amp; Dialog Programs.
