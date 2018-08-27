@@ -210,7 +210,7 @@ tb=[
 	   ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Norwegian_citizens'>yes</a>"
    ,""
 	   ,""
-	   ,""
+	   ,"100,000$"
 	   ,""
 	   ,""
 	     ,""

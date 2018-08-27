@@ -38,31 +38,31 @@
     
     <h2>Types of ABAP 4 Programs</h2>
     <div>
-        <pre>
-        <strong>Executable Programs (ABAP Reports):</strong>
+        
+        <b>Executable Programs (ABAP Reports):</b>
             are I programs type that represented with the keyword REPORT
 
-        <strong>INCLUDE Program:-</strong>
+        <b>INCLUDE Program:-</b>
             are I programs type that represented with the keyword INCLUDE
 
-        <strong>Module Pool/Dialogue programs:</strong>
+        <b>Module Pool/Dialogue programs:</b>
             are type M programs represented with the keyword PROGRAM.
 
-        <strong>Sub-Routine Pool: </strong>
+        <b>Sub-Routine Pool: </b>
             are S programs type that represented with the keyword PROGRAM.
 
-        <strong>Interface Pool:</strong>
+        <b>Interface Pool:</b>
             are J programs type that represented with the keyword INTERFACE-POOL.
 
-        <strong>Class Pool:</strong>
+        <b>Class Pool:</b>
             are K programs type that represented with the keyword CLASS-POOL.    
 
-        <strong>Function Group:</strong>
+        <b>Function Group:</b>
             are F programs type that represented with the keyword FUNCTION-POOL.
 
-        <strong>Type group:</strong> 
+        <b>Type group:</b> 
             are represented with the keyword TYPE-POOL.
-        </pre>
+        
     </div>
     <h2>Variables and Data Types</h2>
     <div>
@@ -81,14 +81,14 @@
         " display: block; overflow: scroll;overflow-x: auto;overflow-y: auto;">
             <tbody>
             <tr>
-                <th style="width:12%"><strong>Data Type</strong></th>
-                <th style="width:18%"><strong>Initial field length</strong></th>
-                <th style="width:18%"><strong>Valid field length</strong></th>
-                <th style="width:18%"><strong>Initial value</strong></th>
-                <th><strong>Meaning</strong></th>
+                <th style="width:12%"><b>Data Type</b></th>
+                <th style="width:18%"><b>Initial field length</b></th>
+                <th style="width:18%"><b>Valid field length</b></th>
+                <th style="width:18%"><b>Initial value</b></th>
+                <th><b>Meaning</b></th>
             </tr>
             <tr>
-                <td colspan="5"><em><strong>Numeric types</strong></em></td>
+                <td colspan="5"><em><b>Numeric types</b></em></td>
             </tr>
             <tr>
                 <td>I</td>
@@ -112,7 +112,7 @@
                 <td>Packed number</td>
             </tr>
             <tr>
-                <td colspan="5"><em><strong>Character types</strong></em></td>
+                <td colspan="5"><em><b>Character types</b></em></td>
             </tr>
             <tr>
                 <td>C</td>
@@ -143,7 +143,7 @@
                 <td>Time field(format: HHMMSS)</td>
             </tr>
             <tr>
-                <td colspan="5"><em><strong>Hexadecimal type</strong></em></td>
+                <td colspan="5"><em><b>Hexadecimal type</b></em></td>
             </tr>
             <tr>
                 <td>X</td>
@@ -224,8 +224,8 @@
 
     <h2>What is Data Dictionary?</h2>
     <div>
-        Data Dictionary is a central source of information for the data the system. 
-        <br>
+        Data Dictionary is a system independent interface to  the database (virtual database ) . 
+        
         Its main function is to support the <b>creation and management</b>  of data definitions
         (or <b>"metadata"</b>).
 
@@ -722,7 +722,7 @@
             <div>
                 Let us now create a Internal table <em>itab </em>using the TYPE statement.
             
-                <strong>syntax :</strong>
+                <b>syntax :</b>
                 <pre>
                     Types : begin of line,
                     column1 type I,
@@ -781,7 +781,7 @@
             <b>4.By creating a new Structure</b>
             <div>
                 Let us now create an internal table with a structure of our own.
-                Here the table is created with an Header line, <strong>by default</strong>.
+                Here the table is created with an Header line, <b>by default</b>.
                 <br> Syntax -
                 <pre>Data : Begin of &lt;f&gt; occurs &lt;n&gt;,
                     &lt;component declaration&gt;,          
@@ -891,7 +891,7 @@
                 
                 Here when you say LOOP AT ITABLE, then the internal table ITABLE is read line by line.
                 You can access the values of the columns for that line during any part of the LOOP-ENDLOOP structure. 
-                The value of the <em>SY-SUBRC</em> is set to <strong>0</strong>,
+                The value of the <em>SY-SUBRC</em> is set to <b>0</b>,
                 even if only one record is read.
                 
                 <b>2. Using READ</b>
@@ -1576,9 +1576,7 @@
                         </p>
     </div>
                   
-    <h2>
-        ALV Reports in SAP Tutorial - ABAP List Viewer
-    </h2>
+    <h2>ALV Reports in SAP Tutorial - ABAP List Viewer   </h2>
     <div>
 
         The common desired  features of any  report are "column alignment", sorting, filtering, subtotals, totals etc.
