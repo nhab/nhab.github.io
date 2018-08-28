@@ -6,7 +6,7 @@
         <p>CSS Describes how HTML elements are to be displayed</p>
 
    <h2 >Debugging CSS</h2>
-   <div>
+   <p>
     -<b>Test Locally:</b>
      Copy the code to your local machine and test it there before uploading 
         to the server.
@@ -33,21 +33,21 @@
         Other times,error in the link tag in the html file,causes the class to not work.exaclty follow This syntax:
         <pre> < link rel="stylesheet"  type="text/css" href="main.css" / ></pre>
         <b>css Validators and debuggers</b>
-        <div>
+        <p>
             1. <a href="http://chrispederick.com/work/web-developer/" target="_blank">Web Developer Extension</a>
             2.<a href="https://getfirebug.com/" target="_blank">Firebug</a>
             3.<a href="https://developer.chrome.com/devtools" target="_blank">Google Developer Tools</a>
             4.<a href="http://www.css-validator.org/" target="_blank">W3 CSS Validation Service</a>
             5.<a href="http://csslint.net/" target="_blank">CSS Lint</a>
-        </div>
-    </div>
+        </p>
+    </p>
    <h2 >Resources</h2>
-   <div>
+   <p>
       <a href="https://css-tricks.com/snippets/css/">Css-tricks Sample Code snippets</a>
       <a href="https://www.w3schools.co/cssref">w3school css reference</a>
       <a href="https://www.google.com/search?num=100&ei=7A55W-OcGqSRrgSi3YawCQ&q=css+centering+site%3Ahttps%3A%2F%2Fjsfiddle.net&oq=css+centering+site%3Ahttps%3A%2F%2Fjsfiddle.net"> [your question] site:https://jsfiddle.net"</a>
       <a href="https://www.google.com/search?num=100&q=divs+side+by+side+site%3Ahttps%3A%2F%2Fcodepen.io&oq=divs+side+by+side+site%3Ahttps%3A%2F%2Fcodepen.io">  [your question] site:https://codepen.io</a>
-   </div>
+   </p>
 <h1>Concepts</h1>
    <h3 id="comments">Comments</h3>
    <p>starts with /* and ends with */</p>
@@ -69,7 +69,7 @@
    <h2 id="terms-and-concepts">Selecting elements</h2>
    
    <h3 id="selectors">Selectors</h3>
-   <div>
+   <p>
         <h4 id="the-element-selector">The element Selector</h4>
         selects HTML elements based on the element name.
         Example:
@@ -80,20 +80,20 @@
             }
         </pre>
         <a href="selector.htm">Other Selector Types</a>
-    </div>
+    </p>
 <br>
    
    <h3 id="rule-set">Rule-set</h3>
-   <div>
+   <p>
        The following line is a rule-set:
         <pre>
             h1      { color  : blue  ;   font-size : 12px>;  }
         </pre>
         So the rule-set is a combination of a selector and a declaration block (a set of prperty:value)
-   </div>
+   </p>
 
    <h3 id="combinator">Combinator</h3>
-   <div>
+   <p>
         <pre>
         /*The following example selects all &lt;p&gt; elements inside &lt;div&gt; elements:*/
         div p {
@@ -101,10 +101,10 @@
         }
         </pre>
         So the combinator explains the relationship between the selectors.
-   </div>
+   </p>
 
    <h3 >Pseudo-classes</h3>
-   <div>
+   <p>
        defines a special state of an element
         (for example on  mouse  over it or when got focus or  visited links)</p>
         <b>syntax</b>
@@ -128,10 +128,10 @@
             color: #FF00FF;
         }
         </code></pre>
-    </div>
+    </p>
 
    <h3 >pseudo-element</h3>
-   <div>
+   <p>
        to style <b>specified parts</b> of an element.
             <b>Syntax (double colon) :</b>
         <pre><code >selector::pseudo-element {
@@ -163,7 +163,7 @@
    </code></pre>
 
    <h1>CSS Layout</h1>
-   <div>
+   <p>
        <h2>Layouting systems:</h2>
         First, we used <b>tables</b>, 
         then <b>floats</b>, 
@@ -175,7 +175,7 @@
         (Flexbox and Grid actually work very well together). 
         
         <b>Grid</b> is the very first CSS module created specifically to solve the layout problems .
-   </div>
+   </p>
    <h2>grid lyout</h2>
    <pre>
         container {
@@ -190,7 +190,7 @@
    <img src="pics\gridLayout.png">
    <a href="https://flaviocopes.com/css-grid/">Read more</a>
    <h2>FlexBox</h2>
-   <div>
+   <p>
         flexbox is a one-dimensional layout model. It will control the layout based on a row or on a column, but not together at the same time.
 
         The main goal of flexbox is to allow items to fill the whole space offered by their container, depending on some rules you set.
@@ -202,7 +202,7 @@
         clearfix hacks
         display: table hacks
         <h3>ENABLE FLEXBOX</h3>
-        <div>
+        <p>
                 A flexbox layout is applied to a container, by setting
 
                 display: flex;
@@ -210,20 +210,20 @@
                 display: inline-flex;
 
                 the content inside the container will be aligned using flexbox.                
-        </div>
+        </p>
         <a href="https://flaviocopes.com/flexbox/">read more</a>
         <a href="https://flexbox.help/">see in action</a>
-   </div>
+   </p>
    <h2 >display</h2>
-   <div> this  is the most important CSS property for <b>controlling layout</b>
+   <p> this  is the most important CSS property for <b>controlling layout</b>
      - The display property specifies if/how an element is displayed.
      - Every HTML element has a default display value depending on what type of element it is.
      - The default display value for most elements is block or inline.
         
         <h4 >Block-level Elements ( display: block;)</h4>
-        <div> always starts on a new line and takes up the full width available
+        <p> always starts on a new line and takes up the full width available
         .like div ,h1 to h6,p;form and more.
-        </div>
+        </p>
         <h4 id="inline-elements-display-inline-">Inline Elements (  display: inline;)</h4>
         <p>An inline element does not start on a new line and only takes up as much width as necessary.
         :x</p>
@@ -262,7 +262,7 @@
                     position>: absolute;/*is positioned relative to the nearest positioned ancestor */>
                             /*/(instead of positioned relative to the viewport, like fixed).*/>
         </code></pre>
-    </div>
+    </p>
    
     <h2 id="z-index">z-index</h2>
    <p>:which element should be placed in front of, or behind, the others.
@@ -428,23 +428,23 @@
    </code></pre>
 
    <h3 >Image Sprites</h3>
-   <div>
+   <p>
        <table><tr>
            <td>
-               <div>
+               <p>
                 An image sprite is a collection of images put into a single image.
                 A web page with many images can take a long time to load and generates multiple server requests.
                 Using image sprites will reduce the number of server requests and save bandwidth.
-                </div>
+                </p>
             </td>
             <td>
                 <img src="pics\imageSprite.png">
             </td>
         </tr></table>
-    </div>
+    </p>
    
    <h3 >Counters</h3>
-   <div>  Ordered lists aren't the only elements that can be automatically numbered. 
+   <p>  Ordered lists aren't the only elements that can be automatically numbered. 
        Thanks to the various counter-related properties, any element can be.
        <pre> 
             < body>
@@ -459,7 +459,7 @@
         </pre>
         Each < section > will respectively start with "1", "2", "3", or "4".
         To work with CSS counters we will use the following properties:
-   </div>
+   </p>
    <table>
         <thead>
         <tr>
@@ -496,7 +496,7 @@
        <tr>
             <td>attr>() </td><td>  Returns the value of an attribute of the selected element</td>
               <td>
-                  <div>
+                  <p>
                         /* Simple usage */
                         attr(data-count);
                         attr(title);
@@ -511,7 +511,7 @@
                         attr(src url, '');
                         attr(data-width px, inherit);
                         attr(data-something, 'default');
-                  </div>
+                  </p>
               </td>
         </tr>
         <tr>
@@ -529,7 +529,7 @@
    </table>
 
  <h3>Variables</h3>
- <div>
+ <p>
         
         A CSS Variable is defined with a special syntax, prepending two dashes to a name (--variable-name), then a colon and a value.
         Like this:
@@ -552,13 +552,13 @@
           --default-background: #fff;
         }
     <a href="https://flaviocopes.com/css-variables/">Read more..</a>
-    </div>  
+    </p>  
 
    <h3 >opacity</h3>
-   <div>To add <b>transparency</b> to the background of an element.
+   <p>To add <b>transparency</b> to the background of an element.
         all of its child elements become transparent as well.
    can take a value from 0.0 - 1.0.
-   </div> 
+   </p> 
    <table>
        <tr><td>Syntax</td><td>Example</td></tr>
        <tr>
@@ -576,7 +576,7 @@
    </code></pre>
 
    <h3 >border/outline/devider</h3>
-   <div>
+   <p>
         border-style
         <code>
             dotted - Defines a dotted border
@@ -595,14 +595,14 @@
         border-color: green;
     
         border-collapse
-        <div>
+        <p>
            Is used for table elements(or table like elements trough display: table or display: inline-table).  
             may have 2 values:
             border-collapse:seperate; /* borders of  cells are seperate;so it could be space between cells */
             border-collapse: collapse; /* boders of cells are in common; so the table looks like a real table */
-        </div>
+        </p>
         border-radius 
-        <div>
+        <p>
             gives any element "rounded corners"
             <b>Examples:</b>
             <pre>
@@ -610,10 +610,10 @@
                     border-radius: 15px 50px 30px:
                     border-radius: 15px 90px 30px 120px;
             </pre>
-        </div>
+        </p>
   
         border-image
-        <div>
+        <p>
             An image can be used as the border around an element.
             it can be a gradiant instead of the image.
             border-image property is actually a shorthand property
@@ -647,10 +647,10 @@
                 table, td, th {    border: 1px solid black;} /* To temporarily/permenantly set borders for all tables:*/
                 th, td {    border-bottom: 1px solid #ddd;}  /* Horizontal Dividers*/
             </code></pre>
-        </div>
-</div>
+        </p>
+</p>
     <h2 id="outline">outline</h2>
-   <div>s a line that is drawn around elements (outside the borders) to make the element &quot;stand out&quot;.
+   <p>s a line that is drawn around elements (outside the borders) to make the element &quot;stand out&quot;.
        However, the outline property is different from the border property:
             
         <pre><code> The outline is NOT a part of dimensions of an element ; 
@@ -662,7 +662,7 @@
         outline-width>: thick;
         </code></pre>
         <h3 >outline-offset</h3>
-        <div>adds space between an outline and the edge or border of an element.
+        <p>adds space between an outline and the edge or border of an element.
         Example
         <pre><code class="lang-css">div> {
             border>: 1px> solid black;
@@ -670,8 +670,8 @@
             outline-offset>: 15px>;
         }
         </code></pre>
-        </div>
-    </div>
+        </p>
+    </p>
  
    <h2 id="colors">Colors</h2>
    <pre><code class="lang-css">color>: green>;
