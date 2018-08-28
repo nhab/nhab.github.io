@@ -29,7 +29,8 @@ h1{display: flex;
   align-items: center;
   background-color:#5342f4;
   color:#cfc9fc;
-  font-weight:lighter;}
+  font-weight:lighter;
+}
 h2{
   display: flex;
   justify-content: center;
@@ -54,20 +55,13 @@ h3{
   border-style: solid;
   border-width: 1px; font-weight:lighter;
 }
-p,div,span,li{    font-size: 18px;  margin-left: 20px;}
+div,span,li{    font-size: 18px;  margin-left: 20px;}
 code,pre {     background-color: #eeeeee; margin: 4px 4px 4px 4px;}
 pre{  width:70%;}
 li{  font-weight: normal;}
 ul{
   margin-left:25px;
 }
-table { border: 1px solid #444444; background-color: #EEEEEE; width: 100%; text-align: left; border-collapse: collapse;}
-table td, table th {  border: 1px solid #444444; padding: 3px 2px;}
-table tbody td { margin-left: 3px; font-size: 16px;}
-table tr:nth-child(even) {  background: #D0E4F5;}
-table thead th {  font-size: 16px;  font-weight: bold;   border: 2px solid ;border-color:#444444;}
-table thead th:first-child {  border-left: none;}
-th {padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #29559b; color: white;}
 /* unvisited link */
 a:link {
   color: rgb(23, 12, 114);
@@ -88,6 +82,33 @@ b{
   font-weight:bolder;
 }
 /******************************************* Classes **********************************************/
+.tableColored { border: 1px solid #444444; background-color: #EEEEEE; width: 100%; text-align: left; border-collapse: collapse;}
+.tableColored td, table th {  border: 1px solid #444444; padding: 3px 2px;}
+.tableColored tbody td { margin-left: 3px; font-size: 16px;}
+.tableColored tr:nth-child(even) {  background: #D0E4F5;}
+.tableColored thead th {  font-size: 16px;  font-weight: bold;   border: 2px solid ;border-color:#444444;}
+.tableColored thead th:first-child {  border-left: none;}
+.tableColored th {padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #29559b; color: white;}
+
+
+.pageHeader{
+  font-weight:lighter;
+  font-size: xx-large;
+  width:100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  padding: 20px;
+  background-color:#5342f4;
+  color:#cfc9fc;
+}
+.topBand{
+  background-color:#140a6d;
+  color:#cfc9fc;
+  font-weight:lighter;
+  font-size: small;
+}
 .header {
     background-color: #666;
     padding: 10px 10px;
@@ -95,6 +116,7 @@ b{
     font-size: 25px;
     color: white;
     width:160px;
+
 }
 .inALine{
   display:inline-block;
