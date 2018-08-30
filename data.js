@@ -400,6 +400,19 @@ tb=[
 +"<a href='http://www.floodmap.net/Elevation/ElevationMap/?gi=3117735'>638 m</a>"
 ,""
 ],
+
+["Slovakia"
+,""
+,""
+,""
+,""
+,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Slovak_citizens'>yes</a>"
+,""
+,"Euro"
+,""
+,""
+,"Bratislava,23°C,50%,440m"
+],
 ["Italy"
  ,""
  ,""
@@ -545,7 +558,7 @@ tb=[
 ["Poland"],
 ["Portugal"],
 ["Romania"],
-["Slovakia"],
+
 ["Slovenia"],
 ["Panama ",
  "0",

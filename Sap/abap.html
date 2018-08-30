@@ -154,23 +154,24 @@
             </tr>
             </tbody>
         </table>
+        
         <h3> Assigning Values</h3>
-        <pre>
+        <p>
         a=16.
-
         move 16 to a.
-
         write a to b.
-        </pre>
-        <h3>- Arithmetic Operations</h3>
-        <code>
+        </p>
+
+        <h3> Arithmetic Operations</h3>
+        <P>
         compute a = a*100.
-        </code>
+        </P>
     </p>
+
     <h2>Control Statements</h2>
     <p>
         <h3> If ... EndIf Loop</h3>
-        <pre>
+        <P>
         if [not] exp [ and / or [not] exp ].
         ........
         [elseif exp.
@@ -178,9 +179,10 @@
         [else.
         .......]
         Endif.
-        </pre>
+        </P>
+
         <h3>Case statement</h3>
-        <pre>
+        <P>
         Case variable.
         when value1.
         .........
@@ -190,21 +192,23 @@
         .........]
         Endcase.
         Do.
-        </pre>
+        </P>
+
         <h3>While loop</h3>
-        <pre>
+        <P>
         While &lt;logical expression&gt;.
         .....
         .....
         Endwhile.
-        </pre>
+        </P>
+
         <h3> Do loop</h3>
-        <pre>
+        <P>
         Do &lt;n&gt; times.
         .....
         .....
         Enddo.
-        </pre>
+        </P>
     </p>
     <h2>Logical Operator</h2>
     <h3>A list of logical operators</h3>
@@ -229,60 +233,36 @@
         Its main function is to support the <b>creation and management</b>  of data definitions
         (or <b>"metadata"</b>).
 
-    <h3>ABAP Dictionary 3 levels</h3>
+        <h3>ABAP Dictionary 3 levels</h3>
     <p>
         Objects in the ABAP Dictionary resided on 3 levels :
-    </p>
-    <ul>
-        <li><b>Tables and structures</b>
-            <br>
-        <p>
-        <b>Tables</b>
-            <p class="width60Percent">
-                . Represent the Database Tables where data actually resides.
-                . Tables can be defined independently of the database in the ABAP Dictionary.
-                . The fields of the table are defined with their (database-independent) SAP ABAP data types and lengths.
 
-            </p>
-
-        <b>Structures</b>
-            <p class="width60Percent">
-                . Are record declarations that do NOT correspond to a Database Table.
-                Just like user-defined data type.
-                Defined like a table and can then be addressed from ABAP programs.
-                Structures contain data only during the runtime of a program.        
-
-            </p>
-        </p>
-        </li>
-        <li><b>Data elements</b>
-            <p class="width60Percent">
-                . Describes the role played by a field in a technical context
-                . Fields of same semantic meaning can refer to the same data element
-                Contains the field information    
-
-            </p>
-            
-        </li>
-        <li><b>Domains</b>
-            <p class="width60Percent">
-                . Describes the technical characteristics of a table field Specifies a value range .
-                . it describes allowed data values for the fields
-                . Fields referring to the same domain (via the data elements assigned to them) are changed when a change is made to the domain
-                Ensures consistency    
-
-            </p>
-        </li>
-    </ul>
+            <b>Tables and structures</b>
+                    <b>Tables</b>    
+                        . Represent the Database Tables where data actually resides.
+                        . Tables can be defined independently of the database in the ABAP Dictionary.
+                        . The fields of the table are defined with their (database-independent) SAP ABAP data types and lengths.
+                    <b>Structures</b>
+                        . Are record declarations that do NOT correspond to a Database Table.
+                        Just like user-defined data type.
+                        Defined like a table and can then be addressed from ABAP programs.
+                        Structures contain data only during the runtime of a program.        
+            <b>Data elements</b>
+                    . Describes the role played by a field in a technical context
+                    . Fields of same semantic meaning can refer to the same data element
+                    Contains the field information    
+            <b>Domains</b>
+                    . Describes the technical characteristics of a table field Specifies a value range .
+                    . it describes allowed data values for the fields
+                    . Fields referring to the same domain (via the data elements assigned to them) are changed when a change is made to the domain
+                    Ensures consistency    
     </p>
     
     <h2>Aggregated Objects of ABAP Dictionary</h2>
     <p>
-        .Aggregated means consisting of several components.
         .In the ABAP Dictionary, aggregated objects are objects which come from several different 
         transparent tables.
 
-        
         <h3>Views</h3>
         <p>
             . Are same as database views.
@@ -290,25 +270,25 @@
             . The data of a view is not actually physically stored.
             . The data of a view is instead derived from one or more other tables
             , It is tailored to the needs of a specific application
-
         </p>
+        
         <h3>Search Help</h3>
         <p>
                 . Search help is a tool to help you search for data records in the system
                 . An efficient and user-friendly search assists users where the key of a record is unknown
-
         </p>
+        
         <h3>Lock Objects</h3>
         <p>
         . Simultaneous accessing of the same data record by two users is synchronized by a lock mechanism.
         . Locks are set and released by calling certain function modules.
         . These function modules are generated automatically from the definition of so-called lock objects in the ABAP/4 Dictionary.
         
-        <h4>Function modules :</h4>
+        <b>Function modules :</b>
             <b>Enqueue_<obj name></obj></b> : to lock the table
             <b>dequeue_<obj name></obj></b> : to release the lock
-
         </p>
+        
     </p>
     <h2>Important Transactions</h2>
     <p>
@@ -326,19 +306,17 @@
 
     <h2>Module</h2>
     <p>
-        . Is a place to put a sequence of ABAP statements.
-        , Then, instead of placing all of the statements in your main program,
-        you just call the module.
-            
+     Is a place to put a <b>sequence of ABAP statements</b>.
+    Then, instead of placing all of the statements in your main program,
+      you just call the module.    
     </p>
     
     <h2>macros</h2>
     <p>
-        . If you want to reuse the same set of statements more than once in a program, you can include them in a macro.
+         If you want to reuse the same set of statements more than once in a program, you can include them in a macro.
         . You can only use a macro within the program in which it is defined, 
         . It can only be called in lines of the program following the definition.
         . Macros can be useful for long calculations or complex WRITE statements.
-
 
         <h3>Syntax</h3>
         <pre>
@@ -510,44 +488,37 @@
         . Like executable programs (type 1) and module pools (type M), 
             Function groups can contain screens, selection screens, and lists.
 
-        <h4>Points to Note</h4>
-
-        <ul>
-            <li>Function Groups cannot be executed.</li>
-            <li>The name of a function group can be up to 26 characters long.</li>
-            <li>When you create a function group or function module, the main program and include programs are generated automatically.</li>
-            <li>Function groups encapsulate data.</li>
-        </ul>    
+        <b>Points to Note</b>
+            
+                - Function Groups cannot be executed.
+                - The name of a function group can be up to 26 characters long.
+                - When you create a function group or function module, the main program and include programs are generated automatically.   
+                - Function groups encapsulate data.
         <br>
-        <h4>How to create a Function Group</h4>
-        <ul>
-        <li>Goto Transaction SE80.</li>
-        <li>Select Program in the DropDown.</li>
-        <li>Write the name of the Function Group That you want to create.<br>
-        Generally User made Function groups start with "Z". e.g. - <Z_FUNCTION_GROUP_NAME> . Hit Enter Key.</li>
-        <li>Note that The TOP Include is create by default if the user checks the option of creating a TOP include.   </li>
-        </ul>
-        <br>
+        <b>How to create a Function Group</b>
+        
+            - Goto Transaction SE80.
+            - Select Program in the DropDown.
+            - Write the name of the Function Group That you want to create.
+                Generally User made Function groups start with "Z". e.g. - <Z_FUNCTION_GROUP_NAME> . Hit Enter Key.
+            - Note that The TOP Include is create by default if the user checks the option of creating a TOP include.   
     </p>
 
     <h2>Open SQL & Native SQL </h2>
-    <p>
         <h3>Types of SQL</h3>
-            <p>
+        <p>
             In ABAP, there are 2 types of SQL :
-            <h4>OPEN SQL   </h4> 
-            <p>
+            <b>OPEN SQL   </b> 
                     Open SQL allows to access the database tables declared in the ABAP dictionary <b>regardless of the database platform</b> 
                     that the system is using.
-            </p>
-            <h4> NATIVE SQL </h4> 
-            <p>
+            
+            <b> NATIVE SQL </b> 
+            
                 Native SQL allows to use <b>database-specific</b> SQL statements in an ABAP program. 
                 This means that you can use database tables that are not administered by ABAP dictionary,
                 and therefore integrate data that is not part of the R/3 system.
-            </p>
-
         </p>
+        
         <h3>Open SQL </h3>
         <p>
             . Open SQL thus provides a uniform syntax and semantics for all of the database systems supported by SAP. 
@@ -622,7 +593,7 @@
             . In nearly all cases, <b>SY-SUBRC</b>  contains the value 0 after the ENDEXEC statement.
 
         </p>
-    </p>
+    
 
     <h2>Open SQL - Performance Rules</h2>
     <p>
