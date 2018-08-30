@@ -4,7 +4,7 @@
         <link rel="stylesheet"  type="text/css" href="main.css" />
         <script src="fdate.js"></script>
         <script src="dateTime.js"></script>
-    
+        <script src="btc.js"></script>
     </head>
     <body>
         <table class="topBand" style="height: 30px;width:100%">
@@ -14,17 +14,15 @@
                    <SCRIPT>document.write(getdateP());</SCRIPT>
                 </td>
                 <td id="div1"  class="topBand" ></td>
-                <td  class="topBand" >
-                    <script>
-                    DatTimeClock();
-                    </script>
-                </td>
              </tr>
         </table>
+        <script>
+            DatTimeClock();
+        </script>
         <div class="pageHeader">NHab </div>
             <br>
             <div class="gridContainer CenterMe-H">
-                <div class="bordered " >
+                <div class="bordered" >
                         <div class="header indent"  >Tutorials</div>
                         <div class="indent">
                             <a href="\Sap\sap.html" class="top">SAP</a>
@@ -38,22 +36,25 @@
                 <div class="bordered">
                         <div class="header indent">Links</div>
                         <div class="indent">
-                            <a href="https://github.com/nhab/">github.com/nhab</a>
-                            <a href="https://www.evernote.com/Home.action">evernote</a>
+                            <a href="https://github.com/nhab/">Github.com/nhab</a>
+                            <a href="https://www.evernote.com/Home.action">EverNote</a>
                             <a href="https://mega.nz/">Mega.nz</a>
-                            <a href="https://mail.yahoo.com">yahoo mail</a>
+                            <a href="https://mail.yahoo.com">Yahoo mail</a>
                             <a href="https://google.com/mail">GMail</a>
                             <a href="https://www.linkedin.com/">Linkedin</a>
-                            <a href="https://mail.google.com/tasks/canvas">google task and notes</a>
-                            <a href="https://www.wunderlist.com/#/lists/inbox">wunderList</a>
-                            <a href="https://docs.google.com/document/u/0/">google Docs</a>
+                            <a href="https://mail.google.com/tasks/canvas">Google Task and notes</a>
+                            <a href="https://www.wunderlist.com/#/lists/inbox">WunderList</a>
+                            <a href="https://docs.google.com/document/u/0/">Google Docs</a>
                         </div>
                 </div>
                 <div class="bordered">
                     <div class="header indent">Refrences</div>
                     <div class="indent">
-                        <a href="shortcutkeys.htm">Shotcut keys </a>
+                        <a href="shortcutkeys.htm">Shortcut keys </a>
                     </div>
+                </div>
+                <div id="btc">
+                    <script>document.write(getprice());</script>
                 </div>
             </div>
         </div>    
