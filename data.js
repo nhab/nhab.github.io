@@ -404,14 +404,18 @@ tb=[
 ["Slovakia"
 ,""
 ,""
+
 ,""
 ,""
 ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Slovak_citizens'>yes</a>"
+
 ,""
 ,"Euro"
 ,""
+
 ,""
 ,"Bratislava,23°C,50%,440m"
+,""
 ],
 ["Italy"
  ,""
