@@ -89,8 +89,8 @@ tb=[
    ,
    [
     "Switzerland",
-    ,"<a href='https://www.expatica.com/ch/visas-and-permits/Moving-to-Switzerland-Swiss-visas-and-permits_107631.html'>Employment based</a>"
-    ,"<a href='https://www.swissinfo.ch/eng/work-permits/29191706'>No?</a>"
+    ,"<a href='https://www.expatica.com/ch/visas-and-permits/Moving-to-Switzerland-Swiss-visas-and-permits_107631.html'>job offer</a>"
+    ,"<a href='https://www.swissinfo.ch/eng/work-permits/29191706'>12</a>"
     ,""
     
     ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Swiss_citizens'>YES</a>"
@@ -206,7 +206,7 @@ tb=[
    "Norway"
    ,"<a href='https://www.udi.no/en/want-to-apply/work-immigration/?c=irn'>Skilled wworker</a>"
    , ""
-   ,""
+   ,"<a href='https://www.lifeinnorway.net/norwegian-citizenship/'>generally 7</a>"
 ,""
 	   ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Norwegian_citizens'>yes</a>"
    ,""
@@ -452,11 +452,11 @@ tb=[
 [
 "Taiwan"
 ,"<a href='https://en.wikipedia.org/wiki/Nationality_law_of_Taiwan'>5 </a>"
+,""
+,""
+,""
 ,"Dual<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Taiwanese_citizens'>Yes,Even china</a>"
 ,"<a href='https://en.wikipedia.org/wiki/Languages_of_Taiwan'>Chines manderin</a>"
-,""
-,""
-,""
 ,""
 ,""
 ,""
@@ -467,10 +467,10 @@ tb=[
 ,
 ["Denmark"
  ,"<a href='https://www.justlanded.com/english/Denmark/Denmark-Guide/Visas-Permits/Citizenship'>9 </a>"
+ ,""
+,""
+,""
  ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Danish_citizens'>Yes</a>"
- ,""
- ,""
- ,""
  ,""
  ,""
  ,""
@@ -483,10 +483,10 @@ tb=[
 [
 "Japan ",
 "<a href='https://www.wikihow.com/Become-a-Japanese-Citizen'>5</a>"
+,""
+,""
+,""
 ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Japanese_citizens'>YES</a>"
-,""
-,""
-,""
 ,""
 ,""
 ,""
@@ -498,6 +498,10 @@ tb=[
 ,
 [
 "Cyprus"
+,""
+,""
+,""
+,""
 ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Cypriot_citizens'>Canada,Europe"
 ]
 ,
