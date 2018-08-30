@@ -249,21 +249,6 @@ tb=[
 ,""
    ],
    [
-     "South africa"
-     ,""
-     ,""
-     ,""
-     ,""
-     ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_South_African_citizens'>india</a>"
-     ,""
-     ,""
-     ,""
-     ,""
-     ,""
-     ,"Johannesburg,22C,22%,1753m"
-     ,""
-   ],
-   [
      "brazil"
      ,""
      ,""
@@ -277,20 +262,6 @@ tb=[
      ,""
      ,"Brasília,27°C,29%,1079m"
      ,""
-   ],
-["Malta"
-    ,"<a href='https://www.gov.mt/en/Life%20Events/Moving-to-Malta/Pages/Moving-to-Malta.aspx'>.</a>"
-    ,""
-    ,"<a href='https://integration.gov.mt/en/ResidenceAndVisas/Pages/Citizenship.aspx'>5</a>"
-   ,""
-   ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Maltese_citizens'>YES</a>"
-   ,"<a href='https://en.wikipedia.org/wiki/Languages_of_Malta'>Maltese,English</a>"
-   ,"Euro"
-   ,""
-   ,""
-   ,""
-    ,""
-    ,""
    ],
    [
    "Finland<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Finnish_citizens'>*</a>"
@@ -536,6 +507,36 @@ tb=[
 ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Chinese_citizens_of_Hong_Kong'>Everywhere Except U.S.</a>"
 ]
 ,
+   [
+     "South africa"
+     ,""
+     ,""
+     ,""
+     ,""
+     ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_South_African_citizens'>india</a>"
+     ,""
+     ,""
+     ,""
+     ,""
+     ,""
+     ,"Johannesburg,22C,22%,1753m"
+     ,""
+   ]
+   ,
+["Malta"
+    ,"<a href='https://www.gov.mt/en/Life%20Events/Moving-to-Malta/Pages/Moving-to-Malta.aspx'>.</a>"
+    ,""
+    ,"<a href='https://integration.gov.mt/en/ResidenceAndVisas/Pages/Citizenship.aspx'>5</a>"
+   ,""
+   ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Maltese_citizens'>YES</a>"
+   ,"<a href='https://en.wikipedia.org/wiki/Languages_of_Malta'>Maltese,English</a>"
+   ,"Euro"
+   ,""
+   ,""
+   ,""
+    ,""
+    ,""
+   ],
 [
 "Georgia",
 ""
