@@ -364,7 +364,8 @@ tb=[
 ,""
 ,"<a href='https://www.xe.com/currencycharts/?from=ESP&to=USD&view=10Y'>ES Peseta</a>(0.007),Euro"
 ,""
-	,""
+  ,""
+  ,""
 	," Barcelona, <a href='http://www.barcelona.climatemps.com/map.php'>5m</a>  "+
 "<br>Madrid, <a href='https://www.holiday-weather.com/madrid/averages/'> 5-25 C </a>,"+
 "<a href='https://weather-and-climate.com/average-monthly-Humidity-perc,Madrid,Spain'>50-70%</a>,"
@@ -375,7 +376,7 @@ tb=[
 ["Slovakia"
 ,""
 ,""
-
+,""
 ,""
 ,""
 ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Slovak_citizens'>yes</a>"
