@@ -304,6 +304,7 @@ tb=[
 	   ,""
     ,""
     ,""
+    ,""
     ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Czech_citizens'>YES</a>",
     "",
     "",
@@ -316,6 +317,7 @@ tb=[
     "Estonia",
     ""
    ,""
+    ,""
     ,""
     , "<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Estonian_citizens'>yes</a>",
     ""
@@ -331,6 +333,7 @@ tb=[
     ""
    ,""
     ,""
+    ,""
     , "<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Greek_citizens'>Yes</a>",
     "",
     "",
@@ -344,6 +347,7 @@ tb=[
    "Hungary",
    "",
    ""
+  ,""
   ,""
    ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Hungarian_citizens'>yes</a>"
    ,""
@@ -378,13 +382,12 @@ tb=[
 ,""
 ,""
 ,""
-,""
 ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Slovak_citizens'>yes</a>"
 
 ,""
 ,"Euro"
 ,""
-
+,""
 ,""
 ,"Bratislava,23°C,50%,440m"
 ,""
