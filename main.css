@@ -7,7 +7,7 @@ body  {  background-color: #cccccc;    height:100%;	overflow-y:auto;}
 table {  border-collapse: collapse;table-layout: fixed;}
 
 div      {  background-color: #ccd6c9  ; white-space:pre-line;  }
-p , p *   {  display:block;  white-space:pre     ;list-style-type: none;    margin-left:0;  padding-left:40px;}
+p  {  display:block;  white-space:pre     ;list-style-type: none;    margin-left:0;  padding-left:40px;}
   h10{  display:block ; white-space:pre-line;list-style-type: none;    margin-left:0;  padding-left:40px;}
 pre,span,code {  background-color: #aaaaaa ;  margin: 30px 30px 30px 30px;}
 pre      {  width:70%;}
