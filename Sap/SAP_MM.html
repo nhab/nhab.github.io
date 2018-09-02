@@ -234,8 +234,36 @@
 			Then Enter the required information in your material views like
 			unit of measure, currency, standard price, moving price etc.
 			Click on save. A new material will be created.
-
 		</p>
+	</p>
+			
+	<h2>Vendor Master Data</h2>
+	<p>
+		It include information on vendors from which a company can procure or it can sell.
+		it contain information like vendor's name, address.
+		
+		its data has 3 categories:
+		General Data    : is maintained at client level and it is valid for all organizational levels.
+		Accounting Data : is maintained at company level and it is valid for all plants belonging to that company.
+		Purchasing Data : is maintained at purchasing organization level.
+		
+		Vendor master has the 3 characteristics:
+		 <b>Vendor Account Group</b>
+			 For Example: All local vendors can be placed under one account group.
+		<b>Path to create Vendor Account Group:</b>
+			IMG => Logistic General => Business Partner => Vendors => Control => Define Account group and field selection(vendor) 
+			TCode: OBD3
+		<img src="https://www.tutorialspoint.com/sap_mm/images/vendor_entry_details.png">
+		<b>Number Range</b>
+		Path to create Number Range:
+			IMG => Logistic General => Business Partner => Vendors => Control => Define Number Range for Vendor master record
+			TCode: XDN1
+		<b>Path to create Vendor Master</b>
+			SAP Menu => Logistics => Material Management => Purchasing => Master Data => Vendor => Central => Create
+			TCode: XK01
+		Fill in the terms of payment that are defined between company and vendor. Click on save. A new vendor master will be created:
+		<img src="https://www.tutorialspoint.com/sap_mm/images/create_vendor_accounting.png">
+		
 	</p>
 	<a href="https://www.tutorialspoint.com/sap_mm/sap_mm_quick_guide.htm">Read more..</a>
 </body>
