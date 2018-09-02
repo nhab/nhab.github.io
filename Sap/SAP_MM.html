@@ -180,4 +180,62 @@
 			<img src="https://www.tutorialspoint.com/sap_mm/images/assignment.png">
 			
 		</p>
+	<h2>Material Master Data</h2>
+	<p>
+		Master Data remains constant over the time but we need to update it on regular basis.
+		<b>Material Master Data</b>
+		 each user department has its own view of material master record.
+		So, the data screens that are used to create material master can be divided into two categories:
+			Main Data:
+				This will include basic data (base unit of measure, weight),
+				purchasing data (over tolerance and under tolerance), accounting data (standard price, moving price).
+			Additional Data:
+				This will include additional information like short description about material, currency etc.
+		<h3>Material master has  4 characteristics</h3>
+		<p>
+			<b>Material Types</b>
+			Materials with some common attributes are assigned to a material type.
+			For example: Raw Material, Finished Products are some of the material types. 
+			<b><To create material type/b>
+				IMG >= Logistics General > Material Master > Basic Settings > Material Types > Define Attributes of Material Types
+				TCode: OMS2
+			<b>Material Groups</b>
+				Material group is a wider range of material type.
+				For Example: Suppose we have some materials which need packaging, so there material type can be electrical or food products 
+				but we can group these material types and put them in packaged material group
+			<b>Path to Create Material Group:</b>
+				IMG => Logistic General => Material Master => Settings for Key Fields => Define Material Groups
+				TCode: OMSF
+			
+			<b>Number Range</b>
+				Every material is recognized by a number, that number will be unique and known as material number.
+				We can assign number to material through two ways:
+				External number assignment 
+					While creating material you have to enter your own number (containing alphabets or digits), and that should be unique.
+				Internal number assignment 
+					 While creating material you need not enter any number, system will automatically generate a unique number to that material.
+				Number range is obviously a range of numbers from n to m,which would be assigned to material groups later.
+			<b>Define Number Range:</b>
+				IMG => Logistic General => Material Master => Basic Settings => Material Types => Define Number Range for Each material Type
+				TCode: MMNR
+			<b>Assignment of Number Range:</b>
+				In the same screen as shown above select Groups tab.
+				<img src="https://www.tutorialspoint.com/sap_mm/images/assign_number_range.png">
+		</p>
+		<h3>Material Master Creation</h3>
+		<p>
+			Material master contains all materials that a company <b>procures</b>, <b>produces</b> or <b>sells</b>. 
+			<b>Path to create Material Master:</b>
+				Logistics => Materials Management => Material Master => Material => Create Material
+				TCode: MM01
+			<img src="https://www.tutorialspoint.com/sap_mm/images/create_material_entry.png">
+			Select the views you want to maintain for your material.
+			Then Enter name of plant and storage location.
+			Then Enter the required information in your material views like
+			unit of measure, currency, standard price, moving price etc.
+			Click on save. A new material will be created.
+
+		</p>
+	</p>
 	<a href="https://www.tutorialspoint.com/sap_mm/sap_mm_quick_guide.htm">Read more..</a>
+</body>
