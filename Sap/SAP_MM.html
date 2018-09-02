@@ -1,9 +1,22 @@
 <head>
 <link  rel="stylesheet" type="text/css" href="..\main.css">
+	<script src="jquery-3.3.1.slim.min.js" ></script>
+<script src="popper.min.js" ></script>
+<script src="bootstrap.min.js" ></script>
+
+
 </head>
 <body>
-
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('[data-toggle="tooltip"]').tooltip({
+            html: true
+        });
+    });
+</script>
 <h1 class="head">		Material Management (MM) </h1>
+	<a href="#" data-toggle="tooltip"  data-placement="right" title="<img src='1.png'>">Welcome</a>
+
 	<p>
 		Material Management process ensures that
 		there is never a shortage of materials or any gaps in the supply chain process of the organization.
