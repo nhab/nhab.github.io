@@ -349,7 +349,41 @@
 				Logistics => Materials Management => Inventory management => Goods movement => Goods movement
 				TCode: MIGO
 			4-<b>Posting Invoice</b>
+				Invoice is received from the vendor after goods receipt, and then invoice is verified by the ordering party. So, this is the phase in which the vendor (seller) is paid from the company and reconciliation of the invoice and PO is accomplished. Invoice can be posted by following the below steps:
+
+				Path to post Invoice:
+				Logistics => Materials Management => Logistic Invoice verification => Document Entry => Enter Invoice
+				TCode: MIRO
+		</p>
+
+		<h2>Purchase Requisition document</h2>
+		<p>
+			Procurement in every organization starts with gathering requirements.
+			Once requirements are gathered we need to inform the purchasing organization.
+			Purchase Requisition is a document that will contain list of requirements.
 			
+			Purchase requisition is a request that is made to purchasing organization to procure certain list of material.
+
+			Purchase requisition is an internal document; specifically it remains within the organization.
+
+			Purchase requisition needs approval from purchasing organization.
+
+			If purchase requisition is approved then changes are possible only to limited extent.
+
+			Purchase requisition can be created for the following procurement types:
+				Standard        : Getting finished material from vendor.
+				Subcontracting  : Providing raw material to vendor and getting finished material.
+				Consignment     : Procuring material that is kept in company’s premises and paying to vendor for that.
+				Stock transfer  : Getting material from within the organization.
+				External service: Getting services like maintenance from third party vendor.
+			
+			<b>Create Purchase Requisition<b>
+				Path to Create Purchase requisition:
+				Logistics => Materials Management => Purchasing => Purchasing Requisition => Create
+				TCode: ME51N
+			<b>Creating Purchase Order from Purchase Requisition</b>
+				Purchase Order from purchase requisition can be created by following below steps:
+				TCode: ME21N
 		</p>
 	</p>
 	<a href="https://www.tutorialspoint.com/sap_mm/sap_mm_quick_guide.htm">Read more..</a>
