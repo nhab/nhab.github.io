@@ -10,10 +10,11 @@
         is an ERP (Enterprise Resouce Plannig) software.
 
     </p>
+    
     <h2>SAP R3 Architechture</h2>
     <p>
     Contains 3 layers:
-    <pre>
+    
     <b>Presentation:</b>
     It is a layer where the user work with SAP GUI. 
     It interacts with database layer
@@ -24,12 +25,13 @@
     It resides in a computer server with multiple CPUs and a vast amount of RAM.
     <b>Database:</b>
     It is a central database that stores all the data of ERP SAP Systems.
-    </pre>
+    
 
     </p>
+
    <h2>Phases of SAP Implementation project(Itrative Proccess)</h2>
    <p>
-    <pre>
+    
     <b> Project Preparation :</b>
        It includes Building the team: 
        knowing people who have the knowledge of the organization business processes
@@ -55,10 +57,30 @@
     <b> Go-Live and support :</b> In this stage, the final product is released to the end-users. 
       The go-live may be done in a Big Bang (all modules at one go) or in a phase-by-phase manner.
       support means resolving end users issues. 
-    </pre>
     
    </p>
-        <h2>Transaction code (T Code)</h2>
+ 
+<h2>What is ERP</h2>
+    <p>
+        Enterprise resources planning is a software which all tasks of the bussiness are integrated into it.
+        
+        <img src="https://www.tutorialspoint.com/sap/images/planning_and_execution.jpg" />
+    
+    <h3>Bussiness proccess integration (BPI)</h3>
+        <p>
+            Various business processes running in an enterprise and how they are integrated
+
+            <img src="https://www.tutorialspoint.com/sap/images/business_process_integration.jpg"/> 
+        </p>
+
+    </p>
+
+  <h2>Transaction</h2>
+    <p>
+    Transaction (in SAP) means processing of certain information in order to complete business process requirement
+    </p>
+    
+     <h3>Transaction code (T Code)</h3>
         <p >
             <b>T Code</b> is a 4 digit short cut key to direct access the desired transaction
             from anywhere within the SAP system.&nbsp;
@@ -78,34 +100,70 @@
             <img class="size-full wp-image-3946 aligncenter" alt="transaction code." width="347" height="131"
             src="https://www.saponlinetutorials.com/wp-content/uploads/2013/08/transaction-code..png"  >
             
-        </p>
-    </p>
-    <h2>What is ERP</h2>
-    <p>
-        Enterprise resources planning is a software which all tasks of the bussiness are integrated into it.
-        
-        <img src="https://www.tutorialspoint.com/sap/images/planning_and_execution.jpg" />
+            </p>
+       </p>
+
+<h2> SAP Implementation Guide</h2>
+<p>
+    When a company purchases SAP, it comes in a CD in form of software.
+    When SAP is first installed, SAP has its standard set up that needs to be configured according to 
+    the need of client i.e. organization.
+    Configuration of SAP software like add fields, to change field names, to modify drop down lists etc.
+    to adjust according to working of your organization is done through implementation guide known as IMG.
+    IMG is where we define enterprise structure and other settings.
     
-    <h3>Bussiness proccess integration (BPI)</h3>
-        <p>
-            Various business processes running in an enterprise and how they are integrated
+    <b> SAP IMG Path</b>
+    To do any type of configuration according to our organization need the first step is to reach the implementation (IMG) guide screen.
+    We can reach implementation guide in 2 ways:
 
-            <img src="https://www.tutorialspoint.com/sap/images/business_process_integration.jpg"/> 
-        </p>
+     
+       Menu path           : 
+            SAP Easy Access > Tools > Customizing > IMG > Execute Project 
+    
+       Transactional code   : 
+            SPRO (SAP Project Reference Object)                           
 
+    <b>SAP IMG</b>
+    After SPRO, on the next screen click on SAP Reference IMG.
+    <img src="https://www.tutorialspoint.com/sap_mm/images/display_img.png">
+
+</p>
+
+<h2>Master Data</h2>
+    <p>
+    Data stored in SAP R/3 is categorized as
+
+        Master Data and
+        Transactional Data.
+
+    Master data is the core data that is used as a base for any transaction.
+        If you are producing, transferring stock, selling, purchasing, doing a physical inventory, whatever your activity may be,
+        it requires certain master data to be maintained.
+
+    Example of Master Data
+
+        Material master data
+        Customer master data
+        Vendor master data
+        Pricing/conditions master data
+        Warehouse management master data (storage bin master data)
     </p>
-    <h2>SAP Modules</h2>
+
+
+<h2>SAP Modules</h2>
      <p>
          SAP has functional and technical Modules
         
       <h3>Functional Modules</h3>
         <p>
-        PP  ( production planning)
-        FICO( Finance & control)
-        MM  ( Material management)
-        SD  ( Sale & Distribution)
-        HR  ( Human resource)  
-        CRM ( Customer relationship management)
+            <a href="SAP_MM.html">MM  ( Material management)</a>
+            <a href="SAP_PP.html">PP  ( production planning)</a>
+            <a href="SAP_FI.html">FI( Finance)</a>
+            <a href="SAP_CO.html">CO(  control)</a>
+        
+            <a href="SAP_SD.html">SD  ( Sale & Distribution)</a>
+            <a href="SAP_HR.html">HR  ( Human resource)</a>  
+            <a href="SAP_CRM.html">CRM ( Customer relationship management)</a>
         </p>
         
       <h3>Technical Modules</h3>
@@ -117,6 +175,7 @@
         BI (Bussiness Intelegence)
         BIW ( Business Information Warehousing )
         </p>
+
     <h2>Functional Modules detail</h2>
     <p>
         <h3>FICO ( Finance and controling ) </h3>
@@ -217,9 +276,8 @@
             SAP IDES 4.7 Installation files
             MS Loopback Network Adaptor
     </p>
-    <h2>
-    Net Weaver
-    </h2>
+
+    <h2>    Net Weaver    </h2>
     <p>
         is a combination of the underlying SAP Kernel
          (also known as the SAP OS layer, basically the WEB AS) and any SAP software tool for business enablement.

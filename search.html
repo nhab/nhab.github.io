@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	     <meta charset="UTF-8"> 
+         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<script src="focus.js"></script>
+	<style>
+		* {
+			/*box-sizing: border-box;*/
+			/*padding: 1px;*/
+		}
+		.col-1 {width: 7%;}
+		.col-2 {width: 12%;}
+		.col-3 {width: 16.66%;}
+		.col-4 {width: 25%;}
+
+		.col-1third {width: 33.33%;}
+		.col-1half {width: 50%;}
+		
+		.rowHead{width:12%}
+		.blocked{display:inline-block;	}
+		.floated{ float: left; }
+		.bordered{border-style: solid;border-width:1px;border-color:black}
+		[class*="col-"] {
+			float: left;
+			padding: 2px;
+			border: 1px solid ;
+		}
+		
+		.row::after {
+			content: "";
+			clear: both;
+			display: block;
+		}
+
+	</style>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="language" content="en"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="keywords" content="advanced search,google advanced,google advanced search,advanced search">
+	<meta name="description" content="Advanced search site for better and more accurate results.">
+	
+	<link rel="stylesheet" type="text/css" href="/assets/e3ecaab1/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/e3ecaab1/css/bootstrap-responsive.css" />
+	<link rel="stylesheet" type="text/css" href="/assets/e3ecaab1/css/yii.css" />
+	<link rel="stylesheet" type="text/css" href="/themes/bootstrap/css/styles.css"/>
+	<link href="/css/ag-style.css" type="text/css" rel="stylesheet" media="screen">
+	
+	<script type="text/javascript" src="/assets/abd38c9/jquery.js"></script>
+	<script type="text/javascript" src="/assets/e3ecaab1/js/bootstrap.js"></script>
+	<script language="javascript" type="text/javascript" src="/includes/ag-js.js"></script>
+	
+	<title>Nilx.ir Managed searchs</title>
+	
+	
+</head>
+<script>
+	function addterm(obj)
+	{
+		
+		
+		//var str = obj.options[obj.selectedIndex].value;
+		var str = obj.options[obj.selectedIndex].innerHTML ;
+		
+		txtQuery=document.getElementById( "txtQuery");
+		//txtQuery.value=txtQuery.value+" "+obj.innerText+" ";
+		txtQuery.value=txtQuery.value+" "+str+" ";
+	}
+	function addtermIm(obj)
+	{
+		txtQuery=document.getElementById( "txtQuery");
+		txtQuery.value=txtQuery.value+obj.innerText;
+	}
+</script>
+
+	<body class="ag">
+		
+	<form name="jksearch" action="http://www.google.com/search" method="get" onSubmit="jksitesearch(this)">
+		<script>
+			/*______________________________________________________*/
+			window.onload = function() {
+				// Initial states data
+				var data={};
+				data["rng"]=10;	
+				//____________ elements _______________________________________
+				debugger;
+				var dvtopMenu=document.getElementById("dvTopMenu");
+				var bdy=document.body;
+				Attribute(bdy,"style","background:linear-gradient(45deg,#303F9F,#ffffff  )");
+				
+				var head1=container(bdy);
+				var mnu=Structure.MenuDropdownContainer(dvtopMenu);
+				
+				var mm1=Structure.MenuDropdown(mnu,"Home");
+				var mm2=Structure.MenuDropdown(mnu,"login");
+				var mm3=Structure.MenuDropdown(mnu,"Help");
+
+				Attribute(dvtopMenu,"style","background-color: #283593;color:#1A237E");
+				colors 	(mm1,"#AAAAAA","#083593");
+				colors 	(mm2,"#AAAAAA","#083593");
+				colors 	(mm3,"#AAAAAA","#083593");
+				//Attribute(mm2,"style","background-color: #283593");
+				//Attribute(mm3,"style","background-color: #283593");
+				//Attribute(mm4,"style","background-color: #283593");
+			}
+		</script>
+			<div id="dvTopMenu">
+			</div>
+		<div id="dvHeader" style="position:fixed;background-color:#aaaaaa;width:100%;vertical-align: middle;">
+				
+		</div>
+
+		<div class="container" id="page">
+			<div id="content">
+				<div onchange="addterm(this);">
+					which parent category topic <input type="text" id="txtParentTopic" name="txtParentTopic"  list="MainParentList">
+					<datalist id="MainParentList">
+						<option value="Spirtuality">
+						<option value="gratitude">
+						<option value="subconscious mind">
+						<option value="success">
+						<option value="technology">
+						<option value="health">
+						<option value="achievment">
+						
+						<option value="etc...">
+					</datalist>
+					<input type="text" id="txt" name="txt">
+					type : <input type="text" id="txtType" name="txtType">
+					<button type="button" 
+					onclick="location.href = 'https://www.google.com/search?as_q='+document.getElementById('txt').value+'&as_epq=&as_oq=&as_eq=&as_nlo=&as_nhi=&lr=&cr=&as_qdr=all&as_sitesearch=&as_occt=any&'+
+					'as_filetype='+document.getElementById('txtType').value+'&as_rights=';" > 
+					search</button>
+					<p>
+					(example of types:jpg,pdf,ppt,mp3,mov,doc,xls,xlsx,cs,js,vb,txt,...)
+					<!--input type="checkbox" value=''>-->
+					</p>
+				</div>
+			</div>
+		</div>
+
+		
+
+		<div style="float:top;font-:small"">
+			<input id="hiddenquery" type="hidden" name="q" />
+			 search :<input name="qfront" id="txtQuery" type="text" style="width: 700px"  />
+			 <input type="submit" value="Search" />
+			<br />
+				<div>
+					<div class="rowHead floated col-2">
+					what is it?
+					<select onchange="addterm(this);">
+						<option value=" ">  </option>
+						<option value="what is">what is it?</option>
+						<option value="concept">concept</option>
+						<option value="key concepts">key concepts</option>
+						<option value="use of">use of</option>
+						<option value=""></option>
+					</select>	
+					</div>
+					
+					<div class="rowHead floated col-2">mechanism:
+					<select onchange="addterm(this);"> <!-- mechanism -->
+						<option value=" ">  </option>
+						<option value=""> mechanism   </option>
+						<option value=""> logic behind</option>
+						<option value=""> site:wolframalpha.com</option
+						<option value=""> philosophy  </option>
+						<option value=""> chart       </option>
+						<option value=""> flow        </option>
+						<option value=""> diagram     </option>
+						<option value=""> site:wolframalpha.com</option>
+			
+					</select>
+					</div>
+					
+					<div class="rowHead floated col-2">general overview :
+					<select onchange="addterm(this);"> <!-- general overview of the topic-->
+						<option value=" ">  </option>
+						<option value=""> overview      </option>
+						<option value=""> abstract      </option>
+						<option value=""> big picture   </option>
+						
+						<option value=""> Architecture  </option>
+						<option value=""> parts         </option>						
+						<option value=""> essence of    </option>
+						<option value=""> excerpt 	   </option>
+						
+						<option value=""> review        </option>
+						<option value=""> cheatsheet     </option>
+						<option value="">  kick start    </option>
+					</select>
+					</div>
+					
+					<div class="rowHead floated col-2">gist	/quick view 
+					<select onchange="addterm(this);"> 
+						<option value=" ">  </option>
+						<option value=""> quick guide   </option>
+						<option value=""> at a glance   </option>
+						<option value="">  in a nutshell </option>
+						<option value="">  jump into     </option>
+						<option value="">  in minutes    </option>
+						<option value=""> filetype:ppt     </option>	
+					</select>
+					</div>
+					<div class="rowHead floated col-2">detalied specification:
+					<select onchange="addterm(this);"> <!-- detalied specification of the topic-->
+						<option value=" ">  </option>
+						<option value=""> detailed           </option>	
+						<option value=""> explanation        </option>	
+						<option value=""> spec               </option>
+						<option value=""> documentation      </option>
+						<option value=""> reference    	    </option>
+						<option value=""> how to master 	    </option>
+						<option value=""> best practices     </option>
+						<option value=""> checklist		    </option>
+						<option value=""> transcript	        </option>
+						<option value=""> hacks              </option>
+						<option value=""> goodreads.com      </option>
+					</select>
+					</div>											
+					<div class="rowHead floated col-2">how to/ process:						
+					<select onchange="addterm(this);"> 	
+						<option value=" ">  </option>
+						<option value=""> site:quora.com</option>
+						<option value=""> step by step       </option>
+						<option value=""> walk through       </option>
+						<option value=""> cookbook			</option>
+						<option value=""> case study		</option>
+						<option value=""> steps        		</option>
+						<option value=""> structure          </option>
+						<option value=""> .vs	            </option>
+						<option value=""> how to             </option>					
+						<option value=""> filetype:txt       </option>
+						<option value=""> alternative        </option>
+						<option value=""> substitution       </option>						
+					</select>
+					</div>
+					<div class="rowHead floated col-2">
+					details 2<!-- detalied specification of the topic-->
+					<select onchange="addterm(this);">
+						<option value=" ">  </option>
+						<option value=""> filetype:pdf       </option>
+						<option value=""> keyboard shortcuts </option>
+						<option value=""> site:dotnetperls.com</option>
+						<option value=""> site:https://archive.org</option>
+					</select>
+					</div>
+					
+					<div class="rowHead floated col-2"	 	   	  > specific information:
+					<select onchange="addterm(this);"> <!-- specific information about it -->
+						<option value=" ">  </option>
+						<option value=""> example			 </option>	
+						<option value=""> sample              </option>	
+						<option value=""> minimalist 		 </option>	
+						<option value=""> your first 		 </option>	
+						<option value=""> site:jsfiddle.net	 </option>
+						<option value=""> site:codepen.io     </option>
+						<option value=""> site:cssdeck.com    </option>
+						<option value=""> site:jsbin.com    </option>
+						<option value=""> site:dabblet.com    </option>
+						<option value=""> site:liveweave.com  </option>
+						<option value=""> site:plnkr.co    </option>
+						<option value=""> site:beta.jhere.net/bin    </option>
+
+						<option value=""> site:2ality.com     </option>
+						<option value=""> site:cssscript.com  </option>
+						<option value=""> site:sitepoint.com </option>
+						<option value=""> Real-world  	</option>
+						<option value=""> simple </option>	
+						<option value="">  minimal </option>	
+						<option value="">demo </option>
+					</select>
+					</div>
+					
+					<div class="rowHead floated col-2"	> language/tech.
+					<select onchange="addterm(this);"> 
+						<option value=" ">  </option>
+						<option value=""> javascript         </option>
+						<option value=""> angular 	        </option>
+						<option value=""> c#         		</option>
+						<option value=""> vb          		</option>
+						<option value=""> android       		</option>
+					</select>
+					</div>
+					
+					<div class="rowHead floated col-2"	>criticism /cons
+					<select onchange="addterm(this);">
+						<option value=" ">  </option>
+						<option value="">criticism </option>
+						<option value="">cons </option>
+					</select>
+					</div>
+					
+					<div class="rowHead floated col-2"	>where
+					<select onchange="addterm(this);"> 
+						<option value=" ">  </option>
+						<option value="" > where:	</option>
+						<option value=""> site:      			</option>
+						<option value=""> drive.google.com   	</option>
+						
+						<option value=""> quora.com  		  </option>
+						<option value=""> wikipedia.org 			 </option>
+						<option value=""> stackoverflow.com		  </option>
+						<option value=""> cdnjs.com  			 </option>
+						<option value=""> amazon.com  		 </option>
+					</select>
+					</div>
+					
+					<div class="rowHead floated col-2"				   > source code:	
+					<select onchange="addterm(this);"> 
+						<option value=" ">  </option>
+						<option value=""> github.com   </option>
+						<option value=""> www.javascriptkit.com   </option>						
+						<option value=""> scotch.io   </option>
+						<option value=""> developer.mozilla.org    </option>
+						<option value=""> twitter.com    </option>
+						<option value=""> www.quepublishing.com    </option>
+						<option value=""> www.wrox.com    </option>
+						<option value="">http://noeticforce.com/</option>
+					</select>
+					</div>
+					<div class="rowHead floated col-2">code:
+					<select onchange="addterm(this);"> 
+						<option value=" ">  </option>
+						<option value=""> www.codecademy.com    </option>
+						<option value="">	  tumblr.com </option>
+					</select>
+					</div>
+					
+					<div class="rowHead floated col-3"	> paper/book /slide
+					<select onchange="addterm(this);"> 
+						<option value=" ">  </option>
+						<option value=""></option>
+						<option value=""> w3schools.com  	</option>
+						<option value=""> 4shared.com              </option>
+						
+			 			<option value=""> readanybook.com 		   </option>
+						<option value=""> slideshare.net 			  </option>
+						<option value=""> Books24x7   					</option>
+						
+						<option value=""> msdn.microsoft.com/en-us/library  </option>
+						<option value=""> www.safaribooksonline.com  	 </option>
+					</select>
+					</div>
+					
+				</div>
+			<br/>
+			<div style="float:right">
+				<h2>some useful tips</h2>
+				<div class=" blocked floated bordered">
+					- you can use asterisk wildcard i.e.: “Come * right now * me”
+				</div>
+				<div class="blocked floated bordered">
+				- websites like another website(similar content): related:istock.com
+				</div>
+				<div class="blocked floated bordered">
+				- websites linked to a specific website: link:buzzfeed
+				</div>
+				<br/>
+				<div class="row floated">
+				- Similar Words and Synonyms
+				</div>
+
+				<div class="blocked floated bordered">
+					Let’s say you want to include a word in your search, but also want to include results that contain similar words or synonyms.
+				</div>
+				<div class="blocked floated bordered">
+					To do this, use the ~ in front of the word.
+				</div>
+				<div class="blocked floated bordered">
+					Example Search: "inbound marketing" ~professional
+				</div>
+					
+				<div class="blocked floated bordered">
+					-word definition : define:plethora
+				</div>
+				<div class="blocked floated bordered">
+					-looking for new in a location location:london
+				</div>
+				<div class="blocked floated bordered">
+					- to search an unknown phone number: Search: phonebook:617-555-1212
+				</div>
+			</div>
+			<br/>
+			<br/>
+			<br/>
+			<div class="floated">			
+			where  :<input name="txtwhere" id ="txtwhere" type="text" style="width: 200px"  />
+			</div>
+			
+			
+			<div style="font: bold 11px Verdana;">
+				Google:	<input name="se" type="radio" checked> 
+				Yahoo : <input name="se" type="radio"> 
+				MSN   : <input name="se" type="radio">
+				DuckDuckGo: <input name="DD" type="radio">
+			</div>
+
+			<a href="https://cdnjs.com/">cdn search </a>
+				<script type="text/javascript">		
+					var searchaction=[ "http://www.google.com/search","http://search.yahoo.com/search",
+						"http://search.msn.com/results.aspx" ,"https://duckduckgo.com/"	]
+					var queryfieldname=["q","p","q","d"] //name of hidden query form for the 3 search engines
+				function switchaction(cur, index){
+					cur.form.action=searchaction[index]
+					document.getElementById("hiddenquery").name=queryfieldname[index]
+				}
+
+				function jksitesearch(curobj){
+					var domainroot = document.getElementById("txtwhere").value;
+					for (i=0; i< document.jksearch.se.length; i++){ //loop through radio to see which is checked
+						if (document.jksearch.se[i].checked==true)
+							switchaction(document.jksearch.se[i], i)
+					}
+					if(domainroot=="")
+						document.getElementById("hiddenquery").value=curobj.qfront.value
+					else
+						document.getElementById("hiddenquery").value="site:"+domainroot+" "+curobj.qfront.value
+				}
+				</script>
+			&nbsp
+			<a href="https://dl.dropboxusercontent.com/u/68089598/blog/index.html">blog</a>
+			&nbsp
+			<a href="https://en.m.wikipedia.org/wiki/Wikipedia:Wikimedia_sister_projects">wikipedia sister websites </a>
+		<a href="https://nhab.github.io/Focus/">focus.js</a>
+		</div>
+	</form>
+	</body>
