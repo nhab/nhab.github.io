@@ -95,14 +95,12 @@
 			</h11>"><b>The main menu paths for MM area </b></a>
 		</h9>
 		<h2>SAP MM - Enterprise Structure</h2>
-		<p>
-			<a href="#" data-toggle="tooltip"  data-placement="right" title="<h11 style='font-size:24px;'>
+		<h9>	<a href="#" data-toggle="tooltip"  data-placement="right" title="<h11 style='font-size:24px;'>
 			Enterprise structure is the structure that represents 
 			an enterprise in SAP ERP system. 
 			It is subdivided into various organizational units 
 			which for legal reason or business related reason.
 			</h11>"><b>Enterprise structure</b></a>
-			<br>
 			<a href="#" data-toggle="tooltip"  data-placement="bottom" title="<h11 style='font-size:24px;'>
 				<table><tr><td>
 				<p>
@@ -118,34 +116,38 @@
 				</td></tr>
 			    </table>
 			</h11>"><b>The Organizational hierarchical Structure consists of</b></a>
-		
-		
-		<b>Client</b>
+			
+			<a href="#" data-toggle="tooltip"  data-placement="bottom" title="<h11 style='font-size:24px;'>
 			Client is <b>a commercial organizational </b> unit in R/3 system.
 			It has its own set of master data with independent table sets.
 			Data that is maintained at client level is valid for all organizational levels.
-
-		<b>Company Code</b>
+			</h11>"><b>Client</b></a>
+			
+			<a href="#" data-toggle="tooltip"  data-placement="bottom" title="<h11 style='font-size:24px;'>
 			Within Client, Company code is the independent accounting unit.
 			It is a legal entity that has its own profit, loss and balance statement.
 			It is the smallest unit in organization for which a complete independent account set can be replicated.
-
-		<b>Plant</b>
+			</h11>"><b>Company Code</b></a>
+				
+			<a href="#" data-toggle="tooltip"  data-placement="bottom" title="<h11 style='font-size:24px;'>
 			Plant is an organizational unit within a company where activities take place.
 			A plant will produce goods and makes goods available for the company.
 			It is unit having manufacturing facility, warehouse distribution center or a regional sales office within logistic. 
-
-		<b>Storage Location</b>
+			 </h11>"><b>Plant</b></a>
+			
+		
+			<a href="#" data-toggle="tooltip"  data-placement="bottom" title="<h11 style='font-size:24px;'>
 			Storage location actually differentiates between different material stocks in a Plant.
 			Storage location is a place where stock is kept physically.
 			Plant can be consisting of multiple storage location. 
 			All data is stored at storage location level for a particular storage location.
-
-		<b>Purchasing Organization</b>
+			</h11>"><b>Storage Location</b></a>
+		
+			<a href="#" data-toggle="tooltip"  data-placement="bottom" title="<h11 style='font-size:24px;'>
 			It is responsible for external Procurement.
-	
-			Different forms of purchasing can be described as follows:
-
+			</h11>"><b>Purchasing Organization</b></a>
+			
+			<a href="#" data-toggle="tooltip"  data-placement="bottom" title="<h11 style='font-size:24px;'>
 				Centralized Purchasing
 				        Purchasing organization is not assigned to any company code it procures 
 					for all company codes belonging to different client.
@@ -157,36 +159,53 @@
 				Plant specific Purchasing
 				        Purchasing organization is assigned to a Plant, only this specific Plant
 					can purchase through this Purchasing organization.
-
-		<b>Purchasing Group</b>
+			  </h11>"><b>Different forms of purchasing </b></a>	
+			
+			<a href="#" data-toggle="tooltip"  data-placement="bottom" title="<h11 style='font-size:24px;'>
 			Is responsible for everyday procurement activities within an organization.
 			It is a buyer or group of buyer responsible for procurement activities in a purchasing organization.
+			</h11>"><b>Purchasing Group</b></a>
 			
-		<b>Defining Organizational Structure</b>
+			<a href="#" data-toggle="tooltip"  data-placement="bottom" title="<h11 style='font-size:24px;'>
 			Path to reach Definition:
 				IMG > Enterprise Structure > Definition
 			<img src="https://www.tutorialspoint.com/sap_mm/images/definition.png">
-			<b>Create Company (TCode: OX15)</b> IMG > Enterprise Structure > Definition > Financial Accounting > Define Company
+			</h11>"><b>Defining Organizational Structure</b></a>	
+			
+			<a href="#" data-toggle="tooltip"  data-placement="bottom" title="<h11 style='font-size:24px;'>
+			 IMG > Enterprise Structure > 
+					Definition > Financial Accounting > Define Company
 			   Select New Entries icon and fill in new company fields and save.
-			<b>Create Company Code (TCode: OX02)</b>  IMG > Enterprise Structure > Definition > Financial Accounting > Edit, Copy, Delete, Check Company Code
+			</h11>"><b>Create Company (TCode: OX15)</b></a>
+				
+			<a href="#" data-toggle="tooltip"  data-placement="bottom" title="<h11 style='font-size:24px;'>
+			 IMG > Enterprise Structure > Definition > Financial Accounting > Edit, Copy, Delete, Check Company Code
 			   A company code is an organizational unit  which may have stand-alone financial accounting's,
 			   profit and loss statements can be withdrawn. Many company codes can be assigned to one company.
 			   and Select New Entries icon.
+			  </h11>"><b>Create Company Code (TCode: OX02)</b> </a>
 			
-			<b>Create Plant (TCode: OX10)</b> IMG > Enterprise Structure > Definition > Logistic General > Define, Copy, Delete check plant	
+			<a href="#" data-toggle="tooltip"  data-placement="bottom" title="<h11 style='font-size:24px;'>
+			IMG > Enterprise Structure > Definition > Logistic General > Define, Copy, Delete check plant	
 			and Select Define Plant icon ,then Select New Entries icon,to create a new plant.
-			
-			<b>Create Storage Location (TCode: OX09)</b> IMG > Enterprise Structure > Definition > Materials Management > Maintain Storage Location
+			 </h11>"><b>Create Plant (TCode: OX10)</b> </a>
+				
+			<a href="#" data-toggle="tooltip"  data-placement="bottom" title="<h11 style='font-size:24px;'>
+			 IMG > Enterprise Structure > Definition > Materials Management > Maintain Storage Location
 			   Enter the name of plant for which you want to create storage location.
 			   then select New Entries icon.
 			   then Enter the name of storage location along with the description of storage location
 			   and Click on save icon
+			</h11>"><b>Create Storage Location (TCode: OX09)</b></a>
 			
-			<b>Create Purchasing Organization(TCode: OX08)</b>IMG > Enterprise Structure > Definition > Materials Management > Maintain Purchasing Organization
-
-			<b>Create Purchasing Group(TCode: OME4)</b> IMG > Materials Management > Purchasing > Create Purchasing Group
-				
-		</p>
+			<a href="#" data-toggle="tooltip"  data-placement="bottom" title="<h11 style='font-size:24px;'>
+			IMG > Enterprise Structure > Definition > Materials Management > Maintain Purchasing Organization
+			</h11>"><b>Create Purchasing Organization(TCode: OX08)</b></a>
+			
+			<a href="#" data-toggle="tooltip"  data-placement="bottom" title="<h11 style='font-size:24px;'>
+			 IMG > Materials Management > Purchasing > Create Purchasing Group
+			</h11>"><b>Create Purchasing Group(TCode: OME4)</b>	</a>
+		</h9>
 		<h3> establishing relationship between Organizational Units</h3>
 		<p>
 		   Four basic and must assignments in standard SAP are:
