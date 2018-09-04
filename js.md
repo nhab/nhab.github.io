@@ -109,10 +109,10 @@ doStuff();
 
 // false, null, undefined, NaN, 0 and "" are falsy; everything else is truthy.
 // Note that 0 is falsy and "0" is truthy, even though 0 == "0".
+```
 
-///////////////////////////////////
-// 2. Variables, Arrays and Objects
-
+<b> 2. Variables, Arrays and Objects</b>
+```javascript
 // Variables are declared with the `var` keyword. JavaScript is dynamically
 // typed, so you don't need to specify type. Assignment uses a single `=`
 // character.
@@ -190,10 +190,9 @@ myObj.myThirdKey  =  true;
 
 // If you try to access a value that's not yet set, you'll get undefined.
 myObj.myFourthKey; // = undefined
-
-///////////////////////////////////
-// 3. Logic and Control Structures
-
+```
+<b> 3. Logic and Control Structures</b>
+```javascript
 // The `if` structure works as you'd expect.
 var count  =  1;
  if (count  ==  3){
@@ -269,10 +268,9 @@ grade  = <span class="s1">'B';
     break;
 }
 
-
-///////////////////////////////////
-// 4. Functions, Scope and Closures
-
+```
+<b> 4. Functions, Scope and Closures</b>
+```javascript
 // JavaScript functions are declared with the `function` keyword.
 function myFunction(thing){
     return thing.toUpperCase();
@@ -347,10 +345,9 @@ function sayHelloInFiveSeconds(name){
     // access to the `prompt` variable when it is finally called.
 }
 sayHelloInFiveSeconds( "Adam"); // will open a popup with "Hello, Adam!" in 5s
-
-///////////////////////////////////
-// 5. More about Objects; Constructors and Prototypes
-
+```
+<b> 5. More about Objects; Constructors and Prototypes</b>
+```javascript
 // Objects can contain functions.
 var myObj  = {
     myFunc : function(){
