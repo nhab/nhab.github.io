@@ -1,21 +1,17 @@
+<b>Comments</b>
 ```javascript
 // Single-line comments start with two slashes.
 /* Multiline comments start with slash-star,
    and end with star-slash */
-
+```
+<b>statements</b>
+```javascript
 // Statements can be terminated by ;
 doStuff();
+```
 
-// ... but they don't have to be, as semicolons are automatically inserted
-// wherever there's a newline, except in certain cases.
-doStuff()
-
-// Because those cases can cause unexpected results, we'll keep on using
-// semicolons in this guide.
-
-///////////////////////////////////
-// 1. Numbers, Strings and Operators
-
+<b>Numbers, Strings and Operators</b>
+```javascript
 // JavaScript has one number type (which is a 64-bit IEEE 754 double).
 // Doubles have a 52-bit mantissa, which is enough to store integers
 // up to about 9✕10¹⁵ precisely.
