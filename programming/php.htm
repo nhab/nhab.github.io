@@ -235,9 +235,7 @@ __file() Example__:
             print $name;
         }
 </code></pre>
-<p>
 <b>  Classes</b>
-</p>
 
 <pre><code class="php">
 class test{
@@ -254,78 +252,76 @@ class test{
 
   A Simple HTML Form
 </p>
-  ```HTML
-      
-            <html>
-            <body>
+<pre><code class="php">
+            &lt;html>
+            &lt;body>
 
-            <form action="welcome.php" method="post">
+            &lt;form action="welcome.php" method="post">
 
-            Name:   <input type="text" name="name">  <br>
-            E-mail: <input type="text" name="email"> <br>
+            Name:   &lt;input type="text" name="name">  &lt;br>
+            E-mail: &lt;input type="text" name="email"> &lt;br>
 
-            <input type="submit">
-            </form>
+            &lt;input type="submit">
+            &lt;/form>
 
-            </body>
-            </html>
-```            
+            &lt;/body>
+            &lt;/html>
+</code></pre>            
   Include 'filename';require 'filename';
-```HTML
-        <html>
-        <body>
+  <pre><code class="html">
 
-        <div class="menu">
-        <?php include 'menu.php';?>
-        </div>
+        &lt;html>
+        &lt;body>
 
-        <h1>Welcome to my home page!</h1>
-        <p>Some text.</p>
-        <p>Some more text.</p>
+        &lt;div class="menu">
+        &lt;?php include 'menu.php';?>
+        &lt;/div>
 
-        </body>
-        </html>
-```
+        &lt;h1>Welcome to my home page!&lt;/h1>
+        &lt;p>Some text.&lt;/p>
+        &lt;p>Some more text.&lt;/p>
 
-## phpMysql:
+        &lt;/body>
+        &lt;/html>
+</code></pre>
+
+<b> phpMysql:</b>
  __Open a Connection to MySQL __<br>
   //Example (MySQLi Object-Oriented)
- ```php 
-                <?php
-                    $servername = "localhost";
-                    $username = "username";
-                    $password = "password";
+  <pre><code class="php">
+    $servername = "localhost";
+    $username = "username";
+    $password = "password";
 
-                    // Create connection
-                    $conn = new mysqli($servername, $username, $password);
+    // Create connection
+    $conn = new mysqli($servername, $username, $password);
 
-                    // Check connection
-                    if ($conn->connect_error) {
-                        die("Connection failed: " . $conn->connect_error);
-                    }
-                    echo "Connected successfully";
-                    ?> 
-```                    
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    echo "Connected successfully";
+    ?> 
+</code></pre>
  //Example (MySQLi Procedural)
-  ```php 
-                    <?php
-                    $servername = "localhost";
-                    $username = "username";
-                    $password = "password";
+ <pre><code class="php">
 
-                    // Create connection
-                    $conn = mysqli_connect($servername, $username, $password);
+    $servername = "localhost";
+    $username = "username";
+    $password = "password";
 
-                    // Check connection
-                    if (!$conn) {
-                        die("Connection failed: " . mysqli_connect_error());
-                    }
-                    echo "Connected successfully";
-                    ?> 
-```                    
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password);
+
+    // Check connection
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    echo "Connected successfully";
+    ?> 
+</code></pre>                    
 //Example (PDO)
- ```php 
-                    <?php
+<pre><code class="php">
                     $servername = "localhost";
                     $username = "username";
                     $password = "password";
@@ -340,12 +336,10 @@ class test{
                         {
                         echo "Connection failed: " . $e->getMessage();
                         }
-                    ?> 
-```
- ####  __Insert__       Example (PDO) and get last id
-  ```php
-                        <?php
-                        $servername = "localhost";
+</code></pre>
+ <b>Insert</b>      Example (PDO) and get last id
+ <pre><code class="php">
+        $servername = "localhost";
                         $username = "username";
                         $password = "password";
                         $dbname = "myDBPDO";
@@ -368,6 +362,5 @@ class test{
                             }
 
                         $conn = null;
-                        ?> 
-```
+   </code></pre>
 </body>
