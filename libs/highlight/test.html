@@ -1,9 +1,25 @@
+<head>
 <link rel="stylesheet" href="androidstudio2.css">
-
+<script src="../jquery-3.3.1.slim.min.js" ></script>
 <script src="highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
 
+<script>
+   
+  $('code').each(function() {
+  var that = $(this);
+  // cache the content of 'code'
+  var html = that.html().trim();
+  that.empty();
+  // escape the content
+  that.text(html);
+});
 
+hljs.initHighlightingOnLoad();
+
+</script>
+</head>
+<body>
+ 
 <pre><code class="javascript">
 /* this is 
 a test */
@@ -14,4 +30,15 @@ $(document).ready(function() {
     hljs.highlightBlock(block);
   });
 });
+</code></pre>
+
+<pre><code class="html">
+    
+    &lt!DOCTYPE html><html><body>
+        &lt?php
+        echo "My first PHP script!";
+        ?>
+        &lt/body>&lt/html>
+        &lt/code>&lt/pre>
+
 </code></pre>

@@ -7,40 +7,55 @@
     <script src="../libs/tooltip/tooltip.js" type="text/javascript"></script>
     <link href="../libs/tooltip/tooltip.css" rel="stylesheet" type="text/css" />
     <style>
-        imagesize{width:350px;height:350px;}
+        .imagesize{width:350px;height:350px;}
+		.column{color:black; }
     </style>
 </head>
+
 <body>
 <script type="text/javascript">
+	var idCount=3;
     $(document).ready(function() {
         $('[data-toggle="tooltip"]').tooltip({
             html: true
         });
     });
+	function write(s)
+	{
+		document.write(s);
+	}
+
+	function writeInTooltip(title,tooltip){
+		idCount=idCount+1;
+		s1="<a href=\"#\" onmouseover=\"tooltip.pop(this, '#sub" + idCount +"', {offsetY:-10, smartPosition:true})\">";
+		s1+=title+"</a>";
+		s1+="<div style=\"display:none;\"><div id=\"sub"+idCount+"\" class=\"column\" >"+tooltip+"</div>";
+		s1+="</div>";
+		document.write(s1);		debugger;
+		return s1;
+	}
 </script>
 	
 <h1 class="head">Material Management (MM) </h1>
-	<a href="#" onmouseover="tooltip.pop(this, '#sub2', {offsetY:-10, smartPosition:false})">Scelerisque</a>
-	<div style="display:none;">
-       	   <div id="sub2" class="imagesize">
-               fsgdfgf
-	   </div>
-	</div>
-	
-	<a href="#" data-toggle="tooltip"  data-placement="right" title="<img src='1.png'>">Concepts :</a>
+<script>
+	write("Concepts:");
 
+	sTopic= "<b>Material Management process</b>";
+	sDesc = "Ensures that there is never a shortage of materials or"
+	  +"<br> any unwanted gaps in the supply chain process of the organization."
+	  +"<br> it also deals with reducing costs.";
+	a = writeInTooltip( sTopic , sDesc );
+	//debugger;
+</script>
 	<h9>
-		<a href="#" data-toggle="tooltip"  data-placement="right" title="<h11 style='font-size:28px;'>
-				 Ensures that there is never a shortage of materials or
-				 any unwanted gaps in the supply chain process of the organization.
-				it also deals with reducing costs.
-		</h11>"><b>Material Management process</b></a>
-
-	    <a href="#" data-toggle="tooltip"  data-placement="bottom" title="<h11 style='font-size:24px;'>
-		   		the method of <b>getting</b>: services, supplies, and equipment from a vendor (seller), 
-		at the right price at the right time in right amount .
-		</h11>"><b>Procurement</b></a>
-
+		<script>
+		 sDesc="<h11>"+
+		   	"the method of <b>getting</b>: services, supplies, and equipment from a vendor (seller),"+ 
+            "at the right price at the right time in right amount .</h11>";
+		 sTopic="<b>Procurement</b>";
+		 a = writeInTooltip( sTopic , sDesc );
+		//debugger;
+		</script>
 		<a href="#" data-toggle="tooltip"  data-placement="right" title="<h11 style='font-size:24px;'>
 		- Procurement for Stock vs  Procurement for Consumption
 		- External (from external vendors) vs Internal Procurement
@@ -93,11 +108,15 @@
 	</h9>
 		<h2>Menu path for MM Configuration</h2>
 		<h9>
-		<a href="#" data-toggle="tooltip"  data-placement="right" 
-			title="<h11 style='font-size:24px;'>Configuration is done through  IMG (tcode = SPRO)
-				SAP Easy Access > Tools > Customizing > IMG > Execute Project
-			</h11><img src='https://www.tutorialspoint.com/sap_mm/images/execute_project.png' width='450px'>"><b>implementation guide (IMG)</b></a>
-
+			<script>
+				sTopic= "<b>implementation guide (IMG)</b>";
+				sDesc = "<h11 style='font-size:24px;'>Configuration is done through  IMG (tcode = SPRO)"+
+				"SAP Easy Access > Tools > Customizing > IMG > Execute Project</h11>"+
+		 	    "<img src='https://www.tutorialspoint.com/sap_mm/images/execute_project.png' width='450px'>";
+				a = writeInTooltip(sTopic, sDesc);
+				debugger;
+			</script>
+				
 			<a href="#" data-toggle="tooltip"  data-placement="bottom" title="<h11 style='font-size:24px;'>	
 			SAP Customizing Implementation Guide (IMG) > Materials Management
 			SAP Customizing Implementation Guide (IMG) > Enterprise Structure > Definition
