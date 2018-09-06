@@ -208,13 +208,15 @@ tb=[
    , ""
    ,"<a href='https://www.lifeinnorway.net/norwegian-citizenship/'>generally 7</a>"
 ,""
+
 	   ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Norwegian_citizens'>yes</a>"
    ,""
 	   ,""
 	   ,"100,000$"
+     ,""
+     
 	   ,""
-	   ,""
-	     ,""
+	     ,"oslo,10C,85%,20m"
        ,""
        ,""
    ],
