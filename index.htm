@@ -59,8 +59,12 @@
                 
                 <div class="bordered">    
                     <input type="text" id="txtInp" onpaste="add()" />
+                    
                     <button type="button" onclick="add(this)">add</button>
-                    <button type="button" onclick="ShowSelection('txtInp')">Browse..</button>
+                    <button type="button" onclick="ShowSelection('txtArea')">Browse..</button>
+                    <textarea id="txtArea" rows="4" cols="50">
+                        <div id="dvShow" style="height:350px; overflow: auto;">
+                    </div>
                     <script>
                         function ShowSelection(txtboxID)
                         {
@@ -84,21 +88,8 @@
                            var win = window.open(selectedText, '_blank');
                            win.focus();
                         }
-                        function getSelectionText(txtboxID) {
-                           var sel = document.getElementById(txtboxID);
-                            var text= sel.options[sel.selectedIndex].text;
-                        }
-                        function openInNewTab(url) {
-                            
-                          var win = window.open(url, '_blank');
-                          win.focus();
-                        }
-                        function openSelectionInNewTab()
-                        {
-                            debugger;
-                            d= getSelectionText("txtInp");
-                             openInNewTab(d);
-                        }
+    
+                        
                         function add()
                         {
                           var txt="";
@@ -117,19 +108,9 @@
                           dv.innerHTML=sDVText;
                           document.getElementById("txtInp").value="";     
                       }
-                      function del(d)
-                      {
-                            alert(d);
-                            alert(d.substring(2));
-                             /* var el = document.getElementsByTagName('div');
 
-                            for (var i = 0; i < el.length; i++) {
-                                el[i].innerHTML = "foo";
-                            }​*/
-                      }
                     </script>
-                    <div id="dvShow" style="height:350px; overflow: auto;">
-                    </div>
+                    
                 </div>
 
                <div class="bordered"> 
