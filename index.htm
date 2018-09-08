@@ -58,11 +58,11 @@
                 </div>
                 
                 <div class="bordered">    
-                    <input type="text" id="txtInp" onpaste="add()" />
-                    <button type="button" onclick="add()">add</button>
+                    <input type="text" id="txtInp" onpaste="add(this)" />
+                    <button type="button" onclick="add(this)">add</button>
                     <button type="button" onclick="del(this.id)">Delete</button>
                     <script>
-                     function add()
+                     function add(this)
                       {
                           txt=document.getElementById("txtInp").value;
                           dv= document.getElementById("dvShow");
@@ -70,6 +70,8 @@
                           sDVText =dv.innerHTML+"<br><input type='checkbox' ";
                           i=Math.random()*10000000000000000;
                           sDVText = sDVText + "id='chk&ltscript>"+i+";&lt/script>'>" ;
+                          if(!txt)
+                              txt=this.innerHTML;
                           sDVText = sDVText + "</input><a href='" + txt + "' id='lnk"+i+"'>" + txt + "<\a>";
                           debugger;
                           dv.innerHTML=sDVText;
