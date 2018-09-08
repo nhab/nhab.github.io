@@ -76,8 +76,7 @@
                               sDVText = sDVText + "id='chk&ltscript>"+i+";&lt/script>'>" ;
                               if(!txt)
                               {
-                                    // var clipboardData = e.clipboardData || e.originalEvent.clipboardData || window.clipboardData;
-                                     txt = clipboardData.getData('text');
+                                     txt =window.clipboardData.getData('Text');
                               }
                                 
                               sDVText = sDVText + "</input><a href='" + txt + "' id='lnk"+i+"'>" + txt + "<\a>";
