@@ -62,6 +62,8 @@
                     
                     <button type="button" onclick="add(this)">add</button>
                     <button type="button" onclick="ShowSelection('txtArea')">Browse..</button>
+                    <button type="button" onclick="saveTextAsFile('txtArea')">save</button>
+                     
                     <textarea id="txtArea" rows="10" cols="20"></textarea>
                         <div id="dvShow" style="height:350px; overflow: auto;">
                     </div>
@@ -89,7 +91,27 @@
                            win.focus();
                         }
     
-                        
+                        function saveTextAsFile(txtboxID) {
+                          var textToWrite = document.getElementById(txtboxID).innerHTML;
+                          var textFileAsBlob = new Blob([ textToWrite ], { type: 'text/plain' });
+                          var fileNameToSaveAs = "ecc.plist";
+
+                          var downloadLink = document.createElement("a");
+                          downloadLink.download = fileNameToSaveAs;
+                          downloadLink.innerHTML = "Download File";
+                          if (window.webkitURL != null) {
+                            // Chrome allows the link to be clicked without actually adding it to the DOM.
+                            downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+                          } else {
+                            // Firefox requires the link to be added to the DOM before it can be clicked.
+                            downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+                            downloadLink.onclick = destroyClickedElement;
+                            downloadLink.style.display = "none";
+                            document.body.appendChild(downloadLink);
+                          }
+
+                          downloadLink.click();
+                        }
                         function add()
                         {
                           var txt="";
