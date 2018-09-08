@@ -66,8 +66,8 @@
                           txt=document.getElementById("txtInp").value;
                           dv= document.getElementById("dvShow");
                           
-                          sDVText=dv.innerHTML+"<br><input type='checkbox' id='chk"+
-                              "<script>Math.random()*10000000000000000;</script>'></input><a href='"+txt+"'>"+txt+"<\a>";
+                          sDVText=dv.innerHTML+"<br><input type='checkbox' id='chk'+<script>Math.random()*10000000000000000;</script>+'\''>"
+                           sDVText=sDVText +"</input><a href='"+txt+"'>"+txt+"<\a>";
                           debugger;
                           dv.innerHTML=sDVText;
                       }
