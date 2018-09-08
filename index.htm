@@ -58,7 +58,6 @@
                 
                 <div class="bordered">    
                     <input type="text" id="txtInp" />
-                    <input type="button" onclick="add()" value="add" />
                     <button type="button" onclick="add()">add</button>
                     <script>
                      function add()
@@ -66,6 +65,7 @@
                           txt=document.getElementById("txtInp").InnerHTML;
                           dv= document.getElementById("dvShow");
                           sDVText=dv.innerHTML+"<a href='"+txt+"'>"+txt+"<\a>";
+                          debugger;
                           dv.innerHTML=sDVText;
                       }
                     </script>
