@@ -67,19 +67,20 @@
                           var txt="";
                             setTimeout( function() {
                              txt=document.getElementById("txtInp").value;
-                            }, 100);
-                          //txt=document.getElementById("txtInp").value;
-                          dv= document.getElementById("dvShow");
+
+                              dv= document.getElementById("dvShow");
+
+                              sDVText =dv.innerHTML+"<br><input type='checkbox' ";
+                              i=Math.random()*10000000000000000;
+                              sDVText = sDVText + "id='chk&ltscript>"+i+";&lt/script>'>" ;
+                              if(!txt)
+                                  txt=d.innerHTML;
+                              sDVText = sDVText + "</input><a href='" + txt + "' id='lnk"+i+"'>" + txt + "<\a>";
+                              debugger;
+                              dv.innerHTML=sDVText;
+                              document.getElementById("txtInp").value="";   
+                                }, 100);
                           
-                          sDVText =dv.innerHTML+"<br><input type='checkbox' ";
-                          i=Math.random()*10000000000000000;
-                          sDVText = sDVText + "id='chk&ltscript>"+i+";&lt/script>'>" ;
-                          if(!txt)
-                              txt=d.innerHTML;
-                          sDVText = sDVText + "</input><a href='" + txt + "' id='lnk"+i+"'>" + txt + "<\a>";
-                          debugger;
-                          dv.innerHTML=sDVText;
-                          document.getElementById("txtInp").value="";
                       }
                       function del(d)
                       {
