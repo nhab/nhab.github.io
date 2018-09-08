@@ -63,9 +63,9 @@
                     <script>
                      function add()
                       {
-                          txt=document.getElementById("txtInp").InnerHTML;
+                          txt=document.getElementById("txtInp").value;
                           dv= document.getElementById("dvShow");
-                          sDVText=dv.innerHTML+"<a href='"+txt+"'>"+txt+"<\a>";
+                          sDVText=dv.innerHTML+"<br><a href='"+txt+"'>"+txt+"<\a>";
                           debugger;
                           dv.innerHTML=sDVText;
                       }
