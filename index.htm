@@ -65,6 +65,7 @@
                      function add(d)
                       {
                           var txt="";
+                          debugger;
                             setTimeout( function() {
                              txt=document.getElementById("txtInp").value;
 
@@ -76,10 +77,10 @@
                               if(!txt)
                                   txt=d.innerHTML;
                               sDVText = sDVText + "</input><a href='" + txt + "' id='lnk"+i+"'>" + txt + "<\a>";
-                              debugger;
+                              
                               dv.innerHTML=sDVText;
                               document.getElementById("txtInp").value="";   
-                                }, 100);
+                            }, 100);
                           
                       }
                       function del(d)
