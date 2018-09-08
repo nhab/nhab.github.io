@@ -67,8 +67,9 @@
                           dv= document.getElementById("dvShow");
                           
                           sDVText =dv.innerHTML+"<br><input type='checkbox' ";
-                          sDVText = sDVText + "id='chk&ltscript>Math.random()*10000000000000000;&lt/script>'>" ;
-                          sDVText = sDVText + "</input><a href='" + txt + "'>" + txt + "<\a>";
+                          i=Math.random()*10000000000000000;
+                          sDVText = sDVText + "id='chk&ltscript>"+i+";&lt/script>'>" ;
+                          sDVText = sDVText + "</input><a href='" + txt + "' id='lnk"+i+"'>" + txt + "<\a>";
                           debugger;
                           dv.innerHTML=sDVText;
                           document.getElementById("txtInp").value="";
