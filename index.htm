@@ -62,14 +62,9 @@
                     <button type="button" onclick="add(this)">add</button>
                     <button type="button" onclick="openSelectionInNewTab()">Browse..</button>
                     <script>
-                        function getSelectionText() {
-                            var text = "";
-                            if (window.getSelection) {
-                                text = window.getSelection().toString();
-                            } else if (document.selection && document.selection.type != "Control") {
-                                text = document.selection.createRange().text;
-                            }
-                            return text;
+                        function getSelectionText(txtboxID) {
+                           var sel = document.getElementById(txtboxID);
+                            var text= sel.options[sel.selectedIndex].text;
                         }
                         function openInNewTab(url) {
                             
@@ -78,7 +73,8 @@
                         }
                         function openSelectionInNewTab()
                         {
-                            d= getSelectionText();
+                            debugger;
+                            d= getSelectionText("txtInp");
                              openInNewTab(d);
                         }
                         function add()
