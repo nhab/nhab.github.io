@@ -65,12 +65,14 @@
                       {
                           txt=document.getElementById("txtInp").value;
                           dv= document.getElementById("dvShow");
-                          sDVText=dv.innerHTML+"<br><a href='"+txt+"'>"+txt+"<\a>";
+                          
+                          sDVText=dv.innerHTML+"<br><input type="checkbox" id='chk"+
+                              <script>Math.random()*10000000000000000;</script>+"'></input><a href='"+txt+"'>"+txt+"<\a>";
                           debugger;
                           dv.innerHTML=sDVText;
                       }
                     </script>
-                    <div id="dvShow" style="height:400px; overflow: auto;">
+                    <div id="dvShow" style="height:350px; overflow: auto;">
                     </div>
                 </div>
 
