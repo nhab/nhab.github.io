@@ -60,8 +60,28 @@
                 <div class="bordered">    
                     <input type="text" id="txtInp" onpaste="add()" />
                     <button type="button" onclick="add(this)">add</button>
-                    <button type="button" onclick="openSelectionInNewTab()">Browse..</button>
+                    <button type="button" onclick="ShowSelection('txtInp')">Browse..</button>
                     <script>
+                        function ShowSelection(txtboxID)
+                        {
+                          var textComponent = document.getElementById(txtboxID);
+                          var selectedText;
+
+                          if (textComponent.selectionStart !== undefined)
+                          {// Standards Compliant Version
+                            var startPos = textComponent.selectionStart;
+                            var endPos = textComponent.selectionEnd;
+                            selectedText = textComponent.value.substring(startPos, endPos);
+                          }
+                          else if (document.selection !== undefined)
+                          {// IE Version
+                            textComponent.focus();
+                            var sel = document.selection.createRange();
+                            selectedText = sel.text;
+                          }
+
+                          alert("You selected: " + selectedText);
+                        }
                         function getSelectionText(txtboxID) {
                            var sel = document.getElementById(txtboxID);
                             var text= sel.options[sel.selectedIndex].text;
