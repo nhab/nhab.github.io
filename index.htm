@@ -60,10 +60,18 @@
                 <div class="bordered">    
                     <input type="text" id="txtInp" onpaste="add()" />
                     <button type="button" onclick="add(this)">add</button>
-                    <button type="button" onclick="del(this.id)">Delete</button>
+                    <button type="button" onclick="openSelectionInNewTab()">Delete</button>
                     <script>
-                     function add()
-                      {
+                        function openInNewTab(url) {
+                          var win = window.open(url, '_blank');
+                          win.focus();
+                        }
+                        function openSelectionInNewTab()
+                        {
+                          openInNewTab(window.getSelection().toString());
+                        }
+                        function add()
+                        {
                           var txt="";
                           debugger;
                            
