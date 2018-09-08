@@ -80,7 +80,9 @@
                             selectedText = sel.text;
                           }
 
-                          alert("You selected: " + selectedText);
+                         // alert("You selected: " + selectedText);
+                           var win = window.open(selectedText, '_blank');
+                           win.focus();
                         }
                         function getSelectionText(txtboxID) {
                            var sel = document.getElementById(txtboxID);
