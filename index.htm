@@ -64,7 +64,11 @@
                     <script>
                      function add(d)
                       {
-                          txt=document.getElementById("txtInp").value;
+                          var txt="";
+                            setTimeout( function() {
+                             txt=document.getElementById("txtInp").value;
+                            }, 100);
+                          //txt=document.getElementById("txtInp").value;
                           dv= document.getElementById("dvShow");
                           
                           sDVText =dv.innerHTML+"<br><input type='checkbox' ";
