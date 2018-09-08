@@ -69,7 +69,10 @@
                         }
                         function openSelectionInNewTab()
                         {
-                          openInNewTab(window.getSelection().toString());
+                            d=window.getSelection().anchorNode.textContent.substring(
+                            window.getSelection().extentOffset, 
+                            window.getSelection().anchorOffset);
+                             openInNewTab(d);
                         }
                         function add()
                         {
