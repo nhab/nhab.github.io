@@ -56,14 +56,10 @@
                     </div>
                 </div>
                 
-                <div id="btc" class="bordered">
-                        <script>document.write(getprice());</script>
-                        <script src="https://miningstockvaluator.com/charts/new-gold-price.js" type="text/javascript"></script>
-                </div>
                 <div class="bordered">    
                     <input type="text" id="txtInp" ></input>
                     <input type="button" onclick="add()"/>
-                  <script>
+                    <script>
                      function add()
                       {
                           txt=document.getElementById("txtInp").InnerHTML;
@@ -71,11 +67,16 @@
                           sDVText=dv.innerHTML+"<a href='"+txt+"'>"+txt+"<\a>";
                           dv.innerHTML=sDVText;
                       }
-                  </script>
+                    </script>
                     <div id="dvShow">
                     </div>
-                </div><div class="bordered">    
-               <div class="bordered">      
+                </div>
+
+               <div class="bordered"> 
+                    <div id="btc" >
+                        <script>document.write(getprice());</script>
+                        <script src="https://miningstockvaluator.com/charts/new-gold-price.js" type="text/javascript"></script>
+                    </div>
                     <a href="https://miningstockvaluator.com/live-gold-price" ><div id="gold_price_div" style="color:darkgoldenrod"></div></a>
                     <script src="http://www.tgju.org/webservice/global/snippet-loader.php?token=webservice&items=ons,oil,oil_opec&placeholder=tgju-data"></script><div id="tgju-data"></div><style>
                     <a href="https://miningstockvaluator.com/live-gold-price"><div id="gold_price_div" style="color:black"></div></a>
