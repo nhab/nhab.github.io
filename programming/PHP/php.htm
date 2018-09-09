@@ -34,138 +34,142 @@
         <tr width="20%"></th>
         <tr width="20%"></th>
     </thead>
-    <tbody>
-    <tr>
-    <td>
-        <b> Where to write php code?</b><br>
-        1. in a php file with extention .php<br>
-        2. inside an html file:<br>
-        <pre><code class="html">
+<tbody>
+        
+<tr>
+    
+<td>
+<b> Where to write php code?</b><br>
+1. in a php file with extention .php<br>
+2. inside an html file:<br>
+<pre><code class="html">
 &lt!DOCTYPE html>&lthtml>&ltbody>
 &lt?php
 echo "My first PHP script!";
 ?>
 &lt/body>&lt/html> 
-        </code></pre>
-    </td>
-    <td>
-    <b> Comments</b> <br>
-        are like c++:
-    
-        <pre><code class="php">
-        // , /*...*/
-        </code></pre>
-    </td>
-    <td>
-            <b>print</b> a statement <br> use  Echo and PRINT
-        <br>
-        <pre><code class="html">
-            &lt?php echo "i like it" ?>
-            &lt?php print "I like it" ?>
-        </code></pre>
-        </td>
-        <td>
-        <b>Variables:</b><br>
-        - Don`t need definition.Wherever used ,are known everafter.<br>
-        - Variable names must begin with $ <br>
-        - Are case sensitive
-        <br>
-        <pre><code class="php">
-        &lt?php
-            $like="I like it";
-            print $like;
-        ?>
-        </code></pre>       
-        </td>
-    </tr>
-    
-    <tr>
-        <td>
-        To <b>combine Strings</b>  variables :
-        <br> use dot (.)
-            <pre><code class="php">
-                print $like ." " .$num;
-            </code></pre>
-        </td>
-        <td>
-            variable name can be dynamic:
-            <br>
-            <pre><code class="php">
-            $test="success";
-            $primary="test";
-            $ID=${$primary};
-            echo $ID;
-            </code></pre>      
-        </td>
-        <td>
-        <b> Arrays </b>
+</code></pre>
+</td>
         
-        <pre><code class="php">
-        $a=array{1,2,3,4,5};
-            f[0]="j";f[1]="a";f[2]="r"; 
-        </code></pre>            
-        </td>
-
-    <td>
-        <b>Operators<b><br>
-        are like c :
-        <br>
-        + -/ * ....
-        </td>
-    </tr>
-
-    <tr>
-    <td>
-        <b> If</b><br> 
-        Is  like c         
-    <pre><code class="php">
-        if ($arr){$price=0.90;}else{..}
-    </code></pre>
-    </td>
-    <td><!--Loops-->
-        <b> Loops</b></br>
-        are like c
-        <br>
-        <pre><code class="php">     
-        for($num=1;$num<=10;$num++)
-        {
-            print $num." ";
-        }
-        /*----------------*/
-        while($num<=10)   {  ...   }
-        /*---------------*/
-
-        $a=array(1,2,3,4,5);
-        foreach($a as $b)
-        {
-            print $b." ";
-        }
-        </code></pre>
-    </td>
-    <td><!Functions---->
-        <b> Functions </b>
-        <br>
-        <pre><code class="php">
-        function examplefunc()
-        {
-            print "Hi < br>";
-        }
-        print "sample line:< br>";
-        examplefunc();
-        $s=examplefunc();
-        print $s;
-        </code></pre>        
-        </td>
-        <td>
-        Passsing <b>reference</b> arguments <br>
-        to functions :
-        <br>
-        <pre><code class="php">          
-            function add_some(&$str1){...}
-        </code></pre>         
-        </td>
+<td>
+<b> Comments</b> <br>
+are like c++:
+<pre><code class="php">
+// , /*...*/
+</code></pre>
+</td>
+<td>
+<b>print</b> a statement <br> use  Echo and PRINT
+<br>
+<pre><code class="html">
+&lt?php echo "i like it" ?>
+&lt?php print "I like it" ?>
+</code></pre>
+</td>
+<td>
+<b>Variables:</b><br>
+- Don`t need definition.Wherever used ,are known everafter.<br>
+- Variable names must begin with $ <br>
+- Are case sensitive
+<br>
+<pre><code class="php">
+&lt?php
+$like="I like it";
+print $like;
+?>
+</code></pre>       
+</td>
+</tr>
+    
+<tr>
+<td>
+To <b>combine Strings</b>  variables :
+<br> use dot (.)
+<pre><code class="php">
+print $like ." " .$num;
+</code></pre>
+</td>
         
-    </tr>
+<td>
+variable name can be dynamic:
+<br>
+<pre><code class="php">
+$test="success";
+$primary="test";
+$ID=${$primary};
+echo $ID;
+</code></pre>      
+</td>
+        
+<td>
+<b> Arrays </b>
+
+<pre><code class="php">
+$a=array{1,2,3,4,5};
+    f[0]="j";f[1]="a";f[2]="r"; 
+</code></pre>            
+</td>
+
+<td>
+<b>Operators<b><br>
+are like c :
+<br>
++ -/ * ....
+</td>
+</tr>
+
+<tr>
+<td>
+<b> If</b><br> 
+Is  like c         
+<pre><code class="php">
+if ($arr){$price=0.90;}else{..}
+</code></pre>
+</td>
+<td><!--Loops-->
+<b> Loops</b></br>
+are like c
+<br>
+<pre><code class="php">     
+for($num=1;$num<=10;$num++)
+{
+    print $num." ";
+}
+/*----------------*/
+while($num<=10)   {  ...   }
+/*---------------*/
+
+$a=array(1,2,3,4,5);
+foreach($a as $b)
+{
+    print $b." ";
+}
+</code></pre>
+</td>
+<td><!Functions---->
+<b> Functions </b>
+<br>
+<pre><code class="php">
+function examplefunc()
+{
+    print "Hi < br>";
+}
+print "sample line:< br>";
+examplefunc();
+$s=examplefunc();
+print $s;
+</code></pre>        
+</td>
+<td>
+Passsing <b>reference</b> arguments <br>
+to functions :
+<br>
+<pre><code class="php">          
+    function add_some(&$str1){...}
+</code></pre>         
+</td>
+
+</tr>
     <tr>
     <td>
     <b>Default Argument</b> in the function:
