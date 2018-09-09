@@ -56,87 +56,6 @@
                         <a href="shortcutkeys.htm">Shortcut keys </a>
                     </div>
                 </div>
-                 <div class="bordered"> 
-                    
-                     <iframe src="https://mail.google.com/tasks/ig" width="100%"></iframe>
-                </div>
-                <div class="bordered">    
-                    <input type="text" id="txtInp" onpaste="add()" />
-                    
-                    <button type="button" onclick="add(this)">add</button>
-                    <button type="button" onclick="ShowSelection('txtArea')">Browse..</button>
-                    <button type="button" onclick="saveTextAsFile('txtArea')">save</button>
-                     
-                    <textarea id="txtArea" rows="10" cols="20"></textarea>
-                        <div id="dvShow" style="height:350px; overflow: auto;">
-                    </div>
-                    <script>
-                        function ShowSelection(txtboxID)
-                        {
-                          var textComponent = document.getElementById(txtboxID);
-                          var selectedText;
-
-                          if (textComponent.selectionStart !== undefined)
-                          {// Standards Compliant Version
-                            var startPos = textComponent.selectionStart;
-                            var endPos = textComponent.selectionEnd;
-                            selectedText = textComponent.value.substring(startPos, endPos);
-                          }
-                          else if (document.selection !== undefined)
-                          {// IE Version
-                            textComponent.focus();
-                            var sel = document.selection.createRange();
-                            selectedText = sel.text;
-                          }
-
-                         // alert("You selected: " + selectedText);
-                           var win = window.open(selectedText, '_blank');
-                           win.focus();
-                        }
-    
-                        function saveTextAsFile(txtboxID) {
-                          var textToWrite = document.getElementById(txtboxID).innerHTML;
-                          var textFileAsBlob = new Blob([ textToWrite ], { type: 'text/plain' });
-                          var fileNameToSaveAs = "ecc.plist";
-
-                          var downloadLink = document.createElement("a");
-                          downloadLink.download = fileNameToSaveAs;
-                          downloadLink.innerHTML = "Download File";
-                          if (window.webkitURL != null) {
-                            // Chrome allows the link to be clicked without actually adding it to the DOM.
-                            downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
-                          } else {
-                            // Firefox requires the link to be added to the DOM before it can be clicked.
-                            downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
-                            downloadLink.onclick = destroyClickedElement;
-                            downloadLink.style.display = "none";
-                            document.body.appendChild(downloadLink);
-                          }
-
-                          downloadLink.click();
-                        }
-                        function add()
-                        {
-                          var txt="";
-                         txt=document.getElementById("txtInp").value;
-                          dv= document.getElementById("dvShow");
-                          sDVText =dv.innerHTML+"<br><input type='checkbox' ";
-                          i=Math.random()*10000000000000000;
-                          sDVText = sDVText + "id='chk&ltscript>"+i+";&lt/script>'>" ;
-                          if(!txt)
-                          {
-                                 txt =window.clipboardData.getData('Text');
-                          }
-
-                          sDVText = sDVText + "</input><a href='" + txt + "' id='lnk"+i+"'>" + txt + "<\a>";
-
-                          dv.innerHTML=sDVText;
-                          document.getElementById("txtInp").value="";     
-                      }
-
-                    </script>
-                    
-                </div>
 
                <div class="bordered"> 
                     <div id="btc" >
@@ -151,7 +70,8 @@
                     <a href="http://www.iranjib.ir/showgroup/23/realtime_price/">$</a>
                     <!-- Dictionary by www.1abzar.com ---><script type="text/javascript" src="http://1abzar.ir/abzar/tools/dic/dic.php?color=A82A11&bg=EFEFEF&kc=777777&kadr=1"></script><div style="display:none"><h2><a href="http://www.1abzar.com/abzar/dictionary.php">&#1583;&#1740;&#1705;&#1588;&#1606;&#1585;&#1740;</a></h2></div><!-- Dictionary by www.1abzar.com --->
                 </div>
-                <div class="bordered" style="width:35%">
+                <div class="bordered" >
+                     
                     <div class="header indent">calender</div>
                     <div class="indent">
                         <iframe src="https://calendar.google.com/calendar/embed?mode=AGENDA&amp;height=200&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=nima.linux%40gmail.com&amp;color=%232952A3&amp;ctz=Asia%2FTehran" style="border-width:0" width="400" height="200" frameborder="0" scrolling="no"></iframe>      </div>    
