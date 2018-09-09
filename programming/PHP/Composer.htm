@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html>
 <head>
     <script src="../../libs/jquery-3.3.1.slim.min.js" ></script>
@@ -215,4 +216,223 @@ $page1 = new Page();
 
 
 </p>
+=======
+<html>
+<head>
+    <script src="../../libs/jquery-3.3.1.slim.min.js" ></script>
+
+    <script src="../../libs/tooltip/tooltip.js" type="text/javascript"></script>
+    <!--link href="../../libs/tooltip/tooltip.css" rel="stylesheet" type="text/css" /-->
+    <style>
+        .imagesize{width:350px;height:350px;}
+        .column{color:black; }
+        .TB3ColFixed{table-layout:fixed;width:100%;border-collapse: separate;}
+        h7{white-space:pre;}
+        td{padding-left:10px;padding-right:10px;vertical-align: text-top;border:1px black solid;
+        font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+        font-size: 18px;word-wrap: break-word;
+        }
+        h2{text-align: center;background-color:#9999ee}
+        b{font-size:20px;font-weight:800;background-color: lightcyan;}
+        code{background-color:#222222;color: lightcyan;
+            padding-left: 3px;padding-right: 3px;
+            margin-left: 5px; margin-right: 5px;}
+    </style>
+    <link rel="stylesheet" href="../../libs/highlight/androidstudio2.css">
+    <script src="../../libs/jquery-3.3.1.slim.min.js" ></script>
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    
+    <script>
+        
+        $('code').each(function() {
+        var that = $(this);
+        // cache the content of 'code'
+        var html = that.html().trim();
+        that.empty();
+        // escape the content
+        that.text(html);
+    });
+    
+    hljs.initHighlightingOnLoad();
+    </script>
+</head>
+
+<body>
+
+<table class="TB3ColFixed">
+<thead>
+<tr width="30%"></th>
+<tr width="33%"></th>
+<tr width="33%"></th>
+</thead>
+<tbody>
+<tr>
+<td>          
+<h2> What is Composer ?</h2>
+It is a PHP <b>dependency management tool</b><br>
+Suppose:<br>
+    a project depends on a number of libraries.<br>
+and Some of them depend on other libraries.<br>
+<br>
+Composer:<br>
+1.  Enables you to declare the libraries.<br>
+2.  Finds out which versions of which packages
+ need to be installed, and installs them<br>
+    (meaning it downloads them into your project).<br>
+
+3.Composer also helps class auloading and namespacing;
+</td>
+
+<td>
+<h2> Setup in the project</h2>
+ after installing composer on your system,<br>
+all you need is a <b>composer.json</b> file in your project.<br>
+
+
+</td>
+<td>
+<h2> composer.json content</h2>
+The first (and often only) thing you specify in composer.json is
+the <b>require</b> key.<br>
+You are simply telling Composer which packages your project depends on.
+<pre><code class="json">
+{
+    "require": {
+        "monolog/monolog": "1.0.*"
+    }
+}
+</code></pre>
+As you see,it maps the package name to its version.<br>
+The required packages will be downloaded to the project directory 
+from the packaglist online repository: https://packagist.org/
+        
+</td>
+</tr>
+<tr>
+
+
+<td>
+<h2> Getting Dependencies or updating</h2>
+To <strong>install</strong> dependencies ,
+<strong>based on  composer.json file</strong>,
+<strong> run</strong> the command:<br>
+
+<pre><code class="html">
+    php composer.phar install
+</code></pre>
+
+running the above command will download 
+dependencies into the project.<br>
+<br>
+it will also creates or updates a file named<br>
+ <code> composer.lock </code> file  into your project<br>
+to maintain the proper version of dependencies<br>
+among diffrent programmers of the project,<br>
+so the <code> composer.lock </code> file  should be <br>
+commited into the version control.<br>
+
+<h2>Update dependencies to latest:</h2>
+
+<pre><code class="html">
+php composer.phar update
+</code></pre>
+        
+</td>
+<td>
+    <h2>Par(PHP archive)</h2>
+    PHAR (PHP archive), which is an archive format for PHP which can be run on the command line, amongst other things.
+
+</td>
+<td>
+<h2> AutoLoading</h2>
+“Autoloading” is Whenever a class is used, it will be loaded<br>
+so the application 
+doesn’t have to load all classes on each request,<br>
+ 
+</td>
+</tr>
+
+<tr>
+<td>
+<h2>PSR-4 and namespaces</h2>
+PSR-4 is the newest standard of autoloading in PHP, and it compels us to use namespaces.
+<b>Steps to autoload by PSR-4 :</b><br>
+<h2>a. Put the classes that we want to autoload in a dedicated directory</h2>
+ For example:__
+<pre><code class="bat">
+your-website/
+    src/
+    Db.php
+    Page.php
+    User.php
+</code></pre>        
+</td>
+
+<td>
+<h2>b. Give the classes a namespace:</h2>
+<pre><code class="php">
+
+namespace Acme;
+
+class Page {
+    public function __construct()
+    {
+        echo "hello, i am a page.";
+    }
+}
+</code></pre>
+
+We give the same namespace Acme to all of the classes in the src/ directory.     
+</td>
+
+<td>
+<h2>c. Point the namespace to the src/ directory in the composer.json file.</h2>
+for example:__
+<pre><code class="json">
+{
+    "autoload": {
+    "psr-4": {
+        "Acme\\":"src/"
+    }
+    }
+}
+</code></pre>
+
+We use the psr-4 key.
+The namespace Acme points to the src/ directory.
+The namespace has to end with \\. For example, "Acme\\".
+You can replace the generic Acme with the name of your brand or website.
+
+</td>
+</tr>
+<tr>
+<td>
+<h2>d. Update the Composer autoloader:</h2>
+<pre><code class="html">
+$ composer dumpautoload -o
+</code></pre>
+        
+</td>
+<td>
+<h2>e. Import the namespace to your scripts.</h2>
+ The scripts need to import
+the namespace as well as the autoloader, e.g., index.php:__
+<pre><code class="php"> 
+require "vendor/autoload.php";
+
+use Acme\Db;
+use Acme\User;
+use Acme\Page;
+
+$page1 = new Page();
+</code></pre>
+</td>
+<td></td>
+</tr>
+</table>
+<p>
+
+
+</p>
+>>>>>>> 654c240a1da36541aa30322f7830e5712ab25f6f
 </body>
