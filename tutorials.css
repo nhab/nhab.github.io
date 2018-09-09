@@ -1,0 +1,15 @@
+*{font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
+h7{white-space:pre;}
+td{padding-left:10px;padding-right:10px;vertical-align: text-top;border:1px black solid;
+
+font-size: 18px;word-wrap: break-word;
+}
+h2{text-align: center;background-color:#9999ee}
+b{font-size:20px;font-weight:800;background-color: lightcyan;}
+code{background-color:#222222;color: lightcyan;
+    padding-left: 3px;padding-right: 3px;
+    margin-left: 5px; margin-right: 5px;}
+
+.imagesize{width:350px;height:350px;}
+.column{color:black; }
+.TB3ColFixed{table-layout:fixed;width:100%;border-collapse: separate;}

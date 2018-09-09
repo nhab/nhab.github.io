@@ -8,6 +8,8 @@
             .column{color:black; }
             td{padding-left:5px;}
         </style>
+        
+         <link rel="stylesheet" href="../../tutorials.css">
         <link rel="stylesheet" href="../../libs/highlight/androidstudio2.css">
         <script src="../../libs/jquery-3.3.1.slim.min.js" ></script>
         <script src="../../libs/highlight/highlight.pack.js"></script>
@@ -27,6 +29,89 @@
         </script>
 </head>
 <body>
+<script>
+function Block(title,body,code,codetype,widt="20%",hei="300px",imageSrc=null)
+{
+    sStyle="padding-left:10px;padding-right:10px;vertical-align:text-top;border:1px black solid";
+    sStyle+=";display:inline-block;width:"+widt+";height:"+hei+";";
+    document.write("<div style='"+sStyle+";'>");
+    debugger;
+    document.write( "<h2>" +title+"</h2>");
+    document.write(body);
+    if(codetype)
+        sCode="<pre><code class='"+codetype+"'>"+code+"</code></pre>";
+    else
+        sCode="<pre><code >"+code+"</code></pre>";
+    
+    document.write(sCode);
+    if(imageSrc)
+        document.write("<img src='"+imageSrc+"'>");
+    document.write("</div>");
+}
+</script>
+
+<script>
+    stitle="Where to write code?";
+    sBody="1. in a file with extention .php<br>2. inside an html file:<br>";
+    sCode="&lt!DOCTYPE html>&lthtml>"+"<br>"+"&ltbody>"+"<br>";
+    sCode+="&lt?php "+"<br>";
+    sCode+="echo \"My first PHP script!\""+"<br>";
+    sCode+="?> &lt/body>&lt/html>"+"<br>";
+    Block(stitle,sBody,sCode,"html");
+    Block("Comments","are like c++:","// , /*...*/","php");
+
+    sCode="&lt?php echo \"i like it\" ?>"+"<br>";
+    sCode+="&lt?php print \"I like it\" ?>";
+    Block("writing a statement", "  'Echo' and 'PRINT' :",sCode,"html");
+
+    stitle="Variables";
+    sBody="- Don`t need definition.<br>- Wherever used ,are known everafter.<br>";
+    sBody+="- Variable names must begin with $ <br>";
+    sBody+="- Are case sensitive";
+    sCode="&lt?php<br>$like=\"I like it\"<br>print $like ?>";
+    Block(stitle,sBody,sCode,"php","31%");
+     
+    Block("combining Strings","use dot (.)","print $like .\" \" .$num;","php");
+    
+    stitle="dynamic variable names";
+    sCode="$test=\"success\";<br>$primary=\"test\";<br>$ID=${$primary};<br>echo $ID;";
+    Block(stitle,"",sCode,"php");
+    
+    Block("Global variables","","function printname()"
+     +"<br>{"
+     +"<br>global $name;"+
+     "<br>include 'variables.php';"+
+     "<br>print $name;<br>};",
+     "php");
+
+    sCode="$a=array{1,2,3,4,5};"+"<br>"+"f[0]=\"j\";<br>f[1]=\"a\";<br>f[2]=\"r\""; 
+    Block("Arrays","",sCode,"php");
+
+    Block("Operators","The same as C++ :","+ -/ * ....","php");
+
+    Block("If","The same as C++"," if ($arr){$price=0.90;}else{..}","php");
+
+    Block("Loops","The same as C++","for($num=1;$num<=10;$num++)<br>{print $num.\" \";}"+
+        "<br>while($num<=10)   {  ...   }<br>"+
+        "$a=array(1,2,3,4,5);<br>"+
+        "foreach($a as $b)<br>"+
+        "{    print $b.\" \";}","php","23%");
+  
+    Block("Functions","","function examplefunc()"+
+        "<br>{  print \"Hi < br>\";}"+
+        "<br>print \"sample line:&ltbr>\""+
+        "<br>examplefunc();"+
+        "<br>$s=examplefunc();"+
+        "<br>print $s;","php");
+    
+    Block("by <b>reference</b> function arguments","By adding & before variable",
+        "function add_some( &$str2 ){<br>..}","php");
+
+    Block("<b>Default Argument</b> of functions","",
+     "function makeCoffe(<br>"
+       +" $types=array(\"cappuccino\",$coffeMaker=Null ))"+"<br>"+"{..}","php","30%");   
+</script>
+<br>
 <table>
     <thead>
         <tr width="25%"></th>
@@ -34,446 +119,292 @@
         <tr width="20%"></th>
         <tr width="20%"></th>
     </thead>
-<tbody>
-        
+<tbody>    
 <tr>
-    
 <td>
-<b> Where to write php code?</b><br>
-1. in a php file with extention .php<br>
-2. inside an html file:<br>
-<pre><code class="html">
-&lt!DOCTYPE html>&lthtml>&ltbody>
-&lt?php
-echo "My first PHP script!";
-?>
-&lt/body>&lt/html> 
-</code></pre>
-</td>
-        
-<td>
-<b> Comments</b> <br>
-are like c++:
+<h2> include</h2>
+<p>To include other php files<br>
+to a php file :<br>
+INCLUDE(),REQUIRE()<br>
+Even text or html files<br>
+can be included 
+Example : 
+</p>        
 <pre><code class="php">
-// , /*...*/
-</code></pre>
-</td>
-<td>
-<b>print</b> a statement <br> use  Echo and PRINT
-<br>
+Include
+'http://www.site.com/file.php';
+</code></pre>  
+</td>   
+
+<td>                 
+Include 'filename';
+<br>require 'filename';
 <pre><code class="html">
-&lt?php echo "i like it" ?>
-&lt?php print "I like it" ?>
+&lthtml>
+&ltbody>
+
+&ltdiv class="menu">
+&lt?php include 'menu.php';?>
+&lt/div>
+
+&lth1>Welcome to my home page!&lt/h1>
+&ltp>Some text.&lt/p>
+&ltp>Some more text.&lt/p>
+
+&lt/body>
+&lt/html>
 </code></pre>
 </td>
-<td>
-<b>Variables:</b><br>
-- Don`t need definition.Wherever used ,are known everafter.<br>
-- Variable names must begin with $ <br>
-- Are case sensitive
-<br>
+
+<td><h3>Classes</h3>
 <pre><code class="php">
-&lt?php
-$like="I like it";
-print $like;
-?>
-</code></pre>       
+class test{
+public static function run(){
+    print "works\n";
+}
+$ClassName='test';
+$ClassName::run();
+}
+</code></pre>
+</td>
+            
+    <td>
+Function to find IP of the Visitors:
+<br>              
+<pre><code class="php">        
+Getenv("REMOTE_ADDR")
+</code></pre>             
 </td>
 </tr>
-    
 <tr>
 <td>
-To <b>combine Strings</b>  variables :
-<br> use dot (.)
+<b> Uploading files</b>
+            
+<pre><code class="html">
+&ltform enctype="multipart/form-data" 
+action="upload.php" method="post">
+Choose the file :
+&ltinput name="uploaded" type="file"
+/>&ltbr />
+&ltinput type="submit" value="Upload"
+/>
+&lt/form>
+</code></pre>  
+</td>
+</tr>
+</table>
+<table>
+
+<h3> Sessions</h3>
+<table>
+<tr>
+<td>
+<b>Session level variables</b>
+<br>1. define them
 <pre><code class="php">
-print $like ." " .$num;
+session_start();
+$_SESSION['Color']='red';
+$_SESSION['size']='small';
+...
 </code></pre>
 </td>
-        
 <td>
-variable name can be dynamic:
-<br>
-<pre><code class="php">
-$test="success";
-$primary="test";
-$ID=${$primary};
-echo $ID;
+    2. Then use those variables 
+    <br>in the second page :
+    <pre><code class="php">    
+    session_start();
+    echo $_SESSION['color'];
+    echo $_SESSION['size'];
+    </code></pre>
+</td>
+<td>
+print the whole session
+<pre><code class="php">         
+print_r($SESSION)  
 </code></pre>      
 </td>
-        
 <td>
-<b> Arrays </b>
+To delete a session variable
+<br> use <b>unset</b>
 
 <pre><code class="php">
-$a=array{1,2,3,4,5};
-    f[0]="j";f[1]="a";f[2]="r"; 
-</code></pre>            
-</td>
-
-<td>
-<b>Operators<b><br>
-are like c :
-<br>
-+ -/ * ....
+$_SESSION['size']='larg';
+unset( $_SESSION['shape']);
+//For total deletion     : 
+session_unset();
+session_destroy();
+</code></pre>              
 </td>
 </tr>
+</table>
+<h3> Files Operations:</h3>
 
+<table>
 <tr>
 <td>
-<b> If</b><br> 
-Is  like c         
+fopen function:
 <pre><code class="php">
-if ($arr){$price=0.90;}else{..}
-</code></pre>
-</td>
-<td><!--Loops-->
-<b> Loops</b></br>
-are like c
-<br>
-<pre><code class="php">     
-for($num=1;$num<=10;$num++)
-{
-    print $num." ";
-}
-/*----------------*/
-while($num<=10)   {  ...   }
-/*---------------*/
-
-$a=array(1,2,3,4,5);
-foreach($a as $b)
-{
-    print $b." ";
-}
-</code></pre>
-</td>
-<td><!Functions---->
-<b> Functions </b>
-<br>
-<pre><code class="php">
-function examplefunc()
-{
-    print "Hi < br>";
-}
-print "sample line:< br>";
-examplefunc();
-$s=examplefunc();
-print $s;
+$a=fopen("/home/files/yourfile.txt","r");
+$b=fopen("yourfile.gif","w");
+//r   determines mode 
+//other modes for opening files:
+x+,x,a+,a,w+,w-,r+,r-
 </code></pre>        
 </td>
 <td>
-Passsing <b>reference</b> arguments <br>
-to functions :
-<br>
-<pre><code class="php">          
-    function add_some(&$str1){...}
+some functions to work with files   
+<pre><code class="php">
+fwrite();
+file_get_contents();
+//returns the whole file as an string
+file();
+fgets();// to read line by line
+fread();
 </code></pre>         
 </td>
-
+<td>file() Example:
+<pre><code class="php">
+$lines=file('yourfile.txt');
+foreach($lines as $line_num=>$line)
+{
+print
+"<font color='red'> line # {$line_num}</font>;"
+.$line."< br/>\n";
+}
+</code></pre>            
+</td>
+<td>fgets() Example
+<pre><code class="php">
+$myFile="yourfile.txt";
+$handle=fopen($myFile,'r');
+while(!feof($handle))
+{
+$data=fgets($handle,512);
+echo $data;
+echo "<br>";
+}
+fclose($handle);
+</code></pre>
+</td>
 </tr>
-    <tr>
-    <td>
-    <b>Default Argument</b> in the function:
-    <br>
-    <pre><code class="php">         
-        function makeCoffe($types=array(
-            "cappuccino",$coffeMaker=Null)){..}
-    </code></pre>        
-    </td>
-    <td>
-        Function to find IP of the Visitors:
-        <br>              
-        <pre><code class="php">        
-            Getenv("REMOTE_ADDR")
-        </code></pre>             
-    </td>
-    <td>
-        <b> Uploading files</b>
-                        
-        <pre><code class="html">
-        &ltform enctype="multipart/form-data" 
-        action="upload.php" method="post">
-        Choose the file :
-        &ltinput name="uploaded" type="file"
-         />&ltbr />
-        &ltinput type="submit" value="Upload"
-         />
-        &lt/form>
-        </code></pre>  
-        </td>
-    </tr>
-    </table>
-    <table>
 
-    <h3> Sessions</h3>
-    <table>
-        <tr>
-            <td>
-            <b>Session level variables</b>
-            <br>1. define them
-            <pre><code class="php">
-            session_start();
-            $_SESSION['Color']='red';
-            $_SESSION['size']='small';
-            ...
-            </code></pre>
-            </td>
-            <td>
-                2. Then use those variables 
-                <br>in the second page :
-                <pre><code class="php">    
-                session_start();
-                echo $_SESSION['color'];
-                echo $_SESSION['size'];
-                </code></pre>
-            </td>
-            <td>
-            print the whole session
-            <pre><code class="php">         
-            print_r($SESSION)  
-            </code></pre>      
-            </td>
-            <td>
-            To delete a session variable
-            <br> use <b>unset</b>
-            
-            <pre><code class="php">
-            $_SESSION['size']='larg';
-            unset( $_SESSION['shape']);
-            //For total deletion     : 
-            session_unset();
-            session_destroy();
-            </code></pre>              
-            </td>
-            </tr>
-    </table>
-    <h3> Files Operations:</h3>
+<tr>
+<td><b>Forms</b><br>
+A Simple HTML Form
+<pre><code class="html">    
+&lthtml>
+&ltbody>
 
-    <table>
-    <tr>
-        <td>
-        fopen function:
-        <pre><code class="php">
-        $a=fopen("/home/files/yourfile.txt","r");
-        $b=fopen("yourfile.gif","w");
-        //r   determines mode 
-        //other modes for opening files:
-        x+,x,a+,a,w+,w-,r+,r-
-        </code></pre>        
-        </td>
-        <td>
-            some functions to work with files   
-            <pre><code class="php">
-            fwrite();
-            file_get_contents();
-            //returns the whole file as an string
-            file();
-            fgets();// to read line by line
-            fread();
-            </code></pre>         
-        </td>
-        <td>file() Example:
-        <pre><code class="php">
-        $lines=file('yourfile.txt');
-        foreach($lines as $line_num=>$line)
-        {
-         print
-          "<font color='red'> line # {$line_num}</font>;"
-          .$line."< br/>\n";
-        }
-        </code></pre>            
-        </td>
-        <td>fgets() Example
-        <pre><code class="php">
-        $myFile="yourfile.txt";
-        $handle=fopen($myFile,'r');
-        while(!feof($handle))
-        {
-            $data=fgets($handle,512);
-            echo $data;
-            echo "<br>";
-        }
-        fclose($handle);
-        </code></pre>
-        </td>
-    </tr>
-    <tr>
-        <td>
-                <h3> include</h3>
-            <p>To include other php files<br>
-        to a php file :<br>
-        INCLUDE(),REQUIRE()<br>
-        
-        Even text or html files<br>
-        can be included 
+&ltform action="welcome.php"
+method="post">
 
-        Example : 
-        </p>
-                    
-        <pre><code class="php">
-        Include
-            'http://www.site.com/file.php';
-        </code></pre>  
-        </td>   
-        <td>                 
-        Include 'filename';
-        <br>require 'filename';
-        <pre><code class="html">
-        &lthtml>
-        &ltbody>
-    
-        &ltdiv class="menu">
-        &lt?php include 'menu.php';?>
-        &lt/div>
-    
-        &lth1>Welcome to my home page!&lt/h1>
-        &ltp>Some text.&lt/p>
-        &ltp>Some more text.&lt/p>
-    
-        &lt/body>
-        &lt/html>
-        </code></pre>
-        </td>
-        <td><h3>Classes</h3>
-        <pre><code class="php">
-        class test{
-            public static function run(){
-                print "works\n";
-            }
-            $ClassName='test';
-            $ClassName::run();
-        }
-        </code></pre>
-        </td>
-        <td>Global variables
-        <pre><code class="php">   
-        function printname()
-        {
-            global $name;
-            include 'variables.php';
-            print $name;
-        }
-        </code></pre>
-        </td>   
-        
-    </tr>
+Name:   
+&ltinput type="text" name="name">
+&ltbr>
+E-mail:
+&ltinput type="text" name="email">
+&ltbr>
 
-        <tr>
-        <td><b>Forms</b><br>
-            A Simple HTML Form
-        <pre><code class="html">    
-        &lthtml>
-        &ltbody>
-        
-        &ltform action="welcome.php"
-            method="post">
-        
-        Name:   
-        &ltinput type="text" name="name">
-            &ltbr>
-        E-mail:
-            &ltinput type="text" name="email">
-            &ltbr>
-        
-        &ltinput type="submit">
-        &lt/form>
-        
-        &lt/body>
-        &lt/html>
-        </code></pre>           
-        </td>
-        </tr>        
-    </table>
+&ltinput type="submit">
+&lt/form>
 
-    <h3>phpMysql</h3>
-    <b>Open a Connection to MySQL </b>
-    <table>
-        <tr>
-            <td>
-            //MySQLi Object-Oriented Example 
-                <pre><code class="php"> 
-                $servername = "localhost";
-                $username = "username";
-                $password = "password";
+&lt/body>
+&lt/html>
+</code></pre>           
+</td>
+</tr>        
+</table>
 
-                // Create connection
-                $conn = new mysqli($servername, $username, $password);
+<h3>phpMysql</h3>
+<b>Open a Connection to MySQL </b>
+<table>
+<tr>
+<td>
+//MySQLi Object-Oriented Example 
+    <pre><code class="php"> 
+    $servername = "localhost";
+    $username = "username";
+    $password = "password";
 
-                // Check connection
-                if ($conn->connect_error) {
-                    die("Connection failed: " . $conn->connect_error);
-                }
-                echo "Connected successfully";
-                </code></pre>       
-            </td>
-            <td>//MySQLi Procedural Example 
-            <pre><code class="php"> 
-            $servername = "localhost";
-            $username = "username";
-            $password = "password";
+    // Create connection
+    $conn = new mysqli($servername, $username, $password);
 
-            // Create connection
-            $conn = mysqli_connect($servername, $username, $password);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    echo "Connected successfully";
+    </code></pre>       
+</td>
+<td>//MySQLi Procedural Example 
+<pre><code class="php"> 
+$servername = "localhost";
+$username = "username";
+$password = "password";
 
-            // Check connection
-            if (!$conn) {
-                die("Connection failed: " . mysqli_connect_error());
-            }
-            echo "Connected successfully";
-            </code></pre>
-            </td>
-        </tr>
-        <tr>
-            <td>// PDO Example
-            <pre><code class="php">                   
-            $servername = "localhost";
-            $username = "username";
-            $password = "password";
-            
-            try {
-                $conn = new PDO("mysql:host=$servername;dbname=myDB", 
-                $username, $password);
-                // set the PDO error mode to exception
-                $conn->setAttribute(PDO::ATTR_ERRMODE,
-                PDO::ERRMODE_EXCEPTION);
-                echo "Connected successfully";
-                }
-            catch(PDOException $e)
-                {
-                echo "Connection failed: " . $e->getMessage();
-                }
-            </code></pre>
-            </td>
-            <td>
-            Insert <br>
-            Example (PDO) and get last id
-            <pre><code class="php">
-            $servername = "localhost";
-            $username = "username";
-            $password = "password";
-            $dbname = "myDBPDO";
-        
-            try {
-                $conn = new PDO("mysql:host=$servername;dbname=$dbname", 
-                $username, $password);
-                // set the PDO error mode to exception
-                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $sql = "INSERT INTO MyGuests (firstname, lastname, email)
-                VALUES ('John', 'Doe', 'john@example.com')";
-                // use exec() because no results are returned
-                $conn->exec($sql);
-                echo "New record created successfully";
-                    $last_id = $conn->lastInsertId();
-                echo "New record created successfully.
-                Last inserted ID is: " . $last_id;
-                }
-            catch(PDOException $e)
-                {
-                echo $sql . "< br>" . $e->getMessage();
-                }
-            $conn = null;
-            </code></pre>            
-            </td>
-        </tr>
-        
+// Create connection
+$conn = mysqli_connect($servername, $username, $password);
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+echo "Connected successfully";
+</code></pre>
+</td>
+</tr>
+<tr>
+<td>// PDO Example
+<pre><code class="php">                   
+$servername = "localhost";
+$username = "username";
+$password = "password";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=myDB", 
+    $username, $password);
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE,
+    PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully";
+    }
+catch(PDOException $e)
+    {
+    echo "Connection failed: " . $e->getMessage();
+    }
+</code></pre>
+</td>
+<td>
+Insert <br>
+Example (PDO) and get last id
+<pre><code class="php">
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDBPDO";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", 
+    $username, $password);
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sql = "INSERT INTO MyGuests (firstname, lastname, email)
+    VALUES ('John', 'Doe', 'john@example.com')";
+    // use exec() because no results are returned
+    $conn->exec($sql);
+    echo "New record created successfully";
+        $last_id = $conn->lastInsertId();
+    echo "New record created successfully.
+    Last inserted ID is: " . $last_id;
+    }
+catch(PDOException $e)
+    {
+    echo $sql . "< br>" . $e->getMessage();
+    }
+$conn = null;
+</code></pre>            
+</td>
+</tr>
+
     </tbody>
 </table>
