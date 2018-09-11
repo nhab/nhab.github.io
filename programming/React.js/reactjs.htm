@@ -58,11 +58,11 @@ C:\reactApp>touch webpack.config.js`,"html");
 module.exports = config;`,"html");
     
   Block("8-Install webpack-dev-server",""
-        ,`C:\reactApp>npm install webpack-dev-server -g`,"php");
+        ,`C:\reactApp>npm install webpack-dev-server -g`,","javascript");
   Block("9-Edit package.json",
         `Open the package.json and delete test echo Error: 
         no test specified & & exit 1 inside scripts object.and add the start command instead.`
-        ,`"start": "webpack-dev-server --hot"`,"php");
+        ,`"start": "webpack-dev-server --hot"`,","javascript");
     
  Block("10- index.html","We are setting div id = 'app' as a root element for our app ",
 `&lt!DOCTYPE html>
@@ -89,7 +89,7 @@ class App extends React.Component {
       );
    }
 }
-export default App;`,"php");
+export default App;`,","javascript");
 Block("12- main.js","",
 `import React from 'react';
 import ReactDOM from 'react-dom';
@@ -98,14 +98,13 @@ import App from './App.jsx';
 ReactDOM.render(<App />, document.getElementById('app'));`,"php");
 
 Block("Running the Server","run the following command line and see the result on http://localhost:8080/",
-"C:\\reactApp>npm start","php");
- </script>
-    <h2>JSX</h2>
-    React uses JSX for templating instead of regular JavaScript
-    <script>
-        Block("Using JSX","App.jsx",
-              `import React from 'react';
+"C:\\reactApp>npm start",","javascript");
+</script>
 
+<h2>JSX</h2>
+  React uses JSX for templating instead of regular JavaScript
+<script>
+  Block("Using JSX","App.jsx", `import React from 'react';
 class App extends React.Component {
    render() {
       return (
@@ -115,6 +114,21 @@ class App extends React.Component {
       );
    }
 }
-export default App;`,"html");
-        
+export default App;`,","javascript");
+  Block("Nested Elements","App.jsx",
+ `import React from 'react';
+
+class App extends React.Component {
+   render() {
+      return (
+         <div>
+            <h1>Header</h1>
+            <h2>Content</h2>
+            <p>This is the content!!!</p>
+         </div>
+      );
+   }
+}
+export default App;
+`,"javascript");
 </body>
