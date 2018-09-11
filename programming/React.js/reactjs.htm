@@ -32,18 +32,18 @@ Block("4 - Add Dependencies and Plugins","",
 `C:\\reactApp>npm install webpack --save
  C:\\reactApp>npm install webpack-dev-server --save`,"php","25%");
     
-Block(" add these packages to package.json"
+Block("5- add these packages to package.json"
    ,"The --save command will add these packages to package.json file."
    ,`C:..\\reactApp>npm install react --save
   C:\\..\\reactApp>npm install react-dom --save`);
     
- Block("Create the Files","using command prompt:",
+ Block("6-Create the Files","using command prompt:",
  `C:\reactApp>touch index.html
 C:\reactApp>touch App.jsx
 C:\reactApp>touch main.js
 C:\reactApp>touch webpack.config.js`,"html");
 
- Block(" Set Compiler, Server and Loaders","Edit webpack.config.js .<br> We are setting webpack entry point to be main.js",
+ Block("7-Set Compiler, Server and Loaders","Edit webpack.config.js .<br> We are setting webpack entry point to be main.js",
   `var config = {
    entry: './main.js',
    output: {      path:'/',      filename: 'index.js',   },
@@ -57,15 +57,25 @@ C:\reactApp>touch webpack.config.js`,"html");
       ]   }}
 module.exports = config;`,"html");
     
-  Block("Install webpack-dev-server",""
+  Block("8-Install webpack-dev-server",""
         ,`C:\reactApp>npm install webpack-dev-server -g`,"php");
-  Block("Edit package.json",
+  Block("9-Edit package.json",
         "Open the package.json and delete 'test' 'echo 'Error: no test specified' && exit 1' inside 'scripts' object.
         and add the start command instead."
         ,`"start": "webpack-dev-server --hot"`,"php");
     
-
-"start": "webpack-dev-server --hot");
+ Block(" index.html","We are setting div id = 'app' as a root element for our app ",
+       `<!DOCTYPE html>
+<html lang = "en">
+   <head>
+      <meta charset = "UTF-8">
+      <title>React App</title>
+   </head>
+   <body>
+      <div id = "app"></div>
+      <script src = "index.js"></script>
+   </body>
+</html>`,"html");
  </script>
 
 </body>
