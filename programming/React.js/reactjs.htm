@@ -32,21 +32,17 @@ Block("4 - Add Dependencies and Plugins","",
 `C:\\reactApp>npm install webpack --save
  C:\\reactApp>npm install webpack-dev-server --save`,"php");
     
-Block("Create the Files","",
-  `C:\reactApp>touch index.html
-C:\reactApp>touch App.jsx
-C:\reactApp>touch main.js
-C:\reactApp>touch webpack.config.js`,"html");
-    
 Block(" add these packages to package.json"
    ,"The --save command will add these packages to package.json file."
    ,`C:..\\reactApp>npm install react --save
   C:\\..\\reactApp>npm install react-dom --save`);
+    
  Block("Create the Files","using command prompt:",
  `C:\reactApp>touch index.html
 C:\reactApp>touch App.jsx
 C:\reactApp>touch main.js
 C:\reactApp>touch webpack.config.js`,"html");
+
  Block(" Set Compiler, Server and Loaders","Edit webpack.config.js .<br> We are setting webpack entry point to be main.js",
   `var config = {
    entry: './main.js',
