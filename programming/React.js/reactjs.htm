@@ -19,28 +19,25 @@ Block(stitle,sBody,null,"javascript");
        
 <h2>Environment Setup</h2>
 <script>
- Block(" 1-Install Node.js");
- Block(" 2-Create the Root Folder",
+ Block("1-Install Node.js");
+ Block("2-Create the Root Folder",
        "",`C:\\>mkdir reactApp
-    C:\\Users\\reactApp>npm init`,"html");
+C:\\Users\\reactApp>npm init`,"html");
 Block("3-Install Global Packages","Installing babel plugins",
  `C:\\reactApp>npm install -g babel
-  C:\\reactApp>npm install -g babel-cli`,"html");
+ C:\\reactApp>npm install -g babel-cli`,"html");
   Block("4 - Add Dependencies and Plugins","",
 `C:\\reactApp>npm install webpack --save
-  C:\\reactApp>npm install webpack-dev-server --save`,"php");
+ C:\\reactApp>npm install webpack-dev-server --save`,"php");
     Block("Create the Files","",
   `C:\reactApp>touch index.html
 C:\reactApp>touch App.jsx
 C:\reactApp>touch main.js
 C:\reactApp>touch webpack.config.js`,"html);
+   Block(" add these packages to package.json"
+   ,"The --save command will add these packages to package.json file."
+   ,`C:..\\reactApp>npm install react --save
+  C:\\..\\reactApp>npm install react-dom --save`
  </script>
-<div>
-<br>
 
-The --save command will add these packages to package.json file.
-<pre><code>C:..\\reactApp>npm install react --save
-  C:\\..\\reactApp>npm install react-dom --save
-</code></pre>
- </div>
 </body>
