@@ -100,5 +100,21 @@ ReactDOM.render(<App />, document.getElementById('app'));`,"php");
 Block("Running the Server","run the following command line and see the result on http://localhost:8080/",
 "C:\Users\username\Desktop\reactApp>npm start","php");
  </script>
+    <h2>JSX</h2>
+    React uses JSX for templating instead of regular JavaScript
+    <script>
+        Block("Using JSX","App.jsx",
+              `import React from 'react';
 
+class App extends React.Component {
+   render() {
+      return (
+         <div>
+            Hello World!!!
+         </div>
+      );
+   }
+}
+export default App;`,"html");
+        
 </body>
