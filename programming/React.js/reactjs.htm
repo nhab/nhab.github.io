@@ -1,5 +1,5 @@
 <head>
-       <link rel="stylesheet" href="../../assets/css/block.css">
+    <link rel="stylesheet" href="../../assets/css/block.css">
     <script src="../../assets/js/block.js"></script>
     <link rel="stylesheet" href="../../libs/highlight/androidstudio2.css">
     <script src="../../libs/highlight/highlight.pack.js"></script>
@@ -8,8 +8,7 @@
 <body>
  <script>
 stitle="React";
-sBody=`
-React is a library for building composable user interfaces.
+sBody=`React is a library for building composable user interfaces.
 It encourages the creation of reusable UI components.
 Lots of people use React as the V in MVC. 
 React can also render on the server using Node, and native apps using React Native
@@ -19,12 +18,15 @@ Block(stitle,sBody,null,"javascript");
  </script>
        
 <h2>Environment Setup</h2>
+<script>
+ Block(" 1-Install Node.js");
+ Block(" 2-Create the Root Folder",
+       "",`C:\\>mkdir reactApp
+    C:\\Users\\reactApp>npm init`,"html');
+       </script>
 <div>
- 1-Install Node.js<br>
- 2-Create the Root Folder
- <pre><code>C:\\Users\\username\\Desktop>mkdir reactApp
-    C:\\Users\\username\\Desktop\\reactApp>npm init
- </code></pre>
+<br>
+
  3-Install Global Packages
  <pre><code>C:\\Users\\username\\Desktop\\reactApp>npm install -g babel
   C:\\Users\\username\\Desktop\\reactApp>npm install -g babel-cli
