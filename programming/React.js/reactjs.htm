@@ -56,6 +56,16 @@ C:\reactApp>touch webpack.config.js`,"html");
                presets: ['es2015', 'react']     }     }
       ]   }}
 module.exports = config;`,"html");
+    
+  Block("Install webpack-dev-server",""
+        ,`C:\reactApp>npm install webpack-dev-server -g`,"php");
+  Block("Edit package.json",
+        "Open the package.json and delete \"test\" \"echo \\"Error: no test specified\\" && exit 1\" inside \"scripts\" object.
+        and add the start command instead."
+        ,`\"start\": \"webpack-dev-server --hot\"`,"php");
+    
+
+"start": "webpack-dev-server --hot");
  </script>
 
 </body>
