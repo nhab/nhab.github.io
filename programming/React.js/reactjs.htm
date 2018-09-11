@@ -47,7 +47,31 @@ Block(" add these packages to package.json"
 C:\reactApp>touch App.jsx
 C:\reactApp>touch main.js
 C:\reactApp>touch webpack.config.js`,"html");
-    
+ Block(" Set Compiler, Server and Loaders","Edit webpack.config.js .<br> We are setting webpack entry point to be main.js",
+  `var config = {
+   entry: './main.js',
+   output: {
+      path:'/',
+      filename: 'index.js',
+   },
+   devServer: {
+      inline: true,
+      port: 8080
+   },
+   module: {
+      loaders: [
+         {
+            test: /\.jsx?$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader',
+            query: {
+               presets: ['es2015', 'react']
+            }
+         }
+      ]
+   }
+}
+module.exports = config;`,"html");
  </script>
 
 </body>
