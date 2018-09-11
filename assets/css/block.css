@@ -9,7 +9,7 @@ b{font-size:20px;font-weight:800;background-color: lightcyan;}
 code{background-color:#222222;color: lightcyan;
     padding-left: 3px;padding-right: 3px;
     margin-left: 5px; margin-right: 5px;}
-
+strong,h7{text-shadow: 0px 1px, 1px 0px, 1px 1px;}
 .imagesize{width:350px;height:350px;}
 .column{color:black; }
 .TB3ColFixed{table-layout:fixed;width:100%;border-collapse: separate;}

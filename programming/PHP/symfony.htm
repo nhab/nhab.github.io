@@ -1,4 +1,5 @@
 <head>
+        
     <link rel="stylesheet" href="../../assets/css/block.css">
     <script src="../../assets/js/block.js"></script>
     <link rel="stylesheet" href="../../libs/highlight/androidstudio2.css">
@@ -9,17 +10,649 @@
 <script>
 stitle="symfony";
 sBody=`
-Symfony is basically a collection of components and bundles. 
-Components are collection of classes providing a single core functionality. 
+Symfony is basically a collection of <b>components</b> and <b>bundles</b>. 
+<h2>Components</h2> are collection of classes providing a single core functionality. 
 For example, Cache component provides cache functionality
 `;
 sCode="";
-Block(stitle,sBody,sCode,"javascript");
+Block(stitle,sBody,null,"javascript","20%","400px");
 Block("Bundle",
-`A bundle is a structured set of files within a <br>
-directory that implement a single feature. 
-Each directory contains everything related to 
-that feature, including PHP files, templates,
-stylesheets, JavaScript files and tests `,"","","");
+`A bundle is a structured set of files within a directory that implement a single feature. 
+<br>Each directory contains everything related to that feature, including
+<br>PHP files, templates,stylesheets, JavaScript files and tests
+in the <b>config \ bundles.php</b> of the following 
+sample project,there is 4 bundles:
+`,
+`return [
+Symfony\Bundle\FrameworkBundle\FrameworkBundle::class => ['all' => true],
+Symfony\Bundle\WebServerBundle\WebServerBundle::class => ['dev' => true],
+Symfony\Bundle\TwigBundle\TwigBundle::class => ['all' => true],
+Symfony\Bundle\MonologBundle\MonologBundle::class => ['all' => true],
+];
+`,"php","46%","400px");
+
+Block("The application structure",
+`Actually, a Symfony application is itself a bundle composed of other bundles.<br>
+and it is generally called AppBundle.<br>
+ A single bundle can use any number of Symfony component 
+ and also third-party components to provide features such as 
+ Webframework, database access, etc. 
+ <br><br>Symfony core web-framework is a bundle called FrameworkBundle
+  and there is a bundle called FrameworkExtraBundle, 
+  which provides more sophisticated options to write a web application.
+`,null,null,"29%","400px");
+
+Block(`SandBox`,
+`The sandbox is an easy-to-install pre-packaged symfony project,
+ already configured with some sensible defaults.
+ It is a great way to practice using symfony .
+ <br><br>
+Following example initializing bundle "SteveBundle" 
+in "Sites/sandbox/src/Spf13":
+`,
+`> app/console init:bundle Spf13/SteveBundle`,"php","29%","400px");
+
+Block("Creating a Bundle",
+`1-Choose a namespace. Namespace of a bundle should include vendor name and bundle name.<br>
+ In our case, it is Acme\\TestBundle.<br>
+ 2-create the folder <b>src/Acme/TestBundle/</b> <br>
+ 3- add a new file called <b>AcmeTestBundle.php</b>`,
+`
+// src/Acme/TestBundle/AcmeTestBundle.php
+namespace App\\Acme\\TestBundle;
+use Symfony\\Component\\HttpKernel\\Bundle\\Bundle;
+class AcmeTestBundle extends Bundle{}`,"php","32%","400px"
+);
+
+Block("Enabling bundle",
+`Now that you've created the bundle, enable it.<br>
+And while it doesn't do anything yet, 
+AcmeTestBundle is now ready to be used.
+`,
+`// config/bundles.php
+return [
+    // ...
+    App\Acme\TestBundle\AcmeTestBundle::class => ['all' => true],
+];
+`,"php","33%","350px"
+);
+Block("Registering a bundle",""
+,`public function registerBundles() { 
+$bundles = array( 
+// ... 
+// register your bundle 
+new Tutorialspoint\\DemoBundle\\TutorialspointDemoBundle(), 
+); 
+return $bundles; 
+}`,"php","30%");
+Block("Bundle`s most common Directories"
+,
+`
+<b>Controller/</b>
+Contains the controllers of the bundle (e.g. RandomController.php).
+<br><b>DependencyInjection/</b>
+Holds certain Dependency Injection Extension classes, which may import service configuration, register compiler passes or more (this directory is not necessary).
+<br><b>Resources/config/</b>
+Houses configuration, including routing configuration (e.g. routing.yaml).
+<br><b>Resources/views/</b>
+Holds templates organized by controller name (e.g. Random/index.html.twig).
+<br><b>Resources/public/</b>
+Contains web assets (images, stylesheets, etc) and is copied or symbolically linked into the project public/ directory via the assets:install console command.
+<br><b>Tests/</b>
+Holds all tests for the bundle.
+`,"",null,"65%","350px");
+
+Block("Services and service containers",
+`<b>Services</b> are useful objects to do special tasks. 
+<br>and each service lives inside a special object called
+ 
+<br><b>the service container</b>.
+The container is just a simple object that holds all of the services
+<br> in your project, including Symfony’s core objects. 
+<br>The container allows you to centralize the way objects are constructed.
+`,"",null,"30%"
+);
+
+Block("Building Container"
+,`Symfony provides <h7>ContainerBuilder</h7> to create a new container.
+ Once the container is created, Greeter class can be registered into it 
+ using the container's <h7>register method</h7>.
+`,
+`use Symfony\Component\DependencyInjection\ContainerBuilder; 
+$container = new ContainerBuilder(); 
+$container 
+   ->register('greeter', 'Greeter') 
+   ->addArgument('Hi');
+   `
+);
+Block("using Services",
+`your application container already contains many services.
+<br>For example to log something:`
+,
+`// src/Controller/ProductController.php
+// ...
+use Psr\Log\LoggerInterface;
+/** @Route("/products") */
+public function list(LoggerInterface $logger)
+{
+    $logger->info('Look! I just used a service');
+    // ...
+}`,"php","30%","450px");
+
+Block("List of available services",
+`Find out available service by running :`,
+`php bin/console debug:autowiring
+
+=========================================================== =====================================
+Class/Interface Type                                            Alias Service ID
+=========================================================== =====================================
+Psr\Cache\CacheItemPoolInterface                            alias for "cache.app.recorder"
+Psr\Log\LoggerInterface                                     alias for "monolog.logger"
+Symfony\Component\EventDispatcher\EventDispatcherInterface  alias for "debug.event_dispatcher"
+Symfony\Component\HttpFoundation\RequestStack               alias for "request_stack"
+Symfony\Component\HttpFoundation\Session\SessionInterface   alias for "session"
+Symfony\Component\Routing\RouterInterface                   alias for "router.default"
+=====`,"php","40%","455px");
+
+Block("Creating Services in the Container",
+`To create reusable code,you can put it in a service
+<br>(instead of directly in the controller):`
+,
+`// src/Service/MessageGenerator.php
+namespace App\Service;
+class MessageGenerator
+{
+    public function getHappyMessage()   {
+        $messages = [
+            'You did it! You updated the system!',
+            'That was one of the coolest updates!'
+        ];
+        $index = array_rand($messages);
+        return $messages[$index];
+    }
+}
+`,"php","35%","500px"
+);
+Block("Using the service",
+`You can use it immediately inside your controller:`,
+`use App\Service\MessageGenerator;
+public function new
+   ( MessageGenerator $messageGenerator )
+{
+ // thanks to the type-hint, the container will 
+ // instantiate a new MessageGenerator for you!
+ $message = $messageGenerator->getHappyMessage();
+ $this->addFlash('success', $message);
+ // ...
+}`,"php","35%","400px");
+
+Block("Installing Components",
+`cd /path/to/project/dir 
+<br>composer require symfony/<component_name>`
+,
+`composer require symfony/filesystem `,"php","30%");
+
+Block("Using Components"
+,"",
+`  require_once __DIR__ . '/vendor/autoload.php'; 
+   use Symfony\\Component\\Filesystem\\Filesystem; 
+   use Symfony\\Component\\Filesystem\\Exception\\IOExceptionInterface;  
+   $fs = new Filesystem(); 
+   try { 
+      $fs->mkdir('./sample-dir'); 
+      $fs->touch('./sample-dir/text.txt'); 
+   } catch (IOExceptionInterface $e) { 
+      echo $e; 
+   } 
+`
+,"php","35%","400px");
+
+Block("Details of Symfony Components"
+,
+`<b>Filesystem</b> component provides a basic system command <h7>related to files and directories</h7> such as file creation, folder creation, file existence, etc
+<br><b>Console</b> component provides various options to easily <h7>create commands, which can be executed in a terminal</h7>
+<br><b>Application</b> class sets up the necessary functionality of a bare-bone <h7>console application</h7>.
+<br><b>Process</b> component provides options to <h7>run any system command in a sub-process</h7>, in a safe and efficient manner
+<br><b>ClassLoader</b> component provides implementation for both PSR-0 and PSR-4 class loader standard. It can be used to auto-load the classes. 
+<br><b>PropertyAccess</b> component provides various options to <h7>read and write an object and array details</h7> using the string notation.
+<br><b>PropertyInfo</b> component is similar to PropertyAccess component, however <h7>it only works with PHP objects</h7> and provides much more functionality.
+<br><b>EventDispatcher</b> component <h7>provides an event-based programming</h7> in PHP. It enables the objects to communicate with each other by dispatching events and listening to them.
+<br><b>DependencyInjection</b> component provides a container to handle the dependency.
+<br><b>Serializer</b> component provides an option <h7>to convert a PHP object into a specific format such as XML, JSON, Binary and vice versa</h7>.
+<br><b>Config</b> component provides options to <h7>load, parse, read, and validate configurations of type XML, YAML, PHP and ini.</h7>and from database as well. it is useful forconfiguring web application.
+<br><b>ExpessionLanguage</b> component enables to easily compile,<h7> parse, and get the value from an expression</h7>. It enables one or more expression to be used in a configuration environment (file) by a non-PHP programmer, say a system administrator. 
+<br><b>OptionsResolver</b> component provides a way to validate the option system used in our system. For example, database setting is placed in an array, dboption with host, username, password, etc., as keys. You need to validate the entries before using it to connect to a database. OptionsResolver simplifies this task by providing a simple class OptionsResolver and a method resolver, which resolves the database setting and if there is any validation issue, it will report it.
+<br><b>Dotenv</b> component provides various options to <h7>parse .env files </h7>and the variable defined in them to be accessible via getenv(), $_ENV, or $_SERVER.
+<br><b>Cache</b> component provides an extended PSR-6 implementation. It can be used to <h7>add cache functionality to our web application.</h7> Since it follows PSR-6, it can be easily used in place of another PSR-6 based cache component.
+<br><b>Intl</b> component is the replacement library for C Intl extension.
+<br><b>Translation</b> component provides various options to <h7>internationalize</h7> our application. Normally, the translation details of different languages will be stored in a file, one file per language, and it will be loaded dynamically during runtime of the application. There are different formats to write a translation file. Translation component provides various options to load any type of format, such as plain PHP file, CSV, ini, Json, Yaml, ICU Resource file, etc. 
+<br><b>Workflow</b> component provides advanced tools to <h7>process a finite state machine</h7>. By providing this functionality.
+<br><b>Yaml</b> component provides an option that parses the <h7>YAML file format</h7> and converts it into PHP arrays.
+<br><b>Ldap</b> component provides PHP classes to <h7>connect to a LDAP or Active directory server</h7> and authenticate the user against it. It provides an option to connect to a Windows domain controller.
+<br><b>Debug</b> component provides various options to enable <h7>debugging in PHP environment</h7>. Normally, debugging PHP code is hard but the debug component provides simple classes to ease the process of debugging and make it clean and structured.
+<br><b>Stopwatch</b> component provides Stopwatch class to profile our PHP code.
+<br><b>VarDumper</b> component provides <h7>better dump() function</h7>. Just include the VarDumper component and use the dump function to get the improved functionality.
+<br><b>BrowserKit</b> component provides an <h7>abstract browser client interface</h7>. It can be used to test web application programmatically. For example, it can request a form, enter the sample data and submit it to find any issue in the form programmatically.
+<br><b>PHPUnit Bridge</b> component provides many options to <h7>improve the PHPUnit testing environment</h7>.
+<br><b>Asset</b> component provides a generic asset handling in a web application. It <h7>generates URL for the assets such as CSS, HTML, JavaScript</h7> and also performs version maintenance.
+<br><b>CssSelector</b> component provides an <h7>option to convert CSS based Selectors into XPath expression</h7>. A web developer knows the CSS based Selectors expression more than XPath expression, but the most efficient expression to find an element in HTML and XML document is XPath Expression.
+it enables the developer to write the expression in CSS Selectors, however, the component converts it to XPath expression before executing it. Thus, the developer has an advantage of simplicity of CSS Selectors and efficiency of XPath expression.
+<br><b>DomCrawler</b> component provides various options <h7>to find the element in HTML and XML document using DOM concept</h7>. It also provides option to use XPath expression to find an element. DomCrawler component can be used along with CssSelector component to use CSS selectors instead of XPath expression. 
+<br><b>HttpFoundation</b> component provides an object-oriented layer to the HTTP specification. By default, PHP provides HTTP request and response details as array-based object such as $_GET, $_POST, $_FILES, $_SESSION, etc. HTTP based functionality such as setting a cookie can be done using simple, plain old function setCookie().
+  HttpFoundation provides <h7>all HTTP related functionality in a small set of classes like Request, Response, RedirectResponse</h7>, etc.
+<br><b>HttpKernel</b> component is the <h7>core component in the Symfony web setup</h7>.
+  It provides all the functionalities required for a web application -
+   from receiving the Request object to sending back the Response object. 
+   The complete architecture of the Symfony web application is provided by HttpKernel 
+<br><b>Routing</b> component <h7>maps the HTTP request to a pre-defined set of configuration variables</h7>.
+ Routing decides which part of our application should handle a request.
+
+ <br><b>Templating</b> component provides the necessary infrastructure to build an <h7>template system</h7>.
+  Symfony uses the Templating component for its View engine implementation.
+<br><b>Validator</b> component provides an implementation of JSR-303 Bean Validation Specification.
+n be <h7>used to validate a form</h7> in a web environment.
+<br><b>Security</b> component provides complete <h7>security system for our web application</h7>,
+ be it HTTP basic authentication, HTTP digest authentication, interactive form based authentication, X.509 certification login, etc. It also provides authorization mechanism based on the user role through in-built ACL system. 
+`,null,null,"95%","1850px"
+);
 </script>
+
+<h2>Events and EventListener</h2>
+<script>
+Block("Step 1:<br>Create a project",", event-dispatcher-example"
+,`cd /path/to/dir 
+mkdir event-dispatcher-example 
+cd event-dispatcher-example 
+composer require symfony/event-dispatcher
+`,"php","29%");
+
+Block("Step 2:<br>Create a class",".User",
+`class User { 
+   public $name; 
+   public $age; 
+}  
+$user = new User(); 
+$user->name = "Jon"; 
+$user->age = 25`,"php",null,"350px");
+
+Block("Step 3 : Create an event","UserRegisteredEvent"
+,`use Symfony\\Component\\EventDispatcher\\Event;  
+class UserRegisteredEvent extends Event {
+   const NAME = \'user.registered\';  
+   protected $user;  
+   
+   public function __construct(User $user) { 
+      $this-< user = $user; 
+   }  
+   public function getUser() { 
+      return $this-< user; 
+   } 
+}  
+$event = new UserRegisteredEvent($user);
+`,"php","32%","470px");
+
+Block("Step 4 <br> Create a listener","UserListener",
+`class UserListener { 
+   public function onUserRegistrationAction
+                  (Event $event) { 
+      $user = $event->getUser(); 
+         echo $user->name . "\\r\\n"; 
+         echo $user->age . "\\r\\n"; 
+   } 
+}  
+$listener = new UserListener();`
+,"php","28%","400px");
+
+Block("Step 5 <br>Create an event","dispatcher object",
+`use Symfony\\Component\\EventDispatcher
+       \\EventDispatcher;  
+$dispatcher = new EventDispatcher();`,"PHP","30%");
+
+Block("Step 6 <br> Connect listener and event",
+" using dispatcher object and its method, addListener",
+`$dispatcher 
+   ->addListener( 
+      UserRegisteredEvent::NAME,  
+      array($listener, 'onUserRegistrationAction'));`,"php","30%");
+
+Block("Step 7:<br>fire/dispatch the event",
+"using event dispatcher's method, dispatch.",
+`$dispatcher->dispatch(UserRegisteredEvent::NAME, $event);`
+,"php","40%");
+
+Block("The Complete listing",
+"main.php"
+,`<?php  
+   require __DIR__ . '/vendor/autoload.php';  
+   use Symfony\\Component\\EventDispatcher\\EventDispatcher; 
+   use Symfony\\Component\\EventDispatcher\\Event;  
+
+   class User { 
+      public $name; 
+      public $age; 
+   }  
+   class UserRegisteredEvent extends Event { 
+      const NAME = 'user.registered';  
+      protected $user;  
+      
+      public function __construct(User $user) { 
+         $this-> user = $user; 
+      }  
+      public function getUser() { 
+         return $this-> user; 
+      } 
+   }  
+   class UserListener { 
+      public function onUserRegistrationAction(Event $event) { 
+         $user = $event-> getUser(); 
+         echo $user-> name . "\r\n"; 
+         echo $user-> age . "\r\n"; 
+      } 
+   } 
+   $user = new User(); 
+   $user-> name = "Jon"; 
+   $user-> age = 25;  
+
+   $event = new UserRegisteredEvent($user); 
+   $listener = new UserListener();  
+
+   $dispatcher = new EventDispatcher();  
+   $dispatcher 
+      ->addListener( 
+         UserRegisteredEvent::NAME, 
+         
+         function(Event $event) { 
+            $user = $event-> getUser(); 
+            echo $user-> name . "\r\n"; 
+         });  
+   $dispatcher 
+      -> addListener( 
+         UserRegisteredEvent::NAME, array($listener, 'onUserRegistrationAction'));
+
+   $dispatcher-> dispatch(UserRegisteredEvent::NAME, $event); 
+?>
+//Result
+//Jon 
+//Jon 
+//25`
+,"php","100%","1200px");
+</script>
+<h2>Expression</h2>
+It enables a non-programmer to configure the web application with little effort.
+<br> 
+<script>
+Block("Step 1 <br> Create a project"," expression-language-example"
+,`cd /path/to/dir 
+mkdir expression-language-example 
+cd expression-language-example 
+composer require symfony/expression-language`,"php","32%");
+
+Block("Step 2<br> Create an expression object","",
+`use Symfony\\Component\\ExpressionLanguage
+         \\ExpressionLanguage; 
+$language = new ExpressionLanguage();
+`,"php","30%");
+
+Block("Step 3 <br> Test a simple expression",""
+,`echo "Evaluated Value: " 
+   . $language->evaluate('10 + 12') . "\\r\\n" ; 
+echo "Compiled Code: " 
+   . $language->compile('130 % 34') . "\\r\\n" ;
+`,"php","30%");
+
+Block("Step 4 ",
+` Symfony expression is powerful such that it can intercept a PHP object and 
+its property as well in the expression language.`
+,`class Product { 
+   public $name; 
+   public $price; 
+} 
+$product = new Product(); 
+$product-> name = 'Cake'; 
+$product-> price = 10;  
+
+echo "Product price is " . $language 
+   ->evaluate('product.price', array('product' => $product,)) . "\\r\\n";  
+echo "Is Product price higher than 5: " . $language 
+   ->evaluate('product.price > 5', array('product' => $product,)) . "\\r\\n"; 
+//Here, the expression product.price and product.price > 5 
+//intercept $product object's property price and evaluate the result.`,"php","50%","570px");
+
+Block("The complete code","main.php"
+,`<?php 
+   require __DIR__ . '/vendor/autoload.php'; 
+   use Symfony\Component\ExpressionLanguage\ExpressionLanguage; 
+   $language = new ExpressionLanguage();  
+
+   echo "Evaluated Value: " . $language->evaluate('10 + 12') . "\r\n" ; 
+   echo "Compiled Code: " . $language->compile('130 % 34') . "\r\n" ;  
+   
+   class Product { 
+      public $name; 
+      public $price; 
+   }  
+   $product = new Product(); 
+   $product->name = 'Cake'; 
+   $product->price = 10;  
+
+   echo "Product price is " . $language 
+      ->evaluate('product.price', array('product' => $product,)) . "\r\n"; 
+   echo "Is Product price higher than 5: " . $language 
+      ->evaluate('product.price > 5', array('product' => $product,)) . "\r\n"; 
+?>
+` ,"html","80%","700px");
+
+</script>
+<p>
+Result
+Evaluated Value: 22 
+Compiled Code: (130 % 34) 
+Product price is 10 
+Is Product price higher than 5: 1
+</p>
+<h2>Creating a Simple Web Application</h2>
+<script>
+Block("Creating the project",
+ "create a project named “student” using the following command"
+ ,`symfony new student`,"php");
+
+Block("Controller",
+ `Symfony is based on the Model-View-Controller (MVC) development pattern.<br> 
+ DefaultController class is located at “src/AppBundle/Controller”. <br>
+ You can create your own Controller class there.<br>
+ Move to the location “src/AppBundle/Controller” <br>
+ and create a new StudentController class.`,
+ `//StudentController.php
+ namespace AppBundle\\Controller; 
+ use Symfony\\Component\\HttpFoundation\\Response;  
+ class StudentController { }`,"php","55%","350px");
+
+Block("Create a Route",
+`Routing maps request URI to a specific controller's method.<br>
+ In the above syntax, @Route(“/student/home”) is the route.<br>
+ It defines the URL pattern for the page.`,
+`namespace AppBundle\\Controller;  
+use Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Route; 
+use Symfony\\Component\\HttpFoundation\\Response; 
+use Symfony\\Bundle\\FrameworkBundle\\Controller\\Controller;  
+class StudentController { 
+   /** 
+      * @Route("/student/home") 
+   */ 
+   public function homeAction() { 
+      return new Response('Student details application!'); 
+   } 
+}
+//Now, request the url “http://localhost:8000/student/home”`,
+"php","45%","550px");
+ 
+</script>
+<h2>Controllers</h2>
+<script>
+    Block("DefaultController",
+    "<h7>DefaultController</h7> class is located at “src/AppBundle/Controller”:"
+,`namespace AppBundle\\Controller; 
+use Symfony\\Bundle\\FrameworkBundle
+   \\Controller\\Controller; 
+use Symfony\\Component\\
+    HttpFoundation\\Response;  
+class DefaultController extends
+      Controller {}`,
+      "php","25%","350px" );
+
+Block("Request Object"
+,"",`use Symfony\\Component\\HttpFoundation\\Request;
+// Creatiing based on the PHP globals: 
+$request = Request::createFromGlobals();
+//or you can also simulate a request:
+$request = Request::create(    '/student',    'GET', 
+   array('name' => 'student1'));
+//Overriding a Request Object:
+$request->overrideGlobals();  
+//Identifying a Request Object
+$request->getPathInfo();`
+,"php","35%","350px");
+
+Block("Response Object","The only requirement for a controller is to return a Response object",
+`//Response constructor:
+use Symfony\\Component\\HttpFoundation\\Response;  
+$response = new Response( 
+   'Content', 
+   Response::HTTP_OK, 
+   array('content-type' => 'text/html') 
+);`,"php","35%","350px");
+
+Block("Sending or redirecting <br>a Response object","",
+`//Sending Response
+$response->send();
+//redirecting:
+use Symfony\\Component\\
+  HttpFoundation\\RedirectResponse;  
+$response = new RedirectResponse
+   ('http://tutorialspoint.com/');`,"php","25%","350px"
+);
+Block("FrontController",
+`A single PHP file that handles every request coming into your application.
+ FrontController executes the routing of different URLs to internally different parts
+  of the application.`,
+`use Symfony\Component\HttpFoundation\Request; 
+use Symfony\Component\HttpFoundation\Response;  
+
+$request = Request::createFromGlobals(); 
+// the URI path being requested 
+$path = $request->getPathInfo();
+if (in_array($path, array(’’, ’/’)))  { 
+   $response = new Response(’Student home page.’); 
+} elseif (‘/about’ === $path) { 
+   $response = new Response(’Student details page’); 
+} else { 
+   $response = new Response(’Page not found.’, 
+   Response::HTTP_NOT_FOUND); 
+} 
+$response->send();`,"php","35%","600px");
+
+Block("Routing",
+`It maps request URI to a specific controller's method.
+<h2>Annotations</h2>
+Annotation simplifies the configuration by declaring it in the coding itself 
+.Routing example:`,
+`// src/AppBundle/Controller/StudentController.php 
+namespace AppBundle\\Controller;  
+use Symfony\\Bundle\\FrameworkBundle\\Controller\\Controller; 
+use Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Route; 
+class StudentController extends Controller { 
+   /** 
+      * @Route(“/student/home”) 
+   */ 
+   public function homeAction() { // ...}  
+   /** 
+      * @Route(“/student/about”) 
+   */ 
+   public function aboutAction() {   } 
+}`,"php","34%","650px");
+
+Block("Wildcard Formats"
+,`Example:(the \d+ is a regular expression that matches a digit)    `,
+`// src/AppBundle/Controller/BlogController.php 
+namespace AppBundle\Controller;  
+
+use Symfony\\Bundle\\FrameworkBundle\\Controller\\Controller; 
+use Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Route;  
+
+class StudentController extends Controller {
+/**      
+     * @Route(“/student/{page}", 
+     name = “student_about”, requirements = {"page": "\d+"})
+ */ 
+public function aboutAction($page) { 
+    // ... 
+} 
+}`,"php","55%","500px");
+Block("Assign Placeholder",
+"You can assign a placeholder value in routing:",
+`// src/AppBundle/Controller/BlogController.php 
+namespace AppBundle\Controller;  
+use Symfony\Bundle\FrameworkBundle\Controller\Controller; 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;  
+class StudentController extends Controller { 
+   /**      
+      * @Route(“/student/{page}", 
+      name = “student_about”, requirements = {"page": "\d+"})
+   */   
+   public function aboutAction($page = 1) { 
+      // ... 
+   } 
+}`,"php","40%","500px");
+
+Block("Redirecting to page","",
+`public function homeAction() { 
+   // redirect to the "homepage" route 
+   return $this-> redirectToRoute('homepage');    
+   // redirect externally 
+   \\return $this->redirect('http://example.com/doc'); 
+}`,"php","40%");
+</script>
+<h2>View Engine</h2>
+<script>
+Block("Templates",
+`Templates are basically text files used to generate any text-based documents 
+such as HTML, XML, etc. 
+they reside in 2 different locations ,by default:<br>
+ -app/Resources/views/<br>-vendor path to Bundle/Resources/views
+ `,``,"php","22%");
+
+ Block("Twig Engine",
+`Twig contains three types of special syntax :<br>
+{{ ... }} − Prints a variable or the result of an expression to the template.<br>
+
+{% ... %} − A tag that controls the logic of the template.<br>
+         &nbsp; It is mainly used to execute a function.<br>
+
+{# ... #} − Comment syntax. It is used to add a single or multi-line comments.<br>
+
+The twig base template is located at “app/Resources/views/base.html.twig”.
+`,
+`//StudentController.php  
+namespace AppBundle\Controller;  
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route; 
+use Symfony\Component\HttpFoundation\Response; 
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;  
+
+class StudentController extends Controller { 
+   /** 
+      * @Route("/student/home") 
+   */ 
+   public function homeAction() { 
+      return $this->render('student/home.html.twig'); 
+   } 
+}`,"php","46%","600px");
+
+Block("home.html.twig file","twig file are in view directory",
+`//app/Resources/views/student/home.html.twig  
+&lth3>Student application!&lt/h3>`,"php","25%");
+</script>
+<a href="https://www.tutorialspoint.com/symfony/symfony_view_engine.htm">
+Read more about swig tags here</a>
+<br><a href="https://www.tutorialspoint.com/symfony/symfony_doctrine_orm.htm">
+And Doctorine ORM here</a>
 </body>

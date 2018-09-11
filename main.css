@@ -11,8 +11,6 @@ p  {  display:block;  white-space:pre     ;list-style-type: none;    margin-left
   h10{  display:block ; white-space:pre-line;list-style-type: none;    margin-left:0;  padding-left:40px;}
 pre,span,code {  background-color: #aaaaaa ;  margin: 30px 30px 30px 30px;}
 pre      {  width:70%;}
-
-
 li       {  font-weight: normal;white-space: pre;}
 ul  ,ol     {  
     list-style-type: none;

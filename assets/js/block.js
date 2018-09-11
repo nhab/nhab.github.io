@@ -6,12 +6,12 @@ function Block(title,body,code,codetype,widt="20%",hei="300px",imageSrc=null)
     debugger;
     document.write( "<h2>" +title+"</h2>");
     document.write(body);
-    if(codetype)
-        sCode="<pre><code class='"+codetype+"'>"+code+"</code></pre>";
-    else
-        sCode="<pre><code >"+code+"</code></pre>";
-    
-    document.write(sCode);
+    if(codetype && code)
+    document.write("<pre><code class='"+codetype+"'>"+code+"</code></pre>");
+    else{
+        if(code)
+          document.write("<pre><code >"+code+"</code></pre>");
+    };
     if(imageSrc)
         document.write("<img src='"+imageSrc+"'>");
     document.write("</div>");
