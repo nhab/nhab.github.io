@@ -22,20 +22,17 @@ Block(stitle,sBody,null,"javascript");
  Block(" 1-Install Node.js");
  Block(" 2-Create the Root Folder",
        "",`C:\\>mkdir reactApp
-    C:\\Users\\reactApp>npm init`,"html');
+    C:\\Users\\reactApp>npm init`,"html");
 Block("3-Install Global Packages","",
  `C:\\reactApp>npm install -g babel
   C:\\reactApp>npm install -g babel-cli`,"html");
-  
+  Block("4 - Add Dependencies and Plugins","",
+`C:\\reactApp>npm install webpack --save
+  C:\\reactApp>npm install webpack-dev-server --save`,"php");
  </script>
 <div>
 <br>
 
-
-4 - Add Dependencies and Plugins
-<pre><code>C:\\..\\reactApp>npm install webpack --save
-  C:\\..\\reactApp>npm install webpack-dev-server --save
-</code></pre>
 The --save command will add these packages to package.json file.
 <pre><code>C:..\\reactApp>npm install react --save
   C:\\..\\reactApp>npm install react-dom --save
