@@ -180,5 +180,24 @@ class App extends React.Component {
    }
 }
 export default App;`,"javascript");
-    
+    Block("Styling",`React recommends using inline styles. 
+When we want to set inline styles, we need to use camelCase syntax.
+React will also automatically append px after the number value on specific elements. 
+The following example shows how to add myStyle inline to h1 element.`,
+`import React from 'react';
+
+class App extends React.Component {
+   render() {
+      var myStyle = {
+         fontSize: 100,
+         color: '#FF0000'
+      }
+      return (
+         <div>
+            <h1 style = {myStyle}>Header</h1>
+         </div>
+      );
+   }
+}
+export default App;`,"javascript");
 </body>
