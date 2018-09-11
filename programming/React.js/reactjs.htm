@@ -64,7 +64,7 @@ module.exports = config;`,"html");
         no test specified & & exit 1 inside scripts object.and add the start command instead.`
         ,`"start": "webpack-dev-server --hot"`,"php");
     
- Block(" index.html","We are setting div id = 'app' as a root element for our app ",
+ Block("10- index.html","We are setting div id = 'app' as a root element for our app ",
        `<!DOCTYPE html>
 <html lang = "en">
    <head>
@@ -77,7 +77,7 @@ module.exports = config;`,"html");
    </body>
 </html>`,"html");
 
-Block("App.jsx and main.js","App.jsx",
+Block("11- App.jsx and main.js","App.jsx",
 `import React from 'react';
 
 class App extends React.Component {
@@ -90,6 +90,15 @@ class App extends React.Component {
    }
 }
 export default App;`,"php");
+Block("12- main.js","",
+`import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.jsx';
+
+ReactDOM.render(<App />, document.getElementById('app'));`,"php);
+
+Block("Running the Server","run the following command line and see the result on http://localhost:8080/",
+"C:\Users\username\Desktop\reactApp>npm start","php);
  </script>
 
 </body>
