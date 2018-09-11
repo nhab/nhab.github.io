@@ -44,12 +44,8 @@ var sCode=
 `1  &lt;&lt;  2; // = 4
 `;
 Block("bitwise operations",sBody,sCode);
-</script>     
-      <br>
-      <b>special values and Operators</b>
-      <pre><code class="javascript">
-      
-      // There are three special not-a-real-number values:
+Block("special values and Operators","",
+`      // There are three special not-a-real-number values:
        Infinity; // result of e.g. 1/0
        - Infinity; // result of e.g. -1/0
        NaN; // result of e.g. 0/0, stands for 'Not a Number'
@@ -57,29 +53,9 @@ Block("bitwise operations",sBody,sCode);
       // There's also a boolean type.
        true;
        false;
-
-      // Strings are created with ' or ".
-      <span class="s1">'abc';
-       "Hello, world";
-
-      // Negation uses the ! symbol
-       ! true; // = false
-       ! false; // = true
-
-      // Equality is ===
-       1  ===  1; // = true
-       2  ===  1; // = false
-
-      // Inequality is !==
-       1  !==  1; // = false
-       2  !==  1; // = true
-
-      // More comparisons
-       1  &lt;  10; // = true
-       1  &gt;  10; // = false
-       2  &lt;=  2; // = true
-       2  &gt;=  2; // = true
-</span></code></pre>
+`);
+</script>     
+      <br>
 <b>strings</b>
 <pre><code class="javascript">
       // Strings are concatenated with +
@@ -134,7 +110,6 @@ Block("bitwise operations",sBody,sCode);
       // false, null, undefined, NaN, 0 and "" are falsy; everything else is truthy.
       // Note that 0 is falsy and "0" is truthy, even though 0 == "0".
       </code></pre>
-
       <b> 2. Variables, Arrays and Objects</b>
       <pre><code class="javascript">
       // Variables are declared with the `var` keyword. JavaScript is dynamically
@@ -571,4 +546,13 @@ Block("bitwise operations",sBody,sCode);
           };
       }
       </code></pre>
+<script>
+ Block("Arrow Functions","Arrow functions allows a short syntax for writing function",
+  `// ES5
+  var x = function(x, y) {
+     return x * y;
+  }
+  // ES6
+  const x = (x, y) => x * y;`,"javascript");
+</script>
  </body>

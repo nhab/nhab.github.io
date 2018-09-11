@@ -14,35 +14,35 @@ Lots of people use React as the V in MVC.
 React can also render on the server using Node, and native apps using React Native
 `;
 
-Block(stitle,sBody,null,"javascript","40%","250px");
+Block(stitle,sBody,null,"javascript","95%","150px");
  </script>
        
 <h2>Environment Setup</h2>
 <script>
  Block("Create the Root Folder",
        "",`C:\\>mkdir reactApp
-C:\\Users\\reactApp>npm init`,"html");
+C:\\reactApp>npm init`,"html","20%","150px");
     
-Block("Install Node.js and Global Packages","Installing babel plugins",
+Block("Install Node.js then Global Packages(babel plugins)",null,
  `C:\\reactApp>npm install -g babel
- C:\\reactApp>npm install -g babel-cli`,"html","25%");
+ C:\\reactApp>npm install -g babel-cli`,"html","40%","150px");
     
 Block("Add Dependencies and Plugins","",
-`C:\\reactApp>npm install webpack --save
- C:\\reactApp>npm install webpack-dev-server --save`,"php","25%");
+ `C:\\reactApp>npm install webpack --save
+ C:\\reactApp>npm install webpack-dev-server --save`,"php","35%","150px");
     
-Block("add these packages to package.json"
+Block("Add packages to package.json"
    ,"The --save command will add these packages to package.json file."
-   ,`C:..\\reactApp>npm install react --save
-  C:\\..\\reactApp>npm install react-dom --save`);
+   ,`C:\\reactApp>npm install react --save
+  C:\\reactApp>npm install react-dom --save`,"php","40%","225px");
     
- Block("Create the Files","using command prompt:",
- `C:\reactApp>touch index.html
-C:\reactApp>touch App.jsx
-C:\reactApp>touch main.js
-C:\reactApp>touch webpack.config.js`,"html");
+ Block("Create the Files","The touch command is the easiest way to create new, empty files:",
+ `C:\\reactApp>touch index.html
+C:\\reactApp>touch App.jsx
+C:\\reactApp>touch main.js
+C:\\reactApp>touch webpack.config.js`,"html","40%","225px");
 
- Block("Set Compiler, Server and Loaders","Edit webpack.config.js .<br> We are setting webpack entry point to be main.js",
+ Block("Set Compiler, Server and Loaders","Edit webpack.config.js.set webpack entry point to be main.js",
   `var config = {
    entry: './main.js',
    output: {      path:'/',      filename: 'index.js',   },
@@ -54,16 +54,16 @@ C:\reactApp>touch webpack.config.js`,"html");
             query: {
                presets: ['es2015', 'react']     }     }
       ]   }}
-module.exports = config;`,"html");
+module.exports = config;`,"javascript","40%","430px");
     
-  Block("Install webpack-dev-server",""
-        ,`C:\reactApp>npm install webpack-dev-server -g`,"javascript");
+  Block("Install webpack-dev-server","The webpack-dev-server is a little Node.js Express server, which uses the webpack-dev-middleware to serve a webpack bundle"
+        ,`C:\\reactApp>npm install webpack-dev-server -g`,"javascript","32%");
   Block("Edit package.json",
         `Open the package.json and delete test echo Error: 
         no test specified & & exit 1 inside scripts object.and add the start command instead.`
-        ,`"start": "webpack-dev-server --hot"`,"javascript");
+        ,`"start": "webpack-dev-server --hot"`,"javascript","23%");
     
- Block("index.html","We are setting div id = 'app' as a root element for our app ",
+ Block("index.html","div id = 'app' as a root element",
 `&lt!DOCTYPE html>
 &lthtml lang = "en">
    &lthead>
@@ -74,27 +74,28 @@ module.exports = config;`,"html");
       &ltdiv id = "app">&lt/div>
       &ltscript src = "index.js">&lt/script>
    &lt/body>
-&lt/html>`,"html");
+&lt/html>`,"html","25%","410px");
 
-Block("App.jsx and main.js","App.jsx",
-`import React from 'react';
-
+Block("App.jsx and main.js",null,
+`//App.jsx
+import React from 'react';
 class App extends React.Component {
    render() {
       return (
-         <div>
+         &ltdiv>
             Hello World!!!
-         </div>
+         &lt/div>
       );
    }
 }
-export default App;`,"javascript");
+export default App;`,"javascript","25%","400px");
+
 Block("main.js","",
 `import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.jsx';
-
-ReactDOM.render(<App />, document.getElementById('app'));`,"php");
+ReactDOM.render(&ltApp />, 
+  document.getElementById('app'));`,"php","23%","300px");
 
 Block("Running the Server","run the following command line and see the result on http://localhost:8080/",
 "C:\\reactApp>npm start","javascript");
@@ -102,18 +103,19 @@ Block("Running the Server","run the following command line and see the result on
 
 <h2>JSX</h2>
   React uses JSX for templating instead of regular JavaScript
+  <br>
 <script>
   Block("Using JSX","App.jsx", `import React from 'react';
 class App extends React.Component {
    render() {
       return (
-         <div>
+         &ltdiv>
             Hello World!!!
-         </div>
+         &lt/div>
       );
    }
 }
-export default App;`,"javascript");
+export default App;`,"javascript","30%","410px");
 
 Block("Nested Elements","App.jsx",
  `import React from 'react';
@@ -121,16 +123,16 @@ Block("Nested Elements","App.jsx",
 class App extends React.Component {
    render() {
       return (
-         <div>
-            <h1>Header</h1>
-            <h2>Content</h2>
-            <p>This is the content!!!</p>
-         </div>
+         &ltdiv>
+            &lth1>Header&lt/h1>
+            &lth2>Content&lt/h2>
+            &ltp>This is the content!!!&lt/p>
+         &lt/div>
       );
    }
 }
 export default App;
-`,"javascript");
+`,"javascript","30%","470px");
     
 Block("Attributes",
       `We can use our own custom attributes in addition to regular HTML properties and attributes.
@@ -141,69 +143,137 @@ In the following example, we added data-myattribute as an attribute of p element
 class App extends React.Component {
    render() {
       return (
-         <div>
-            <h1>Header</h1>
-            <h2>Content</h2>
-            <p data-myattribute = "somevalue">This is the content!!!</p>
-         </div>
+         &ltdiv>
+            &lth1>Header&lt/h1>
+            &lth2>Content&lt/h2>
+            &ltp data-myattribute = "somevalue">
+            This is the content!!!&lt/p>
+         &lt/div>
       );
    }
 }
-export default App;`,"javascript");
+export default App;`,"javascript","35%","600px");
   
  Block("JavaScript Expressions",`JavaScript expressions can be used inside of JSX.
-We just need to wrap it with curly brackets {}. The following example will render 2.`,
+We just need to wrap it with curly brackets {} :`,
 `import React from 'react';
 
 class App extends React.Component {
    render() {
       return (
-         <div>
-            <h1>{1+1}</h1>
-         </div>
+         &ltdiv>
+            &lth1>{1+1}&lt/h1>
+         &lt/div>
       );
    }
 }
-export default App;`,"javascript");
-    Block("conditional (ternary) expressions",""
-,`import React from 'react';
+export default App;`,"javascript","25%","480px");
 
+Block("conditional (ternary) expressions",""
+,`import React from 'react';
 class App extends React.Component {
    render() {
       var i = 1;
       return (
-         <div>
-            <h1>{i == 1 ? 'True!' : 'False'}</h1>
-         </div>
+         &ltdiv>
+            &lth1>{i == 1 ? 'True!'
+             : 'False'}&lt/h1>
+         &lt/div>
       );
    }
 }
-export default App;`,"javascript");
-    Block("Styling",`React recommends using inline styles. 
+export default App;`,"javascript","30%","410px");
+    
+Block("Styling",`React recommends using inline styles. 
 When we want to set inline styles, we need to use camelCase syntax.
 React will also automatically append px after the number value on specific elements. 
 The following example shows how to add myStyle inline to h1 element.`,
 `import React from 'react';
-
 class App extends React.Component {
    render() {
-      var myStyle = {
-         fontSize: 100,
-         color: '#FF0000'
-      }
+      var myStyle = { fontSize: 100,
+         color: '#FF0000'  }
       return (
-         <div>
-            <h1 style = {myStyle}>Header</h1>
-         </div>
+         &ltdiv>
+            &lth1 style = {myStyle}>Header&lt/h1>
+         &lt/div>
       );
    }
 }
-export default App;`,"javascript");
- Block("Naming Convention",
-`HTML tags always use lowercase tag names, while React components start with Uppercase.
-Note − You should use className and htmlFor as XML attribute names instead of class and for.
+export default App;`,"javascript","40%","550px");
+ 
+Block("Naming Convention",
+`HTML tags always use lowercase tag names, <br>while React components start with Uppercase.<br>
+<b>Note</b> − You should use className and htmlFor as XML attribute names instead of class and for.
 This is explained on React official page as −
 Since JSX is JavaScript, identifiers such as class and for are discouraged as XML attribute names.
 Instead, React DOM components expect DOM property names such as className and htmlFor, respectively.`
-       );
+,null,null,"70%","200px"       );
+</script>
+<h2>Components</h2>
+<h7>Stateless Example:</h7><br>
+<script>
+Block("App.jsx","App.jsx",
+`import React from 'react';
+class App extends React.Component {
+   render() { return ( &ltdiv>  &ltHeader/> &ltContent/>  &lt/div> ); }
+}
+class Header extends React.Component {
+   render() {return (  &ltdiv> &lth1>Header&lt/h1> &lt/div> );  }
+}
+class Content extends React.Component {
+   render() {  return ( &ltdiv> &lth2>Content&lt/h2> &ltp>The content text!!!&lt/p> &lt/div>  );   }
+}
+export default App;`,"php","60%","400px");
+Block("main.js",``,
+`import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.jsx';
+ReactDOM.render(<App />, document.getElementById('app'));
+`,"php","35%","400px",'https://www.tutorialspoint.com/reactjs/images/react_components_stateless.jpg');
+</script>
+<br><h7>Stateful Example</h7><br>
+<script>
+      Block("App.jsx","",
+`import React from 'react';
+class App extends React.Component {
+   constructor() {
+      super();
+      this.state = {
+         data:    [{ "id":1,"name":"Foo","age":"20" },
+                   { "id":2,"name":"Bar","age":"30" },
+                   { "id":3,"name":"Baz","age":"40"}
+                  ]  }
+   }
+   render() { return (
+         &ltdiv> &ltHeader/>
+            &lttable> &lttbody>
+                  {this.state.data.map((person, i) => &ltTableRow key = {i} 
+                     data = {person} />)}
+             &lt/tbody>&lt/table>
+         &lt/div>
+      );   }
+}
+class Header extends React.Component {
+   render() {return ( &ltdiv>&lth1>Header&lt/h1>&lt/div> ); }
+}
+class TableRow extends React.Component {
+   render() {return (&lttr>
+            &lttd>{this.props.data.id}&lt/td>
+            &lttd>{this.props.data.name}&lt/td>
+            &lttd>{this.props.data.age}&lt/td>
+         &lt/tr>  );   }
+}
+export default App;`,"php","45%","850px");
+
+Block('main.js',null,
+`import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.jsx';
+ReactDOM.render(<App/>, document.getElementById('app'));
+`,"javascript","50%","450px",
+"https://www.tutorialspoint.com/reactjs/images/react_components_statefull.jpg");
+
+</script>
+
 </body>
