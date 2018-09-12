@@ -8,7 +8,7 @@ function Block(title,body,code,codetype,widt="20%",hei="300px",imageSrc=null,pad
     document.write( "<div style='width:100%;text-align:center;background-color:#336699;color:#aabbff' class='bolder'>" +title+"</div>");
     //body:
     if(body)
-        document.write("<div style='width:100%;white-space:pre;>"+body+"</div>");
+        document.write("<div style='width:100%;white-space:pre;'>"+body+"</div>");
     if(codetype && code)
         document.write("<pre><code class='"+codetype+"'>"+code+"</code></pre>");
     else{
