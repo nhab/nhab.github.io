@@ -244,13 +244,17 @@ Instead, React DOM components expect DOM property names such as className and ht
 Block("App.jsx","App.jsx",
 `import React from 'react';
 class App extends React.Component {
-   render() { return ( &ltdiv>  &ltHeader/> &ltContent/>  &lt/div> ); }
+   render() { return ( &ltdiv>  &ltHeader/>
+                &ltContent/>  &lt/div> ); }
 }
 class Header extends React.Component {
-   render() {return (  &ltdiv> &lth1>Header&lt/h1> &lt/div> );  }
+   render() {return (  &ltdiv> &lth1>Header
+                 &lt/h1> &lt/div> );  }
 }
 class Content extends React.Component {
-   render() {  return ( &ltdiv> &lth2>Content&lt/h2> &ltp>The content text!!!&lt/p> &lt/div>  );   }
+   render() {  return ( &ltdiv> &lth2>
+            Content&lt/h2> &ltp>The content
+            text!!!&lt/p> &lt/div>  );  }
 }
 export default App;`,"javascript");
 Block("main.js",``,
