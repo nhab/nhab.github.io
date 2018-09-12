@@ -24,31 +24,30 @@ Block(stitle,sBody,null,"javascript","95%","130px");
        
 <h2>Environment Setup</h2>
 <script>
- Block("Create the Root Folder",
-       "",`C:\\>mkdir reactApp
-C:\\reactApp>npm init`,"html","20%","150px");
+ Block("Create the Root Folder","",`C:\\>mkdir reactApp
+C:\\reactApp>npm init`,"html","20%","110px");
     
 Block("Install Node.js then Global Packages(babel plugins)",null,
  `C:\\reactApp>npm install -g babel
- C:\\reactApp>npm install -g babel-cli`,"html","60%","150px");
+ C:\\reactApp>npm install -g babel-cli`,"html","60%","110px");
     
 Block("Add Dependencies and Plugins","",
  `C:\\reactApp>npm install webpack --save
- C:\\reactApp>npm install webpack-dev-server --save`,"php","45%","160px");
+ C:\\reactApp>npm install webpack-dev-server --save`,"php","45%","120px");
     
 Block("Add packages to package.json"
    ,"The --save command will add these packages to package.json file."
    ,`C:\\reactApp>npm install react --save
-  C:\\reactApp>npm install react-dom --save`,"php","50%","160px");
+  C:\\reactApp>npm install react-dom --save`,"php","50%","140px");
     
  Block("Create the Files","The touch command is the easiest way to create new, empty files:",
  `C:\\reactApp>touch index.html
 C:\\reactApp>touch App.jsx
 C:\\reactApp>touch main.js
-C:\\reactApp>touch webpack.config.js`,"html","45%","225px");
+C:\\reactApp>touch webpack.config.js`,"html","45%","190px");
 
    Block("Install webpack-dev-server","The webpack-dev-server is a little Node.js Express server, which uses the webpack-dev-middleware to serve a webpack bundle"
-        ,`C:\\reactApp>npm install webpack-dev-server -g`,"javascript","40%","200px");
+        ,`C:\\reactApp>npm install webpack-dev-server -g`,"javascript","50%","120px");
     
  Block("Set Compiler, Server and Loaders","Edit webpack.config.js.set webpack entry point to be main.js",
   `var config = {
