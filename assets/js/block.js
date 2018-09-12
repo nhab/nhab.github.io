@@ -9,7 +9,7 @@ function Block(title,body,code,codetype,widt,hei,imageSrc=null,padding="7")
     var id1="dv"+Math.random()*20;
     document.write("<div style='"+sStyle+";' id='"+id1+"'>");
    //header:
-    document.write( "<div style='width:100%;text-align:center;background-color:#336699;color:#ccbbdd;font-weight:900;"+
+    document.write( "<div style='width:100%;text-align:center;background-color:#336699;color:#ddccff;font-weight:900;"+
                    "padding-left:2px;padding-right:2px;' >" 
                    +title+"</div>");
     //body:
