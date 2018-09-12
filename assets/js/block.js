@@ -1,7 +1,7 @@
 function Block(title,body,code,codetype,widt,hei,imageSrc=null,padding="7")
 {
     sStyle="padding-left:"+padding+"px;padding-right:"+padding+"px;vertical-align:text-top;border:1px black solid";
-    sStyle+=";display:inline-block;overflow: auto;"+
+    sStyle+=";display:inline-block;overflow: auto;";
     if(widt)
         sStyle+=";width:"+widt+";";
     if(hei)
