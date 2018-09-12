@@ -1,4 +1,4 @@
-function Block(title,body,code,codetype,widt="20%",hei="300px",imageSrc=null,padding="5")
+function Block(title,body,code,codetype,widt="20%",hei="300px",imageSrc=null,padding="7")
 {
     sStyle="padding-left:"+padding+"px;padding-right:"+padding+"px;vertical-align:text-top;border:1px black solid";
     sStyle+=";display:inline-block;width:"+widt+";height:"+hei+";";
