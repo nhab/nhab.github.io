@@ -1,6 +1,6 @@
-function Block(title,body,code,codetype,widt="20%",hei="300px",imageSrc=null)
+function Block(title,body,code,codetype,widt="20%",hei="300px",imageSrc=null,padding="5px")
 {
-    sStyle="padding-left:10px;padding-right:10px;vertical-align:text-top;border:1px black solid";
+    sStyle="padding-left:"+padding+"px;padding-right:"+padding+"px;vertical-align:text-top;border:1px black solid";
     sStyle+=";display:inline-block;width:"+widt+";height:"+hei+";";
     var id1="dv"+Math.random()*20;
     document.write("<div style='"+sStyle+";' id='"+id1+"'>");
