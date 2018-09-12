@@ -47,7 +47,7 @@ C:\\reactApp>touch webpack.config.js`,"html");
    Block("Install webpack-dev-server",
      `The webpack-dev-server is a little Node.js Express server, 
       which uses the webpack-dev-middleware to serve a webpack bundle`
-        ,`C:\\reactApp>npm install webpack-dev-server -g`,"javascript","50%","120px");
+        ,`C:\\reactApp>npm install webpack-dev-server -g`,"javascript");
     
  Block("Set Compiler, Server and Loaders","Edit webpack.config.js.set webpack entry point to be main.js",
   `var config = {
@@ -61,13 +61,13 @@ C:\\reactApp>touch webpack.config.js`,"html");
             query: {
                presets: ['es2015', 'react']     }     }
       ]   }}
-module.exports = config;`,"javascript","40%","430px");
+module.exports = config;`,"javascript");
     
 
   Block("Edit package.json",
         `Open the package.json and delete test echo Error: 
         no test specified & & exit 1 inside scripts object.and add the start command instead.`
-        ,`"start": "webpack-dev-server --hot"`,"javascript","23%");
+        ,`"start": "webpack-dev-server --hot"`,"javascript");
     
  Block("index.html","div id = 'app' as a root element",
 `&lt!DOCTYPE html>
@@ -80,7 +80,7 @@ module.exports = config;`,"javascript","40%","430px");
       &ltdiv id = "app">&lt/div>
       &ltscript src = "index.js">&lt/script>
    &lt/body>
-&lt/html>`,"html","25%","410px");
+&lt/html>`,"html");
 
 Block("App.jsx and main.js",null,
 `//App.jsx
@@ -94,21 +94,22 @@ class App extends React.Component {
       );
    }
 }
-export default App;`,"javascript","25%","400px");
+export default App;`,"javascript");
 
 Block("main.js","",
 `import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.jsx';
 ReactDOM.render(&ltApp />, 
-  document.getElementById('app'));`,"php","23%","300px");
+  document.getElementById('app'));`,"html");
 
 Block("Running the Server","run the following command line and see the result on http://localhost:8080/",
 "C:\\reactApp>npm start","javascript");
 </script>
+    
 <a href="https://codesandbox.io/s/r5w8zk8qzn">
-      <img alt="Edit r5w8zk8qzn" src="https://codesandbox.io/static/img/play-codesandbox.svg">
-    </a>
+   <img alt="Edit r5w8zk8qzn" src="https://codesandbox.io/static/img/play-codesandbox.svg">
+  </a>
     
 <h2>JSX</h2>
   React uses JSX for templating instead of regular JavaScript
@@ -124,7 +125,7 @@ class App extends React.Component {
       );
    }
 }
-export default App;`,"javascript","30%","410px");
+export default App;`,"javascript");
 
 Block("Nested Elements","App.jsx",
  `import React from 'react';
@@ -141,7 +142,7 @@ class App extends React.Component {
    }
 }
 export default App;
-`,"javascript","26%","470px");
+`,"javascript");
     
 Block("Attributes",
       `We can use our own custom attributes in addition to regular HTML properties and attributes.
@@ -161,7 +162,7 @@ class App extends React.Component {
       );
    }
 }
-export default App;`,"javascript","30%","600px");
+export default App;`,"javascript");
   
  Block("JavaScript Expressions",`JavaScript expressions can be used inside of JSX.
 We just need to wrap it with curly brackets {} :`,
@@ -176,7 +177,7 @@ class App extends React.Component {
       );
    }
 }
-export default App;`,"javascript","25%","480px");
+export default App;`,"javascript");
 
 Block("conditional (ternary) expressions",""
 ,`import React from 'react';
@@ -191,7 +192,7 @@ class App extends React.Component {
       );
    }
 }
-export default App;`,"javascript","30%","410px");
+export default App;`,"javascript");
     
 Block("Styling",`React recommends using inline styles. 
 When we want to set inline styles, we need to use camelCase syntax.
@@ -209,7 +210,7 @@ class App extends React.Component {
       );
    }
 }
-export default App;`,"javascript","40%","550px");
+export default App;`,"javascript");
  
 Block("Naming Convention",
 `HTML tags always use lowercase tag names, <br>while React components start with Uppercase.<br>
@@ -217,7 +218,7 @@ Block("Naming Convention",
 This is explained on React official page as −
 Since JSX is JavaScript, identifiers such as class and for are discouraged as XML attribute names.
 Instead, React DOM components expect DOM property names such as className and htmlFor, respectively.`
-,null,null,"70%","200px"       );
+,null,null );
 </script>
 <h2>Components</h2>
 <h7>Stateless Example:</h7><br>
@@ -233,13 +234,13 @@ class Header extends React.Component {
 class Content extends React.Component {
    render() {  return ( &ltdiv> &lth2>Content&lt/h2> &ltp>The content text!!!&lt/p> &lt/div>  );   }
 }
-export default App;`,"php","60%","400px");
+export default App;`,"javascript");
 Block("main.js",``,
 `import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.jsx';
 ReactDOM.render(<App />, document.getElementById('app'));
-`,"php","35%","400px",'https://www.tutorialspoint.com/reactjs/images/react_components_stateless.jpg');
+`,"php",null,null,'https://www.tutorialspoint.com/reactjs/images/react_components_stateless.jpg');
 </script>
 <br><h7>Stateful Example</h7><br>
 <script>
