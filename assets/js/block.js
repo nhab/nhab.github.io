@@ -1,7 +1,7 @@
 function Block(title,body,code,codetype,widt="20%",hei="300px",imageSrc=null,padding="7")
 {
     sStyle="padding-left:"+padding+"px;padding-right:"+padding+"px;vertical-align:text-top;border:1px black solid";
-    sStyle+=";display:inline-block;width:"+widt+";height:"+hei+";overflow: auto;";
+    sStyle+=";display:inline-block;width:"+widt+";overflow: auto;";//;height:"+hei";
     var id1="dv"+Math.random()*20;
     document.write("<div style='"+sStyle+";' id='"+id1+"'>");
    //header:
