@@ -10,7 +10,7 @@ function Block(title,body,code,codetype,widt="20%",hei="300px",imageSrc=null,pad
     if(body)
         document.write("<div style='width:100%;white-space:pre;overflow: auto;'>"+body+"</div>");
     if(codetype && code)
-        document.write("<pre><code class='"+codetype+"'>"+code+"</code></pre>");
+        document.write("<pre><code style='overflow: auto;' class='"+codetype+"'>"+code+"</code></pre>");
     else{
         if(code)
           document.write("<pre><code >"+code+"</code></pre>");
