@@ -5,7 +5,7 @@ function Block(title,body,code,codetype,widt="20%",hei="300px",imageSrc=null,pad
     var id1="dv"+Math.random()*20;
     document.write("<div style='"+sStyle+";' id='"+id1+"'>");
    //header:
-    document.write( "<div style='width:100%;text-align:center;background-color:#336699;color:#aabbff' class='bolder'>" +title+"</div>");
+    document.write( "<div style='width:100%;text-align:center;background-color:#336699;color:#aabbff;font-weight:900;' >" +title+"</div>");
     //body:
     if(body)
         document.write("<div style='width:100%;white-space:pre;overflow: auto;'>"+body+"</div>");
