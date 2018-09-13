@@ -15,14 +15,49 @@ React can also render on the server using Node, and native apps using React Nati
 <b>Creating a React app involves creating one or more React components</b> that can interact with each other. 
 A React component is simply a JavaScript class that requires the <b>render function</b> to be declared. 
 The render function simply outputs HTML code, which is <b>implemented using either JSX or JavaScript code</b>.
-<a href='https://codepen.io/pen?&editors=0010'>Hello world! sample</a>
+
+<a href='https://codepen.io/nhab/pen/MqXwRE'>My Hello world!</a>
+(see settings of codepen /javascript tab, which has included react and reactdom and set preproccessor to babel)
 `;
 
-Block(stitle,sBody,null,"javascript");
+ Block(stitle,sBody,null,"javascript");
+ BlockHorizontally("A stand alone sample",
+`you dont need to setup everything locally. 
+The following html code,is a working react sample which
+ includes everything needed to code in react.
+ `
+,`&lt!doctype html>
+&lthtml>
+
+&lthead>
+    &ltmeta charset="utf-8">
+    &lttitle>Hello React!&lt/title>
+    &ltscript src="https://unpkg.com/react@16/umd/react.development.js">&lt/script>
+    &ltscript src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">&lt/script>
+    &ltscript src="https://unpkg.com/babel-standalone@6.26.0/babel.js">&lt/script>
+&lt/head>
+
+&ltbody>
+    &ltdiv id="root">&lt/div>
+    &ltscript type="text/babel">
+        class App extends React.Component { 
+            render() { 
+                return (
+                    &lth1>Hello world!&lt/h1>
+                ); 
+            } 
+        } 
+        ReactDOM.render(&ltApp />, document.getElementById('root'));
+    &lt/script>
+&lt/body>
+&lt/html>`
+);
+
  </script>
        
 <h2>Environment Setup</h2>
 <script>
+ 
  Block("Create the Root Folder","",`C:\\>mkdir reactApp
 C:\\reactApp>npm init`,"html");
     
@@ -52,7 +87,9 @@ C:\\reactApp>touch webpack.config.js`,"html");
   to serve a webpack bundle`
   ,`npm install webpack-dev-server -g`,"javascript");
     
- Block("Set Compiler, Server and Loaders","Edit webpack.config.js.set webpack entry point to be main.js",
+ Block("Set Compiler, Server and Loaders",
+ `Edit <b>webpack.config.js</b> . 
+ set webpack entry point to be main.js`,
   `var config = {
    entry: './main.js',
    output: {      path:'/',      filename: 'index.js',   },
@@ -68,9 +105,10 @@ module.exports = config;`,"javascript");
     
 
   Block("Edit package.json",
-        `Open the package.json and delete test echo Error: 
- no test specified & & exit 1 inside scripts
- object.and add the start command instead.`
+   `Open the package.json and 
+   delete test echo Error: 
+  no test specified & & exit 1 inside scripts
+  object.and add the start command instead.`
         ,`"start": "webpack-dev-server --hot"`,"javascript");
     
  Block("index.html","div id = 'app' as a root element",
@@ -110,14 +148,54 @@ ReactDOM.render(&ltApp />,
 Block("Running the Server","run the following command line and see the result on http://localhost:8080/",
 "C:\\reactApp>npm start","javascript");
 </script>
-    
+    <br>
 <a href="https://codesandbox.io/s/r5w8zk8qzn">
    <img alt="Edit r5w8zk8qzn" src="https://codesandbox.io/static/img/play-codesandbox.svg">
-  </a>
-    
+  </a>&nbsp;
+<a href="https://codepen.io/bradleyboy/pen/OPBpGw">2nd Example</a>    
+<h2>ReactDOM</h2>
+
+  <script>
+    BlockHorizontally("ReactDOM",
+  `ReactDOM is the <h7>glue between React and the DOM</h7>.
+ Often, you will only use it <h7>for one single thing</h7>: mounting with <h7>ReactDOM.render()</h7>
+ Another useful feature of ReactDOM is<h7>ReactDOM.findDOMNode()</h7>
+  which you can use to gain direct access to a DOM element.`,
+  `var React = require('react'); /* importing react */
+var ReactDOM = require('react-dom'); /* importing react-dom */
+
+var MyComponent = React.createClass({
+  render: function() {
+    return &ltdiv>Hello World&lt/div>;
+  }
+});
+
+ReactDOM.render(&ltMyComponent />, node);`
+  );
+  </script>
+  
 <h2>JSX</h2>
-  React uses JSX for templating instead of regular JavaScript
-  <br>
+
+<script>
+  Block("jsx is a syntax",
+  `React uses JSX for templating and components instead of regular JavaScript.
+   <b>JavaScript XML (JSX)</b> is an extension to the JavaScript language <h7>syntax</h7>. `,`//this isa jsx syntax:
+  const element = &lth1>Hello, world!&lt/h1>;`);
+
+  Block("An example of JSX code:","App.jsx"
+  ,`class App extends React.Component {
+  render() {
+    return (
+      &ltdiv>
+        &ltp>Header&lt/p>
+        &ltp>Content&lt/p>
+        &ltp>Footer&lt/p>
+      &lt/div>
+    );
+  }
+}`);
+</script>
+
 <script>
   Block("Using JSX","App.jsx", `import React from 'react';
 class App extends React.Component {
@@ -133,12 +211,9 @@ export default App;`,"javascript");
 
 Block("Nested Elements","App.jsx",
  `import React from 'react';
-
 class App extends React.Component {
-   render() {
-      return (
-         &ltdiv>
-            &lth1>Header&lt/h1>
+   render() { return (
+         &ltdiv>  &lth1>Header&lt/h1>
             &lth2>Content&lt/h2>
             &ltp>This is the content!!!&lt/p>
          &lt/div>
@@ -149,29 +224,27 @@ export default App;
 `,"javascript");
     
 Block("Attributes",
- `We can use our own custom attributes 
-in addition to regular HTML properties 
-and attributes.
-When we want to add custom attribute, 
-we need to use data- prefix.
-In the example, we added data-myattribute
+ `<b>custom attributes</b> are additions to 
+ regular HTML properties and attributes.
+to add custom attribute,we need to use 
+<b>data- prefix</b>.
+In the example, we added <b>data-myattribute</b>
 as an attribute of p element:`,
       `import React from 'react';
-
 class App extends React.Component {
    render() {
-      return (
-         &ltdiv>
+      return (  &ltdiv>
             &lth1>Header&lt/h1>
             &lth2>Content&lt/h2>
             &ltp data-myattribute = "somevalue">
             This is the content!!!&lt/p>
-         &lt/div>
-      );
-   }
-}
+         &lt/div>   );
+}  }
 export default App;`,"javascript");
-  
+  Block("Expression in an attribute",null,
+  `const element =
+     &ltimg src={user.avatarUrl}>
+     &lt/img>;`);
  Block("JavaScript Expressions",`JavaScript expressions can be used inside of JSX.
 We just need to wrap it with curly brackets {} :`,
 `import React from 'react';
@@ -194,8 +267,7 @@ class App extends React.Component {
       var i = 1;
       return (
          &ltdiv>
-            &lth1>{i == 1 ? 'True!'
-             : 'False'}&lt/h1>
+            &lth1>{i == 1 ? 'True!' : 'False'}&lt/h1>
          &lt/div>
       );
    }
@@ -204,11 +276,10 @@ export default App;`,"javascript");
     
 Block("Styling",
 `React recommends using inline styles. 
-When we want to set inline styles,
-we need to use camelCase syntax.
+(with camelCase syntax)
 it will automatically append px after 
 the number value on specific elements.
-Example:`,
+<a href="https://codepen.io/ciptohadi/pen/qaHgj">example link</a> ,<h7>Example:</h7>`,
 `import React from 'react';
 class App extends React.Component {
    render() {
@@ -224,33 +295,70 @@ class App extends React.Component {
 export default App;`,"javascript");
  
 Block("Naming Convention",
-`HTML tags always use lowercase tag names, <br>while React components start with Uppercase.<br>
-<b>Note</b> − You should use className and htmlFor as XML attribute names instead of class and for.
-This is explained on React official page as −
-Since JSX is JavaScript, identifiers such as class and for are discouraged as XML attribute names.
-Instead, React DOM components expect DOM property names such as className and htmlFor, respectively.`
+`<h7>HTML tags</h7> always use <h7>lowercase tag</h7> names, while <h7>React components start with Uppercase.</h7>
+<b>Note</b> − You should use <h7>className</h7> and <h7>htmlFor</h7> as XML attribute names instead of <h7>class</h7> and <h7>for</h7>.`
 ,null,null );
 </script>
     
 <h2>Components</h2>
-   <h7>React components can further be categorized into:
-       1- containers/stateful components:
+   <p>Components seperate <h7>concerns</h7>, instead of seperating markup and  logic.
+      React components are  <h7>written</h7> using <b>JSX</b> or <b>javascript</b>.<a href="https://babeljs.io/repl/#?presets=react&code_lz=GYVwdgxgLglg9mABACwKYBt1wBQEpEDeAUIogE6pQhlIA8AJjAG4B8AEhlogO5xnr0AhLQD0jVgG4iAXyJA"> play converting them here</a>
+    <h3>Sample components:</h3>
+    </p>
+      <script>
+      Block("(javascript syntax",null,
+      `React.createElement(
+          MyButton,
+          {color:'blue',shadowSize:2}
+          ,'Click Me'
+        )`);
+        Block("jsx syntax:",null,
+        `&ltMyButton color="blue"
+            shadowSize={2}>
+  Click Me
+&lt/MyButton>`);
+    Block("Class components",null,
+    `const Username = React.createClass({
+  render() {
+    return &ltp>The logged in user is: 
+     {this.props.username}&lt/p>;
+  },
+});
+// OR:
+class Username extends React.Component {
+  render() {
+    return &ltp>The logged in user is: 
+     {this.props.username}&lt/p>;
+  }
+}`);
+Block("functional stateles component(FSC)","<a href='https://codepen.io/nhab/pen/zJaEMR'>see the code in action</a>",
+        `const Username = function(props) {
+  return &ltp>The logged in user is:
+   {props.username}&lt/p>;
+};
+// OR :
+function Welcome(props) {
+  return &lth1>Hello, {props.name}&lt/h1>;
+}`);
+      </script>
+<br>
+      <p>
+     React components can further be categorized into:
+       1- containers/<h7>stateful components</h7>:
          does the work of rendering child components
-       and 2- stateless components :
+       and 2- <h7>stateless components</h7> :
          A stateless component’s work is to handle the
        data,event,..receives from its parent component
-    </h7>
+      </p>
 <h7>Stateless Example:</h7><br>
 <script>
 Block("App.jsx","App.jsx",
 `import React from 'react';
 class App extends React.Component {
-   render() { return ( &ltdiv>  &ltHeader/>
-                &ltContent/>  &lt/div> ); }
+   render() { return ( &ltdiv>  &ltHeader/> &ltContent/>  &lt/div> ); }
 }
 class Header extends React.Component {
-   render() {return (  &ltdiv> &lth1>Header
-                 &lt/h1> &lt/div> );  }
+   render() {return (  &ltdiv> &lth1>Header &lt/h1> &lt/div> );  }
 }
 class Content extends React.Component {
    render() {  return ( &ltdiv> &lth2>
@@ -299,19 +407,74 @@ class TableRow extends React.Component {
 }
 export default App;`,"php","45%","850px");
 
-Block('main.js',null,
+Block('main.js',
+null,
 `import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.jsx';
 ReactDOM.render(<App/>, document.getElementById('app'));
 `,"javascript","50%","450px",
 "https://www.tutorialspoint.com/reactjs/images/react_components_statefull.jpg");
-
-Block("State","State is the place where the data comes from.");
+</script>
+<h2>State</h2>
+<script>
+Block("State",`State is the place where the data comes from.
+State is similar to props, but it is private and fully controlled by the component.
+<a href="https://codepen.io/gaearon/pen/KgQpJd?editors=0010">
+  <img alt="Edit new" src="https://codesandbox.io/static/img/play-codesandbox.svg">
+</a>`);
 
 </script>
-<a href="https://codesandbox.io/s/new">
-      <img alt="Edit new" src="https://codesandbox.io/static/img/play-codesandbox.svg">
-    </a>
- 
+ <h2>Handling Events </h2>
+ <script>
+ Block("Event Handling",
+`Handling events with React elements is very similar to handling events on DOM elements. 
+There are some syntactic differences:
+
+React events are named using camelCase, rather than lowercase.
+With JSX you pass a function as the event handler, rather than a string.
+`,
+`function ActionLink() {
+    function handleClick(e) {
+       e.preventDefault();
+       console.log('The link was clicked.');
+    }
+  return (
+    &lta href="#" onClick={handleClick}>
+      Click me
+    &lt/a>
+  );
+}`);
+Block("Event example2",
+`<a href="http://codepen.io/gaearon/pen/xEmzGg?editors=0010">Try it on codePen</a>`,
+`class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {isToggleOn: true};
+
+    // This binding is necessary to make 'this' work in the callback
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(state => ({
+      isToggleOn: !state.isToggleOn
+    }));
+  }
+
+  render() {
+    return (
+      &ltbutton onClick={this.handleClick}>
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
+      &lt/button>
+    );
+  }
+}
+
+ReactDOM.render(
+  &ltToggle />,
+  document.getElementById('root')
+);`);
+ </script>
+ <a href="https://reactjs.org/docs/conditional-rendering.html">-  Read more..</a>
 </body>
