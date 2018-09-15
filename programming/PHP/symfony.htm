@@ -20,11 +20,13 @@ cache functionality
 sCode="";
 Block(stitle,sBody,null,"javascript");
 Block("Bundle",
-`A bundle is a structured set of files within a directory that implement a single feature. 
-<br>Each directory contains everything related to that feature, including
-<br>PHP files, templates,stylesheets, JavaScript files and tests
-in the <b>config \ bundles.php</b> of the following 
-sample project,there is 4 bundles:
+`A bundle is a structured set of files within
+a directory that implement a single feature. 
+<br>Each directory contains everything related
+to that feature, including
+PHP files, templates,stylesheets, JavaScript
+files and testsin the <b>config \ bundles.php</b>
+of the following sample project,there is 4 bundles:
 `,
 `return [
 Symfony\Bundle\FrameworkBundle\FrameworkBundle::class => ['all' => true],
@@ -32,22 +34,26 @@ Symfony\Bundle\WebServerBundle\WebServerBundle::class => ['dev' => true],
 Symfony\Bundle\TwigBundle\TwigBundle::class => ['all' => true],
 Symfony\Bundle\MonologBundle\MonologBundle::class => ['all' => true],
 ];
-`,"php","46%","400px");
+`,"php");
 
 Block("The application structure",
-`Actually, a Symfony application is itself a bundle composed of other bundles.<br>
+`Actually, a Symfony application is 
+itself a bundle composed of other bundles.<br>
 and it is generally called AppBundle.<br>
- A single bundle can use any number of Symfony component 
- and also third-party components to provide features such as 
- Webframework, database access, etc. 
- <br><br>Symfony core web-framework is a bundle called FrameworkBundle
-  and there is a bundle called FrameworkExtraBundle, 
-  which provides more sophisticated options to write a web application.
+ A single bundle can use any number of Symfony
+component and also third-party components to 
+provide features such as  Webframework, 
+database access, etc. 
+ <br><br>Symfony core web-framework is a bundle
+called FrameworkBundle and there is a bundle 
+called FrameworkExtraBundle, which provides more
+sophisticated options to write a web application.
 `,null,null,"29%","400px");
 
 Block(`SandBox`,
-`The sandbox is an easy-to-install pre-packaged symfony project,
- already configured with some sensible defaults.
+`The sandbox is an easy-to-install pre-packaged
+symfony project,already configured with some
+sensible defaults.
  It is a great way to practice using symfony .
  <br><br>
 Following example initializing bundle "SteveBundle" 
@@ -56,7 +62,8 @@ in "Sites/sandbox/src/Spf13":
 `> app/console init:bundle Spf13/SteveBundle`,"php","29%","400px");
 
 Block("Creating a Bundle",
-`1-Choose a namespace. Namespace of a bundle should include vendor name and bundle name.<br>
+`1-Choose a namespace. Namespace of a bundle should 
+include vendor name and bundle name.<br>
  In our case, it is Acme\\TestBundle.<br>
  2-create the folder <b>src/Acme/TestBundle/</b> <br>
  3- add a new file called <b>AcmeTestBundle.php</b>`,
@@ -64,8 +71,7 @@ Block("Creating a Bundle",
 // src/Acme/TestBundle/AcmeTestBundle.php
 namespace App\\Acme\\TestBundle;
 use Symfony\\Component\\HttpKernel\\Bundle\\Bundle;
-class AcmeTestBundle extends Bundle{}`,"php","32%","400px"
-);
+class AcmeTestBundle extends Bundle{}`,"php");
 
 Block("Enabling bundle",
 `Now that you've created the bundle, enable it.<br>
