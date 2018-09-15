@@ -10,12 +10,11 @@
 <script>
 stitle="symfony";
 sBody=`
-Symfony is basically a collection of 
+Symfony is a set of reusable 
 <b>components</b> and <b>bundles</b>. 
-<h2>Components</h2>are collection of <b>classes</b> providing
-a single core functionality. 
 For example, Cache component
 provides cache functionality
+it is also a php web framework
 `;
 sCode="";
 Block(stitle,sBody,null,"javascript");
@@ -40,9 +39,8 @@ Symfony\Bundle\MonologBundle\MonologBundle::class => ['all' => true],
 `,"php");
 
 Block("The application structure",
-`Actually, a Symfony application is 
-itself a bundle composed of other
-bundles.
+`A Symfony application is itself a
+bundle composed of other bundles.
 and it is generally called <b>AppBundle</b>.
 A single bundle can use any number of 
 Symfony component and also third-party 
@@ -50,17 +48,89 @@ components to provide features such as
 Webframework, database access, etc. 
 
 Symfony core web-framework is a bundle
-called FrameworkBundle and there is a bundle 
-called FrameworkExtraBundle, which provides more
-sophisticated options to write a web application.
+called <b>FrameworkBundle</b> and there is
+a bundle called <b>FrameworkExtraBundle</b>,
+which provides more sophisticated options.
 `);
+</script>
+<h2>Setting up a Hello symfony! project from scrach</h2>
+<script>
+Block("download and install",
+`Make sure you've installed Composer and have PHP 7.1.3 
+or higher. Run in terminal:
+(This creates a new quick_tour/ directory with 
+a Symfony application)`,
+`composer create-project symfony/skeleton quick_tour`);
+Block("Install and run symfony server",null,
+`composer require server --dev
+ php bin/console server:start`);
+ Block("Try your new app",
+ `by going to http://localhost:8000
+  in a browser!`,
+ null,null,"40%",null,"https://symfony.com/doc/current/_images/no_routes_page.png",null,"50%");
+ Block("define the URL to our new page (rout)",
+`Start in config/routes.yaml.
+rout is the URL to your page (/) 
+and the "controller": the function that will be called
+by going to the URL.
+the controller must return a Symfony Response object`,
+`# config/routes.yaml
+index:
+-     path: /
++     path: /hello/{name}
+    controller: 'App\Controller\DefaultController::index'
 
+`);
+Block("Create the controller",
+`In src/Controller, create a new <b>DefaultController</b>
+ class and an index method inside.
+ That's it! Try the page out by going to 
+ http://localhost:8000/hello/Symfony.`,
+ `// src/Controller/DefaultController.php
+namespace App\Controller;
+
+use Symfony\Component\HttpFoundation\Response;
+
+class DefaultController
+{
+-     public function index()
++     public function index($name)
+    {
+-         return new Response('Hello!');
++         return new Response("Hello $name!");
+    }
+}`);
+Block("further enhancement",
+`you can replace rout by anottation.to do this:
+comment-out the YAML route by adding
+the # character befor each line of it.
+use this code for the controller:
+`,
+`// src/Controller/DefaultController.php
+namespace App\\Controller;
+
+use Symfony\\Component\\HttpFoundation
+  \\Response;
++ use Symfony\\Component\\Routing
+  \\Annotation\\Route;
+
+class DefaultController
+{
++    /**
++     * @Route("/hello/{name}")
++     */
+     public function index($name) {
+        return new Response("Hello $name!");
+     }
+}`,"php");
+</script>
+<h2>.</h2>
+<script>
 Block(`SandBox`,
 `The sandbox is an easy-to-install
-pre-packaged symfony project,already 
+<b>pre-packaged symfony project</b>,already 
 configured with some sensible defaults.
- It is a great way to practice using 
-symfony .
+ It is a great way to practice symfony.
 
 Following example initializing bundle
 "SteveBundle" 
@@ -81,14 +151,16 @@ use Symfony\\Component\\HttpKernel\\Bundle\\Bundle;
 class AcmeTestBundle extends Bundle{}`,"php");
 
 Block("Enabling bundle",
-`Now that you've created the bundle, enable it.
-And while it doesn't do anything yet, 
-AcmeTestBundle is now ready to be used.
+`After enabling it,AcmeTestBundle 
+doesn't do anything yet, 
+but is now ready to be used.
 `,
 `// config/bundles.php
 return [
     // ...
-    App\Acme\TestBundle\AcmeTestBundle::class => ['all' => true],
+    App\\Acme\\TestBundle
+     \\AcmeTestBundle::class =>
+      ['all' => true],
 ];
 `,"php");
 Block("Registering a bundle",""
@@ -96,7 +168,8 @@ Block("Registering a bundle",""
 $bundles = array( 
 // ... 
 // register your bundle 
-new Tutorialspoint\\DemoBundle\\TutorialspointDemoBundle(), 
+new Tutorialspoint\\DemoBundle
+ \\TutorialspointDemoBundle(), 
 ); 
 return $bundles; 
 }`,"php","30%");
@@ -146,7 +219,8 @@ Once the container is created, Greeter
 class can be registered into it 
 using the container's <h7>register method</h7>.
 `,
-`use Symfony\Component\DependencyInjection\ContainerBuilder; 
+`use Symfony\\Component\\
+ DependencyInjection\\ContainerBuilder; 
 $container = new ContainerBuilder(); 
 $container 
    ->register('greeter', 'Greeter') 
@@ -154,8 +228,9 @@ $container
    `
 );
 Block("using Services",
-`your application container already contains many services.
-<br>For example to log something:`
+`your application container already
+contains many services.
+For example to log something:`
 ,
 `// src/Controller/ProductController.php
 // ...
@@ -171,16 +246,15 @@ Block("List of available services",
 `Find out available service by running :`,
 `php bin/console debug:autowiring
 
-=========================================================== =====================================
+=========================================================== 
 Class/Interface Type                                            Alias Service ID
-=========================================================== =====================================
+===========================================================
 Psr\Cache\CacheItemPoolInterface                            alias for "cache.app.recorder"
 Psr\Log\LoggerInterface                                     alias for "monolog.logger"
 Symfony\Component\EventDispatcher\EventDispatcherInterface  alias for "debug.event_dispatcher"
 Symfony\Component\HttpFoundation\RequestStack               alias for "request_stack"
 Symfony\Component\HttpFoundation\Session\SessionInterface   alias for "session"
-Symfony\Component\Routing\RouterInterface                   alias for "router.default"
-=====`,"php","40%","455px");
+Symfony\Component\Routing\RouterInterface                   alias for "router.default"`,"php","65%","455px");
 
 Block("Creating Services in the Container",
 `To create reusable code,you can put it 
@@ -402,14 +476,13 @@ Block("The Complete listing",
 //Jon 
 //Jon 
 //25`
-,"php","100%","1200px");
+,"php","50%","1200px");
 </script>
 <h2>Expression</h2>
 It enables a non-programmer to configure 
 the web application with little effort.
-<br> 
 <script>
-Block("Step 1 <br> Create a project"," expression-language-example"
+Block("Step 1 - Create a project"," expression-language-example"
 ,`cd /path/to/dir 
 mkdir expression-language-example 
 cd expression-language-example 
@@ -448,7 +521,15 @@ echo "Is Product price higher than 5: " . $language
 //Here, the expression product.price and product.price > 5 
 //intercept $product object's property price and evaluate the result.`,"php");
 
-Block("The complete code","main.php"
+Block("The complete code",`main.php
+the result of the following code will be:
+
+Result
+Evaluated Value: 22 
+Compiled Code: (130 % 34) 
+Product price is 10 
+Is Product price higher than 5: 1
+`
 ,`<?php 
    require __DIR__ . '/vendor/autoload.php'; 
    use Symfony\Component\ExpressionLanguage\ExpressionLanguage; 
@@ -474,11 +555,6 @@ Block("The complete code","main.php"
 
 </script>
 <p>
-Result
-Evaluated Value: 22 
-Compiled Code: (130 % 34) 
-Product price is 10 
-Is Product price higher than 5: 1
 </p>
 <h2>Creating a Simple Web Application</h2>
 <script>
@@ -487,10 +563,12 @@ Block("Creating the project",
  ,`symfony new student`,"php");
 
 Block("Controller",
- `Symfony is based on the Model-View-Controller (MVC) development pattern.<br> 
- DefaultController class is located at “src/AppBundle/Controller”. <br>
- You can create your own Controller class there.<br>
- Move to the location “src/AppBundle/Controller” <br>
+ `Symfony is based on the Model-View-Controller
+  (MVC) development pattern.
+ DefaultController class is located at
+  “src/AppBundle/Controller”. 
+ You can create your own Controller class there.
+ Move to the location “src/AppBundle/Controller” 
  and create a new StudentController class.`,
  `//StudentController.php
  namespace AppBundle\\Controller; 
@@ -498,8 +576,8 @@ Block("Controller",
  class StudentController { }`,"php");
 
 Block("Create a Route",
-`Routing maps request URI to a specific controller's method.<br>
- In the above syntax, @Route(“/student/home”) is the route.<br>
+`Routing <h7>maps</h7> <b>request URI</b> <h7>to</h7> a specific <b>controller's method</b>.
+In the above syntax,  @Route(“/student/home”) is the route.
  It defines the URL pattern for the page.`,
 `namespace AppBundle\\Controller;  
 use Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Route; 

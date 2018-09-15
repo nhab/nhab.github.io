@@ -1,4 +1,4 @@
-function Block(title,body,code,codetype,widt,hei,imageSrc=null,padding="7")
+function Block(title,body,code,codetype,widt,hei,imageSrc=null,padding="7",imagWidth="100%")
 {
     sStyle="padding-left:"+padding+"px;padding-right:"+padding+"px;vertical-align:text-top;border:1px black solid;margin-left:2px;";
     sStyle+=";display:inline-block;overflow: auto;";
@@ -25,7 +25,7 @@ function Block(title,body,code,codetype,widt,hei,imageSrc=null,padding="7")
     if(imageSrc)
     {
         //document.getElementById(id1).write("<img src='"+imageSrc+"'>");
-        document.write("<img src='"+imageSrc+"' style='width:100%'>");
+        document.write("<img src='"+imageSrc+"' style='width:"+imagWidth+"'>");
     }
     document.write("</div>");
 }

@@ -1,0 +1,309 @@
+<head>
+        
+        <link rel="stylesheet" href="../../assets/css/block.css">
+        <script src="../../assets/js/block.js"></script>
+        <link rel="stylesheet" href="../../libs/highlight/androidstudio2.css">
+        <script src="../../libs/highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </head>
+    <body>
+<script>
+Block("What is Doctrine 2?",
+`it is an object-relational mapper (ORM) for PHP `);
+Block("What are Entities?",
+`they are PHP Objects that can be 
+identified by a unique identifier.`);
+Block("persistable property",
+`An entity contains <b>persistable</b> properties. 
+A <b>persistable property</b> is an
+ instance variable of the entity
+  that is <b>saved into</b> and <b>retrieved from</b> the database .`);
+</script> 
+<h2>Doctrine ORM Example</h2> 
+<script>
+Block("Create a Symfony Application",
+``,`symfony new dbsample`);
+BlockHorizontally("Configure a Database",
+`Generally, the database information is 
+configured in “app/config/parameters.yml” 
+file. add the following changes to it:
+<b>parameter.yml</b>`,
+`parameters: 
+   database_host: 127.0.0.1 
+   database_port: null
+   database_name: studentsdb 
+   database_user: <user_name> 
+   database_password: <password> 
+   mailer_transport: smtp 
+   mailer_host: 127.0.0.1 
+   mailer_user: null 
+   mailer_password: null 
+   secret: 037ab82c601c10402408b2b190d5530d602b5809 
+   
+   doctrine: 
+      dbal: 
+      driver:   pdo_mysql 
+      host:     '%database_host%' 
+      dbname:   '%database_name%' 
+      user:     '%database_user%' 
+      password: '%database_password%' 
+      charset: utf8mb4`);
+Block("Create a Database",
+`Issue the following command to generate
+ “studentsdb” database`,
+ `php bin/console doctrine:database:create`);
+ BlockHorizontally("Map Information",
+ `Mapping information is nothing but "metadata”.
+ this metadata can be specified in a number of 
+ different formats, including YAML, XML or 
+ you can directly pass Student class using
+  annotations.
+ Change the <b>Student.php</b> as follow: `,
+ `&lt?php  
+namespace AppBundle\\Entity;  
+
+use Doctrine\\ORM\\Mapping as ORM;  
+/** 
+   * @ORM\\Entity 
+   * @ORM\\Table(name = "students") 
+*/ 
+class Student { 
+   /** 
+      * @ORM\\Column(type = "integer") 
+      * @ORM\\Id 
+      * @ORM\\GeneratedValue(strategy = "AUTO") 
+   */ 
+   private $id;  
+    
+   /** 
+      * @ORM\\Column(type = "string", length = 50) 
+   */ 
+   private $name;  
+   
+   /** 
+     * @ORM\\Column(type = "text") 
+     */ 
+   private $address; 
+}`);
+BlockHorizontally("Bind an Entity",`to generate an entity:
+<b>php bin/console doctrine:generate:entities AppBundle/Entity/Student</b>`,
+`/*Student.php*/
+&lt?php 
+namespace AppBundle\\Entity; 
+
+use Doctrine\\ORM\\Mapping as ORM;  
+/** 
+   * @ORM\\Entity 
+   * @ORM\\Table(name="students") 
+*/ 
+class Student { 
+   /** 
+      * @ORM\\Column(type="integer") 
+      * @ORM\\Id 
+      * @ORM\\GeneratedValue(strategy="AUTO") 
+   */ 
+   private $id;  
+    
+   /** 
+      * @ORM\\Column(type = "string", length = 50) 
+   */ 
+   private $name; 
+    
+   /** 
+      * @ORM\\Column(type = "text") 
+   */
+   private $address; 
+    
+   /** 
+      * Get id 
+      * 
+      * @return integer 
+   */ 
+   public function getId() { 
+      return $this->id; 
+   }  
+    
+   /** 
+      * Set name 
+      * 
+      * @param string $name 
+      * 
+      * @return Student 
+   */ 
+    
+   public function setName($name) { 
+      $this->name = $name;  
+      return $this; 
+   }  
+    
+   /** 
+      * Get name 
+      * 
+      * @return string 
+   */ 
+    
+   public function getName() { 
+      return $this->name; 
+   }  
+    
+   /**
+      * Set address 
+      * 
+      * @param string $address 
+      * 
+      * @return Student 
+   */ 
+    
+   public function setAddress($address) { 
+      $this->address = $address;  
+      return $this; 
+   }  
+    
+   /** 
+      * Get address 
+      * 
+      * @return string 
+   */ 
+   
+   public function getAddress() { 
+      return $this->address; 
+   } 
+}    `);
+
+Block("Create a Schema",
+`Doctrine can automatically create all
+the database tables needed for Student entity.
+This can be done using the following command.`,
+`php bin/console doctrine:schema:update --force`);
+Block("Map Validation",
+`After creating entities, you should validate
+ the mappings using the following command.`,
+`php bin/console doctrine:schema:validate`);
+Block("Getter and setter",
+`the following command generates all 
+the getters and setters for the Student class`,
+`$ php bin/console doctrine:generate:entities
+     AppBundle/Entity/Student`);
+Block("Persist Objects to the Database",
+`Now, we have mapped the Student entity to
+ its corresponding Student table.
+ We should now be able to persist Student
+  objects to the database.
+   Add the following method to the 
+   StudentController of the bundle.`,
+`//StudentController.php
+&lt?php  
+namespace AppBundle\\Controller; 
+
+use Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Route; 
+use Symfony\\Bundle\\FrameworkBundle\\Controller\\Controller; 
+use Symfony\\Component\\HttpFoundation\\Response;  
+use AppBundle\\Entity\\Student; 
+
+class StudentController extends Controller { 
+   /** 
+      * @Route("/student/add") 
+   */ 
+   public function addAction() { 
+      $stud = new Student(); 
+      $stud->setName('Adam'); 
+      $stud->setAddress('12 north street'); 
+      $doct = $this->getDoctrine()->getManager();
+      
+      // tells Doctrine you want to save the Product 
+      $doct->persist($stud);
+      
+      //executes the queries (i.e. the INSERT query) 
+      $doct->flush(); 
+      
+      return new Response('Saved new student with id ' . $stud->getId()); 
+   } 
+} `);
+Block("Fetch Objects from the Database",
+`Create a function in StudentController that
+ will display the student details.
+ <b>StudentController.php</b>`,
+`/** 
+   * @Route("//student//display") 
+*/ 
+public function displayAction() { 
+   $stud = $this->getDoctrine() 
+   ->getRepository('AppBundle:Student') 
+   ->findAll();
+   return $this->render('student//display.html.twig', array('data' => $stud)); 
+}`);
+Block("Create a View",
+`Let’s create a view that points to 
+display action.
+ Move to the views directory and 
+create a file “display.html.twig”.
+Add the following changes :
+<b>display.html.twig</b>`,
+`&ltstyle> 
+   .table { border-collapse: collapse; } 
+   .table th, td { 
+      border-bottom: 1px solid #ddd; 
+      width: 250px; 
+      text-align: left; 
+      align: left; 
+   } 
+&lt/style> 
+
+&lth2>Students database application!&lt/h2>  
+&lttable class = "table">  
+   &lttr>  
+      &ltth>Name&lt/th>  
+      &ltth>Address&lt/th>  
+   &lt/tr>  
+   {% for x in data %} 
+   &lttr>  
+      &lttd>{{ x.Name }}&lt/td>   
+      &lttd>{{ x.Address }}&lt/td>   
+   &lt/tr>  
+   {% endfor %} 
+&lt/table>` );
+Block("Update an Object",
+`To update an object in StudentController,
+create an action and change it as follow`,
+`/** 
+   * @Route("//student//update//{id}") 
+*/ 
+public function updateAction($id) { 
+   $doct = $this->getDoctrine()->getManager(); 
+   $stud = $doct->getRepository(
+       'AppBundle:Student')->find($id);  
+   
+   if (!$stud) { 
+      throw $this->createNotFoundException( 
+         'No student found for id '.$id 
+      ); 
+   } 
+   $stud->setAddress('7 south street'); 
+   $doct->flush();   
+   return new Response('Changes updated!'); 
+}`);
+Block("Delete an Object",
+`Deleting an object is similar and it requires 
+a call to the remove() method of the entity 
+(doctrine) manager,as follow:`,
+`/** 
+   * @Route("/student/delete/{id}") 
+*/ 
+public function deleteAction($id) { 
+   $doct = $this->getDoctrine()->getManager(); 
+   $stud = $doct->getRepository(
+       'AppBundle:Student')->find($id);  
+    
+   if (!$stud) { 
+      throw $this->createNotFoundException(
+          'No student found for id '.$id); 
+   }  
+    
+   $doct->remove($stud); 
+   $doct->flush();  
+   
+   return new Response('Record deleted!'); 
+}`);
+</script>
+
+</body>
