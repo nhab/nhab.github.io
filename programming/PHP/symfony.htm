@@ -12,22 +12,24 @@ stitle="symfony";
 sBody=`
 Symfony is basically a collection of 
 <b>components</b> and <b>bundles</b>. 
-<h2>Components</h2>
-are collection of <b>classes</b> providing
+<h2>Components</h2>are collection of <b>classes</b> providing
 a single core functionality. 
-For example, Cache component provides
-cache functionality
+For example, Cache component
+provides cache functionality
 `;
 sCode="";
 Block(stitle,sBody,null,"javascript");
 Block("Bundle",
-`A bundle is a structured set of files within
-a directory that implement a single feature. 
-<br>Each directory contains everything related
-to that feature, including
-PHP files, templates,stylesheets, JavaScript
-files and testsin the <b>config \ bundles.php</b>
-of the following sample project,there is 4 bundles:
+`A bundle is a structured set of 
+files within a directory that implement
+a single feature. 
+<br>Each directory contains everything 
+related to that feature, including
+PHP files, templates,stylesheets,
+JavaScrip files and testsin the <b>config
+\ bundles.php</b>
+of the following sample project,
+there is 4 bundles:
 `,
 `return [
 Symfony\Bundle\FrameworkBundle\FrameworkBundle::class => ['all' => true],
