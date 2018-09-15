@@ -28,7 +28,6 @@ The following html code,is a working react sample which
  `
 ,`&lt!doctype html>
 &lthtml>
-
 &lthead>
     &ltmeta charset="utf-8">
     &lttitle>Hello React!&lt/title>
@@ -36,16 +35,11 @@ The following html code,is a working react sample which
     &ltscript src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">&lt/script>
     &ltscript src="https://unpkg.com/babel-standalone@6.26.0/babel.js">&lt/script>
 &lt/head>
-
 &ltbody>
     &ltdiv id="root">&lt/div>
     &ltscript type="text/babel">
         class App extends React.Component { 
-            render() { 
-                return (
-                    &lth1>Hello world!&lt/h1>
-                ); 
-            } 
+            render() { return ( &lth1>Hello world!&lt/h1> );  } 
         } 
         ReactDOM.render(&ltApp />, document.getElementById('root'));
     &lt/script>
