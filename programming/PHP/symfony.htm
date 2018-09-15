@@ -232,7 +232,7 @@ Block("Using Components"
       echo $e; 
    } 
 `
-,"php","35%","400px");
+,"php");
 
 Block("Details of Symfony Components"
 ,
@@ -405,20 +405,21 @@ Block("The Complete listing",
 ,"php","100%","1200px");
 </script>
 <h2>Expression</h2>
-It enables a non-programmer to configure the web application with little effort.
+It enables a non-programmer to configure 
+the web application with little effort.
 <br> 
 <script>
 Block("Step 1 <br> Create a project"," expression-language-example"
 ,`cd /path/to/dir 
 mkdir expression-language-example 
 cd expression-language-example 
-composer require symfony/expression-language`,"php","32%");
+composer require symfony/expression-language`,"php",\);
 
 Block("Step 2<br> Create an expression object","",
 `use Symfony\\Component\\ExpressionLanguage
          \\ExpressionLanguage; 
 $language = new ExpressionLanguage();
-`,"php","30%");
+`,"php");
 
 Block("Step 3 <br> Test a simple expression",""
 ,`echo "Evaluated Value: " 
@@ -428,8 +429,10 @@ echo "Compiled Code: "
 `,"php","30%");
 
 Block("Step 4 ",
-` Symfony expression is powerful such that it can intercept a PHP object and 
-its property as well in the expression language.`
+`Symfony expression is powerful such
+that it can intercept a PHP object and 
+its property as well in the expression 
+language.`
 ,`class Product { 
    public $name; 
    public $price; 
@@ -443,7 +446,7 @@ echo "Product price is " . $language
 echo "Is Product price higher than 5: " . $language 
    ->evaluate('product.price > 5', array('product' => $product,)) . "\\r\\n"; 
 //Here, the expression product.price and product.price > 5 
-//intercept $product object's property price and evaluate the result.`,"php","50%","570px");
+//intercept $product object's property price and evaluate the result.`,"php");
 
 Block("The complete code","main.php"
 ,`<?php 
@@ -467,7 +470,7 @@ Block("The complete code","main.php"
    echo "Is Product price higher than 5: " . $language 
       ->evaluate('product.price > 5', array('product' => $product,)) . "\r\n"; 
 ?>
-` ,"html","80%","700px");
+` ,"html");
 
 </script>
 <p>
@@ -492,7 +495,7 @@ Block("Controller",
  `//StudentController.php
  namespace AppBundle\\Controller; 
  use Symfony\\Component\\HttpFoundation\\Response;  
- class StudentController { }`,"php","55%","350px");
+ class StudentController { }`,"php");
 
 Block("Create a Route",
 `Routing maps request URI to a specific controller's method.<br>
@@ -511,7 +514,7 @@ class StudentController {
    } 
 }
 //Now, request the url “http://localhost:8000/student/home”`,
-"php","45%","550px");
+"php",);
  
 </script>
 <h2>Controllers</h2>
@@ -525,7 +528,7 @@ use Symfony\\Component\\
     HttpFoundation\\Response;  
 class DefaultController extends
       Controller {}`,
-      "php","25%","350px" );
+      "php" );
 
 Block("Request Object"
 ,"",`use Symfony\\Component\\HttpFoundation\\Request;
@@ -538,16 +541,18 @@ $request = Request::create(    '/student',    'GET',
 $request->overrideGlobals();  
 //Identifying a Request Object
 $request->getPathInfo();`
-,"php","35%","350px");
+,"php");
 
-Block("Response Object","The only requirement for a controller is to return a Response object",
+Block("Response Object"
+ ,`The only requirement for a controller
+   is to return a Response object`,
 `//Response constructor:
 use Symfony\\Component\\HttpFoundation\\Response;  
 $response = new Response( 
    'Content', 
    Response::HTTP_OK, 
    array('content-type' => 'text/html') 
-);`,"php","35%","350px");
+);`,"php");
 
 Block("Sending or redirecting <br>a Response object","",
 `//Sending Response
@@ -556,8 +561,7 @@ $response->send();
 use Symfony\\Component\\
   HttpFoundation\\RedirectResponse;  
 $response = new RedirectResponse
-   ('http://tutorialspoint.com/');`,"php","25%","350px"
-);
+   ('http://tutorialspoint.com/');`,"php");
 Block("FrontController",
 `A single PHP file that handles every request coming into your application.
  FrontController executes the routing of different URLs to internally different parts
@@ -576,7 +580,7 @@ if (in_array($path, array(’’, ’/’)))  {
    $response = new Response(’Page not found.’, 
    Response::HTTP_NOT_FOUND); 
 } 
-$response->send();`,"php","35%","600px");
+$response->send();`,"php");
 
 Block("Routing",
 `It maps request URI to a specific controller's method.
@@ -596,7 +600,7 @@ class StudentController extends Controller {
       * @Route(“/student/about”) 
    */ 
    public function aboutAction() {   } 
-}`,"php","34%","650px");
+}`,"php");
 
 Block("Wildcard Formats"
 ,`Example:(the \d+ is a regular expression that matches a digit)    `,
@@ -614,7 +618,7 @@ class StudentController extends Controller {
 public function aboutAction($page) { 
     // ... 
 } 
-}`,"php","55%","500px");
+}`,"php");
 Block("Assign Placeholder",
 "You can assign a placeholder value in routing:",
 `// src/AppBundle/Controller/BlogController.php 
@@ -629,7 +633,7 @@ class StudentController extends Controller {
    public function aboutAction($page = 1) { 
       // ... 
    } 
-}`,"php","40%","500px");
+}`,"php");
 
 Block("Redirecting to page","",
 `public function homeAction() { 
@@ -637,7 +641,7 @@ Block("Redirecting to page","",
    return $this-> redirectToRoute('homepage');    
    // redirect externally 
    \\return $this->redirect('http://example.com/doc'); 
-}`,"php","40%");
+}`,"php");
 </script>
 <h2>View Engine</h2>
 <script>
@@ -646,7 +650,7 @@ Block("Templates",
 such as HTML, XML, etc. 
 they reside in 2 different locations ,by default:<br>
  -app/Resources/views/<br>-vendor path to Bundle/Resources/views
- `,``,"php","22%");
+ `,``,"php");
 
  Block("Twig Engine",
 `Twig contains three types of special syntax :<br>
@@ -672,7 +676,7 @@ class StudentController extends Controller {
    public function homeAction() { 
       return $this->render('student/home.html.twig'); 
    } 
-}`,"php","46%","600px");
+}`,"php",);
 
 Block("home.html.twig file","twig file are in view directory",
 `//app/Resources/views/student/home.html.twig  
