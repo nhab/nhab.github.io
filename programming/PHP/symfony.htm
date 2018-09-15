@@ -19,7 +19,7 @@ provides cache functionality
 `;
 sCode="";
 Block(stitle,sBody,null,"javascript");
-Block("Bundle",
+Blockhorizontal("Bundle",
 `A bundle is a structured set of 
 files within a directory that implement
 a single feature. 
@@ -41,13 +41,15 @@ Symfony\Bundle\MonologBundle\MonologBundle::class => ['all' => true],
 
 Block("The application structure",
 `Actually, a Symfony application is 
-itself a bundle composed of other bundles.<br>
-and it is generally called AppBundle.<br>
- A single bundle can use any number of Symfony
+itself a bundle composed of other
+bundles.
+and it is generally called <b>AppBundle</b>.
+A single bundle can use any number of Symfony
 component and also third-party components to 
 provide features such as  Webframework, 
 database access, etc. 
- <br><br>Symfony core web-framework is a bundle
+
+Symfony core web-framework is a bundle
 called FrameworkBundle and there is a bundle 
 called FrameworkExtraBundle, which provides more
 sophisticated options to write a web application.
