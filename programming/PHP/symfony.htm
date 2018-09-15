@@ -12,8 +12,9 @@ stitle="symfony";
 sBody=`
 Symfony is basically a collection of 
 <b>components</b> and <b>bundles</b>. 
-<h2>Components</h2> are collection of 
-<b>classes</b> providing a single core functionality. 
+<h2>Components</h2>
+are collection of <b>classes</b> providing
+a single core functionality. 
 For example, Cache component provides
 cache functionality
 `;
@@ -48,7 +49,7 @@ database access, etc.
 called FrameworkBundle and there is a bundle 
 called FrameworkExtraBundle, which provides more
 sophisticated options to write a web application.
-`,null,null,"29%","400px");
+`);
 
 Block(`SandBox`,
 `The sandbox is an easy-to-install pre-packaged
@@ -59,7 +60,7 @@ sensible defaults.
 Following example initializing bundle "SteveBundle" 
 in "Sites/sandbox/src/Spf13":
 `,
-`> app/console init:bundle Spf13/SteveBundle`,"php","29%","400px");
+`> app/console init:bundle Spf13/SteveBundle`,"php");
 
 Block("Creating a Bundle",
 `1-Choose a namespace. Namespace of a bundle should 
@@ -83,8 +84,7 @@ return [
     // ...
     App\Acme\TestBundle\AcmeTestBundle::class => ['all' => true],
 ];
-`,"php","33%","350px"
-);
+`,"php");
 Block("Registering a bundle",""
 ,`public function registerBundles() { 
 $bundles = array( 
