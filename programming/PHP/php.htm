@@ -127,51 +127,16 @@ public static function run(){
 $ClassName='test';
 $ClassName::run();
 }`,"php");
-</script>
-<table>
-    <thead>
-        <tr width="25%"></th>
-        <tr width="25%"></th>
-        <tr width="20%"></th>
-        <tr width="20%"></th>
-    </thead>
-<tbody>    
-<tr>
-<td>
-</td>   
-
-<td>                 
-</td>
-
-<td>
-</td>
-</tr>
-<tr>            
-    <td>
-Function to find IP of the Visitors:
-<br>              
-<pre><code class="php">        
-Getenv("REMOTE_ADDR")
-</code></pre>             
-</td>
-<td>
-<b> Uploading files</b>
-            
-<pre><code class="html">
-&ltform enctype="multipart/form-data" 
+Block("Function to find IP of the Visitors:",null,`Getenv("REMOTE_ADDR")`,"php");
+Block("Uploading files",null,`&ltform enctype="multipart/form-data" 
 action="upload.php" method="post">
 Choose the file :
 &ltinput name="uploaded" type="file"
 />&ltbr />
 &ltinput type="submit" value="Upload"
 />
-&lt/form>
-</code></pre>  
-</td>
-<td><b>Forms</b><br>
-A Simple HTML Form
-<pre><code class="html">    
-&lthtml>
+&lt/form>`,"php");
+Block("Forms","A Simple HTML Form",`&lthtml>
 &ltbody>
 
 &ltform action="welcome.php"
@@ -188,97 +153,63 @@ E-mail:
 &lt/form>
 
 &lt/body>
-&lt/html>
-</code></pre>           
-</td>
+&lt/html>`,"php");
+Block("Finding php.exe path",null,
+`&lt?php
+echo str_replace('ext/', 'php.exe', ini_get('extension_dir'));
+?>`,"php");
+</script>
 
-</tr>
-</table>
-<table>
 
-<h3> Sessions</h3>
-<table>
-<tr>
-<td>
+<h2> Sessions</h2>
 <b>Session level variables</b>
-<br>1. define them
-<pre><code class="php">
-session_start();
+<br>
+<script>
+    Block("1. define them",null,
+    `session_start();
 $_SESSION['Color']='red';
 $_SESSION['size']='small';
-...
-</code></pre>
-</td>
-<td>
-    2. Then use those variables 
-    <br>in the second page :
-    <pre><code class="php">    
-    session_start();
+...`,"php");
+Block("2. Then use those variables",
+"in the second page :",
+`session_start();
     echo $_SESSION['color'];
-    echo $_SESSION['size'];
-    </code></pre>
-</td>
-<td>
-print the whole session
-<pre><code class="php">         
-print_r($SESSION)  
-</code></pre>      
-</td>
-<td>
-To delete a session variable
-<br> use <b>unset</b>
-
-<pre><code class="php">
-$_SESSION['size']='larg';
+    echo $_SESSION['size'];`,"php");
+Block("print the whole session",null,"print_r($SESSION)","php");
+Block("To delete a session variable","use <b>unset</b>",
+`$_SESSION['size']='larg';
 unset( $_SESSION['shape']);
 //For total deletion     : 
 session_unset();
-session_destroy();
-</code></pre>              
-</td>
-</tr>
-</table>
-<h3> Files Operations:</h3>
-
-<table>
-<tr>
-<td>
-fopen function:
-<pre><code class="php">
-$a=fopen("/home/files/yourfile.txt","r");
+session_destroy();`,"php");
+</script>
+<h2> Files Operations:</h2>
+<script>
+    Block("fopen function:",null,
+    `$a=fopen("/home/files/yourfile.txt","r");
 $b=fopen("yourfile.gif","w");
 //r   determines mode 
 //other modes for opening files:
 x+,x,a+,a,w+,w-,r+,r-
-</code></pre>        
-</td>
-<td>
-some functions to work with files   
-<pre><code class="php">
-fwrite();
+`,"php");
+Block("some functions to work with files",null,
+`fwrite();
 file_get_contents();
 //returns the whole file as an string
 file();
 fgets();// to read line by line
-fread();
-</code></pre>         
-</td>
-<td>file() Example:
-<pre><code class="php">
-$lines=file('yourfile.txt');
+fread();`,"php");
+Block("file() Example:",
+null,
+`$lines=file('yourfile.txt');
 foreach($lines as $line_num=>$line)
 {
 print
 "<font color='red'> line # {$line_num}</font>;"
 .$line."< br/>\n";
-}
-</code></pre>            
-</td>
-</tr>
-<tr>
-<td>fgets() Example
-<pre><code class="php">
-$myFile="yourfile.txt";
+}`,"php");
+Block("fgets() Example",null,
+`$myFile="yourfile.txt";
 $handle=fopen($myFile,'r');
 while(!feof($handle))
 {
@@ -286,103 +217,62 @@ $data=fgets($handle,512);
 echo $data;
 echo "<br>";
 }
-fclose($handle);
-</code></pre>
-</td>
-</tr>
+fclose($handle);`,"php");
+</script>
+<h2>phpMysql</h2>
 
-</table>
-
-<h3>phpMysql</h3>
 <b>Open a Connection to MySQL </b>
-<table>
-<tr>
-<td>
-//MySQLi Object-Oriented Example 
-    <pre><code class="php"> 
-    $servername = "localhost";
+<br/>
+<script>
+Block("MySQLi Object-Oriented",
+null,
+`$servername = "localhost";
     $username = "username";
     $password = "password";
 
     // Create connection
-    $conn = new mysqli($servername, $username, $password);
+    $conn = new mysqli($servername, 
+             $username, $password);
 
     // Check connection
     if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+        die("Connection failed: "
+         . $conn->connect_error);
     }
-    echo "Connected successfully";
-    </code></pre>       
-</td>
-<td>//MySQLi Procedural Example 
-<pre><code class="php"> 
-$servername = "localhost";
+    echo "Connected successfully";`,"php" );
+Block("MySQLi Procedural",null,
+`$servername = "localhost";
 $username = "username";
 $password = "password";
 
 // Create connection
-$conn = mysqli_connect($servername, $username, $password);
+$conn = mysqli_connect($servername, 
+             $username, $password);
 
 // Check connection
 if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+    die("Connection failed: " .
+         mysqli_connect_error());
 }
-echo "Connected successfully";
-</code></pre>
-</td>
-</tr>
-<tr>
-<td>// PDO Example
-<pre><code class="php">                   
-$servername = "localhost";
-$username = "username";
-$password = "password";
-
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=myDB", 
-    $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE,
-    PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully";
-    }
-catch(PDOException $e)
-    {
-    echo "Connection failed: " . $e->getMessage();
-    }
-</code></pre>
-</td>
-<td>
-Insert <br>
-Example (PDO) and get last id
-<pre><code class="php">
-$servername = "localhost";
+echo "Connected successfully";`,"php");
+Block("PDO",null,
+`$servername = "localhost";
 $username = "username";
 $password = "password";
 $dbname = "myDBPDO";
-
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", 
+try {$conn = new PDO("mysql:host=$servername;dbname=$dbname", 
     $username, $password);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "INSERT INTO MyGuests (firstname, lastname, email)
-    VALUES ('John', 'Doe', 'john@example.com')";
+    $sql = "INSERT INTO Guest (fname,lname)VALUES ('John', 'Doe')";
     // use exec() because no results are returned
     $conn->exec($sql);
     echo "New record created successfully";
         $last_id = $conn->lastInsertId();
     echo "New record created successfully.
     Last inserted ID is: " . $last_id;
-    }
-catch(PDOException $e)
-    {
+}catch(PDOException $e) {
     echo $sql . "< br>" . $e->getMessage();
-    }
-$conn = null;
-</code></pre>            
-</td>
-</tr>
-
-    </tbody>
-</table>
+ }
+$conn = null;`,"php");
+</script>
