@@ -8,20 +8,18 @@
 </head>
 <body>
 <script>
-stitle="symfony";
-sBody=`
-Symfony is a set of reusable 
+
+Block("symfony",
+`Symfony is a set of reusable 
 <b>components</b> and <b>bundles</b>. 
 For example, Cache component
 provides cache functionality
-it is also a php web framework
-`;
-sCode="";
-Block(stitle,sBody,null,"javascript");
+it is also a php web framework`,null,"javascript");
+
 BlockHorizontally("Bundle",
 `A bundle is a structured set of 
-files within a directory that implement
-a single feature. 
+<b>files within a directory</b> that 
+implement a single feature. 
 <br>Each directory contains everything 
 related to that feature, including
 PHP files, templates,stylesheets,
@@ -31,25 +29,26 @@ of the following sample project,
 there is 4 bundles:
 `,
 `return [
-Symfony\Bundle\FrameworkBundle\FrameworkBundle::class => ['all' => true],
-Symfony\Bundle\WebServerBundle\WebServerBundle::class => ['dev' => true],
-Symfony\Bundle\TwigBundle\TwigBundle::class => ['all' => true],
-Symfony\Bundle\MonologBundle\MonologBundle::class => ['all' => true],
+Symfony\\Bundle\\FrameworkBundle\\
+  FrameworkBundle::class => ['all' => true],
+Symfony\\Bundle\\WebServerBundle\\
+  WebServerBundle::class => ['dev' => true],
+Symfony\\Bundle\\TwigBundle\\
+  TwigBundle::class => ['all' => true],
+Symfony\\Bundle\\MonologBundle\\
+  MonologBundle::class => ['all' => true],
 ];
 `,"php");
 
 Block("The application structure",
-`A Symfony application is itself a
-bundle composed of other bundles.
+`A <b>Symfony application</b> itself <b>is  a
+bundle composed of other bundles</b>.
 and it is generally called <b>AppBundle</b>.
-A single bundle can use any number of 
-Symfony component and also third-party 
-components to provide features such as 
-Webframework, database access, etc. 
 
-Symfony core web-framework is a bundle
-called <b>FrameworkBundle</b> and there is
-a bundle called <b>FrameworkExtraBundle</b>,
+Symfony core web-framework is
+ <b>FrameworkBundle</b>
+ and there is a bundle called
+  <b>FrameworkExtraBundle</b>,
 which provides more sophisticated options.
 `);
 </script>
@@ -61,13 +60,14 @@ or higher. Run in terminal:
 (This creates a new quick_tour/ directory with 
 a Symfony application)`,
 `composer create-project symfony/skeleton quick_tour`);
-Block("Install and run symfony server",null,
-`composer require server --dev
+Block("Install the web-server and<br/> run symfony server",null,
+`composer require symfony/
+    web-server-bundle  --dev
  php bin/console server:start`);
  Block("Try your new app",
  `by going to http://localhost:8000
   in a browser!`,
- null,null,"40%",null,"https://symfony.com/doc/current/_images/no_routes_page.png",null,"50%");
+ null,null,"40%",null,"https://symfony.com/doc/current/_images/no_routes_page.png",null,"100%");
  Block("define the URL to our new page (rout)",
 `Start in config/routes.yaml.
 rout is the URL to your page (/) 

@@ -2,7 +2,7 @@
 h7,p{white-space:pre;}
 td{padding-left:2px;padding-right:2px;vertical-align: text-top;border:1px black solid;
 font-size: 18px;word-wrap: break-word;}
-h2{font-size: 20px;text-align: center;background-color:#9999ee}
+h2{font-size: 22px;text-align: center;background-color:#9999ee}
 b{font-size:20px;font-weight:800;background-color: lightcyan;}
 code{background-color:#222222;color: lightcyan;
     padding-left: 2px;padding-right:2px;
@@ -12,3 +12,13 @@ strong,h7{text-shadow: 0px 1px, 1px 0px, 1px 1px;}
 .column{color:black; }
 .TB3ColFixed{table-layout:fixed;width:100%;border-collapse: separate;}
 .bolder{text-shadow: 0px 1px, 1px 0px, 1px 1px;}
+.blockHead{
+    width:100%;
+    text-align:center;
+    background-color:#336699;
+    color:#ddccff;
+    font-weight:900;
+    padding-left:2px;
+    padding-right:2px;
+    font-size:22px;
+}
