@@ -1,33 +1,74 @@
 <html>
 <head>
-    <script src="../../libs/jquery-3.3.1.slim.min.js" ></script>
-
-    <script src="../../libs/tooltip/tooltip.js" type="text/javascript"></script>
-    <!--link href="../../libs/tooltip/tooltip.css" rel="stylesheet" type="text/css" /-->
-    <style>
-    </style>
-    <link rel="stylesheet" href="../../assets/css/block.css">
-    <link rel="stylesheet" href="../../libs/highlight/androidstudio2.css">
-    <script src="../../libs/jquery-3.3.1.slim.min.js" ></script>
-    <script src="../../libs/highlight/highlight.pack.js"></script>
-    
-    <script>
+        <script src="../../libs/jquery-3.3.1.slim.min.js" ></script>
+        <script src="../../libs/tooltip/tooltip.js" type="text/javascript"></script>
+        <!--link href="../../libs/tooltip/tooltip.css" rel="stylesheet" type="text/css" /-->
+        <link rel="stylesheet" href="../../assets/css/block.css">
+        <link rel="stylesheet" href="../../libs/highlight/androidstudio2.css">
+        <script src="../../libs/jquery-3.3.1.slim.min.js" ></script>
+        <script src="../../libs/highlight/highlight.pack.js"></script>
+        <script src="../../assets/js/block.js"></script>
+        <script>
+          $('code').each(function() {
+          var that = $(this);
+          // cache the content of 'code'
+          var html = that.html().trim();
+          that.empty();
+          // escape the content
+          that.text(html);
+        });
         
-        $('code').each(function() {
-        var that = $(this);
-        // cache the content of 'code'
-        var html = that.html().trim();
-        that.empty();
-        // escape the content
-        that.text(html);
-    });
-    
-    hljs.initHighlightingOnLoad();
-    </script>
+        hljs.initHighlightingOnLoad();
+        </script>
 </head>
 
 <body>
+<script>
+Block("What is Composer ?",
+`It is a PHP <b>dependency management tool</b>
+Suppose:
+    a project depends on a number of libraries.
+and Some of them depend on other libraries.
+Composer:
+1.  Enables you to declare the libraries.
+2.  Finds out which versions of which packages
+ need to be installed, and installs them
+ (meaning it downloads them into your project)
+3.Composer also helps 
+ class auloading and namespacing;`);
 
+ Block("Setup on Windows",
+`install it by the <a href='https://getcomposer.org/Composer-Setup.exe'>Setup</a>`);
+
+Block("Setup the project",
+`after installing composer on your system,
+all you need is a <b>composer.json</b> 
+file in your project.
+
+by running :<code>composer update</code>
+Composer will download all needed versions
+of dependencies listed in the
+<b>composer.json</b> into your project.`);
+
+Block("composer.json content"
+,`The first (and often only) thing 
+you specify in composer.json is
+the <b>require</b> key.
+You are simply telling Composer 
+which packages your project 
+depends on.
+As you see,it maps the package
+ name to its version.
+The required packages will be 
+downloaded to the project directory 
+from the packaglist online repository:
+ https://packagist.org/`,
+ `{
+    "require": {
+        "monolog/monolog": "1.0.*"
+    }
+}`,"php");        
+</script>
 <table class="TB3ColFixed">
 <thead>
 <tr width="30%"></th>
@@ -35,48 +76,6 @@
 <tr width="33%"></th>
 </thead>
 <tbody>
-<tr>
-<td>          
-<h2> What is Composer ?</h2>
-It is a PHP <b>dependency management tool</b><br>
-Suppose:<br>
-    a project depends on a number of libraries.<br>
-and Some of them depend on other libraries.<br>
-<br>
-Composer:<br>
-1.  Enables you to declare the libraries.<br>
-2.  Finds out which versions of which packages
- need to be installed, and installs them<br>
-    (meaning it downloads them into your project).<br>
-
-3.Composer also helps class auloading and namespacing;
-</td>
-
-<td>
-<h2> Setup in the project</h2>
- after installing composer on your system,<br>
-all you need is a <b>composer.json</b> file in your project.<br>
-
-
-</td>
-<td>
-<h2> composer.json content</h2>
-The first (and often only) thing you specify in composer.json is
-the <b>require</b> key.<br>
-You are simply telling Composer which packages your project depends on.
-<pre><code class="json">
-{
-    "require": {
-        "monolog/monolog": "1.0.*"
-    }
-}
-</code></pre>
-As you see,it maps the package name to its version.<br>
-The required packages will be downloaded to the project directory 
-from the packaglist online repository: https://packagist.org/
-        
-</td>
-</tr>
 <tr>
 
 
