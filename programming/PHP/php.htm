@@ -3,12 +3,6 @@
     
         <script src="../../libs/tooltip/tooltip.js" type="text/javascript"></script>
         <!--link href="../../libs/tooltip/tooltip.css" rel="stylesheet" type="text/css" /-->
-        <style>
-            .imagesize{width:350px;height:350px;}
-            .column{color:black; }
-            td{padding-left:5px;}
-        </style>
-        
         <link rel="stylesheet" href="../../assets/css/block.css">
         <link rel="stylesheet" href="../../libs/highlight/androidstudio2.css">
         <script src="../../libs/jquery-3.3.1.slim.min.js" ></script>
@@ -35,28 +29,28 @@
     sCode+="&lt?php "+"<br>";
     sCode+="echo \"My first PHP script!\""+"<br>";
     sCode+="?> &lt/body>&lt/html>"+"<br>";
-    Block(stitle,sBody,sCode,"html");
+Block(stitle,sBody,sCode,"html");
 Block("online <br/>code playground",
 `<a href='https://www.ideone.com/ryTuHp'>ideone </a>
 <a href="http://codepad.org/w4gyeryk">codepad</a>
 `);
 
-    Block("Comments","are like c++:","// , /*...*/","php");
+Block("Comments","are like c++:","// , /*...*/","php");
 
     sCode="&lt?php echo \"i like it\" ?>"+"<br>";
     sCode+="&lt?php print \"I like it\" ?>";
     Block("writing a statement", "  'Echo' and 'PRINT' :",sCode,"html");
 
-    stitle="Variables";
-    sBody="- Don`t need definition.<br>- Wherever used ,are known everafter.<br>";
-    sBody+="- Variable names must begin with $ <br>";
-    sBody+="- Are case sensitive";
-    sCode="&lt?php<br>$like=\"I like it\"<br>print $like ?>";
-    Block(stitle,sBody,sCode,"php");
-     
-    Block("combining Strings","use dot (.)","print $like .\" \" .$num;","php");
     
-    stitle="dynamic <br/>variable names";
+    sCode="&lt?php<br>$like=\"I like it\"<br>print $like ?>";
+Block("Variables",
+`- Don't need definition.
+- They begin with $ 
+- Are case sensitive`,sCode,"php");
+     
+    Block("Combining Strings","use dot (.)","print $like .\" \" .$num;","php");
+    
+    stitle="Dynamic <br/>variable names";
     sCode="$test=\"success\";<br>$primary=\"test\";<br>$ID=${$primary};<br>echo $ID;";
     Block(stitle,"",sCode,"php");
     
@@ -127,7 +121,7 @@ public static function run(){
 $ClassName='test';
 $ClassName::run();
 }`,"php");
-Block("Function to find IP of the Visitors:",null,`Getenv("REMOTE_ADDR")`,"php");
+Block("Function to find <br/>IP of the Visitors:",null,`Getenv("REMOTE_ADDR")`,"php");
 Block("Uploading files",null,`&ltform enctype="multipart/form-data" 
 action="upload.php" method="post">
 Choose the file :
@@ -138,25 +132,20 @@ Choose the file :
 &lt/form>`,"php");
 Block("Forms","A Simple HTML Form",`&lthtml>
 &ltbody>
-
 &ltform action="welcome.php"
 method="post">
-
-Name:   
-&ltinput type="text" name="name">
+Name:   &ltinput type="text" name="name">
 &ltbr>
-E-mail:
-&ltinput type="text" name="email">
+E-mail:&ltinput type="text" name="email">
 &ltbr>
-
 &ltinput type="submit">
 &lt/form>
-
 &lt/body>
 &lt/html>`,"php");
 Block("Finding php.exe path",null,
 `&lt?php
-echo str_replace('ext/', 'php.exe', ini_get('extension_dir'));
+echo str_replace('ext/', 'php.exe', 
+  ini_get('extension_dir'));
 ?>`,"php");
 </script>
 
