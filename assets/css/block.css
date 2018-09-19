@@ -15,7 +15,8 @@ strong,h7{text-shadow: 0px 1px, 1px 0px, 1px 1px;}
 .blockFrame{
     vertical-align:text-top;
     border:1px black solid;
-    margin-left:2px;
+    margin-left:5px;
+    margin-top:5px;
     display:inline-block;
     overflow: auto;
     background-color: #eeeeee;
