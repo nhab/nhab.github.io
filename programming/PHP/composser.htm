@@ -1,0 +1,173 @@
+<html>
+<head>
+        <script src="../../libs/jquery-3.3.1.slim.min.js" ></script>
+        <script src="../../libs/tooltip/tooltip.js" type="text/javascript"></script>
+        <!--link href="../../libs/tooltip/tooltip.css" rel="stylesheet" type="text/css" /-->
+        <link rel="stylesheet" href="../../assets/css/block.css">
+        <link rel="stylesheet" href="../../libs/highlight/androidstudio2.css">
+        <script src="../../libs/jquery-3.3.1.slim.min.js" ></script>
+        <script src="../../libs/highlight/highlight.pack.js"></script>
+        <script src="../../assets/js/block.js"></script>
+        <script>
+          $('code').each(function() {
+          var that = $(this);
+          // cache the content of 'code'
+          var html = that.html().trim();
+          that.empty();
+          // escape the content
+          that.text(html);
+        });
+        
+        hljs.initHighlightingOnLoad();
+        </script>
+</head>
+
+<body>
+<script>
+Block("What is Composer ?",
+`Composer is a PHP 
+<b>dependency management tool</b>
+Composer finds out <h7>which versions</h7>
+of <h7>which packages</h7> need to be 
+installed, and <h7>downloads</h7> and <h7>installs</h7>
+them based on your declaration in
+<h7> composer.json</h7> file,into the project.
+Composer also helps 
+class auloading and namespacing`);
+ Block("Setup on Windows",
+`install it by the <a href='https://getcomposer.org/Composer-Setup.exe'>Setup</a>`);
+Block("Setup the project",
+`after installing composer on your system,
+all you need is a <b>composer.json</b> 
+file in your project.
+by running :<code>composer update</code>
+Composer will download all needed versions
+of dependencies listed in the
+<b>composer.json</b> into your project.`);
+
+Block("composer.json content"
+,`usually,The only thing you specify 
+in composer.json is the <b>require</b> key.
+You are simply telling Composer which 
+packages your project depends on.
+It maps the package name to its version.
+The required packages will be 
+downloaded to the project directory 
+from the packaglist online repository:
+ https://packagist.org/`,
+ `{
+    "require": {
+        "monolog/monolog": "1.0.*"
+    }
+}`,"php");  
+Block("Getting Dependencies or updating",
+`To <strong>install</strong> dependencies ,
+<strong>based on  composer.json file</strong>,
+<strong> run</strong> the command:
+<pre><code class="html">
+    php composer.phar install
+</code></pre>
+running the above command will download 
+dependencies into the project.
+it will also creates or updates a file named<br>
+<code> composer.lock </code> file  into your
+project to maintain the proper version of 
+dependencies among diffrent programmers of
+the project,<br>so the <code> composer.lock </code>
+file  should be commited into the version
+ control.`);
+
+Block("Update dependencies to latest",
+ null,`php composer.phar update`,"html");      
+
+Block("Par(PHP archive)",
+`PHAR (PHP archive), which is an archive
+format for PHP which can be run on the 
+command line, amongst other things.`);
+Block("AutoLoading",
+`“Autoloading” is Whenever a class is used,
+ it will be loaded so the application 
+doesn’t have to load all classes on each 
+request,`);
+
+const blkPsr=new BlockFrame();
+blkPsr.AddHeader("PSR-4 and namespaces");
+blkPsr.AddBody(`PSR-4 is the newest standard of autoloading
+ in PHP, and it compels us to use namespaces.`);
+</script>
+<h2>Steps to autoload by PSR-4</h2>
+<script>
+
+const blkAutoloadbyPSR=new BlockFrame();
+blkAutoloadbyPSR.AddHeader("a. Put the classes in a directory ");
+blkAutoloadbyPSR.AddBody(` Put the classes that we want to
+autoload in a dedicated directory. For example:`);
+blkAutoloadbyPSR.AddCode(`your-website/
+    src/
+    Db.php
+    Page.php
+    User.php`);
+
+const blkAutoloadbyPSRb=new BlockFrame();
+blkAutoloadbyPSRb.AddHeader("b. Give the classes a namespace:");
+blkAutoloadbyPSRb.AddCode(
+`namespace Acme;
+
+class Page {
+    public function __construct()
+    {
+        echo "hello, i am a page.";
+    }
+}`);
+blkAutoloadbyPSRb.AddBody(
+`We give the same namespace Acme to all
+ of the classes in the src/ directory. `);
+
+const blkAutoloadbyPSRc=new BlockFrame();
+blkAutoloadbyPSRc.AddHeader(`c. Point the namespace to
+ the src/directory`);
+blkAutoloadbyPSRc.AddBody(`Point the namespace to the src/ 
+directory in the composer.json file.for example:`);
+blkAutoloadbyPSRc.AddCode(`
+<pre><code class="json">
+{
+    "autoload": {
+    "psr-4": {
+        "Acme\\":"src/"
+    }
+    }
+}`);
+blkAutoloadbyPSRc.AddBody(
+`We use the psr-4 key.The namespace Acme points to the
+src/ directory. The namespace has to end with \\.
+For example, "Acme\\".You can replace the generic Acme
+with the name of your brand or website.`);
+
+const blkautoloadd=new BlockFrame();
+blkautoloadd.AddHeader("d. Update the Composer autoloader");
+blkautoloadd.AddCode(`$ composer dumpautoload -o`);
+
+const blkautoloade=new BlockFrame();
+blkautoloade.AddHeader(`e. Import the namespace to your scripts`);
+blkautoloade.AddBody(`The scripts need to import
+the namespace as well as the autoloader, e.g., index.php:`);
+blkautoloade.AddCode(`require "vendor/autoload.php";
+
+use Acme\Db;
+use Acme\User;
+use Acme\Page;
+
+$page1 = new Page();`);
+
+</script>
+
+<table class="TB3ColFixed">
+<thead>
+<tr width="30%"></th>
+<tr width="33%"></th>
+<tr width="33%"></th>
+</thead>
+<tbody>
+</table>
+<p>
+</body>

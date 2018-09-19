@@ -1,3 +1,4 @@
+
 function Block(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",imagWidth="100%")
 {
     sStyle="padding-left:"+padding+"px;padding-right:"+padding+"px;padding-top:"+padding+"px;padding-down:"+padding+"px";
@@ -24,10 +25,10 @@ function Block(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",imagW
     };
     if(imageSrc)
     {
-        //document.getElementById(id1).write("<img src='"+imageSrc+"'>");
         document.write("<img src='"+imageSrc+"' style='width:"+imagWidth+"'>");
     }
     document.write("</div>");
+    return document.getElementById(id1);
 }
 function BlockHorizontally(title,body,code,codetype,widt,hei,imageSrc=null,padding="7")
 {
@@ -61,4 +62,48 @@ function BlockHorizontally(title,body,code,codetype,widt,hei,imageSrc=null,paddi
         document.write("<img src='"+imageSrc+"' style='display:inline-block;overflow:auto;'>");
     }
     document.write("</div>");
+}
+class BlockFrame{
+     
+    constructor(){
+        var padding="7";
+        var widt=null;
+        var hei=null;
+        sStyle="padding-left:"+padding+"px;padding-right:"+padding+"px;padding-top:"+padding+"px;padding-down:"+padding+"px";
+        if(widt)
+            sStyle+=";width:"+widt+";";
+        if(hei)
+            sStyle+=";height:"+hei+";";
+        this.frameID="dv"+Math.random()*20;
+        document.write("<div class='blockFrame' style='"+sStyle+";' id='"+this.frameID+"'></div>");
+    }
+    AddHeader(title)
+    {
+        var para = document.createElement("div");
+        para.setAttribute('class', 'blockHead');
+        var t = document.createTextNode(title);
+        para.appendChild(t);
+        document.getElementById(this.frameID).appendChild(para);
+    }
+    AddBody(bod)
+    {
+        var para = document.createElement("div");
+        para.setAttribute('class', 'blockBody');
+        var t = document.createTextNode(bod);
+        para.appendChild(t);
+        document.getElementById(this.frameID).appendChild(para);
+    }
+    AddCode(cod,codeType=`javascript`)
+    {
+        var gParent = document.createElement("pre");
+        var para=document.createElement("code");
+        para.setAttribute('style','overflow: auto;');
+        para.setAttribute('class', codeType);
+        gParent.appendChild(para);
+        var t = document.createTextNode(cod);
+        para.appendChild(t);
+        gParent.appendChild(para);
+        document.getElementById(this.frameID).appendChild(gParent);
+
+    }
 }
