@@ -8,16 +8,29 @@
     </head>
     <body>
 <script>
-Block("What is Doctrine 2 ?",
+Block("What is Doctrine ?",
 `it is an <b>ORM</b> for PHP `);
+
+Block("installing doctrine",null,
+`composer require doctrine`);
+Block("Installing Doctrine",null,
+` composer require symfony/orm-pack
+ composer require symfony/maker-bundle --dev`);
+
+ 
 Block("What is an Entity ?",
 `It is a <b>PHP Objects</b> that can be 
 identified by a <b>unique identifier</b>.`);
+
+
 Block("persistable property",
 `An entity contains <b>persistable</b> properties. 
 A <b>persistable property</b> is an
- instance variable of the entity
-  that is <b>saved into</b> and <b>retrieved from</b> the database .`);
+instance variable of the entity
+that is <b>saved into</b> and <b>retrieved from</b> 
+the database .`);
+
+
 </script> 
 <h2>Doctrine ORM Example</h2> 
 <script>

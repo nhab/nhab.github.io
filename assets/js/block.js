@@ -1,6 +1,7 @@
-function Block(title,body,code,codetype,widt,hei,imageSrc=null,padding="7",imagWidth="100%")
+function Block(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",imagWidth="100%")
 {
-    sStyle="padding-left:"+padding+"px;padding-right:"+padding+"px;vertical-align:text-top;border:1px black solid;margin-left:2px;";
+    sStyle="padding-left:"+padding+"px;padding-right:"+padding+"px;padding-top:"+padding+"px;padding-down:"+padding+"px";
+    sStyle+=";vertical-align:text-top;border:1px black solid;margin-left:2px;";
     sStyle+=";display:inline-block;overflow: auto;";
     if(widt)
         sStyle+=";width:"+widt+";";
@@ -13,7 +14,7 @@ function Block(title,body,code,codetype,widt,hei,imageSrc=null,padding="7",imagW
                    +title+"</div>");
     //body:
     if(body)
-        document.write("<div style='width:100%;white-space:pre;display:block;clear:both;overflow: auto;overflow-wrap: break-word;'>"
+        document.write("<div class='blockBody'>"
                        +body+"</div>");
     if(codetype && code)
         document.write("<pre><code style='overflow: auto;' class='"+codetype+"'>"+code+"</code></pre>");

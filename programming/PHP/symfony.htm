@@ -51,9 +51,64 @@ Symfony core web-framework is
   <b>FrameworkExtraBundle</b>,
 which provides more sophisticated options.
 `);
+Block("downloding installler(Windows)",
+`First download symfony:
+<pre><code>
+php -r "file_put_contents('symfony', 
+ file_get_contents('https://symfony.com/installer'));"
+</code></pre>
+and execute the following:
+<pre><code>c:\> 
+(echo @ECHO OFF & echo php "%~dp0symfony" %*) 
+   > symfony.bat
+</code></pre>
+Then, move both files (symfony and
+symfony.bat)to any location included 
+in your execution path.
+Now you can run the symfony command
+anywhere on your system.`,
+null
+);
+Block("Using the installer",
+`Execute the new command and 
+provide the name of your project
+as the only argument:`
+,`# Linux, Mac OS X
+$ symfony new my_project
+
+# Windows
+c:\> php symfony new my_project` );
+Block("Unistalling",
+`Symfony on your computer is just a folder 
+containing the framework and the structure
+of the files, so you can delete that
+folder and you are done. Composer is just
+an binary file (phar) that can run on the 
+command line. 
+Locate where that file is and delete it.`);
+
+Block("Symfony Flex",
+`<a  href="https://github.com/symfony/flex">Symfony Flex</a> is the new way to install and 
+manage Symfony applications.
+Flex is not a new Symfony version,
+but a tool that replaces and improves
+the <a  href="https://github.com/symfony/symfony-installer">Symfony Installer</a> and the 
+<a href="https://github.com/symfony/symfony-standard">Symfony Standard Edition</a>.`);
+Block("How Does Flex Work",
+`Symfony Flex <h7>is a Composer plugin</h7> that modifies the 
+behavior of the require,update, and remove commands. 
+When installing or removing dependencies in a Flex-enabled 
+application, Symfony can <h7>perform tasks before 
+and after the execution</h7> of Composer tasks.`);
 </script>
 <h2>Setting up a Hello symfony! project from scrach</h2>
 <script>
+Block("Creating the project<br/> by flex is recommended",
+`The use of the Symfony Installer
+ to create new applications is no 
+ longer recommended since Symfony 3.3.
+ Use the <code>Composer create-project</code>
+ command instead`);
 Block("download and install",
 `Make sure you've installed Composer and have PHP 7.1.3 
 or higher. Run in terminal:
