@@ -65,17 +65,26 @@ function BlockHorizontally(title,body,code,codetype,widt,hei,imageSrc=null,paddi
 }
 class BlockFrame{
      
-    constructor(){
+    constructor(header=null,body=null,code=null,id=null){
         var padding="7";
         var widt=null;
         var hei=null;
-        sStyle="padding-left:"+padding+"px;padding-right:"+padding+"px;padding-top:"+padding+"px;padding-down:"+padding+"px";
+        var sStyle="padding-left:"+padding+"px;padding-right:"+padding+"px;padding-top:"+padding+"px;padding-down:"+padding+"px";
         if(widt)
             sStyle+=";width:"+widt+";";
         if(hei)
             sStyle+=";height:"+hei+";";
-        this.frameID="dv"+Math.random()*20;
+        if(id)
+            this.frameID=id;
+        else
+            this.frameID="dv"+Math.random()*20;
         document.write("<div class='blockFrame' style='"+sStyle+";' id='"+this.frameID+"'></div>");
+        if(header)
+            this.AddHeader(header);
+        if(body)
+            this.AddBody(body);
+        if(code)
+            this.AddCode(code);
     }
     AddHeader(title)
     {
@@ -103,5 +112,20 @@ class BlockFrame{
         para.appendChild(t);
         gParent.appendChild(para);
         document.getElementById(this.frameID).appendChild(gParent);
+    }
+    AddUrl(title,url)
+    {
+        var para = document.createElement("a");
+        para.href=url;
+        para.innerHTML=title;
+        document.getElementById(this.frameID).appendChild(para);    
+    }
+    AddBr()
+    {
+        var para = document.createElement("br");
+        document.getElementById(this.frameID).appendChild(para);        
+    }
+    AddObj(obj){
+        document.getElementById(this.frameID).appendChild(obj);
     }
 }

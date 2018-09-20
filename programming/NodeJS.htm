@@ -1,0 +1,446 @@
+<html>
+<head>
+        <script src="../libs/jquery-3.3.1.slim.min.js" ></script>
+        <script src="../libs/tooltip/tooltip.js" type="text/javascript"></script>
+        <!--link href="../libs/tooltip/tooltip.css" rel="stylesheet" type="text/css" /-->
+        <link rel="stylesheet" href="../assets/css/block.css">
+        <link rel="stylesheet" href="../libs/highlight/androidstudio2.css">
+        <script src="../libs/jquery-3.3.1.slim.min.js" ></script>
+        <script src="../libs/highlight/highlight.pack.js"></script>
+        <script src="../assets/js/block.js"></script>
+        <script>
+          $('code').each(function() {
+          var that = $(this);
+          // cache the content of 'code'
+          var html = that.html().trim();
+          that.empty();
+          // escape the content
+          that.text(html);
+        });
+        
+        hljs.initHighlightingOnLoad();
+        </script>
+</head>
+
+<body>
+<script>
+const blkNodejs=new BlockFrame();
+blkNodejs.AddHeader("Node.js");
+blkNodejs.AddBody(
+ `Has a command-line tool that can be run 
+as a regular web server It can also run
+a JavaScript programsNode.js has lot of
+libraries called pacckages that can be
+ searched here :<a href='https://www.npmjs.com/'>npmjs.com</a>`);
+
+const blkNVM=new BlockFrame();
+blkNVM.AddHeader("NVM");
+blkNVM.AddBody(
+ `Is node version manager
+to this version the default one:`);
+blkNVM.AddCode("$ nvm alias default 0.10.31");      
+
+const blkNPM=new BlockFrame();
+blkNPM.AddHeader("NPM");
+blkNPM.AddBody(
+` Is the <h7>package manager</h7> for javascript and the Node.js server platform.
+It is included in nodejs installation by default.
+<b>Features</b>
+- local dependencies:
+   It installs application dependencies locally, not globally.
+- multiple versions of the same dependency:
+	 It handles multiple versions of the same module 
+	 at the same time.
+- tarball or git dependencies:
+	can specify tarballs or git repositories as dependencies.
+- Easy module publishing (to the npm registry).
+- Easy creation of CLI utilities that others can install .`);
+
+const blk1stExample=new BlockFrame();
+blk1stExample.AddHeader(`Example of shell scripts`);
+blk1stExample.AddBody(
+`1. create a file named <b>a.js</b>
+2. write this line inside it and save:
+  <code>console.log("Hello World");</code>
+3. in command prompt run this command :
+  <code>node h.js</code>
+4. finished! It will prints <b>Hello world</b>.`);
+
+const blkWitharg=new BlockFrame("script with arguments");
+blkWitharg.AddBody(`1. put this content inside your script `);    
+blkWitharg.AddCode(
+`process.argv.forEach((val, index) => {
+	console.log('$\{index}: $\{val}');
+});`);
+blkWitharg.AddBody(`2. run your script by proving arguments:`);
+blkWitharg.AddCode(`node h.js one two=three four`);
+
+const blk10=new BlockFrame("install NVM on an Ubuntu",
+"1. prerequisite: make sure system has a C++ compiler:");
+blk10.AddCode(
+` sudo apt-get update
+ sudo apt-get install build-essential libssl-dev`);
+blk10.AddBody("2. NVM Installation:");
+blk10.AddCode(
+`copy-paste the one-line installer for NVM into the terminal:
+$ curl https://raw.githubusercontent.com/creationix/nvm/v0.13.1/install.sh | bash`);
+blk10.AddBody(`3. Checking NVM Installation:
+so we will logout and login to verify that:`,`$ nvm`);
+blk10.AddCode("	$ nvm install v0.10.31");
+blk10.AddBody("5.Both node and npm should be available in the terminal now:");
+blk10.AddCode(
+`		$ node -v &amp;&amp; npm -v
+		v0.10.31
+		1.4.23`);
+const blk11=new BlockFrame("Install From source",``);
+blk11.AddCode(`wget http://nodejs.org/dist/node-v0.4.4.tar.gz
+$ tar -xzf node-v0.4.4.tar.gz
+$ cd node-v0.4.4
+$ ./configure
+$ sudo make install`);
+
+const blk12=new BlockFrame("switching between node versions",null,
+`$ nvm install v0.8.10
+$ nvm use v0.8.10`);
+
+const blk13=new BlockFrame("list of versions <br/>and also the current <br/>and default versions :");
+blk13.AddCode("nvm list");
+
+
+const blk14=new BlockFrame("getting the version<br>(in command line)",null,
+`node -v`);
+	
+const blk15=new BlockFrame("A hello world http server",
+`program responds to hello world via http.
+We'll call the file 'hello_http.js' 
+and put the following code into it:`
+,`var http = require('http');
+var server = http.createServer(
+	function(req, res) {
+		res.writeHead(200);
+		res.end('Hello Http');
+	});
+server.listen(8080);`);
+blk15.AddBody(`Now lets run this program from the 
+terminal by typing:`);
+	blk15.AddCode("$ node hello_http.js");
+	blk15.Addbody(
+`Testing the server is as simple as opening a new browser tab
+and navigating to the following url: http://localhost:8080/. 
+you should see  : 'Hello Http'.
+Alternatively, you could also open up a new terminal and use
+curl to test your server:
+<code>$ curl localhost:8080
+Hello Http</code>`);
+
+const blkModule=new BlockFrame("Modules (or packages or libraries)");
+blkModule.AddBody(`Node implements the CommonJS interface for modules. `);
+
+const blkLodingDependencies = new BlockFrame("Loading depencies<br/>(using the <b>require</b> keyword)");
+blkLodingDependencies.AddBody(`Example:`);
+blkLodingDependencies.AddCode(
+`//we can require some native modules
+var http = require('http');   
+var dns = require('dns');
+//We can also require relative files:
+var myFile = require('./myFile'); 
+// loads myFile.js`);
+
+const blkInstallingModules=new BlockFrame("Installing modules from npm");
+blkInstallingModules.AddBody(
+`either search for them on the website or on Github. 
+The syntax for installing an npm module locally :`);
+blkInstallingModules.AddCode(
+`# where express === module name
+$ npm install express`);
+blkInstallingModules.AddBody(
+`You can require module install from npm as you would do
+with the native ones,no need to specify path:`);
+blkInstallingModules.AddCode("var express = require('express');");
+
+const blkModuleScop=new BlockFrame("Module scope");
+blkModuleScop.AddBody(
+`-Node modules aren't automatically 
+injected into the global scope  
+, instead you just assigned them to
+a variable of your choice. 
+
+That means that you don't have to 
+care about two or more modules that
+have functions with the same name.`);
+</script>
+<h2>Creating your own modules</h2>
+<script>
+const blkCreatingModules=new BlockFrame ("Step 1");
+blkCreatingModules.AddCode(`configure npm
+npm set init.author.name "Brent Ertz"
+npm set init.author.email "brent.ertz@gmail.com"
+npm set init.author.url "http://brentertz.com"
+npm adduser`);
+const blkCreatingModules2=new BlockFrame ("Step 2");
+blkCreatingModules2.AddBody(
+`The primary 2 items that we are concerned
+with here are <b>require</b> and <b>exports</b>. 
+You require other modules that you wish 
+to use in your code and your module exports
+anything that should be exposed publicly.
+For example:`);
+blkCreatingModules2.AddCode(
+`var other = require('other_module');
+module.exports = function() {
+  console.log(other.doSomething());
+}`);
+const blkCreatingModules3=new BlockFrame ("Step 3");
+blkCreatingModules3.AddBody(
+`Executing the following command will 
+ask you a bunch of questions,   
+and then write out a package.json file.`);
+blkCreatingModules3.AddCode(`npm init`);
+
+const blkCreatingModules4=new BlockFrame ("Step 4");
+blkCreatingModules4.AddBody(
+`Create an index.js file to hold the
+primary module code. for example:`);
+blkCreatingModules4.AddCode(
+`/**
+* Escape special characters in the given string of html.
+*
+* @param  {String} html
+* @return {String}
+*/
+module.exports = {
+escape: function(html) {
+	return String(html)
+			.replace(/&/g, '&amp;')
+			.replace(/"/g, '&quot;')
+			.replace(/'/g, '&#39;')
+			.replace(/</g, '&lt;')
+			.replace(/>/g, '&gt;');
+	},
+	/**
+	* Unescape special characters in
+	* the given string of html.
+	* @param  {String} html
+	* @return {String}
+	*/
+	unescape: function(html) {
+	return String(html)
+			.replace(/&amp;/g, '&')
+			.replace(/&quot;/g, '"')
+			.replace(/&#39;/g, \'\'\')
+			.replace(/&lt;/g, '<')
+			.replace(/&gt;/g, '>');
+	}
+};
+....`);
+</script>
+<h2>Other concepts</h2>
+
+<script>
+const blk1=new BlockFrame("CallBack",
+`-you are telling it to do something and <h7>when 
+it is done</h7> it will call your function(callback).
+-In asynchronous programming we do not return
+ values when our functions are done,but instead 
+ we use the continuation-passing style (CPS)`);
+
+const blk2=new BlockFrame(`Events`,
+`The standard callback pattern works well for 
+the use cases where we want to be notified when
+the async function finishes. 
+However, there are situations that require being
+notified of different events that do not occur 
+at the same time.`);
+
+const blk3=new BlockFrame(`Streams`, 
+`represent an abstract interface for asynchronously 
+manipulating a continuous flow of data.
+They can be classified into 5 types: 
+<h7>readable, writable, transform, duplex and classic</h7>.`);
+
+const blk4=new BlockFrame(`Directory`,null,
+`C:\\Program Files\\nodejs\\
+ node_modules\\npm\\node_modules`);
+
+const blk5=new BlockFrame("using node commands",
+`1. with no arguments. 
+This will open an interactive shell 
+where you can execute raw JavaScript code.`,
+`$ node
+> console.log('Hello World');
+Hello World`);
+blk5.AddBody(
+`2. by providing it a JavaScript file to execute.
+This is almost always how you will be using it.`);
+blk5.AddCode(
+`hello.js
+console.log('Hello World');
+$ node hello.js
+Hello World`);
+
+const blk6=new BlockFrame("file operations",
+`readFile : 
+	takes a file path and a callback.
+	The callback will be invoked when the file is done
+	 being read.
+	The file data comes in the form of a Buffer,
+	which is basically a byte array. 
+	We can convert it to a string using the toString() function.`
+,`// Load the fs (filesystem) module.
+	var fs = require('fs');// 
+
+	// Read the contents of the file into memory.
+	fs.readFile('example_log.txt', function (err, logData) {
+	
+	// If an error occurred, throwing it will
+	// display the exception and kill our app.
+	if (err) throw err;
+	
+	// logData is a Buffer, convert to string.
+	var text = logData.toString();
+	
+	var results = {};
+
+	// Break up the file into lines.
+	var lines = text.split('\\n');
+	
+	lines.forEach(function(line) {
+		var parts = line.split(' ');
+		var letter = parts[1];
+		var count = parseInt(parts[2]);	
+		if(!results[letter]) {
+			results[letter] = 0;
+		}
+		results[letter] += parseInt(count);
+	});
+	console.log(results);	// { A: 2, B: 14, C: 6 }
+	});`);
+const BLK16=new BlockFrame("HTTP server example",null,
+`var http = require('http');
+
+http.createServer(function (req, res) {
+	res.writeHead(200, {'Content-Type': 'text/plain'});
+	res.end('Hello World\n');
+}).listen(8080);
+
+console.log('Server running on port 8080.');
+
+// This is not a full-featured HTTP server.
+// It can't serve any HTML file or images.
+// In fact, no matter what you request,
+// it will return 'Hello World'.
+// However, you can run this and hit 
+//http://localhost:8080 in your browser 
+//and you'll see the text.			
+// If you want this to be a full-featured 
+//web server, then you have to do that work.
+'''`);
+const blk17=new BlockFrame("Creating a realtime application <br/>with Express and Socket.io"
+,`Express is the most popular web framework for Node,
+while Socket.IO is a realtime framework that enables 
+bi-directional communication between web clients and the server.
+We are going to create a basic tracking pixel application using
+the two that has a dashboard which reports realtime visits.
+
+Besides Express and Socket.IO we will need to install the
+emptygif module.
+When the user visits http://localhost:1337/tpx.gif, a message
+will be sent to all the users that are viewing the homepage.
+The message will contain information related to the clients,
+mainly their IP address and user agent.
+
+Below is the code for the server.js file:
+`,
+`var emptygif = require('emptygif');
+var express = require('express');
+var app = express();
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
+
+app.get('/tpx.gif', function(req, res, next) {
+io.emit('visit', {
+	ip: req.ip,
+	ua: req.headers['user-agent']
+});
+
+emptygif.sendEmptyGif(req, res, {
+	'Content-Type': 'image/gif',
+	'Content-Length': emptygif.emptyGifBufferLength,
+	'Cache-Control': 'public, max-age=0' 
+	//or specify expiry to make sure it will call
+	// everytime
+});
+});
+
+app.use(express.static(__dirname + '/public'));
+
+server.listen(1337);`);
+const blk18=new BlockFrame("The frontend",null,
+`&lt!DOCTYPE HTML>
+&lthtml lang="en">
+&lthead>
+&ltmeta charset="UTF-8">
+&lttitle>Realtime pixel tracking dashboard&lt/title>
+&ltstyle type="text/css">
+.visit {
+margin: 5px 0;
+border-bottom: 1px dotted #CCC;
+padding: 5px 0;
+}
+.ip {
+margin: 0 10px;
+border-left: 1px dotted #CCC;
+border-right: 1px dotted #CCC;
+padding: 0 5px;
+}
+&lt/style>
+&lt/head>
+&ltbody>
+&lth1>Realtime pixel tracking dashboard&lt/h1>
+
+&ltdiv class="visits">&lt/div>
+
+&ltscript src="https://code.jquery.com/jquery-1.10.2.min.js">&lt/script>
+&ltscript src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.1/moment.min.js">&lt/script>
+&ltscript src="/socket.io/socket.io.js">&lt/script>
+&ltscript>
+	$(function() {
+var socket = io();
+var containerEl = $('.visits');
+
+socket.on('visit', function(visit) {
+	var newItem = '&ltdiv class="visit">';
+	newItem += '&ltspan class="date">' + moment().format('MMMM Do YYYY, HH:mm:ss') + '&lt/span>';
+	newItem += '&ltspan class="ip">' + visit.ip + '&lt/span>';
+	newItem += '&ltspan class="ua">' + visit.ua + '&lt/span>&lt/div>';
+	containerEl.append(newItem);
+	});
+	});
+&lt/script>
+&lt/body>
+&lt/html>`);
+
+const blk19=new BlockFrame("Resources");
+
+const blk20=new BlockFrame(null,null,null,"col1id");
+blk20.AddUrl("Original reference","https://nodejs.org/docs/latest/api/");
+blk20.AddBr();
+blk20.AddUrl("source code repository of npmjs","https://www.npmjs.com");
+blk20.AddBr();
+blk20.AddUrl("on youtube","https://www.youtube.com/watch?v=Rc9LJ9bdHJ");
+
+const blk21=new BlockFrame(null,null,null,"col2id");
+blk21.AddUrl("nod.js by gamma","https://github.com/egamma/nodejs-guidelines");   
+blk21.AddBr();
+blk21.AddUrl("beginners guide","http://blog.modulus.io/absolute-beginners-guide-to-nodejs");
+blk21.AddBr();
+blk21.AddUrl("tutorial with examples","http://noeticforce.com/best-nodejs-tutorial-with-examples");
+blk21.AddBr();
+blk21.AddUrl("building a real time markdown-viewer","https://scotch.io/tutorials/building-a-real-time-markdown-viewer");
+
+blk19.AddObj(blk20);
+blk19.AddObj(blk21);
+</script>
+</body>
+
+</html>
