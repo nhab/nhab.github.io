@@ -100,6 +100,122 @@ behavior of the require,update, and remove commands.
 When installing or removing dependencies in a Flex-enabled 
 application, Symfony can <h7>perform tasks before 
 and after the execution</h7> of Composer tasks.`);
+
+const blkRecipes=new BlockFrame();
+blkRecipes.AddHeader("Recipes");
+blkRecipes.AddBody(
+    `they allow the automation of Composer 
+packages configuration via the
+Symfony Flex Composer plugin`);
+
+const blkCreateRecipes=new BlockFrame();
+blkCreateRecipes.AddHeader("Creating Recipes");
+blkCreateRecipes.AddBody(
+    `Symfony recipes consist of a <b>manifest.json</b> 
+config file and, optionally,files and directories.
+Recipes must be stored on their own repositories,
+outside of your Composer package repository.
+They must follow the <b>vendor/package/version/ </b>
+directory structure, where version is the 
+minimum version supported by the recipe.
+Directory structure of some Symfony recipes:`);
+blkCreateRecipes.AddCode(
+`symfony/
+    console/
+        3.3/
+            bin/
+            manifest.json
+    framework-bundle/
+        3.3/
+            config/
+            public/
+            src/
+            manifest.json
+    requirements-checker/
+        1.0/
+            manifest.json`);
+const blkConfigurators=new BlockFrame();
+blkConfigurators.AddHeader("Configurators");
+blkConfigurators.AddBody(
+`Recipes define the different tasks executed
+ when installing a dependency, such as 
+ running commands, copying files or 
+ adding new environment variables.
+ types of tasks, which are called configurators:`);
+ blkConfigurators.AddCode(
+`copy-from-recipe, copy-from-package,
+ bundles, env, composer-scripts, gitignore,
+  and post-install-output`
+ );
+
+ const blkbundlesConfigurator=new BlockFrame();
+ blkbundlesConfigurator.AddHeader("bundles Configurator");
+ blkbundlesConfigurator.AddBody(
+`Enables one or more bundles in the Symfony application by
+ appending them to the <b>bundles.php</b> file.
+Its value is an associative array where the key is the 
+bundle class name and the value is an array of environments 
+where it must be enabled.` );
+blkbundlesConfigurator.AddCode(
+`{
+    "bundles": {
+        "Symfony\\Bundle\\DebugBundle\\DebugBundle": ["dev", "test"],
+        "Symfony\\Bundle\\MonologBundle\\MonologBundle": ["all"]
+    }
+}`
+);
+
+const blkenvConfigurator=new BlockFrame();
+blkenvConfigurator.AddHeader("env Configurator");
+blkenvConfigurator.AddBody(
+`Adds the given list of environment variables 
+to the .env and .env.dist files stored in 
+the root of the Symfony project:`
+);
+blkenvConfigurator.AddCode(
+`{
+    "env": {
+        "APP_ENV": "dev"
+    }
+}`);
+blkenvConfigurator.AddBody(
+`This recipe is converted into the following 
+content appended to the .env and .env.dist files:`);
+blkenvConfigurator.AddCode(
+`###> your-recipe-name-here ###
+APP_ENV=dev
+###< your-recipe-name-here ###
+`);
+
+const blkFullExample=new BlockFrame();
+blkFullExample.AddHeader("Full Example");
+blkFullExample.AddBody(`recipes used by symfony/framework-bundle
+at <b>../recipes/symfony/framework-bundle/4.2/manifest.json</b>`);
+blkFullExample.AddCode(
+`{
+    "bundles": {
+        "Symfony\\Bundle\\FrameworkBundle\\FrameworkBundle": ["all"]
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/",
+        "public/": "%PUBLIC_DIR%/",
+        "src/": "%SRC_DIR%/"
+    },
+    "composer-scripts": {
+        "cache:clear": "symfony-cmd",
+        "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd"
+    },
+    "env": {
+        "APP_ENV": "dev",
+        "APP_SECRET": "%generate(secret)%"
+    },
+    "gitignore": [
+        ".env",
+        "/public/bundles/",
+        "/var/",
+        "/vendor/"
+    ]
+}`);
 </script>
 <h2>Setting up a Hello symfony! project from scrach</h2>
 <script>
@@ -178,6 +294,41 @@ class DefaultController
         return new Response("Hello $name!");
      }
 }`,"php");
+</script>
+<h2>Configuring Symfony (and Environments)</h2>
+<script>
+const blkConfig =new BlockFrame();
+blkConfig.AddHeader("Configuring");
+blkConfig.AddBody(
+`Symfony applications can install third-party packages
+(bundles, libraries, etc.) to bring in new
+features (services) to your project.
+Each package can be customized via configuration files 
+that live - by default - in the <b>config/ directory</b>`);
+
+const blkConfiguration=new BlockFrame();
+blkConfiguration.AddHeader("Configuration : config/packages/");
+blkConfiguration.AddBody(
+`The configuration for each package can be found 
+in <b>config/packages/</b>.
+ For instance, the framework bundle is configured 
+ in <b>config/packages/framework.yaml:</b>`);
+blkConfiguration.AddCode(
+`# config/packages/framework.yaml
+framework:
+    secret: '%env(APP_SECRET)%'
+    #default_locale: en
+    #csrf_protection: ~
+    #http_method_override: true
+    #trusted_hosts: ~
+    # https://symfony.com/doc/current/reference/configuration/framework.html#handler-id
+    #session:
+    #    # The native PHP session handler will be used
+    #    handler_id: ~
+    #esi: ~
+    #fragments: ~
+    php_errors:
+        log: true`);
 </script>
 <h2>.</h2>
 <script>

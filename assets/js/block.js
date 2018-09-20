@@ -81,16 +81,15 @@ class BlockFrame{
     {
         var para = document.createElement("div");
         para.setAttribute('class', 'blockHead');
-        var t = document.createTextNode(title);
-        para.appendChild(t);
+        para.innerHTML=title;
         document.getElementById(this.frameID).appendChild(para);
     }
     AddBody(bod)
     {
         var para = document.createElement("div");
         para.setAttribute('class', 'blockBody');
-        var t = document.createTextNode(bod);
-        para.appendChild(t);
+        
+      para.innerHTML=bod;
         document.getElementById(this.frameID).appendChild(para);
     }
     AddCode(cod,codeType=`javascript`)
@@ -104,6 +103,5 @@ class BlockFrame{
         para.appendChild(t);
         gParent.appendChild(para);
         document.getElementById(this.frameID).appendChild(gParent);
-
     }
 }
