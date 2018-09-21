@@ -1,0 +1,367 @@
+<html>
+    <head>
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+             integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <style>
+            h9{background-color: lightgray;}
+            body{font-family: "arial";font-size:20px;}
+            a {text-decoration: none;}
+            .bkgray{background-color: lightgray;border:1px solid black;margin-right: 5px;padding-left:5px;}
+            .inl{display: inline-block;vertical-align: top;}
+            .head{background-color: darkblue;color: lightblue;text-align: center}
+            .pre{white-space:pre}
+        </style>
+    </head>
+    <body>
+        <script>
+            sAlphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÜß"; 
+
+            function ShowLetter(alf,wavfile)  
+            {
+                if(wavfile)
+                {
+
+                    document.write(`
+                    <audio id="aud`+alf+`"><source src="https://0.tqn.com/z/g/german/library/media/Audio/`+wavfile+`.wav"></audio>
+                    <a href="#"  onclick="document.getElementById('aud`+alf+`').play()//.pause()" class='bkgray'><i class="fas fa-play"></i>`+
+                        alf+` `+alf.toLowerCase() +` </a>` );
+                    return;
+                }
+                document.write(`
+                <audio id="aud`+alf+`"><source src="https://0.tqn.com/z/g/german/library/media/Audio/`+alf.toLowerCase()+`.wav"></audio>
+                    <a href="#"  onclick="document.getElementById('aud`+alf+`').play()//.pause()" class='bkgray'><i class="fas fa-play"></i>`+
+                        alf+` `+alf.toLowerCase() +` </a>` );
+            }  
+            function ShowSample(samp,mean,wavfilename,num=1)
+            {
+                if(num==1)
+                    s="<audio id=\"aud"+samp+"\"><source src=\"https://0.tqn.com/z/g/german/od/audiolistening/l/";
+                else
+                    s="<audio id=\"aud"+samp+"\"><source src=\"https://0.tqn.com/z/g/german/library/media/Audio/";
+                if(wavfilename)
+                    {
+                    s+=wavfilename+".wav\" > </audio>";
+                    s+="<a href=\"#\"  onclick=\"document.getElementById('aud";
+                    s+=wavfilename+".wav').play()//.pause()\"><i class=\"fa fa-play-circle\"></i>"+ samp+"</a>";
+                    }
+                else    
+                {
+                    s+=samp.toLowerCase()+".wav\"> </audio>";
+                    s+="<a href=\"#\"  onclick=\"document.getElementById('aud";
+                    s+=samp+"').play()//.pause()\"><i class=\"fa fa-play-circle\"></i>"+ samp+"</a>";
+                }  
+                if(mean)
+                        s+="("+mean+" )";
+                if(!mean)debugger;
+                document.write(s);
+            }
+
+        </script>
+        <h2 class="head">German</h2>
+        <h3 class="head">1.Alphabet</h2>
+        <div class="inl">
+            <div class="inl" >
+                <div>
+                    <script>ShowLetter("A");</script>:
+                    <script>ShowSample("Adler","eagle");</script>,
+                    <script>ShowSample("januar","january");</script>
+                </div>
+                <div>
+                    <script>ShowLetter("B");</script>:
+                    
+                    <script>ShowSample("Bruder","brother");</script>
+                    <script>ShowSample("aber","but");</script>
+                </div>
+                <div>
+                    <script>ShowLetter("C");</script>
+                    <script>ShowSample("Chor","Choir");</script>
+                    <script>ShowSample("Celcius","Celcius");</script>
+                </div>
+                <div>
+                    <script>ShowLetter("D");</script>
+                    <script>ShowSample("Dienstag","Tuesday");</script>
+                    <script>ShowSample("oder","or");</script>  
+                </div>
+                <div>
+                        <script>ShowLetter("E");</script>     
+                        <script>ShowSample("essen","to eat");</script>
+                        <script>ShowSample("zuerst","first");</script>  
+                </div>
+                <div>
+                    <script>ShowLetter("F");</script>
+                    <script>ShowSample("Freund","friend");</script>
+                    <script>ShowSample("offen","open");</script>
+                </div>
+                <div>
+                    <script>ShowLetter("G");</script>
+                    <script>ShowSample("gut","good");</script>
+                    <script>ShowSample("gemein","mean");</script>
+                </div>
+                <div>
+                    <script>ShowLetter("H");</script>
+                    <script>ShowSample("Hammer","Hammer");</script>
+                    <script>ShowSample("Mühle","mill","muehle");</script>
+                </div>
+                <div>
+                    <script>ShowLetter("I");</script>
+                    <script>ShowSample("Igel","porcupine");</script>
+                    <script>ShowSample("Imbiss","snack");</script>
+                    <script>ShowSample("sieben","seven");</script>
+                </div>
+                <div>
+                        <script>ShowLetter("J");</script>(Yott)
+                        <script>ShowSample("Jahr","year");</script>
+                        <script>ShowSample("jeder","each");</script>
+                </div>
+                <div>
+                        <script>ShowLetter("K");</script>
+                        <script>ShowSample("Kamel");</script>
+                        <script>ShowSample("Kuchen","cake",null,2);</script>      
+                </div>
+                <div>
+                        <script>ShowLetter("L");</script>
+                        <script>ShowSample("Leute","people",null,2);</script>
+                        <script>ShowSample("Land","Land",null,2);</script>
+                </div>
+            
+            
+                <div>
+                    <script>ShowLetter("M");</script>
+                    <script>ShowSample("Mann",null,null,2);</script>
+                    <script>ShowSample("Ameise",null,null,2);</script>
+                </div>
+            
+            
+                <div>
+                    <script>ShowLetter("N");</script>
+                    <script>ShowSample("nicht","not",null,2);</script>
+                    <script>ShowSample("Münze","coin",null,2);</script>
+                </div>
+            
+            
+                <div>
+                        <script>ShowLetter("O");</script>
+                        <script>ShowSample("Ostern","Easter",null,2);</script>
+                        <script>ShowSample("rot","red",null,2);</script>
+                </div>
+            
+            
+                <div>
+                        <script>ShowLetter("P");</script>
+                        <script>ShowSample("Polizei","police",null,2);</script>
+                        <script>ShowSample("Apfel","",null,2);</script>
+                </div>
+            
+            
+                <div>
+                    <script>ShowLetter("Q");</script>
+                    <script>ShowSample("Quadrat","square",null,2);</script>
+                    <script>ShowSample("Quelle","source",null,2);</script>
+                </div>
+            
+            
+                <div>
+                        <script>ShowLetter("R");</script>
+                        <script>ShowSample("Rücken","the back",null,2);</script>
+                        <script>ShowSample("Stern","star",null,2);</script>
+                </div>
+            
+            
+                <div>
+                        <script>ShowLetter("S");</script>
+                        <script>ShowSample("summen","hum",null,2);</script>
+                        <script>ShowSample("schön","pretty",null,2);</script>
+                        <script>ShowSample("Maus",null,2);</script>
+                </div>
+            </div>
+            <div class="inl"> 
+                <div>
+                    <script>ShowLetter("T");</script>
+                    <script>ShowSample("Tyrann",null,2);</script>
+                    <script>ShowSample("acht","eight",null,2);</script>
+                </div>                          
+                <div>
+                        <script>ShowLetter("U");</script>
+                        <script>ShowSample("Universität","university",null,2);</script>
+                        <script>ShowSample("Mund","mouth",null,2);</script>
+                </div>
+                <div>
+                        <script>ShowLetter("V");</script>
+                        <script>ShowSample("Vogel","bird",null,2);</script>
+                        <script>ShowSample("Nerven","nerves",null,2);</script>
+                </div>
+                <div>
+                        <script>ShowLetter("W");</script>
+                        <script>ShowSample("Wange","cheek",null,2);</script>
+                        <script>ShowSample("Schwein","pig",null,2);</script>
+                        <script>ShowSample("wieviel","how much",null,2);</script>
+                </div>
+                <div>
+                        <script>ShowLetter("X");</script>
+                        <script>ShowSample("Xylofon",null,2);</script>
+                        <script>ShowSample("Hexe","witch",null,2);</script>
+                </div>
+                <div>
+                        <script>ShowLetter("Y");</script>
+                        <script>ShowSample("Yucca","",null,2);</script>
+                        <script>ShowSample("Yeti","",null,2);</script>
+                </div>
+                <div>
+                    <script>ShowLetter("Z");</script>
+                    <script>ShowSample("Zeitung","newspaper",null,2);</script>
+                    <script>ShowSample("Zigeuner","gypsy",null,2);</script>
+                </div>
+                <div>
+                    <script>ShowLetter("ä","ae");</script>
+                    <script>ShowSample("ähnlich","similar",null,2);</script>
+                    <script>ShowSample("gähnen","to yawn",null,2);</script>
+                    
+                </div>
+                <div>
+                    <script>ShowLetter("ö","oe");</script>
+                    <script>ShowSample("Österreich","",null,2);</script>
+                    <script>ShowSample("Austria","",null,2);</script>              
+                </div>
+                <div>
+                    <script>ShowLetter("ü","ue");</script>
+                    <script>ShowSample("über","over",null,2);</script>
+                    <script>ShowSample("müde","tired",null,2);</script>
+                </div>
+                <div>
+                    <script>ShowLetter("ß","esszett");</script>esszet
+                    <script>ShowSample("heiß","hot",null,2);</script>
+                    <script>ShowSample("Straße","street",null,2);</script>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="head">2.Diphthongs (double vowel)</h3>
+        <div class="inl">
+            <div class="inl pre">
+                <b>Diphthong</b> 
+                ai / ei
+                au
+                eu / äu
+                ie
+            </div>
+            <div class="inl pre" >
+                <b>Pronunciation</b>
+                eye
+                ow
+                oy
+                eeh
+            </div>
+            <div class="inl pre">
+                    <b>Examples</b>
+                    bei (at, near), das Ei (egg), der Mai (May)
+                    auch (also), das Auge (eye), aus (out of)
+                    Häuser (houses), Europa (Europe), neu (new)
+                    bieten (offer), nie (never), Sie (you)
+            </div>
+        </div>
+        <h3 class="head">Grouped Consonants</h3>        
+            <div class="inl pre">
+                <b>Consonant</b>	
+                ck
+                
+                ch
+                
+
+
+
+
+
+
+
+
+
+                pf
+                
+                ph
+                
+                qu
+                
+                sch
+                
+                sp / st
+                
+                th
+            </div>
+            <div class="inl pre">
+                <b>Pronunciation</b>
+                k
+                
+                >>
+                
+
+
+
+
+
+
+
+
+
+                pf
+                
+                
+                
+                
+                
+                f
+                
+                
+                kv
+
+                sh
+                
+                
+                
+                
+                
+                
+                shp / sht
+                t
+            </div>
+            <div class="inl pre">
+                <b>Examples</b>
+                dick (fat, thick), der Schock (shock)
+                
+                After a, o, u and au, pronounced like the guttural ch in
+                  Scottish "loch" - das Buch(book), auch (also).
+                  Otherwise it is a palatal sound as in: mich (me), 
+                  welche (w hich),wirklich (really).
+                  TIP: If no air is passing over your tongue when you say
+                   a ch-sound, you aren't saying it correctly.
+                   No true equivalent in English. 
+                  - Although ch doesn't usually have a hard k sound, 
+                  there are exceptions: 
+                  Chor,Christoph, Chaos, Orchester, Wachs (wax)
+                
+                Both letters are (quickly) pronounced as a combined puff-sound: 
+                  das Pferd (horse), derPfennig.
+                  If this is difficult for you, an f sound will work, 
+                  but try to do it!
+                
+                das Alphabet, phonetisch - Some words formerly spelled with ph
+                 are now spelled with f:das Telefon, das Foto
+                
+                die Qual (anguish, torture), die Quittung(receipt)
+                
+                schön (pretty), die Schule (school) - The German sch combination
+                 is never split, 
+                 whereas  sh usually is (Grashalme, Gras/Halme; but die Show,
+                 a foreign word).
+                 At the start of a word, the s in sp/st has a sch sound as in
+                 English "show, she." sprechen(speak), stehen (stand)
+                
+                das Theater (tay-AHTER), das Thema (TAY-muh), topic - Always
+                  sounds like a t (TAY).
+                  NEVER has the English th sound!
+        
+            </div>
+	
+ 
+
+     </body>
+</html>
