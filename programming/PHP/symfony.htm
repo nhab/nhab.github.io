@@ -224,9 +224,8 @@ or higher. Run in terminal:
 (This creates a new quick_tour/ directory with 
 a Symfony application)`,
 `composer create-project symfony/skeleton quick_tour`);
-Block("Install the web-server and<br/> run symfony server",null,
-`composer require symfony/
-    web-server-bundle  --dev
+Block("Install the web-server and run symfony server",null,
+`composer require symfony/ web-server-bundle  --dev
  php bin/console server:start`);
  Block("Try your new app",
  `by going to http://localhost:8000
