@@ -23,13 +23,14 @@
 </head>
 <body>
 <script>
-    stitle="Where to write code?";
-    sBody="1. in a file with extention .php<br>2. inside an html file:<br>";
+ Block("where is the running php.exe in windows?",null,"where php.exe");
+ Block(" which php.ini file is being loaded",null,"php --ini");
+
     sCode="&lt!DOCTYPE html>&lthtml>"+"<br>"+"&ltbody>"+"<br>";
     sCode+="&lt?php "+"<br>";
     sCode+="echo \"My first PHP script!\""+"<br>";
     sCode+="?> &lt/body>&lt/html>"+"<br>";
-Block(stitle,sBody,sCode,"html");
+Block("Where to write code?","1. in a file with extention .php<br>2. inside an html file:",sCode,"html");
 Block("online <br/>code playground",
 `<a href='https://www.ideone.com/ryTuHp'>ideone </a>
 <a href="http://codepad.org/w4gyeryk">codepad</a>
@@ -263,8 +264,3 @@ try {$conn = new PDO("mysql:host=$servername;dbname=$dbname",
  }
 $conn = null;`,"php");
 </script>
- <h2>php.exe</h2>
-  <script>
- Block("where is the running php.exe in windows?",null,"where php.exe");
- Block(" which php.ini file is being loaded",null,"php --ini");
-  </script>
