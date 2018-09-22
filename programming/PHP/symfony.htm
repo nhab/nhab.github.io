@@ -23,20 +23,16 @@ implement a single feature.
 <br>Each directory contains everything 
 related to that feature, including
 PHP files, templates,stylesheets,
-JavaScrip files and testsin the <b>config
-\ bundles.php</b>
+JavaScrip files and testsin the 
+<b>config\ bundles.php</b>
 of the following sample project,
 there is 4 bundles:
 `,
 `return [
-Symfony\\Bundle\\FrameworkBundle\\
-  FrameworkBundle::class => ['all' => true],
-Symfony\\Bundle\\WebServerBundle\\
-  WebServerBundle::class => ['dev' => true],
-Symfony\\Bundle\\TwigBundle\\
-  TwigBundle::class => ['all' => true],
-Symfony\\Bundle\\MonologBundle\\
-  MonologBundle::class => ['all' => true],
+Symfony\\Bundle\\FrameworkBundle\\FrameworkBundle::class => ['all' => true],
+Symfony\\Bundle\\WebServerBundle\\ WebServerBundle::class => ['dev' => true],
+Symfony\\Bundle\\TwigBundle\\ TwigBundle::class => ['all' => true],
+Symfony\\Bundle\\MonologBundle\\ MonologBundle::class => ['all' => true],
 ];
 `,"php");
 
