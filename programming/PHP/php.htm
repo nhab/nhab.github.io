@@ -142,11 +142,9 @@ E-mail:&ltinput type="text" name="email">
 &lt/form>
 &lt/body>
 &lt/html>`,"php");
-Block("Finding php.exe path",null,
-`&lt?php
-echo str_replace('ext/', 'php.exe', 
-  ini_get('extension_dir'));
-?>`,"php");
+Block("Finding php.exe path","in winodws command prompt:",
+`C:\>where php.exe
+C:\Program Files (x86)\WAMP\bin\php\php5.3.5\php.exe`,"php");
 </script>
 
 
