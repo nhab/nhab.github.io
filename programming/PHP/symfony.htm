@@ -227,10 +227,11 @@ a Symfony application)`,
 Block("Install the web-server and run symfony server",null,
 `composer require symfony/ web-server-bundle  --dev
  php bin/console server:start`);
+    
  Block("Try your new app",
- `by going to http://localhost:8000
-  in a browser!`,
+ `by going to http://localhost:8000 in a browser!`,
  null,null,"40%",null,"https://symfony.com/doc/current/_images/no_routes_page.png",null,"100%");
+ 
  Block("define the URL to our new page (rout)",
 `Start in config/routes.yaml.
 rout is the URL to your page (/) 
