@@ -47,14 +47,14 @@ false;`);
     
 const blkStrings=new BlockFrame("strings");
 blkStrings.AddCode(
-`// Strings are concatenated with +
+`// Strings are <b>concatenated with +</b>
 "Hello "+ "world!"; // = "Hello world!"
  
 // ... which works with more than just strings
    "1, 2, "  +  3; // = "1, 2, 3"
    "Hello "  + [ "world",  "!"]; // = "Hello world,!"
 
-// and are compared with < and >
+// and are <b>compared with < and ></b>
    "a"  <  "b"; // = true
 
 // Type coercion is performed for comparisons with double equals...
@@ -62,24 +62,25 @@ blkStrings.AddCode(
    null  ==  undefined; // = true
 
 // ...unless you use ===
-   "5"  ===  5; \// = false
+   "5"  ===  5; // = false
    null  ===  undefined; \// = false
- 
+// ...which can result in some weird behaviour...
+   13  +  ! 0; // 14
+   "13"  +  ! 0; // '13true'
+
+// You can access characters in a string with 'charAt'
+   "This is a string".charAt( 0);  // = 'T'
+
+// ...or use 'substring' to get larger pieces.
+   "Hello world".substring( 0,  5); // = "Hello"
+
+// 'length' is a property, so don't use ().
+   "Hello".length; \// = 5`);  
 `);
-    /*
-\\// ...which can result in some weird behaviour...
-   13  +  ! 0; \// 14
-   "13"  +  ! 0; \// '13true'
-
-  \// You can access characters in a string with `charAt`
-   "This is a string".charAt( 0);  \// = 'T'
-
-  \// ...or use `substring` to get larger pieces.
-   "Hello world".substring( 0,  5); \// = "Hello"
-
-  \// `length` is a property, so don't use ().
-   "Hello".length; \// = 5`);
  
+ 
+    /*
+
 //multiline strings:
 //ECMAScript 6 (ES6) introduces a new type of literal,
 // namely template literals.
@@ -102,24 +103,8 @@ blkbundlesConfigurator.AddCode(``);
     
 <b>strings</b>
 <pre><code class="javascript">
-      // Strings are concatenated with +
-       "Hello "  +  "world!"; // = "Hello world!"
-
-      // ... which works with more than just strings
-       "1, 2, "  +  3; // = "1, 2, 3"
-       "Hello "  + [ "world",  "!"]; // = "Hello world,!"
-
-      // and are compared with &lt; and &gt;
-       "a"  &lt;  "b"; // = true
-
-      // Type coercion is performed for comparisons with double equals...
-       "5"  ==  5; // = true
-       null  ==  undefined; // = true
-
-      // ...unless you use ===
-       "5"  ===  5; // = false
-       null  ===  undefined; // = false
-
+      
+     
       // ...which can result in some weird behaviour...
        13  +  ! 0; // 14
        "13"  +  ! 0; // '13true'
