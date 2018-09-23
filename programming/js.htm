@@ -273,25 +273,17 @@ blkLogic.AddCode(
           console.log( "Oy vey");
           break;
       }`);
- /*
-const blkbundlesConfigurator=new BlockFrame("");
-blkbundlesConfigurator.AddBody(``);
-blkbundlesConfigurator.AddCode(
-``);
- */
-</script>     
-<pre><code class="javascript">
-
-      <b> 4. Functions, Scope and Closures</b>
-      <pre><code class="javascript">
-      // JavaScript functions are declared with the `function` keyword.
+    
+const blkFunction=new BlockFrame("Functions");
+blkFunction.AddCode(
+` // JavaScript functions are declared with the "function" keyword.
       function myFunction(thing){
           return thing.toUpperCase();
       }
       myFunction( "foo"); // = "FOO"
 
       // Note that the value to be returned must start on the same line as the
-      // `return` keyword, otherwise you'll always return `undefined` due to
+      // "return" keyword, otherwise you'll always return "undefined" due to
       // automatic semicolon insertion. Watch out for this when using Allman style.
       function myFunction(){
           return // &lt;- semicolon automatically inserted here
@@ -319,7 +311,18 @@ blkbundlesConfigurator.AddCode(
       // an anonymous function definition directly into the arguments of another.
       setTimeout(function(){
           // this code will be called in 5 seconds' time
-      },  5000);
+      },  5000);`);
+ /*
+const blkbundlesConfigurator=new BlockFrame("");
+blkbundlesConfigurator.AddBody(``);
+blkbundlesConfigurator.AddCode(
+``);
+ */
+</script>     
+<pre><code class="javascript">
+      <b> 4. Functions, Scope and Closures</b>
+      <pre><code class="javascript">
+     
 
       // JavaScript has function scope; functions get their own scope but other blocks
       // do not.
