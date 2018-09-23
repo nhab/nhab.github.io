@@ -6,12 +6,24 @@
     <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
+    <h2>javascript</h2>
+   
 <script>
 /*
 const blkbundlesConfigurator=new BlockFrame("");
 blkbundlesConfigurator.AddBody(``);
 blkbundlesConfigurator.AddCode(``);
  */
+Block("What is javascript?",
+` Javascript is a high-level, dynamic, untyped,
+ and interpreted programming language.`);
+const blk1=new BlockFrame("How to write javascript<br/> in HTML file?");
+blk1.AddCode(
+`//save the code as  file:test.html 
+ \<script type="text/javascript">
+    document.write ( new Date() );
+\<\/script>`
+);
 
 const blkComment=new BlockFrame("Comments");
 blkComment.AddCode(` // Single-line comments start with two slashes
@@ -45,12 +57,61 @@ NaN; // result of e.g. 0/0, stands for 'Not a Number'
 true;
 false;
 // There's also 'null' and 'undefined'.
-   null;      // used to indicate a deliberate non-value
-   undefined; // used to indicate a value is not currently present (although
-             // 'undefined' is actually a value itself)
+null;      
+// null used to indicate a deliberate non-value
+undefined;
+// undefined used to indicate a value is not 
+//   currently present 
+//(although 'undefined' is actually a value itself)
 
-  // false, null, undefined, NaN, 0 and "" are falsy; everything else is truthy.
-  // Note that 0 is falsy and "0" is truthy, even though 0 == "0".`);
+// false, null, undefined, NaN, 0 and "" are falsy;
+//   everything else is truthy.
+// Note that 0 is falsy and "0" is truthy, 
+//even though 0 == "0".`);
+
+Block("including a javaScript file",null,
+ "< script type='text/javascript' src='Script1.js'>\<\/script>");
+
+Block("Including from another js file :",
+`Put all the code using the remote library in the callback function.
+For example:`,
+`function loadScript(url, callback)
+{
+    // Adding the script tag to the head as suggested before
+    var head = document.getElementsByTagName('head')[0];
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = url;
+
+    // Then bind the event to the callback function.
+    // There are several events for cross browser compatibility.
+    script.onreadystatechange = callback;
+    script.onload = callback;
+
+    // Fire the loading
+    head.appendChild(script);
+}
+
+//Then you write the code you want to use AFTER
+// the script is loaded in a lambda function:
+
+var myPrettyCode = function() {
+
+    // Here, do what ever you want
+};
+
+//Then you run all that:
+
+ loadScript("my_lovely_script.js", myPrettyCode);
+
+
+// Note that the script may execute after the DOM 
+//has loaded, or before,
+//depending on the browser and whether you 
+//included the line script.async = false;
+
+`);
+
 </script>
 
 <h2>strings</h2>
@@ -198,7 +259,7 @@ myObj.myThirdKey  =  true;
 //set, you'll get undefined.
 myObj.myFourthKey; // = undefined`);
    
-const blkLogic =new BlockFrame("Logic and Control");
+const blkLogic =new BlockFrame("Logic ");
 blkLogic.AddCode(
 `// The 'if' structure works as you'd expect.
 var count  =  1;
@@ -210,52 +271,15 @@ if (count  ==  3){
   // evaluated if it's not either 3 or 4
 }
 
-// As does 'while'.
-while ( true){
-  // An infinite loop!
-}
-
-// Do-while loops are like while loops, except 
-//they always run at least once.
-var input;
-do {
-  input  = getInput();
-} while ( !isValid(input));
-
-// The 'for' loop is the same as C and Java:
-// initialization; continue condition; iteration.
-for (var i  =  0; i  &lt;  5; i ++){
-  // will run 5 times
-}
-
-// Breaking out of labeled loops is similar to Java
-outer :
-for (var i  =  0; i  &lt;  10; i ++) {
-  for (var j  =  0; j  &lt;  10; j ++) {
-      if (i  ==  5  &amp;&amp; j  == 5) {
-          break outer;
-          // breaks out of outer loop instead of 
-            //only the inner one
-      }
-  }
-}
-
-// The for/in statement allows iteration over properties of an object.
-var description  =  "";
-var person  = {fname : "Paul", lname : "Ken", age : 18};
-for (var x in person){
-  description  += person[x]  +  " ";
-} // description = 'Paul Ken 18 '
-
-// &amp;&amp; is logical and, || is logical or
-if (house.size  ==  "big"  &amp;&amp; house.colour  ==  "blue"){
+// && is logical and, || is logical or
+if (house.size  ==  "big"  && house.colour  ==  "blue"){
   house.contains  =  "bear";
 }
 if (colour  ==  "red"  || colour  ==  "blue"){
   // colour is either red or blue
 }
 
-// &amp;&amp; and || "short circuit", which is useful 
+// && and || "short circuit", which is useful 
 //for setting default values.
 var name  = otherName  ||  "default";
 
@@ -277,6 +301,44 @@ default :
   console.log( "Oy vey");
   break;
 }`);
+const blkLoops=new BlockFrame("Loops");
+blkLoops.AddCode(
+`// As does 'while'.
+while ( true){
+  // An infinite loop!
+}
+
+// Do-while loops are like while loops, except 
+//they always run at least once.
+var input;
+do {
+  input  = getInput();
+} while ( !isValid(input));
+
+// The 'for' loop is the same as C and Java:
+// initialization; continue condition; iteration.
+for (var i  =  0; i  &lt;  5; i ++){
+  // will run 5 times
+}
+
+// Breaking out of labeled loops is similar to Java
+outer :
+for (var i  =  0; i  &lt;  10; i ++) {
+  for (var j  =  0; j  &lt;  10; j ++) {
+      if (i  ==  5  && j  == 5) {
+          break outer;
+          // breaks out of outer loop instead of 
+            //only the inner one
+      }
+  }
+}
+
+// The for/in statement allows iteration over properties of an object.
+var description  =  "";
+var person  = {fname : "Paul", lname : "Ken", age : 18};
+for (var x in person){
+  description  += person[x]  +  " ";
+} // description = 'Paul Ken 18 '`);
     
 const blkFunction=new BlockFrame("Functions");
 blkFunction.AddBody(
@@ -299,13 +361,13 @@ function myFunction(){
 myFunction(); // = undefined
 `);
 
- const blkFunction2=new BlockFrame("Functions Continued");
-blkFunction2.AddCode(
-`// JavaScript functions can be reassigned to
-// different variable names and passed to other
-// functions as arguments - for example, when 
-// supplying an event handler:
-function myFunction(){
+const blkFunction2=new BlockFrame("Functions Continued");
+ blkFunction2.AddBody(
+`- functions can be reassigned to different variable names
+- functions can be passed to other functions as arguments 
+  for example,  when supplying an event handler:`);
+ blkFunction2.AddCode(
+`function myFunction(){
   // this code will be called in 5 seconds' time
 }
 setTimeout(myFunction,  5000);
@@ -316,64 +378,114 @@ setTimeout(myFunction,  5000);
 setTimeout(function(){
   // this code will be called in 5 seconds' time
 },  5000);`);
-    
-const blkfunction=new BlockFrame("Functions and Scope");
-blkfunction.AddCode(
-` // JavaScript has function scope;functions get 
-//their own scope but other blocks do not.
-if ( true){
+   
+
+
+Block("'By reference' parameter to function",
+"it can be implemented by passing object to function as parameter",
+`function alterObject(obj) {
+ obj.foo = "goodbye";
+}
+var myObj = { foo: "hello world" };
+alterObject(myObj);
+alert(myObj.foo); // "goodbye" instead of "hello world"`);
+
+Block("optional parameters",
+`you can call functions omitting some parameters and js will
+ fil in the other parameters with the value undefined. 
+Example: `,
+` connect("www.google.com"); function connect(hostname, port, method)
+ { // inside the function, // hostname === "www.google.com", 
+ // port === undefined, // method === undefined } `);
+const blkNamedParams=new BlockFrame("Named parameters");
+blkNamedParams.AddBody(
+`JavaScript does not have native support for named parameters 
+like Python and many other languages. But there is a reasonably 
+elegant simulation: provide optional parameters via an object literal`);
+blkNamedParams.AddCode(
+`
+//definition:
+ function myFunction({param1, param2}={}){ 
+     // ... 
+ }
+// usage:
+ myFunction({ param1 : 70, param2 : 175});`);
+
+Block("The Arguments Object",
+`JavaScript functions have a built-in object called the arguments object.
+The argument object contains an array of the arguments 
+used when the function was called (invoked)`);
+
+const blkScope=new BlockFrame("Functions and Scope");
+blkScope.AddBody(`functions get their own scope but other blocks do not.`);
+blkScope.AddCode(
+`if ( true){
   var i  =  5;
 }
-i; // = 5 - not undefined as you'd expect in a block-scoped language
+i; // = 5 - not undefined as you'd expect in c#
 
-// This has led to a common pattern of "immediately-executing anonymous
-// functions", which prevent temporary variables from leaking into the global
-// scope.
+// This has led to a common pattern 
+// of "immediately-executing anonymous functions",
+// which prevent temporary variables from leaking
+//  into the global scope.
 (function(){
   var temporary  =  5;
-  // We can access the global scope by assigning to the "global object", which
-  // in a web browser is always 'window'. The global object may have a
-  // different name in non-browser environments such as Node.js.
+  // We can access the global scope by assigning to the
+  // "global object", which in a web browser is always 'window'.
+  // The global object may have a different name in non-browser 
+  // environments such as Node.js.
    window.permanent  =  10;
 })();
 temporary; // raises ReferenceError
 permanent; // = 10`);
 
+Block("Nested Functions",null,
+`function add() { 
+    var counter = 0; 
+    function plus() {
+        counter += 1;
+    }
+     plus();
+      return counter;
+ }`);
+
  const blkClosures=new BlockFrame("Closures");
 blkClosures.AddBody(
-`One of JavaScript's most powerful features is closures. 
-If a function is defined inside another function,
-the inner function has access to all the outer function's 
+`If a function is an inner function which
+has access to all the outer function's 
 variables, even after the outer function exits.`);
 blkClosures.AddCode(
 `function sayHelloInFiveSeconds(name){
   var prompt  =  "Hello, "  + name  +  "!";
-  // Inner functions are put in the local scope by default, as if they were
-  // declared with 'var'.
+  // Inner functions are put in the local scope by default, 
+  // as if they were declared with 'var'.
   function inner(){
       alert(prompt);
   }
   setTimeout(inner,  5000);
-  // setTimeout is asynchronous, so the sayHelloInFiveSeconds function will
-  // exit immediately, and setTimeout will call inner afterwards. However,
-  // because inner is "closed over" sayHelloInFiveSeconds, inner still has
-  // access to the 'prompt' variable when it is finally called.
+  // setTimeout is asynchronous, so the sayHelloInFiveSeconds
+  // function will exit immediately, and setTimeout will call 
+  //inner afterwards. However,because inner is "closed over"
+  // sayHelloInFiveSeconds, inner still has access to the
+  // 'prompt' variable when it is finally called.
 }
-sayHelloInFiveSeconds( "Adam"); // will open a popup with "Hello, Adam!" in 5s`);
+sayHelloInFiveSeconds( "Adam"); 
+// will open a popup with "Hello, Adam!" in 5s`);
 
- const blkPrototypes=new BlockFrame("Objects Constructors and Prototypes");
-blkPrototypes.AddBody(`Objects can contain functions.`);
-blkbundlesConfigurator.AddCode(
-`       var myObj  = {
+const blkConstructors=new BlockFrame("Objects Constructors and function");
+blkConstructors.AddBody(`Objects can contain functions.`);
+blkConstructors.AddCode(
+` var myObj  = {
       myFunc : function(){
           return  "Hello world!";
       }
   };
   myObj.myFunc(); // = "Hello world!"
-
-  // When functions attached to an object are called, they can access the object
-  // they're attached to using the 'this' keyword.
-  myObj  = {
+`);
+blkConstructors.AddBody(`When functions of an object are called, 
+  they can access the object using the 'this' keyword:`);
+blkConstructors.AddCode(
+` myObj  = {
       myString :  "Hello world!",
       myFunc : function(){
           return this.myString;
@@ -381,196 +493,276 @@ blkbundlesConfigurator.AddCode(
   };
   myObj.myFunc(); // = "Hello world!"
 
-  // What this is set to has to do with how the function is called, not where
-  // it's defined. So, our function doesn't work if it isn't called in the
-  // context of the object.
+  // the function doesn't work if it isn't
+  //  called in the context of the object:
   var myFunc  = myObj.myFunc;
-  myFunc(); // = undefined
+  myFunc(); // = undefined`);
 
-  // Inversely, a function can be assigned to the object and gain access to it
-  // through 'this', even if it wasn't attached when it was defined.
-  var myOtherFunc  = function(){
+blkConstructors.AddBody(
+`Inversely, a function can be assigned 
+to the object and gain access to it
+through 'this', even if it wasn't 
+attached when it was defined.`);
+blkConstructors.AddCode(
+`var myOtherFunc  = function(){
       return this.myString.toUpperCase();
   };
   myObj.myOtherFunc  = myOtherFunc;
-  myObj.myOtherFunc(); // = "HELLO WORLD!"
+  myObj.myOtherFunc(); // = "HELLO WORLD!"`);
 
-  // We can also specify a context for a function to execute in when we invoke it
-  // using 'call' or 'apply'.
-
-  var anotherFunc  = function(s){
+const blkCallApply=new BlockFrame("Call , apply and bind");
+blkCallApply.AddBody(
+`We can also specify a context for a function to 
+execute in when we invoke it using 'call' or 'apply'.
+<strong><b>Call()</b></strong> example:`);
+blkCallApply.AddCode(
+`  var anotherFunc  = function(s){
       return this.myString  + s;
   };
   anotherFunc.call(myObj,  " And Hello Moon!"); // = "Hello World! And Hello Moon!"
+  `);
+  blkCallApply.AddBody(
+  `The <strong><b>'apply()'</b></strong> function is nearly identical,
+   but takes an array for an argument list.
+`);
 
-  // The 'apply' function is nearly identical, but takes an array for an argument
-  // list.
-
-  anotherFunc.apply(myObj, [ " And Hello Sun!"]); // = "Hello World! And Hello Sun!"
+blkCallApply.AddCode(
+ ` anotherFunc.apply(myObj, [ " And Hello Sun!"]); // = "Hello World! And Hello Sun!"
 
   // This is useful when working with a function that accepts a sequence of
   // arguments and you want to pass an array.
 
    Math.min( 42,  6,  27); // = 6
    Math.min([ 42,  6,  27]); // = NaN (uh-oh!)
-   Math.min.apply( Math, [ 42,  6,  27]); // = 6
+   Math.min.apply( Math, [ 42,  6,  27]); // = 6`);
 
-  // But, 'call' and 'apply' are only temporary. When we want it to stick, we can
-  // use 'bind'.
-
-  var boundFunc  = anotherFunc.bind(myObj);
-  boundFunc( " And Hello Saturn!"); // = "Hello World! And Hello Saturn!"
-
-  // 'bind' can also be used to partially apply (curry) a function.
-
-  var product  = function(a, b){ return a  * b; };
+blkCallApply.AddBody(
+`But, 'call' and 'apply' are only temporary. 
+When we want it to stick, we can use <strong><b>'bind'</b></strong>:`);
+ blkCallApply.AddCode(
+ ` var boundFunc  = anotherFunc.bind(myObj);
+  boundFunc( " And Hello Saturn!"); // = "Hello World! And Hello Saturn!"`);
+  blkCallApply.AddBody(
+`'bind' can also be used to partially apply (curry) a function.`);
+blkCallApply.AddCode(
+  `var product  = function(a, b){ return a  * b; };
   var doubler  = product.bind( this,  2);
-  doubler( 8); // = 16
-
-  // When you call a function with the 'new' keyword, a new object is created, and
-  // made available to the function via the 'this' keyword. Functions designed to be
-  // called like that are called constructors.
-
-  var MyConstructor  = function(){
-      this.myNumber  =  5;
-  };
-  myNewObj  = new MyConstructor(); // = {myNumber: 5}
-  myNewObj.myNumber; // = 5`);
- 
-</script>     
-
-      // Unlike most other popular object-oriented languages, JavaScript has no
-      // concept of 'instances' created from 'class' blueprints; instead, JavaScript
-      // combines instantiation and inheritance into a single concept: a 'prototype'.
-
-      // Every JavaScript object has a 'prototype'. When you go to access a property
-      // on an object that doesn't exist on the actual object, the interpreter will
-      // look at its prototype.
-
-      // Some JS implementations let you access an object's prototype on the magic
-      // property '__proto__'. While this is useful for explaining prototypes it's not
-      // part of the standard; we'll get to standard ways of using prototypes later.
-      var myObj  = {
-          myString :  "Hello world!"
-      };
-      var myPrototype  = {
-          meaningOfLife :  42,
-          myFunc : function(){
-              return this.myString.toLowerCase();
-          }
-      };
-
-      myObj.__proto__  = myPrototype;
-      myObj.meaningOfLife; // = 42
-
-      // This works for functions, too.
-      myObj.myFunc(); // = "hello world!"
-
-      // Of course, if your property isn't on your prototype, the prototype's
-      // prototype is searched, and so on.
-      myPrototype.__proto__  = {
-          myBoolean :  true
-      };
-      myObj.myBoolean; // = true
-
-      // There's no copying involved here; each object stores a reference to its
-      // prototype. This means we can alter the prototype and our changes will be
-      // reflected everywhere.
-      myPrototype.meaningOfLife  =  43;
-      myObj.meaningOfLife; // = 43
-
-      // The for/in statement allows iteration over properties of an object,
-      // walking up the prototype chain until it sees a null prototype.
-       for (var x in myObj){
-          console.log(myObj[x]);
-      }
-      ///prints:
-      // Hello world!
-      // 43
-      // [Function: myFunc]
-
-      // To only consider properties attached to the object itself
-      // and not its prototypes, use the 'hasOwnProperty()' check.
-       for (var x in myObj){
-          if (myObj.hasOwnProperty(x)){
-              console.log(myObj[x]);
-          }
-      }
-      ///prints:
-      // Hello world!
-
-      // We mentioned that '_proto__' was non-standard, and there's no standard way to
-      // change the prototype of an existing object. However, there are two ways to
-      // create a new object with a given prototype.
-
-      // The first is Object.create, which is a recent addition to JS, and therefore
-      // not available in all implementations yet.
-      var myObj  =  Object.create(myPrototype);
-      myObj.meaningOfLife; // = 43
-
-      // The second way, which works anywhere, has to do with constructors.
-      // Constructors have a property called prototype. This is *not* the prototype of
-      // the constructor function itself; instead, it's the prototype that new objects
-      // are given when they're created with that constructor and the new keyword.
-      MyConstructor.prototype  = {
-          myNumber :  5,
-          getMyNumber : function(){
-              return this.myNumber;
-          }
-      };
-      var myNewObj2  = new MyConstructor();
-      myNewObj2.getMyNumber(); // = 5
-      myNewObj2.myNumber  =  6;
-      myNewObj2.getMyNumber(); // = 6
-
-      // Built-in types like strings and numbers also have constructors that create
-      // equivalent wrapper objects.
-      var myNumber  =  12;
-      var myNumberObj  = new  Number( 12);
-      myNumber  == myNumberObj; // = true
-
-      // Except, they aren't exactly equivalent.
-       typeof myNumber; // = 'number'
-       typeof myNumberObj; // = 'object'
-      myNumber  === myNumberObj; // = false
-       if ( 0){
-          // This code won't execute, because 0 is falsy.
-      }
-       if ( new  Number( 0)){
-         // This code will execute, because wrapped numbers are objects, and objects
-         // are always truthy.
-      }
-
-      // However, the wrapper objects and the regular builtins share a prototype, so
-      // you can actually add functionality to a string, for instance.
-       String.prototype.firstCharacter  = function(){
-          return this.charAt( 0);
-      };
-       "abc".firstCharacter(); // = "a"
-
-      // This fact is often used in "polyfilling", which is implementing newer
-      // features of JavaScript in an older subset of JavaScript, so that they can be
-      // used in older environments such as outdated browsers.
-
-      // For instance, we mentioned that Object.create isn't yet available in all
-      // implementations, but we can still use it with this polyfill:
-       if ( Object.create  ===  undefined){ // don't overwrite it if it exists
-           Object.create  = function(proto){
-              // make a temporary constructor with the right prototype
-              var Constructor  = function(){};
-              Constructor.prototype  = proto;
-              // then use it to create a new, appropriately-prototyped object
-              return new Constructor();
-          };
-      }
-      </code></pre>
-<script>
- Block("Arrow Functions","Arrow functions allows a short syntax for writing function",
+  doubler( 8); // = 16`);
+  Block("Arrow Functions","Arrow functions allows a short syntax for writing function",
   `// ES5
   var x = function(x, y) {
      return x * y;
   }
   // ES6
   const x = (x, y) => x * y;`,"javascript");
+
+Block("Events",
+"Example:",
+`< script type="text/javascript">
+function checkRange(t,low,high) {
+    var n = parseInt(t);
+    if (t!="" && (isNaN(n) || n<low || n>high))
+    alert("Enter a number between "+low+" and "+high);
+
+< /script>
+< form> 
+    < input type=text name=number size=10 onBlur="checkRange(this.value,1000,2000);">
+< /form>}`);
+
+Block("Raising events",
+`to raise an event use <b>dispatchEvent</b> (equivalent of raisevent in vb)
+to  Listen for the event use <b>addEventListener</b>
+ 
+Example`,
+`//in the function you want raise event,you call dispatchevent:
+ x.onchange=function()
+ {
+      x2.innerHTML=x.value;
+
+      var event = new Event('chang');  // (*)
+      x.dispatchEvent(event);	
+ }
+ return x;
+ ............................
+ //in the place you want to use it,call addEventListener:
+ // Listen for the event.
+  ra.addEventListener('chang', function (e) {
+  // e.target matches elem
+      alert(e.target);
+      console.log(e);
+  }, false);`);
+  const blkNew=new BlockFrame("New Keyword");
+  blkNew.AddBody(
+` When you call a function with the 'new' keyword, 
+a new object is created, and made available to the
+ function via the 'this' keyword.
+ Functions designed to be  called like that are 
+ called constructors.`);
+blkNew.AddCode(
+ ` var MyConstructor  = function(){
+      this.myNumber  =  5;
+  };
+  myNewObj  = new MyConstructor(); // = {myNumber: 5}
+  myNewObj.myNumber; // = 5`);
+ 
+ const blkPrototype=new BlockFrame("Prototypes");
+ blkPrototype.AddBody(
+ `Every JavaScript object has a public 'prototype' object.
+ The prototype object is special type of enumerable object
+  to which additional properties can be attached to it
+which will be shared across all the instances of it's 
+constructor function.
+
+ When you go to access a property on an object 
+ that doesn't exist on the actual object, 
+ the interpreter will look at its prototype.
+ Example:`);
+ blkPrototype.AddCode(
+ `function Student() {
+                this.name = 'John';
+                this.gender = 'M';
+  }
+
+  Student.prototype.age = 15;
+
+  var studObj1 = new Student();
+  alert(studObj1.age); // 15
+
+  var studObj2 = new Student();
+  alert(studObj2.age); // 15
+
+//All JavaScript objects inherit their properties 
+//and methods from their prototype.`);
+
+  blkPrototype.AddCode(
+`  var myObj  = {
+    myString :  "Hello world!"
+};
+var myPrototype  = {
+    meaningOfLife :  42,
+    myFunc : function(){
+        return this.myString.toLowerCase();
+    }
+};
+
+myObj.__proto__  = myPrototype;
+myObj.meaningOfLife; // = 42
+
+// This works for functions, too.
+myObj.myFunc(); // = "hello world!"
+
+// Of course, if your property isn't on your prototype, the prototype's
+// prototype is searched, and so on.
+myPrototype.__proto__  = {
+    myBoolean :  true
+};
+myObj.myBoolean; // = true
+
+// There's no copying involved here; each object stores a reference to its
+// prototype. This means we can alter the prototype and our changes will be
+// reflected everywhere.
+myPrototype.meaningOfLife  =  43;
+myObj.meaningOfLife; // = 43`);
+
+const blkProperties=new BlockFrame("properties of an object");
+blkProperties.AddBody(
+`The for/in statement allows iteration over
+properties of an object,
+walking up the prototype chain 
+until it sees a null prototype.`);
+blkProperties.AddCode(
+`  for (var x in myObj){
+          console.log(myObj[x]);
+      }
+      ///prints:
+      // Hello world!
+      // 43
+      // [Function: myFunc]`);
+blkProperties.AddBody(
+`To only consider properties attached to the object itself
+and <b>not its prototypes</b>, use the 'hasOwnProperty()' check:`);
+blkProperties.AddCode(
+`for (var x in myObj){
+    if (myObj.hasOwnProperty(x)){
+        console.log(myObj[x]);
+    }
+}
+///prints:
+// Hello world!`);
+
+const blkCreateNewObj=new BlockFrame(`Creating New Object`);
+blkCreateNewObj.AddBody(
+`using Object.create:`);
+blkCreateNewObj.AddCode(
+` var myObj  =  Object.create(myPrototype);
+  myObj.meaningOfLife; // = 43`);
+  blkCreateNewObj.AddBody(
+`The second way is using constructors.
+Constructors have a property called prototype. 
+This is *not* the prototype of the constructor 
+function itself; instead, it's the prototype 
+that new objects are given when they're created
+ with that constructor and the new keyword.`  );
+ blkCreateNewObj.AddCode(
+`MyConstructor.prototype  = {
+    myNumber :  5,
+    getMyNumber : function(){
+        return this.myNumber;
+    }
+};
+var myNewObj2  = new MyConstructor();
+myNewObj2.getMyNumber(); // = 5
+myNewObj2.myNumber  =  6;
+myNewObj2.getMyNumber(); // = 6
+
+// Built-in types like strings and numbers also have
+// constructors that create equivalent wrapper objects.
+var myNumber  =  12;
+var myNumberObj  = new  Number( 12);
+myNumber  == myNumberObj; // = true
+
+// Except, they aren't exactly equivalent.
+typeof myNumber; // = 'number'
+typeof myNumberObj; // = 'object'
+myNumber  === myNumberObj; // = false
+if ( 0){
+    // This code won't execute, because 0 is falsy.
+}
+if ( new  Number( 0)){
+    // This code will execute, because wrapped numbers 
+    // are objects, and objects are always truthy.
+}
+
+// However, the wrapper objects and the regular builtins
+// share a prototype, so you can actually add 
+// functionality to a string, for instance.
+String.prototype.firstCharacter  = function(){
+    return this.charAt( 0);
+};
+"abc".firstCharacter(); // = "a"
+
+// This fact is often used in "polyfilling", which is 
+// implementing newer features of JavaScript in an 
+// older subset of JavaScript, so that they can be
+// used in older environments such as outdated browsers.
+
+// For instance, we mentioned that Object.create isn't
+// yet available in all implementations, but we can 
+// still use it with this polyfill:
+if ( Object.create  ===  undefined){ 
+    // don't overwrite it if it exists
+    Object.create  = function(proto){
+     // make a temporary constructor with the right prototype
+     var Constructor  = function(){};
+     Constructor.prototype  = proto;
+     // then use it to create a new, appropriately-prototyped object
+     return new Constructor();
+    };
+}`);
+
+Block("object inheritannce",null,
+`var animal = { eats: true }
+rabbit = Object.create(animal)
+alert(rabbit.eats) // true`);
 </script>
  </body>
