@@ -44,17 +44,21 @@ NaN; // result of e.g. 0/0, stands for 'Not a Number'
 // There's also a boolean type:
 true;
 false;`);
-    
-const blkStrings=new BlockFrame("strings");
+    </script>
+    <h2>strings</h2>
+<script>
+const blkStrings=new BlockFrame("Concatenation");
 blkStrings.AddCode(
 `// Strings are <b>concatenated with +</b>
 "Hello "+ "world!"; // = "Hello world!"
  
 // ... which works with more than just strings
    "1, 2, "  +  3; // = "1, 2, 3"
-   "Hello "  + [ "world",  "!"]; // = "Hello world,!"
+   "Hello "  + [ "world",  "!"]; // = "Hello world,!"`);
 
-// and are <b>compared with < and ></b>
+const blkComparision=new BlockFrame("Comparision");
+blkComparision.AddCode(
+`// and are <b>compared with < and ></b>
    "a"  <  "b"; // = true
 
 // Type coercion is performed for comparisons with double equals
