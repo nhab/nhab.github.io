@@ -43,7 +43,15 @@ Block("special values ",null,
 NaN; // result of e.g. 0/0, stands for 'Not a Number'
 // There's also a boolean type:
 true;
-false;`);
+false;
+// There's also `null` and `undefined`.
+   null;      // used to indicate a deliberate non-value
+   undefined; // used to indicate a value is not currently present (although
+             // `undefined` is actually a value itself)
+
+  // false, null, undefined, NaN, 0 and "" are falsy; everything else is truthy.
+  // Note that 0 is falsy and "0" is truthy, even though 0 == "0".
+`);
     </script>
     <h2>strings</h2>
 <script>
@@ -98,56 +106,10 @@ var html = \`
   </div>
     \`;   
 `);
- 
 
- /*
-const blkbundlesConfigurator=new BlockFrame("");
-blkbundlesConfigurator.AddBody(``);
-blkbundlesConfigurator.AddCode(``);
- */
-</script>     
-    
-<b>strings</b>
-<pre><code class="javascript">
-      
-     
-      // ...which can result in some weird behaviour...
-       13  +  ! 0; // 14
-       "13"  +  ! 0; // '13true'
-
-      // You can access characters in a string with `charAt`
-       "This is a string".charAt( 0);  // = 'T'
-
-      // ...or use `substring` to get larger pieces.
-       "Hello world".substring( 0,  5); // = "Hello"
-
-      // `length` is a property, so don't use ().
-       "Hello".length; // = 5
-
-    //multiline strings:
-    //ECMAScript 6 (ES6) introduces a new type of literal,
-    // namely template literals.
-    // They have many features, variable interpolation among others,
-    // but most importantly they can be multiline.
-    //A template literal is delimited by backticks:
-    
-    var html = `
-      <div>
-        <span>Some HTML here</span>
-      </div>
-    `;
-      
-    // There's also `null` and `undefined`.
-       null;      // used to indicate a deliberate non-value
-       undefined; // used to indicate a value is not currently present (although
-                 // `undefined` is actually a value itself)
-
-      // false, null, undefined, NaN, 0 and "" are falsy; everything else is truthy.
-      // Note that 0 is falsy and "0" is truthy, even though 0 == "0".
-      </code></pre>
-      <b> 2. Variables, Arrays and Objects</b>
-      <pre><code class="javascript">
-      // Variables are declared with the `var` keyword. JavaScript is dynamically
+const constblkVars=new BlockFrame(" Variables");
+constblkVars.AddCode(
+ ` // Variables are declared with the `var` keyword. JavaScript is dynamically
       // typed, so you don't need to specify type. Assignment uses a single `=`
       // character.
       var someVar  =  5;
@@ -171,7 +133,18 @@ blkbundlesConfigurator.AddCode(``);
 
       // and an even-shorter-hand for adding or subtracting 1
       someVar ++; // now someVar is 101
-      someVar --; // back to 100
+      someVar --; // back to 100`);
+ /*
+const blkbundlesConfigurator=new BlockFrame("");
+blkbundlesConfigurator.AddBody(``);
+blkbundlesConfigurator.AddCode(``);
+ */
+</script>     
+<pre><code class="javascript">
+      </code></pre> Arrays and Objects
+      <b> 2. Variables,</b>
+      <pre><code class="javascript">
+     
 
       // Arrays are ordered lists of values, of any type.
       var myArray  = [ "Hello",  45,  true];
