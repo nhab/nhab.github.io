@@ -18,9 +18,6 @@ blkComment.AddCode(` // Single-line comments start with two slashes
 /* Multiline comments start with slash-star
     and end with star-slash*/`);
     
-
-Block("statements","Statements can be terminated by ';'","<br> doStuff();");
-
 Block("Numbers"
     ,`JavaScript has only one 64-bit number type .
 it  has a 52-bit mantissa, which is enough
@@ -55,10 +52,10 @@ blkStrings.AddCode(
  // ... which works with more than just strings
    "1, 2, "  +  3; // = "1, 2, 3"
    "Hello "  + [ "world",  "!"]; // = "Hello world,!"
+// and are compared with &lt; and &gt;
+   "a"  &lt;  "b"; \// = true
 `);
     /*
-  \// and are compared with &lt; and &gt;
-   "a"  &lt;  "b"; \// = true
 
   \// Type coercion is performed for comparisons with double equals...
    "5"  ==  5; \// = true
