@@ -7,10 +7,17 @@
 </head>
 <body>
 <script>
+/*
+const blkbundlesConfigurator=new BlockFrame("");
+blkbundlesConfigurator.AddBody(``);
+blkbundlesConfigurator.AddCode(``);
+ */
 
-Block("Comments",null,` // Single-line comments start with two slashes
+const blkbundlesConfigurator=new BlockFrame("Comments");
+blkbundlesConfigurator.AddCode(` // Single-line comments start with two slashes
 /* Multiline comments start with slash-star
-    and end with star-slash*/`,"javascript");
+    and end with star-slash*/`);
+    
 
 Block("statements","Statements can be terminated by ';'","<br> doStuff();");
 
