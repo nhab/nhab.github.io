@@ -372,7 +372,7 @@ blkbundlesConfigurator.AddCode(
   myObj.myFunc(); // = "Hello world!"
 
   // When functions attached to an object are called, they can access the object
-  // they're attached to using the `this` keyword.
+  // they're attached to using the 'this' keyword.
   myObj  = {
       myString :  "Hello world!",
       myFunc : function(){
@@ -388,7 +388,7 @@ blkbundlesConfigurator.AddCode(
   myFunc(); // = undefined
 
   // Inversely, a function can be assigned to the object and gain access to it
-  // through `this`, even if it wasn't attached when it was defined.
+  // through 'this', even if it wasn't attached when it was defined.
   var myOtherFunc  = function(){
       return this.myString.toUpperCase();
   };
