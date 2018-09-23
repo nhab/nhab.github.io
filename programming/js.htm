@@ -110,15 +110,15 @@ var html = \`
 const constblkVars=new BlockFrame("Variables");
 constblkVars.AddCode(
  `// Variables are declared with the 'var' keyword. 
-
-// JavaScript is dynamically typed, so you don't need to specify type.
-
-// If you leave the var keyword off, you won't get an error...
+// you don't need to specify type.
+// you don`t need to specify 'var' keyword
+//  for variable defenition :
 someOtherVar  =  10;
-// ...but your variable will be created in the global scope, 
+// but your variable will be created in the global scope, 
 not in the scope you defined it in.
 
-// Variables declared without being assigned to are set to undefined.
+// Variables declared without being assigned to 
+//are set to undefined.
 var someThirdVar; // = undefined
 
 // If you want to declare a couple of variables, 
