@@ -50,12 +50,13 @@ false;`);
     
 const blkStrings=new BlockFrame("strings");
 blkStrings.AddCode(
-`\// Strings are concatenated with +
-"Hello "+ "world!"; \// = "Hello world!"
- \// ... which works with more than just strings
-   "1, 2, "  \+  3; // = "1, 2, 3"
-   "Hello "  \+ [ "world",  "!"]; \// = "Hello world,!"
-
+`// Strings are concatenated with +
+"Hello "+ "world!"; // = "Hello world!"
+ // ... which works with more than just strings
+   "1, 2, "  +  3; // = "1, 2, 3"
+   "Hello "  + [ "world",  "!"]; // = "Hello world,!"
+`);
+    /*
   \// and are compared with &lt; and &gt;
    "a"  &lt;  "b"; \// = true
 
@@ -79,9 +80,6 @@ blkStrings.AddCode(
 
   \// `length` is a property, so don't use ().
    "Hello".length; \// = 5`);
-   /*
-  
-
  
 //multiline strings:
 //ECMAScript 6 (ES6) introduces a new type of literal,
