@@ -57,14 +57,14 @@ blkStrings.AddCode(
    "Hello "  \+ [ "world",  "!"]; \// = "Hello world,!"
 
   \// and are compared with &lt; and &gt;
-   "a"  &lt;  "b"; // = true
+   "a"  &lt;  "b"; \// = true
 
   \// Type coercion is performed for comparisons with double equals...
    "5"  ==  5; \// = true
    null  ==  undefined; \// = true
 
 \// ...unless you use ===
-   "5"  ===  5; // = false
+   "5"  ===  5; \// = false
    null  ===  undefined; \// = false
 
  \// ...which can result in some weird behaviour...
@@ -78,9 +78,7 @@ blkStrings.AddCode(
    "Hello world".substring( 0,  5); \// = "Hello"
 
   \// `length` is a property, so don't use ().
-   "Hello".length; \// = 5
-
-`);
+   "Hello".length; \// = 5`);
    /*
   
 
