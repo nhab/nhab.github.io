@@ -93,14 +93,14 @@ blkStrings2.AddCode(
    "Hello".length; // = 5`);  
 
  const blkmultilineStrings=new BlockFrame("multiline strings");
-blkmultilineStrings.AddCode(
- `//multiline strings:
-//ECMAScript 6 (ES6) introduces a new type of literal,
+blkmultilineStrings.AddBody(
+`ECMAScript 6 (ES6) introduces a new type of literal,
 // namely template literals.
 // They have many features, variable interpolation among others,
 // but most importantly they can be multiline.
-//A template literal is delimited by backticks:
-var html = \`
+//A template literal is delimited by backticks:`);
+blkmultilineStrings.AddCode(
+ `var html = \`
   <div>
     <span>Some HTML here</span>
   </div>
