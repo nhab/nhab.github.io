@@ -133,8 +133,6 @@ someVar ++; // now someVar is 101
 someVar --; // back to 100`);
     
 const blkArrays=new BlockFrame("Arrays");
-  blkArrays.AddBode(
- ``);
 blkArrays.AddCode(
 ` // Arrays are ordered lists of values, of any type.
 var myArray  = [ "Hello",  45,  true];
@@ -167,7 +165,8 @@ myArray0.slice( 1, 4); // = [false,"js",12]
 // Remove 4 elements starting from index 2,
 // and insert there strings
 // "hi","wr" and "ld"; return removed subarray
-myArray0.splice( 2, 4, "hi", "wr", "ld"); // = ["js",12,56,90]
+myArray0.splice( 2, 4, "hi", "wr", "ld");
+// = ["js",12,56,90]
 // myArray0 === [32,false,"hi","wr","ld"]`);
 
 const blkObjets=new BlockFrame("Objets");
@@ -234,7 +233,8 @@ for (var i  =  0; i  &lt;  10; i ++) {
   for (var j  =  0; j  &lt;  10; j ++) {
       if (i  ==  5  &amp;&amp; j  == 5) {
           break outer;
-          // breaks out of outer loop instead of only the inner one
+          // breaks out of outer loop instead of 
+            //only the inner one
       }
   }
 }
@@ -254,7 +254,8 @@ if (colour  ==  "red"  || colour  ==  "blue"){
   // colour is either red or blue
 }
 
-// &amp;&amp; and || "short circuit", which is useful for setting default values.
+// &amp;&amp; and || "short circuit", which is useful 
+//for setting default values.
 var name  = otherName  ||  "default";
 
 // The 'switch' statement checks for equality with '==='.
@@ -279,41 +280,42 @@ default :
 const blkFunction=new BlockFrame("Functions");
 blkFunction.AddCode(
 ` // JavaScript functions are declared with the "function" keyword.
-      function myFunction(thing){
-          return thing.toUpperCase();
-      }
-      myFunction( "foo"); // = "FOO"
+  function myFunction(thing){
+      return thing.toUpperCase();
+  }
+  myFunction( "foo"); // = "FOO"
 
-      // Note that the value to be returned must start on the same line as the
-      // "return" keyword, otherwise you'll always return "undefined" due to
-      // automatic semicolon insertion. Watch out for this when using Allman style.
-      function myFunction(){
-          return // &lt;- semicolon automatically inserted here
-          {thisIsAn : <span class="s1">'object literal'};
-      }
-      myFunction(); // = undefined
+  // Note that the value to be returned must start on the same line as the
+  // "return" keyword, otherwise you'll always return "undefined" due to
+  // automatic semicolon insertion. Watch out for this when using Allman style.
+  function myFunction(){
+      return // &lt;- semicolon automatically inserted here
+      {thisIsAn : <span class="s1">'object literal'};
+  }
+  myFunction(); // = undefined
 
-      // JavaScript functions are first class objects, so they can be reassigned to
-      // different variable names and passed to other functions as arguments - for
-      // example, when supplying an event handler:
-      function myFunction(){
-          // this code will be called in 5 seconds' time
-      }
-      setTimeout(myFunction,  5000);
-      // Note: setTimeout isn't part of the JS language, but is provided by browsers
-      // and Node.js.
+  // JavaScript functions are first class objects, so they can be reassigned to
+  // different variable names and passed to other functions as arguments - for
+  // example, when supplying an event handler:
+  function myFunction(){
+      // this code will be called in 5 seconds' time
+  }
+  setTimeout(myFunction,  5000);
+  // Note: setTimeout isn't part of the JS language, but is provided by browsers
+  // and Node.js.
 
-      // Another function provided by browsers is setInterval
-      function myFunction(){
-          // this code will be called every 5 seconds
-      }
-      setInterval(myFunction,  5000);
+  // Another function provided by browsers is setInterval
+  function myFunction(){
+      // this code will be called every 5 seconds
+  }
+  setInterval(myFunction,  5000);
 
-      // Function objects don't even have to be declared with a name - you can write
-      // an anonymous function definition directly into the arguments of another.
-      setTimeout(function(){
-          // this code will be called in 5 seconds' time
-      },  5000);`);
+  // Function objects don't even have to be declared with a name - you can write
+  // an anonymous function definition directly into the arguments of another.
+  setTimeout(function(){
+      // this code will be called in 5 seconds' time
+  },  5000);`);
+    
  /*
 const blkbundlesConfigurator=new BlockFrame("");
 blkbundlesConfigurator.AddBody(``);
