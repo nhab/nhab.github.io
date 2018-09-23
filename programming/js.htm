@@ -57,7 +57,7 @@ blkStrings.AddCode(
 // and are <b>compared with < and ></b>
    "a"  <  "b"; // = true
 
-// Type coercion is performed for comparisons with double equals...
+// Type coercion is performed for comparisons with double equals
    "5"  ==  5; // = true
    null  ==  undefined; // = true
 
@@ -67,33 +67,35 @@ blkStrings.AddCode(
 // ...which can result in some weird behaviour...
    13  +  ! 0; // 14
    "13"  +  ! 0; // '13true'
+`);
 
-// You can access characters in a string with 'charAt'
+const blkStrings2=new BlockFrame("strings continued");
+blkStrings2.AddCode(
+`// You can access characters in a string with 'charAt'
    "This is a string".charAt( 0);  // = 'T'
 
 // ...or use 'substring' to get larger pieces.
    "Hello world".substring( 0,  5); // = "Hello"
 
 // 'length' is a property, so don't use ().
-   "Hello".length; \// = 5`);  
-`);
- 
- 
-    /*
+   "Hello".length; // = 5`);  
 
-//multiline strings:
+ const blkmultilineStrings=new BlockFrame("multiline strings");
+blkmultilineStrings.AddCode(
+ `//multiline strings:
 //ECMAScript 6 (ES6) introduces a new type of literal,
 // namely template literals.
 // They have many features, variable interpolation among others,
 // but most importantly they can be multiline.
 //A template literal is delimited by backticks:
-
 var html = \`
   <div>
     <span>Some HTML here</span>
   </div>
-    \`;   `);
-*/
+    \`;   
+`);
+ 
+
  /*
 const blkbundlesConfigurator=new BlockFrame("");
 blkbundlesConfigurator.AddBody(``);
