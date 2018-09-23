@@ -294,10 +294,13 @@ myFunction( "foo"); // = "FOO"
 // automatic semicolon insertion.
 function myFunction(){
   return // &lt;- semicolon automatically inserted here
-  {thisIsAn : <span class="s1">'object literal'};
+  {thisIsAn : <span class="s1">'object literal' };
 }
 myFunction(); // = undefined
-
+`);
+    const blkFunction2=new BlockFrame("Functions Continued");
+    blkFunction2.AddCode(
+`
 // JavaScript functions are first class objects, so they can be reassigned to
 // different variable names and passed to other functions as arguments - for
 // example, when supplying an event handler:
