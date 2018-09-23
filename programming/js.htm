@@ -13,6 +13,7 @@ Block("Comments",null,` // Single-line comments start with two slashes
     and end with star-slash*/`,"javascript");
 
 Block("statements","Statements can be terminated by ';'","<br> doStuff();");
+
 Block("Numbers"
     ,`JavaScript has only one 64-bit number type .
 it  has a 52-bit mantissa, which is enough
@@ -27,26 +28,20 @@ to store integers up to about 9✕10¹⁵ .
 30  %  4; // = 2"
 18.5  %  7; // = 4.5`,  "javascript");
 
-var sBody=`Bitwise operations also works;
-    when you perform a bitwise operation ,
-    the float is converted to a signed int *up to* 32 bits.
-`;
-var sCode=
-`1  &lt;&lt;  2; // = 4
-`;
-Block("bitwise operations",sBody,sCode);
-Block("special values and Operators","",
-`      // There are three special not-a-real-number values:
-       Infinity; // result of e.g. 1/0
-       - Infinity; // result of e.g. -1/0
-       NaN; // result of e.g. 0/0, stands for 'Not a Number'
+Block("bitwise operations",`Bitwise operations also works;
+ when you perform a bitwise operation ,
+ the float is converted to a signed int *up to* 32 bits.`,`1  &lt;&lt;  2; // = 4`);
 
-      // There's also a boolean type.
-       true;
-       false;
-`);
+Block("special values and Operators","",
+`// There are three special not-a-real-number values:
+Infinity; // result of e.g. 1/0
+- Infinity; // result of e.g. -1/0
+NaN; // result of e.g. 0/0, stands for 'Not a Number'
+
+// There's also a boolean type.
+true;
+false;`);
 </script>     
-      <br>
 <b>strings</b>
 <pre><code class="javascript">
       // Strings are concatenated with +
