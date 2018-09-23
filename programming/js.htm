@@ -49,23 +49,25 @@ const blkStrings=new BlockFrame("strings");
 blkStrings.AddCode(
 `// Strings are concatenated with +
 "Hello "+ "world!"; // = "Hello world!"
- // ... which works with more than just strings
+ 
+// ... which works with more than just strings
    "1, 2, "  +  3; // = "1, 2, 3"
    "Hello "  + [ "world",  "!"]; // = "Hello world,!"
-// and are compared with &lt; and &gt;
-   "a"  &lt;  "b"; \// = true
-`);
-    /*
 
-  \// Type coercion is performed for comparisons with double equals...
-   "5"  ==  5; \// = true
-   null  ==  undefined; \// = true
+// and are compared with < and >
+   "a"  <  "b"; // = true
 
-\// ...unless you use ===
+// Type coercion is performed for comparisons with double equals...
+   "5"  ==  5; // = true
+   null  ==  undefined; // = true
+
+// ...unless you use ===
    "5"  ===  5; \// = false
    null  ===  undefined; \// = false
-
- \// ...which can result in some weird behaviour...
+ 
+`);
+    /*
+\\// ...which can result in some weird behaviour...
    13  +  ! 0; \// 14
    "13"  +  ! 0; \// '13true'
 
