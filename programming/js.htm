@@ -170,11 +170,12 @@ myArray0.splice( 2, 4, "hi", "wr", "ld");
 // myArray0 === [32,false,"hi","wr","ld"]`);
 
 const blkObjets=new BlockFrame("Objets");
+blkObjets.AddBody(
+`JavaScript's objects are equivalent to
+"dictionaries" or "maps" in other languages: 
+an unordered collection of key-value pairs.`);
 blkObjets.AddCode(
-`// JavaScript's objects are equivalent to
-//"dictionaries" or "maps" in other
-// languages: an unordered collection of key-value pairs.
-var myObj  = {key1 :  "Hello", key2 :  "World"};
+`var myObj  = {key1 :  "Hello", key2 :  "World"};
 
 // Keys are strings, but quotes aren't
 // required if they're a valid
@@ -278,44 +279,47 @@ default :
 }`);
     
 const blkFunction=new BlockFrame("Functions");
+blkFunction.AddBody(
+ `JavaScript functions are declared
+with the "function" keyword.`);
 blkFunction.AddCode(
-` // JavaScript functions are declared with the "function" keyword.
-  function myFunction(thing){
-      return thing.toUpperCase();
-  }
-  myFunction( "foo"); // = "FOO"
+` function myFunction(thing){
+  return thing.toUpperCase();
+}
+myFunction( "foo"); // = "FOO"
 
-  // Note that the value to be returned must start on the same line as the
-  // "return" keyword, otherwise you'll always return "undefined" due to
-  // automatic semicolon insertion. Watch out for this when using Allman style.
-  function myFunction(){
-      return // &lt;- semicolon automatically inserted here
-      {thisIsAn : <span class="s1">'object literal'};
-  }
-  myFunction(); // = undefined
+// Note that the value to be returned must start 
+//on the same line as the "return" keyword, 
+//otherwise you'll always return "undefined" due to
+// automatic semicolon insertion.
+function myFunction(){
+  return // &lt;- semicolon automatically inserted here
+  {thisIsAn : <span class="s1">'object literal'};
+}
+myFunction(); // = undefined
 
-  // JavaScript functions are first class objects, so they can be reassigned to
-  // different variable names and passed to other functions as arguments - for
-  // example, when supplying an event handler:
-  function myFunction(){
-      // this code will be called in 5 seconds' time
-  }
-  setTimeout(myFunction,  5000);
-  // Note: setTimeout isn't part of the JS language, but is provided by browsers
-  // and Node.js.
+// JavaScript functions are first class objects, so they can be reassigned to
+// different variable names and passed to other functions as arguments - for
+// example, when supplying an event handler:
+function myFunction(){
+  // this code will be called in 5 seconds' time
+}
+setTimeout(myFunction,  5000);
+// Note: setTimeout isn't part of the JS language, but is provided by browsers
+// and Node.js.
 
-  // Another function provided by browsers is setInterval
-  function myFunction(){
-      // this code will be called every 5 seconds
-  }
-  setInterval(myFunction,  5000);
+// Another function provided by browsers is setInterval
+function myFunction(){
+  // this code will be called every 5 seconds
+}
+setInterval(myFunction,  5000);
 
-  // Function objects don't even have to be declared with a name - you can write
-  // an anonymous function definition directly into the arguments of another.
-  setTimeout(function(){
-      // this code will be called in 5 seconds' time
-  },  5000);`);
-    
+// Function objects don't even have to be declared with a name - you can write
+// an anonymous function definition directly into the arguments of another.
+setTimeout(function(){
+  // this code will be called in 5 seconds' time
+},  5000);`);
+
  /*
 const blkbundlesConfigurator=new BlockFrame("");
 blkbundlesConfigurator.AddBody(``);
@@ -326,7 +330,6 @@ blkbundlesConfigurator.AddCode(
 <pre><code class="javascript">
       <b> 4. Functions, Scope and Closures</b>
       <pre><code class="javascript">
-     
 
       // JavaScript has function scope; functions get their own scope but other blocks
       // do not.
