@@ -108,16 +108,16 @@ var html = \`
 `);
 
 const constblkVars=new BlockFrame("Variables");
-constblkVars.AddCode(
- `// Variables are declared with the 'var' keyword. 
-// you don't need to specify type.
-// you don't need to specify 'var' keyword
-//  for variable defenition :
+constblkVars.AddBody(
+`Variables are declared with the 'var' keyword. 
+ you don't need to specify type.
+ you don't need to specify 'var' keyword
+ for variable defenition :
 someOtherVar  =  10;
-// but your variable will be created in the global scope, 
-not in the scope you defined it in.
-
-// Variables declared without being assigned to 
+ but your variable will be created in the global scope, 
+not in the scope you defined it in.`);
+constblkVars.AddCode(
+ `// Variables declared without being assigned to 
 //are set to undefined.
 var someThirdVar; // = undefined
 
