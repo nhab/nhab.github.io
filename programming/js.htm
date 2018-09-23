@@ -109,8 +109,8 @@ var html = \`
 
 const constblkVars=new BlockFrame("Variables");
 constblkVars.AddCode(
- `// Variables are declared with the `var` keyword. JavaScript is dynamically
-// typed, so you don't need to specify type. Assignment uses a single `=`
+ `// Variables are declared with the 'var' keyword. JavaScript is dynamically
+// typed, so you don't need to specify type. Assignment uses a single '='
 // character.
 var someVar  =  5;
 
@@ -172,37 +172,29 @@ blkArrays.AddCode(
 const blkObjets=new BlockFrame("Objets");
 blkObjets.AddCode(
 `// JavaScript's objects are equivalent to "dictionaries" or "maps" in other
-      // languages: an unordered collection of key-value pairs.
-      var myObj  = {key1 :  "Hello", key2 :  "World"};
+  // languages: an unordered collection of key-value pairs.
+  var myObj  = {key1 :  "Hello", key2 :  "World"};
 
-      // Keys are strings, but quotes aren't required if they're a valid
-      // JavaScript identifier. Values can be any type.
-      var myObj  = {myKey :  "myValue",  "my other key" :  4};
+  // Keys are strings, but quotes aren't required if they're a valid
+  // JavaScript identifier. Values can be any type.
+  var myObj  = {myKey :  "myValue",  "my other key" :  4};
 
-      // Object attributes can also be accessed using the subscript syntax,
-      myObj[ "my other key"]; // = 4
+  // Object attributes can also be accessed using the subscript syntax,
+  myObj[ "my other key"]; // = 4
 
-      // ... or using the dot syntax, provided the key is a valid identifier.
-      myObj.myKey; // = "myValue"
+  // ... or using the dot syntax, provided the key is a valid identifier.
+  myObj.myKey; // = "myValue"
 
-      // Objects are mutable; values can be changed and new keys added.
-      myObj.myThirdKey  =  true;
+  // Objects are mutable; values can be changed and new keys added.
+  myObj.myThirdKey  =  true;
 
-      // If you try to access a value that's not yet set, you'll get undefined.
-      myObj.myFourthKey; // = undefined`);
- /*
-const blkbundlesConfigurator=new BlockFrame("");
-blkbundlesConfigurator.AddBody(``);
-blkbundlesConfigurator.AddCode(
-``);
- */
-</script>     
-<pre><code class="javascript">
-      </code></pre> 
- 
-      <b> 3. Logic and Control Structures</b>
-      <pre><code class="javascript">
-      // The `if` structure works as you'd expect.
+  // If you try to access a value that's not yet set, you'll get undefined.
+  myObj.myFourthKey; // = undefined`);
+   
+const blkLogic =new BlockFrame("Logic and Control");
+blkLogic.AddBody(``);
+blkLogic.AddCode(
+`// The 'if' structure works as you'd expect.
       var count  =  1;
        if (count  ==  3){
           // evaluated if count is 3
@@ -212,7 +204,7 @@ blkbundlesConfigurator.AddCode(
           // evaluated if it's not either 3 or 4
       }
 
-      // As does `while`.
+      // As does 'while'.
        while ( true){
           // An infinite loop!
       }
@@ -223,7 +215,7 @@ blkbundlesConfigurator.AddCode(
           input  = getInput();
       } while ( !isValid(input));
 
-      // The `for` loop is the same as C and Java:
+      // The 'for' loop is the same as C and Java:
       // initialization; continue condition; iteration.
        for (var i  =  0; i  &lt;  5; i ++){
           // will run 5 times
@@ -258,7 +250,7 @@ blkbundlesConfigurator.AddCode(
       // &amp;&amp; and || "short circuit", which is useful for setting default values.
       var name  = otherName  ||  "default";
 
-      // The `switch` statement checks for equality with `===`.
+      // The 'switch' statement checks for equality with '==='.
       // Use 'break' after each case
       // or the cases after the correct one will be executed too.
       grade  = <span class="s1">'B';
@@ -275,7 +267,20 @@ blkbundlesConfigurator.AddCode(
         default :
           console.log( "Oy vey");
           break;
-      }
+      }`);
+ /*
+const blkbundlesConfigurator=new BlockFrame("");
+blkbundlesConfigurator.AddBody(``);
+blkbundlesConfigurator.AddCode(
+``);
+ */
+</script>     
+<pre><code class="javascript">
+      </code></pre> 
+ 
+      <b> 3. Logic and Control Structures</b>
+      <pre><code class="javascript">
+      
 
       </code></pre>
       <b> 4. Functions, Scope and Closures</b>
