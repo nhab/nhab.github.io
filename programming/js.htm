@@ -136,58 +136,66 @@ someVar --; // back to 100`);
 const blkArrays=new BlockFrame("Arrays");
 blkArrays.AddCode(
 `     // Arrays are ordered lists of values, of any type.
-  var myArray  = [ "Hello",  45,  true];
+var myArray  = [ "Hello",  45,  true];
 
-  // Their members can be accessed using the square-brackets subscript syntax.
-  // Array indices start at zero.
-  myArray[ 1]; // = 45
+// Their members can be accessed 
+//using the square-brackets subscript syntax.
+// Array indices start at zero.
+myArray[ 1]; // = 45
 
-  // Arrays are mutable and of variable length.
-  myArray.push( "World");
-  myArray.length; // = 4
+// Arrays are mutable and of variable length.
+myArray.push( "World");
+myArray.length; // = 4
 
-  // Add/Modify at specific index
-  myArray[ 3]  =  "Hello";
+// Add/Modify at specific index
+myArray[ 3]  =  "Hello";
 
-  // Add and remove element from front or back end of an array
-  myArray.unshift( 3); // Add as the first element
-  someVar  = myArray.shift(); // Remove first element and return it
-  myArray.push( 3); // Add as the last element
-  someVar  = myArray.pop(); // Remove last element and return it
+// Add/remove element from front or back end of an array
+myArray.unshift( 3); // Add as the first element
+someVar  = myArray.shift(); // Remove first element and return it
+myArray.push( 3); // Add as the last element
+someVar  = myArray.pop(); // Remove last element and return it
 
-  // Join all elements of an array with semicolon
-  var myArray0  = [ 32, false, "js", 12, 56, 90];
-  myArray0.join( ";") // = "32;false;js;12;56;90"
+// Join all elements of an array with semicolon
+var myArray0  = [ 32, false, "js", 12, 56, 90];
+myArray0.join( ";") // = "32;false;js;12;56;90"
 
-  // Get subarray of elements from index 1 (include) to 4 (exclude)
-  myArray0.slice( 1, 4); // = [false,"js",12]
+// Get subarray of elements from index 1 to 4 
+myArray0.slice( 1, 4); // = [false,"js",12]
 
-  // Remove 4 elements starting from index 2, and insert there strings
-  // "hi","wr" and "ld"; return removed subarray
-  myArray0.splice( 2, 4, "hi", "wr", "ld"); // = ["js",12,56,90]
-  // myArray0 === [32,false,"hi","wr","ld"]`);
+// Remove 4 elements starting from index 2,
+// and insert there strings
+// "hi","wr" and "ld"; return removed subarray
+myArray0.splice( 2, 4, "hi", "wr", "ld"); // = ["js",12,56,90]
+// myArray0 === [32,false,"hi","wr","ld"]`);
 
 const blkObjets=new BlockFrame("Objets");
 blkObjets.AddCode(
-`// JavaScript's objects are equivalent to "dictionaries" or "maps" in other
-  // languages: an unordered collection of key-value pairs.
-  var myObj  = {key1 :  "Hello", key2 :  "World"};
+`// JavaScript's objects are equivalent to
+//"dictionaries" or "maps" in other
+// languages: an unordered collection of key-value pairs.
+var myObj  = {key1 :  "Hello", key2 :  "World"};
 
-  // Keys are strings, but quotes aren't required if they're a valid
-  // JavaScript identifier. Values can be any type.
-  var myObj  = {myKey :  "myValue",  "my other key" :  4};
+// Keys are strings, but quotes aren't
+// required if they're a valid
+// JavaScript identifier. Values can be any type.
+var myObj  = {myKey :  "myValue",  "my other key" :  4};
 
-  // Object attributes can also be accessed using the subscript syntax,
-  myObj[ "my other key"]; // = 4
+// Object attributes can also be accessed using 
+//the subscript syntax,
+myObj[ "my other key"]; // = 4
 
-  // ... or using the dot syntax, provided the key is a valid identifier.
-  myObj.myKey; // = "myValue"
+// ... or using the dot syntax, provided the key
+//is a valid identifier.
+myObj.myKey; // = "myValue"
 
-  // Objects are mutable; values can be changed and new keys added.
-  myObj.myThirdKey  =  true;
+// Objects are mutable; values can be changed 
+//and new keys added.
+myObj.myThirdKey  =  true;
 
-  // If you try to access a value that's not yet set, you'll get undefined.
-  myObj.myFourthKey; // = undefined`);
+// If you try to access a value that's not yet
+//set, you'll get undefined.
+myObj.myFourthKey; // = undefined`);
    
 const blkLogic =new BlockFrame("Logic and Control");
 blkLogic.AddBody(``);
