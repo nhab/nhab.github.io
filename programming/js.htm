@@ -109,26 +109,24 @@ var html = \`
 
 const constblkVars=new BlockFrame("Variables");
 constblkVars.AddCode(
- `// Variables are declared with the 'var' keyword. JavaScript is dynamically
-// typed, so you don't need to specify type. Assignment uses a single '='
-// character.
-var someVar  =  5;
+ `// Variables are declared with the `+"<b>'var'</b>"+` keyword. 
+
+// JavaScript is dynamically typed, so you don't need to specify type.
 
 // If you leave the var keyword off, you won't get an error...
 someOtherVar  =  10;
-
-// ...but your variable will be created in the global scope, not in the scope
-// you defined it in.
+// ...but your variable will be created in the global scope, 
+not in the scope you defined it in.
 
 // Variables declared without being assigned to are set to undefined.
 var someThirdVar; // = undefined
 
-// If you want to declare a couple of variables, then you could use a comma
-// separator
+// If you want to declare a couple of variables, 
+then you could use a comma separator
 var someFourthVar  =  2, someFifthVar  =  4;
 
 // There's shorthand for performing math operations on variables:
-someVar  +=  5; // equivalent to someVar = someVar + 5; someVar is 10 now
+someVar  +=  5; // or  someVar = someVar + 5; someVar is 10 now
 someVar  *=  10; // now someVar is 100
 
 // and an even-shorter-hand for adding or subtracting 1
@@ -138,36 +136,36 @@ someVar --; // back to 100`);
 const blkArrays=new BlockFrame("Arrays");
 blkArrays.AddCode(
 `     // Arrays are ordered lists of values, of any type.
-      var myArray  = [ "Hello",  45,  true];
+  var myArray  = [ "Hello",  45,  true];
 
-      // Their members can be accessed using the square-brackets subscript syntax.
-      // Array indices start at zero.
-      myArray[ 1]; // = 45
+  // Their members can be accessed using the square-brackets subscript syntax.
+  // Array indices start at zero.
+  myArray[ 1]; // = 45
 
-      // Arrays are mutable and of variable length.
-      myArray.push( "World");
-      myArray.length; // = 4
+  // Arrays are mutable and of variable length.
+  myArray.push( "World");
+  myArray.length; // = 4
 
-      // Add/Modify at specific index
-      myArray[ 3]  =  "Hello";
+  // Add/Modify at specific index
+  myArray[ 3]  =  "Hello";
 
-      // Add and remove element from front or back end of an array
-      myArray.unshift( 3); // Add as the first element
-      someVar  = myArray.shift(); // Remove first element and return it
-      myArray.push( 3); // Add as the last element
-      someVar  = myArray.pop(); // Remove last element and return it
+  // Add and remove element from front or back end of an array
+  myArray.unshift( 3); // Add as the first element
+  someVar  = myArray.shift(); // Remove first element and return it
+  myArray.push( 3); // Add as the last element
+  someVar  = myArray.pop(); // Remove last element and return it
 
-      // Join all elements of an array with semicolon
-      var myArray0  = [ 32, false, "js", 12, 56, 90];
-      myArray0.join( ";") // = "32;false;js;12;56;90"
+  // Join all elements of an array with semicolon
+  var myArray0  = [ 32, false, "js", 12, 56, 90];
+  myArray0.join( ";") // = "32;false;js;12;56;90"
 
-      // Get subarray of elements from index 1 (include) to 4 (exclude)
-      myArray0.slice( 1, 4); // = [false,"js",12]
+  // Get subarray of elements from index 1 (include) to 4 (exclude)
+  myArray0.slice( 1, 4); // = [false,"js",12]
 
-      // Remove 4 elements starting from index 2, and insert there strings
-      // "hi","wr" and "ld"; return removed subarray
-      myArray0.splice( 2, 4, "hi", "wr", "ld"); // = ["js",12,56,90]
-      // myArray0 === [32,false,"hi","wr","ld"]`);
+  // Remove 4 elements starting from index 2, and insert there strings
+  // "hi","wr" and "ld"; return removed subarray
+  myArray0.splice( 2, 4, "hi", "wr", "ld"); // = ["js",12,56,90]
+  // myArray0 === [32,false,"hi","wr","ld"]`);
 
 const blkObjets=new BlockFrame("Objets");
 blkObjets.AddCode(
