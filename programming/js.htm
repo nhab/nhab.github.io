@@ -13,8 +13,8 @@ blkbundlesConfigurator.AddBody(``);
 blkbundlesConfigurator.AddCode(``);
  */
 
-const blkbundlesConfigurator=new BlockFrame("Comments");
-blkbundlesConfigurator.AddCode(` // Single-line comments start with two slashes
+const blkComment=new BlockFrame("Comments");
+blkComment.AddCode(` // Single-line comments start with two slashes
 /* Multiline comments start with slash-star
     and end with star-slash*/`);
     
@@ -48,50 +48,50 @@ NaN; // result of e.g. 0/0, stands for 'Not a Number'
 true;
 false;`);
     
-const blkbundlesConfigurator=new BlockFrame("strings");
-blkbundlesConfigurator.AddCode(
+const blkStrings=new BlockFrame("strings");
+blkStrings.AddCode(
 `// Strings are concatenated with +
-       "Hello "  +  "world!"; // = "Hello world!"
+  "Hello "  +  "world!"; // = "Hello world!"
 
-      // ... which works with more than just strings
-       "1, 2, "  +  3; // = "1, 2, 3"
-       "Hello "  + [ "world",  "!"]; // = "Hello world,!"
+  // ... which works with more than just strings
+   "1, 2, "  +  3; // = "1, 2, 3"
+   "Hello "  + [ "world",  "!"]; // = "Hello world,!"
 
-      // and are compared with &lt; and &gt;
-       "a"  &lt;  "b"; // = true
+  // and are compared with &lt; and &gt;
+   "a"  &lt;  "b"; // = true
 
-      // Type coercion is performed for comparisons with double equals...
-       "5"  ==  5; // = true
-       null  ==  undefined; // = true
+  // Type coercion is performed for comparisons with double equals...
+   "5"  ==  5; // = true
+   null  ==  undefined; // = true
 
-      // ...unless you use ===
-       "5"  ===  5; // = false
-       null  ===  undefined; // = false
+  // ...unless you use ===
+   "5"  ===  5; // = false
+   null  ===  undefined; // = false
 
-      // ...which can result in some weird behaviour...
-       13  +  ! 0; // 14
-       "13"  +  ! 0; // '13true'
+  // ...which can result in some weird behaviour...
+   13  +  ! 0; // 14
+   "13"  +  ! 0; // '13true'
 
-      // You can access characters in a string with `charAt`
-       "This is a string".charAt( 0);  // = 'T'
+  // You can access characters in a string with `charAt`
+   "This is a string".charAt( 0);  // = 'T'
 
-      // ...or use `substring` to get larger pieces.
-       "Hello world".substring( 0,  5); // = "Hello"
+  // ...or use `substring` to get larger pieces.
+   "Hello world".substring( 0,  5); // = "Hello"
 
-      // `length` is a property, so don't use ().
-       "Hello".length; // = 5
+  // `length` is a property, so don't use ().
+   "Hello".length; // = 5
 
-    //multiline strings:
-    //ECMAScript 6 (ES6) introduces a new type of literal,
-    // namely template literals.
-    // They have many features, variable interpolation among others,
-    // but most importantly they can be multiline.
-    //A template literal is delimited by backticks:
-    
-    var html = \`
-      <div>
-        <span>Some HTML here</span>
-      </div>
+//multiline strings:
+//ECMAScript 6 (ES6) introduces a new type of literal,
+// namely template literals.
+// They have many features, variable interpolation among others,
+// but most importantly they can be multiline.
+//A template literal is delimited by backticks:
+
+var html = \`
+  <div>
+    <span>Some HTML here</span>
+  </div>
     \`;   `);
 
  /*
