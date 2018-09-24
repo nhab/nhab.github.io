@@ -130,12 +130,13 @@ class BlockFrame{
         document.getElementById(this.frameID).appendChild(obj);
     }
     AddImage(imageSrc,imagWidth=null){
-      if(imageSrc)
-      {
-          if(imagWidth)
-              document.write("<img src='"+imageSrc+"' style='width:"+imagWidth+"' />");
-          else
-             document.write("<img src='"+imageSrc+"' />");
-      }
+        var para = document.createElement("img");
+        if(imageSrc)
+            para.href=url;
+        para.innerHTML=title;
+        document.getElementById(this.frameID).appendChild(para);    
+         if(imagWidth)
+             para.setAttribute('style',width:"+imagWidth+"');
+
     }
 }
