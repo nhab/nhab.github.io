@@ -78,13 +78,14 @@ class BlockFrame{
             this.frameID=id;
         else
             this.frameID="dv"+Math.random()*20;
-        document.write("<div class='blockFrame' style='"+sStyle+";' id='"+this.frameID+"'></div>");
+        document.write("<div class='blockFrame' style='"+sStyle+";' id='"+this.frameID+"'>");
         if(header)
             this.AddHeader(header);
         if(body)
             this.AddBody(body);
         if(code)
             this.AddCode(code);
+        document.write("</div>");
     }
     AddHeader(title)
     {
