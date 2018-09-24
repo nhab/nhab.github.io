@@ -136,7 +136,7 @@ class BlockFrame{
         para.innerHTML=title;
         document.getElementById(this.frameID).appendChild(para);    
          if(imagWidth)
-             para.setAttribute('style',"'"+width:"+imagWidth+"');
+             para.setAttribute('style','"+width:"+imagWidth+"');
 
     }
 }
