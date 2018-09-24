@@ -132,8 +132,7 @@ class BlockFrame{
     
     AddImage(imageSrc,imagWidth=null){
         var para = document.createElement("img");
-       
-        para.href=imageSrc;
+        para.src=imageSrc;
         if(imagWidth)
              para.setAttribute("style","width:"+imagWidth);
        
