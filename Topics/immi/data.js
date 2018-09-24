@@ -281,6 +281,23 @@ tb=[
    ,""
    ],
    [
+      "Hungary",
+      "",
+      ""
+     ,""
+     ,""
+      ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Hungarian_citizens'>yes</a>"
+      ,""
+      ,""
+      ,""
+      ,""
+      ,""
+      ,"Budapest,<a href='https://www.holiday-weather.com/budapest/averages/'>-4 to 26C</a>,<a href='https://weatherspark.com/y/84771/Average-Weather-in-Budapest-Hungary-Year-Round'>40-60%</a>,<a href='http://en-dk.topographic-map.com/places/Budapest-7860353/'>100 to 500m</a>"
+      ,""
+      ,""
+      ,""
+   ],
+   [
    "England ",
    "",
    ""
@@ -344,21 +361,6 @@ tb=[
     ""
     ,""
     ,""
-],
-[
-   "Hungary",
-   "",
-   ""
-  ,""
-  ,""
-   ,"<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Hungarian_citizens'>yes</a>"
-   ,""
-   ,""
-   ,""
-   ,""
-   ,""
-   ,""
-   ,""
 ],
 [
 "Spain "
