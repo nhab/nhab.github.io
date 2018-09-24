@@ -135,7 +135,8 @@ class BlockFrame{
        
         para.href=imageSrc;
         if(imagWidth)
-             para.setAttribute('style','"+width:"+imagWidth+"');
+             para.setAttribute("style","width:"+imagWidth);
+       
 
         document.getElementById(this.frameID).appendChild(para);    
         
