@@ -394,9 +394,12 @@ Block("optional parameters",
 `you can call functions omitting some parameters and js will
  fil in the other parameters with the value undefined. 
 Example: `,
-` connect("www.google.com"); function connect(hostname, port, method)
- { // inside the function, // hostname === "www.google.com", 
- // port === undefined, // method === undefined } `);
+` connect("www.google.com"); 
+  function connect(hostname, port, method)
+  {
+   // inside the function, // hostname === "www.google.com", 
+   // port === undefined, // method === undefined
+  } `);
 const blkNamedParams=new BlockFrame("Named parameters");
 blkNamedParams.AddBody(
 `JavaScript does not have native support for named parameters 
