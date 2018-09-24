@@ -132,12 +132,12 @@ class BlockFrame{
     
     AddImage(imageSrc,imagWidth=null){
         var para = document.createElement("img");
-        if(imageSrc)
-            para.href=imageSrc;
        
-        document.getElementById(this.frameID).appendChild(para);    
-         if(imagWidth)
+        para.href=imageSrc;
+        if(imagWidth)
              para.setAttribute('style','"+width:"+imagWidth+"');
 
+        document.getElementById(this.frameID).appendChild(para);    
+        
     }
 }
