@@ -128,4 +128,8 @@ class BlockFrame{
     AddObj(obj){
         document.getElementById(this.frameID).appendChild(obj);
     }
+    AddImage(imageSrc){
+      if(imageSrc)
+        document.write("<img src='"+imageSrc+"' style='width:"+imagWidth+"' />");
+    }
 }
