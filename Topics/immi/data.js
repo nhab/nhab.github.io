@@ -1,7 +1,7 @@
 
 tb=[
     ["Iran",
-     ""
+     "<a href='https://en.wikipedia.org/wiki/Visa_requirements_for_Iranian_citizens#cite_note-9>Req.</a>"
      ,""
      ,""
 
