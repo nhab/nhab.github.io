@@ -20,7 +20,7 @@ ul  ,ol     {
 
 img{margin-left: 25px;}
 h1{display: flex;justify-content: center; align-items: center; background-color:#5342f4;color:#cfc9fc; font-size:xx-large }
-h2{display: flex;justify-content: center; align-items: center; background-color:#c7d5ed;font-size: x-large;
+h2,.header{display: flex;justify-content: center; align-items: center; background-color:#c7d5ed;font-size: x-large;
   border-color:black;
   border-style: solid;  border-width: 1px;line-height: 40px;}
 h3{display: block;font-weight:bolder;  width:50%;  text-align: center;  margin-left:25px; background-color:lightblue; color:darkblue;

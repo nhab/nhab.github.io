@@ -1,5 +1,188 @@
+function BlockN(options)
+//title,body,code,codetype,widt,hei,imageSrc=null,padding="5",imagWidth="100%",parent=document,imagesOnRight=false,codeOnRight=false)
+{
+    if (options == undefined) options = {}; 
+    if (options.imageSrc === undefined) options.imageSrc =null;
+    if (options.padding   == undefined) options.padding = "5";
+    if (options.imagWidth ==undefined) options.imagWidth=="100%";
+    if (options.parent    ==undefined)options.parent=document;
+    if (options.imagesOnRight==undefined) options.imagesOnRight=false;
+    if (options.codeOnLeft=undefined) options.codeOnRight=false;
+    var div1 = document.createElement("div");
+   
+    sStyle="padding-left:"+options.padding+"px;padding-right:"+options.padding+"px;padding-top:"+options.padding+"px;";
+    sStyle+="padding-down:"+options.padding+"px;";
+    sStyle+="vertical-align:text-top;border:1px black solid;margin-left:2px;";
+    sStyle+="display:inline-block;overflow: auto;";
+    if(options.widt)
+        sStyle+=";width:"+ options.widt+";";
+    if(options.hei)
+        sStyle+=";height:"+ options.hei+";";
+    var id1="dv"+Math.random()*20;
+    
+    div1.setAttribute('style',sStyle);
+    div1.setAttribute('id', id1);
 
-function Block(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",imagWidth="100%")
+    //header:
+    var divHead = document.createElement("div");
+    var dvTitle = document.createElement("div");
+    dvTitle.setAttribute("class",'blockHead');
+    dvTitle.innerHTML= options.title;
+    divHead.appendChild(dvTitle);
+    var objBtn = document.createElement("Input");
+    objBtn.setAttribute("type","button");
+    objBtn.setAttribute("value","V");
+   // objBtn.setAttribute("onclick","alert('Hello')");
+    div1.appendChild(objBtn);
+    div1.appendChild(divHead);
+    //body:
+    if(options.body)
+    {   
+        var divBody = document.createElement("div");
+        divBody.setAttribute("class",'blockBody');
+        divBody.innerHTML=options.body;
+        div1.appendChild(divBody);
+    }
+    sStylle="overflow: auto;";
+    if(options.codeOnRight)
+        sStyle+="display:inline-block;";
+debugger;
+    if(options.codetype && options.code)
+    {
+        //parent.InnerHtml+= "<pre style='"+sStyle+"'><code style='"+sStyle+"' class='"+options.codetype+"'>"+options.code+"</code></pre>";
+        var divPre= document.createElement("pre");
+        divPre.setAttribute("style",sStyle);
+        var divCode = document.createElement("code");
+        divCode.setAttribute("style",'overflow: auto;');
+        divCode.setAttribute("class",options.codetype);
+        divCode.innerHTML= options.code;
+        divPre.appendChild(divCode);
+        div1.appendChild(divPre);
+    }
+        
+    else{
+        if(options.code)
+        {
+            var divPre= document.createElement("pre");
+            divPre.setAttribute("style",sStyle);
+            var divCode = document.createElement("code");
+            divCode.setAttribute("style",'overflow: auto;');
+            divCode.innerHTML= options.code;
+            divPre.appendChild(divCode);
+            div1.appendChild(divPre);
+        }
+    };
+    /*
+    imagesOnRight=false
+    */
+    sStyle  ="width:"+ options.imagWidth;
+    if(options.imagesOnRight)
+       sStyle +=";display:inline-block;overflow:auto;";
+   
+    if(options.imageSrc)
+    {
+        var dvImg=document.createElement("img");
+        dvImg.setAttribute("src", options.imageSrc);
+        dvImg.setAttribute("style",sStyle);
+    }
+    try{
+        options.parent.appendChild(div1);
+    }catch(err)
+    {
+        alert("Line 90:"+options.title+":"+err)
+    }
+    return document.getElementById(id1);
+}
+//-------------------------------------------------------------------------------------------------------------------
+///1.title, 2.body, 3.code, 4.codetype, 5.widt, 6.hei, 7.imageSrc=null, 8.padding="5", 9.imagWidth="100%", 10.parent
+function BlockPrev(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",imagWidth="100%",parent=document)
+{
+    var div1 = document.createElement("div");
+    //return document.getElementsByTagName('body')[0].appendChild(div1);
+   
+    sStyle="padding-left:"+padding+"px;padding-right:"+padding+"px;padding-top:"+padding+"px;padding-down:"+padding+"px";
+    sStyle+=";vertical-align:text-top;border:1px black solid;margin-left:2px;";
+    sStyle+=";display:inline-block;overflow: auto;";
+    if(widt)
+        sStyle+=";width:"+widt+";";
+    if(hei)
+        sStyle+=";height:"+hei+";";
+    var id1="dv"+Math.random()*20;
+
+    
+    div1.setAttribute('style',sStyle);
+    div1.setAttribute('id', id1);
+
+    //header:
+    var divHead = document.createElement("div");
+    var dvTitle = document.createElement("div");
+    dvTitle.setAttribute("class",'blockHead');
+    dvTitle.innerHTML=title;
+    divHead.appendChild(dvTitle);
+    var objBtn = document.createElement("Input");
+    objBtn.setAttribute("type","button");
+    objBtn.setAttribute("value","V");
+   // objBtn.setAttribute("onclick","alert('Hello')");
+    div1.appendChild(objBtn);
+    div1.appendChild(divHead);
+    //body:
+    if(body)
+    {   
+        var divBody = document.createElement("div");
+        divBody.setAttribute("class",'blockBody');
+        divBody.innerHTML=body;
+        div1.appendChild(divBody);
+    }
+    if(codetype && code)
+    {
+        parent.InnerHtml+= "<pre><code style='overflow: auto;' class='"+codetype+"'>"+code+"</code></pre>";
+        var divPre= document.createElement("pre");
+        var divCode = document.createElement("code");
+        divCode.setAttribute("style",'overflow: auto;');
+        divCode.setAttribute("class",codetype);
+        divCode.innerHTML=code;
+        divPre.appendChild(divCode);
+        div1.appendChild(divPre);
+    }
+        
+    else{
+        if(code)
+        {
+            try{
+            parent.InnerHtml+= "<pre><code >"+code+"</code></pre>";
+            }catch(err)
+            {
+                debugger;
+                alert(title);
+            }
+            var divPre= document.createElement("pre");
+            var divCode = document.createElement("code");
+            divCode.setAttribute("style",'overflow: auto;');
+            divCode.innerHTML=code;
+            divPre.appendChild(divCode);
+            div1.appendChild(divPre);
+    
+        }
+    };
+    if(imageSrc)
+    {
+        var dvImg=document.createElement("img");
+        dvImg.setAttribute("src",imageSrc);
+        dvImg.setAttribute("style","width:"+imagWidth);
+
+        //parent.InnerHtml+= "<img src='"+imageSrc+"' style='width:"+imagWidth+"'>";
+    }
+    try{
+    parent.appendChild(div1);
+    
+    }catch(err)
+    {
+        alert(title+":"+err)
+    }
+    return document.getElementById(id1);
+}
+
+function Block(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",imagWidth="100%",parent=document)
 {
     sStyle="padding-left:"+padding+"px;padding-right:"+padding+"px;padding-top:"+padding+"px;padding-down:"+padding+"px";
     sStyle+=";vertical-align:text-top;border:1px black solid;margin-left:2px;";
@@ -9,28 +192,27 @@ function Block(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",imagW
     if(hei)
         sStyle+=";height:"+hei+";";
     var id1="dv"+Math.random()*20;
-    document.write("<div style='"+sStyle+";' id='"+id1+"'>");
+    parent.InnerHtml=parent.InnerHtml+"<div style='"+sStyle+";' id='"+id1+"'>";
    //header:
-    document.write( "<div class='blockHead' >" 
-                   +title+"</div>");
+    parent.InnerHtml+= "<div class='blockHead' >"  +title+"</div>";
     //body:
     if(body)
-        document.write("<div class='blockBody'>"
-                       +body+"</div>");
+    parent.InnerHtml+= "<div class='blockBody'>" +body+"</div>";
     if(codetype && code)
-        document.write("<pre><code style='overflow: auto;' class='"+codetype+"'>"+code+"</code></pre>");
+        parent.InnerHtml+= "<pre><code style='overflow: auto;' class='"+codetype+"'>"+code+"</code></pre>";
     else{
         if(code)
-          document.write("<pre><code >"+code+"</code></pre>");
+        parent.InnerHtml+= "<pre><code >"+code+"</code></pre>";
     };
     if(imageSrc)
     {
-        document.write("<img src='"+imageSrc+"' style='width:"+imagWidth+"'>");
+        parent.InnerHtml+= "<img src='"+imageSrc+"' style='width:"+imagWidth+"'>";
     }
-    document.write("</div>");
+    parent.InnerHtml+= "</div>";
     return document.getElementById(id1);
 }
-function BlockHorizontally(title,body,code,codetype,widt,hei,imageSrc=null,padding="7")
+
+function BlockHorizontally(title,body,code,codetype,widt,hei,imageSrc=null,padding="7",parent=document)
 {
     sStyle="padding-left:"+padding+"px;padding-right:"+padding+"px;vertical-align:text-top;border:1px black solid;margin-left:2px;";
     sStyle+=";display:inline-block;overflow: auto;";
@@ -39,33 +221,81 @@ function BlockHorizontally(title,body,code,codetype,widt,hei,imageSrc=null,paddi
     if(hei)
         sStyle+=";height:"+hei+";";
     var id1="dv"+Math.random()*20;
-    document.write("<div style='"+sStyle+";' id='"+id1+"'>");
+    parent.write("<div style='"+sStyle+";' id='"+id1+"'>");
    //header:
-    document.write( "<div style='width:100%;text-align:center;background-color:#336699;color:#ddccff;font-weight:900;"+
+   parent.write( "<div style='width:100%;text-align:center;background-color:#336699;color:#ddccff;font-weight:900;"+
                    "padding-left:2px;padding-right:2px;' >" 
                    +title+"</div>");
     //body:
     if(body)
-        document.write("<div style='display:inline-block;overflow:auto;"+
+        parent.write("<div style='display:inline-block;overflow:auto;"+
             "padding-right:7px;padding-top:7px;"+
             "white-space:pre;clear:both;overflow: auto;overflow-wrap: break-word;vertical-align: top;'>"
             +body+"</div>");
     if(codetype && code)
-        document.write("<pre style='display:inline-block;overflow:auto;'><code style='overflow: auto;' class='"+codetype+"'>"+code+"</code></pre>");
+        parent.write("<pre style='display:inline-block;overflow:auto;'><code style='overflow: auto;' class='"+codetype+"'>"+code+"</code></pre>");
     else{
         if(code)
-          document.write("<pre style='display:inline-block;overflow:auto;'><code style='overflow: auto;'>"+code+"</code></pre>");
+            parent.write("<pre style='display:inline-block;overflow:auto;'><code style='overflow: auto;'>"+code+"</code></pre>");
     };
     if(imageSrc)
     {
         //document.getElementById(id1).write("<img src='"+imageSrc+"'>");
-        document.write("<img src='"+imageSrc+"' style='display:inline-block;overflow:auto;'>");
+        parent.write("<img src='"+imageSrc+"' style='display:inline-block;overflow:auto;'>");
     }
-    document.write("</div>");
+    parent.write("</div>");
 }
+function getRandomID()
+{
+    return ( "_"+Math.random()*20 ).replace(".","");
+}
+function BlockGroup(title,parent=document)
+{
+    var para = document.createElement("div");
+    para.setAttribute("style","width:100%;border-size:1px;display: inline;");
+    
+    
+    var dvTitle = document.createElement("div");
+    dvTitle.setAttribute("class","header");
+    dvTitle.setAttribute("style","display: inline-block;width:90%");
+    dvTitle.innerHTML=title;
+    
+    var objBtn = document.createElement("Input");
+    objBtn.setAttribute("type","button");
+    objBtn.setAttribute("value","V");
+    objBtn.setAttribute("style","display: inline-block;");
+    btnId="btn"+getRandomID();
+    objBtn.setAttribute("id",btnId);
+    
+    var dvGrpBody=document.createElement("div");
+    dvGrpBodyId="dv"+getRandomID();
+    dvGrpBody.setAttribute("id",dvGrpBodyId);
+    
+    objBtn.setAttribute("onclick",`
+        
+        if(this.value=="V")
+        {
+            this.value=">";
+            document.getElementById("`+ dvGrpBodyId+`").style.display="none";
+        }
+        else
+        {
+            this.value="V";
+            document.getElementById("`+ dvGrpBodyId+`").style.display="block";
+        }
+        alert(document.getElementById("`+ dvGrpBodyId+`").style.display);
+    `);
+    
+    para.appendChild(objBtn);
+    para.appendChild(dvTitle);
+    para.appendChild(dvGrpBody);
+    document.getElementsByTagName('body')[0].appendChild(para)
+    return para.appendChild(dvGrpBody);
+}
+
 class BlockFrame{
      
-    constructor(header=null,body=null,code=null,id=null){
+    constructor(header=null,body=null,code=null,id=null,parent=document){
         var padding="7";
         var widt=null;
         var hei=null;
@@ -78,14 +308,14 @@ class BlockFrame{
             this.frameID=id;
         else
             this.frameID="dv"+Math.random()*20;
-        document.write("<div class='blockFrame' style='"+sStyle+";' id='"+this.frameID+"'>");
+        parent.write("<div class='blockFrame' style='"+sStyle+";' id='"+this.frameID+"'>");
         if(header)
             this.AddHeader(header);
         if(body)
             this.AddBody(body);
         if(code)
             this.AddCode(code);
-        document.write("</div>");
+        parent.write("</div>");
     }
     AddHeader(title)
     {
