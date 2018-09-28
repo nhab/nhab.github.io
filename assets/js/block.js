@@ -283,7 +283,6 @@ function BlockGroup(title,parent=document)
             this.value="V";
             document.getElementById("`+ dvGrpBodyId+`").style.display="block";
         }
-        alert(document.getElementById("`+ dvGrpBodyId+`").style.display);
     `);
     
     para.appendChild(objBtn);
