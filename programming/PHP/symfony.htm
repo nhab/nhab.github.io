@@ -13,7 +13,9 @@
 var objConcepts=BlockGroup("Concepts");
 // BlockN(options)
 // title,body,code,codetype,widt,hei,imageSrc=null,padding="5",imagWidth="100%",parent=document,imagesOnRight=false,codeOnRight=false)
+
 var options=[];
+
 options[0]={title:"symfony",
 body:`Symfony is a php web framework 
 which is set of reusable <b>components</b>
@@ -22,7 +24,6 @@ For example, Cache component provides
 cache functionality.`,codetype:"javascript",parent:objConcepts
 }
 
-BlockN(options[0]);
 options[1]={title:"Bundle",
 body:`A bundle is a  set of all related <b>files within a directory</b> that implement a single feature, including:
   PHP files, templates,stylesheets,JavaScript and tests.
@@ -33,15 +34,47 @@ Symfony\\Bundle\\WebServerBundle\\ WebServerBundle::class =>['dev' => true],
 Symfony\\Bundle\\TwigBundle\\ TwigBundle::class =>['all' => true],
 Symfony\\Bundle\\MonologBundle\\ MonologBundle::class =>['all' => true],
 ];`,
-codetype:"php",parent:objConcepts,codeOnRight:true};
-BlockN(options[1]);
+codetype:"php",parent:objConcepts,codeOnRight:true
+};
 
-Block("The application structure",
-`A <b>Symfony application</b> itself <b>is a bundle composed of other bundles</b>which is called <b>AppBundle</b>.
+options[2]={title:"The application structure",
+body:`A <b>Symfony application</b> itself <b>is a bundle composed of other bundles</b> which is called <b>AppBundle</b>.
 
 Symfony core web-framework is <b>FrameworkBundle</b>
  and there is a bundle called  <b>FrameworkExtraBundle</b> for furthur options.
-`,null,"javascript",null,null,null,null,null,objConcepts);
+`,parent:objConcepts
+}
+
+options[3]={
+    title:"bundles Configurator",
+    body:`Enables one or more bundles in the Symfony application by
+ appending them to the <b>bundles.php</b> file.
+Its value is an associative array where the key is the 
+bundle class name and the value is an array of environments 
+where it must be enabled.`,
+    code:`{
+    "bundles": {
+        "Symfony\\Bundle\\DebugBundle\\DebugBundle": ["dev", "test"],
+        "Symfony\\Bundle\\MonologBundle\\MonologBundle": ["all"]
+    }
+}`,parent:objConcepts
+};
+
+options[4]={
+    title:"env Configurator",
+    body:`Adds the given list of environment variables 
+to the .env and .env.dist files stored in 
+the root of the Symfony project:`
+,code:`{
+    "env": {
+        "APP_ENV": "dev"
+    }
+}` ,parent:objConcepts
+}
+
+for(i=0;i<=3;i++)
+    BlockN(options[i]);
+/*
  const blkbundlesConfigurator=new BlockFrame();
  blkbundlesConfigurator.AddHeader("bundles Configurator");
  blkbundlesConfigurator.AddBody(
@@ -80,7 +113,7 @@ blkenvConfigurator.AddCode(
 APP_ENV=dev
 ###< your-recipe-name-here ###
 `);
-
+*/
     
 var objSettingUp=BlockGroup("Setting it Up");
 

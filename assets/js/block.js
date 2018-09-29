@@ -8,7 +8,8 @@ function BlockN(options)
     if (options.parent    ==undefined)options.parent=document;
     if (options.imagesOnRight==undefined) options.imagesOnRight=false;
     if (options.codeOnLeft=undefined) options.codeOnRight=false;
-    var div1 = document.createElement("div");
+    
+    var dvContainer = document.createElement("div");
    
     sStyle="padding-left:"+options.padding+"px;padding-right:"+options.padding+"px;padding-top:"+options.padding+"px;";
     sStyle+="padding-down:"+options.padding+"px;";
@@ -18,30 +19,39 @@ function BlockN(options)
         sStyle+=";width:"+ options.widt+";";
     if(options.hei)
         sStyle+=";height:"+ options.hei+";";
+    
+    //sStyle="border-size:1px;display: inline;";
     var id1="dv"+Math.random()*20;
     
-    div1.setAttribute('style',sStyle);
-    div1.setAttribute('id', id1);
+    dvContainer.setAttribute('style',sStyle);
+    dvContainer.setAttribute('id', id1);
 
     //header:
     var divHead = document.createElement("div");
+    divHead.setAttribute("style","display:inline;");
     var dvTitle = document.createElement("div");
     dvTitle.setAttribute("class",'blockHead');
+    dvTitle.setAttribute("style","display: inline-block;width:90%;")
     dvTitle.innerHTML= options.title;
-    divHead.appendChild(dvTitle);
+    
     var objBtn = document.createElement("Input");
     objBtn.setAttribute("type","button");
     objBtn.setAttribute("value","V");
-   // objBtn.setAttribute("onclick","alert('Hello')");
-    div1.appendChild(objBtn);
-    div1.appendChild(divHead);
+    objBtn.setAttribute("style","display: inline-block;width:10%")
+    // objBtn.setAttribute("onclick","alert('Hello')");
+
+    divHead.appendChild(objBtn);
+    divHead.appendChild(dvTitle);
+    
+    //dvContainer.appendChild(objBtn);
+    dvContainer.appendChild(divHead);
     //body:
     if(options.body)
     {   
         var divBody = document.createElement("div");
         divBody.setAttribute("class",'blockBody');
         divBody.innerHTML=options.body;
-        div1.appendChild(divBody);
+        dvContainer.appendChild(divBody);
     }
     sStylle="overflow: auto;";
     if(options.codeOnRight)
@@ -57,7 +67,7 @@ debugger;
         divCode.setAttribute("class",options.codetype);
         divCode.innerHTML= options.code;
         divPre.appendChild(divCode);
-        div1.appendChild(divPre);
+        dvContainer.appendChild(divPre);
     }
         
     else{
@@ -69,7 +79,7 @@ debugger;
             divCode.setAttribute("style",'overflow: auto;');
             divCode.innerHTML= options.code;
             divPre.appendChild(divCode);
-            div1.appendChild(divPre);
+            dvContainer.appendChild(divPre);
         }
     };
     /*
@@ -86,7 +96,7 @@ debugger;
         dvImg.setAttribute("style",sStyle);
     }
     try{
-        options.parent.appendChild(div1);
+        options.parent.appendChild(dvContainer);
     }catch(err)
     {
         alert("Line 90:"+options.title+":"+err)
@@ -97,8 +107,8 @@ debugger;
 ///1.title, 2.body, 3.code, 4.codetype, 5.widt, 6.hei, 7.imageSrc=null, 8.padding="5", 9.imagWidth="100%", 10.parent
 function BlockPrev(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",imagWidth="100%",parent=document)
 {
-    var div1 = document.createElement("div");
-    //return document.getElementsByTagName('body')[0].appendChild(div1);
+    var dvContainer = document.createElement("div");
+    //return document.getElementsByTagName('body')[0].appendChild(dvContainer);
    
     sStyle="padding-left:"+padding+"px;padding-right:"+padding+"px;padding-top:"+padding+"px;padding-down:"+padding+"px";
     sStyle+=";vertical-align:text-top;border:1px black solid;margin-left:2px;";
@@ -110,8 +120,8 @@ function BlockPrev(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",i
     var id1="dv"+Math.random()*20;
 
     
-    div1.setAttribute('style',sStyle);
-    div1.setAttribute('id', id1);
+    dvContainer.setAttribute('style',sStyle);
+    dvContainer.setAttribute('id', id1);
 
     //header:
     var divHead = document.createElement("div");
@@ -123,15 +133,15 @@ function BlockPrev(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",i
     objBtn.setAttribute("type","button");
     objBtn.setAttribute("value","V");
    // objBtn.setAttribute("onclick","alert('Hello')");
-    div1.appendChild(objBtn);
-    div1.appendChild(divHead);
+    dvContainer.appendChild(objBtn);
+    dvContainer.appendChild(divHead);
     //body:
     if(body)
     {   
         var divBody = document.createElement("div");
         divBody.setAttribute("class",'blockBody');
         divBody.innerHTML=body;
-        div1.appendChild(divBody);
+        dvContainer.appendChild(divBody);
     }
     if(codetype && code)
     {
@@ -142,7 +152,7 @@ function BlockPrev(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",i
         divCode.setAttribute("class",codetype);
         divCode.innerHTML=code;
         divPre.appendChild(divCode);
-        div1.appendChild(divPre);
+        dvContainer.appendChild(divPre);
     }
         
     else{
@@ -160,7 +170,7 @@ function BlockPrev(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",i
             divCode.setAttribute("style",'overflow: auto;');
             divCode.innerHTML=code;
             divPre.appendChild(divCode);
-            div1.appendChild(divPre);
+            dvContainer.appendChild(divPre);
     
         }
     };
@@ -173,7 +183,7 @@ function BlockPrev(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",i
         //parent.InnerHtml+= "<img src='"+imageSrc+"' style='width:"+imagWidth+"'>";
     }
     try{
-    parent.appendChild(div1);
+    parent.appendChild(dvContainer);
     
     }catch(err)
     {
@@ -249,15 +259,16 @@ function getRandomID()
 {
     return ( "_"+Math.random()*20 ).replace(".","");
 }
+
 function BlockGroup(title,parent=document)
 {
-    var para = document.createElement("div");
-    para.setAttribute("style","width:100%;border-size:1px;display: inline;");
+    var dvContainer = document.createElement("div");
+    dvContainer.setAttribute("style","width:100%;border-size:1px;display: inline;");
     
     
     var dvTitle = document.createElement("div");
     dvTitle.setAttribute("class","header");
-    dvTitle.setAttribute("style","display: inline-block;width:90%");
+    dvTitle.setAttribute("style","display: inline-block;width:98%");
     dvTitle.innerHTML=title;
     
     var objBtn = document.createElement("Input");
@@ -284,12 +295,13 @@ function BlockGroup(title,parent=document)
             document.getElementById("`+ dvGrpBodyId+`").style.display="block";
         }
     `);
-    
-    para.appendChild(objBtn);
-    para.appendChild(dvTitle);
-    para.appendChild(dvGrpBody);
-    document.getElementsByTagName('body')[0].appendChild(para)
-    return para.appendChild(dvGrpBody);
+    dvContainer.appendChild(document.createElement("br")); 
+    dvContainer.appendChild(objBtn);
+    dvContainer.appendChild(dvTitle);
+    dvContainer.appendChild(dvGrpBody);
+    document.getElementsByTagName('body')[0].appendChild(dvContainer)
+   
+    return dvContainer.appendChild(dvGrpBody);
 }
 
 class BlockFrame{
