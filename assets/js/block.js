@@ -68,8 +68,7 @@ debugger;
         divCode.innerHTML= options.code;
         divPre.appendChild(divCode);
         dvContainer.appendChild(divPre);
-    }
-        
+    }  
     else{
         if(options.code)
         {
@@ -281,10 +280,9 @@ function BlockGroup(title,parent=document)
     var dvGrpBody=document.createElement("div");
     dvGrpBodyId="dv"+getRandomID();
     dvGrpBody.setAttribute("id",dvGrpBodyId);
-    
-    objBtn.setAttribute("onclick",`
-        
-        if(this.value=="V")
+   
+    dvTitle.setAttribute("onclick",
+    `if(this.value=="V")
         {
             this.value=">";
             document.getElementById("`+ dvGrpBodyId+`").style.display="none";
@@ -295,6 +293,20 @@ function BlockGroup(title,parent=document)
             document.getElementById("`+ dvGrpBodyId+`").style.display="block";
         }
     `);
+   
+    objBtn.setAttribute("onclick",
+    `if(this.value=="V")
+        {
+            this.value=">";
+            document.getElementById("`+ dvGrpBodyId+`").style.display="none";
+        }
+        else
+        {
+            this.value="V";
+            document.getElementById("`+ dvGrpBodyId+`").style.display="block";
+        }
+    `);
+    
     dvContainer.appendChild(document.createElement("br")); 
     dvContainer.appendChild(objBtn);
     dvContainer.appendChild(dvTitle);

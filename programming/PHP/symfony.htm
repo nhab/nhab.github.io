@@ -74,58 +74,21 @@ the root of the Symfony project:`
 
 for(i=0;i<=3;i++)
     BlockN(options[i]);
-/*
- const blkbundlesConfigurator=new BlockFrame();
- blkbundlesConfigurator.AddHeader("bundles Configurator");
- blkbundlesConfigurator.AddBody(
-`Enables one or more bundles in the Symfony application by
- appending them to the <b>bundles.php</b> file.
-Its value is an associative array where the key is the 
-bundle class name and the value is an array of environments 
-where it must be enabled.` );
-blkbundlesConfigurator.AddCode(
-`{
-    "bundles": {
-        "Symfony\\Bundle\\DebugBundle\\DebugBundle": ["dev", "test"],
-        "Symfony\\Bundle\\MonologBundle\\MonologBundle": ["all"]
-    }
-}`
-);
-
-const blkenvConfigurator=new BlockFrame();
-blkenvConfigurator.AddHeader("env Configurator");
-blkenvConfigurator.AddBody(
-`Adds the given list of environment variables 
-to the .env and .env.dist files stored in 
-the root of the Symfony project:`
-);
-blkenvConfigurator.AddCode(
-`{
-    "env": {
-        "APP_ENV": "dev"
-    }
-}`);
-blkenvConfigurator.AddBody(
-`This recipe is converted into the following 
-content appended to the .env and .env.dist files:`);
-blkenvConfigurator.AddCode(
-`###> your-recipe-name-here ###
-APP_ENV=dev
-###< your-recipe-name-here ###
-`);
-*/
     
 var objSettingUp=BlockGroup("Setting it Up");
-
-Block("Requirements for Running Symfony",
- `Symfony 4.0 requires PHP 7.1.3 or higher to run.,
+options=[];
+options[0]={
+   title: "Requirements for Running Symfony",
+  body:`Symfony 4.0 requires PHP 7.1.3 or higher to run.,
 Symfony 3.4 requires PHP 5.5.9 or higher to run.
 to know more requirements,Run:`,
- ` cd my-project/
- php bin/symfony_requirements`,null,null,null,null,null,null,objSettingUp);
-
-Block("downloding installler(Windows)",
-`First download symfony:
+ code:` cd my-project/
+ php bin/symfony_requirements`,
+ parent:objSettingUp
+};
+options[1]={
+    title:"downloding installler(Windows)",
+    body:`First download symfony:
 <pre><code>
 php -r "file_put_contents('symfony', 
  file_get_contents('https://symfony.com/installer'));"
@@ -139,62 +102,73 @@ Then, move both files (symfony and
 symfony.bat)to any location included 
 in your execution path.
 Now you can run the symfony command
-anywhere on your system.`
-,null,null,null,null,null,null,null,objSettingUp);
+anywhere on your system.`,
+ parent:objSettingUp
+}
 
-Block("Using the installer",
-`Execute the new command and 
+options[2]={
+    title:"Using the installer",
+    body:`Execute the new command and 
 provide the name of your project
-as the only argument:`
-,`# Linux, Mac OS X
+as the only argument:`,
+code:`# Linux, Mac OS X
 $ symfony new my_project
 
 # Windows
-c:\> php symfony new my_project` ,null,null,null,null,null,null,objSettingUp);
-Block("Unistalling",
-`Symfony on your computer is just a folder 
+c:\> php symfony new my_project`,
+ parent:objSettingUp
+};
+
+options[3]={
+    title:"Unistalling",
+body:`Symfony on your computer is just a folder 
 containing the framework and the structure
 of the files, so you can delete that
 folder and you are done. Composer is just
 an binary file (phar) that can run on the 
 command line. 
-Locate where that file is and delete it.`,null,null,null,null,null,null,null,objSettingUp);
-Block("Symfony Flex",
-`<a  href="https://github.com/symfony/flex">Symfony Flex</a> is the new way to install and 
+Locate where that file is and delete it.`,
+ parent:objSettingUp
+}
+options[4]={
+    title:"Symfony Flex",
+    body:`<a  href="https://github.com/symfony/flex">Symfony Flex</a> is the new way to install and 
 manage Symfony applications.
 Flex is not a new Symfony version,
 but a tool that replaces and improves
 the <a  href="https://github.com/symfony/symfony-installer">Symfony Installer</a> and the 
-<a href="https://github.com/symfony/symfony-standard">Symfony Standard Edition</a>.`
-,null,null,null,null,null,null,null,objSettingUp);
-Block("How Does Flex Work",
-`Symfony Flex <h7>is a Composer plugin</h7> that modifies the 
+<a href="https://github.com/symfony/symfony-standard">Symfony Standard Edition</a>.`,
+    parent:objSettingUp
+}
+options[5]={
+    title:"How Does Flex Work",
+    body:`Symfony Flex <h7>is a Composer plugin</h7> that modifies the 
 behavior of the require,update, and remove commands. 
 When installing or removing dependencies in a Flex-enabled 
 application, Symfony can <h7>perform tasks before 
-and after the execution</h7> of Composer tasks.`,null,null,null,null,null,null,null,objSettingUp);
+and after the execution</h7> of Composer tasks.`,
+parent:objSettingUp
+}
 
-
-const blkRecipes=new BlockFrame();
-blkRecipes.AddHeader("Recipes");
-blkRecipes.AddBody(
-    `they allow the automation of Composer 
+options[6]={
+    title:"Recipes",
+    body:`they allow the automation of Composer 
 packages configuration via the
-Symfony Flex Composer plugin`);
+Symfony Flex Composer plugin`,
+    parent:objSettingUp
+}
 
-const blkCreateRecipes=new BlockFrame();
-blkCreateRecipes.AddHeader("Creating Recipes");
-blkCreateRecipes.AddBody(
-    `Symfony recipes consist of a <b>manifest.json</b> 
+options[7]={
+    title:"Creating Recipes",
+    body:`Symfony recipes consist of a <b>manifest.json</b> 
 config file and, optionally,files and directories.
 Recipes must be stored on their own repositories,
 outside of your Composer package repository.
 They must follow the <b>vendor/package/version/ </b>
 directory structure, where version is the 
 minimum version supported by the recipe.
-Directory structure of some Symfony recipes:`);
-blkCreateRecipes.AddCode(
-`symfony/
+Directory structure of some Symfony recipes:`,
+code:`symfony/
     console/
         3.3/
             bin/
@@ -207,20 +181,25 @@ blkCreateRecipes.AddCode(
             manifest.json
     requirements-checker/
         1.0/
-            manifest.json`);
-const blkConfigurators=new BlockFrame();
-blkConfigurators.AddHeader("Configurators");
-blkConfigurators.AddBody(
-`Recipes define the different tasks executed
+            manifest.json`
+,parent:objSettingUp
+}
+
+options[8]={
+    title:"Configurators",
+    body:`Recipes define the different tasks executed
  when installing a dependency, such as 
  running commands, copying files or 
  adding new environment variables.
- types of tasks, which are called configurators:`);
- blkConfigurators.AddCode(
-`copy-from-recipe, copy-from-package,
+ types of tasks, which are called configurators:`,
+ code:`copy-from-recipe, copy-from-package,
  bundles, env, composer-scripts, gitignore,
   and post-install-output`
- );
+  ,parent:objSettingUp
+}
+for(i=0;i<=8;i++)
+    BlockN(options[i]);
+
 //-------------------------------------------------------------------------
 
 var objSettingUp=BlockGroup("Configuring Symfony (and Environments)");
