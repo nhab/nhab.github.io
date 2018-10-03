@@ -168,6 +168,14 @@ blkmultilineStrings.AddCode(
   </div>
     \`;   
 `);
+const blkTemplateLiterals=new BlockFrame("Template Literals");
+blkTemplateLiterals.AddBody("Template strings can use placeholders for string substitution<br> using the ${ } syntax, as demonstrated.");
+blkTemplateLiterals.AddCode(
+`var name = "Brendan"; 
+console.log('Hello, \$\{name}!');
+ //output is :
+//Hello, Brendan!`
+);
 
 const constblkVars=new BlockFrame("Variables");
 constblkVars.AddBody(
@@ -538,7 +546,8 @@ blkCallApply.AddCode(
 `  var anotherFunc  = function(s){
       return this.myString  + s;
   };
-  anotherFunc.call(myObj,  " And Hello Moon!"); // = "Hello World! And Hello Moon!"
+  anotherFunc.call(myObj,  " And Hello Moon!");
+   // = "Hello World! And Hello Moon!"
   `);
   blkCallApply.AddBody(
   `The <strong><b>'apply()'</b></strong> function is nearly identical,
@@ -546,10 +555,12 @@ blkCallApply.AddCode(
 `);
 
 blkCallApply.AddCode(
- ` anotherFunc.apply(myObj, [ " And Hello Sun!"]); // = "Hello World! And Hello Sun!"
+ ` anotherFunc.apply(myObj, [ " And Hello Sun!"]); 
+ // = "Hello World! And Hello Sun!"
 
-  // This is useful when working with a function that accepts a sequence of
-  // arguments and you want to pass an array.
+ // This is useful when working with a function
+ // that accepts a sequence of
+ // arguments and you want to pass an array.
 
    Math.min( 42,  6,  27); // = 6
    Math.min([ 42,  6,  27]); // = NaN (uh-oh!)
@@ -560,7 +571,8 @@ blkCallApply.AddBody(
 When we want it to stick, we can use <strong><b>'bind'</b></strong>:`);
  blkCallApply.AddCode(
  ` var boundFunc  = anotherFunc.bind(myObj);
-  boundFunc( " And Hello Saturn!"); // = "Hello World! And Hello Saturn!"`);
+  boundFunc( " And Hello Saturn!"); 
+  // = "Hello World! And Hello Saturn!"`);
   blkCallApply.AddBody(
 `'bind' can also be used to partially apply (curry) a function.`);
 blkCallApply.AddCode(
@@ -568,49 +580,7 @@ blkCallApply.AddCode(
   var doubler  = product.bind( this,  2);
   doubler( 8); // = 16`);
   debugger;
-  BlockP("Arrow Functions","Arrow functions allows a short syntax for writing function",
-  `// ES5
-  var x = function(x, y) {
-     return x * y;
-  }
-  // ES6
-  const x = (x, y) => x * y;`,"javascript");
 
-BlockP("Events",
-"Example:",
-`< script type="text/javascript">
-function checkRange(t,low,high) {
-    var n = parseInt(t);
-    if (t!="" && (isNaN(n) || n<low || n>high))
-    alert("Enter a number between "+low+" and "+high);
-
-< /script>
-< form> 
-    < input type=text name=number size=10 onBlur="checkRange(this.value,1000,2000);">
-< /form>}`);
-
-BlockP("Raising events",
-`to raise an event use <b>dispatchEvent</b> (equivalent of raisevent in vb)
-to  Listen for the event use <b>addEventListener</b>
- 
-Example`,
-`//in the function you want raise event,you call dispatchevent:
- x.onchange=function()
- {
-      x2.innerHTML=x.value;
-
-      var event = new Event('chang');  // (*)
-      x.dispatchEvent(event);	
- }
- return x;
- ............................
- //in the place you want to use it,call addEventListener:
- // Listen for the event.
-  ra.addEventListener('chang', function (e) {
-  // e.target matches elem
-      alert(e.target);
-      console.log(e);
-  }, false);`);
   const blkNew=new BlockFrame("New Keyword");
   blkNew.AddBody(
 ` When you call a function with the 'new' keyword, 
@@ -671,16 +641,16 @@ myObj.meaningOfLife; // = 42
 // This works for functions, too.
 myObj.myFunc(); // = "hello world!"
 
-// Of course, if your property isn't on your prototype, the prototype's
-// prototype is searched, and so on.
+// Of course, if your property isn't on your prototype, 
+//the prototype's prototype is searched, and so on.
 myPrototype.__proto__  = {
     myBoolean :  true
 };
 myObj.myBoolean; // = true
 
-// There's no copying involved here; each object stores a reference to its
-// prototype. This means we can alter the prototype and our changes will be
-// reflected everywhere.
+// There's no copying involved here; each object stores
+// a reference to its prototype. This means we can alter 
+// the prototype and our changes will be reflected everywhere.
 myPrototype.meaningOfLife  =  43;
 myObj.meaningOfLife; // = 43`);
 
@@ -726,7 +696,7 @@ code:`for (var x in myObj){
   ,parent:objObjects
 }*/
 options[ind++]={
-    title:"Creating New Object (using Object.create)",
+    title:"Creating New Object (by Object.create)",
     body:`:`,
     code:`var myObj  =  Object.create(myPrototype);
   myObj.meaningOfLife; // = 43`
@@ -734,7 +704,7 @@ options[ind++]={
 }
 
 options[ind++]={
-    title:"Creating New Object (using constructor)",
+    title:"Creating New Object (by constructor)",
     body:`Constructors have a property called prototype. 
 This is *not* the prototype of the constructor 
 function itself; instead, it's the prototype 
@@ -806,11 +776,294 @@ in an older subset of JavaScript, so that they can be
 
  options[ind++]={
     title:"object inheritannce",
+    body:" ",
     code:`var animal = { eats: true }
 rabbit = Object.create(animal)
 alert(rabbit.eats) // true`
   ,parent:objObjects
 }
+for(i=0;i<options.length;i++)
+    Block(options[i]);
+
+var objEvents=BlockGroup("Events");
+var options=[];
+var ind=0;
+options[ind++]={
+    title:"Events",
+body:"Example:",
+code:`< script type="text/javascript">
+function checkRange(t,low,high) {
+    var n = parseInt(t);
+    if (t!="" && (isNaN(n) || n<low || n>high))
+    alert("Enter a number between "+low+" and "+high);
+
+< /script>
+< form> 
+    < input type=text name=number size=10 
+      onBlur="checkRange(this.value,1000,2000);">
+< /form>}`,
+parent:objEvents
+};
+
+options[ind++]={
+    title:"Raising events",
+    body:`to raise an event use <b>dispatchEvent</b> (equivalent of raisevent in vb)
+to  Listen for the event use <b>addEventListener</b>
+ 
+Example`,
+code:`//in the function you want raise event,you call dispatchevent:
+ x.onchange=function()
+ {
+      x2.innerHTML=x.value;
+
+      var event = new Event('chang');  // (*)
+      x.dispatchEvent(event);	
+ }
+ return x;
+ ............................
+ //in the place you want to use it,call addEventListener:
+ // Listen for the event.
+  ra.addEventListener('chang', function (e) {
+  // e.target matches elem
+      alert(e.target);
+      console.log(e);
+  }, false);`,
+  parent:objEvents
+};
+  
+
+for(i=0;i<options.length;i++)
+    Block(options[i]);
+
+//--------------------------------------------------------------------
+var objES6=BlockGroup("ES6 other features");
+var options=[];
+var ind=0;
+options[ind++]={
+    title:"Arrow Functions",
+    body:"Arrow functions allows a short syntax for writing function",
+  code:`// ES5
+  var x = function(x, y) {
+     return x * y;
+  }
+  // ES6
+  const x = (x, y) => x * y;`,
+  parent:objES6
+};
+options[ind++]={
+    title:"Implicit returns",
+    body:`The return keyword can be omitted 
+    if using arrow functions without a block body`,
+    code:`let func = (a, b, c) => a + b + c; 
+    // curly brackets must be omitted`,
+    parent:objES6
+}
+options[ind++]={
+    title:"Key/property shorthand",
+    body:`shorter notation for assigning properties 
+    to variables of the same name:`,
+    code:` var obj = { a: a, b: b} //ES5
+    let obj = {  a, b}  //ES6    `
+    ,parent:objES6
+}
+options[ind++]={
+    title:"Method definition shorthand",
+    body:`//ES5:
+    var obj = {
+        a: function(c, d) {},
+        b: function(e, f) {}
+    };
+//ES6:
+    let obj = {
+        a(c, d) {},
+        b(e, f) {}
+    } `
+    ,parent:objES6    
+}
+options[ind++]={
+    title:"DeStructuring (object matching)",
+    body:`Use curly brackets to assign properties
+ of an object to their own variable.
+ for example assume:
+  var obj = { a: 1, b: 2, c: 3 };`,
+  code:`//ES5:
+var a = obj.a;
+var b = obj.b;
+var c = obj.c;
+//ES6:
+let {a, b, c} = obj;
+`,parent:objES6
+};
+options[ind++]={
+    title:"looping ,the new syntax",
+    body:"  ",
+    code:`
+//ES5:
+for (var i = 0; i < arr.length; i++)
+{
+    console.log(arr[i]);
+}
+//ES6:
+for (let i of arr) {
+    console.log(i);
+}`
+,parent:objES6    
+};
+
+options[ind++]={
+    title:"Spread syntax ",
+    body:`to expand arrays and for function parameters`,
+    code:`
+// to expand array:
+let arr1 = [1, 2, 3];
+let arr2 = ['a', 'b', 'c'];
+let arr3 = [...arr1, ...arr2];
+
+console.log(arr3); // [1, 2, 3, "a", "b", "c"]
+
+//function parameters:
+let arr1 = [1, 2, 3];
+let func = (a, b, c) => a + b + c;
+
+console.log(func(...arr1)); // 6
+`,    
+    parent:objES6
+};
+
+options[ind++]={
+    title:"Classes/constructor functions",
+    body:" ",
+    code:
+`// ES5                          :
+function Func(a, b) {
+    this.a = a;
+    this.b = b;
+}
+
+Func.prototype.getSum = function() {
+    return this.a + this.b;
+}
+
+var x = new Func(3, 4);
+
+// ES6                           :
+class Func {
+    constructor(a, b) {
+        this.a = a;
+        this.b = b;
+    }
+
+    getSum() {
+        return this.a + this.b;
+    }
+}
+
+let x = new Func(3, 4);
+x.getSum(); // returns 7
+`,        parent:objES6
+}
+
+
+options[ind++]={
+    title:`Inheritance`,
+    body:"The <h7>extends</h7> keyword creates a subclass",
+    code:`//ES5                                           :
+function Inheritance(a, b, c) {
+    Func.call(this, a, b);
+
+    this.c = c;
+}
+
+Inheritance.prototype = Object.create(Func.prototype);
+Inheritance.prototype.getProduct = function() {
+    return this.a * this.b * this.c;
+}
+
+var y = new Inheritance(3, 4, 5);
+//ES6                                       :
+class Inheritance extends Func {
+    constructor(a, b, c) {
+        super(a, b);
+
+        this.c = c;
+    }
+
+    getProduct() {
+        return this.a * this.b * this.c;
+    }
+}
+
+let y = new Inheritance(3, 4, 5);
+y.getProduct(); // 60`,
+    parent:objES6
+} ;
+
+options[ind++]={
+   title:"Modules",
+   body:`Modules can be created to <h7>export</h7> and <h7>import</h7>
+code between files.`,
+   code:`//index.html                                :
+&ltscript src="export.js">&lt;/script>
+&ltscript type="module" src="import.js">&lt;/script>
+//export.js                                  : 
+let func = a => a + a;
+let obj = {};
+let x = 0;
+
+export \{ func, obj, x \};
+//import.js                               :
+import \{ func, obj, x \} from './export.js';
+
+console.log(func(3), obj, x);`
+,parent:objES6
+};
+
+
+options[ind++]={
+    title:"CallBacks [ES5]",
+    body:
+`A function may be <h7>passed as a parameter</h7>
+to another function.This mechanism is termed
+as a Callback`,
+     code:`//ES5 callback              :
+function doSecond() {
+    console.log('Do second.');
+}
+
+function doFirst(callback) {
+    setTimeout(function() {
+        console.log('Do first.');
+
+        callback();
+    }, 500);
+}
+
+doFirst(doSecond);`
+    , parent:objES6
+};
+options[ind++]={
+    title:"promise",
+    body:`Promises represent the 
+<h7>completion of an asynchronous function</h7>.
+They can be used as an alternative to 
+chaining functions.`,
+ code:`//ES6 Promise                :
+let doSecond = () => {
+    console.log('Do second.');
+}
+
+let doFirst = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        console.log('Do first.');
+
+        resolve();
+    }, 500);
+});
+
+doFirst.then(doSecond);`
+ , parent:objES6
+}
+
 for(i=0;i<options.length;i++)
     Block(options[i]);
 
