@@ -29,9 +29,10 @@ blkNodejs.AddHeader("Node.js");
 blkNodejs.AddBody(
  `Has a command-line tool that can be run 
 as a regular web server It can also run
-a JavaScript programsNode.js has lot of
-libraries called pacckages that can be
- searched here :<a href='https://www.npmjs.com/'>npmjs.com</a>`);
+a JavaScript programs.
+Node.js has lot of libraries called 
+pacckages that can be browsed here :
+<a href='https://www.npmjs.com/'>npmjs.com</a>`);
 
 const blkNVM=new BlockFrame();
 blkNVM.AddHeader("NVM");
@@ -43,18 +44,41 @@ blkNVM.AddCode("$ nvm alias default 0.10.31");
 const blkNPM=new BlockFrame();
 blkNPM.AddHeader("NPM");
 blkNPM.AddBody(
-` Is the <h7>package manager</h7> for javascript and the Node.js server platform.
+` Is the <h7>package manager</h7> for 
+javascript and the Node.js server platform.
 It is included in nodejs installation by default.
 <b>Features</b>
-- local dependencies:
-   It installs application dependencies locally, not globally.
-- multiple versions of the same dependency:
-	 It handles multiple versions of the same module 
-	 at the same time.
+- <h7>Installs dependencies Locally:</h7>
+   It installs application dependencies locally, 
+   in a folder inside the project folder,
+   not globally.
+- <h7>multiple versions of the same dependency:</h7>
+	 It handles multiple versions of the same
+	module at the same time.
 - tarball or git dependencies:
-	can specify tarballs or git repositories as dependencies.
+	can specify tarballs or git repositories
+	as dependencies.
 - Easy module publishing (to the npm registry).
-- Easy creation of CLI utilities that others can install .`);
+- Easy creation of CLI utilities that others
+ can install .`);
+
+const blk11=new BlockFrame("Install From source",``);
+blk11.AddCode(`wget http://nodejs.org/dist/node-v0.4.4.tar.gz
+$ tar -xzf node-v0.4.4.tar.gz
+$ cd node-v0.4.4
+$ ./configure
+$ sudo make install`);
+
+const blk12=new BlockFrame("switching between node versions",null,
+`$ nvm install v0.8.10
+$ nvm use v0.8.10`);
+
+const blk13=new BlockFrame("list of versions <br/>and also the current <br/>and default versions :");
+blk13.AddCode("nvm list");
+
+
+const blk14=new BlockFrame("getting the version<br>(in command line)",null,
+`node -v`);
 
 const blk1stExample=new BlockFrame();
 blk1stExample.AddHeader(`Example of shell scripts`);
@@ -75,41 +99,7 @@ blkWitharg.AddCode(
 blkWitharg.AddBody(`2. run your script by proving arguments:`);
 blkWitharg.AddCode(`node h.js one two=three four`);
 
-const blk10=new BlockFrame("install NVM on an Ubuntu",
-"1. prerequisite: make sure system has a C++ compiler:");
-blk10.AddCode(
-` sudo apt-get update
- sudo apt-get install build-essential libssl-dev`);
-blk10.AddBody("2. NVM Installation:");
-blk10.AddCode(
-`copy-paste the one-line installer for NVM into the terminal:
-$ curl https://raw.githubusercontent.com/creationix/nvm/v0.13.1/install.sh | bash`);
-blk10.AddBody(`3. Checking NVM Installation:
-so we will logout and login to verify that:`,`$ nvm`);
-blk10.AddCode("	$ nvm install v0.10.31");
-blk10.AddBody("5.Both node and npm should be available in the terminal now:");
-blk10.AddCode(
-`		$ node -v &amp;&amp; npm -v
-		v0.10.31
-		1.4.23`);
-const blk11=new BlockFrame("Install From source",``);
-blk11.AddCode(`wget http://nodejs.org/dist/node-v0.4.4.tar.gz
-$ tar -xzf node-v0.4.4.tar.gz
-$ cd node-v0.4.4
-$ ./configure
-$ sudo make install`);
 
-const blk12=new BlockFrame("switching between node versions",null,
-`$ nvm install v0.8.10
-$ nvm use v0.8.10`);
-
-const blk13=new BlockFrame("list of versions <br/>and also the current <br/>and default versions :");
-blk13.AddCode("nvm list");
-
-
-const blk14=new BlockFrame("getting the version<br>(in command line)",null,
-`node -v`);
-	
 const blk15=new BlockFrame("A hello world http server",
 `program responds to hello world via http.
 We'll call the file 'hello_http.js' 
@@ -124,7 +114,7 @@ server.listen(8080);`);
 blk15.AddBody(`Now lets run this program from the 
 terminal by typing:`);
 	blk15.AddCode("$ node hello_http.js");
-	blk15.Addbody(
+	blk15.AddBody(
 `Testing the server is as simple as opening a new browser tab
 and navigating to the following url: http://localhost:8080/. 
 you should see  : 'Hello Http'.
@@ -133,8 +123,50 @@ curl to test your server:
 <code>$ curl localhost:8080
 Hello Http</code>`);
 
+const blkInitializeProject=new BlockFrame("Initialize Project");
+blkInitializeProject.AddBody(
+`Navigate to the directory in which 
+you want your project to exist:`
+);
+blkInitializeProject.AddCode("cd sites/node-test");
+blkInitializeProject.AddBody(`Now initalize a new project with npm.`);
+blkInitializeProject.AddCode("npm init");
+blkInitializeProject.AddBody(
+ `utility will walk you through creating
+  a package.json file.
+  First, it will ask for a package name:`);
+  blkInitializeProject.AddCode("node-test");
+  blkInitializeProject.AddBody(
+ `The rest you can just press enter and skip.
+ Now you’ll notice we have a <h7>package.json</h7>
+ file that contains all the information we
+  entered.`
+  );
+
 const blkModule=new BlockFrame("Modules (or packages or libraries)");
 blkModule.AddBody(`Node implements the CommonJS interface for modules. `);
+
+const blkPackageJson=new BlockFrame("package.json");
+blkPackageJson.AddBody(
+`A package.json is a file that contains metadata
+about the project, and handles the dependencies
+(additional software and modules) of the project`
+);
+
+const blkInstallingModules=new BlockFrame("Installing modules from npm");
+blkInstallingModules.AddBody(
+`either search for them on the website or on Github. 
+The syntax for installing an npm module locally 
+(where 'express' is module name):`);
+blkInstallingModules.AddCode(
+`$ npm install express`);
+blkInstallingModules.AddBody(
+`To add dependency to packages.json use --save:`);
+blkInstallingModules.AddCode("npm install left-pad --save");
+blkInstallingModules.AddBody(
+`You can require module install from npm as you would do
+with the native ones,no need to specify path:`);
+blkInstallingModules.AddCode("var express = require('express');");
 
 const blkLodingDependencies = new BlockFrame("Loading depencies<br/>(using the <b>require</b> keyword)");
 blkLodingDependencies.AddBody(`Example:`);
@@ -146,17 +178,23 @@ var dns = require('dns');
 var myFile = require('./myFile'); 
 // loads myFile.js`);
 
-const blkInstallingModules=new BlockFrame("Installing modules from npm");
-blkInstallingModules.AddBody(
-`either search for them on the website or on Github. 
-The syntax for installing an npm module locally :`);
-blkInstallingModules.AddCode(
-`# where express === module name
-$ npm install express`);
-blkInstallingModules.AddBody(
-`You can require module install from npm as you would do
-with the native ones,no need to specify path:`);
-blkInstallingModules.AddCode("var express = require('express');");
+const blkRunNode=new BlockFrame("Run Node in the terminal");
+blkRunNode.AddBody(
+`Create a index.js file in the root folder
+of your project and add the code to it:`
+);
+blkRunNode.AddCode(
+`//index.js
+const leftPad = require('left-pad');         // Require left pad
+const output = leftPad('Hello, World!', 15); // Define output
+
+// Send output to the console
+console.log(output);`
+);
+blkRunNode.AddBody(
+`Now you can run the project in terminal:`
+);
+blkRunNode.AddCode(`node index.js`);
 
 const blkModuleScop=new BlockFrame("Module scope");
 blkModuleScop.AddBody(
@@ -168,7 +206,13 @@ a variable of your choice.
 That means that you don't have to 
 care about two or more modules that
 have functions with the same name.`);
+
+
+
+//const blkExample2=new BlockFrame("Example 2");
+
 </script>
+
 <h2>Creating your own modules</h2>
 <script>
 const blkCreatingModules=new BlockFrame ("Step 1");
