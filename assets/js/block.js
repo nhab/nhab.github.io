@@ -27,22 +27,25 @@ function BlockN(options)
     dvContainer.setAttribute('id', id1);
 
     //header:
+    headerHeight="25px";
     var divHead = document.createElement("div");
-    divHead.setAttribute("style","display:inline;");
+    divHead.setAttribute("class","blockHead");
+    divHead.setAttribute("style","height:30px;");
+
     var dvTitle = document.createElement("div");
-    dvTitle.setAttribute("class",'blockHead');
-    dvTitle.setAttribute("style","display: inline-block;width:90%;")
+    dvTitle.setAttribute("class",'blockTitle');
+    dvTitle.setAttribute("style","height:"+headerHeight);
     dvTitle.innerHTML= options.title;
     
     var objBtn = document.createElement("Input");
     objBtn.setAttribute("type","button");
     objBtn.setAttribute("value","V");
-    objBtn.setAttribute("style","display: inline-block;width:10%")
+    objBtn.setAttribute("style","display: inline-block; top:0%;width:25px;float:right;vertical-align:top;height:"+headerHeight);
     // objBtn.setAttribute("onclick","alert('Hello')");
 
-    divHead.appendChild(objBtn);
-    divHead.appendChild(dvTitle);
-    
+     divHead.appendChild(dvTitle);
+     divHead.appendChild(objBtn);
+
     //dvContainer.appendChild(objBtn);
     dvContainer.appendChild(divHead);
     //body:

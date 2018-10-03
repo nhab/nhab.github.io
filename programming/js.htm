@@ -17,7 +17,7 @@ blkbundlesConfigurator.AddCode(``);
 Block("What is javascript?",
 ` Javascript is a high-level, dynamic, untyped,
  and interpreted programming language.`);
-const blk1=new BlockFrame("How to write javascript<br/> in HTML file?");
+const blk1=new BlockFrame("javascript in HTML file");
 blk1.AddCode(
 `//save the code as  file:test.html 
  \<script type="text/javascript">
@@ -682,47 +682,64 @@ myObj.myBoolean; // = true
 myPrototype.meaningOfLife  =  43;
 myObj.meaningOfLife; // = 43`);
 
-const blkProperties=new BlockFrame("properties of an object");
-blkProperties.AddBody(
-`The for/in statement allows iteration over
+//---------------------------------------------------------------------------------------------
+var objObjects=BlockGroup("Objects");
+var options=[];
+var ind=0;
+ options[ind++]={
+    title:"properties of an object",
+    body:`The for/in statement allows iteration over
 properties of an object,
 walking up the prototype chain 
-until it sees a null prototype.`);
-blkProperties.AddCode(
-`  for (var x in myObj){
+until it sees a null prototype.`,
+    code:` for (var x in myObj){
           console.log(myObj[x]);
       }
       ///prints:
       // Hello world!
       // 43
-      // [Function: myFunc]`);
-blkProperties.AddBody(
-`To only consider properties attached to the object itself
-and <b>not its prototypes</b>, use the 'hasOwnProperty()' check:`);
-blkProperties.AddCode(
-`for (var x in myObj){
+      // [Function: myFunc]`
+  ,parent:objObjects
+}
+
+ options[ind++]={
+    title:"hasOwnProperty() check",
+    body:`To only consider properties attached to the object itself
+and <b>not its prototypes</b>, use the 'hasOwnProperty()' check:`,
+code:`for (var x in myObj){
     if (myObj.hasOwnProperty(x)){
         console.log(myObj[x]);
     }
 }
 ///prints:
-// Hello world!`);
+// Hello world!`
+  ,parent:objObjects
+}
 
-const blkCreateNewObj=new BlockFrame(`Creating New Object`);
-blkCreateNewObj.AddBody(
-`using Object.create:`);
-blkCreateNewObj.AddCode(
-` var myObj  =  Object.create(myPrototype);
-  myObj.meaningOfLife; // = 43`);
-  blkCreateNewObj.AddBody(
-`The second way is using constructors.
+/*
+ options[]={
+    title:"",
+    body: ,
+    code:``
+  ,parent:objObjects
+}*/
+options[ind++]={
+    title:"Creating New Object method 1",
+    body:`using Object.create:`,
+    code:`var myObj  =  Object.create(myPrototype);
+  myObj.meaningOfLife; // = 43`
+  ,parent:objObjects
+}
+
+options[ind++]={
+    title:"Creating New Object method 2",
+    body:`The second way is using constructors.
 Constructors have a property called prototype. 
 This is *not* the prototype of the constructor 
 function itself; instead, it's the prototype 
 that new objects are given when they're created
- with that constructor and the new keyword.`  );
- blkCreateNewObj.AddCode(
-`MyConstructor.prototype  = {
+ with that constructor and the new keyword.`,
+ code:`MyConstructor.prototype  = {
     myNumber :  5,
     getMyNumber : function(){
         return this.myNumber;
@@ -732,10 +749,14 @@ var myNewObj2  = new MyConstructor();
 myNewObj2.getMyNumber(); // = 5
 myNewObj2.myNumber  =  6;
 myNewObj2.getMyNumber(); // = 6
+`,parent:objObjects
+};
 
-// Built-in types like strings and numbers also have
-// constructors that create equivalent wrapper objects.
-var myNumber  =  12;
+options[ind++]={
+    title:"Built-in types vs wrapper objects",
+    body:`// Built-in types like strings and numbers also have
+// constructors that create equivalent wrapper objects.`,
+code:`var myNumber  =  12;
 var myNumberObj  = new  Number( 12);
 myNumber  == myNumberObj; // = true
 
@@ -749,38 +770,48 @@ if ( 0){
 if ( new  Number( 0)){
     // This code will execute, because wrapped numbers 
     // are objects, and objects are always truthy.
+}`,parent:objObjects
 }
 
-// However, the wrapper objects and the regular builtins
-// share a prototype, so you can actually add 
-// functionality to a string, for instance.
-String.prototype.firstCharacter  = function(){
+options[ind++]={
+    title:"Adding function to objects by prototypes",
+    body:`However, the wrapper objects and the regular builtins
+ share a prototype, so you can actually add 
+ functionality to a string, for instance.`,
+code:`String.prototype.firstCharacter  = function(){
     return this.charAt( 0);
 };
 "abc".firstCharacter(); // = "a"
+`,parent:objObjects};
 
-// This fact is often used in "polyfilling", which is 
-// implementing newer features of JavaScript in an 
-// older subset of JavaScript, so that they can be
-// used in older environments such as outdated browsers.
+options[ind++]={
+    title:`polyfilling of an object`,
+    body: `prototypes is often used in "polyfilling", 
+which is implementing newer features of JavaScript
+in an older subset of JavaScript, so that they can be
+ used in older environments such as outdated browsers.
 
-// For instance, we mentioned that Object.create isn't
-// yet available in all implementations, but we can 
-// still use it with this polyfill:
-if ( Object.create  ===  undefined){ 
+ For instance, we mentioned that Object.create isn't
+ yet available in all implementations, but we can 
+ still use it with this polyfill:`,
+ code:`if ( Object.create  ===  undefined){ 
     // don't overwrite it if it exists
     Object.create  = function(proto){
      // make a temporary constructor with the right prototype
      var Constructor  = function(){};
      Constructor.prototype  = proto;
-     // then use it to create a new, appropriately-prototyped object
-     return new Constructor();
-    };
-}`);
+     // then use it to`
+     ,parent:objObjects};
 
-Block("object inheritannce",null,
-`var animal = { eats: true }
+ options[ind++]={
+    title:"object inheritannce",
+    code:`var animal = { eats: true }
 rabbit = Object.create(animal)
-alert(rabbit.eats) // true`);
+alert(rabbit.eats) // true`
+  ,parent:objObjects
+}
+for(i=0;i<options.length;i++)
+    BlockN(options[i]);
+
 </script>
  </body>
