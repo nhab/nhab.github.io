@@ -205,7 +205,7 @@ function BlockP(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",imag
     var id1="dv"+Math.random()*20;
     parent.InnerHtml=parent.InnerHtml+"<div style='"+sStyle+";' id='"+id1+"'>";
    //header:
-    parent.InnerHtml+= "<div class='blockHead' >"  +title+"</div>";
+    parent.InnerHtml+= "<div class='blockTitle' >"  +title+"</div>";
     //body:
     if(body)
     parent.InnerHtml+= "<div class='blockBody'>" +body+"</div>";
@@ -344,10 +344,15 @@ class BlockFrame{
     }
     AddHeader(title)
     {
+
         var para = document.createElement("div");
-        para.setAttribute('class', 'blockHead');
+        var container=document.createElement("div");
+        para.setAttribute('class', 'blockTitle');
+        container.setAttribute('class','blockHead');
+
         para.innerHTML=title;
-        document.getElementById(this.frameID).appendChild(para);
+        container.appendChild(para);
+        document.getElementById(this.frameID).appendChild(container);
     }
     AddBody(bod)
     {
