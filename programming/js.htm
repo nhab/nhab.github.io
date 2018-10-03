@@ -14,7 +14,8 @@ const blkbundlesConfigurator=new BlockFrame("");
 blkbundlesConfigurator.AddBody(``);
 blkbundlesConfigurator.AddCode(``);
  */
-Block("What is javascript?",
+
+BlockP("What is javascript?",
 ` Javascript is a high-level, dynamic, untyped,
  and interpreted programming language.`);
 const blk1=new BlockFrame("javascript in HTML file");
@@ -30,7 +31,7 @@ blkComment.AddCode(` // Single-line comments start with two slashes
 /* Multiline comments start with slash-star
     and end with star-slash*/`);
     
-Block("Numbers"
+BlockP("Numbers"
     ,`JavaScript has only one 64-bit number type .
 it  has a 52-bit mantissa, which is enough
 to store integers up to about 9✕10¹⁵ .
@@ -44,12 +45,12 @@ to store integers up to about 9✕10¹⁵ .
 30  %  4; // = 2"
 18.5  %  7; // = 4.5`,  "javascript");
 
-Block("bitwise operations",
+BlockP("bitwise operations",
 `when you perform a bitwise operation ,
  the float is converted to 
 a signed int *up to* 32 bits.`,`1  &lt;&lt;  2; // = 4`);
 
-Block("special values ",null,
+BlockP("special values ",null,
 `Infinity; // result of e.g. 1/0
 - Infinity; // result of e.g. -1/0
 NaN; // result of e.g. 0/0, ('Not a Number)'
@@ -69,10 +70,10 @@ undefined;
 // Note that 0 is falsy and "0" is truthy, 
 //even though 0 == "0".`);
 
-Block("including a javaScript file",null,
+BlockP("including a javaScript file",null,
  "< script type='text/javascript' src='Script1.js'>\<\/script>");
 
-Block("Including from another js file :",
+BlockP("Including from another js file :",
 `Put all the code using the remote library in the callback function.
 For example:`,
 `function loadScript(url, callback)
@@ -381,7 +382,7 @@ setTimeout(function(){
    
 
 
-Block("'By reference' parameter to function",
+BlockP("'By reference' parameter to function",
 "it can be implemented by passing object to function as parameter",
 `function alterObject(obj) {
  obj.foo = "goodbye";
@@ -390,7 +391,7 @@ var myObj = { foo: "hello world" };
 alterObject(myObj);
 alert(myObj.foo); // "goodbye" instead of "hello world"`);
 
-Block("optional parameters",
+BlockP("optional parameters",
 `you can call functions omitting some parameters and js will
  fil in the other parameters with the value undefined. 
 Example: `,
@@ -414,7 +415,7 @@ blkNamedParams.AddCode(
 // usage:
  myFunction({ param1 : 70, param2 : 175});`);
 
-Block("The Arguments Object",
+BlockP("The Arguments Object",
 `JavaScript functions have a built-in object called 
 the arguments object.
 The argument object contains an array of the arguments 
@@ -443,7 +444,7 @@ i; // = 5 - not undefined as you'd expect in c#
 temporary; // raises ReferenceError
 permanent; // = 10`);
 
-Block("Nested Functions",null,
+BlockP("Nested Functions",null,
 `function add() { 
     var counter = 0; 
     function plus() {
@@ -476,7 +477,7 @@ blkClosures.AddCode(
 sayHelloInFiveSeconds( "Adam"); 
 // will open a popup with "Hello, Adam!" in 5s`);
 
-Block("IIFE(Immediately-Invoked Function Expression)",
+BlockP("IIFE(Immediately-Invoked Function Expression)",
 `It executes immediately after it’s created.
 This pattern is often used when trying to 
 avoid polluting the global namespace, 
@@ -566,7 +567,7 @@ blkCallApply.AddCode(
   `var product  = function(a, b){ return a  * b; };
   var doubler  = product.bind( this,  2);
   doubler( 8); // = 16`);
-  Block("Arrow Functions","Arrow functions allows a short syntax for writing function",
+  BlockP("Arrow Functions","Arrow functions allows a short syntax for writing function",
   `// ES5
   var x = function(x, y) {
      return x * y;
@@ -574,7 +575,7 @@ blkCallApply.AddCode(
   // ES6
   const x = (x, y) => x * y;`,"javascript");
 
-Block("Events",
+BlockP("Events",
 "Example:",
 `< script type="text/javascript">
 function checkRange(t,low,high) {
@@ -587,7 +588,7 @@ function checkRange(t,low,high) {
     < input type=text name=number size=10 onBlur="checkRange(this.value,1000,2000);">
 < /form>}`);
 
-Block("Raising events",
+BlockP("Raising events",
 `to raise an event use <b>dispatchEvent</b> (equivalent of raisevent in vb)
 to  Listen for the event use <b>addEventListener</b>
  
