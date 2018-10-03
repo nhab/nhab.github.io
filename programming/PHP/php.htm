@@ -1,14 +1,16 @@
 <head>
-        <script src="../../libs/jquery-3.3.1.slim.min.js" ></script>
+    <script src="../../libs/jquery-3.3.1.slim.min.js" ></script>
+
+    <!--script src="../../libs/tooltip/tooltip.js" type="text/javascript"></script-->
+    <!--link href="../../libs/tooltip/tooltip.css" rel="stylesheet" type="text/css" /-->
+    <link rel="stylesheet" href="../../assets/css/block.css">
+    <link rel="stylesheet" href="../../libs/highlight/androidstudio2.css">
+    <script src="../../libs/jquery-3.3.1.slim.min.js" ></script>
+    <script src="../../libs/highlight/highlight.pack.js"></script>
+    <script src="../../assets/js/block.js"></script>
+    <meta charset="UTF-8">
     
-        <script src="../../libs/tooltip/tooltip.js" type="text/javascript"></script>
-        <!--link href="../../libs/tooltip/tooltip.css" rel="stylesheet" type="text/css" /-->
-        <link rel="stylesheet" href="../../assets/css/block.css">
-        <link rel="stylesheet" href="../../libs/highlight/androidstudio2.css">
-        <script src="../../libs/jquery-3.3.1.slim.min.js" ></script>
-        <script src="../../libs/highlight/highlight.pack.js"></script>
-        <script src="../../assets/js/block.js"></script>
-        <script>
+    <script>
           $('code').each(function() {
           var that = $(this);
           // cache the content of 'code'
@@ -19,91 +21,97 @@
         });
         
         hljs.initHighlightingOnLoad();
-        </script>
+    </script>
 </head>
 <body>
 <script>
- Block("where is the running php.exe in windows?",null,"where php.exe");
- Block(" which php.ini file is being loaded",null,"php --ini");
-
+    var objPHP=BlockGroup("PHP basics");
+    Block({title:"path of php.exe",code:"where php.exe",parent:objPHP});
+    Block({title:"path of php.ini",code:"php --ini",parent:objPHP});
     sCode="&lt!DOCTYPE html>&lthtml>"+"<br>"+"&ltbody>"+"<br>";
     sCode+="&lt?php "+"<br>";
     sCode+="echo \"My first PHP script!\""+"<br>";
     sCode+="?> &lt/body>&lt/html>"+"<br>";
-Block("Where to write code?","1. in a file with extention .php<br>2. inside an html file:",sCode,"html");
-Block("online <br/>code playground",
-`<a href='https://www.ideone.com/ryTuHp'>ideone </a>
-<a href="http://codepad.org/w4gyeryk">codepad</a>
-`);
+    Block({title:"Where to write code?",
+     body:"1. in a file with extention .php<br>2. inside an html file:",
+     code:sCode,parent:objPHP});
 
-Block("Comments","are like c++:","// , /*...*/","php");
+    Block({title:"online code playground",
+body:`<a href='https://www.ideone.com/ryTuHp'>ideone </a>
+<a href="http://codepad.org/w4gyeryk">codepad</a>`    
+,parent:objPHP}); 
+    Block({
+        title:"comments",
+        body:"are like C++ : \// , \/*...*\/",parent:objPHP
+});
 
     sCode="&lt?php echo \"i like it\" ?>"+"<br>";
     sCode+="&lt?php print \"I like it\" ?>";
-    Block("writing a statement", "  'Echo' and 'PRINT' :",sCode,"html");
-
     
+    Block({title:"writing a statement", body:"  'Echo' and 'PRINT' :",code:sCode,parent:objPHP});
+
     sCode="&lt?php<br>$like=\"I like it\"<br>print $like ?>";
-Block("Variables",
-`- Don't need definition.
+Block({title:"Variables",
+body:`- Don't need definition.
 - They begin with $ 
-- Are case sensitive`,sCode,"php");
-     
-    Block("Combining Strings","use dot (.)","print $like .\" \" .$num;","php");
+- Are case sensitive`,code:sCode,parent:objPHP});
     
-    stitle="Dynamic <br/>variable names";
+Block({title:"Combining Strings",body:"use dot (.)",
+  code:"print $like .\" \" .$num;",parent:objPHP});
+
     sCode="$test=\"success\";<br>$primary=\"test\";<br>$ID=${$primary};<br>echo $ID;";
-    Block(stitle,"",sCode,"php");
-    
-    Block("Global variables","","function printname()"
-     +"<br>{"
-     +"<br>global $name;"+
-     "<br>include 'variables.php';"+
-     "<br>print $name;<br>};",
-     "php");
 
-    sCode="$a=array{1,2,3,4,5};"+"<br>"+"f[0]=\"j\";<br>f[1]=\"a\";<br>f[2]=\"r\""; 
-    Block("Arrays","",sCode,"php");
+Block({title:"Dynamic variable names",code:sCode,parent:objPHP});
 
-    Block("Operators","The same as C++ :","+ -/ * ....","php");
+Block({title:"Global variables",code:"function printname()"
+    +"<br>{"
+    +"<br>global $name;"+
+    "<br>include 'variables.php';"+
+    "<br>print $name;<br>};",parent:objPHP});
+    Block({title:"Arrays",
+    code:"$cars = array(\"Volvo\", \"BMW\");<br/>"+
+    "echo \"The car were \" . $cars[1] . \"" 
+,parent:objPHP  });
 
-    Block("If","The same as C++",
-    ` if ($arr)
+  Block({title:"Operators",body:"The same as C++ :",code:"+ -/ * ..",parent:objPHP});
+  Block({title:"If",body:"The same as C++",
+    code:` if ($arr)
      {$price=0.90;}
-     else{..}`,"php");
+     else{..}`,parent:objPHP});
 
-    Block("Loops","The same as C++","for($num=1;$num<=10;$num++)<br>{print $num.\" \";}"+
+    Block({title:"Loops",body:"The same as C++",
+    code:"for($num=1;$num<=10;$num++)<br>{print $num.\" \";}"+
         "<br>while($num<=10)   {  ...   }<br>"+
         "$a=array(1,2,3,4,5);<br>"+
         "foreach($a as $b)<br>"+
-        "{    print $b.\" \";}","php","23%");
+        "{    print $b.\" \";}",parent:objPHP});
   
-    Block("Functions","","function examplefunc()"+
-        "<br>{<br>  print \"Hi < br>\";<br>}"+
-        "<br>print \"sample line:&ltbr>\""+
-        "<br>examplefunc();"+
-        "<br>$s=examplefunc();"+
-        "<br>print $s;","php");
     
-    Block("by <b>reference</b> <br/>function arguments","By adding & before variable",
-        "function add_some( &$str2 ){<br>..}","php");
+    Block({title:"Functions",code:"function examplefunc()"+
+    "<br>{<br>  print \"Hi < br>\";<br>}"+
+    "<br>print \"sample line:&ltbr>\""+
+    "<br>examplefunc();"+
+    "<br>$s=examplefunc();"+
+    "<br>print $s;",parent:objPHP});
 
-    Block("<b>Default Argument</b><br/> of functions","",
-     "function makeCoffe(<br>"
-       +" $types=array(\"cappuccino\",$coffeMaker=Null ))"+"<br>"+"{..}","php");   
-    Block(`include`,
-    `To include other php files
-to a php file :
+Block({title:"by <b>reference</b> function arguments",body:"By adding & before variable",
+    code:"function add_some( &$str2 ){<br>..}",parent:objPHP});
+
+Block({title:"<b>Default Argument</b> of functions",
+    code:"function makeCoffe(<br>"
+    +" $types=array(\"cappuccino\",$coffeMaker=Null ))"+"<br>"+"{..}",parent:objPHP});
+
+  Block({title:`include`,
+    body:`To include other php files to a php file,use :
 INCLUDE(),REQUIRE()
-Even text or html files
-can be included 
+Even text or html files can be included 
 Example :`,
-`Include
-  'http://www.site.com/file.php';`,"php");
-  Block(`Include example`,
-`Include 'filename';//or
+code:`Include
+  'http://www.site.com/file.php';`,parent:objPHP});
+  Block({title:`Include example`,
+body:`Include 'filename';//or
 require 'filename';`,
-`&lthtml>
+code:`&lthtml>
 &ltbody>
 &ltdiv class="menu">
 &lt?php include 'menu.php';?>
@@ -113,25 +121,25 @@ require 'filename';`,
 &ltp>Some more text.&lt/p>
 &lt/body>
 &lt/html>
-`,"html");
-Block("Classes",""
-,`class test{
+`,parent:objPHP});
+Block({title:"Classes"
+,code:`class test{
 public static function run(){
     print "works\n";
 }
 $ClassName='test';
 $ClassName::run();
-}`,"php");
-Block("Function to find <br/>IP of the Visitors:",null,`Getenv("REMOTE_ADDR")`,"php");
-Block("Uploading files",null,`&ltform enctype="multipart/form-data" 
+}`,parent:objPHP});
+Block({title:"Finding IP of the Visitors:",code:`Getenv("REMOTE_ADDR")`,parent:objPHP});
+Block({title:"Uploading files",code:`&ltform enctype="multipart/form-data" 
 action="upload.php" method="post">
 Choose the file :
-&ltinput name="uploaded" type="file"
-/>&ltbr />
-&ltinput type="submit" value="Upload"
-/>
-&lt/form>`,"php");
-Block("Forms","A Simple HTML Form",`&lthtml>
+&ltinput name="uploaded" type="file" />&ltbr />
+&ltinput type="submit" value="Upload" />
+&lt/form>`,parent:objPHP});
+
+
+Block({title:"Forms",body:"A Simple HTML Form",code:`&lthtml>
 &ltbody>
 &ltform action="welcome.php"
 method="post">
@@ -142,62 +150,55 @@ E-mail:&ltinput type="text" name="email">
 &ltinput type="submit">
 &lt/form>
 &lt/body>
-&lt/html>`,"php");
-Block("Finding php.exe path","in winodws command prompt:",
-`C:\>where php.exe
-C:\Program Files (x86)\WAMP\bin\php\php5.3.5\php.exe`,"php");
-</script>
+&lt/html>`,parent:objPHP});
 
-
-<h2> Sessions</h2>
-<b>Session level variables</b>
-<br>
-<script>
-    Block("1. define them",null,
-    `session_start();
+/*---------------------------------------------------*/
+    var objSession=BlockGroup("Session variables");
+ Block({title:"1. define them",
+    code:`session_start();
 $_SESSION['Color']='red';
 $_SESSION['size']='small';
-...`,"php");
-Block("2. Then use those variables",
-"in the second page :",
-`session_start();
+...`,parent:objSession});
+Block({title:"2. Then use those variables",
+body:"in the second page :",
+code:`session_start();
     echo $_SESSION['color'];
-    echo $_SESSION['size'];`,"php");
-Block("print the whole session",null,"print_r($SESSION)","php");
-Block("To delete a session variable","use <b>unset</b>",
-`$_SESSION['size']='larg';
+    echo $_SESSION['size'];`,parent:objSession});
+Block({title:"print the whole session",code:"print_r($SESSION)",parent:objSession});
+Block({title:"To delete a session variable",body:"use <b>unset</b>",
+code:`$_SESSION['size']='larg';
 unset( $_SESSION['shape']);
 //For total deletion     : 
 session_unset();
-session_destroy();`,"php");
-</script>
-<h2> Files Operations:</h2>
-<script>
-    Block("fopen function:",null,
-    `$a=fopen("/home/files/yourfile.txt","r");
+session_destroy();`,parent:objSession});
+
+/*---------------------------------------------------*/
+var objFileOp=BlockGroup("Files Operations");
+
+   Block({title:"fopen function:",
+    code:`$a=fopen("/home/files/yourfile.txt","r");
 $b=fopen("yourfile.gif","w");
 //r   determines mode 
 //other modes for opening files:
 x+,x,a+,a,w+,w-,r+,r-
-`,"php");
-Block("some functions to work with files",null,
-`fwrite();
+`,parent:objFileOp});
+Block({title:"some functions to work with files",
+code:`fwrite();
 file_get_contents();
 //returns the whole file as an string
 file();
 fgets();// to read line by line
-fread();`,"php");
-Block("file() Example:",
-null,
-`$lines=file('yourfile.txt');
+fread();`,parent:objFileOp});
+Block({title:"file() Example:",
+code:`$lines=file('yourfile.txt');
 foreach($lines as $line_num=>$line)
 {
 print
 "<font color='red'> line # {$line_num}</font>;"
 .$line."< br/>\n";
-}`,"php");
-Block("fgets() Example",null,
-`$myFile="yourfile.txt";
+}`,parent:objFileOp});
+Block({title:"fgets() Example",
+code:`$myFile="yourfile.txt";
 $handle=fopen($myFile,'r');
 while(!feof($handle))
 {
@@ -205,16 +206,12 @@ $data=fgets($handle,512);
 echo $data;
 echo "<br>";
 }
-fclose($handle);`,"php");
-</script>
-<h2>phpMysql</h2>
-
-<b>Open a Connection to MySQL </b>
-<br/>
-<script>
-Block("MySQLi Object-Oriented",
-null,
-`$servername = "localhost";
+fclose($handle);`,parent:objFileOp});
+/*-----------------------------------------*/
+var objPhpMySql=BlockGroup("phpMysql");
+//<b>Open a Connection to MySQL </b>
+Block({title:"MySQLi Object-Oriented",
+code:`$servername = "localhost";
     $username = "username";
     $password = "password";
 
@@ -227,9 +224,9 @@ null,
         die("Connection failed: "
          . $conn->connect_error);
     }
-    echo "Connected successfully";`,"php" );
-Block("MySQLi Procedural",null,
-`$servername = "localhost";
+    echo "Connected successfully";`,parent:objPhpMySql} );
+Block({title:"MySQLi Procedural",
+code:`$servername = "localhost";
 $username = "username";
 $password = "password";
 
@@ -242,9 +239,9 @@ if (!$conn) {
     die("Connection failed: " .
          mysqli_connect_error());
 }
-echo "Connected successfully";`,"php");
-Block("PDO",null,
-`$servername = "localhost";
+echo "Connected successfully";`,parent:objPhpMySql});
+Block({title:"PDO",
+code:`$servername = "localhost";
 $username = "username";
 $password = "password";
 $dbname = "myDBPDO";
@@ -262,5 +259,6 @@ try {$conn = new PDO("mysql:host=$servername;dbname=$dbname",
 }catch(PDOException $e) {
     echo $sql . "< br>" . $e->getMessage();
  }
-$conn = null;`,"php");
+$conn = null;`,parent:objPhpMySql});
+
 </script>

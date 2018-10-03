@@ -724,17 +724,16 @@ code:`for (var x in myObj){
   ,parent:objObjects
 }*/
 options[ind++]={
-    title:"Creating New Object method 1",
-    body:`using Object.create:`,
+    title:"Creating New Object (using Object.create)",
+    body:`:`,
     code:`var myObj  =  Object.create(myPrototype);
   myObj.meaningOfLife; // = 43`
   ,parent:objObjects
 }
 
 options[ind++]={
-    title:"Creating New Object method 2",
-    body:`The second way is using constructors.
-Constructors have a property called prototype. 
+    title:"Creating New Object (using constructor)",
+    body:`Constructors have a property called prototype. 
 This is *not* the prototype of the constructor 
 function itself; instead, it's the prototype 
 that new objects are given when they're created
@@ -811,7 +810,7 @@ alert(rabbit.eats) // true`
   ,parent:objObjects
 }
 for(i=0;i<options.length;i++)
-    BlockN(options[i]);
+    Block(options[i]);
 
 </script>
  </body>

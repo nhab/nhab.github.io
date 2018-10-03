@@ -1,4 +1,4 @@
-function BlockN(options)
+function Block(options)
 //title,body,code,codetype,widt,hei,imageSrc=null,padding="5",imagWidth="100%",parent=document,imagesOnRight=false,codeOnRight=false)
 {
     if (options == undefined) options = {}; 
@@ -44,9 +44,8 @@ function BlockN(options)
     // objBtn.setAttribute("onclick","alert('Hello')");
 
      divHead.appendChild(dvTitle);
-     divHead.appendChild(objBtn);
+//     divHead.appendChild(objBtn);
 
-    //dvContainer.appendChild(objBtn);
     dvContainer.appendChild(divHead);
     //body:
     if(options.body)
@@ -59,7 +58,7 @@ function BlockN(options)
     sStylle="overflow: auto;";
     if(options.codeOnRight)
         sStyle+="display:inline-block;";
-debugger;
+
     if(options.codetype && options.code)
     {
         //parent.InnerHtml+= "<pre style='"+sStyle+"'><code style='"+sStyle+"' class='"+options.codetype+"'>"+options.code+"</code></pre>";
@@ -194,7 +193,7 @@ function BlockPrev(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",i
     return document.getElementById(id1);
 }
 
-function Block(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",imagWidth="100%",parent=document)
+function BlockP(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",imagWidth="100%",parent=document)
 {
     sStyle="padding-left:"+padding+"px;padding-right:"+padding+"px;padding-top:"+padding+"px;padding-down:"+padding+"px";
     sStyle+=";vertical-align:text-top;border:1px black solid;margin-left:2px;";
