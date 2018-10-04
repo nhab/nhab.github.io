@@ -464,23 +464,22 @@ socket.on('visit', function(visit) {
 &lt/body>
 &lt/html>`);
 
-const blk19=new BlockFrame("Resources");
+//const blk19=new BlockFrame("Resources");
 
-const blk20=new BlockFrame(null,null,null,"col1id");
+const blk20=new BlockFrame("Resources",null,null,"col1id");
 blk20.AddUrl("Original reference","https://nodejs.org/docs/latest/api/");
 blk20.AddBr();
 blk20.AddUrl("source code repository of npmjs","https://www.npmjs.com");
 blk20.AddBr();
 blk20.AddUrl("on youtube","https://www.youtube.com/watch?v=Rc9LJ9bdHJ");
 
-const blk21=new BlockFrame(null,null,null,"col2id");
-blk21.AddUrl("nod.js by gamma","https://github.com/egamma/nodejs-guidelines");   
-blk21.AddBr();
-blk21.AddUrl("beginners guide","http://blog.modulus.io/absolute-beginners-guide-to-nodejs");
-blk21.AddBr();
-blk21.AddUrl("tutorial with examples","http://noeticforce.com/best-nodejs-tutorial-with-examples");
-blk21.AddBr();
-blk21.AddUrl("building a real time markdown-viewer","https://scotch.io/tutorials/building-a-real-time-markdown-viewer");
+blk20.AddUrl("nod.js by gamma","https://github.com/egamma/nodejs-guidelines");   
+blk20.AddBr();
+blk20.AddUrl("beginners guide","http://blog.modulus.io/absolute-beginners-guide-to-nodejs");
+blk20.AddBr();
+blk20.AddUrl("tutorial with examples","http://noeticforce.com/best-nodejs-tutorial-with-examples");
+blk20.AddBr();
+blk20.AddUrl("building a real time markdown-viewer","https://scotch.io/tutorials/building-a-real-time-markdown-viewer");
 
 blk19.AddObj(blk20);
 blk19.AddObj(blk21);
