@@ -8,7 +8,7 @@ tb=[
      ,""
      ,""
      ,""
-     ,"
+     ,""
      ,"<a href='https://www.xe.com/currencycharts/?from=IRR&to=USD&view=10Y'>Rial</a>(0.00001)",
        "<a href='https://tradingeconomics.com/iran/gdp-per-capita'>7k$</a>"
 
