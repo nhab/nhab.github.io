@@ -220,6 +220,7 @@ function BlockP(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",imag
         parent.InnerHtml+= "<img src='"+imageSrc+"' style='width:"+imagWidth+"'>";
     }
     parent.InnerHtml+= "</div>";
+    debugger;
     return document.getElementById(id1);
 }
 

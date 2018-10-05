@@ -7,6 +7,8 @@
 </head>
 <body style="overflow: auto;">
  <script>
+   var objReact=BlockGroup("React.js basics");
+    
 stitle="React";
 sBody=`React is a library for building user interfaces through creation of UI components.
 Unlike more complete frameworks such as Angular or Vue, React deals only with the view layer.( V in MVC. )
@@ -19,14 +21,13 @@ The render function simply outputs HTML code, which is <b>implemented using eith
 <a href='https://codepen.io/nhab/pen/MqXwRE'>My Hello world!</a>
 (see settings of codepen /javascript tab, which has included react and reactdom and set preproccessor to babel)
 `;
-
- Block(stitle,sBody,null,"javascript");
- BlockHorizontally("A stand alone sample",
-`you dont need to setup everything locally. 
+ Block({title:stitle,body:sBody,parent:objReact});
+ Block({title:"A stand alone sample",
+body:`you dont need to setup everything locally. 
 The following html code,is a working react sample which
  includes everything needed to code in react.
  `
-,`&lt!doctype html>
+,code:`&lt!doctype html>
 &lthtml>
 &lthead>
     &ltmeta charset="utf-8">
@@ -45,43 +46,43 @@ The following html code,is a working react sample which
     &lt/script>
 &lt/body>
 &lt/html>`
-);
+,parent:objReact});
 
  </script>
        
 <h2>Environment Setup</h2>
 <script>
  
- Block("Create the Root Folder","",`C:\\>mkdir reactApp
+ BlockP("Create the Root Folder","",`C:\\>mkdir reactApp
 C:\\reactApp>npm init`,"html");
     
-Block("Install Node.js then Global Packages(babel plugins)",null,
+BlockP("Install Node.js then Global Packages(babel plugins)",null,
  `C:\\reactApp>npm install -g babel
  C:\\reactApp>npm install -g babel-cli`,"html");
     
-Block("Add Dependencies and Plugins","",
+BlockP("Add Dependencies and Plugins","",
  `C:\\reactApp>npm install webpack --save
  C:\\reactApp>npm install webpack-dev-server --save`,"html");
     
-Block("Add packages to package.json"
+BlockP("Add packages to package.json"
    ,"The --save command will add these packages to package.json file."
    ,`C:\\reactApp>npm install react --save
   C:\\reactApp>npm install react-dom --save`,"php");
     
- Block("Create the Files","The touch command is the easiest way to create new, empty files:",
+ BlockP("Create the Files","The touch command is the easiest way to create new, empty files:",
  `C:\\reactApp>touch index.html
 C:\\reactApp>touch App.jsx
 C:\\reactApp>touch main.js
 C:\\reactApp>touch webpack.config.js`,"html");
 
- Block("Install webpack-dev-server",
+ BlockP("Install webpack-dev-server",
   `The webpack-dev-server is a little
   Node.js Express server, 
   which uses the webpack-dev-middleware
   to serve a webpack bundle`
   ,`npm install webpack-dev-server -g`,"javascript");
     
- Block("Set Compiler, Server and Loaders",
+ BlockP("Set Compiler, Server and Loaders",
  `Edit <b>webpack.config.js</b> . 
  set webpack entry point to be main.js`,
   `var config = {
@@ -98,14 +99,14 @@ C:\\reactApp>touch webpack.config.js`,"html");
 module.exports = config;`,"javascript");
     
 
-  Block("Edit package.json",
+  BlockP("Edit package.json",
    `Open the package.json and 
    delete test echo Error: 
   no test specified & & exit 1 inside scripts
   object.and add the start command instead.`
         ,`"start": "webpack-dev-server --hot"`,"javascript");
     
- Block("index.html","div id = 'app' as a root element",
+ BlockP("index.html","div id = 'app' as a root element",
 `&lt!DOCTYPE html>
 &lthtml lang = "en">
    &lthead>
@@ -118,7 +119,7 @@ module.exports = config;`,"javascript");
    &lt/body>
 &lt/html>`,"html");
 
-Block("App.jsx and main.js",null,
+BlockP("App.jsx and main.js",null,
 `//App.jsx
 import React from 'react';
 class App extends React.Component {
@@ -132,14 +133,14 @@ class App extends React.Component {
 }
 export default App;`,"javascript");
 
-Block("main.js","",
+BlockP("main.js","",
 `import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.jsx';
 ReactDOM.render(&ltApp />, 
   document.getElementById('app'));`,"html");
 
-Block("Running the Server","run the following command line and see the result on http://localhost:8080/",
+BlockP("Running the Server","run the following command line and see the result on http://localhost:8080/",
 "C:\\reactApp>npm start","javascript");
 </script>
     <br>
@@ -171,12 +172,12 @@ ReactDOM.render(&ltMyComponent />, node);`
 <h2>JSX</h2>
 
 <script>
-  Block("jsx is a syntax",
+  BlockP("jsx is a syntax",
   `React uses JSX for templating and components instead of regular JavaScript.
    <b>JavaScript XML (JSX)</b> is an extension to the JavaScript language <h7>syntax</h7>. `,`//this isa jsx syntax:
   const element = &lth1>Hello, world!&lt/h1>;`);
 
-  Block("An example of JSX code:","App.jsx"
+  BlockP("An example of JSX code:","App.jsx"
   ,`class App extends React.Component {
   render() {
     return (
@@ -191,7 +192,7 @@ ReactDOM.render(&ltMyComponent />, node);`
 </script>
 
 <script>
-  Block("Using JSX","App.jsx", `import React from 'react';
+  BlockP("Using JSX","App.jsx", `import React from 'react';
 class App extends React.Component {
    render() {
       return (
@@ -203,7 +204,7 @@ class App extends React.Component {
 }
 export default App;`,"javascript");
 
-Block("Nested Elements","App.jsx",
+BlockP("Nested Elements","App.jsx",
  `import React from 'react';
 class App extends React.Component {
    render() { return (
@@ -217,7 +218,7 @@ class App extends React.Component {
 export default App;
 `,"javascript");
     
-Block("Attributes",
+BlockP("Attributes",
  `<b>custom attributes</b> are additions to 
  regular HTML properties and attributes.
 to add custom attribute,we need to use 
@@ -235,11 +236,11 @@ class App extends React.Component {
          &lt/div>   );
 }  }
 export default App;`,"javascript");
-  Block("Expression in an attribute",null,
+  BlockP("Expression in an attribute",null,
   `const element =
      &ltimg src={user.avatarUrl}>
      &lt/img>;`);
- Block("JavaScript Expressions",`JavaScript expressions can be used inside of JSX.
+ BlockP("JavaScript Expressions",`JavaScript expressions can be used inside of JSX.
 We just need to wrap it with curly brackets {} :`,
 `import React from 'react';
 
@@ -254,7 +255,7 @@ class App extends React.Component {
 }
 export default App;`,"javascript");
 
-Block("conditional (ternary) expressions",""
+BlockP("conditional (ternary) expressions",""
 ,`import React from 'react';
 class App extends React.Component {
    render() {
@@ -268,7 +269,7 @@ class App extends React.Component {
 }
 export default App;`,"javascript");
     
-Block("Styling",
+BlockP("Styling",
 `React recommends using inline styles. 
 (with camelCase syntax)
 it will automatically append px after 
@@ -288,7 +289,7 @@ class App extends React.Component {
 }
 export default App;`,"javascript");
  
-Block("Naming Convention",
+BlockP("Naming Convention",
 `<h7>HTML tags</h7> always use <h7>lowercase tag</h7> names, while <h7>React components start with Uppercase.</h7>
 <b>Note</b> − You should use <h7>className</h7> and <h7>htmlFor</h7> as XML attribute names instead of <h7>class</h7> and <h7>for</h7>.`
 ,null,null );
@@ -300,18 +301,18 @@ Block("Naming Convention",
     <h3>Sample components:</h3>
     </p>
       <script>
-      Block("(javascript syntax",null,
+      BlockP("(javascript syntax",null,
       `React.createElement(
           MyButton,
           {color:'blue',shadowSize:2}
           ,'Click Me'
         )`);
-        Block("jsx syntax:",null,
+        BlockP("jsx syntax:",null,
         `&ltMyButton color="blue"
             shadowSize={2}>
   Click Me
 &lt/MyButton>`);
-    Block("Class components",null,
+    BlockP("Class components",null,
     `const Username = React.createClass({
   render() {
     return &ltp>The logged in user is: 
@@ -325,7 +326,7 @@ class Username extends React.Component {
      {this.props.username}&lt/p>;
   }
 }`);
-Block("functional stateles component(FSC)","<a href='https://codepen.io/nhab/pen/zJaEMR'>see the code in action</a>",
+BlockP("functional stateles component(FSC)","<a href='https://codepen.io/nhab/pen/zJaEMR'>see the code in action</a>",
         `const Username = function(props) {
   return &ltp>The logged in user is:
    {props.username}&lt/p>;
@@ -346,7 +347,7 @@ function Welcome(props) {
       </p>
 <h7>Stateless Example:</h7><br>
 <script>
-Block("App.jsx","App.jsx",
+BlockP("App.jsx","App.jsx",
 `import React from 'react';
 class App extends React.Component {
    render() { return ( &ltdiv>  &ltHeader/> &ltContent/>  &lt/div> ); }
@@ -360,7 +361,7 @@ class Content extends React.Component {
             text!!!&lt/p> &lt/div>  );  }
 }
 export default App;`,"javascript");
-Block("main.js",``,
+BlockP("main.js",``,
 `import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.jsx';
@@ -369,7 +370,7 @@ ReactDOM.render(<App />, document.getElementById('app'));
 </script>
 <br><h7>Stateful Example</h7><br>
 <script>
-      Block("App.jsx","",
+      BlockP("App.jsx","",
 `import React from 'react';
 class App extends React.Component {
    constructor() {
@@ -401,7 +402,7 @@ class TableRow extends React.Component {
 }
 export default App;`,"php","45%","850px");
 
-Block('main.js',
+BlockP('main.js',
 null,
 `import React from 'react';
 import ReactDOM from 'react-dom';
@@ -412,7 +413,7 @@ ReactDOM.render(<App/>, document.getElementById('app'));
 </script>
 <h2>State</h2>
 <script>
-Block("State",`State is the place where the data comes from.
+BlockP("State",`State is the place where the data comes from.
 State is similar to props, but it is private and fully controlled by the component.
 <a href="https://codepen.io/gaearon/pen/KgQpJd?editors=0010">
   <img alt="Edit new" src="https://codesandbox.io/static/img/play-codesandbox.svg">
@@ -421,7 +422,7 @@ State is similar to props, but it is private and fully controlled by the compone
 </script>
  <h2>Handling Events </h2>
  <script>
- Block("Event Handling",
+ BlockP("Event Handling",
 `Handling events with React elements is very similar to handling events on DOM elements. 
 There are some syntactic differences:
 
@@ -439,7 +440,7 @@ With JSX you pass a function as the event handler, rather than a string.
     &lt/a>
   );
 }`);
-Block("Event example2",
+BlockP("Event example2",
 `<a href="http://codepen.io/gaearon/pen/xEmzGg?editors=0010">Try it on codePen</a>`,
 `class Toggle extends React.Component {
   constructor(props) {
