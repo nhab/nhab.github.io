@@ -73,7 +73,7 @@ the root of the Symfony project:`
 }
 
 for(i=0;i<=3;i++)
-    BlockN(options[i]);
+    Block(options[i]);
     
 var objSettingUp=BlockGroup("Setting it Up");
 options=[];
@@ -198,7 +198,7 @@ options[8]={
   ,parent:objSettingUp
 }
 for(i=0;i<=8;i++)
-    BlockN(options[i]);
+    Block(options[i]);
 
 //-------------------------------------------------------------------------
 
@@ -240,7 +240,7 @@ framework:
 </script>
 <h2>Setting up a Hello symfony! project from scrach</h2>
 <script>
-Block("Creating the project<br/> by flex is recommended",
+BlockP("Creating the project<br/> by flex is recommended",
 `The use of the Symfony Installer to create new applications 
  is no  longer recommended since Symfony 3.3.
  
@@ -251,15 +251,15 @@ or higher. Run in terminal:
 (This creates a new quick_tour/ directory with 
 a Symfony application)`,
 `composer create-project symfony/skeleton quick_tour`);
-Block("Install the web-server and run symfony server",null,
+BlockP("Install the web-server and run symfony server",null,
 `composer require symfony/ web-server-bundle  --dev
  php bin/console server:start`);
     
- Block("Try your new app",
+ BlockP("Try your new app",
  `by going to http://localhost:8000 in a browser!`,
  null,null,"40%",null,"https://symfony.com/doc/current/_images/no_routes_page.png",null,"100%");
  
- Block("define the URL to our new page (rout)",
+ BlockP("define the URL to our new page (rout)",
  
 `Start in config/routes.yaml.
 rout is the URL to your page (/) 
@@ -273,7 +273,7 @@ index:
     controller: 'App\Controller\DefaultController::index'
 
 `);
-Block("Create the controller",
+BlockP("Create the controller",
 `In src/Controller, create a new <b>DefaultController</b>
  class and an index method inside.
  That's it! Try the page out by going to 
@@ -292,7 +292,7 @@ class DefaultController
 +         return new Response("Hello $name!");
     }
 }`);
-Block("further enhancement",
+BlockP("further enhancement",
 `you can replace rout by anottation.to do this:
 comment-out the YAML route by adding
 the # character befor each line of it.
@@ -319,7 +319,7 @@ class DefaultController
 </script>
 <h2>.</h2>
 <script>
-Block(`SandBox`,
+BlockP(`SandBox`,
 `The sandbox is an easy-to-install
 <b>pre-packaged symfony project</b>,already 
 configured with some sensible defaults.
@@ -331,7 +331,7 @@ in "Sites/sandbox/src/Spf13":
 `,
 `> app/console init:bundle Spf13/SteveBundle`,"php");
 
-Block("Creating a Bundle",
+BlockP("Creating a Bundle",
 `1-Choose a namespace. Namespace of a bundle 
 should include vendor name and bundle name.
  In our case, it is Acme\\TestBundle.
@@ -343,7 +343,7 @@ namespace App\\Acme\\TestBundle;
 use Symfony\\Component\\HttpKernel\\Bundle\\Bundle;
 class AcmeTestBundle extends Bundle{}`,"php");
 
-Block("Enabling bundle",
+BlockP("Enabling bundle",
 `After enabling it,AcmeTestBundle 
 doesn't do anything yet, 
 but is now ready to be used.
@@ -356,7 +356,7 @@ return [
       ['all' => true],
 ];
 `,"php");
-Block("Registering a bundle",""
+BlockP("Registering a bundle",""
 ,`public function registerBundles() { 
 $bundles = array( 
 // ... 
@@ -366,7 +366,7 @@ new Tutorialspoint\\DemoBundle
 ); 
 return $bundles; 
 }`,"php","30%");
-Block("Bundle`s most common Directories"
+BlockP("Bundle`s most common Directories"
 ,
 `
 <b>Controller/</b>
@@ -392,7 +392,7 @@ via the assets:install console command.
 Holds all tests for the bundle.
 `,"");
 
-Block("Services and service containers",
+BlockP("Services and service containers",
 `<b>Services</b> are useful objects 
 to do special tasks. 
 and each service lives inside a 
@@ -405,7 +405,7 @@ Symfony’s core objects. The container
 allows you to centralize the way objects
 are constructed.`,"",null);
 
-Block("Building Container"
+BlockP("Building Container"
 ,`Symfony provides <h7>ContainerBuilder
 </h7> to create a new container.
 Once the container is created, Greeter
@@ -420,7 +420,7 @@ $container
    ->addArgument('Hi');
    `
 );
-Block("using Services",
+BlockP("using Services",
 `your application container already
 contains many services.
 For example to log something:`
@@ -435,7 +435,7 @@ public function list(LoggerInterface $logger)
     // ...
 }`,"php");
 
-Block("List of available services",
+BlockP("List of available services",
 `Find out available service by running :`,
 `php bin/console debug:autowiring
 
@@ -449,7 +449,7 @@ Symfony\Component\HttpFoundation\RequestStack               alias for "request_s
 Symfony\Component\HttpFoundation\Session\SessionInterface   alias for "session"
 Symfony\Component\Routing\RouterInterface                   alias for "router.default"`,"php","65%","455px");
 
-Block("Creating Services in the Container",
+BlockP("Creating Services in the Container",
 `To create reusable code,you can put it 
 in a service(instead of controller):`
 ,
@@ -467,7 +467,7 @@ class MessageGenerator
     }
 }
 `,"php");
-Block("Using the service",
+BlockP("Using the service",
 `You can use it immediately inside your controller:`,
 `use App\Service\MessageGenerator;
 public function new
@@ -480,13 +480,13 @@ public function new
  // ...
 }`,"php","35%","400px");
 
-Block("Installing Components",
+BlockP("Installing Components",
 `cd /path/to/project/dir 
 <br>composer require symfony/<component_name>`
 ,
 `composer require symfony/filesystem `,"php","30%");
 
-Block("Using Components"
+BlockP("Using Components"
 ,"",
 `  require_once __DIR__ . '/vendor/autoload.php'; 
    use Symfony\\Component\\Filesystem\\Filesystem; 
@@ -501,7 +501,7 @@ Block("Using Components"
 `
 ,"php");
 
-Block("Details of Symfony Components"
+BlockP("Details of Symfony Components"
 ,
 `<b>Filesystem</b> component provides a basic system command <h7>related to files and directories</h7> such as file creation, folder creation, file existence, etc
 <br><b>Console</b> component provides various options to easily <h7>create commands, which can be executed in a terminal</h7>
@@ -553,14 +553,14 @@ n be <h7>used to validate a form</h7> in a web environment.
 
 <h2>Events and EventListener</h2>
 <script>
-Block("Step 1:<br>Create a project",", event-dispatcher-example"
+BlockP("Step 1:<br>Create a project",", event-dispatcher-example"
 ,`cd /path/to/dir 
 mkdir event-dispatcher-example 
 cd event-dispatcher-example 
 composer require symfony/event-dispatcher
 `,"php");
 
-Block("Step 2:<br>Create a class",".User",
+BlockP("Step 2:<br>Create a class",".User",
 `class User { 
    public $name; 
    public $age; 
@@ -569,7 +569,7 @@ $user = new User();
 $user->name = "Jon"; 
 $user->age = 25`,"php",null);
 
-Block("Step 3 : Create an event","UserRegisteredEvent"
+BlockP("Step 3 : Create an event","UserRegisteredEvent"
 ,`use Symfony\\Component\\EventDispatcher\\Event;  
 class UserRegisteredEvent extends Event {
    const NAME = \'user.registered\';  
@@ -585,7 +585,7 @@ class UserRegisteredEvent extends Event {
 $event = new UserRegisteredEvent($user);
 `,"php");
 
-Block("Step 4 <br> Create a listener","UserListener",
+BlockP("Step 4 <br> Create a listener","UserListener",
 `class UserListener { 
    public function onUserRegistrationAction
                   (Event $event) { 
@@ -597,24 +597,24 @@ Block("Step 4 <br> Create a listener","UserListener",
 $listener = new UserListener();`
 ,"php");
 
-Block("Step 5 <br>Create an event","dispatcher object",
+BlockP("Step 5 <br>Create an event","dispatcher object",
 `use Symfony\\Component\\EventDispatcher
        \\EventDispatcher;  
 $dispatcher = new EventDispatcher();`,"PHP");
 
-Block("Step 6 <br> Connect listener and event",
+BlockP("Step 6 <br> Connect listener and event",
 " using dispatcher object and its method, addListener",
 `$dispatcher 
    ->addListener( 
       UserRegisteredEvent::NAME,  
       array($listener, 'onUserRegistrationAction'));`,"php");
 
-Block("Step 7:<br>fire/dispatch the event",
+BlockP("Step 7:<br>fire/dispatch the event",
 "using event dispatcher's method, dispatch.",
 `$dispatcher->dispatch(UserRegisteredEvent::NAME, $event);`
 ,"php");
 
-Block("The Complete listing",
+BlockP("The Complete listing",
 "main.php"
 ,`<?php  
    require __DIR__ . '/vendor/autoload.php';  
@@ -675,26 +675,26 @@ Block("The Complete listing",
 It enables a non-programmer to configure 
 the web application with little effort.
 <script>
-Block("Step 1 - Create a project"," expression-language-example"
+BlockP("Step 1 - Create a project"," expression-language-example"
 ,`cd /path/to/dir 
 mkdir expression-language-example 
 cd expression-language-example 
 composer require symfony/expression-language`,"php");
 
-Block("Step 2<br> Create an expression object","",
+BlockP("Step 2<br> Create an expression object","",
 `use Symfony\\Component\\ExpressionLanguage
          \\ExpressionLanguage; 
 $language = new ExpressionLanguage();
 `,"php");
 
-Block("Step 3 <br> Test a simple expression",""
+BlockP("Step 3 <br> Test a simple expression",""
 ,`echo "Evaluated Value: " 
    . $language->evaluate('10 + 12') . "\\r\\n" ; 
 echo "Compiled Code: " 
    . $language->compile('130 % 34') . "\\r\\n" ;
 `,"php","30%");
 
-Block("Step 4 ",
+BlockP("Step 4 ",
 `Symfony expression is powerful such
 that it can intercept a PHP object and 
 its property as well in the expression 
@@ -714,7 +714,7 @@ echo "Is Product price higher than 5: " . $language
 //Here, the expression product.price and product.price > 5 
 //intercept $product object's property price and evaluate the result.`,"php");
 
-Block("The complete code",`main.php
+BlockP("The complete code",`main.php
 the result of the following code will be:
 
 Result
@@ -751,11 +751,11 @@ Is Product price higher than 5: 1
 </p>
 <h2>Creating a Simple Web Application</h2>
 <script>
-Block("Creating the project",
+BlockP("Creating the project",
  "create a project named “student” using the following command"
  ,`symfony new student`,"php");
 
-Block("Controller",
+BlockP("Controller",
  `Symfony is based on the Model-View-Controller
   (MVC) development pattern.
  DefaultController class is located at
@@ -768,7 +768,7 @@ Block("Controller",
  use Symfony\\Component\\HttpFoundation\\Response;  
  class StudentController { }`,"php");
 
-Block("Create a Route",
+BlockP("Create a Route",
 `Routing <h7>maps</h7> <b>request URI</b> <h7>to</h7> a specific <b>controller's method</b>.
 In the above syntax,  @Route(“/student/home”) is the route.
  It defines the URL pattern for the page.`,
@@ -790,7 +790,7 @@ class StudentController {
 </script>
 <h2>Controllers</h2>
 <script>
-    Block("DefaultController",
+    BlockP("DefaultController",
     "<h7>DefaultController</h7> class is located at “src/AppBundle/Controller”:"
 ,`namespace AppBundle\\Controller; 
 use Symfony\\Bundle\\FrameworkBundle
@@ -801,7 +801,7 @@ class DefaultController extends
       Controller {}`,
       "php" );
 
-Block("Request Object"
+BlockP("Request Object"
 ,"",`use Symfony\\Component\\HttpFoundation\\Request;
 // Creatiing based on the PHP globals: 
 $request = Request::createFromGlobals();
@@ -814,7 +814,7 @@ $request->overrideGlobals();
 $request->getPathInfo();`
 ,"php");
 
-Block("Response Object"
+BlockP("Response Object"
  ,`The only requirement for a controller
    is to return a Response object`,
 `//Response constructor:
@@ -825,7 +825,7 @@ $response = new Response(
    array('content-type' => 'text/html') 
 );`,"php");
 
-Block("Sending or redirecting <br>a Response object","",
+BlockP("Sending or redirecting <br>a Response object","",
 `//Sending Response
 $response->send();
 //redirecting:
@@ -833,7 +833,7 @@ use Symfony\\Component\\
   HttpFoundation\\RedirectResponse;  
 $response = new RedirectResponse
    ('http://tutorialspoint.com/');`,"php");
-Block("FrontController",
+BlockP("FrontController",
 `A single PHP file that handles every request coming into your application.
  FrontController executes the routing of different URLs to internally different parts
   of the application.`,
@@ -853,7 +853,7 @@ if (in_array($path, array(’’, ’/’)))  {
 } 
 $response->send();`,"php");
 
-Block("Routing",
+BlockP("Routing",
 `It maps request URI to a specific controller's method.
 <h2>Annotations</h2>
 Annotation simplifies the configuration by declaring it in the coding itself 
@@ -873,7 +873,7 @@ class StudentController extends Controller {
    public function aboutAction() {   } 
 }`,"php");
 
-Block("Wildcard Formats"
+BlockP("Wildcard Formats"
 ,`Example:(the \d+ is a regular expression that matches a digit)    `,
 `// src/AppBundle/Controller/BlogController.php 
 namespace AppBundle\Controller;  
@@ -890,7 +890,7 @@ public function aboutAction($page) {
     // ... 
 } 
 }`,"php");
-Block("Assign Placeholder",
+BlockP("Assign Placeholder",
 "You can assign a placeholder value in routing:",
 `// src/AppBundle/Controller/BlogController.php 
 namespace AppBundle\Controller;  
@@ -906,7 +906,7 @@ class StudentController extends Controller {
    } 
 }`,"php");
 
-Block("Redirecting to page","",
+BlockP("Redirecting to page","",
 `public function homeAction() { 
    // redirect to the "homepage" route 
    return $this-> redirectToRoute('homepage');    
@@ -916,14 +916,14 @@ Block("Redirecting to page","",
 </script>
 <h2>View Engine</h2>
 <script>
-Block("Templates",
+BlockP("Templates",
 `Templates are basically text files used to generate any text-based documents 
 such as HTML, XML, etc. 
 they reside in 2 different locations ,by default:<br>
  -app/Resources/views/<br>-vendor path to Bundle/Resources/views
  `,``,"php");
 
- Block("Twig Engine",
+ BlockP("Twig Engine",
 `Twig contains three types of special syntax :<br>
 {{ ... }} − Prints a variable or the result of an expression to the template.<br>
 
@@ -949,7 +949,7 @@ class StudentController extends Controller {
    } 
 }`,"php",);
 
-Block("home.html.twig file","twig file are in view directory",
+BlockP("home.html.twig file","twig file are in view directory",
 `//app/Resources/views/student/home.html.twig  
 &lth3>Student application!&lt/h3>`,"php","25%");
 </script>
