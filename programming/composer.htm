@@ -1,13 +1,13 @@
 <html>
 <head>
-        <script src="../../libs/jquery-3.3.1.slim.min.js" ></script>
-        <script src="../../libs/tooltip/tooltip.js" type="text/javascript"></script>
+        <script src="../libs/jquery-3.3.1.slim.min.js" ></script>
+        <!--script src="../libs/tooltip/tooltip.js" type="text/javascript"></script-->
         <!--link href="../../libs/tooltip/tooltip.css" rel="stylesheet" type="text/css" /-->
-        <link rel="stylesheet" href="../../assets/css/block.css">
-        <link rel="stylesheet" href="../../libs/highlight/androidstudio2.css">
-        <script src="../../libs/jquery-3.3.1.slim.min.js" ></script>
-        <script src="../../libs/highlight/highlight.pack.js"></script>
-        <script src="../../assets/js/block.js"></script>
+        <link rel="stylesheet" href="../assets/css/block.css">
+        <link rel="stylesheet" href="../libs/highlight/androidstudio2.css">
+        <script src="../libs/jquery-3.3.1.slim.min.js" ></script>
+        <script src="../libs/highlight/highlight.pack.js"></script>
+        <script src="../assets/js/block.js"></script>
         <script>
           $('code').each(function() {
           var that = $(this);
@@ -24,7 +24,7 @@
 
 <body>
 <script>
-Block("What is Composer ?",
+BlockPrev("What is Composer ?",
 `Composer is a PHP 
 <b>dependency management tool</b>
 Composer finds out <h7>which versions</h7>
@@ -34,9 +34,9 @@ them based on your declaration in
 <h7> composer.json</h7> file,into the project.
 Composer also helps 
 class auloading and namespacing`);
- Block("Setup on Windows",
+ BlockPrev("Setup on Windows",
 `install it by the <a href='https://getcomposer.org/Composer-Setup.exe'>Setup</a>`);
-Block("Setup the project",
+BlockPrev("Setup the project",
 `after installing composer on your system,
 all you need is a <b>composer.json</b> 
 file in your project.
@@ -45,7 +45,7 @@ Composer will download all needed versions
 of dependencies listed in the
 <b>composer.json</b> into your project.`);
 
-Block("composer.json content"
+BlockPrev("composer.json content"
 ,`usually,The only thing you specify 
 in composer.json is the <b>require</b> key.
 You are simply telling Composer which 
@@ -60,7 +60,7 @@ from the packaglist online repository:
         "monolog/monolog": "1.0.*"
     }
 }`,"php");  
-Block("Getting Dependencies or updating",
+BlockPrev("Getting Dependencies or updating",
 `To <strong>install</strong> dependencies ,
 <strong>based on  composer.json file</strong>,
 <strong> run</strong> the command:
@@ -77,14 +77,14 @@ the project,<br>so the <code> composer.lock </code>
 file  should be commited into the version
  control.`);
 
-Block("Update dependencies to latest",
+BlockPrev("Update dependencies to latest",
  null,`php composer.phar update`,"html");      
 
-Block("Par(PHP archive)",
+BlockPrev("Par(PHP archive)",
 `PHAR (PHP archive), which is an archive
 format for PHP which can be run on the 
 command line, amongst other things.`);
-Block("AutoLoading",
+BlockPrev("AutoLoading",
 `“Autoloading” is Whenever a class is used,
  it will be loaded so the application 
 doesn’t have to load all classes on each 

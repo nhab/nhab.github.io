@@ -1,11 +1,11 @@
+//options://title,body,code,codetype,widt,hei,imageSrc=null,padding="5",imagWidth="100%",parent=document.body,imagesOnRight=false,codeOnRight=false)
 function Block(options)
-//title,body,code,codetype,widt,hei,imageSrc=null,padding="5",imagWidth="100%",parent=document,imagesOnRight=false,codeOnRight=false)
 {
     if (options == undefined) options = {}; 
     if (options.imageSrc === undefined) options.imageSrc =null;
     if (options.padding   == undefined) options.padding = "5";
     if (options.imagWidth ==undefined) options.imagWidth=="100%";
-    if (options.parent    ==undefined)options.parent=document;
+    if (options.parent    ==undefined)options.parent=document.body;
     if (options.imagesOnRight==undefined) options.imagesOnRight=false;
     if (options.codeOnLeft=undefined) options.codeOnRight=false;
     
@@ -106,7 +106,7 @@ function Block(options)
 }
 //-------------------------------------------------------------------------------------------------------------------
 ///1.title, 2.body, 3.code, 4.codetype, 5.widt, 6.hei, 7.imageSrc=null, 8.padding="5", 9.imagWidth="100%", 10.parent
-function BlockPrev(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",imagWidth="100%",parent=document)
+function BlockPrev(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",imagWidth="100%",parent=document.body)
 {
     var dvContainer = document.createElement("div");
     //return document.getElementsByTagName('body')[0].appendChild(dvContainer);
@@ -120,7 +120,7 @@ function BlockPrev(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",i
         sStyle+=";height:"+hei+";";
     var id1="dv"+Math.random()*20;
 
-    
+    debugger;
     dvContainer.setAttribute('style',sStyle);
     dvContainer.setAttribute('id', id1);
 
@@ -134,7 +134,7 @@ function BlockPrev(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",i
     objBtn.setAttribute("type","button");
     objBtn.setAttribute("value","V");
    // objBtn.setAttribute("onclick","alert('Hello')");
-    dvContainer.appendChild(objBtn);
+    divHead.appendChild(objBtn);
     dvContainer.appendChild(divHead);
     //body:
     if(body)
@@ -193,38 +193,7 @@ function BlockPrev(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",i
     return document.getElementById(id1);
 }
 
-function BlockP(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",imagWidth="100%",parent=document)
-{
-    sStyle="padding-left:"+padding+"px;padding-right:"+padding+"px;padding-top:"+padding+"px;padding-down:"+padding+"px";
-    sStyle+=";vertical-align:text-top;border:1px black solid;margin-left:2px;";
-    sStyle+=";display:inline-block;overflow: auto;";
-    if(widt)
-        sStyle+=";width:"+widt+";";
-    if(hei)
-        sStyle+=";height:"+hei+";";
-    var id1="dv"+Math.random()*20;
-    parent.InnerHtml=parent.InnerHtml+"<div style='"+sStyle+";' id='"+id1+"'>";
-   //header:
-    parent.InnerHtml+= "<div class='blockTitle' >"  +title+"</div>";
-    //body:
-    if(body)
-    parent.InnerHtml+= "<div class='blockBody'>" +body+"</div>";
-    if(codetype && code)
-        parent.InnerHtml+= "<pre><code style='overflow: auto;' class='"+codetype+"'>"+code+"</code></pre>";
-    else{
-        if(code)
-        parent.InnerHtml+= "<pre><code >"+code+"</code></pre>";
-    };
-    if(imageSrc)
-    {
-        parent.InnerHtml+= "<img src='"+imageSrc+"' style='width:"+imagWidth+"'>";
-    }
-    parent.InnerHtml+= "</div>";
-    debugger;
-    return document.getElementById(id1);
-}
-
-function BlockHorizontally(title,body,code,codetype,widt,hei,imageSrc=null,padding="7",parent=document)
+function BlockHorizontally(title,body,code,codetype,widt,hei,imageSrc=null,padding="7",parent=document.body)
 {
     sStyle="padding-left:"+padding+"px;padding-right:"+padding+"px;vertical-align:text-top;border:1px black solid;margin-left:2px;";
     sStyle+=";display:inline-block;overflow: auto;";
