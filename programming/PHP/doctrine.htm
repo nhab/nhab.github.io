@@ -8,17 +8,17 @@
     </head>
     <body>
 <script>
-BlockPrev("What is Doctrine 2.0 ?",
-`it is an <b>ORM</b> for PHP 5.4+ that provides 
+BlockPrev("What is Doctrine ?",
+`it is an <b>ORM</b> that provides 
 transparent persistence for PHP objects.
-ORMs use the Data Mapper pattern at the heart`);
+ORMs use the Data Mapper pattern at the heart.
 
-const blkDataMap=new BlockFrame("Data Mapper pattern");
-  blkDataMap.AddBody(
- `A layer of Mappers that moves data 
-between objects and a database while keeping 
-them independent of each other and the mapper itself.`);
-blkDataMap.AddImage("https://martinfowler.com/eaaCatalog/databaseMapperSketch.gif");
+it is usually used as a bundle of php.
+
+(A bundle is a  set of all related 
+<b>files within a directory</b> 
+that implement a single feature)`);
+
 
 BlockPrev("What is an Entity ?",
 `It is a <b>PHP Objects</b> that can be 
@@ -29,210 +29,179 @@ Block({title:"persistable property",
 body:`A <b>persistable property</b> is an instance variable of the entity
 that is <b>saved into</b> and <b>retrieved from</b> the database .`});
 
-Block({title:"installing doctrine to a symfony project",code:`composer require doctrine`});
-        
-Block({title:"Installing Doctrine to a symfony project",code:` composer require symfony/orm-pack
+Block({title:"Installing Doctrine to a symfony project",
+body:`First you need to have symfony project
+(by <code>composer create-project symfony/skeleton dbsample</code>)
+ and then Add Doctorine bundle into it:`,
+ code:` composer require symfony/orm-pack
  composer require symfony/maker-bundle --dev`});
 
-const blkGrp1=BlockGroup("Doctrine ORM Example");
+const blkGrp1=BlockGroup("Learn Doctrine ORM by a step by step Example:");
 Block({title:"Create a Symfony Application",
-body:`symfony new dbsample`,parent:blkGrp1} );
-BlockPrev("Configure a Database",
-`Generally, the database information is 
-configured in “app/config/parameters.yml” 
-file. add the following changes to it:
-<b>parameter.yml</b>`,
-`parameters: 
-   database_host: 127.0.0.1 
-   database_port: null
-   database_name: studentsdb 
-   database_user: <user_name> 
-   database_password: <password> 
-   mailer_transport: smtp 
-   mailer_host: 127.0.0.1 
-   mailer_user: null 
-   mailer_password: null 
-   secret: 037ab82c601c10402408b2b190d5530d602b5809 
-   
-   doctrine: 
-      dbal: 
-      driver:   pdo_mysql 
-      host:     '%database_host%' 
-      dbname:   '%database_name%' 
-      user:     '%database_user%' 
-      password: '%database_password%' 
-      charset: utf8mb4`);
-BlockPrev("Create a Database",
-`Issue the following command to generate
+body:`first creat a new symfony project 
+and name it dbsample`,
+code:`composer create-project symfony/skeleton dbsample`,parent:blkGrp1} );
+Block({title:"Configure a Database",
+body:`The database connection information is stored as
+ an environment variable named <h7>DATABASE_URL</h7> inside <b>.env</b> file:
+ (.env file is located in the root folder of symfony project)`,
+code:`# .env
+
+# customize this line!
+DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"
+
+# to use sqlite:
+# DATABASE_URL="sqlite:///%kernel.project_dir%/var/app.db"
+CAUTION`,parent:blkGrp1});
+Block({title:"Create a Database",
+body:`Issue the following command to generate
  “studentsdb” database`,
- `php bin/console doctrine:database:create`);
- BlockPrev("Map Information",
- `Mapping information is nothing but "metadata”.
- this metadata can be specified in a number of 
- different formats, including YAML, XML or 
- you can directly pass Student class using
-  annotations.
- Change the <b>Student.php</b> as follow: `,
- `&lt?php  
-namespace AppBundle\\Entity;  
+ code:`php bin/console doctrine:database:create`,parent:blkGrp1});
 
-use Doctrine\\ORM\\Mapping as ORM;  
-/** 
-   * @ORM\\Entity 
-   * @ORM\\Table(name = "students") 
-*/ 
-class Student { 
-   /** 
-      * @ORM\\Column(type = "integer") 
-      * @ORM\\Id 
-      * @ORM\\GeneratedValue(strategy = "AUTO") 
-   */ 
-   private $id;  
-    
-   /** 
-      * @ORM\\Column(type = "string", length = 50) 
-   */ 
-   private $name;  
-   
-   /** 
-     * @ORM\\Column(type = "text") 
-     */ 
-   private $address; 
-}`);
-BlockPrev("Bind an Entity",`to generate an entity:
-<b>php bin/console doctrine:generate:entities AppBundle/Entity/Student</b>`,
-`/*Student.php*/
-&lt?php 
-namespace AppBundle\\Entity; 
+ Block({title:"Creating an Entity Class",
+body:`You can use the make:entity command 
+to create this class and any fields you need. 
+The command will ask you some questions - answer them
+(To see more datatypes see <a href='https://www.doctrine-project.org/projects/doctrine-orm/en/latest/reference/basic-mapping.html'>this</a>) `,
+code:` php bin/console make:entity
 
-use Doctrine\\ORM\\Mapping as ORM;  
-/** 
-   * @ORM\\Entity 
-   * @ORM\\Table(name="students") 
-*/ 
-class Student { 
-   /** 
-      * @ORM\\Column(type="integer") 
-      * @ORM\\Id 
-      * @ORM\\GeneratedValue(strategy="AUTO") 
-   */ 
-   private $id;  
-    
-   /** 
-      * @ORM\\Column(type = "string", length = 50) 
-   */ 
-   private $name; 
-    
-   /** 
-      * @ORM\\Column(type = "text") 
-   */
-   private $address; 
-    
-   /** 
-      * Get id 
-      * 
-      * @return integer 
-   */ 
-   public function getId() { 
-      return $this->id; 
-   }  
-    
-   /** 
-      * Set name 
-      * 
-      * @param string $name 
-      * 
-      * @return Student 
-   */ 
-    
-   public function setName($name) { 
-      $this->name = $name;  
-      return $this; 
-   }  
-    
-   /** 
-      * Get name 
-      * 
-      * @return string 
-   */ 
-    
-   public function getName() { 
-      return $this->name; 
-   }  
-    
-   /**
-      * Set address 
-      * 
-      * @param string $address 
-      * 
-      * @return Student 
-   */ 
-    
-   public function setAddress($address) { 
-      $this->address = $address;  
-      return $this; 
-   }  
-    
-   /** 
-      * Get address 
-      * 
-      * @return string 
-   */ 
-   
-   public function getAddress() { 
-      return $this->address; 
-   } 
-}    `);
+Class name of the entity to create or update:
+> Product
 
-BlockPrev("Create a Schema",
-`Doctrine can automatically create all
-the database tables needed for Student entity.
-This can be done using the following command.`,
-`php bin/console doctrine:schema:update --force`);
-BlockPrev("Map Validation",
-`After creating entities, you should validate
- the mappings using the following command.`,
-`php bin/console doctrine:schema:validate`);
-BlockPrev("Getter and setter",
-`the following command generates all 
-the getters and setters for the Student class`,
-`$ php bin/console doctrine:generate:entities
-     AppBundle/Entity/Student`);
+ to stop adding fields):
+> name
+
+Field type (enter ? to see all types) [string]:
+> string
+
+Field length [255]:
+> 255
+
+Can this field be null in the database (nullable) (yes/no) [no]:
+> no
+
+ to stop adding fields):
+> price
+
+Field type (enter ? to see all types) [string]:
+> integer
+
+Can this field be null in the database (nullable) (yes/no) [no]:
+> no
+
+ to stop adding fields):
+>
+(press enter again to finish)
+`,parent:blkGrp1});
+ Block({title:"new Entity class",
+body:"Now we have a new product Entity class:",
+code:`// src/Entity/Product.php
+namespace App\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity(repositoryClass="App\Repository\ProductRepository")
+ */
+class Product
+{
+    /**
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
+     */
+    private $id;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $price;
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    // ... getter and setter methods
+}`,parent:blkGrp1});
+
+Block({title:"Creating the Database Tables(by migration commands)",
+body:`to save our product entity to a product table,
+run following 2 commands.
+
+the first generates a temp file like :
+'src/Migrations/Version20180207231217.php'
+which contains The needed SQL Command
+and the second command,runs the SQL  statement
+`,
+code:
+`php bin/console make:migration
+and
+php bin/console doctrine:migrations:migrate
+`});
+Block({title:`Adding more Fields`,
+body:`It is easy to add property by hand.but
+you can also use <b>make:entity</b> again:
+<code>>php bin/console make:entity</code>
+and then call migration commands again`,
+code:
+`php bin/console make:migration
+and
+php bin/console doctrine:migrations:migrate
+`});
+
+
 BlockPrev("Persist Objects to the Database",
-`Now, we have mapped the Student entity to
- its corresponding Student table.
- We should now be able to persist Student
-  objects to the database.
-   Add the following method to the 
-   StudentController of the bundle.`,
-`//StudentController.php
-&lt?php  
-namespace AppBundle\\Controller; 
+`first, we shuld create a controller class
+for Product by following command:
+<code> php bin/console make:controller ProductController</code>
+Inside the controller, you can create a
+ new Product object, set data on it, and save it.
+ you can try it out by <h7>http://localhost:8000/product</h7> `,
+`&lt;?php
+namespace App\Controller;
 
-use Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Route; 
-use Symfony\\Bundle\\FrameworkBundle\\Controller\\Controller; 
-use Symfony\\Component\\HttpFoundation\\Response;  
-use AppBundle\\Entity\\Student; 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Response;
+use App\Entity\Product;
+class ProductController extends AbstractController
+{
+    /**
+     * @Route("/product", name="product")
+     */
+    public function index()
+    {
+		
+		// you can fetch the EntityManager via $this->getDoctrine()
+        // or you can add an argument to your action:
+		// index(EntityManagerInterface $entityManager)
+        $entityManager = $this->getDoctrine()->getManager();
 
-class StudentController extends Controller { 
-   /** 
-      * @Route("/student/add") 
-   */ 
-   public function addAction() { 
-      $stud = new Student(); 
-      $stud->setName('Adam'); 
-      $stud->setAddress('12 north street'); 
-      $doct = $this->getDoctrine()->getManager();
-      
-      // tells Doctrine you want to save the Product 
-      $doct->persist($stud);
-      
-      //executes the queries (i.e. the INSERT query) 
-      $doct->flush(); 
-      
-      return new Response('Saved new student with id ' . $stud->getId()); 
-   } 
-} `);
+        $product = new Product();
+        $product->setName('Keyboard');
+        $product->setPrice(1999);
+        $product->setDescription('Ergonomic and stylish!');
+
+        // tell Doctrine you want to (eventually) save the Product 
+		//(no queries yet)
+        $entityManager->persist($product);
+
+        // actually executes the queries (i.e. the INSERT query)
+        $entityManager->flush();
+
+		/* return $this->json(['message' => 'Welcome to your new controller!',
+        'path' => 'src/Controller/ProductController.php',   ]);*/
+
+        return new Response('Saved new product with id '.$product->getId());
+    
+    }
+}`);
 BlockPrev("Fetch Objects from the Database",
 `Create a function in StudentController that
  will display the student details.

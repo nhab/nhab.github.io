@@ -10,7 +10,7 @@
 
 <script>
 
-var objConcepts=BlockGroup("Concepts");
+var blk2=BlockGroup("Symfony");
 // BlockN(options)
 // title,body,code,codetype,widt,hei,imageSrc=null,padding="5",imagWidth="100%",parent=document,imagesOnRight=false,codeOnRight=false)
 
@@ -21,10 +21,94 @@ body:`Symfony is a php web framework
 which is set of reusable <b>components</b>
  and <b>bundles</b>. 
 For example, Cache component provides 
-cache functionality.`,codetype:"javascript",parent:objConcepts
+cache functionality.`,codetype:"javascript",parent:blk2
 }
 
-options[1]={title:"Bundle",
+for(i=0;i<options.length;i++)
+    Block(options[i]);
+
+//------------------------------------------------------------------------------
+const blk1=new BlockGroup("Setting up a Hello symfony! project from scrach");
+Block({title:"Creating the project ( by flex is recommended )",
+body:`The use of the Symfony Installer to create new applications 
+ is no  longer recommended since Symfony 3.3.
+ 
+Use the <code>Composer create-project</code> command instead
+
+Make sure you've installed Composer and have PHP 7.1.3 
+or higher. Run in terminal:
+(This creates a new quick_tour/ directory with 
+a Symfony application)`,
+code:`composer create-project symfony/skeleton quick_tour`,parent:blk1});
+BlockPrev("Install the web-server",
+`Run one of the following commands to 
+install webserver bundle into the project:`,
+
+`>composer req webserver
+or
+>composer require symfony/ web-server-bundle  --dev`);
+BlockPrev(" run symfony server",
+`Run one of these commandlines, 
+based on your symfony version`,
+ `>php bin/console server:run
+or
+ >php bin/console server:start`,"php");
+ 
+ BlockPrev("Try your new app",
+ `by going to this url in a browser!`,
+ `http://localhost:8000`,null,"40%",null,"https://symfony.com/doc/current/_images/no_routes_page.png",null,"100%");
+ 
+ BlockPrev("define the URL to our new page (rout)",
+ 
+`Start in config/routes.yaml.
+rout is the URL to your page (/) 
+and the "controller": the function that will be called
+by going to the URL.
+the controller must return a Symfony Response object`,
+`# config/routes.yaml
+# the "app_lucky_number" route name is not important yet
+app_lucky_number:
+    path: /lucky/number
+    controller: App\Controller\LuckyController::number`);
+BlockPrev("Create the controller",
+`In src/Controller, create a new <b>LuckyController</b>
+ class and an index method inside.
+ That's it! Try the page out by going to 
+ <b>http://localhost:8000/lucky/number</b>`,
+ `&lt;?php
+// src/Controller/LuckyController.php
+namespace App\Controller;
+
+use Symfony\Component\HttpFoundation\Response;
+
+class LuckyController
+{
+    public function number()
+    {
+        $number = random_int(0, 100);
+
+        return new Response(
+            '<html><body>Lucky number: '.$number.'</body></html>'
+        );
+    }
+} `);
+//-------------------------------------------------------
+    var objConcepts=BlockGroup("Concepts");
+
+options[0]={title:`SandBox`,
+body:`The sandbox is an easy-to-install
+<b>pre-packaged symfony project</b>,already 
+configured with some sensible defaults.
+ It is a great way to practice symfony.
+
+Following example initializing bundle
+"SteveBundle" 
+in "Sites/sandbox/src/Spf13":
+`,
+code:`> app/console init:bundle Spf13/SteveBundle`,codetype:"php",
+parent:objConcepts};
+
+    options[1]={title:"Bundle",
 body:`A bundle is a  set of all related <b>files within a directory</b> that implement a single feature, including:
   PHP files, templates,stylesheets,JavaScript and tests.
 See the 4 bundles In the <b>config\ bundles.php</b> of the following sample :`,
@@ -71,22 +155,16 @@ the root of the Symfony project:`
     }
 }` ,parent:objConcepts
 }
-
-for(i=0;i<=3;i++)
-    Block(options[i]);
-    
-var objSettingUp=BlockGroup("Setting it Up");
-options=[];
-options[0]={
+options[5]={
    title: "Requirements for Running Symfony",
   body:`Symfony 4.0 requires PHP 7.1.3 or higher to run.,
 Symfony 3.4 requires PHP 5.5.9 or higher to run.
 to know more requirements,Run:`,
  code:` cd my-project/
  php bin/symfony_requirements`,
- parent:objSettingUp
+ parent:objConcepts
 };
-options[1]={
+options[6]={
     title:"downloding installler(Windows)",
     body:`First download symfony:
 <pre><code>
@@ -103,232 +181,11 @@ symfony.bat)to any location included
 in your execution path.
 Now you can run the symfony command
 anywhere on your system.`,
- parent:objSettingUp
-}
-
-options[2]={
-    title:"Using the installer",
-    body:`Execute the new command and 
-provide the name of your project
-as the only argument:`,
-code:`# Linux, Mac OS X
-$ symfony new my_project
-
-# Windows
-c:\> php symfony new my_project`,
- parent:objSettingUp
+ parent:objConcepts
 };
 
-options[3]={
-    title:"Unistalling",
-body:`Symfony on your computer is just a folder 
-containing the framework and the structure
-of the files, so you can delete that
-folder and you are done. Composer is just
-an binary file (phar) that can run on the 
-command line. 
-Locate where that file is and delete it.`,
- parent:objSettingUp
-}
-options[4]={
-    title:"Symfony Flex",
-    body:`<a  href="https://github.com/symfony/flex">Symfony Flex</a> is the new way to install and 
-manage Symfony applications.
-Flex is not a new Symfony version,
-but a tool that replaces and improves
-the <a  href="https://github.com/symfony/symfony-installer">Symfony Installer</a> and the 
-<a href="https://github.com/symfony/symfony-standard">Symfony Standard Edition</a>.`,
-    parent:objSettingUp
-}
-options[5]={
-    title:"How Does Flex Work",
-    body:`Symfony Flex <h7>is a Composer plugin</h7> that modifies the 
-behavior of the require,update, and remove commands. 
-When installing or removing dependencies in a Flex-enabled 
-application, Symfony can <h7>perform tasks before 
-and after the execution</h7> of Composer tasks.`,
-parent:objSettingUp
-}
-
-options[6]={
-    title:"Recipes",
-    body:`they allow the automation of Composer 
-packages configuration via the
-Symfony Flex Composer plugin`,
-    parent:objSettingUp
-}
-
-options[7]={
-    title:"Creating Recipes",
-    body:`Symfony recipes consist of a <b>manifest.json</b> 
-config file and, optionally,files and directories.
-Recipes must be stored on their own repositories,
-outside of your Composer package repository.
-They must follow the <b>vendor/package/version/ </b>
-directory structure, where version is the 
-minimum version supported by the recipe.
-Directory structure of some Symfony recipes:`,
-code:`symfony/
-    console/
-        3.3/
-            bin/
-            manifest.json
-    framework-bundle/
-        3.3/
-            config/
-            public/
-            src/
-            manifest.json
-    requirements-checker/
-        1.0/
-            manifest.json`
-,parent:objSettingUp
-}
-
-options[8]={
-    title:"Configurators",
-    body:`Recipes define the different tasks executed
- when installing a dependency, such as 
- running commands, copying files or 
- adding new environment variables.
- types of tasks, which are called configurators:`,
- code:`copy-from-recipe, copy-from-package,
- bundles, env, composer-scripts, gitignore,
-  and post-install-output`
-  ,parent:objSettingUp
-}
-for(i=0;i<=8;i++)
+for(i=0;i<options.length;i++)
     Block(options[i]);
-
-//-------------------------------------------------------------------------
-
-var objSettingUp=BlockGroup("Configuring Symfony (and Environments)");
-
-const blkConfig =new BlockFrame();
-blkConfig.AddHeader("Configuring");
-blkConfig.AddBody(
-`Symfony applications can install third-party packages
-(bundles, libraries, etc.) to bring in new
-features (services) to your project.
-Each package can be customized via configuration files 
-that live - by default - in the <b>config/ directory</b>`);
-
-const blkConfiguration=new BlockFrame();
-blkConfiguration.AddHeader("Configuration : config/packages/");
-blkConfiguration.AddBody(
-`The configuration for each package can be found 
-in <b>config/packages/</b>.
- For instance, the framework bundle is configured 
- in <b>config/packages/framework.yaml:</b>`);
-blkConfiguration.AddCode(
-`# config/packages/framework.yaml
-framework:
-    secret: '%env(APP_SECRET)%'
-    #default_locale: en
-    #csrf_protection: ~
-    #http_method_override: true
-    #trusted_hosts: ~
-    # https://symfony.com/doc/current/reference/configuration/framework.html#handler-id
-    #session:
-    #    # The native PHP session handler will be used
-    #    handler_id: ~
-    #esi: ~
-    #fragments: ~
-    php_errors:
-        log: true`);        
-
-//------------------------------------------------------------------------------
-const blk1=new BlockGroup("Setting up a Hello symfony! project from scrach");
-Block({title:"Creating the project<br/> by flex is recommended",
-body:`The use of the Symfony Installer to create new applications 
- is no  longer recommended since Symfony 3.3.
- 
-Use the <code>Composer create-project</code> command instead
-
-Make sure you've installed Composer and have PHP 7.1.3 
-or higher. Run in terminal:
-(This creates a new quick_tour/ directory with 
-a Symfony application)`,
-code:`composer create-project symfony/skeleton quick_tour`,parent:blk1});
-BlockPrev("Install the web-server and run symfony server",null,
-`composer require symfony/ web-server-bundle  --dev
- php bin/console server:start`);
-    
- BlockPrev("Try your new app",
- `by going to http://localhost:8000 in a browser!`,
- null,null,"40%",null,"https://symfony.com/doc/current/_images/no_routes_page.png",null,"100%");
- 
- BlockPrev("define the URL to our new page (rout)",
- 
-`Start in config/routes.yaml.
-rout is the URL to your page (/) 
-and the "controller": the function that will be called
-by going to the URL.
-the controller must return a Symfony Response object`,
-`# config/routes.yaml
-index:
--     path: /
-+     path: /hello/{name}
-    controller: 'App\Controller\DefaultController::index'
-
-`);
-BlockPrev("Create the controller",
-`In src/Controller, create a new <b>DefaultController</b>
- class and an index method inside.
- That's it! Try the page out by going to 
- http://localhost:8000/hello/Symfony.`,
- `// src/Controller/DefaultController.php
-namespace App\Controller;
-
-use Symfony\Component\HttpFoundation\Response;
-
-class DefaultController
-{
--     public function index()
-+     public function index($name)
-    {
--         return new Response('Hello!');
-+         return new Response("Hello $name!");
-    }
-}`);
-BlockPrev("further enhancement",
-`you can replace rout by anottation.to do this:
-comment-out the YAML route by adding
-the # character befor each line of it.
-use this code for the controller:
-`,
-`// src/Controller/DefaultController.php
-namespace App\\Controller;
-
-use Symfony\\Component\\HttpFoundation
-  \\Response;
-+ use Symfony\\Component\\Routing
-  \\Annotation\\Route;
-
-class DefaultController
-{
-+    /**
-+     * @Route("/hello/{name}")
-+     */
-     public function index($name) {
-        return new Response("Hello $name!");
-     }
-}`,"php");
-
-</script>
-<h2>.</h2>
-<script>
-BlockPrev(`SandBox`,
-`The sandbox is an easy-to-install
-<b>pre-packaged symfony project</b>,already 
-configured with some sensible defaults.
- It is a great way to practice symfony.
-
-Following example initializing bundle
-"SteveBundle" 
-in "Sites/sandbox/src/Spf13":
-`,
-`> app/console init:bundle Spf13/SteveBundle`,"php");
 
 BlockPrev("Creating a Bundle",
 `1-Choose a namespace. Namespace of a bundle 
