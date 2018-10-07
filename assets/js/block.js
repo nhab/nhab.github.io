@@ -1,7 +1,25 @@
 //options://title,body,code,codetype,widt,hei,imageSrc=null,padding="5",imagWidth="100%",parent=document.body,imagesOnRight=false,codeOnRight=false)
-function Block(options)
+function Block(...a)
 {
-    if (options == undefined) options = {}; 
+    var options = {}; 
+    
+    if(arguments.length>1)
+        {
+           options.title= a[0];
+           options.body=a[1];
+           if(a[2])options.code=a[2];
+           if(a[3])options.codetype=a[3];
+           if(a[4])options.widt=a[4];
+           if(a[5])options.hei=a[5];
+           if(a[6])options.imageSrc=a[6];
+           if(a[7])options.padding=a[7];
+           if(a[8])options.imagWidth=a[8];
+           if(a[9])options.parent=a[9];
+           if(a[10])options.imagesOnRight=a[10];
+        }
+    else
+        options=arguments[0];
+        
     if (options.imageSrc === undefined) options.imageSrc =null;
     if (options.padding   == undefined) options.padding = "5";
     if (options.imagWidth ==undefined) options.imagWidth=="100%";
@@ -39,30 +57,34 @@ function Block(options)
     
     var objBtn = document.createElement("Input");
     objBtn.setAttribute("type","button");
-    objBtn.setAttribute("value","V");
+    objBtn.setAttribute("value","-");
     objBtn.setAttribute("style","display: inline-block; top:0%;width:25px;float:right;vertical-align:top;height:"+headerHeight);
-    // objBtn.setAttribute("onclick","alert('Hello')");
-
+    
      divHead.appendChild(dvTitle);
-//     divHead.appendChild(objBtn);
+     divHead.appendChild(objBtn);
 
     dvContainer.appendChild(divHead);
     //body:
+    var bodyID="dv"+Math.random()*20;
     if(options.body)
     {   
         var divBody = document.createElement("div");
+        divBody.setAttribute('id', bodyID);
         divBody.setAttribute("class",'blockBody');
         divBody.innerHTML=options.body;
         dvContainer.appendChild(divBody);
     }
+
     sStylle="overflow: auto;";
     if(options.codeOnRight)
         sStyle+="display:inline-block;";
 
+    var preID="dv"+Math.random()*20;
     if(options.codetype && options.code)
     {
         //parent.InnerHtml+= "<pre style='"+sStyle+"'><code style='"+sStyle+"' class='"+options.codetype+"'>"+options.code+"</code></pre>";
         var divPre= document.createElement("pre");
+        divPre.setAttribute('id', preID);
         divPre.setAttribute("style",sStyle);
         var divCode = document.createElement("code");
         divCode.setAttribute("style",'overflow: auto;');
@@ -75,6 +97,7 @@ function Block(options)
         if(options.code)
         {
             var divPre= document.createElement("pre");
+            divPre.setAttribute('id', preID);
             divPre.setAttribute("style",sStyle);
             var divCode = document.createElement("code");
             divCode.setAttribute("style",'overflow: auto;');
@@ -90,22 +113,64 @@ function Block(options)
     if(options.imagesOnRight)
        sStyle +=";display:inline-block;overflow:auto;";
    
+    var dvImgID="dv"+Math.random()*20;
     if(options.imageSrc)
     {
-        var dvImg=document.createElement("img");
+        var dvImg=document.createElement("img");    
+        dvImg.setAttribute('id', dvImgID);
         dvImg.setAttribute("src", options.imageSrc);
         dvImg.setAttribute("style",sStyle);
+        dvContainer.appendChild(dvImg);
     }
+
+    
+    objBtn.setAttribute("onclick",
+    `
+    var dvBody = document.getElementById("`+ bodyID  +`");
+    var dvCode = document.getElementById("`+ preID   +`");
+    var dvImg  = document.getElementById("`+ dvImgID +`");
+    if(this.value=="|")
+        {
+            this.value="-";
+            debugger;
+            if(dvBody)dvBody.style.display="none";
+            if(dvCode)dvCode.style.display="none";
+            if(dvImg)dvImg.style.display="none";
+        }
+        else
+        {
+            this.value="|";
+            if(dvBody)dvBody.style.display="block";
+            if(dvCode)dvCode.style.display="block";
+            if(dvImg)dvImg.style.display="block";
+        }
+    `);
+
+
     try{
         options.parent.appendChild(dvContainer);
+        
+        var dvBody = document.getElementById( bodyID  );
+        var dvCode = document.getElementById( preID   );
+        var dvImg  = document.getElementById( dvImgID );
+
+        if(dvBody)dvBody.style.display="none";
+        if(dvCode)dvCode.style.display="none";
+        if(dvImg)dvImg.style.display="none";
+
     }catch(err)
     {
-        alert("Line 90:"+options.title+":"+err)
+        if(options.title)
+            alert("Block(...) function last lines:"+options.title+":"+err);
+        else
+        alert("Block(...) function last lines:"+options+":"+err);
+        debugger;
     }
     return document.getElementById(id1);
 }
 //-------------------------------------------------------------------------------------------------------------------
 ///1.title, 2.body, 3.code, 4.codetype, 5.widt, 6.hei, 7.imageSrc=null, 8.padding="5", 9.imagWidth="100%", 10.parent
+/*
 function BlockPrev(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",imagWidth="100%",parent=document.body)
 {
     var dvContainer = document.createElement("div");
@@ -192,7 +257,8 @@ function BlockPrev(title,body,code,codetype,widt,hei,imageSrc=null,padding="5",i
     }
     return document.getElementById(id1);
 }
-
+*/
+/*
 function BlockHorizontally(title,body,code,codetype,widt,hei,imageSrc=null,padding="7",parent=document.body)
 {
     sStyle="padding-left:"+padding+"px;padding-right:"+padding+"px;vertical-align:text-top;border:1px black solid;margin-left:2px;";
@@ -226,6 +292,7 @@ function BlockHorizontally(title,body,code,codetype,widt,hei,imageSrc=null,paddi
     }
     parent.write("</div>");
 }
+*/
 function getRandomID()
 {
     return ( "_"+Math.random()*20 ).replace(".","");
@@ -234,26 +301,30 @@ function getRandomID()
 function BlockGroup(title,parent=document)
 {
     var dvContainer = document.createElement("div");
-    dvContainer.setAttribute("style","width:100%;border-size:1px;display: inline;");
+    
+    var stl1="width:100%;border-size:1px;display: block;";
+    dvContainer.setAttribute("style",stl1);
     
     
-    var dvTitle = document.createElement("div");
-    dvTitle.setAttribute("class","header");
-    dvTitle.setAttribute("style","display: inline-block;width:98%");
-    dvTitle.innerHTML=title;
+    var dvHeader=document.createElement("div");
+    dvHeader.setAttribute("style","width:100%;");
+    dvHeader.setAttribute("class","header");
+dvHeader.innerHTML=title;
     
     var objBtn = document.createElement("Input");
     objBtn.setAttribute("type","button");
     objBtn.setAttribute("value","V");
-    objBtn.setAttribute("style","display: inline-block;");
+    objBtn.setAttribute("style","float:right; top:0%;width:25px;vertical-align:top;text-align:right;");
     btnId="btn"+getRandomID();
     objBtn.setAttribute("id",btnId);
     
+    dvHeader.appendChild(objBtn);
+
     var dvGrpBody=document.createElement("div");
     dvGrpBodyId="dv"+getRandomID();
     dvGrpBody.setAttribute("id",dvGrpBodyId);
    
-    dvTitle.setAttribute("onclick",
+    dvHeader.setAttribute("onclick",
     `if(this.value=="V")
         {
             this.value=">";
@@ -279,15 +350,27 @@ function BlockGroup(title,parent=document)
         }
     `);
     
-    dvContainer.appendChild(document.createElement("br")); 
-    dvContainer.appendChild(objBtn);
-    dvContainer.appendChild(dvTitle);
+    dvContainer.appendChild(dvHeader);
     dvContainer.appendChild(dvGrpBody);
+    
     document.getElementsByTagName('body')[0].appendChild(dvContainer)
    
     return dvContainer.appendChild(dvGrpBody);
 }
 
+function PageHeaderRow(title) //Freezed page header row
+{
+    var stl1="width:100%;border-size:1px;display: inline;position:fixed";
+    var dvContainer = document.createElement("h1");
+    dvContainer.setAttribute("style",stl1);
+    dvContainer.innerHTML=title;
+    document.getElementsByTagName('body')[0].appendChild(dvContainer)
+   
+}
+function NewLine()
+{
+    document.write("<br/>");
+}
 class BlockFrame{
      
     constructor(header=null,body=null,code=null,id=null,parent=document){

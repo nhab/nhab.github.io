@@ -8,7 +8,10 @@
     </head>
     <body>
 <script>
-BlockPrev("What is Doctrine ?",
+PageHeaderRow("Doctrine");
+NewLine();
+NewLine();
+Block("What is Doctrine ?",
 `it is an <b>ORM</b> that provides 
 transparent persistence for PHP objects.
 ORMs use the Data Mapper pattern at the heart.
@@ -20,7 +23,7 @@ it is usually used as a bundle of php.
 that implement a single feature)`);
 
 
-BlockPrev("What is an Entity ?",
+Block("What is an Entity ?",
 `It is a <b>PHP Objects</b> that can be 
 identified by a <b>unique identifier</b>.`);
 
@@ -156,14 +159,14 @@ php bin/console doctrine:migrations:migrate
 `});
 
 
-BlockPrev("Persist Objects to the Database",
-`first, we shuld create a controller class
+Block({title:"Persist Objects to the Database",
+body:`first, we shuld create a controller class
 for Product by following command:
 <code> php bin/console make:controller ProductController</code>
 Inside the controller, you can create a
  new Product object, set data on it, and save it.
  you can try it out by <h7>http://localhost:8000/product</h7> `,
-`&lt;?php
+code:`&lt;?php
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -201,12 +204,17 @@ class ProductController extends AbstractController
         return new Response('Saved new product with id '.$product->getId());
     
     }
-}`);
-BlockPrev("Fetch Objects from the Database",
-`Create a function in StudentController that
+}`});
+Block({title:`Querying database from commandline`,
+body:`To see the newly inserted records in  commandline,
+Run following command.it output records in json format`,
+code:`php bin/console doctrine:query:sql "SELECT * FROM product"`});
+
+Block({title:`Fetch Objects from the Database`,
+body:`Create a function in StudentController that
  will display the student details.
  <b>StudentController.php</b>`,
-`/** 
+code:`/** 
    * @Route("//student//display") 
 */ 
 public function displayAction() { 
@@ -214,15 +222,76 @@ public function displayAction() {
    ->getRepository('AppBundle:Student') 
    ->findAll();
    return $this->render('student//display.html.twig', array('data' => $stud)); 
-}`);
-BlockPrev("Create a View",
-`Let’s create a view that points to 
-display action.
- Move to the views directory and 
+}`});
+
+Block({
+   title:`Fetching Objects from the Database`,
+body:`Fetching an object back out of the database
+ is even easier. Suppose you want to be able to
+  go to /product/1 to see your new product:`,
+code:`// src/Controller/ProductController.php
+// ...
+
+/**
+ * @Route("/product/{id}", name="product_show")
+ */
+public function show($id)
+{
+    $product = $this->getDoctrine()
+        ->getRepository(Product::class)
+        ->find($id);
+
+    if (!$product) {
+        throw $this->createNotFoundException(
+            'No product found for id '.$id
+        );
+    }
+
+    return new Response('Check out this great product: '.$product->getName());
+
+    // or render a template
+    // in the template, print things with {{ product.name }}
+    // return $this->render('product/show.html.twig', ['product' => $product]);
+}`
+});
+
+Block({title:"Repository",
+body:`When you query for a particular type of object,
+you always use what's known as its "repository".
+You can think of a repository as a PHP class
+whose only job is to help you fetch entities 
+of a certain class.
+
+Once you have a repository object, you have
+many helper methods:`,
+code:`$repository = $this->getDoctrine()->getRepository(Product::class);
+
+// look for a single Product by its primary key (usually "id")
+$product = $repository->find($id);
+
+// look for a single Product by name
+$product = $repository->findOneBy(['name' => 'Keyboard']);
+// or find by name and price
+$product = $repository->findOneBy([
+    'name' => 'Keyboard',
+    'price' => 1999,
+]);
+
+// look for multiple Product objects matching the name, ordered by price
+$products = $repository->findBy(
+    ['name' => 'Keyboard'],
+    ['price' => 'ASC']
+);
+
+// look for *all* Product objects
+$products = $repository->findAll();
+`});
+Block({title:"Create a View ( UI Page)",
+body:`Move to the views directory and 
 create a file “display.html.twig”.
 Add the following changes :
 <b>display.html.twig</b>`,
-`&ltstyle> 
+code:`&ltstyle> 
    .table { border-collapse: collapse; } 
    .table th, td { 
       border-bottom: 1px solid #ddd; 
@@ -244,8 +313,8 @@ Add the following changes :
       &lttd>{{ x.Address }}&lt/td>   
    &lt/tr>  
    {% endfor %} 
-&lt/table>` );
-BlockPrev("Update an Object",
+&lt/table>`} );
+Block("Update an Object (student)",
 `To update an object in StudentController,
 create an action and change it as follow`,
 `/** 
@@ -265,28 +334,82 @@ public function updateAction($id) {
    $doct->flush();   
    return new Response('Changes updated!'); 
 }`);
-BlockPrev("Delete an Object",
+Block({
+title:`Updating an Object (product)`,
+body:`Once you've fetched an object from
+ Doctrine, updating it is easy.
+ Updating an object involves just three steps:
+
+fetching the object from Doctrine;
+modifying the object;
+calling flush() on the entity manager.`
+,code:`/**
+ * @Route("/product/edit/{id}")
+ */
+public function update($id)
+{
+    $entityManager = $this->getDoctrine()->getManager();
+    $product = $entityManager->getRepository(Product::class)->find($id);
+
+    if (!$product) {
+        throw $this->createNotFoundException(
+            'No product found for id '.$id
+        );
+    }
+
+    $product->setName('New product name!');
+    $entityManager->flush();
+
+    return $this->redirectToRoute('product_show', [
+        'id' => $product->getId()
+    ]);
+}`});
+Block("Delete an Object",
 `Deleting an object is similar and it requires 
 a call to the remove() method of the entity 
 (doctrine) manager,as follow:`,
-`/** 
-   * @Route("/student/delete/{id}") 
-*/ 
-public function deleteAction($id) { 
-   $doct = $this->getDoctrine()->getManager(); 
-   $stud = $doct->getRepository(
-       'AppBundle:Student')->find($id);  
-    
-   if (!$stud) { 
-      throw $this->createNotFoundException(
-          'No student found for id '.$id); 
-   }  
-    
-   $doct->remove($stud); 
-   $doct->flush();  
-   
-   return new Response('Record deleted!'); 
-}`);
+`$entityManager->remove($product);
+$entityManager->flush();`);
+Block({title:`Querying with DQL`,
+body:`In addition to the  query builder,
+ you can also query with Doctrine Query Language:`,
+code:`// src/Repository/ProductRepository.php
+// ...
+
+public function findAllGreaterThanPrice($price): array
+{
+    $entityManager = $this->getEntityManager();
+
+    $query = $entityManager->createQuery(
+        'SELECT p
+        FROM App\Entity\Product p
+        WHERE p.price > :price
+        ORDER BY p.price ASC'
+    )->setParameter('price', 1000);
+
+    // returns an array of Product objects
+    return $query->execute();
+}`});
+Block({title:`Quering with SQL`,
+body:`you can also use SQL:`,
+code:`// src/Repository/ProductRepository.php
+// ...
+
+public function findAllGreaterThanPrice($price): array
+{
+    $conn = $this->getEntityManager()->getConnection();
+
+    $sql = '
+        SELECT * FROM product p
+        WHERE p.price > :price
+        ORDER BY p.price ASC
+        ';
+    $stmt = $conn->prepare($sql);
+    $stmt->execute(['price' => 1000]);
+
+    // returns an array of arrays (i.e. a raw data set)
+    return $stmt->fetchAll();
+}`});
 </script>
 
 </body>
