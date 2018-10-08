@@ -15,7 +15,7 @@ blkbundlesConfigurator.AddBody(``);
 blkbundlesConfigurator.AddCode(``);
  */
 
-BlockP("What is javascript?",
+Block("What is javascript?",
 ` Javascript is a high-level, dynamic, untyped,
  and interpreted programming language.`);
 const blk1=new BlockFrame("javascript in HTML file");
@@ -31,7 +31,7 @@ blkComment.AddCode(` // Single-line comments start with two slashes
 /* Multiline comments start with slash-star
     and end with star-slash*/`);
     
-BlockP("Numbers"
+Block("Numbers"
     ,`JavaScript has only one 64-bit number type .
 it  has a 52-bit mantissa, which is enough
 to store integers up to about 9✕10¹⁵ .
@@ -45,12 +45,12 @@ to store integers up to about 9✕10¹⁵ .
 30  %  4; // = 2"
 18.5  %  7; // = 4.5`,  "javascript");
 
-BlockP("bitwise operations",
+Block("bitwise operations",
 `when you perform a bitwise operation ,
  the float is converted to 
 a signed int *up to* 32 bits.`,`1  &lt;&lt;  2; // = 4`);
 
-BlockP("special values ",null,
+Block("special values ",null,
 `Infinity; // result of e.g. 1/0
 - Infinity; // result of e.g. -1/0
 NaN; // result of e.g. 0/0, ('Not a Number)'
@@ -70,10 +70,10 @@ undefined;
 // Note that 0 is falsy and "0" is truthy, 
 //even though 0 == "0".`);
 
-BlockP("including a javaScript file",null,
+Block("including a javaScript file",null,
  "< script type='text/javascript' src='Script1.js'>\<\/script>");
 
-BlockP("Including from another js file :",
+Block("Including from another js file :",
 `Put all the code using the remote library in the callback function.
 For example:`,
 `function loadScript(url, callback)
@@ -390,7 +390,7 @@ setTimeout(function(){
    
 
 
-BlockP("'By reference' parameter to function",
+Block("'By reference' parameter to function",
 "it can be implemented by passing object to function as parameter",
 `function alterObject(obj) {
  obj.foo = "goodbye";
@@ -399,7 +399,7 @@ var myObj = { foo: "hello world" };
 alterObject(myObj);
 alert(myObj.foo); // "goodbye" instead of "hello world"`);
 
-BlockP("optional parameters",
+Block("optional parameters",
 `you can call functions omitting some parameters and js will
  fil in the other parameters with the value undefined. 
 Example: `,
@@ -423,7 +423,7 @@ blkNamedParams.AddCode(
 // usage:
  myFunction({ param1 : 70, param2 : 175});`);
 
-BlockP("The Arguments Object",
+Block("The Arguments Object",
 `JavaScript functions have a built-in object called 
 the arguments object.
 The argument object contains an array of the arguments 
@@ -452,7 +452,7 @@ i; // = 5 - not undefined as you'd expect in c#
 temporary; // raises ReferenceError
 permanent; // = 10`);
 
-BlockP("Nested Functions",null,
+Block("Nested Functions",null,
 `function add() { 
     var counter = 0; 
     function plus() {
@@ -485,7 +485,7 @@ blkClosures.AddCode(
 sayHelloInFiveSeconds( "Adam"); 
 // will open a popup with "Hello, Adam!" in 5s`);
 
-BlockP("IIFE(Immediately-Invoked Function Expression)",
+Block("IIFE(Immediately-Invoked Function Expression)",
 `It executes immediately after it’s created.
 This pattern is often used when trying to 
 avoid polluting the global namespace, 

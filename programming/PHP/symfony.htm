@@ -29,9 +29,7 @@ Symfony core web-framework is <b>FrameworkBundle</b>
  and there is a bundle called  <b>FrameworkExtraBundle</b> for furthur options.
 `,parent:grpSymfony
 }
-
-for(i=0;i<options.length;i++)
-    Block(options[i]);
+options=RenderBlocks(options);
 
 //------------------------------------------------------------------------------
 const blk1=new BlockGroup("Setting up a Hello symfony! project from scrach");
@@ -83,15 +81,17 @@ app_lucky_number:
     controller: App\Controller\LuckyController::number`,parent:blk1};
 
 options[i++]={title:"<h7>Controller</h7>: Create the controller",
-body:`In src/Controller, create a new <b>LuckyController</b>
+body:`A <h7>controller</h7>  is just a <h7>normal function</h7> with one rule: 
+it must return a Symfony Response object.
+So, In src/Controller, create a new <b>LuckyController</b>
  class and an index method inside.
  That's it! Try the page out by going to 
  <b>http://localhost:8000/lucky/number</b>`,
  code:`&lt;?php
 // src/Controller/LuckyController.php
-namespace App\Controller;
+namespace App\\Controller;
 
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\\Component\\HttpFoundation\\Response;
 
 class LuckyController
 {
@@ -105,8 +105,118 @@ class LuckyController
     }
 } `,parent:blk1};
 
-for(i=0;i<options.length;i++)
-    Block(options[i]);
+options[i++]={
+    title:"{parametric} rout and controller Example",
+    body:
+`using '{parameter}' paramerter can be added to rout and useed in the controller:
+<pre> <code>
+# config/routes.yaml
+index:
+-     path: /
++     path: /hello/{name}
+    controller: 'App\Controller\DefaultController::index'</code></pre>
+and the controller would be:
+<pre><code>
+// src/Controller/DefaultController.php
+namespace App\\Controller;
+
+use Symfony\\Component\\HttpFoundation\\Response;
+
+class DefaultController
+{
+     public function index()
+     public function index($name)
+    {
+         return new Response('Hello!');
+         return new Response("Hello $name!");
+    }
+}</code></pre>`,parent:blk1
+}
+
+options[i++]={
+    title:"<h7>annotations</h7> instead of <b>routes file</b>",
+body:`You can comment the rout defined in routes.yaml and
+use annotation inside the controller itself.
+
+just remember to add annotations before using it:
+<pre><code>composer require annotations</code></pre>
+and the controller would be:`,
+code:`// src/Controller/DefaultController.php
+namespace App\\Controller;
+
+use Symfony\\Component\\HttpFoundation\\Response;
+use Symfony\\Component\\Routing\\Annotation\\Route;
+
+class DefaultController
+{
+    \/**
+     * @Route("/hello/{name}")
+     *\/
+     public function index($name) {
+         \/\/ ...
+     }
+}
+//Now, request the url “http://localhost:8000/hello/john”`,parent:blk1
+}
+
+options[i++]={
+    title:"Redirecting to page",body:"",
+code:`public function homeAction() { 
+   // redirect to the "homepage" route 
+   return $this-> redirectToRoute('homepage');    
+   // redirect externally 
+   \\return $this->redirect('http://example.com/doc'); 
+}`,codetype:"php",parent:blk1};
+
+
+options=RenderBlocks(options);
+//----------------------------------------------------------
+BlockGroup("View Engine");
+Block("What is twig",
+`Unless you're building a pure API , you'll probably want to render HTML. 
+To do that, you'll use Twig. Twig is a template engine for PHP.`);
+Block("Templates",
+`Templates are basically text files used to generate any text-based documents 
+such as HTML, XML, etc. 
+they reside in 2 different locations ,by default:
+ -app/Resources/views/<br>-vendor path to Bundle/Resources/views
+ `,``,"php");
+
+ Block("Twig Engine",
+`Twig contains three types of special syntax :
+{{ ... }} − Prints a variable or the result of an expression to the template.
+
+{% ... %} − A tag that controls the logic of the template.
+         &nbsp; It is mainly used to execute a function.
+
+{# ... #} − Comment syntax. It is used to add a single or multi-line comments.
+
+The twig base template is located at “app/Resources/views/base.html.twig”.
+`,
+`//StudentController.php  
+namespace AppBundle\Controller;  
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route; 
+use Symfony\Component\HttpFoundation\Response; 
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;  
+
+class StudentController extends Controller { 
+   /** 
+      * @Route("/student/home") 
+   */ 
+   public function homeAction() { 
+      return $this->render('student/home.html.twig'); 
+   } 
+}`,"php");
+
+Block("home.html.twig file","twig file are in view directory",
+`//app/Resources/views/student/home.html.twig  
+&lth3>Student application!&lt/h3>`,"php","25%");
+Block("Read more",
+`<a href="https://www.tutorialspoint.com/symfony/symfony_view_engine.htm">
+Read more about swig tags here</a>
+<br><a href="https://www.tutorialspoint.com/symfony/symfony_doctrine_orm.htm">
+And Doctorine ORM here</a>`);
+
 //-------------------------------------------------------
 var grpEnvironment=BlockGroup("Environment");
 var i=0;
@@ -164,10 +274,8 @@ Now you can run the symfony command
 anywhere on your system.`,
  parent:grpEnvironment
 };
-
-for(i=0;i<options.length;i++)
-    Block(options[i]);
-
+options=RenderBlocks(options);
+//-------------------------------------------------------------------
 var grpBundle=BlockGroup("Bundle");
 var i=0;
 options[i++]={title:"Bundle",
@@ -260,9 +368,8 @@ via the assets:install console command.
 <b>Tests/</b>
 Holds all tests for the bundle.
 `,parent:grpBundle};
-
-for(i=0;i<options.length;i++)
-    Block(options[i]);
+options=RenderBlocks(options);
+//---------------------------------------------------------
 
 var grpService=BlockGroup("Services");
 Block("Services and service containers",
@@ -617,212 +724,7 @@ Is Product price higher than 5: 1
 ?>
 ` ,"html");
 //------------------------------------------------------------------------
-BlockGroup("Creating a Simple Web Application");
-Block("Creating the project",
- "create a project named “student” using the following command"
- ,`symfony new student`,"php");
 
-Block("Controller",
- `Symfony is based on the Model-View-Controller
-  (MVC) development pattern.
- DefaultController class is located at
-  “src/AppBundle/Controller”. 
- You can create your own Controller class there.
- Move to the location “src/AppBundle/Controller” 
- and create a new StudentController class.`,
- `//StudentController.php
- namespace AppBundle\\Controller; 
- use Symfony\\Component\\HttpFoundation\\Response;  
- class StudentController { }`,"php");
-
-Block("Create a Route",
-`Routing <h7>maps</h7> <b>request URI</b> <h7>to</h7> a specific <b>controller's method</b>.
-In the above syntax,  @Route(“/student/home”) is the route.
- It defines the URL pattern for the page.`,
-`namespace AppBundle\\Controller;  
-use Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Route; 
-use Symfony\\Component\\HttpFoundation\\Response; 
-use Symfony\\Bundle\\FrameworkBundle\\Controller\\Controller;  
-class StudentController { 
-   /** 
-      * @Route("/student/home") 
-   */ 
-   public function homeAction() { 
-      return new Response('Student details application!'); 
-   } 
-}
-//Now, request the url “http://localhost:8000/student/home”`,
-"php");
- 
-    //-----------------------------------------------------
- BlockGroup("Controllers , Request, Response, Routing");
- Block("DefaultController",
-    "<h7>DefaultController</h7> class is located at “src/AppBundle/Controller”:"
-,`namespace AppBundle\\Controller; 
-use Symfony\\Bundle\\FrameworkBundle
-   \\Controller\\Controller; 
-use Symfony\\Component\\
-    HttpFoundation\\Response;  
-class DefaultController extends
-      Controller {}`,
-      "php" );
-
-Block("Request Object"
-,"",`use Symfony\\Component\\HttpFoundation\\Request;
-// Creatiing based on the PHP globals: 
-$request = Request::createFromGlobals();
-//or you can also simulate a request:
-$request = Request::create(    '/student',    'GET', 
-   array('name' => 'student1'));
-//Overriding a Request Object:
-$request->overrideGlobals();  
-//Identifying a Request Object
-$request->getPathInfo();`
-,"php");
-
-Block("Response Object"
- ,`The only requirement for a controller
-   is to return a Response object`,
-`//Response constructor:
-use Symfony\\Component\\HttpFoundation\\Response;  
-$response = new Response( 
-   'Content', 
-   Response::HTTP_OK, 
-   array('content-type' => 'text/html') 
-);`,"php");
-
-Block("Sending or redirecting a Response object","",
-`//Sending Response
-$response->send();
-//redirecting:
-use Symfony\\Component\\
-  HttpFoundation\\RedirectResponse;  
-$response = new RedirectResponse
-   ('http://tutorialspoint.com/');`,"php");
-Block("FrontController",
-`A single PHP file that handles every request coming into your application.
- FrontController executes the routing of different URLs to internally different parts
-  of the application.`,
-`use Symfony\Component\HttpFoundation\Request; 
-use Symfony\Component\HttpFoundation\Response;  
-
-$request = Request::createFromGlobals(); 
-// the URI path being requested 
-$path = $request->getPathInfo();
-if (in_array($path, array(’’, ’/’)))  { 
-   $response = new Response(’Student home page.’); 
-} elseif (‘/about’ === $path) { 
-   $response = new Response(’Student details page’); 
-} else { 
-   $response = new Response(’Page not found.’, 
-   Response::HTTP_NOT_FOUND); 
-} 
-$response->send();`,"php");
-
-Block("Routing",
-`It maps request URI to a specific controller's method.
-<h2>Annotations</h2>
-Annotation simplifies the configuration by declaring it in the coding itself 
-.Routing example:`,
-`// src/AppBundle/Controller/StudentController.php 
-namespace AppBundle\\Controller;  
-use Symfony\\Bundle\\FrameworkBundle\\Controller\\Controller; 
-use Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Route; 
-class StudentController extends Controller { 
-   /** 
-      * @Route(“/student/home”) 
-   */ 
-   public function homeAction() { // ...}  
-   /** 
-      * @Route(“/student/about”) 
-   */ 
-   public function aboutAction() {   } 
-}`,"php");
-
-Block("Wildcard Formats"
-,`Example:(the \d+ is a regular expression that matches a digit)    `,
-`// src/AppBundle/Controller/BlogController.php 
-namespace AppBundle\Controller;  
-
-use Symfony\\Bundle\\FrameworkBundle\\Controller\\Controller; 
-use Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Route;  
-
-class StudentController extends Controller {
-/**      
-     * @Route(“/student/{page}", 
-     name = “student_about”, requirements = {"page": "\d+"})
- */ 
-public function aboutAction($page) { 
-    // ... 
-} 
-}`,"php");
-Block("Assign Placeholder",
-"You can assign a placeholder value in routing:",
-`// src/AppBundle/Controller/BlogController.php 
-namespace AppBundle\Controller;  
-use Symfony\Bundle\FrameworkBundle\Controller\Controller; 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;  
-class StudentController extends Controller { 
-   /**      
-      * @Route(“/student/{page}", 
-      name = “student_about”, requirements = {"page": "\d+"})
-   */   
-   public function aboutAction($page = 1) { 
-      // ... 
-   } 
-}`,"php");
-
-Block("Redirecting to page","",
-`public function homeAction() { 
-   // redirect to the "homepage" route 
-   return $this-> redirectToRoute('homepage');    
-   // redirect externally 
-   \\return $this->redirect('http://example.com/doc'); 
-}`,"php");
-//-----------------------------------------------------
-BlockGroup("View Engine");
-
-Block("Templates",
-`Templates are basically text files used to generate any text-based documents 
-such as HTML, XML, etc. 
-they reside in 2 different locations ,by default:
- -app/Resources/views/<br>-vendor path to Bundle/Resources/views
- `,``,"php");
-
- Block("Twig Engine",
-`Twig contains three types of special syntax :
-{{ ... }} − Prints a variable or the result of an expression to the template.
-
-{% ... %} − A tag that controls the logic of the template.
-         &nbsp; It is mainly used to execute a function.
-
-{# ... #} − Comment syntax. It is used to add a single or multi-line comments.
-
-The twig base template is located at “app/Resources/views/base.html.twig”.
-`,
-`//StudentController.php  
-namespace AppBundle\Controller;  
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route; 
-use Symfony\Component\HttpFoundation\Response; 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;  
-
-class StudentController extends Controller { 
-   /** 
-      * @Route("/student/home") 
-   */ 
-   public function homeAction() { 
-      return $this->render('student/home.html.twig'); 
-   } 
-}`,"php");
-
-Block("home.html.twig file","twig file are in view directory",
-`//app/Resources/views/student/home.html.twig  
-&lth3>Student application!&lt/h3>`,"php","25%");
-Block("Read more",
-`<a href="https://www.tutorialspoint.com/symfony/symfony_view_engine.htm">
-Read more about swig tags here</a>
-<br><a href="https://www.tutorialspoint.com/symfony/symfony_doctrine_orm.htm">
-And Doctorine ORM here</a>`);
 </script>
 
 </body>

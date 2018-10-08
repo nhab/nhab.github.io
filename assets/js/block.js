@@ -31,8 +31,8 @@ function Block(...a)
    
     sStyle="padding-left:"+options.padding+"px;padding-right:"+options.padding+"px;padding-top:"+options.padding+"px;";
     sStyle+="padding-down:"+options.padding+"px;";
-    sStyle+="vertical-align:text-top;border:1px black solid;margin-left:2px;";
-    sStyle+="display:inline-block;overflow: auto;";
+    sStyle+="vertical-align:text-top;margin-left:2px;";
+    sStyle+="display:inline-block;overflow: hidden;";
     if(options.widt)
         sStyle+=";width:"+ options.widt+";";
     if(options.hei)
@@ -293,6 +293,13 @@ function BlockHorizontally(title,body,code,codetype,widt,hei,imageSrc=null,paddi
     parent.write("</div>");
 }
 */
+function RenderBlocks(options)
+{    
+    for(i=0;i<options.length;i++)
+       Block(options[i]);
+    options=[];
+    return options;
+}
 function getRandomID()
 {
     return ( "_"+Math.random()*20 ).replace(".","");
