@@ -20,7 +20,7 @@ body:`download it and run setup
 (or try it <a href='http://try.mongodb.org/'>online</a> )`,
 code:`https://www.mongodb.com/download-center?initial=true#community`,parent:grp1
 };
-options[i++]={title:"MongoDB’s equivalents of SQL terms",
+options[i++]={title:"MongoDB’s equivalents of SQL",
 body:`
 <table style='border-collapse: collapse;'>
   <tr bgcolor="#DDEEEE" style="font-weight:bolder"><td>SQL</td><td>MongoDB</td> </tr>
@@ -28,6 +28,25 @@ body:`
   <tr><td>table</td><td>collection</td> </tr>
   <tr><td>row</td><td>document</td> </tr>
   <tr><td>column</td><td>field</td> </tr>
+  <tr><td>table joins</td><td>$lookups , embedded documents</td> </tr>
+  <tr><td>aggregation</td><td>aggregation pipelines</td></tr>
+  <tr><td>SELECT * FROM people</td><td>db.people.find()</td></tr>
+  <tr><td>SELECT user_id, status FROM people</td><td>db.people.find(
+    { },
+    { user_id: 1, status: 1, _id: 0 }
+)</td></tr>
+<tr><td>SELECT * FROM people WHERE status = "A"</td><td>SELECT * FROM people WHERE status = "A"</td></tr>
+<tr><td>SELECT * FROM people WHERE status != "A"</td><td>db.people.find(   { status: { $ne: "A" } })</td></tr>
+<tr><td>SELECT * FROM people WHERE status = "A" AND age = 50</td><td>db.people.find({ status: "A", age: 50 })</td></tr>
+<tr><td>SELECT * FROM people WHERE status = "A" OR age = 50</td><td>db.people.find({ $or: [ { status: "A" } , { age: 50 } ] })</td></tr>
+<tr><td>SELECT * FROM people WHERE age > 25</td><td>db.people.find({ age: { $gt: 25 } })</td></tr>
+<tr><td>SELECT * FROM people WHERE user_id like "%bc%"</td><td>db.people.find( { user_id: { $regex: /bc/ } } )</td></tr>
+<tr><td>SELECT * FROM people WHERE status = "A" ORDER BY user_id ASC</td><td>db.people.find( { status: "A" } ).sort( { user_id: 1 } )</td></tr>
+<tr><td>SELECT COUNT(*) FROM people</td><td>db.people.count()</td></tr>
+<tr><td>SELECT DISTINCT(status) FROM people</td><td>db.people.aggregate( [ { $group : { _id : "$status" } } ] )</td></tr>
+<tr><td>UPDATE people SET age = age + 3 WHERE status = "A"</td><td>db.people.updateMany( { status: "A" } , { $inc: { age: 3 } })</td></tr>
+
+
 </table>   
 - MongoDB automatically adds a unique identifier,
   “_id”, to all newly created documents.
@@ -84,7 +103,8 @@ body:`<table border="1" style='border-collapse: collapse;'>
 </tr>
 <tr ><td><code class="xref mongodb mongodb-method docutils literal">
   <span >db.&lt;collection&gt;.help()</span></code></td>
-<td>Show help on collection methods. The <code >
+<td>Show help on collection methods. 
+The <code >
   <span >&lt;collection&gt;</span></code> can be the
 name of an existing collection or a non-existing collection.</td>
 </tr>
