@@ -1,0 +1,135 @@
+<head>  
+  <link rel="stylesheet" href="../assets/css/block.css">
+  <script src="../assets/js/block.js"></script>
+  <link rel="stylesheet" href="../libs/highlight/androidstudio2.css">
+  
+</head>
+<body>
+
+
+<script>
+PageHeaderRow("Mongo DB");
+NewLine();
+NewLine();
+var grp1=BlockGroup("MongoDB",null);
+
+var options=[];
+var i=0;
+options[i++]={title:"Installation",
+body:`download it and run setup
+(or try it <a href='http://try.mongodb.org/'>online</a> )`,
+code:`https://www.mongodb.com/download-center?initial=true#community`,parent:grp1
+};
+options[i++]={title:"MongoDB’s equivalents of SQL terms",
+body:`
+<table style='border-collapse: collapse;'>
+  <tr bgcolor="#DDEEEE" style="font-weight:bolder"><td>SQL</td><td>MongoDB</td> </tr>
+  <tr><td>database</td><td>database</td> </tr>
+  <tr><td>table</td><td>collection</td> </tr>
+  <tr><td>row</td><td>document</td> </tr>
+  <tr><td>column</td><td>field</td> </tr>
+</table>   
+- MongoDB automatically adds a unique identifier,
+  “_id”, to all newly created documents.
+`,parent:grp1};
+
+options[i++]={title:`Creating Databasse and adding Document`,
+ body:`In the following code ,
+The first command creates a new “testDB” database
+  and selects it as current.
+
+The second command inserts a new document containing one field,
+ “name”, with the value, “my first document”, 
+ into a new collection, “testCollection”, in our database`,
+ code:`$ mongo
+> use testDB
+  switched to db testDB
+> db.testCollection.insert ({name : "my first document"})
+  WriteResult({ "nInserted" : 1 })`
+ ,parent:grp1};
+
+options[i++]={title:"Querying Data",
+body:`To query documents, use  .find() or .findOne methods of collection,
+ for example:`
+,code:`> db.users.findOne ( { name : "admin" } )
+{ "_id" : ObjectId("53708c240e04f45cb80aeded"), "name" : "admin", "password": "123" }`,parent:grp1};
+
+options[i++]={title:`aggregated query`,
+code:`> db.persons.count( { age: { $gt: 27 } } )
+3`,parent:grp1};
+
+options[i++]={title:`Updating Data`,
+code:`> db.users.update( {name: "admin", {$set:{name: "superadmin"}}, {multi: false})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })`}
+
+options[i++]={title:"shell commands",
+body:`<table border="1" style='border-collapse: collapse;'>
+<colgroup>
+<col width="30%">
+<col width="70%">
+</colgroup>
+<thead valign="bottom">
+<tr ><th class="head">Help Methods and Commands</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr ><td><code ><span >help</span></code></td>
+<td>Show help.</td>
+</tr>
+<tr ><td><a  href="../method/db.help/#db.help" title="db.help()">
+  <code class="xref mongodb mongodb-method docutils literal">
+    <span >db.help()</span></code></a></td>
+<td>Show help for database methods.</td>
+</tr>
+<tr ><td><code class="xref mongodb mongodb-method docutils literal">
+  <span >db.&lt;collection&gt;.help()</span></code></td>
+<td>Show help on collection methods. The <code >
+  <span >&lt;collection&gt;</span></code> can be the
+name of an existing collection or a non-existing collection.</td>
+</tr>
+<tr ><td><code ><span >show</span> <span >dbs</span></code></td>
+<td>Print a list of all databases on the server.</td>
+</tr>
+<tr ><td><code ><span >use</span> <span >&lt;db&gt;</span></code></td>
+<td>Switch current database to <code ><span >&lt;db&gt;</span>
+  </code>. The <a  href="../program/mongo/#bin.mongo" title="bin.mongo">
+    <code class="xref mongodb mongodb-binary docutils literal"><span >mongo</span></code></a> shell
+variable <code ><span >db</span></code> is set to the current database.</td>
+</tr>
+<tr ><td><code ><span >show</span> <span >collections</span></code></td>
+<td><p class="first">Print a list of all collections for current database.</p>
+<div class="last admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a  href="../../release-notes/4.0-compatibility/#compat-show-collections">
+  <span class="std std-ref">show collections</span></a></p>
+</div>
+</td>
+</tr>
+<tr ><td><code ><span >show</span> <span >users</span></code></td>
+<td>Print a list of users for current database.</td>
+</tr>
+<tr ><td><code ><span >show</span> <span >roles</span></code></td>
+<td>Print a list of all roles, both user-defined and built-in, for
+the current database.</td>
+</tr>
+<tr ><td><code ><span >show</span> <span >profile</span></code></td>
+<td>Print the five most recent operations that took 1 millisecond or
+more. See documentation on the <a  href="../../tutorial/manage-the-database-profiler/">
+  <span >database profiler</span></a> for more information.</td>
+</tr>
+<tr ><td><code ><span >show</span> <span >databases</span></code></td>
+<td>Print a list of all available databases.</td>
+</tr>
+<tr ><td><code ><span >load()</span></code></td>
+<td>Execute a JavaScript file. See
+<a  href="../../tutorial/write-scripts-for-the-mongo-shell/">
+  <span >Write Scripts for the mongo Shell</span></a>
+for more information.</td>
+</tr>
+</tbody>
+</table>`}
+options=RenderBlocks(options);
+
+</script>
+</body>

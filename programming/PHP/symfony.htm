@@ -117,6 +117,7 @@ index:
     controller: 'App\Controller\DefaultController::index'</code></pre>
 and the controller would be:
 <pre><code>
+&lt;?php
 // src/Controller/DefaultController.php
 namespace App\\Controller;
 
@@ -141,7 +142,8 @@ use annotation inside the controller itself.
 just remember to add annotations before using it:
 <pre><code>composer require annotations</code></pre>
 and the controller would be:`,
-code:`// src/Controller/DefaultController.php
+code:`&lt;?php
+// src/Controller/DefaultController.php
 namespace App\\Controller;
 
 use Symfony\\Component\\HttpFoundation\\Response;
@@ -153,7 +155,7 @@ class DefaultController
      * @Route("/hello/{name}")
      *\/
      public function index($name) {
-         \/\/ ...
+        return new Response("Hello ".$name);
      }
 }
 //Now, request the url “http://localhost:8000/hello/john”`,parent:blk1
@@ -168,13 +170,52 @@ code:`public function homeAction() {
    \\return $this->redirect('http://example.com/doc'); 
 }`,codetype:"php",parent:blk1};
 
+options[i++]={
+    title:"Controller returning json",
+    code:`src/Controller/MovieController.php:
 
+&lt;?php
+namespace App\\Controller;
+
+use Symfony\\Component\\HttpFoundation\\JsonResponse;
+use Symfony\\Component\\Routing\\Annotation\\Route;
+
+class MovieController
+{
+    \/**
+    * @Route("/movies")
+    *\/
+    public function moviesAction()
+    {
+        return new JsonResponse([
+            [
+                'title' => 'The Princess Bride',
+                'count' => 0
+            ]
+        ]);
+    }
+}`,parent:blk1
+};
 options=RenderBlocks(options);
 //----------------------------------------------------------
 BlockGroup("View Engine");
 Block("What is twig",
 `Unless you're building a pure API , you'll probably want to render HTML. 
 To do that, you'll use Twig. Twig is a template engine for PHP.`);
+Block("Installing twig into the project",
+`By running the following command,Symfony Flex, a Composer plugin ,
+use 'twing' as an alis  that points to symfony/twig-bundle
+and install and configure it into the project:
+<pre><code>composer require twig</code></pre>
+Thanks to 'recipe' ,the command  enables the twig feature in 
+<pre><code>config/bundles.php</code></pre>,
+  and it added 3 other things:  <pre><code>  config/packages/twig.yaml</code></pre>
+ (A configuration file that sets up Twig with sensible defaults.)
+ <pre><code>config/routes/dev/twig.yaml</code><pre>
+ (A route that helps you debug your error pages.)
+ <pre><code>templates/</code></pre>
+(This is the directory where template files will live.)
+ The recipe also added a <pre><code>base.html.twig</code></pre> layout file.`);
 Block("Templates",
 `Templates are basically text files used to generate any text-based documents 
 such as HTML, XML, etc. 
@@ -182,7 +223,7 @@ they reside in 2 different locations ,by default:
  -app/Resources/views/<br>-vendor path to Bundle/Resources/views
  `,``,"php");
 
- Block("Twig Engine",
+ Block("Twig Engine and how to render it form controller",
 `Twig contains three types of special syntax :
 {{ ... }} − Prints a variable or the result of an expression to the template.
 
@@ -204,13 +245,24 @@ class StudentController extends Controller {
       * @Route("/student/home") 
    */ 
    public function homeAction() { 
-      return $this->render('student/home.html.twig'); 
+      return $this->render('student/home.html.twig', [
+            'name' => $name,
+        ]); 
    } 
 }`,"php");
 
 Block("home.html.twig file","twig file are in view directory",
 `//app/Resources/views/student/home.html.twig  
-&lth3>Student application!&lt/h3>`,"php","25%");
+&lth3>Student {{ name }} application!&lt/h3>`,"php");
+
+Block("Extend the page","Give the page an HTML layout",
+`{# templates/default/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    &lt;h1>Hello {{ name }}&lt/h1>
+{% endblock %}`);
+
 Block("Read more",
 `<a href="https://www.tutorialspoint.com/symfony/symfony_view_engine.htm">
 Read more about swig tags here</a>
