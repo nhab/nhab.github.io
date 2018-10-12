@@ -24,27 +24,26 @@
 
 <body>
 <script>
-const blkNodejs=new BlockFrame();
-blkNodejs.AddHeader("Node.js");
-blkNodejs.AddBody(
- `Has a command-line tool that can be run 
-as a regular web server It can also run
-a JavaScript programs.
+BlockFrame.PageHeaderRow("Node.JS");
+BlockFrame.NewLine();
+BlockFrame.NewLine();
+blk1= BlockFrame.BlockGroup("NodeJS basics");
+
+BlockFrame.Block({title:"Node.js",
+ body:`Is a program that can run Javascript codes.
+ it Has a command-line tool that to run JavaScript programs;
+ they are usualy used as regular web server .
 Node.js has lot of libraries called 
 pacckages that can be browsed here :
-<a href='https://www.npmjs.com/'>npmjs.com</a>`);
+<a href='https://www.npmjs.com/'>npmjs.com</a>`,parent:blk1});
 
-const blkNVM=new BlockFrame();
-blkNVM.AddHeader("NVM");
-blkNVM.AddBody(
- `Is node version manager
-to this version the default one:`);
-blkNVM.AddCode("$ nvm alias default 0.10.31");      
+BlockFrame.Block({title:"NVM",
+body: `Is node version manager
+to this version the default one:`,code:"$ nvm alias default 0.10.31"
+,parent:blk1});      
 
-const blkNPM=new BlockFrame();
-blkNPM.AddHeader("NPM");
-blkNPM.AddBody(
-` Is the <h7>package manager</h7> for 
+BlockFrame.Block({title:"NPM",
+body:` Is the <h7>package manager</h7> for 
 javascript and the Node.js server platform.
 It is included in nodejs installation by default.
 <b>Features</b>
@@ -60,68 +59,60 @@ It is included in nodejs installation by default.
 	as dependencies.
 - Easy module publishing (to the npm registry).
 - Easy creation of CLI utilities that others
- can install .`);
+ can install .`,parent:blk1});
 
-const blk11=new BlockFrame("Install From source",``);
-blk11.AddCode(`wget http://nodejs.org/dist/node-v0.4.4.tar.gz
+BlockFrame.Block({title:"Install From source",
+code:`wget http://nodejs.org/dist/node-v0.4.4.tar.gz
 $ tar -xzf node-v0.4.4.tar.gz
 $ cd node-v0.4.4
 $ ./configure
-$ sudo make install`);
+$ sudo make install`,parent:blk1});
 
-const blk12=new BlockFrame("switching between node versions",null,
-`$ nvm install v0.8.10
-$ nvm use v0.8.10`);
+BlockFrame.Block({title:"switching between node versions",
+code:`$ nvm install v0.8.10
+$ nvm use v0.8.10`,parent:blk1});
 
-const blk13=new BlockFrame("list of versions <br/>and also the current <br/>and default versions :");
-blk13.AddCode("nvm list");
+BlockFrame.Block({title:"list of current ,default and all versions",
+code:"nvm list"});
 
+BlockFrame.Block({title:"getting the version",code:`node -v`});
 
-const blk14=new BlockFrame("getting the version<br>(in command line)",null,
-`node -v`);
-
-const blk1stExample=new BlockFrame();
-blk1stExample.AddHeader(`Example of shell scripts`);
-blk1stExample.AddBody(
-`1. create a file named <b>a.js</b>
+BlockFrame.Block({title:`Hello,World! Example of shell scripts`,
+body:`1. create a file named <b>a.js</b>
 2. write this line inside it and save:
   <code>console.log("Hello World");</code>
 3. in command prompt run this command :
   <code>node h.js</code>
-4. finished! It will prints <b>Hello world</b>.`);
+4. finished! It will prints <b>Hello world</b>.`});
 
-const blkWitharg=new BlockFrame("script with arguments");
-blkWitharg.AddBody(`1. put this content inside your script `);    
-blkWitharg.AddCode(
-`process.argv.forEach((val, index) => {
+BlockFrame.Block({title:"script with arguments",
+body:`1. put this content inside your script 
+<pre><code>process.argv.forEach((val, index) => {
 	console.log('$\{index}: $\{val}');
-});`);
-blkWitharg.AddBody(`2. run your script by proving arguments:`);
-blkWitharg.AddCode(`node h.js one two=three four`);
+});</code></pre>
+2. run your script by proving arguments:`,code:`node h.js one two=three four`});
+debugger;
 
-
-const blk15=new BlockFrame("A hello world http server",
-`program responds to hello world via http.
+BlockFrame.Block({title:"A hello world http server",
+body:`program responds to hello world via http.
 We'll call the file 'hello_http.js' 
 and put the following code into it:`
-,`var http = require('http');
+,code:`var http = require('http');
 var server = http.createServer(
 	function(req, res) {
 		res.writeHead(200);
 		res.end('Hello Http');
 	});
-server.listen(8080);`);
-blk15.AddBody(`Now lets run this program from the 
-terminal by typing:`);
-	blk15.AddCode("$ node hello_http.js");
-	blk15.AddBody(
-`Testing the server is as simple as opening a new browser tab
+server.listen(8080);`,
+body2:`Now lets run this program from the 
+terminal by typing:`,code2:"$ node hello_http.js",
+body3:`Testing the server is as simple as opening a new browser tab
 and navigating to the following url: http://localhost:8080/. 
 you should see  : 'Hello Http'.
 Alternatively, you could also open up a new terminal and use
-curl to test your server:
-<code>$ curl localhost:8080
-Hello Http</code>`);
+curl to test your server:`,
+code3:`$ curl localhost:8080
+Hello Http`});
 
 const blkInitializeProject=new BlockFrame("Initialize Project");
 blkInitializeProject.AddBody(
@@ -464,9 +455,9 @@ socket.on('visit', function(visit) {
 &lt/body>
 &lt/html>`);
 
-//const blk19=new BlockFrame("Resources");
+var blk20=new BlockFrame("Resources");
 
-const blk20=new BlockFrame("Resources",null,null,"col1id");
+//var  blk20=new BlockFrame("Resources",null,null,"col1id");
 blk20.AddUrl("Original reference","https://nodejs.org/docs/latest/api/");
 blk20.AddBr();
 blk20.AddUrl("source code repository of npmjs","https://www.npmjs.com");
@@ -481,8 +472,8 @@ blk20.AddUrl("tutorial with examples","http://noeticforce.com/best-nodejs-tutori
 blk20.AddBr();
 blk20.AddUrl("building a real time markdown-viewer","https://scotch.io/tutorials/building-a-real-time-markdown-viewer");
 
-blk19.AddObj(blk20);
-blk19.AddObj(blk21);
+//blk19.AddObj(blk20);
+//blk19.AddObj(blk21);
 </script>
 </body>
 
