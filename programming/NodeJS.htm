@@ -78,7 +78,7 @@ code:"nvm list"});
 BlockFrame.Block({title:"getting the version",code:`node -v`});
 
  BlockFrame.BlockGroup("Learn by step by step example");
-BlockFrame.Block({title:`Hello,World! Example of shell scripts`,
+BlockFrame.Block({title:`Hello,World! Example of <b>console</b> scripts`,
 body:`1. create a file named <b>a.js</b>
 2. write this line inside it and save:
   <code>console.log("Hello World");</code>
@@ -86,14 +86,14 @@ body:`1. create a file named <b>a.js</b>
   <code>node h.js</code>
 4. finished! It will prints <b>Hello world</b>.`});
 
-BlockFrame.Block({title:"script with arguments",
+BlockFrame.Block({title:"script <b>arguments</b>",
 body:`1. put this content inside your script 
 <pre><code>process.argv.forEach((val, index) => {
 	console.log('$\{index}: $\{val}');
 });</code></pre>
 2. run your script by proving arguments:`,code:`node h.js one two=three four`});
 
-BlockFrame.Block({title:"A hello world http server",
+BlockFrame.Block({title:"A hello world <b>http server</b>",
 body:`program responds to hello world via http.
 We'll call the file 'hello_http.js' 
 and put the following code into it:`
@@ -113,30 +113,40 @@ Alternatively, you could also open up a new terminal and use
 curl to test your server:`,
 code3:`$ curl localhost:8080
 Hello Http`});
-
-BlockFrame.Block({title:"Initialize Project",
+BlockFrame.Block({title:"Initialize Project by <b>package.json</b>",
 body:`Navigate to the directory in which 
 you want your project to exist:`,
 code:"cd sites/node-test",
 body2:`Now initalize a new project with npm.`,
 code2:"npm init",
 body3: `utility will walk you through creating
-  a package.json file.
-  First, it will ask for a package name:
+A package.json file.
+
+A package.json is a file that contains metadata
+about the project, and handles the dependencies
+(additional software and modules) of the project
+ 
+First, it will ask for a package name:
   
-  ( The rest you can just press enter and skip.
+( The rest you can just press enter and skip.
  Now you’ll notice we have a <h7>package.json</h7>
  file that contains all the information we
   entered. )`,
 code3:"node-test"});
-  
+
+BlockFrame.Block({title:"test web projects",
+body:`try <code>npm start</code> from testsite directory.
+
+look at the <h7>package.json</h7>
+
+<h7>scripts : { start : node bin/www }</h7>
+So you must execute the www under the bin directory.
+
+So instead of <h7>node app.js</h7> use <code>node bin/www</code>`});
+//-------------------------------------------------------
+BlockFrame.BlockGroup("Modules");  
 BlockFrame.Block({title:"Modules (or packages or libraries)",
 body:`Node implements the CommonJS interface for modules. `});
-
-BlockFrame.Block({title:"package.json",
-body:`A package.json is a file that contains metadata
-about the project, and handles the dependencies
-(additional software and modules) of the project`});
 
 BlockFrame.Block({title:"Installing modules from npm",
 body:`either search for them on the website or on Github. 
@@ -158,7 +168,7 @@ var dns = require('dns');
 var myFile = require('./myFile'); 
 // loads myFile.js`});
 
-BlockFrame.Block({title:"Run Node in the terminal",
+BlockFrame.Block({title:"Another Example in the terminal",
 body:`Create a index.js file in the root folder
 of your project and add the code to it:`,
 code:`//index.js

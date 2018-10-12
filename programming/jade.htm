@@ -1,0 +1,177 @@
+<html>
+<head>
+        <script src="../libs/jquery-3.3.1.slim.min.js" ></script>
+        <!--link href="../libs/tooltip/tooltip.css" rel="stylesheet" type="text/css" /-->
+        <link rel="stylesheet" href="../assets/css/block.css">
+        <link rel="stylesheet" href="../libs/highlight/androidstudio2.css">
+        <script src="../libs/jquery-3.3.1.slim.min.js" ></script>
+        <script src="../libs/highlight/highlight.pack.js"></script>
+        <script src="../assets/js/block.js"></script>
+        <script>
+          $('code').each(function() {
+          var that = $(this);
+          // cache the content of 'code'
+          var html = that.html().trim();
+          that.empty();
+          // escape the content
+          that.text(html);
+        });
+        
+        hljs.initHighlightingOnLoad();
+        </script>
+</head>
+
+<body>
+<script>
+BlockFrame.PageHeaderRow("Jade");
+BlockFrame.NewLine();
+BlockFrame.NewLine();
+var blk1= BlockFrame.BlockGroup("Jade Basics");
+BlockFrame.Block({title:"What is Jade",
+body:`Jade is a templating engine, primarily used for server-side templating in NodeJS.
+Jade gives you a way to write markup,with a number of advantages over HTML.
+For example, take a look at this movie card in HTML:`,
+code:`&lt;div>
+  &lt;h1>Ocean's Eleven&lt;/h1>
+  &lt;ul>
+    &lt;li>Comedy&lt;/li>
+    &lt;li>Thriller&lt;/li>
+  &lt;/ul>
+  &lt;p>Danny Ocean and his eleven accomplices plan to rob
+     three Las Vegas casinos simultaneously.&lt;/p>
+&lt;/div>`,
+body2:`This is what the same markup looks like in Jade:`,
+code2:`div
+  h1 Ocean's Eleven
+  ul
+    li Comedy
+    li Thriller
+  p.
+    Danny Ocean and his eleven accomplices plan to rob
+    three Las Vegas casinos simultaneously.`
+});
+BlockFrame.Block({
+   title:"Simple Tags" ,
+   body:`As you might have noticed earlier, there are no “closing” tags in Jade. 
+   Instead, Jade uses indentation to determine how tags are nested.`
+});
+BlockFrame.Block({title:"Example 2:jade and html comparision",
+body:"Html:",
+code:`&lt;!DOCTYPE html>
+&lt;html lang="en">
+  &lt;head>
+    &lt;title>Jade&lt;/title>
+    &lt;script type="text/javascript">
+      //&lt;![CDATA[
+      if (foo) {
+      	bar()
+      }
+      //]]>
+    &lt;/script>
+  &lt;/head>
+  &lt;body>
+    &lt;h1>Jade - node template engine&lt;/h1>
+    &lt;div id="container">
+      &lt;p>You are amazing&lt;/p>
+    &lt;/div>
+  &lt;/body>
+&lt;/html>`,
+body2:"Jade:",
+code2:`!!! 5
+html(lang="en")
+  head
+    title= pageTitle
+    :javascript
+      | if (foo) {
+      |    bar()
+      | }
+  body
+    h1 Jade - node template engine
+    #container
+      - if (youAreUsingJade)
+         You are amazing
+      - else
+         Get on it!
+         Get on it!
+         Get on it!
+ `,
+body3:`<a href="https://codepen.io/SitePoint/pen/PZLgaN">play on codepen</a>`,});
+BlockFrame.Block
+({title:"Attributes",
+body:`see the example:(or in <a href="http://codepen.io/SitePoint/pen/pgYBZd">codePen</a>)`,
+code:
+`div(class="movie-card", id="oceans-11")
+  h1(class="movie-title") Ocean's 11
+  img(src="/img/oceans-11.png", class="movie-poster")`,
+body2:"or short handed:",
+code2:`div.movie-card#oceans-11
+  h1.movie-title Ocean's 11
+  img.movie-poster(src="/img/oceans-11.png")`});
+BlockFrame.Block({
+title:"Blocks of Text",
+body:`Jade treats the first word of every line as an HTML tag.
+so to have multi line texts,a period (full stop) after a tag shows
+everything inside that tag is text`,
+code:`div
+  p How are you?
+  p.
+    I'm fine thank you.
+    And you? 
+    I heard you went to italy last week`
+});
+BlockFrame.Block({
+title:"Using JavaScript in Jade",
+body:"starting a line with a hyphen(-), means the line is javascript code ",
+code:`- var x = 5;
+div
+  ul
+    - for (var i=1; i<=x; i++) {
+      li Hello
+    - }`,
+body2:"and use equal sign(=) to output the value of a variable",
+code2:`- var x = 5;
+div
+  ul
+    - for (var i=1; i<=x; i++) {
+      li= i + ". Hello"
+    - }`,
+body3:"which prints 1,2,3,.. in each <li>"});
+
+BlockFrame.Block({title:"Jade native Loops",
+body:"<a href='http://codepen.io/SitePoint/pen/ZQPNxZ'>view in codePen</a>",
+code:`- var droids = ["R2D2", "C3PO", "BB8"];
+div
+  h1 Famous Droids from Star Wars
+  for name in droids
+    div.card
+      h2= name`
+});
+
+BlockFrame.Block({
+title:"Interpolation:using js variable in jade text",
+body:`assume :`,
+code:`var profileName = "Danny Ocean";`,
+body2:`Instead of :`,
+code2:`= "Hi there, " + profileName + ". How are you doing?"`,
+body3:`we can write :`,
+code3:` p Hi there, #{profileName}. How are you doing?`
+});
+
+BlockFrame.Block({
+    title:"Mixins are like functions",
+body:"defenition:",
+code:`mixin thumbnail(imageName, caption)
+  div.thumbnail
+    img(src="/img/#{imageName}.jpg")
+    h4.image-caption= caption`,
+body2:`Call them beginnig by + symbol:`,
+code2:`+thumbnail("oceans-eleven", "Danny Ocean makes an elevator pitch.")
++thumbnail("pirates", "Introducing Captain Jack Sparrow!")`
+});
+BlockFrame.Block({
+title:`A complete Sample`,
+body:`<a href='https://codepen.io/SitePoint/pen/Bjbgpv'>view in codepen</a>`
+});
+</script>
+
+</body>

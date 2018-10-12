@@ -6,7 +6,7 @@ html  {  word-break: break-all;}
 body  {  background-color: #cccccc;    height:100%;	overflow-y:auto;}
 table {  border-collapse: collapse;table-layout: fixed;}
 
-div      {  background-color: #ccd6c9  ; white-space:pre-line;  }
+div      {  background-color: #ccccff  ; white-space:pre-line;  }
 p  {  display:block;  white-space:pre     ;list-style-type: none;    margin-left:0;  padding-left:40px;}
 h10{  display:block ; white-space:pre-line;list-style-type: none;    margin-left:0;  padding-left:40px;}
 pre,span,code {  background-color: #aaaaaa ;  margin: 30px 30px 30px 30px;}
@@ -26,8 +26,8 @@ h2,.header{display: flex;justify-content: center; align-items: center; backgroun
 h3{display: block;font-weight:bolder;  width:50%;  text-align: center;  margin-left:25px; background-color:lightblue; color:darkblue;
   padding: 10px ;  border-color:black;  border-style: solid;  border-width: 1px; }
 a:link {  color: rgb(23, 12, 114);}/* unvisited link */
-a:visited {  color: purple;}/* visited link */
-a:hover {  color: rgb(190, 97, 190);text-decoration: underline;font-size: 22px;}/* mouse over link */
+a:visited {  color: gray;}/* visited link */
+a:hover {  color: rgb(190, 97, 190);text-decoration: underline;}/* mouse over link */
 a { color: rgb(23, 12, 114); text-decoration: none;  }
 a:active {  color: black;}
 
