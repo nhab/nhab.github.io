@@ -23,12 +23,12 @@
 
 <body>
 <script>
-BlockFrame.PageHeaderRow("Jade");
+BlockFrame.PageHeaderRow("Jade( recently,renamed to pug)");
 BlockFrame.NewLine();
 BlockFrame.NewLine();
 var blk1= BlockFrame.BlockGroup("Jade Basics");
 BlockFrame.Block({title:"What is Jade",
-body:`Jade is a templating engine, primarily used for server-side templating in NodeJS.
+body:`Jade(<a href='https://pugjs.org/api/getting-started.html'>pug</a>) is a templating engine, primarily used for server-side templating in NodeJS.
 Jade gives you a way to write markup,with a number of advantages over HTML.
 For example, take a look at this movie card in HTML:`,
 code:`&lt;div>
@@ -96,6 +96,27 @@ html(lang="en")
          Get on it!
  `,
 body3:`<a href="https://codepen.io/SitePoint/pen/PZLgaN">play on codepen</a>`,});
+
+BlockFrame.Block({
+title:"Pug in your Web browser’s console",
+body:`just open a web browser,and 
+perss F12 and go to console tab and past:`,
+code:`pug.render('p Hello world!');`});
+
+BlockFrame.Block({
+title:"Comments",
+body:`Comments must appear on their own Line.
+single line comment example:`,
+code:`// some comment`,
+body2:`multiline comment example:`,
+code2:`body
+  //- wil not output within markup:
+    Comments for your template writers.
+    Use as much text as you want.
+  // will output within markup:
+    Comments for your HTML readers.
+    Use as much text as you want.`
+});
 BlockFrame.Block
 ({title:"Attributes",
 body:`see the example:(or in <a href="http://codepen.io/SitePoint/pen/pgYBZd">codePen</a>)`,
