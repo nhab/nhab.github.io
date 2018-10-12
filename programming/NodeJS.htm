@@ -27,7 +27,7 @@
 BlockFrame.PageHeaderRow("Node.JS");
 BlockFrame.NewLine();
 BlockFrame.NewLine();
-blk1= BlockFrame.BlockGroup("NodeJS basics");
+var blk1= BlockFrame.BlockGroup("NodeJS commandline options");
 
 BlockFrame.Block({title:"Node.js",
  body:`Is a program that can run Javascript codes.
@@ -77,6 +77,7 @@ code:"nvm list"});
 
 BlockFrame.Block({title:"getting the version",code:`node -v`});
 
+ BlockFrame.BlockGroup("Learn by step by step example");
 BlockFrame.Block({title:`Hello,World! Example of shell scripts`,
 body:`1. create a file named <b>a.js</b>
 2. write this line inside it and save:
@@ -91,7 +92,6 @@ body:`1. put this content inside your script
 	console.log('$\{index}: $\{val}');
 });</code></pre>
 2. run your script by proving arguments:`,code:`node h.js one two=three four`});
-debugger;
 
 BlockFrame.Block({title:"A hello world http server",
 body:`program responds to hello world via http.
@@ -114,130 +114,103 @@ curl to test your server:`,
 code3:`$ curl localhost:8080
 Hello Http`});
 
-const blkInitializeProject=new BlockFrame("Initialize Project");
-blkInitializeProject.AddBody(
-`Navigate to the directory in which 
-you want your project to exist:`
-);
-blkInitializeProject.AddCode("cd sites/node-test");
-blkInitializeProject.AddBody(`Now initalize a new project with npm.`);
-blkInitializeProject.AddCode("npm init");
-blkInitializeProject.AddBody(
- `utility will walk you through creating
+BlockFrame.Block({title:"Initialize Project",
+body:`Navigate to the directory in which 
+you want your project to exist:`,
+code:"cd sites/node-test",
+body2:`Now initalize a new project with npm.`,
+code2:"npm init",
+body3: `utility will walk you through creating
   a package.json file.
-  First, it will ask for a package name:`);
-  blkInitializeProject.AddCode("node-test");
-  blkInitializeProject.AddBody(
- `The rest you can just press enter and skip.
+  First, it will ask for a package name:
+  
+  ( The rest you can just press enter and skip.
  Now you’ll notice we have a <h7>package.json</h7>
  file that contains all the information we
-  entered.`
-  );
+  entered. )`,
+code3:"node-test"});
+  
+BlockFrame.Block({title:"Modules (or packages or libraries)",
+body:`Node implements the CommonJS interface for modules. `});
 
-const blkModule=new BlockFrame("Modules (or packages or libraries)");
-blkModule.AddBody(`Node implements the CommonJS interface for modules. `);
-
-const blkPackageJson=new BlockFrame("package.json");
-blkPackageJson.AddBody(
-`A package.json is a file that contains metadata
+BlockFrame.Block({title:"package.json",
+body:`A package.json is a file that contains metadata
 about the project, and handles the dependencies
-(additional software and modules) of the project`
-);
+(additional software and modules) of the project`});
 
-const blkInstallingModules=new BlockFrame("Installing modules from npm");
-blkInstallingModules.AddBody(
-`either search for them on the website or on Github. 
+BlockFrame.Block({title:"Installing modules from npm",
+body:`either search for them on the website or on Github. 
 The syntax for installing an npm module locally 
-(where 'express' is module name):`);
-blkInstallingModules.AddCode(
-`$ npm install express`);
-blkInstallingModules.AddBody(
-`To add dependency to packages.json use --save:`);
-blkInstallingModules.AddCode("npm install left-pad --save");
-blkInstallingModules.AddBody(
-`You can require module install from npm as you would do
-with the native ones,no need to specify path:`);
-blkInstallingModules.AddCode("var express = require('express');");
+(where 'express' is module name):`,
+code:`$ npm install express`,
+body2:`To add dependency to packages.json use --save:`,
+code2:"npm install left-pad --save",
+body3:`You can require module install from npm as you would do
+with the native ones,no need to specify path:`,
+code3:"var express = require('express');"});
 
-const blkLodingDependencies = new BlockFrame("Loading depencies<br/>(using the <b>require</b> keyword)");
-blkLodingDependencies.AddBody(`Example:`);
-blkLodingDependencies.AddCode(
-`//we can require some native modules
+BlockFrame.Block({title:"Loading depencies(using the <b>require</b> keyword)",
+body:`Example:`,
+code:`//we can require some native modules
 var http = require('http');   
 var dns = require('dns');
 //We can also require relative files:
 var myFile = require('./myFile'); 
-// loads myFile.js`);
+// loads myFile.js`});
 
-const blkRunNode=new BlockFrame("Run Node in the terminal");
-blkRunNode.AddBody(
-`Create a index.js file in the root folder
-of your project and add the code to it:`
-);
-blkRunNode.AddCode(
-`//index.js
+BlockFrame.Block({title:"Run Node in the terminal",
+body:`Create a index.js file in the root folder
+of your project and add the code to it:`,
+code:`//index.js
 const leftPad = require('left-pad');         // Require left pad
 const output = leftPad('Hello, World!', 15); // Define output
 
 // Send output to the console
 console.log(output);`
-);
-blkRunNode.AddBody(
-`Now you can run the project in terminal:`
-);
-blkRunNode.AddCode(`node index.js`);
+,body2:`Now you can run the project in terminal:`
+,code2:`node index.js`});
 
-const blkModuleScop=new BlockFrame("Module scope");
-blkModuleScop.AddBody(
-`-Node modules aren't automatically 
+BlockFrame.Block({title:"Module scope",
+body:`-Node modules aren't automatically 
 injected into the global scope  
 , instead you just assigned them to
 a variable of your choice. 
 
 That means that you don't have to 
 care about two or more modules that
-have functions with the same name.`);
-
-
-
-//const blkExample2=new BlockFrame("Example 2");
-
-</script>
-
-<h2>Creating your own modules</h2>
-<script>
-const blkCreatingModules=new BlockFrame ("Step 1");
-blkCreatingModules.AddCode(`configure npm
+have functions with the same name.`});
+//-------------------------------------------------------------
+BlockFrame.BlockGroup("Creating your own modules");
+BlockFrame.Block({title:"Step 1: Init authur",
+code:`configure npm
 npm set init.author.name "Brent Ertz"
 npm set init.author.email "brent.ertz@gmail.com"
 npm set init.author.url "http://brentertz.com"
-npm adduser`);
-const blkCreatingModules2=new BlockFrame ("Step 2");
-blkCreatingModules2.AddBody(
+npm adduser`});
+
+BlockFrame.Block({title:"Step 2: <b>require</b>d modules",
+body:
 `The primary 2 items that we are concerned
 with here are <b>require</b> and <b>exports</b>. 
 You require other modules that you wish 
 to use in your code and your module exports
 anything that should be exposed publicly.
-For example:`);
-blkCreatingModules2.AddCode(
-`var other = require('other_module');
+For example:`,
+code:`var other = require('other_module');
 module.exports = function() {
   console.log(other.doSomething());
-}`);
-const blkCreatingModules3=new BlockFrame ("Step 3");
-blkCreatingModules3.AddBody(
-`Executing the following command will 
-ask you a bunch of questions,   
-and then write out a package.json file.`);
-blkCreatingModules3.AddCode(`npm init`);
+}`});
 
-const blkCreatingModules4=new BlockFrame ("Step 4");
-blkCreatingModules4.AddBody(
-`Create an index.js file to hold the
-primary module code. for example:`);
-blkCreatingModules4.AddCode(
-`/**
+BlockFrame.Block({title:"Step 3: Creating <b>package.json</b>",
+body:`Executing the following command will 
+ask you a bunch of questions,   
+and then write out a package.json file.`,
+code:`npm init`});
+
+BlockFrame.Block({title:"Step 4: primary module ocde",
+body:`Create an index.js file to hold the
+primary module code. for example:`,
+code:`/**
 * Escape special characters in the given string of html.
 *
 * @param  {String} html
@@ -267,61 +240,60 @@ escape: function(html) {
 			.replace(/&gt;/g, '>');
 	}
 };
-....`);
-</script>
-<h2>Other concepts</h2>
-
-<script>
-const blk1=new BlockFrame("CallBack",
-`-you are telling it to do something and <h7>when 
+....`});
+//-----------------------------------------------
+BlockFrame.BlockGroup("Other concepts");
+BlockFrame.Block({title:"CallBack",
+body:`-you are telling it to do something and <h7>when 
 it is done</h7> it will call your function(callback).
--In asynchronous programming we do not return
- values when our functions are done,but instead 
- we use the continuation-passing style (CPS)`);
 
-const blk2=new BlockFrame(`Events`,
-`The standard callback pattern works well for 
+-In asynchronous programming we do not return values
+ when our functions are done,but instead 
+ we use the continuation-passing style (CPS)`});
+
+BlockFrame.Block({title:`Events`,
+body:`The standard callback pattern works well for 
 the use cases where we want to be notified when
 the async function finishes. 
 However, there are situations that require being
 notified of different events that do not occur 
-at the same time.`);
+at the same time.`});
 
-const blk3=new BlockFrame(`Streams`, 
-`represent an abstract interface for asynchronously 
+BlockFrame.Block({title:`Streams`, 
+body:`represent an abstract interface for asynchronously 
 manipulating a continuous flow of data.
 They can be classified into 5 types: 
-<h7>readable, writable, transform, duplex and classic</h7>.`);
+<h7>readable, writable, transform, duplex and classic</h7>.`});
 
-const blk4=new BlockFrame(`Directory`,null,
-`C:\\Program Files\\nodejs\\
- node_modules\\npm\\node_modules`);
+BlockFrame.Block({title:`Directory`,
+code:`C:\\Program Files\\nodejs\\
+ node_modules\\npm\\node_modules`});
 
-const blk5=new BlockFrame("using node commands",
-`1. with no arguments. 
+BlockFrame.Block({title:"using node commands",
+body:`1. with no arguments. 
 This will open an interactive shell 
 where you can execute raw JavaScript code.`,
-`$ node
+code:`$ node
 > console.log('Hello World');
-Hello World`);
-blk5.AddBody(
+Hello World`,
+body2:
 `2. by providing it a JavaScript file to execute.
-This is almost always how you will be using it.`);
-blk5.AddCode(
+This is almost always how you will be using it.`,
+code2:
 `hello.js
 console.log('Hello World');
 $ node hello.js
-Hello World`);
+Hello World`});
 
-const blk6=new BlockFrame("file operations",
-`readFile : 
+BlockFrame.Block({title:"file operations",
+body:`readFile : 
 	takes a file path and a callback.
 	The callback will be invoked when the file is done
 	 being read.
 	The file data comes in the form of a Buffer,
 	which is basically a byte array. 
 	We can convert it to a string using the toString() function.`
-,`// Load the fs (filesystem) module.
+,code:`// Load the fs (filesystem) module.
 	var fs = require('fs');// 
 
 	// Read the contents of the file into memory.
@@ -349,9 +321,10 @@ const blk6=new BlockFrame("file operations",
 		results[letter] += parseInt(count);
 	});
 	console.log(results);	// { A: 2, B: 14, C: 6 }
-	});`);
-const BLK16=new BlockFrame("HTTP server example",null,
-`var http = require('http');
+	});`});
+
+BlockFrame.Block({title:"HTTP server example",
+code:`var http = require('http');
 
 http.createServer(function (req, res) {
 	res.writeHead(200, {'Content-Type': 'text/plain'});
@@ -369,9 +342,9 @@ console.log('Server running on port 8080.');
 //and you'll see the text.			
 // If you want this to be a full-featured 
 //web server, then you have to do that work.
-'''`);
-const blk17=new BlockFrame("Creating a realtime application <br/>with Express and Socket.io"
-,`Express is the most popular web framework for Node,
+'''`});
+BlockFrame.Block({title:"Creating a realtime application <br/>with Express and Socket.io"
+,body:`Express is the most popular web framework for Node,
 while Socket.IO is a realtime framework that enables 
 bi-directional communication between web clients and the server.
 We are going to create a basic tracking pixel application using
@@ -386,7 +359,7 @@ mainly their IP address and user agent.
 
 Below is the code for the server.js file:
 `,
-`var emptygif = require('emptygif');
+code:`var emptygif = require('emptygif');
 var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
@@ -409,9 +382,9 @@ emptygif.sendEmptyGif(req, res, {
 
 app.use(express.static(__dirname + '/public'));
 
-server.listen(1337);`);
-const blk18=new BlockFrame("The frontend",null,
-`&lt!DOCTYPE HTML>
+server.listen(1337);`});
+BlockFrame.Block({title:"The frontend",
+code:`&lt!DOCTYPE HTML>
 &lthtml lang="en">
 &lthead>
 &ltmeta charset="UTF-8">
@@ -453,27 +426,17 @@ socket.on('visit', function(visit) {
 	});
 &lt/script>
 &lt/body>
-&lt/html>`);
+&lt/html>`});
 
-var blk20=new BlockFrame("Resources");
-
-//var  blk20=new BlockFrame("Resources",null,null,"col1id");
-blk20.AddUrl("Original reference","https://nodejs.org/docs/latest/api/");
-blk20.AddBr();
-blk20.AddUrl("source code repository of npmjs","https://www.npmjs.com");
-blk20.AddBr();
-blk20.AddUrl("on youtube","https://www.youtube.com/watch?v=Rc9LJ9bdHJ");
-
-blk20.AddUrl("nod.js by gamma","https://github.com/egamma/nodejs-guidelines");   
-blk20.AddBr();
-blk20.AddUrl("beginners guide","http://blog.modulus.io/absolute-beginners-guide-to-nodejs");
-blk20.AddBr();
-blk20.AddUrl("tutorial with examples","http://noeticforce.com/best-nodejs-tutorial-with-examples");
-blk20.AddBr();
-blk20.AddUrl("building a real time markdown-viewer","https://scotch.io/tutorials/building-a-real-time-markdown-viewer");
-
-//blk19.AddObj(blk20);
-//blk19.AddObj(blk21);
+BlockFrame.Block({title:"Resources",
+body:`<a href='https://nodejs.org/docs/latest/api/'>Main reference</a>
+<a href='"https://www.npmjs.com"'>source code repository of npmjs</a>
+<a href="https://www.youtube.com/watch?v=Rc9LJ9bdHJ">on youtube</a>
+<a href="https://github.com/egamma/nodejs-guidelines">nod.js by gamma</a>   
+<a href="http://blog.modulus.io/absolute-beginners-guide-to-nodejs">beginners guide</a>
+<a href="http://noeticforce.com/best-nodejs-tutorial-with-examples">tutorial with examples</a>
+<a href="https://scotch.io/tutorials/building-a-real-time-markdown-viewer">building a real time markdown-viewer</a>`
+});
 </script>
 </body>
 
