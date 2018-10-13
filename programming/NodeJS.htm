@@ -77,7 +77,25 @@ code:"nvm list"});
 
 BlockFrame.Block({title:"getting the version",code:`node -v`});
 
- BlockFrame.BlockGroup("Learn by step by step example");
+BlockFrame.Block({title:"using node commands",
+body:`1. with no arguments. 
+This will open an interactive shell 
+where you can execute raw JavaScript code.`,
+code:`$ node
+> console.log('Hello World');
+Hello World`,
+body2:
+`2. by providing it a JavaScript file to execute.
+This is almost always how you will be using it.`,
+code2:
+`hello.js
+console.log('Hello World');
+$ node hello.js
+Hello World`});
+
+
+//--------------------------------------------------------------------------
+BlockFrame.BlockGroup("Learn by step by step example");
 BlockFrame.Block({title:`Hello,World! Example of <b>console</b> scripts`,
 body:`1. create a file named <b>a.js</b>
 2. write this line inside it and save:
@@ -274,27 +292,6 @@ body:`represent an abstract interface for asynchronously
 manipulating a continuous flow of data.
 They can be classified into 5 types: 
 <h7>readable, writable, transform, duplex and classic</h7>.`});
-
-BlockFrame.Block({title:`Directory`,
-code:`C:\\Program Files\\nodejs\\
- node_modules\\npm\\node_modules`});
-
-BlockFrame.Block({title:"using node commands",
-body:`1. with no arguments. 
-This will open an interactive shell 
-where you can execute raw JavaScript code.`,
-code:`$ node
-> console.log('Hello World');
-Hello World`,
-body2:
-`2. by providing it a JavaScript file to execute.
-This is almost always how you will be using it.`,
-code2:
-`hello.js
-console.log('Hello World');
-$ node hello.js
-Hello World`});
-
 BlockFrame.Block({title:"file operations",
 body:`readFile : 
 	takes a file path and a callback.
@@ -332,28 +329,20 @@ body:`readFile :
 	});
 	console.log(results);	// { A: 2, B: 14, C: 6 }
 	});`});
-
-BlockFrame.Block({title:"HTTP server example",
-code:`var http = require('http');
-
-http.createServer(function (req, res) {
-	res.writeHead(200, {'Content-Type': 'text/plain'});
-	res.end('Hello World\n');
-}).listen(8080);
-
-console.log('Server running on port 8080.');
-
-// This is not a full-featured HTTP server.
-// It can't serve any HTML file or images.
-// In fact, no matter what you request,
-// it will return 'Hello World'.
-// However, you can run this and hit 
-//http://localhost:8080 in your browser 
-//and you'll see the text.			
-// If you want this to be a full-featured 
-//web server, then you have to do that work.
-'''`});
-BlockFrame.Block({title:"Creating a realtime application <br/>with Express and Socket.io"
+BlockFrame.Block(
+{title:`blocking vs non-blocking software development`,
+body:`Blocking methods execute synchronously and 
+non-blocking methods execute asynchronously`});
+BlockFrame.Block({title:`Node Event Loop`,
+body:`Node.js programs usually use a loop,to check for requests.
+Node provides the event loop as part of the language
+ 
+ The minute that you call Node you don’t have 
+ to call a start function to start a loop that’s waiting for events. 
+You literally just put in your script and 
+the loop starts the minute that you start Node
+ and it doesn’t end until the last callback is called `});
+BlockFrame.Block({title:"Creating a realtime application with Express and Socket.io"
 ,body:`Express is the most popular web framework for Node,
 while Socket.IO is a realtime framework that enables 
 bi-directional communication between web clients and the server.
