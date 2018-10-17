@@ -1,0 +1,848 @@
+<html>
+<head>
+	<link rel="stylesheet" href="../assets/css/block.css">
+	<script src="../assets/js/block.js"></script>
+</head>
+
+<body>
+<script>
+BlockFrame.PageHeaderRow("Jquery");
+BlockFrame.NewLine();
+BlockFrame.NewLine();
+var blk1= BlockFrame.BlockGroup("JQuery");
+
+var options=[];
+var i=0;
+options[i++]={title:"1. Selectors",
+body:" Selectors in jQuery are used to select an element ",
+code:` var   page   =   $  (  window  );   // Selects the whole viewport 
+
+ // Selectors can also be CSS selector 
+ var   paragraph   =   $  (  'p'  );   // Selects all paragraph elements 
+ var   table1   =   $  (  '#table1'  );   // Selects element with id 'table1' 
+ var   squares   =   $  (  '.square'  );   // Selects all elements with the class 'square' 
+ var   square_p   =   $  (  'p.square'  )   // Selects paragraphs with the 'square' class 
+`};
+
+options[i++]={title:"2. Events and Effects",
+body:` // jQuery is very good at handling what happens when an event is triggered 
+ // A very common event used is the ready event on the document 
+ // You can use the 'ready' method to wait until the element has finished loading `,
+ code:` $  (  document  ).  ready  (  function  (){ 
+   // Code won't execute until the document is loaded 
+ }); 
+ // You can also use defined functions 
+ function   onAction  ()   { 
+   // This is executed when the event is triggered 
+ } 
+ $  (  '#btn'  ).  click  (  onAction  );   // Invokes onAction on click 
+
+ // Some other common events are: 
+ $  (  '#btn'  ).  dblclick  (  onAction  );   // Double click 
+ $  (  '#btn'  ).  hover  (  onAction  );   // Hovering over 
+ $  (  '#btn'  ).  focus  (  onAction  );   // On focus 
+ $  (  '#btn'  ).  blur  (  onAction  );   // Losses focus 
+ $  (  '#btn'  ).  submit  (  onAction  );   // On submit 
+ $  (  '#btn'  ).  select  (  onAction  );   // When an element is selected 
+ $  (  '#btn'  ).  keydown  (  onAction  );   // When a key is pushed down 
+ $  (  '#btn'  ).  keyup  (  onAction  );   // When a key is released 
+ $  (  '#btn'  ).  keypress  (  onAction  );   // When a key is pressed 
+ $  (  '#btn'  ).  mousemove  (  onAction  );   // When the mouse is moved 
+ $  (  '#btn'  ).  mouseenter  (  onAction  );   // Mouse enters the element 
+ $  (  '#btn'  ).  mouseleave  (  onAction  );   // Mouse leaves the element 
+
+
+ // These can all also trigger the event instead of handling it 
+ // by simply not giving any parameters 
+ $  (  '#btn'  ).  dblclick  ();   // Fires double click on the element 
+
+ // You can handle multiple events while only using the selector once 
+ $  (  '#btn'  ).  on  ( 
+   {  dblclick  :   myFunction1  }   // Triggered on double click 
+   {  blur  :   myFunction1  }   // Triggered on blur 
+ ); 
+
+ // You can move and hide elements with some effect methods 
+ $  (  '.table'  ).  hide  ();   // Hides the element(s) 
+
+ // Note: calling a function in these methods will still hide the element 
+ $  (  '.table'  ).  hide  (  function  (){ 
+     // Element hidden then function executed 
+ }); 
+
+ // You can store selectors in variables 
+ var   tables   =   $  (  '.table'  ); 
+
+ // Some basic document manipulation methods are: 
+ tables  .  hide  ();   // Hides element(s) 
+ tables  .  show  ();   // Shows (un-hides) element(s) 
+ tables  .  toggle  ();   // Changes the hide/show state 
+ tables  .  fadeOut  ();   // Fades out 
+ tables  .  fadeIn  ();   // Fades in 
+ tables  .  fadeToggle  ();   // Fades in or out 
+ tables  .  fadeTo  (  0.5  );   // Fades to an opacity (between 0 and 1) 
+ tables  .  slideUp  ();   // Slides up 
+ tables  .  slideDown  ();   // Slides down 
+ tables  .  slideToggle  ();   // Slides up or down 
+
+ // All of the above take a speed (milliseconds) and callback function 
+ tables  .  hide  (  1000  ,   myFunction  );   // 1 second hide animation then function 
+
+ // fadeTo has a required opacity as its second parameter 
+ tables  .  fadeTo  (  2000  ,   0.1  ,   myFunction  );   // 2 sec. fade to 0.1 opacity then function 
+
+ // You can get slightly more advanced with the animate method 
+ tables  .  animate  ({  margin  -  top  :  "+=50"  ,   height  :   "100px"  },   500  ,   myFunction  ); 
+ // The animate method takes an object of css and values to end with, 
+ // optional options parameter to tune the animation, 
+ // and of course the callback function 
+`};
+
+options[i++]={title:"3. Manipulation", 
+body:" These are similar to effects but can do more ",
+code:` $  (  'div'  ).  addClass  (  'taming-slim-20'  );   // Adds class taming-slim-20 to all div  
+
+ // Common manipulation methods 
+ $  (  'p'  ).  append  (  'Hello world'  );   // Adds to end of element 
+ $  (  'p'  ).  attr  (  'class'  );   // Gets attribute 
+ $  (  'p'  ).  attr  (  'class'  ,   'content'  );   // Sets attribute 
+ $  (  'p'  ).  hasClass  (  'taming-slim-20'  );   // Returns true if it has the class 
+ $  (  'p'  ).  height  ();   // Gets height of element or sets height 
+ `};
+ options=RenderBlocks(options);
+
+</script>
+
+ <h3>--</h3>
+<pre> 
+	#JQuery
+		: javascript library to find and and manipulate HTML elements  
+		The dollar function, $(), is used as shorthand for the getElementBy... function.
+		:{
+			1. select HTML elements
+				-basic selecting
+					*			 	: Selects all elements
+					$(".someClass")	: Selects all elements with the given class attribute. 		:x  $( ".myClass" ).
+					$("someElement") : Selects all HTML elements with the given tag name. 		:x  $( "div" ).
+							x:
+								$(document).ready(function(){
+									$("button").click(function(){
+										$("p").hide();
+									});
+								});
+					$("#someId")	: Selects a single element with the given id attribute. 	:x  $( "#myDiv" ).
+							
+					multiple: selector1, selectorN, ...								:x  $( "div, span, p.myClass" ).
+					Combined selection:
+						X:
+							$("p.intro")	Selects all <p> elements with class="intro"
+							$("p:first")	Selects the first <p> element
+							$("ul li:first")	Selects the first <li> element of the first <ul>	
+							$("ul li:first-child")	Selects the first <li> element of every <ul>	
+							$("[href]")	Selects all elements with an href attribute
+							$("a[target='_blank']")	Selects all <a> elements with a target attribute value equal to "_blank"
+							$(":button")	Selects all <button> elements and <input> elements of type="button"
+							$("tr:even")	Selects all even <tr> elements
+				-Hierarchy
+					Child Selector			: (“parent > child”)					:x $( "ul.topnav > li" ).
+					Descendant Selector 	: (“ancestor descendant”)				:x $( "form fieldset input" ).
+					Next Adjacent Selector 	: (“prev + next”)						:x $( "label + input" ).
+					Next Siblings Selector	: (“prev ~ siblings”)					:x $( "#prev ~ div" ).
+				-filter (by colon)
+					-Basic Filters 
+						:animated
+						:eq()
+						:even
+						:first
+						:gt()
+						:header
+						:lang()
+						:last
+						:lt()
+						:not()
+						:odd
+						:root
+						:ta
+					-Content Filters
+						:contains()
+						:empty
+						:has()
+						:parent
+					-Visibility Filters
+						:hidden
+						:visible    : Selects all elements that are visible    :x $( "div:visible" ).
+					-Child Filters
+						:first-child
+						:first-of-type
+						:last-child
+						:last-of-type
+						:nth-child()
+						:nth-last-child()
+						:nth-last-of-type()
+						:nth-of-type()
+						:only-child
+						:only-of-type()
+					Forms
+						:button
+						:checkbox
+						:checked
+						:disabled
+						:enabled
+						:file
+						:focus
+						:image
+						:input
+						:password
+						:radio
+						:reset
+						:selected
+						:submit
+						:text
+				-Attribute (by brackets)
+					[name|="value"]
+					[name*="value"]
+					[name~="value"]
+					[name$="value"]
+					[name="value"]
+					[name!="value"]
+					[name^="value"]
+					[name]
+					[name="value"][name2="value2"]
+
+				
+			2. perform "actions" on them.
+				Manipulation
+					Copying
+						.clone()
+
+					Insertion
+						DOM Insertion, Around
+							.wrap()
+							.wrapAll()
+							.wrapInner()
+
+						DOM Insertion, Inside
+							.append()
+								:X
+									$( ".inner" ).append( "<p>Test</p>" );
+							.appendTo()
+							.html()
+							.prepend()
+							.prependTo()
+							.text()
+
+						DOM Insertion, Outside
+							.after()
+							.before()
+							.insertAfter()
+							.insertBefore()
+
+					DOM Removal
+						.detach()
+						.empty()
+						.remove()
+						.unwrap()
+
+					DOM Replacement
+						.replaceAll()
+						.replaceWith()
+				Traversing
+					Filtering
+						.eq()
+						.filter()
+						.first()
+						.has()
+						.is()
+						.last()
+						.map()
+						.not()
+						.slice()
+
+					Miscellaneous Traversing
+						.add()
+						.addBack()
+						.andSelf()
+						.contents()
+						.each()
+						.end()
+
+					Tree Traversal
+						.children()
+						.closest()
+						.find()
+						.next()
+						.nextAll()
+						.nextUntil()
+						.parent()
+						.parents()
+						.parentsUntil()
+						.prev()
+						.prevAll()
+						.prevUntil()
+						.siblings()
+				Events
+					Syntax
+						definition:
+							$("something").click(function(){
+								// action goes here!!
+								}); 
+						assigning that event to elements
+							$("p").click();
+					:{
+						Browser Events
+							.error()
+							.resize()
+							.scroll()
+
+						Document Loading
+							.load()
+							.ready()
+								$(document).ready(function(){
+									// jQuery methods go here...
+								});
+								
+								//or shorter method:
+								$(function(){...}
+									.unload()
+
+						Event Handler Attachment
+
+							.bind()
+							.delegate()
+							.die()
+							.live()
+							.off()
+							.on()
+							.one()
+							.trigger()
+							.triggerHandler()
+							.unbind()
+							.undelegate()
+
+						Form Events
+
+							.blur()
+							.change()
+							.focus()
+								$("input").focus(function(){
+									$(this).css("background-color", "#cccccc");
+								});
+
+							.focusin()
+							.focusout()
+							.select()
+							.submit()
+
+						Keyboard Events
+
+							.keydown()
+							.keypress()
+							.keyup()
+
+						Mouse Events
+
+							.click()
+								$("p").click(function(){
+									$(this).hide();
+								});
+							.contextMenu()
+							.dblclick()
+							
+							.mousedown()
+							mouseenter()
+								$("#p1").mouseenter(function(){
+									alert("You entered p1!");
+								});
+
+							hover()
+								$("#p1").hover(function(){
+									alert("You entered p1!");
+								},
+								function(){
+									alert("Bye! You now leave p1!");
+								});
+
+							.mouseleave()
+							.mousemove()
+							.mouseout()
+							.mouseover()
+							.mouseup()
+							.toggle()
+
+						Event Object
+
+							event.currentTarget
+							event.data
+							event.delegateTarget
+							event.isDefaultPrevented()
+							event.isImmediatePropagationStopped()
+							event.isPropagationStopped()
+							event.metaKey
+							event.namespace
+							event.pageX
+							event.pageY
+							event.preventDefault()
+							event.relatedTarget
+							event.result
+							event.stopImmediatePropagation()
+							event.stopPropagation()
+							event.target
+							event.timeStamp
+							event.type
+							event.which	
+						Ajax
+							Shorthand Methods
+								.load(URL,data,callback)
+									:loads data from a server and puts the returned data into the selected element.
+									:X
+										$("#div1").load("demo_test.txt");
+
+								jQuery.get(URL,callback)
+									:Requests data from the server with an HTTP GET request.
+									:X
+										$("button").click(function(){
+											$.get("demo_test.asp", function(data, status){
+												alert("Data: " + data + "\nStatus: " + status);
+											});
+										}); 
+								
+								jQuery.getJSON()
+								jQuery.getScript()
+								jQuery.post(URL,data,callback)
+									: requests data from the server using an HTTP POST request.
+									:X
+										$("button").click(function(){
+											$.post("demo_test_post.asp",
+											{
+												name: "Donald Duck",
+												city: "Duckburg"
+											},
+											function(data, status){
+												alert("Data: " + data + "\nStatus: " + status);
+											});
+										});
+
+							Low-Level Interface
+								jQuery.ajax(url[, options])
+									: is used to perform an asynchronous HTTP request
+									-The list of the options accepted by this function is very long
+									:X ( retrieve data )
+										$.ajax({
+											url: 'http://api.joind.in/v2.1/talks/10889',
+											data: {
+												format: 'json'
+											},
+											error: function() {
+												$('#info').html('<p>An error has occurred</p>');
+											},
+											dataType: 'jsonp',
+											success: function(data) {
+												var $title = $('<h1>').text(data.talks[0].talk_title);
+												var $description = $('<p>').text(data.talks[0].talk_description);
+												$('#info')
+													.append($title)
+													.append($description);
+											},
+											type: 'GET'
+										});
+									:X Passing data to the Server
+										$( 'form' ).submit(function( event ) {
+											event.preventDefault();
+
+											var form = $( this );
+
+											$.ajax({
+												type: 'POST',
+												url: '/data/save',
+												data: form.serialize(),
+												dataType: 'json',
+												success: function( resp ) {
+													console.log( resp );
+													}
+											});
+										});
+									:x2 
+										&lt;!DOCTYPE html>
+										&lt;html>
+											&lt;head>
+												&lt;title>jQuery AJAX POST Form&lt;/title>
+												&lt;meta charset="utf-8">
+											&lt;/head>
+										&lt;body>
+											&lt;div id="response">
+												&lt;pre>&lt;/pre>
+											&lt;/div>
+
+											&lt;form id="my-form">
+												&lt;input type="text" id="first-name" name="first-name" placeholder="First Name" />
+												&lt;input type="text" id="last-name" name="last-name" placeholder="Last Name" />
+
+												&lt;button type="submit">Submit&lt;/button>
+											&lt;/form>
+
+											&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">&lt;/script>
+											&lt;script>
+												(function($){
+													function processForm( e ){
+														$.ajax({
+															url: 'users.php',
+															dataType: 'text',
+															type: 'post',
+															contentType: 'application/x-www-form-urlencoded',
+															data: $(this).serialize(),
+															success: function( data, textStatus, jQxhr ){
+																$('#response pre').html( data );
+															},
+															error: function( jqXhr, textStatus, errorThrown ){
+																console.log( errorThrown );
+															}
+														});
+
+														e.preventDefault();
+													}
+
+													$('#my-form').submit( processForm );
+												})(jQuery);
+											&lt;/script>
+										&lt;/body>
+										&lt;/html>
+
+								jQuery.ajaxSetup()
+								jQuery.ajaxTransport()
+								jQuery.prefilter()
+								
+
+
+							Global Ajax Event Handlers
+
+								.ajaxComplete()
+								.ajaxError()
+								.ajaxSend()
+								.ajaxStart()
+								.ajaxStop()
+								.ajaxSuccess()
+
+							Helper Functions
+
+								.serialize()
+								.serializeArray()
+								jQuery.param()
+
+
+							
+						Core
+							jQuery Object
+
+								jQuery()
+								jQuery.holdReady()
+								jQuery.noConflict()
+								jQuery.sub()
+								jQuery.when()
+
+							Deferred Object
+
+								.promise()
+								deferred.always()
+								deferred.done()
+								deferred.fail()
+								deferred.isRejected()
+								deferred.isResolved()
+								deferred.notify()
+								deferred.notifyWith()
+								deferred.pipe()
+								deferred.progress()
+								deferred.promise()
+								deferred.reject()
+								deferred.rejectWith()
+								deferred.resolve()
+								deferred.resolveWith()
+								deferred.state()
+								deferred.then()
+								jQuery.Deferred()
+
+							Utilities
+
+								jQuery.boxModel
+								jQuery.browser
+								jQuery.contains()
+								jQuery.each()
+								jQuery.extend()
+								jQuery.globalEval()
+								jQuery.grep()
+								jQuery.inArray()
+								jQuery.isArray()
+								jQuery.isEmptyObject()
+								jQuery.isFunction()
+								jQuery.isNumeric()
+								jQuery.isPlainObject()
+								jQuery.isWindow()
+								jQuery.isXMLDoc()
+								jQuery.makeArray()
+								jQuery.map()
+								jQuery.merge()
+								jQuery.noop()
+								jQuery.now()
+								jQuery.parseHTML()
+								jQuery.parseJSON()
+								jQuery.parseXML()
+								jQuery.proxy()
+								jQuery.support
+								jQuery.trim()
+								jQuery.type()
+								jQuery.unique()
+								jQuery.uniqueSort()
+
+							DOM Element Methods
+
+								.get()
+								.index()
+								.size()
+								.toArray()
+
+							Internals
+
+								.context
+								.jquery
+								.length
+								.pushStack()
+								.selector
+								jQuery.error()
+
+							Callbacks Object
+								callbacks.add()
+								callbacks.disable()
+								callbacks.disabled()
+								callbacks.empty()
+								callbacks.fire()
+								callbacks.fireWith()
+								callbacks.fired()
+								callbacks.has()
+								callbacks.lock()
+								callbacks.locked()
+								callbacks.remove()
+								jQuery.Callbacks()
+						on() Method
+							:The on() method attaches one or more event handlers for the selected elements.
+							X:
+								$("p").on("click", function(){
+									$(this).hide();
+								});
+							X: 2
+								//Attach multiple event handlers to a &lt;p> element:
+								$("p").on({
+									mouseenter: function(){
+										$(this).css("background-color", "lightgray");
+									}, 
+									mouseleave: function(){
+										$(this).css("background-color", "lightblue");
+									}, 
+									click: function(){
+										$(this).css("background-color", "yellow");
+									} 
+								});
+
+		:syntax ( $("#id") |  $(".class") ) 
+				- jQuery("c" ).action()
+				- $("c").action() 
+				- $.objectname
+					:X 	$.root = $("body");
+					:X2 var chat = $.connection.chatHub
+
+			which "c" can be :
+				1: .class	|	$(".class1") 		:X $(".btnClass")
+				2: #id 								:x 	$("#someId")
+				3: htmlElement  
+					jQuery( "[attribute|='value']" ) | $( "a[href|='www.g.com']" ).css( "border", "3px dotted green" );
+		
+
+
+			functions
+				getJSON
+					:Load JSON-encoded data from the server using a GET HTTP request.
+					X:
+						//we have this json file:
+						//	{  "one": "Singular sensation",  "two": "Beady little eyes",  "three": "Little birds pitch by my doorstep"}
+						
+						$.getJSON( "ajax/test.json", function( data ) {
+							var items = [];
+							$.each( data, function( key, val ) {
+								items.push( "&lt;li id='" + key + "'>" + val + "&lt;/li>" );
+							});
+							
+							$( "&lt;ul/>", {
+								"class": "my-new-list",
+								html: items.join( "" )
+							}).appendTo( "body" );
+						});
+
+				html
+					text() - Sets or returns the text content of selected elements
+					html() - Sets or returns the content of selected elements (including HTML markup)
+						X:
+							$("#btn2").click(function(){
+								alert("HTML: " + $("#test").html());
+							});
+					val() - Sets or returns the value of form fields
+					attr() method is used to get attribute values.
+						X:
+							$("button").click(function(){
+								alert($("#w3s").attr("href"));
+							});
+					append() - Inserts content at the end of the selected elements
+					prepend() - Inserts content at the beginning of the selected elements
+					after() - Inserts content after the selected elements
+					before() - Inserts content before the selected elements
+						X:
+							function afterText() {
+								var txt1 = "&lt;b>I &lt;/b>";                    // Create element with HTML  
+								var txt2 = $("&lt;i>&lt;/i>").text("love ");     // Create with jQuery
+								var txt3 = document.createElement("b");    // Create with DOM
+								txt3.innerHTML = "jQuery!";
+								$("img").after(txt1, txt2, txt3);          // Insert new elements after &lt;img>
+							}
+					remove() - Removes the selected element (and its child elements)
+					empty() - Removes the child elements from the selected element
+					addClass() - Adds one or more classes to the selected elements
+					removeClass() - Removes one or more classes from the selected elements
+					toggleClass() - Toggles between adding/removing classes from the selected elements
+					css() - Sets or returns the style attribute
+					The css() method sets or returns one or more style properties for the selected elements.
+						X:
+							//The following example will return the background-color value of the FIRST matched element:
+							$("p").css("background-color");
+				effects
+					hide() , show() and toggle()
+					animate() 
+				callback function
+					: is executed after the current effect is finished.
+					(call back means "when it comes back call it")
+					Typical syntax:		$(selector).hide(speed,callback);
+					X:	
+						$("button").click(function(){
+							$("p").hide("slow", function(){
+								alert("The paragraph is now hidden");
+							});
+						});
+				dimensions
+					width()
+					height()
+					innerWidth()
+					innerHeight()
+					outerWidth()
+					outerHeight()
+				
+				Traversing
+					:jQuery traversing, which means "move through", are used to "find" (or select) HTML elements based on 
+					their relation to other elements. Start with one selection and move through that 
+					selection until you reach the elements you desire.
+					parent()
+					parents()
+					parentsUntil()
+						x:
+							$(document).ready(function(){
+								$("span").parent();
+							});
+					first(), last() and eq()
+					filter() and not() allow you to select elements that match, or do not match, a certain criteria.
+				
+				AJAX
+					: is exchanging data with a server, and updating parts of a web page  without reloading the whole page.
+					load() 
+						:method loads data from a server and puts the returned data into the selected element.
+						syntax
+							$(selector).load(URL,data,callback);
+						:x
+							&lt;body>
+								&lt;div id="div1">&lt;/div>
+								&lt;script >
+									$("#div1").load("http://api.propertyclicks.net/General/Province/GetByCountry/65");
+								&lt;/script>
+							&lt;/body>
+						:x 2
+							$("button").click(function(){
+								$("#div1").load("demo_test.txt", function(responseTxt, statusTxt, xhr){
+									if(statusTxt == "success")
+										alert("External content loaded successfully!");
+									if(statusTxt == "error")
+										alert("Error: " + xhr.status + ": " + xhr.statusText);
+								});
+							});
+						-Adding selector to url
+							It is also possible to add a jQuery selector to the URL parameter.
+							:X	$("#div1").load("demo_test.txt #p1");
+					
+					GET 
+						: Requests data from a specified resource
+						Syntax:
+							$.get(URL,callback);
+						:x
+							$("button").click(function(){
+								$.get("demo_test.asp", function(data, status){
+									alert("Data: " + data + "\nStatus: " + status);
+								});
+							}); 
+					POST : Submits data to be processed to a specified resource
+							ajax calls for working with database
+					$.ajax is a special method to perform the AJAX request .properties:
+						• url: 
+							This is the URL address for the request;
+
+						• cache: 
+							a false value will force the requested page to not be
+							cached by the browser
+
+						• type: 
+							we perform the GET request to get some data	from the server
+
+						• contentType:
+							we want to get data in the JSON format with the UTF-8 charset
+
+						• data: 
+							This is the data that transforms to the server;
+
+							it is empty in this case
+
+						• success: 
+							This is the callback function for
+							the success case; after performing a request, 
+
+							• error:
+								function(exception){alert('Exeption:'+exception);}
+		:process: Commmon Practices
+			Referencing
+				by embening in project:
+					&lt;head>
+						&lt;script src="jquery-1.12.2.min.js">&lt;/script>
+					&lt;/head>
+				by jQuery CDN
+					&lt;head>
+						&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js">&lt;/script>
+					&lt;/head>
+				by Microsoft CDN:
+					&lt;head>
+					&lt;script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.2.min.js">&lt;/script>
+					&lt;/head>
+			Putting jqueries in seperate file
+				If your website contains a lot of pages, and you want your jQuery functions to be easy to maintain,
+				you can put your jQuery functions in a separate .js file.
+						x:
+							&lt;head>
+							&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js">
+							&lt;/script>
+							&lt;script src="my_jquery_functions.js">&lt;/script>
+							&lt;/head>
+		:res	https://oscarotero.com/jquery/
+ 
+
+
+ // For many manipulation methods, getting info on an element 
+ // will ONLY get the first matching element 
+ $  (  'p'  ).  height  ();   // Gets only the first 'p' tag's height 
+
+ // You can use each to loop through all the elements 
+ var   heights   =   []; 
+ $  (  'p'  ).  each  (  function  ()   { 
+   heights  .  push  (  $  (  this  ).  height  ());   // Adds all 'p' tag heights to array 
+ }); 
+
+</pre>
