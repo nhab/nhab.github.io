@@ -36,3 +36,14 @@ Once installed in a server, run the Redis CLI (Command Line Interface)
 to issue commands to Redis. 
 While working on the CLI tool, your command-line prompt will change to: 
 redis>
+
+sample commands:
+$ redis-cli                                                                
+redis 127.0.0.1:6379> ping
+PONG
+redis 127.0.0.1:6379> set mykey somevalue
+OK
+redis 127.0.0.1:6379> get mykey
+"somevalue"
+
+
