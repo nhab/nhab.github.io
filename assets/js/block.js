@@ -85,10 +85,11 @@ function Block(...a)
         //parent.InnerHtml+= "<pre style='"+sStyle+"'><code style='"+sStyle+"' class='"+options.codetype+"'>"+options.code+"</code></pre>";
         var divPre= document.createElement("pre");
         divPre.setAttribute('id', preID);
-        divPre.setAttribute("style",sStyle);
+        divPre.setAttribute("style",sStyle+";background-color:black;color:cyan;");
         var divCode = document.createElement("code");
-        divCode.setAttribute("style",'overflow: auto;');
-        divCode.setAttribute("class",options.codetype);
+        divCode.setAttribute("style",'overflow: auto;background-color:black;color:cyan;');
+        debugger;
+        //divCode.setAttribute("class",options.codetype);
         divCode.innerHTML= options.code;
         divPre.appendChild(divCode);
         dvContainer.appendChild(divPre);
@@ -513,12 +514,14 @@ class BlockFrame{
             sStyle+="display:inline-block;";
 
         var preID="dv"+Math.random()*20;
+        
         if(options.codetype && options.code)
         {
             //parent.InnerHtml+= "<pre style='"+sStyle+"'><code style='"+sStyle+"' class='"+options.codetype+"'>"+options.code+"</code></pre>";
             var divPre= document.createElement("pre");
             divPre.setAttribute('id', preID);
             divPre.setAttribute("style",sStyle);
+            
             var divCode = document.createElement("code");
             divCode.setAttribute("style",'overflow: auto;');
             divCode.setAttribute("class",options.codetype);
@@ -687,6 +690,19 @@ class BlockFrame{
             if(code)
                 parent.write("<pre style='display:inline-block;overflow:auto;'><code style='overflow: auto;'>"+code+"</code></pre>");
     */
+    static  RenderGrouped(options)
+    {    
+        var i,j;
+        debugger;
+        for(i=0;i<options.length;i++)
+        {
+            BlockGroup(options[i].GrpTitle);
+            for(j=0;j<options[i].items.length;j++)
+                Block(options[i].items[j]);
+        }
+        options=[];
+        return options;
+    }
     static  Render(options)
     {    
         var i;

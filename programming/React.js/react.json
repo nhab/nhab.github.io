@@ -1,0 +1,180 @@
+options=[
+{
+	GrpTitle:"React.js basics",
+	items:[
+		{title:"What is React",
+		body:`React is a library for building user interfaces
+		through creation of UI components.Unlike more complete
+		frameworks such as Angular or Vue, React deals only
+		with the view layer.( V in MVC. )
+
+		React can also render on the server using Node,
+		and native apps using React Native.
+
+		<b>Creating a React app involves creating one or more 
+		React components</b> that can interact with each other. 
+		A React component is simply a JavaScript class that 
+		requires the <b>render function</b> to be declared. 
+		The render function simply outputs HTML code, which is
+		<b>implemented using either JSX or JavaScript code</b>.
+
+		<a href='https://codepen.io/nhab/pen/MqXwRE'>My Hello world!</a>
+		(see settings of codepen /javascript tab, 
+		which has included react and reactdom 
+		and set preproccessor to babel)`},
+
+		{title:"A stand alone sample",
+
+		body:`you dont need to setup everything locally. 
+		The following html code,is a working react sample which
+		includes everything needed to code in react.`,
+
+		code:`&lt!doctype html>
+			
+			&lthead>
+				&ltmeta charset="utf-8">
+				&lttitle>Hello React!&lt/title>
+				&ltscript src="https://unpkg.com/react@16/umd/react.development.js">
+				&lt/script>
+				&ltscript src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
+				&lt/script>
+				&ltscript src="https://unpkg.com/babel-standalone@6.26.0/babel.js">
+				&lt/script>
+			&lt/head>
+			&ltbody>
+				&ltdiv id="root">&lt/div>
+				&ltscript type="text/babel">
+					class App extends React.Component \{ 
+						render() { return ( &lth1>Hello world!&lt/h1> );  \} 
+					\} 
+					ReactDOM.render(&ltApp />, document.getElementById('root'));
+				&lt/script>
+			&lt/body>
+			&lt/html>`,
+			codetype:"html"
+		}
+	]
+},
+{GrpTitle:"Environment Setup",
+	items:[		
+		{
+			title:`Create the Root Folder`,
+			code:`C:\\>mkdir reactApp
+			C:\\reactApp>npm init`,
+			codetype:"html"
+		},
+		{
+			title:"Install Node.js then Global Packages(babel plugins)",
+			code:`C:\\reactApp>npm install -g babel
+			C:\\reactApp>npm install -g babel-cli`,
+			codetype:"html"
+		},
+		{
+			title:"Add Dependencies and Plugins",
+			code:`C:\\reactApp>npm install webpack --save
+			C:\\reactApp>npm install webpack-dev-server --save`,
+			codetype:"html"
+		},
+		{
+			title:"Add packages to package.json",
+   			body:"The --save command will add these packages to package.json file.",
+   			code:`C:\\reactApp>npm install react --save
+			  C:\\reactApp>npm install react-dom --save`,
+			codetype:"php"
+		},
+		{
+			title:"Create the Files",
+			body:"The touch command is the easiest way to create new, empty files:",
+			code:`C:\\reactApp>touch index.html
+			C:\\reactApp>touch App.jsx
+			C:\\reactApp>touch main.js
+			C:\\reactApp>touch webpack.config.js`,
+			codetype:"html"
+		},
+		{
+			title:"Install webpack-dev-server",
+			body:`The webpack-dev-server is a little
+			Node.js Express server, 
+			which uses the webpack-dev-middleware
+			to serve a webpack bundle`,
+			code:`npm install webpack-dev-server -g`,
+			codetype:"javascript"
+		},
+		{
+			title:"Set Compiler, Server and Loaders",
+			body:`Edit <b>webpack.config.js</b> . 
+			set webpack entry point to be main.js`,
+			code: `var config = {
+			  entry: './main.js',
+			  output: {      path:'/',      filename: 'index.js',   },
+			  devServer: {   inline: true,      port: 8080   },
+			  module: {      loaders: [         {
+					   test: /\.jsx?$/,
+					   exclude: /node_modules/,
+					   loader: 'babel-loader',
+					   query: {
+						  presets: ['es2015', 'react']     }     }
+				 ]   }}
+			   module.exports = config;`,
+			codetype:   "javascript"
+		},
+		{
+			title:"Edit package.json",
+			body:`Open the package.json and 
+			delete test echo Error: 
+		     no test specified & & exit 1 inside scripts
+		     object.and add the start command instead.`,
+			code:`"start": "webpack-dev-server --hot"`,
+			codetype:"javascript"
+		},
+		{
+			title:"index.html",
+			body:"div id = 'app' as a root element",
+			code:`&lt!DOCTYPE html>
+			&lthtml lang = "en">
+			&lthead>
+				&ltmeta charset = "UTF-8">
+				&lttitle>React App&lt/title>
+			&lt/head>
+			&ltbody>
+				&ltdiv id = "app">&lt/div>
+				&ltscript src = "index.js">&lt/script>
+			&lt/body>
+			&lt/html>`,
+			codetype:"html"
+		},
+		{
+			title:"App.jsx and main.js",
+			code:`//App.jsx
+				import React from 'react';
+				class App extends React.Component {
+				render() {
+					return (
+						&ltdiv>
+							Hello World!!!
+						&lt/div>
+					);
+				}
+				}
+				export default App;`,
+			codetype:"javascript"
+		},
+		{
+			title:"main.js",
+			code:`import React from 'react';
+			import ReactDOM from 'react-dom';
+			import App from './App.jsx';
+			ReactDOM.render(&ltApp />, 
+			document.getElementById('app'));`,
+			codetype:"html"
+		},
+		{
+			title:"Running the Server",
+			body:"run the following command line and see the result on http://localhost:8080/",
+			code:"C:\\reactApp>npm start",
+			codetype:"javascript"
+		}
+	]	
+}
+];
+	
