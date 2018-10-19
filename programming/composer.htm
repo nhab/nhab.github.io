@@ -24,7 +24,7 @@
 
 <body>
 <script>
-BlockPrev("What is Composer ?",
+Block("What is Composer ?",
 `Composer is a PHP 
 <b>dependency management tool</b>
 Composer finds out <h7>which versions</h7>
@@ -34,9 +34,9 @@ them based on your declaration in
 <h7> composer.json</h7> file,into the project.
 Composer also helps 
 class auloading and namespacing`);
- BlockPrev("Setup on Windows",
+ Block("Setup on Windows",
 `install it by the <a href='https://getcomposer.org/Composer-Setup.exe'>Setup</a>`);
-BlockPrev("Setup the project",
+Block("Setup the project",
 `after installing composer on your system,
 all you need is a <b>composer.json</b> 
 file in your project.
@@ -45,7 +45,7 @@ Composer will download all needed versions
 of dependencies listed in the
 <b>composer.json</b> into your project.`);
 
-BlockPrev("composer.json content"
+Block("composer.json content"
 ,`usually,The only thing you specify 
 in composer.json is the <b>require</b> key.
 You are simply telling Composer which 
@@ -60,7 +60,7 @@ from the packaglist online repository:
         "monolog/monolog": "1.0.*"
     }
 }`,"php");  
-BlockPrev("Getting Dependencies or updating",
+Block("Getting Dependencies or updating",
 `To <strong>install</strong> dependencies ,
 <strong>based on  composer.json file</strong>,
 <strong> run</strong> the command:
@@ -77,14 +77,14 @@ the project,<br>so the <code> composer.lock </code>
 file  should be commited into the version
  control.`);
 
-BlockPrev("Update dependencies to latest",
+Block("Update dependencies to latest",
  null,`php composer.phar update`,"html");      
 
-BlockPrev("Par(PHP archive)",
+Block("Par(PHP archive)",
 `PHAR (PHP archive), which is an archive
 format for PHP which can be run on the 
 command line, amongst other things.`);
-BlockPrev("AutoLoading",
+Block("AutoLoading",
 `“Autoloading” is Whenever a class is used,
  it will be loaded so the application 
 doesn’t have to load all classes on each 
