@@ -687,8 +687,9 @@ class BlockFrame{
             if(code)
                 parent.write("<pre style='display:inline-block;overflow:auto;'><code style='overflow: auto;'>"+code+"</code></pre>");
     */
-    static  RenderBlocks(options)
+    static  Render(options)
     {    
+        var i;
         for(i=0;i<options.length;i++)
         Block(options[i]);
         options=[];
