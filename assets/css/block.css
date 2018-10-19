@@ -114,6 +114,8 @@ code{background-color:#222222;color: lightcyan;
     padding-top:10px;
     padding-bottom :10px;
     
-    background-color: #eefeef;
+   /* background-color: #eefeef;*/
+   background-color: #222222;
+   color:#c9c9c9;
     width:100%;white-space:pre;
 }
