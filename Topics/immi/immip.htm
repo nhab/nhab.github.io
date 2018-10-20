@@ -1,0 +1,114 @@
+<head>
+   <link rel="stylesheet" href="..\..\assets\css\main.css">
+</head>
+<body>
+ <h1>Imigration </h1>
+
+<script type='text/javascript' src='data.js'></script>
+<!--script type='text/javascript' src='fileOP.js'></script-->
+
+<table id="tb1" class="tableColored" >
+ 	<tr>
+	  <th style="width:110px;">Country                   </th>
+	  <th >visa         </th>
+	  <th >Proof of<br> fund             </th>
+	  <th style="width:55px;">Years<br> to <br>citizen<br>ship      </th>
+	  <th >citizen <br>ship <br>other<br> conditions</th>
+	  <th >Visa Free <br>to <br>U.S.<br>/Europe </th>
+	  <th >Language</th>
+	  <th> Currency/US$</th>
+	  <th style="width:50px;">GDP/<br>capita</th> 
+	  <th><a href="https://tradingeconomics.com/country-list/inflation-rate">Inflation<br> rate</a> </th>
+      <th>polution</th>
+	   <th class="ClimateCol">
+		   Major Cities climate 
+		<br>
+		   <table style="border: 1px solid black;"><tr>
+			<td >City</td>
+			<td >Temprature °C</td>
+			<td >Humidity</td>
+			<td ><a href="https://en.wikipedia.org/wiki/List_of_cities_by_elevation">Elevation</a><br>(Altitude) </td>
+			<td >Monthly <br>Expenses</td>
+			<td>Average Salary</td> 
+
+		  </tr></table>
+	</th>
+	<th>Exports</th>
+	<th>Political<br>/expat<br>rights</th>
+	<th>Religional</th>
+	<th>Food /Water/Fruites <br>Taste and Health</th>
+	<th> Spirtual<br>background<br>/Gurus/<br>Energic places</th>
+	<th>Sun,Snow,<br>Wind,Rain<br> Beach,<br>Lake,<br>river,<br>mountain </th>
+
+	</tr>
+	<script>
+	   //debugger;
+	   for(r=0;r<tb.length;r++)
+	   {
+		document.write("<tr>\r\n");
+		for( c=0;c<tb[0].length;c++)
+		{
+			if(c!=11)//
+			{
+				document.write("<td style='border: 1px solid black;'>"+tb[r][c]+"</td>\r\n");
+			}else
+			{
+				s="<td>";
+				if(tb[r][c]){
+					var res = tb[r][c].split("<br>");
+					
+					s+="<table>";
+					for(c1=0;c1<res.length;c1++)
+					{
+					s+="<tr>";
+					/*
+					var n = res[c1].indexOf(" ");
+					s+="<td class='width20per'>"+res[c1].substring(0,n)+"</td>";
+					s+="<td class='width20per'>"+res[c1].substring(n,res[c1].length)+"</td>";
+					*/
+					var sd= res[c1].split(",");
+					for(c2=0;c2<sd.length;c2++)
+					{
+						s+="<td class='width20per'>";
+						if(sd[c2] )
+							s+=sd[c2];
+						s+="</td>";
+					}
+					s+="</tr>";
+					};		
+					s+="</table>";
+				};
+				s+="</td>";
+				document.write(s);
+			}
+		}
+		document.write("</tr>\r\n");
+	  }
+	</script>
+</table>
+<h2></h2>
+switzerland :
+Cost of living/month:<a href="https://www.numbeo.com/cost-of-living/country_result.jsp?country=Switzerland">2400$</a>
+Average Monthly Net Salary (After Tax)	4,885.11 Fr.
+<h2> Pollution and security</h2>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;  <a href="https://www.mpg.de/11583624/original-1508156177.jpg?t=eyJ3aWR0aCI6MTQwMCwib2JqX2lkIjoxMTU4MzYyNH0=--89a145434832f20e7ee237570e87985767547d5d"> Atomic pollution</a>
+  <br>
+  
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.google.com/search?num=100&ei=uz1jW_OnC8iSsAH0ta7AAw&q=ozone+layer+depletion+affected+areas&oq=ozone+layer+depletion+affected+areas">
+	Ozone Layer depletion</a> (UV Rediation) <br>
+	
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; include
+ <a href="http://www.wmo.int/pages/prog/arep/WMOAntarcticOzoneBulletins2016.html">Australia, New Zealand, Argentina and Chile and </a><br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; in the future may extend over Alaska, Canada and parts of northern Europe
+  <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://archive.stats.govt.nz/browse_for_stats/environment/environmental-reporting-series/environmental-indicators/Home/Atmosphere-and-climate/ozone-hole.aspx">Ozone hole </a>,
+ <a href="https://www.google.com/search?biw=1366&bih=645&tbs=qdr%3Ay&tbm=isch&sa=1&ei=EUNjW4vxEYWVsAGzuJPoDw&q=Ozone+hole+map+&oq=Ozone+hole+map+">Ozone hole map</a>
+<br>
+<a href="https://www.google.com/search?q=broad-spectrum+sunscreens&oq=broad-spectrum+sunscreens&aqs=chrome..69i57j0l5.436j0j7&sourceid=chrome&ie=UTF-8"> for UV Protection see Sunscreen products</a>
+<br>
+	
+&nbsp;&nbsp; Buying /Savings Power is Income - expenses <br>
+
+
+</body>
