@@ -295,6 +295,19 @@ options={
    ,"Helsinki ,<a href='https://www.holiday-weather.com/helsinki/averages/'> -7 to 17 C</a>"
    ,""
    ],
+   ["Slovenia",
+    "",
+    "",
+    "",
+    "",
+    "YES",
+    "slevonian,english",
+    "euro",
+    "27k$",
+    "",
+    "",
+    "{Ljubljana,300m,12°C,85%},{Maribor,262m,12°C,80% }"
+   ],
    [
       "Hungary",
       "",
@@ -605,7 +618,6 @@ options={
     ["Portugal"],
     ["Romania"],
 
-    ["Slovenia"],
     ["Panama ",
     "0",
     "1250$ retiree income/month"
