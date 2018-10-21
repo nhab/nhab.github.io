@@ -22,12 +22,7 @@ options=[
 		(see settings of codepen /javascript tab, 
 		which has included react and reactdom 
 		and set preproccessor to babel)`},
-               {title:'why react?',body:`
-React doesn’t require using JSX, 
-but most people find it helpful as a visual aid 
-when working with UI inside the JavaScript code. 
-It also allows React to show more useful error and warning messages.`},		
-		{title:"A stand alone sample",
+              {title:"A stand alone sample",
 
 		body:`you dont need to setup everything locally. 
 		The following html code,is a working react sample which
