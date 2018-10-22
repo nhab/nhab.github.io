@@ -88,7 +88,6 @@ function Block(...a)
         divPre.setAttribute("style",sStyle+";background-color:black;color:cyan;");
         var divCode = document.createElement("code");
         divCode.setAttribute("style",'overflow: auto;background-color:black;color:cyan;');
-        debugger;
         //divCode.setAttribute("class",options.codetype);
         divCode.innerHTML= options.code;
         divPre.appendChild(divCode);
@@ -693,12 +692,16 @@ class BlockFrame{
     static  RenderGrouped(options)
     {    
         var i,j;
-        debugger;
-        for(i=0;i<options.length;i++)
+        try{
+            for(i=0;i<options.length;i++)
+            {
+                BlockGroup(options[i].GrpTitle);
+                for(j=0;j<options[i].items.length;j++)
+                    Block(options[i].items[j]);
+            }
+        }catch( ex)
         {
-            BlockGroup(options[i].GrpTitle);
-            for(j=0;j<options[i].items.length;j++)
-                Block(options[i].items[j]);
+            debugger;
         }
         options=[];
         return options;
