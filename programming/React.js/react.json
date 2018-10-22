@@ -62,14 +62,12 @@ options=[
 			C:\\reactApp>npm init`,
 			codetype:"html"
 		},
-		{
-			title:"Install Node.js then Global Packages(babel plugins)",
+		{			title:"Install Node.js then Global Packages(babel plugins)",
 			code:`C:\\reactApp>npm install -g babel
 			C:\\reactApp>npm install -g babel-cli`,
 			codetype:"html"
 		},
-		{
-			title:"Add Dependencies and Plugins",
+		{	title:"Add Dependencies and Plugins",
 			code:`C:\\reactApp>npm install webpack --save
 			C:\\reactApp>npm install webpack-dev-server --save`,
 			codetype:"html"
@@ -172,8 +170,17 @@ options=[
 			body:"run the following command line and see the result on http://localhost:8080/",
 			code:"C:\\reactApp>npm start",
 			codetype:"javascript"
+		},
+		{title:"more examples",
+			body:`<a href="https://codesandbox.io/s/r5w8zk8qzn"><br>
+			 <img alt="Edit r5w8zk8qzn" src="https://codesandbox.io/static/img/play-codesandbox.svg">
+			</a>&nbsp
+			<a href="https://codepen.io/bradleyboy/pen/OPBpGw">2nd Example</a> `
+
 		}
 	]	
-}
+},
+
+
 ];
 	
