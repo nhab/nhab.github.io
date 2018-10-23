@@ -1,6 +1,5 @@
 options=[
-{
-	GrpTitle:"React.js basics",
+{	GrpTitle:"React.js basics",
 	items:[
 		{title:"What is React",
 		body:`React is a library for building user interfaces
@@ -177,10 +176,169 @@ options=[
 			</a>&nbsp
 			<a href="https://codepen.io/bradleyboy/pen/OPBpGw">2nd Example</a> `
 
+<<<<<<< HEAD
 		}
 	]	
 },
-
-
-];
-	
+{GrpTitle:"ReactDOM",
+	items:[	
+			{title:"ReactDOM",
+			body:`ReactDOM is the <h7>glue between React and the DOM</h7>.
+			Often, you will only use it <h7>for one single thing</h7>: mounting with <h7>ReactDOM.render()</h7>
+			Another useful feature of ReactDOM is<h7>ReactDOM.findDOMNode()</h7>
+			 which you can use to gain direct access to a DOM element.`,
+			code: `var React = require('react'); /* importing react */
+		   var ReactDOM = require('react-dom'); /* importing react-dom */
+		   
+		   var MyComponent = React.createClass({
+			 render: function() {
+			   return &ltdiv>Hello World&lt/div>;
+			 }
+		   });
+			 ReactDOM.render(&ltMyComponent />, node);`}
+		]
+},
+{GrpTitle:"JSX",
+	items:[	
+			{title:"jsx is a syntax",
+				body:`React uses JSX for templating and components instead of regular JavaScript.
+				<b>JavaScript XML (JSX)</b> is an extension to the JavaScript language <h7>syntax</h7>. `,
+				code:`//this isa jsx syntax:
+				const element = &lth1>Hello, world!&lt/h1>;`
+			},
+			{title:'why react?',
+			body:`	React doesn’t require using JSX, 
+				but most people find it helpful as a visual aid 
+				when working with UI inside the JavaScript code. 
+				It also allows React to show more useful error and warning messages.`
+			},		
+			{title:"An example of JSX code:",
+			 body:"App.jsx" ,
+			 code:`class App extends React.Component {
+				  render() {
+					return (
+					  &ltdiv>
+						&ltp>Header&lt/p>
+						&ltp>Content&lt/p>
+						&ltp>Footer&lt/p>
+					  &lt/div>
+					);
+				  }
+				}`
+			},
+			{	title:"Using JSX",
+				body:"App.jsx", 
+				code:`import React from 'react';
+				class App extends React.Component {
+				render() {
+					return (
+						&ltdiv>
+							Hello World!!!
+						&lt/div>
+					);
+	   			}
+				}
+				export default App;`
+			},
+			{
+				title:"Nested Elements",
+				body:"App.jsx",
+				code:`import React from 'react';
+				class App extends React.Component {
+				render() { return (
+						&ltdiv>  &lth1>Header&lt/h1>
+							&lth2>Content&lt/h2>
+							&ltp>This is the content!!!&lt/p>
+						&lt/div>
+					);
+				}
+				}
+				export default App;
+				`
+			},
+			{
+				title:"Attributes",
+				body:`<b>custom attributes</b> are additions to 
+				regular HTML properties and attributes.
+			   to add custom attribute,we need to use 
+			   <b>data- prefix</b>.
+			   In the example, we added <b>data-myattribute</b>
+			   as an attribute of p element:`,
+				code:	 `import React from 'react';
+			   class App extends React.Component {
+				  render() {
+					 return (  &ltdiv>
+						   &lth1>Header&lt/h1>
+						   &lth2>Content&lt/h2>
+						   &ltp data-myattribute = "somevalue">
+						   This is the content!!!&lt/p>
+						&lt/div>   );
+			   }  }
+			   export default App;`
+			},
+			{
+				title:"Expression in an attribute",
+				code:`const element =
+				   &ltimg src={user.avatarUrl}>
+				   &lt/img>;`
+			},
+			{
+				title:"JavaScript Expressions",
+				body:`JavaScript expressions can be used inside of JSX.
+				We just need to wrap it with curly brackets {} :`,
+				code:`import React from 'react';
+				
+				class App extends React.Component {
+				   render() {
+					  return (
+						 &ltdiv>
+							&lth1>{1+1}&lt/h1>
+						 &lt/div>
+					  );
+				   }
+				}
+				export default App;`
+			},
+			{
+				title:"conditional (ternary) expressions"
+				,code:`import React from 'react';
+				class App extends React.Component {
+				   render() {
+					  var i = 1;
+					  return (
+						 &ltdiv>
+							&lth1>{i == 1 ? 'True!' : 'False'}&lt/h1>
+						 &lt/div>
+					  );
+				   }
+				}
+				export default App;`
+			},
+			{
+				title:"Styling",
+				body:`React recommends using inline styles. 
+				(with camelCase syntax)
+				it will automatically append px after 
+				the number value on specific elements.
+				<a href="https://codepen.io/ciptohadi/pen/qaHgj">example link</a> ,<h7>Example:</h7>`,
+				code:`import React from 'react';
+				class App extends React.Component {
+				   render() {
+					  var myStyle = { fontSize: 100,
+						 color: '#FF0000'  }
+					  return (
+						 &ltdiv>
+							&lth1 style = {myStyle}>Header&lt/h1>
+						 &lt/div>
+					  );
+				   }
+				}
+				export default App;`
+			},
+			{
+				title:"Naming Convention",
+				body:`<h7>HTML tags</h7> always use <h7>lowercase tag</h7> names, while <h7>React components start with Uppercase.</h7>
+				<b>Note</b> − You should use <h7>className</h7> and <h7>htmlFor</h7> as XML attribute names instead of <h7>class</h7> and <h7>for</h7>.`
+			}
+		]
+}	
