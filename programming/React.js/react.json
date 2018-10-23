@@ -205,8 +205,8 @@ options=[
 				code:`//this isa jsx syntax:
 				const element = &lth1>Hello, world!&lt/h1>;`
 			},
-			{title:'why react?',
-			body:`	React doesn’t require using JSX, 
+			{title:'why JSX?',
+			body:`	React doesn't require using JSX, 
 				but most people find it helpful as a visual aid 
 				when working with UI inside the JavaScript code. 
 				It also allows React to show more useful error and warning messages.`
@@ -397,8 +397,19 @@ items:
 		body:` 1- containers/<h7>stateful components</h7>:
 		does the work of rendering child components
 		and 2- <h7>stateless components</h7> :
-		A stateless component’s work is to handle the
+		A stateless component's work is to handle the
 		data,event,..receives from its parent component`
+		}
+	]
+},
+{	GrpTitle:"	State",
+	items:[
+		{title:"State",
+			body:`State is the place where the data comes from.
+			State is similar to props, but it is private and fully controlled by the component.
+			<a href="https://codepen.io/gaearon/pen/KgQpJd?editors=0010">
+			  <img alt="Edit new" src="https://codesandbox.io/static/img/play-codesandbox.svg">
+			</a>`
 		}
 	]
 },
@@ -426,18 +437,7 @@ items:
 			import App from './App.jsx';
 			ReactDOM.render(<App />, document.getElementById('app'));
 			`,
-			img:'https://www.tutorialspoint.com/reactjs/images/react_components_stateless.jpg'
-		}
-	]
-},
-{	GrpTitle:"	State",
-	items:[
-		{title:"State",
-			body:`State is the place where the data comes from.
-			State is similar to props, but it is private and fully controlled by the component.
-			<a href="https://codepen.io/gaearon/pen/KgQpJd?editors=0010">
-			  <img alt="Edit new" src="https://codesandbox.io/static/img/play-codesandbox.svg">
-			</a>`
+			imageSrc:'https://www.tutorialspoint.com/reactjs/images/react_components_stateless.jpg'
 		}
 	]
 },
@@ -483,7 +483,7 @@ import ReactDOM from 'react-dom';
 import App from './App.jsx';
 ReactDOM.render(<App/>, document.getElementById('app'));
 `,
-img:"https://www.tutorialspoint.com/reactjs/images/react_components_statefull.jpg"
+imageSrc:"https://www.tutorialspoint.com/reactjs/images/react_components_statefull.jpg"
 
 		},
 	]
