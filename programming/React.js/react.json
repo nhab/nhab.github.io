@@ -399,9 +399,13 @@ items:
 		and 2- <h7>stateless components</h7> :
 		A stateless component’s work is to handle the
 		data,event,..receives from its parent component`
-		},
-		{title:"Stateless Example:",
-		body:"App.jsx",
+		}
+	]
+},
+{GrpTitle:"Stateless Example",
+items:
+	[
+		{title:"App.jsx",
 		code:`import React from 'react';
 		class App extends React.Component {
 		   render() { return ( &ltdiv>  &ltHeader/> &ltContent/>  &lt/div> ); }
@@ -416,85 +420,85 @@ items:
 		}
 		export default App;`
 		},
-		{}
+		{title:"main.js",
+			code:`import React from 'react';
+			import ReactDOM from 'react-dom';
+			import App from './App.jsx';
+			ReactDOM.render(<App />, document.getElementById('app'));
+			`,
+			img:'https://www.tutorialspoint.com/reactjs/images/react_components_stateless.jpg'
+		}
 	]
-
-
-}
-]
-/*
-
-<h7>Stateless Example:</h7><br>
-
-BlockFrame.Block("main.js",``,
-`import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App.jsx';
-ReactDOM.render(<App />, document.getElementById('app'));
-`,"php",null,null,'https://www.tutorialspoint.com/reactjs/images/react_components_stateless.jpg');
-</script>
-<br><h7>Stateful Example</h7><br>
-<script>
-      BlockFrame.Block("App.jsx","",
-`import React from 'react';
-class App extends React.Component {
-   constructor() {
-      super();
-      this.state = {
-         data:    [{ "id":1,"name":"Foo","age":"20" },
-                   { "id":2,"name":"Bar","age":"30" },
-                   { "id":3,"name":"Baz","age":"40"}
-                  ]  }
-   }
-   render() { return (
-         &ltdiv> &ltHeader/>
-            &lttable> &lttbody>
-                  {this.state.data.map((person, i) => &ltTableRow key = {i} 
-                     data = {person} />)}
-             &lt/tbody>&lt/table>
-         &lt/div>
-      );   }
-}
-class Header extends React.Component {
-   render() {return ( &ltdiv>&lth1>Header&lt/h1>&lt/div> ); }
-}
-class TableRow extends React.Component {
-   render() {return (&lttr>
-            &lttd>{this.props.data.id}&lt/td>
-            &lttd>{this.props.data.name}&lt/td>
-            &lttd>{this.props.data.age}&lt/td>
-         &lt/tr>  );   }
-}
-export default App;`,"php","45%","850px");
-
-BlockFrame.Block('main.js',
-null,
-`import React from 'react';
+},
+{	GrpTitle:"	State",
+	items:[
+		{title:"State",
+			body:`State is the place where the data comes from.
+			State is similar to props, but it is private and fully controlled by the component.
+			<a href="https://codepen.io/gaearon/pen/KgQpJd?editors=0010">
+			  <img alt="Edit new" src="https://codesandbox.io/static/img/play-codesandbox.svg">
+			</a>`
+		}
+	]
+},
+{GrpTitle:"Statefull Example",
+items:
+	[
+		{title:"App.jsx",
+		code:
+			`import React from 'react';
+			class App extends React.Component {
+			constructor() {
+				super();
+				this.state = {
+					data:    [{ "id":1,"name":"Foo","age":"20" },
+							{ "id":2,"name":"Bar","age":"30" },
+							{ "id":3,"name":"Baz","age":"40"}
+							]  }
+			}
+			render() { return (
+					&ltdiv> &ltHeader/>
+						&lttable> &lttbody>
+							{this.state.data.map((person, i) => &ltTableRow key = {i} 
+								data = {person} />)}
+						&lt/tbody>&lt/table>
+					&lt/div>
+				);   }
+			}
+			class Header extends React.Component {
+			render() {return ( &ltdiv>&lth1>Header&lt/h1>&lt/div> ); }
+			}
+			class TableRow extends React.Component {
+			render() {return (&lttr>
+						&lttd>{this.props.data.id}&lt/td>
+						&lttd>{this.props.data.name}&lt/td>
+						&lttd>{this.props.data.age}&lt/td>
+					&lt/tr>  );   }
+			}
+			export default App;`
+		},
+		{title:'main.js',
+			code:`import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.jsx';
 ReactDOM.render(<App/>, document.getElementById('app'));
-`,"javascript","50%","450px",
-"https://www.tutorialspoint.com/reactjs/images/react_components_statefull.jpg");
-</script>
-<h2>State</h2>
-<script>
-BlockFrame.Block("State",`State is the place where the data comes from.
-State is similar to props, but it is private and fully controlled by the component.
-<a href="https://codepen.io/gaearon/pen/KgQpJd?editors=0010">
-  <img alt="Edit new" src="https://codesandbox.io/static/img/play-codesandbox.svg">
-</a>`);
+`,
+img:"https://www.tutorialspoint.com/reactjs/images/react_components_statefull.jpg"
 
-</script>
- <h2>Handling Events </h2>
- <script>
- BlockFrame.Block("Event Handling",
-`Handling events with React elements is very similar to handling events on DOM elements. 
+		},
+	]
+},
+{
+	GrpTitle:"Handling Events",
+	items:[
+		{title:"Event Handling",
+		body:`Handling events with React elements is very similar to handling events on DOM elements. 
 There are some syntactic differences:
 
 React events are named using camelCase, rather than lowercase.
 With JSX you pass a function as the event handler, rather than a string.
 `,
-`function ActionLink() {
+code:`function ActionLink() {
     function handleClick(e) {
        e.preventDefault();
        console.log('The link was clicked.');
@@ -504,35 +508,40 @@ With JSX you pass a function as the event handler, rather than a string.
       Click me
     &lt/a>
   );
-}`);
-BlockFrame.Block("Event example2",
-`<a href="http://codepen.io/gaearon/pen/xEmzGg?editors=0010">Try it on codePen</a>`,
-`class Toggle extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {isToggleOn: true};
+}`
+		},
+		{title:"Event example2",
+			body:`<a href="http://codepen.io/gaearon/pen/xEmzGg?editors=0010">Try it on codePen</a>`,
+			code:`class Toggle extends React.Component {
+			  constructor(props) {
+				super(props);
+				this.state = {isToggleOn: true};
+			
+				// This binding is necessary to make 'this' work in the callback
+				this.handleClick = this.handleClick.bind(this);
+			  }
+			
+			  handleClick() {
+				this.setState(state => ({
+				  isToggleOn: !state.isToggleOn
+				}));
+			  }
+			
+			  render() {
+				return (
+				  &ltbutton onClick={this.handleClick}>
+					{this.state.isToggleOn ? 'ON' : 'OFF'}
+				  &lt/button>
+				);
+			  }
+			}
+			
+			ReactDOM.render(
+			  &ltToggle />,
+			  document.getElementById('root')
+			);`
 
-    // This binding is necessary to make 'this' work in the callback
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick() {
-    this.setState(state => ({
-      isToggleOn: !state.isToggleOn
-    }));
-  }
-
-  render() {
-    return (
-      &ltbutton onClick={this.handleClick}>
-        {this.state.isToggleOn ? 'ON' : 'OFF'}
-      &lt/button>
-    );
-  }
+		}
+	]
 }
-
-ReactDOM.render(
-  &ltToggle />,
-  document.getElementById('root')
-);`);	
-*/
+]
