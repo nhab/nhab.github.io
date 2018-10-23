@@ -392,37 +392,40 @@ items:
 			function Welcome(props) {
 			return &lth1>Hello, {props.name}&lt/h1>;
 			}`
+		},
+		{title:"Components types",
+		body:` 1- containers/<h7>stateful components</h7>:
+		does the work of rendering child components
+		and 2- <h7>stateless components</h7> :
+		A stateless component’s work is to handle the
+		data,event,..receives from its parent component`
+		},
+		{title:"Stateless Example:",
+		body:"App.jsx",
+		code:`import React from 'react';
+		class App extends React.Component {
+		   render() { return ( &ltdiv>  &ltHeader/> &ltContent/>  &lt/div> ); }
 		}
+		class Header extends React.Component {
+		   render() {return (  &ltdiv> &lth1>Header &lt/h1> &lt/div> );  }
+		}
+		class Content extends React.Component {
+		   render() {  return ( &ltdiv> &lth2>
+					Content&lt/h2> &ltp>The content
+					text!!!&lt/p> &lt/div>  );  }
+		}
+		export default App;`
+		},
+		{}
 	]
 
 
 }
 ]
 /*
-      <p>
-     React components can further be categorized into:
-       1- containers/<h7>stateful components</h7>:
-         does the work of rendering child components
-       and 2- <h7>stateless components</h7> :
-         A stateless component’s work is to handle the
-       data,event,..receives from its parent component
-      </p>
+
 <h7>Stateless Example:</h7><br>
-<script>
-BlockFrame.Block("App.jsx","App.jsx",
-`import React from 'react';
-class App extends React.Component {
-   render() { return ( &ltdiv>  &ltHeader/> &ltContent/>  &lt/div> ); }
-}
-class Header extends React.Component {
-   render() {return (  &ltdiv> &lth1>Header &lt/h1> &lt/div> );  }
-}
-class Content extends React.Component {
-   render() {  return ( &ltdiv> &lth2>
-            Content&lt/h2> &ltp>The content
-            text!!!&lt/p> &lt/div>  );  }
-}
-export default App;`,"javascript");
+
 BlockFrame.Block("main.js",``,
 `import React from 'react';
 import ReactDOM from 'react-dom';
