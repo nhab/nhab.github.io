@@ -202,9 +202,19 @@ document.getElementById('app'));`,
 	items:[	
 			{title:"jsx is a syntax",
 				body:`React uses JSX for templating and components instead of regular JavaScript.
-<b>JavaScript XML (JSX)</b> is an extension to the JavaScript language <h7>syntax</h7>. `,
+<b>JavaScript XML (JSX)</b> is an extension to the JavaScript language <h7>syntax</h7>.
+
+JSX tags are the same as Html tags,so there is no learning curve for tags.
+and all HTML DOM properties and attributes (including event handlers)
+ should be camelCased,In React.Some of them are a bit different. For example:
+	<table style="background-color:lightgray;border-collapse: collapse;">
+	<tr style="background-color:gray"><td> HTML attribute</td><td> corresponding attribute  in React</td></tr>
+	<tr><td> tabindex      </td><td>tabIndex                     </td>	</tr>
+	<tr><td>class			</td><td>className					</td></tr>
+	<tr><td>innerHTML</td><td>dangerouslySetInnerHTML</td></tr>
+	</table>`,
 				code:`//this isa jsx syntax:
-				const element = &lth1>Hello, world!&lt/h1>;`
+const element = &lth1>Hello, world!&lt/h1>;`
 			},
 			{title:'why JSX?',
 			body:`	React doesn't require using JSX, 
@@ -239,106 +249,110 @@ class App extends React.Component {
 		}
 	}
 export default App;`
-		},
-			{
-				title:"Nested Elements",
+			},
+			{	title:"Nested Elements",
 				body:"App.jsx",
 				code:`import React from 'react';
-				class App extends React.Component {
-				render() { return (
-						&ltdiv>  &lth1>Header&lt/h1>
-							&lth2>Content&lt/h2>
-							&ltp>This is the content!!!&lt/p>
-						&lt/div>
-					);
-				}
-				}
-				export default App;
+class App extends React.Component {
+render() { return (
+		&ltdiv>  &lth1>Header&lt/h1>
+			&lth2>Content&lt/h2>
+			&ltp>This is the content!!!&lt/p>
+		&lt/div>
+		);
+	}
+}
+export default App;
 				`
 			},
-			{
-				title:"Attributes",
+			{title:"Attributes",
 				body:`<b>custom attributes</b> are additions to 
-				regular HTML properties and attributes.
-			   to add custom attribute,we need to use 
-			   <b>data- prefix</b>.
-			   In the example, we added <b>data-myattribute</b>
-			   as an attribute of p element:`,
-				code:	 `import React from 'react';
-			   class App extends React.Component {
-				  render() {
-					 return (  &ltdiv>
-						   &lth1>Header&lt/h1>
-						   &lth2>Content&lt/h2>
-						   &ltp data-myattribute = "somevalue">
-						   This is the content!!!&lt/p>
-						&lt/div>   );
-			   }  }
-			   export default App;`
+regular HTML properties and attributes.
+to add custom attribute,we need to use 
+<b>data- prefix</b>.
+In the example, we added <b>data-myattribute</b>
+as an attribute of p element:`,
+code:	 `import React from 'react';
+class App extends React.Component {
+	render() {
+		return (  &ltdiv>
+			&lth1>Header&lt/h1>
+			&lth2>Content&lt/h2>
+			&ltp data-myattribute = "somevalue">
+			This is the content!!!&lt/p>
+		&lt/div>   );
+}  }
+export default App;`
 			},
-			{
-				title:"Expression in an attribute",
+			{	title:"Expression in an attribute",
 				code:`const element =
-				   &ltimg src={user.avatarUrl}>
-				   &lt/img>;`
+&ltimg src={user.avatarUrl}>
+&lt/img>;`
 			},
-			{
-				title:"JavaScript Expressions",
+			{	title:"JavaScript Expressions",
 				body:`JavaScript expressions can be used inside of JSX.
-				We just need to wrap it with curly brackets {} :`,
-				code:`import React from 'react';
-				
-				class App extends React.Component {
-				   render() {
-					  return (
-						 &ltdiv>
-							&lth1>{1+1}&lt/h1>
-						 &lt/div>
-					  );
-				   }
-				}
-				export default App;`
+We just need to wrap it with curly brackets {} :`,
+code:`import React from 'react';
+
+class App extends React.Component {
+	render() {
+		return (
+			&ltdiv>
+			&lth1>{1+1}&lt/h1>
+			&lt/div>
+		);
+	}
+}
+export default App;`
 			},
-			{
-				title:"conditional (ternary) expressions"
+			{	title:"conditional (ternary) expressions"
 				,code:`import React from 'react';
-				class App extends React.Component {
-				   render() {
-					  var i = 1;
-					  return (
-						 &ltdiv>
-							&lth1>{i == 1 ? 'True!' : 'False'}&lt/h1>
-						 &lt/div>
-					  );
-				   }
-				}
-				export default App;`
+class App extends React.Component {
+	render() {
+		var i = 1;
+		return (
+			&ltdiv>
+			&lth1>{i == 1 ? 'True!' : 'False'}&lt/h1>
+			&lt/div>
+		);
+	}
+}
+export default App;`
 			},
-			{
-				title:"Styling",
+			{title:"Styling",
 				body:`React recommends using inline styles. 
-				(with camelCase syntax)
-				it will automatically append px after 
-				the number value on specific elements.
-				<a href="https://codepen.io/ciptohadi/pen/qaHgj">example link</a> ,<h7>Example:</h7>`,
-				code:`import React from 'react';
-				class App extends React.Component {
-				   render() {
-					  var myStyle = { fontSize: 100,
-						 color: '#FF0000'  }
-					  return (
-						 &ltdiv>
-							&lth1 style = {myStyle}>Header&lt/h1>
-						 &lt/div>
-					  );
-				   }
-				}
-				export default App;`
+(with camelCase syntax)
+it will automatically append px after 
+the number value on specific elements.
+<a href="https://codepen.io/ciptohadi/pen/qaHgj">example link</a> ,<h7>Example:</h7>`,
+code:`import React from 'react';
+class App extends React.Component {
+	render() {
+		var myStyle = { fontSize: 100,
+			color: '#FF0000'  }
+		return (
+			&ltdiv>
+			&lth1 style = {myStyle}>Header&lt/h1>
+			&lt/div>
+		);
+	}
+}
+export default App;`
 			},
-			{
-				title:"Naming Convention",
+			{title:"Naming Convention",
 				body:`<h7>HTML tags</h7> always use <h7>lowercase tag</h7> names, while <h7>React components start with Uppercase.</h7>
 				<b>Note</b> − You should use <h7>className</h7> and <h7>htmlFor</h7> as XML attribute names instead of <h7>class</h7> and <h7>for</h7>.`
+			},
+			{title:"Reference",
+				body:`
+	<br/><a href='https://reactjs.org/docs/react-api.html'>react api</a>
+	<br/><a href='https://reactjs.org/docs/react-component.html'>components</a>
+	<br/><a href='https://reactjs.org/docs/react-dom.html'>ReactDOM</a>
+	<br/><a href='https://reactjs.org/docs/react-dom-server.html'>DomServer</a>
+	<br/><a href='https://reactjs.org/docs/dom-elements.html'>Dom Elements</a>
+	<br/><a href='https://reactjs.org/docs/events.html'>SyntheticEvents</a>
+	<br/><a href='https://reactjs.org/docs/test-utils.html'>TestUtils</a>
+	<br/><a href='https://reactjs.org/docs/glossary.html'>Glossary</a>`
 			}
 		]
 },

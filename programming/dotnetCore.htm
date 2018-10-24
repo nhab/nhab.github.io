@@ -1,0 +1,159 @@
+<head>
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<h2>DotnetCore Components and Example</h2>
+<h3>Entity Framework (EF) Core</h3>
+Defintion:
+<pre>
+<code>
+public class SchoolContext : DbContext
+ {
+      public DbSet Students { get; set; }
+      public DbSet Courses { get; set; }
+      protected override void OnConfiguring( DbContextOptionsBuilder optionsBuilder)     
+      {
+        optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=SchoolDB;Trusted_Connection=True;");
+      }
+}
+</code>
+</pre>
+Using:
+<pre>
+<code>
+    using (var context = new SchoolContext()) {
+
+        var std = new Student()
+        {
+             Name = "Bill"
+        };
+
+        context.Students.Add(std);
+        context.SaveChanges();
+    }
+</code>
+</pre>
+<h3>Identity Core:</h3>
+<pre>
+<code>
+    private async Task CreateUserRoles(IServiceProvider serviceProvider) 
+        { 
+            var RoleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>(); 
+            var UserManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>(); 
+ 
+            IdentityResult roleResult; 
+            //Adding Admin Role 
+            var roleCheck = await RoleManager.RoleExistsAsync("Admin"); 
+            if (!roleCheck) 
+            { 
+                //create the roles and seed them to the database 
+                roleResult = await RoleManager.CreateAsync(new IdentityRole("Admin")); 
+            } 
+ //Assign Admin role to the main User here we have given our newly registered  
+ //login id for Admin management 
+            ApplicationUser user = await UserManager.FindByEmailAsync("syedshanumcain@gmail.com"); 
+            var User = new ApplicationUser();  
+            await UserManager.AddToRoleAsync(user, "Admin"); 
+        }
+ 
+</code>
+</pre>
+<h3>MVC Core </h3>
+<pre>
+<code>
+    Routing:
+  routes.MapRoute(name: "Default", template: "{controller=Home}/{action=Index}/{id?}");
+
+Model binding :
+ public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null) { ... }
+
+Model validation :
+  [Required]
+  [DataType(DataType.Password)]
+  public string Password { get; set; }
+
+Dependency injection :  
+   @inject SomeService ServiceName
+   < !DOCTYPE html >
+   < html lang="en" >
+   < head >
+       < title >@ServiceName.GetTitle< /title >
+   < /head >
+   < body >
+       < h1 >@ServiceName.GetTitle< /h1 >
+   < /body >
+   < /html >
+
+Filters:
+  [Authorize]
+  public class AccountController : Controller
+  {...}
+
+Areas:
+  For instance, an e-commerce app with multiple business units,
+  such as checkout, billing, and search etc. 
+  Each of these units have their own logical component views, controllers
+  , and models.
+
+Web APIs:
+  To build services and more.
+
+Testability:
+ like unit testing, Integration tests
+
+Razor view engine:
+   <ul>
+     @for (int i = 0; i < 5; i++) {
+       <li>List item @i</li>
+     }
+   </ul>
+
+Strongly typed views:
+  @model IEnumerable<Product>
+  <ul>
+      @foreach (Product p in Model)
+      {
+          <li>@p.Name</li>
+      }
+  </ul>
+
+Tag Helpers
+   to define custom tags (for example, <environment>) 
+   or to modify the behavior of existing tags :
+   Please <a asp-controller="Account" asp-action="Login">Click here to Log in</a>
+
+   View Components:
+ They're similar to partial views, but with associated logic:
+ <vc:priority-list max-priority="2" is-done="false">
+ </vc:priority-list>
+</code>
+</pre>
+<h3>Razor</h3>
+<pre>
+<code>
+    @page "{id:int}"
+@model RazorPagesContacts.Pages.EditModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Edit Customer";
+}
+
+&lth1>Edit Customer - @Model.Customer.Id&lt/h1>
+&ltform method="post">
+    &ltdiv asp-validation-summary="All">&lt/div>
+    &ltinput asp-for="Customer.Id" type="hidden" />
+    &ltdiv>
+        &ltlabel asp-for="Customer.Name">&lt/label>
+        &ltdiv>
+            &ltinput asp-for="Customer.Name" />
+            &ltspan asp-validation-for="Customer.Name" >&lt/span>
+        &lt/div>
+    &lt/div>
+ 
+    &ltdiv>
+        &ltbutton type="submit">Save&lt/button>
+    &lt/div>
+&lt/form>
+
+</code>
+</pre>
