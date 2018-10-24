@@ -695,9 +695,13 @@ class BlockFrame{
         try{
             for(i=0;i<options.length;i++)
             {
-                BlockGroup(options[i].GrpTitle);
+                var o=BlockGroup(options[i].GrpTitle);
                 for(j=0;j<options[i].items.length;j++)
+                {
+                    debugger;
+                    options[i].items[j].parent=o;
                     Block(options[i].items[j]);
+                }
             }
         }catch( ex)
         {
