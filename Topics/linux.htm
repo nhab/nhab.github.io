@@ -1,0 +1,67 @@
+
+<a href="http://ss64.com/bash/" title="Shell commands are part of the shell program. There are several different shells (C shell, bash shell, bourne shell etc) to choose from, and each will have a variation of the shell commands built in. The commands vary between shells, but each shell is the same across different linux distros.
+Linux Commands">
+Shell Commands
+</a>
+<a href="" title="
+Linux commands are not part of the shell. Each one is a seperate executable program, probably written in the C programming language.
+These executables are stored in various directories set up for binary files, such as /bin and /usr/bin. 
+The location of these directories can be defined with the $PATH variable so the shells know where to find them. 
+These commands vary between different linux distrubutions, and remain the same whichever shell you are using.">
+Linux Commands
+</a>
+<table border="1" >
+	<tr valign="top">
+		<td>
+			<h2>Getting Help :</h2>
+			&nbsp <a href=""  title="can answer all of your questions.usage: man grep">'man' command </a>  
+			&nbsp &nbsp <a href=""  title=" If you know what you want to do but dont know the command, apropos will give you list of related commands. &#10 usage :apropos make directory">'apropos' command </a>
+			&nbsp &nbsp<a href="" title="If you just want a quick idea of what a command does, use the whatis command. &#10 example: whatis grep">whatis</a> 
+			&nbsp &nbsp<a href="" title="Many of the utilities included with Linux, especially those created by the GNU Project, have documentation in the form of info pages. Info pages look similar to man pages, but there is a lot more to them. Like the man pages, info documents are intended to act as your online “manual”, your guide to the GNU/Linux system. But info documents are integrated with each other in a hypertext database that can be read like a book (it even has a table of contents) and accessed from your terminal.&#10example :  info grep">info command</a>
+			&nbsp &nbsp<a href="" title="Many programs are just too complex to store all their help information in a man page. The /usr/doc directory is where these programs will store their information. Sometimes there will just be a text file, sometimes a program will have an entire subdirectory devoted to it. Also in this folder you may find copies of the Linux How-To’s to help you with common tasks. Take these with a grain of salt. The information in the How-To’s is usually very technical and oriented more toward system administrators than novice users. (Part of the purpose of Control-Escape is to translate some of that knowledge into plain English).
+			">/usr/doc/* (or /usr/share/doc/*)</a>
+			<br/> - when you know begining of a command you can see posibilites by pressing 'tab' key 2 times
+
+			<br/> - so any desired operation can be found by 'apropos' command and learned by 'man' command described above.
+			<br/> <a href="http://tldp.org" title="a wealth of knowledge about linux OS">linux documentation project</a>
+			<br/><a href="http://www.er.uqam.ca/nobel/r10735/unixcomm.html">reference</a>
+		</td>
+		<td>
+			<br/><b><h2>Uninstall/installing packages:</h2><br/>
+			<br> </b>&nbsp To remove package called mplayer, enter:
+			<pre>
+			<i> &nbsp $ sudo apt-get remove mplayer</i>
+			</pre>
+			<br/>
+			<b>Uncompressing content of a file  :</b>
+			<br/>tar -xvzf Komodo
+			<br /><b>make a program from its source files:</b>
+			<br/>sh ./configure
+		</td>
+		<td>
+			<a href="" title="printf '\EC'">real clear screen</a>
+			<br/><b>Directory operations ::</b>
+			<br/>- to <b>list</b> the names of the directories and files in the current directory:
+			ls </b> 
+			<br/>- to <b>copy</b> all contents of dir1 to dir2 recurcievly:cp -r dir1 dir22  .
+                        <br/>- To <b>remove</b> a file or directory :rm -f -r {file-name} 
+                        <br/>Where,     -f: Forcefully remove file and     -r: Remove the contents of directories recursively
+			<br/><a href="http://www.ahinc.com/linux101/permission.htm">linux permissions</a>
+			<br/>
+			<pre>
+Backup MBR with dd command
+dd the old good command which now backup partition tables even writes CDs ;).
+ Backing up partition is nothing but actually backing up MBR (master boot record). 
+The command is as follows for backing up MBR stored on /dev/sdX or /dev/hdX :
+
+# dd if=/dev/sdX of=/tmp/sda-mbr.bin bs=512 count=1
+Replace X with actual device name such as /dev/sda.
+
+Now to restore partition table to disk, all you need to do is use dd command:
+# dd if= sda-mbr.bin of=/dev/sdX bs=1 count=64 skip=446 seek=446
+			</pre>
+		</td>
+	</tr>
+</table>
+
+
