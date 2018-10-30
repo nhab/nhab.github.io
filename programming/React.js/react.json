@@ -352,7 +352,12 @@ export default App;`
 	<br/><a href='https://reactjs.org/docs/dom-elements.html'>Dom Elements</a>
 	<br/><a href='https://reactjs.org/docs/events.html'>SyntheticEvents</a>
 	<br/><a href='https://reactjs.org/docs/test-utils.html'>TestUtils</a>
-	<br/><a href='https://reactjs.org/docs/glossary.html'>Glossary</a>`
+	<br/><a href='https://reactjs.org/docs/glossary.html'>Glossary</a>
+	<br/><a href='https://reactjs.org/docs/jsx-in-depth.html'>jsx-in-depth</a>
+	<br/><a href='https://github.com/mikechau/react-primer-draft'>primer-draft</a>
+	<br/><a href='https://github.com/enaqx/awesome-react'>awesome-react</a>
+	<br/><a href='https://www.codecademy.com/courses/react-101/lessons/react-jsx-intro/exercises/why-react?action=resume_content_item'>why-react<\a>
+	<br/><a href='https://devhints.io/redux'>redux</a>`
 			}
 		]
 },
