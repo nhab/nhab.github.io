@@ -1,0 +1,256 @@
+options=[
+  {	GrpTitle:"Basics",
+    items:
+    [
+      {title:"What is A Tick",
+      body:`A tick is an event that is characterized by a new price of the symbol at a specific time.
+      depending to the current market situation, ticks may be received more or less frequently, 
+       each of them brings a new quote`
+      },
+      {title:"A Quote",
+  
+      body:`the cost of one currency expressed in terms of another currency.`
+      },
+      {title:"Data types",
+        body:
+`<b>int</b>
+   int Num  = 21;                         // Example integer variable
+   int Max  = 2147483647;                
+   int Min  = -2147483648;               
+ <b>double</b>
+    double Art     = 10.123;                
+   double B_27    = -1.0;                  
+   double Num     = 0.5;                   
+   double MMM     = -12.07;                
+<b>bool</b>
+bool aa    = True;           // Boolean variable аа    has the value of true
+   bool B17   = TRUE;            
+   bool Hamma = 1;
+   bool Asd   = False;
+   bool Nol   = FALSE;          
+   bool Prim  = 0;    
+  <b>string</b>
+  string Prefix    = "MetaTrader 4";                 
+   string Postfix   = "_of_my_progr. OK";             
+   string Name_Mass = "History";                      
+   string text      ="Upper Line\nLower Line";        // the text contains line feed characters 
+<b>color</b>
+  color Paint_1 = C'128,128,128';       // The value of gray   was assigned to the variable
+  color Colo    = C'0x00,0x00,0xFF';    // The value of blue   was assigned to the variable
+  color BMP_4   = C'0xFF,0x33,0x00'     // The value of red    was assigned to the variable
+  color K_12  = 0xFF3300;               // The value of red    was assigned to the variable
+  color N_3   = 0x008000;               // The value of green  was assigned to the variable
+  color Color = 16777215;               // The value of white  was assigned to the variable
+  color Alfa  = 32768;                  // The value of green  was assigned to the variable
+  color A       = Red;                  // The value of red    was assigned to the variable
+  color B       = Yellow;               // The value of yellow was assigned to the variable
+  color Colorit = Black;                // The value of black  was assigned to the variable
+  color B_21    = White;                // The value of white  was assigned to the variable
+<b>date</b>  
+  datetime Alfa    = D'2004.01.01 00:00';       // New Year
+  datetime Tim     = D'01.01.2004';             // New Year
+  datetime Tims    = D'2005.05.12 16:30:45';    // May 12, 2005 4:30:45 p.m.
+  datetime N_3     = D'12.05.2005 16:30:45';    // May 12, 2005 4:30:45 p.m.
+  datetime Compile = D'';
+  `
+      },
+      {title:"variable declation",
+        body:
+`variables sould be declared at the very start of a program.`
+      },
+      {title:"operators",
+        body:"Operators are just like c++"
+      },
+      {title:"Typecasting",
+        body:
+`double A = 2.0;                      // The number of John's pencils
+int    Y = 3;                        // The number of Pete's passages
+int    F = A + Y;                    // Total number
+
+string W1  = "Arctic";             // String 1
+double A   = 2;                    // Number of John's pencils
+string Sum = W1 + A;               // Implied transformation to the right
+`
+     },
+     {title:"External variable",
+body:`External variable is a variable, the value of which is available from a program properties window. 
+An external variable is declared outside all functions and is a global one - its scope is the whole program.
+ When declaring an external variable, modifier 'extern' should be indicated before its value type:
+
+extern int Number;    `
+     },
+     {title:"Functions and function types",
+      body:
+`Functions in mql4 are just like c++ functions.
+<b>Function types</b> are:
+  1-special functions :
+      are init(), start(), and deinit()
+  2-standard (built-in, predefined) functions
+  3-user-defined functions
+`
+     },
+     {title:"Standard functions",
+      body:
+`
+Common Functions. 
+  are the following functions: Print(), Alert(), Comment(), MarketInfo(), Sleep(), etc.
+
+Graphical Objects. 
+  This group includes functions that are used for programmed creation such objects as well as for changing their properties, moving them and deleting.
+
+Operations with Charts.
+  A group of functions that are used for getting different information about a current chart,
+  to which a program in MQL4 (script, indicator or Expert Advisor) is attached.
+
+String Functions.
+  String functions are used for processing variables of string type:
+   searching value, concatenation of lines, retrieval of sub-lines, etc. 
+   Conversion functions are used for converting a variable of one type into another type. 
+   NormalizeDouble() function rounds off values of double type to a certain accuracy.
+
+Date and Time.
+  This group of functions is used for getting time information in this or that form: 
+    LocalTime() shows the local time of a computer, TimeCurrent() shows server time of the last received quote. 
+  Besides, parameters like a weekday, month day, hour, minute, etc. can be obtained for an indicated time value.
+
+File Operations.
+  This group of functions is necessary for reading/recording data on a hard disk.
+
+Arrays and Timeseries.
+  They provide access to price data of any available symbol/period.
+
+Mathematical Functions.
+  Standard set of mathematical and trigonometrical functions.
+
+GlobalVariables.
+  Functions for working with GlobalVariables.
+
+Custom Indicators.
+  These functions can be used only when writing custom indicators.
+
+Account Information.
+  Functions show information about a client terminal, account and check the current state of a client terminal 
+  (including the state of environment of MQL4-program being executed).
+
+Trade Functions.
+  Functions for conducting trade operations.
+`
+     },
+     {title:"formal parameters",
+    body:"parameters of the functions are called formal parameters in mql4"
+     },
+     {title:"Passing parameters by reference",
+      code:
+`double SecondMethod(int &i,int &j)
+{
+ double res;
+//---
+ i*=2;
+ j/=2;
+ res=i+j;
+//---
+ return(res);
+}`
+      
+     },
+     {title:"Format of Operator 'return' ",
+     code:
+`return (Expression);  
+return;              //returns void   `   
+     },
+     {title:"Program types",
+      body:
+` 1- <b>An Expert Advisor (EA)</b>
+     is a program coded in MQL4 and called by the client terminal to be executed at every tick.
+     The main purpose of EAs is the programmed control over trades or autotrading.
+     
+  2- <b>A script </b>
+      is a program  executed by the client terminal only once.
+
+  3- A <b>custom indicator</b> is a program is called by the client terminal 
+  to be executed at every tick. 
+  It is basically intended for graphical displaying of preliminarily calculated data,
+   such as lines.
+   Indicators cannot trade.
+   There are two types of indicators: technical (built-in) indicators and custom indicators.
+   Indicators are considered in detail in Usage of technical indicators and Creation of custom indicators.
+
+`
+      }
+    ]
+  },
+  {
+    GrpTitle:"MetaEditor",
+    items:
+    [
+      {title:"MetaEditor",
+        body:
+`MetaEditor is a multifunction specialized editor intended for creating, editing, and compiling application programs written in MQL4. `
+      },
+      {title:"File system",
+      body 
+    :` The client terminal recognizes program types by their location in subordinate directories.
+    All application programs are concentrated in the directory ClientTerminal_folder\experts.
+    EAs, scripts, and custom indicators that you are going t
+    o use in your practical work should be located in corresponding directories.
+     EAs are located right in the directory ClientTerminal_folder\experts.
+      Scripts and indicators are in subdirectories ClientTerminal_folder\experts\scripts and ClientTerminal_folder \experts\indicators, respectively.`
+     },
+     {title:"File types",
+      body:
+`1-<b>mq4</b>
+  represent a program source code.
+2-<b>ex4</b>
+  is a compiled program ready for practical use in the client terminal.
+3-<b> mqh</b>
+are include files. It is a source text of frequently used blocks of custom programs.
+
+files of mqh type are stored in the directory ClientTerminal_folder\experts\include
+`
+     },
+     {title:"creating a new program",
+     body:
+`go to the the editor File menu, and click New
+then complete "EA Wizard" .
+It creates a new File and opens it in MetaEditor.
+For example if you choose EA,It will create:`,
+      code:
+`//+------------------------------------------------------------------+
+//|                                                       create.mq4 |
+//|                                                       John Smith |
+//|                                                  www.company.com |
+//+------------------------------------------------------------------+
+#property copyright "John Smith"
+#property link      "www.company.com"
+//+------------------------------------------------------------------+
+//| expert initialization function                                   |
+//+------------------------------------------------------------------+
+int init()
+  {
+//----
+//----
+   return(0);
+  }
+//+------------------------------------------------------------------+
+//| expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+int deinit()
+  {
+//----
+//----
+   return(0);
+  }
+//+------------------------------------------------------------------+
+//| expert start function                                            |
+//+------------------------------------------------------------------+
+int start()
+  {
+//----
+//----
+   return(0);
+  }
+//+------------------------------------------------------------------+`
+     }
+    ]
+  }
+]
