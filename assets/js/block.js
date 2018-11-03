@@ -72,7 +72,7 @@ function Block(...a)
         divBody.setAttribute('id', bodyID);
         divBody.setAttribute("class",'blockBody');
         debugger;
-        divBody.innerHTML=options.bodyd;
+        divBody.innerHTML=options.body;
         dvContainer.appendChild(divBody);
     }
 
