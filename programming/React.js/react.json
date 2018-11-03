@@ -430,6 +430,22 @@ items:
 			<a href="https://codepen.io/gaearon/pen/KgQpJd?editors=0010">
 			  <img alt="Edit new" src="https://codesandbox.io/static/img/play-codesandbox.svg">
 			</a>`
+		},
+		{title:"prop",
+		body:
+`This is how you pass props to a component (highlighted in bold):
+
+ReactDOM.render(
+    <Hello message="my friend" />, 
+    document.getElementById("root")
+);
+This prop is called message and has the value “my friend”. We can access this prop inside the Hello component by referencing this.props.message, like this:
+
+class Hello extends React.Component {
+    render() {
+        return <h1>Hello {this.props.message}!</h1>;
+    }
+}`
 		}
 	]
 },
