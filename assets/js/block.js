@@ -72,7 +72,7 @@ function Block(...a)
         divBody.setAttribute('id', bodyID);
         divBody.setAttribute("class",'blockBody');
         debugger;
-        divBody.innerHTML=options.body.replace("<","&lt;");
+        divBody.innerHTML=options.bodyd;
         dvContainer.appendChild(divBody);
     }
 
@@ -506,7 +506,7 @@ class BlockFrame{
             divBody.setAttribute('id', bodyID);
             divBody.setAttribute("class",'blockBody');
             debugger;   
-            divBody.innerHTML=options.body.replace("<","&lt;");;
+            divBody.innerHTML=options.body;
             dvContainer.appendChild(divBody);
         }
 
