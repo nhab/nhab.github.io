@@ -422,31 +422,57 @@ items:
 		}
 	]
 },
-{	GrpTitle:"	State",
+{	GrpTitle:"props and	state ",
 	items:[
-		{title:"State",
-			body:`State is the place where the data comes from.
-			State is similar to props, but it is private and fully controlled by the component.
-			<a href="https://codepen.io/gaearon/pen/KgQpJd?editors=0010">
-			  <img alt="Edit new" src="https://codesandbox.io/static/img/play-codesandbox.svg">
-			</a>`
-		},
 		{title:"prop",
 		body:
-`This is how you pass props to a component (highlighted in bold):
-
-ReactDOM.render(
+`This is how you pass props to a component:`,
+code:
+`ReactDOM.render(
     <Hello message="my friend" />, 
     document.getElementById("root")
 );
-This prop is called message and has the value “my friend”. We can access this prop inside the Hello component by referencing this.props.message, like this:
+//This prop is called message and has the value “my friend”. 
+//We can access this prop inside the Hello component 
+//by referencing this.props.message, like this:
 
 class Hello extends React.Component {
     render() {
-        return <h1>Hello {this.props.message}!</h1>;
+        return &lt;h1>Hello {this.props.message}!&lt;/h1>;
     }
 }`
-		}
+		},
+		{title:"State",
+			body:
+`The other way of storing data in React is in the component’s state. 
+And unlike props — which can’t be changed directly by the component — the state can.
+State is the place where the data comes from.
+State is similar to props, but it is private and fully controlled by the component.
+<a href="https://codepen.io/gaearon/pen/KgQpJd?editors=0010">
+ <img alt="Edit new" src="https://codesandbox.io/static/img/play-codesandbox.svg">
+</a>`
+		},
+		{title:"Initializing state",
+		body:
+`To initialize the state, simply set this.state in the constructor() method of the class. 
+Our state is an object which in our case only has one key called message.`,
+		code:			
+`class Hello extends React.Component {
+	
+	constructor(){
+		super();
+		this.state = {
+			message: "my friend (from state)!"
+		};
+	}
+	
+	render() {
+		return <h1>Hello {this.state.message}!</h1>;
+	}
+}`
+
+	}
+
 	]
 },
 {GrpTitle:"Stateless Example",
