@@ -59,6 +59,9 @@ b{font-size:20px;font-weight:800;background-color: lightcyan;color:darkcyan;}
 code{background-color:#222222;color: lightcyan;
     padding-left: 2px;padding-right:2px;
     margin-left: 2px; margin-right: 2px;}
+a:visited{color:pink;background-color:black;}
+/*-----------------------------------------------*/
+
 .imagesize{width:350px;height:350px;}
 .column{color:black; }
 .TB3ColFixed{table-layout:fixed;width:100%;border-collapse: separate;}
