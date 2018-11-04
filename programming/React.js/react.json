@@ -369,20 +369,21 @@ export default App;`
 items:
 	[
 		{title:"What are components?",
-		body:` <p>Components seperate <h7>concerns</h7>, instead of seperating markup and  logic.
-		React components are  <h7>written</h7> using <b>JSX</b> or <b>javascript</b>.<a href="https://babeljs.io/repl/#?presets=react&code_lz=GYVwdgxgLglg9mABACwKYBt1wBQEpEDeAUIogE6pQhlIA8AJjAG4B8AEhlogO5xnr0AhLQD0jVgG4iAXyJA"> play converting them here</a>
-	  <h3>Sample components:`,
-	  code:`React.createElement(
-	  MyButton,
-	  {color:'blue',shadowSize:2}
-	  ,'Click Me'
-		)`},
-		{title:"sample(javascript syntax)",
-			code:`React.createElement(
-			MyButton,
-			{color:'blue',shadowSize:2}
-			,'Click Me'
-		  )`
+		body:
+ ` <p>Components seperate <h7>concerns</h7>, instead of seperating markup and  logic.
+React components are  <h7>written</h7> using <b>JSX</b> or <b>javascript</b>.<a href="https://babeljs.io/repl/#?presets=react&code_lz=GYVwdgxgLglg9mABACwKYBt1wBQEpEDeAUIogE6pQhlIA8AJjAG4B8AEhlogO5xnr0AhLQD0jVgG4iAXyJA"> play converting them here</a>
+<h3>Sample components:`,
+code:`React.createElement(
+MyButton,
+{color:'blue',shadowSize:2}
+,'Click Me'
+)`},
+{title:"sample(javascript syntax)",
+	code:`React.createElement(
+	MyButton,
+	{color:'blue',shadowSize:2}
+	,'Click Me'
+  )`
 		},
 		{title:"sample(jsx syntax)",
 			code:`&ltMyButton color="blue"
@@ -392,37 +393,40 @@ items:
 
 		},
 		{title:"Class components",
-			code:`const Username = React.createClass({
-			render() {
-				return &ltp>The logged in user is: 
-				{this.props.username}&lt/p>;
-			},
-			});
-			// OR:
-			class Username extends React.Component {
-				render() {
-					return &ltp>The logged in user is: 
-					{this.props.username}&lt/p>;
-				}
-			}`
+			code:
+ `const Username = React.createClass({
+render() {
+	return &ltp>The logged in user is: 
+	{this.props.username}&lt/p>;
+},
+});
+// OR:
+class Username extends React.Component {
+	render() {
+		return &ltp>The logged in user is: 
+		{this.props.username}&lt/p>;
+	}
+}`
 		},
 		{title:"functional stateless component(FSC)",
 			body:"<a href='https://codepen.io/nhab/pen/zJaEMR'>see the code in action</a>",
-        	code:`const Username = function(props) {
-			return &ltp>The logged in user is:
-			{props.username}&lt/p>;
-			};
-			// OR :
-			function Welcome(props) {
-			return &lth1>Hello, {props.name}&lt/h1>;
-			}`
+        	code:
+ `const Username = function(props) {
+return &ltp>The logged in user is:
+{props.username}&lt/p>;
+};
+// OR :
+function Welcome(props) {
+return &lth1>Hello, {props.name}&lt/h1>;
+}`
 		},
 		{title:"Components types",
-		body:` 1- containers/<h7>stateful components</h7>:
-		does the work of rendering child components
-		and 2- <h7>stateless components</h7> :
-		A stateless component's work is to handle the
-		data,event,..receives from its parent component`
+		body:
+` 1- containers/<h7>stateful components</h7>:
+does the work of rendering child components
+and 2- <h7>stateless components</h7> :
+A stateless component's work is to handle the
+data,event,..receives from its parent component`
 		}
 	]
 },
@@ -483,26 +487,28 @@ Our state is an object which in our case only has one key called message.`,
 items:
 	[
 		{title:"App.jsx",
-		code:`import React from 'react';
-		class App extends React.Component {
-		   render() { return ( &ltdiv>  &ltHeader/> &ltContent/>  &lt/div> ); }
-		}
-		class Header extends React.Component {
-		   render() {return (  &ltdiv> &lth1>Header &lt/h1> &lt/div> );  }
-		}
-		class Content extends React.Component {
-		   render() {  return ( &ltdiv> &lth2>
-					Content&lt/h2> &ltp>The content
-					text!!!&lt/p> &lt/div>  );  }
-		}
-		export default App;`
+		code:
+`import React from 'react';
+class App extends React.Component {
+   render() { return ( &ltdiv>  &ltHeader/> &ltContent/>  &lt/div> ); }
+}
+class Header extends React.Component {
+   render() {return (  &ltdiv> &lth1>Header &lt/h1> &lt/div> );  }
+}
+class Content extends React.Component {
+   render() {  return ( &ltdiv> &lth2>
+			Content&lt/h2> &ltp>The content
+			text!!!&lt/p> &lt/div>  );  }
+}
+export default App;`
 		},
 		{title:"main.js",
-			code:`import React from 'react';
-			import ReactDOM from 'react-dom';
-			import App from './App.jsx';
-			ReactDOM.render(<App />, document.getElementById('app'));
-			`,
+			code:
+`import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.jsx';
+ReactDOM.render(<App />, document.getElementById('app'));
+`,
 			imageSrc:'https://www.tutorialspoint.com/reactjs/images/react_components_stateless.jpg'
 		}
 	]
@@ -512,36 +518,36 @@ items:
 	[
 		{title:"App.jsx",
 		code:
-			`import React from 'react';
-			class App extends React.Component {
-			constructor() {
-				super();
-				this.state = {
-					data:    [{ "id":1,"name":"Foo","age":"20" },
-							{ "id":2,"name":"Bar","age":"30" },
-							{ "id":3,"name":"Baz","age":"40"}
-							]  }
-			}
-			render() { return (
-					&ltdiv> &ltHeader/>
-						&lttable> &lttbody>
-							{this.state.data.map((person, i) => &ltTableRow key = {i} 
-								data = {person} />)}
-						&lt/tbody>&lt/table>
-					&lt/div>
-				);   }
-			}
-			class Header extends React.Component {
-			render() {return ( &ltdiv>&lth1>Header&lt/h1>&lt/div> ); }
-			}
-			class TableRow extends React.Component {
-			render() {return (&lttr>
-						&lttd>{this.props.data.id}&lt/td>
-						&lttd>{this.props.data.name}&lt/td>
-						&lttd>{this.props.data.age}&lt/td>
-					&lt/tr>  );   }
-			}
-			export default App;`
+`import React from 'react';
+class App extends React.Component {
+constructor() {
+	super();
+	this.state = {
+		data:    [{ "id":1,"name":"Foo","age":"20" },
+				{ "id":2,"name":"Bar","age":"30" },
+				{ "id":3,"name":"Baz","age":"40"}
+				]  }
+}
+render() { return (
+		&ltdiv> &ltHeader/>
+			&lttable> &lttbody>
+				{this.state.data.map((person, i) => &ltTableRow key = {i} 
+					data = {person} />)}
+			&lt/tbody>&lt/table>
+		&lt/div>
+	);   }
+}
+class Header extends React.Component {
+render() {return ( &ltdiv>&lth1>Header&lt/h1>&lt/div> ); }
+}
+class TableRow extends React.Component {
+render() {return (&lttr>
+			&lttd>{this.props.data.id}&lt/td>
+			&lttd>{this.props.data.name}&lt/td>
+			&lttd>{this.props.data.age}&lt/td>
+		&lt/tr>  );   }
+}
+export default App;`
 		},
 		{title:'main.js',
 			code:`import React from 'react';
@@ -558,13 +564,15 @@ imageSrc:"https://www.tutorialspoint.com/reactjs/images/react_components_statefu
 	GrpTitle:"Handling Events",
 	items:[
 		{title:"Event Handling",
-		body:`Handling events with React elements is very similar to handling events on DOM elements. 
+		body:
+`Handling events with React elements is very similar to handling events on DOM elements. 
 There are some syntactic differences:
 
 React events are named using camelCase, rather than lowercase.
 With JSX you pass a function as the event handler, rather than a string.
 `,
-code:`function ActionLink() {
+code:
+`function ActionLink() {
     function handleClick(e) {
        e.preventDefault();
        console.log('The link was clicked.');
@@ -578,34 +586,35 @@ code:`function ActionLink() {
 		},
 		{title:"Event example2",
 			body:`<a href="http://codepen.io/gaearon/pen/xEmzGg?editors=0010">Try it on codePen</a>`,
-			code:`class Toggle extends React.Component {
-			  constructor(props) {
-				super(props);
-				this.state = {isToggleOn: true};
-			
-				// This binding is necessary to make 'this' work in the callback
-				this.handleClick = this.handleClick.bind(this);
-			  }
-			
-			  handleClick() {
-				this.setState(state => ({
-				  isToggleOn: !state.isToggleOn
-				}));
-			  }
-			
-			  render() {
-				return (
-				  &ltbutton onClick={this.handleClick}>
-					{this.state.isToggleOn ? 'ON' : 'OFF'}
-				  &lt/button>
-				);
-			  }
-			}
-			
-			ReactDOM.render(
-			  &ltToggle />,
-			  document.getElementById('root')
-			);`
+			code:
+`class Toggle extends React.Component {
+  constructor(props) {
+	super(props);
+	this.state = {isToggleOn: true};
+
+	// This binding is necessary to make 'this' work in the callback
+	this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+	this.setState(state => ({
+	  isToggleOn: !state.isToggleOn
+	}));
+  }
+
+  render() {
+	return (
+	  &ltbutton onClick={this.handleClick}>
+		{this.state.isToggleOn ? 'ON' : 'OFF'}
+	  &lt/button>
+	);
+  }
+}
+
+ReactDOM.render(
+  &ltToggle />,
+  document.getElementById('root')
+);`
 
 		}
 	]
