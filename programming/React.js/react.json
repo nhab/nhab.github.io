@@ -191,45 +191,45 @@ export default App;`
                     <b>Note</b> − You should use <h7>className</h7> and <h7>htmlFor</h7> as XML attribute names instead of <h7>class</h7> and <h7>for</h7>.`
                 }
             ]
-        },
-        {GrpTitle:"Expressions",
-        items:[
-                {	title:"Expression in an attribute",
-                    code:`const element =
-    &ltimg src={user.avatarUrl}>
-    &lt/img>;`
-                },
-                {	title:"JavaScript Expressions",
-                    body:`JavaScript expressions can be used inside of JSX.
-    We just need to wrap it with curly brackets {} :`,
-    code:`import React from 'react';
-    
-    class App extends React.Component {
-        render() {
-            return (
-                &ltdiv>
-                &lth1>{1+1}&lt/h1>
-                &lt/div>
-            );
-        }
+    },
+    {GrpTitle:"Expressions",
+    items:[
+            {	title:"Expression in an attribute",
+                code:`const element =
+&ltimg src={user.avatarUrl}>
+&lt/img>;`
+            },
+            {	title:"JavaScript Expressions",
+                body:`JavaScript expressions can be used inside of JSX.
+We just need to wrap it with curly brackets {} :`,
+code:`import React from 'react';
+
+class App extends React.Component {
+    render() {
+        return (
+            &ltdiv>
+            &lth1>{1+1}&lt/h1>
+            &lt/div>
+        );
     }
-    export default App;`
-                },
-                {	title:"conditional (ternary) expressions"
-                    ,code:`import React from 'react';
-    class App extends React.Component {
-        render() {
-            var i = 1;
-            return (
-                &ltdiv>
-                &lth1>{i == 1 ? 'True!' : 'False'}&lt/h1>
-                &lt/div>
-            );
-        }
+}
+export default App;`
+            },
+            {	title:"conditional (ternary) expressions"
+                ,code:`import React from 'react';
+class App extends React.Component {
+    render() {
+        var i = 1;
+        return (
+            &ltdiv>
+            &lth1>{i == 1 ? 'True!' : 'False'}&lt/h1>
+            &lt/div>
+        );
     }
-    export default App;`
-                }
-            ]
+}
+export default App;`
+            }
+        ]
     },
     {GrpTitle:"Components",
     items:
@@ -636,7 +636,6 @@ export default App;`
     ]
 
      }
-    ]
-    }
-    ]
+]
+
     
