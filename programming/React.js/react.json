@@ -1,623 +1,626 @@
 options=[
-{GrpTitle:"React.js basics",
-	items:[
-		{title:"What is React",
-		body:
-`React is a library for building user interfaces
-through creation of UI components.
+    {GrpTitle:"React.js basics",
+        items:[
+            {title:"What is React",
+            body:
+    `React is a library for building user interfaces
+    through creation of UI components.
+    
+    Unlike more complete frameworks such as Angular or Vue,
+     React deals only with the view layer.( V in MVC. )
+    
+    React can also render on the server using Node,
+    and native apps using React Native.
+    
+    <b>Creating a React app involves creating one or more 
+    React components</b> that can interact with each other.
+    
+    A React component is simply a JavaScript class that 
+    requires the <b>render function</b> to be declared. 
+    The render function simply outputs HTML code, which is
+    <b>implemented using either JSX or JavaScript code</b>.
+    
+    <a href='https://codepen.io/nhab/pen/MqXwRE'>My Hello world!</a>
+    (see settings of codepen /javascript tab, 
+    which has included react and reactdom 
+    and set preproccessor to babel)`
+            },
+            {title:"A stand alone sample",
+    
+            body:`you dont need to setup everything locally. 
+    The following html code,is a working react sample which
+    includes everything needed to code in react.`,
+    
+            code:`&lt!doctype html>
+    &lthead>
+        &ltmeta charset="utf-8">
+        &lttitle>Hello React!&lt/title>
+        &ltscript src="https://unpkg.com/react@16/umd/react.development.js">
+        &lt/script>
+        &ltscript src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
+        &lt/script>
+        &ltscript src="https://unpkg.com/babel-standalone@6.26.0/babel.js">
+        &lt/script>
+    &lt/head>
+    &ltbody>
+        &ltdiv id="root">&lt/div>
+        &ltscript type="text/babel">
+            class App extends React.Component \{ 
+                render() { return ( &lth1>Hello world!&lt/h1> );  \} 
+            \} 
+            ReactDOM.render(&ltApp />, document.getElementById('root'));
+        &lt/script>
+    &lt/body>
+    &lt/html>`,
+                codetype:"html"
+            },
+            {title:"ReactDOM",
+            body:
+    `Often, it is used for  <h7>1 </h7> single thing:
+      - mounting with <h7>ReactDOM.render()</h7>
+    Another useful feature of ReactDOM is:
+      - <h7>ReactDOM.findDOMNode()</h7>
+    which you can use to gain direct access to a DOM element.`,
+                code: 
+    `var React = require('react'); /* importing react */
+    var ReactDOM = require('react-dom'); /* importing react-dom */
+    
+    var MyComponent = React.createClass({
+    render: function() {
+       return &ltdiv>Hello World&lt/div>;
+    }
+    });
+    ReactDOM.render(&ltMyComponent />, node);`
+                }
+            ]
+    },
+    {GrpTitle:"JSX",
+        items:[	
+                {title:"jsx is a syntax",
+                body:
+    `<b>JavaScript XML (JSX)</b> is an extension to the JavaScript language <h7>syntax</h7>
+    for templating and components instead of regular JavaScript.
+    
+    JSX tags are the same as Html tags,so there is no learning curve for tags.
+    
+    and all HTML DOM properties and attributes (including event handlers)
+     should be camelCased,In React.
+    
+    Some of them are a bit different. For example:
+        <table style="background-color:lightgray;border-collapse: collapse;">
+        <tr style="background-color:gray"><td> HTML attribute</td><td> corresponding attribute  in React</td></tr>
+        <tr><td> tabindex      </td><td>tabIndex                     </td>	</tr>
+        <tr><td>class			</td><td>className					</td></tr>
+        <tr><td>innerHTML</td><td>dangerouslySetInnerHTML</td></tr>
+        </table>`,
+                    code:`//this isa jsx syntax:
+    const element = &lth1>Hello, world!&lt/h1>;`
+                },
+                {title:'why JSX?',
+                body:`	React doesn't require using JSX, 
+    but most people find it helpful as a visual aid 
+    when working with UI inside the JavaScript code. 
+    It also allows React to show more useful error and warning messages.`
+                },		
+                {title:"An example of JSX code:",
+                 body:"App.jsx" ,
+                 code:`class App extends React.Component {
+    render() {
+        return (
+              &ltdiv>
+            &ltp>Header&lt/p>
+            &ltp>Content&lt/p>
+            &ltp>Footer&lt/p>
+          &lt/div>
+            );
+          }
+        }`
+                },
+                {	title:"Using JSX",
+                    body:"App.jsx", 
+                    code:`import React from 'react';
+    class App extends React.Component {
+        render() {
+            return (
+                &ltdiv>
+                    Hello World!!!
+                &lt/div>
+                );
+            }
+        }
+    export default App;`
+                },
+                {	title:"Nested Elements",
+                    body:"App.jsx",
+                    code:`import React from 'react';
+    class App extends React.Component {
+    render() { return (
+            &ltdiv>  &lth1>Header&lt/h1>
+                &lth2>Content&lt/h2>
+                &ltp>This is the content!!!&lt/p>
+            &lt/div>
+            );
+        }
+    }
+    export default App;
+                    `
+                },
+                {title:"Attributes",
+                    body:`<b>custom attributes</b> are additions to 
+properties and attributes of regular Html Tags.
+to add custom attribute,we need to use: 
+<b>data-  </b> prefix.
 
-Unlike more complete frameworks such as Angular or Vue,
- React deals only with the view layer.( V in MVC. )
-
-React can also render on the server using Node,
-and native apps using React Native.
-
-<b>Creating a React app involves creating one or more 
-React components</b> that can interact with each other.
-
-A React component is simply a JavaScript class that 
-requires the <b>render function</b> to be declared. 
-The render function simply outputs HTML code, which is
-<b>implemented using either JSX or JavaScript code</b>.
-
-<a href='https://codepen.io/nhab/pen/MqXwRE'>My Hello world!</a>
-(see settings of codepen /javascript tab, 
-which has included react and reactdom 
-and set preproccessor to babel)`
-		},
-        {title:"A stand alone sample",
-
-		body:`you dont need to setup everything locally. 
-The following html code,is a working react sample which
-includes everything needed to code in react.`,
-
-		code:`&lt!doctype html>
-&lthead>
-	&ltmeta charset="utf-8">
-	&lttitle>Hello React!&lt/title>
-	&ltscript src="https://unpkg.com/react@16/umd/react.development.js">
-	&lt/script>
-	&ltscript src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
-	&lt/script>
-	&ltscript src="https://unpkg.com/babel-standalone@6.26.0/babel.js">
-	&lt/script>
-&lt/head>
-&ltbody>
-	&ltdiv id="root">&lt/div>
-	&ltscript type="text/babel">
-		class App extends React.Component \{ 
-			render() { return ( &lth1>Hello world!&lt/h1> );  \} 
-		\} 
-		ReactDOM.render(&ltApp />, document.getElementById('root'));
-	&lt/script>
-&lt/body>
-&lt/html>`,
-			codetype:"html"
-		},
-		{title:"ReactDOM",
-		body:
-`Often, it is used for  <h7>1 </h7> single thing:
-  - mounting with <h7>ReactDOM.render()</h7>
-Another useful feature of ReactDOM is:
-  - <h7>ReactDOM.findDOMNode()</h7>
-which you can use to gain direct access to a DOM element.`,
-			code: 
-`var React = require('react'); /* importing react */
-var ReactDOM = require('react-dom'); /* importing react-dom */
-
-var MyComponent = React.createClass({
-render: function() {
-   return &ltdiv>Hello World&lt/div>;
-}
-});
-ReactDOM.render(&ltMyComponent />, node);`
-			}
-		]
-},
-{GrpTitle:"JSX",
-	items:[	
-			{title:"jsx is a syntax",
-			body:
-`<b>JavaScript XML (JSX)</b> is an extension to the JavaScript language <h7>syntax</h7>
-for templating and components instead of regular JavaScript.
-
-JSX tags are the same as Html tags,so there is no learning curve for tags.
-
-and all HTML DOM properties and attributes (including event handlers)
- should be camelCased,In React.
-
-Some of them are a bit different. For example:
-	<table style="background-color:lightgray;border-collapse: collapse;">
-	<tr style="background-color:gray"><td> HTML attribute</td><td> corresponding attribute  in React</td></tr>
-	<tr><td> tabindex      </td><td>tabIndex                     </td>	</tr>
-	<tr><td>class			</td><td>className					</td></tr>
-	<tr><td>innerHTML</td><td>dangerouslySetInnerHTML</td></tr>
-	</table>`,
-				code:`//this isa jsx syntax:
-const element = &lth1>Hello, world!&lt/h1>;`
-			},
-			{title:'why JSX?',
-			body:`	React doesn't require using JSX, 
-but most people find it helpful as a visual aid 
-when working with UI inside the JavaScript code. 
-It also allows React to show more useful error and warning messages.`
-			},		
-			{title:"An example of JSX code:",
-			 body:"App.jsx" ,
-			 code:`class App extends React.Component {
-render() {
-	return (
-		  &ltdiv>
-		&ltp>Header&lt/p>
-		&ltp>Content&lt/p>
-		&ltp>Footer&lt/p>
-	  &lt/div>
-		);
-	  }
-	}`
-			},
-			{	title:"Using JSX",
-				body:"App.jsx", 
-				code:`import React from 'react';
-class App extends React.Component {
-	render() {
-		return (
-			&ltdiv>
-				Hello World!!!
-			&lt/div>
-			);
-		}
-	}
-export default App;`
-			},
-			{	title:"Nested Elements",
-				body:"App.jsx",
-				code:`import React from 'react';
-class App extends React.Component {
-render() { return (
-		&ltdiv>  &lth1>Header&lt/h1>
-			&lth2>Content&lt/h2>
-			&ltp>This is the content!!!&lt/p>
-		&lt/div>
-		);
-	}
-}
-export default App;
-				`
-			},
-			{title:"Attributes",
-				body:`<b>custom attributes</b> are additions to 
-regular HTML properties and attributes.
-to add custom attribute,we need to use 
-<b>data- prefix</b>.
 In the example, we added <b>data-myattribute</b>
 as an attribute of p element:`,
-code:	 `import React from 'react';
+    code:	
+`import React from 'react';
 class App extends React.Component {
-	render() {
-		return (  &ltdiv>
-			&lth1>Header&lt/h1>
-			&lth2>Content&lt/h2>
-			&ltp data-myattribute = "somevalue">
-			This is the content!!!&lt/p>
-		&lt/div>   );
+    render() {
+        return (  &ltdiv>
+            &lth1>Header&lt/h1>
+            &lth2>Content&lt/h2>
+            &ltp data-myattribute = "somevalue">
+            This is the content!!!&lt/p>
+        &lt/div>   );
 }  }
 export default App;`
-			},
-			{	title:"Expression in an attribute",
-				code:`const element =
-&ltimg src={user.avatarUrl}>
-&lt/img>;`
-			},
-			{	title:"JavaScript Expressions",
-				body:`JavaScript expressions can be used inside of JSX.
-We just need to wrap it with curly brackets {} :`,
-code:`import React from 'react';
-
-class App extends React.Component {
-	render() {
-		return (
-			&ltdiv>
-			&lth1>{1+1}&lt/h1>
-			&lt/div>
-		);
-	}
-}
-export default App;`
-			},
-			{	title:"conditional (ternary) expressions"
-				,code:`import React from 'react';
-class App extends React.Component {
-	render() {
-		var i = 1;
-		return (
-			&ltdiv>
-			&lth1>{i == 1 ? 'True!' : 'False'}&lt/h1>
-			&lt/div>
-		);
-	}
-}
-export default App;`
-			},
-			{title:"Styling",
-				body:`React recommends using inline styles. 
-(with camelCase syntax)
-it will automatically append px after 
-the number value on specific elements.
-<a href="https://codepen.io/ciptohadi/pen/qaHgj">example link</a> ,<h7>Example:</h7>`,
-code:`import React from 'react';
-class App extends React.Component {
-	render() {
-		var myStyle = { fontSize: 100,
-			color: '#FF0000'  }
-		return (
-			&ltdiv>
-			&lth1 style = {myStyle}>Header&lt/h1>
-			&lt/div>
-		);
-	}
-}
-export default App;`
-			},
-			{title:"Naming Convention",
-				body:`<h7>HTML tags</h7> always use <h7>lowercase tag</h7> names, while <h7>React components start with Uppercase.</h7>
-				<b>Note</b> − You should use <h7>className</h7> and <h7>htmlFor</h7> as XML attribute names instead of <h7>class</h7> and <h7>for</h7>.`
-			},
-			{title:"Reference",
-				body:`
-	<br/><a href='https://reactjs.org/docs/react-api.html'>react api</a>
-	<br/><a href='https://reactjs.org/docs/react-component.html'>components</a>
-	<br/><a href='https://reactjs.org/docs/react-dom.html'>ReactDOM</a>
-	<br/><a href='https://reactjs.org/docs/react-dom-server.html'>DomServer</a>
-	<br/><a href='https://reactjs.org/docs/dom-elements.html'>Dom Elements</a>
-	<br/><a href='https://reactjs.org/docs/events.html'>SyntheticEvents</a>
-	<br/><a href='https://reactjs.org/docs/test-utils.html'>TestUtils</a>
-	<br/><a href='https://reactjs.org/docs/glossary.html'>Glossary</a>
-	<br/><a href='https://reactjs.org/docs/jsx-in-depth.html'>jsx-in-depth</a>
-	<br/><a href='https://github.com/mikechau/react-primer-draft'>primer-draft</a>
-	<br/><a href='https://github.com/enaqx/awesome-react'>awesome-react</a>
-	<br/><a href='https://www.codecademy.com/courses/react-101/lessons/react-jsx-intro/exercises/why-react?action=resume_content_item'>why-react<\a>
-	<br/><a href='https://devhints.io/redux'>redux</a>`
-			}
-		]
-},
-{GrpTitle:"Components",
-items:
-	[
-		{title:"What are components?",
-		body:
- ` <p>Components seperate <h7>concerns</h7>, instead of seperating markup and  logic.
-React components are  <h7>written</h7> using <b>JSX</b> or <b>javascript</b>.<a href="https://babeljs.io/repl/#?presets=react&code_lz=GYVwdgxgLglg9mABACwKYBt1wBQEpEDeAUIogE6pQhlIA8AJjAG4B8AEhlogO5xnr0AhLQD0jVgG4iAXyJA"> play converting them here</a>
-<h3>Sample components:`,
-code:`React.createElement(
-MyButton,
-{color:'blue',shadowSize:2}
-,'Click Me'
-)`},
-{title:"sample(javascript syntax)",
-	code:`React.createElement(
-	MyButton,
-	{color:'blue',shadowSize:2}
-	,'Click Me'
-  )`
-		},
-		{title:"sample(jsx syntax)",
-			code:`&ltMyButton color="blue"
-            shadowSize={2}>
-  Click Me
-&lt/MyButton>`
-
-		},
-		{title:"Class components",
-			code:
- `const Username = React.createClass({
-render() {
-	return &ltp>The logged in user is: 
-	{this.props.username}&lt/p>;
-},
-});
-// OR:
-class Username extends React.Component {
-	render() {
-		return &ltp>The logged in user is: 
-		{this.props.username}&lt/p>;
-	}
-}`
-		},
-		{title:"functional stateless component(FSC)",
-			body:"<a href='https://codepen.io/nhab/pen/zJaEMR'>see the code in action</a>",
-        	code:
- `const Username = function(props) {
-return &ltp>The logged in user is:
-{props.username}&lt/p>;
-};
-// OR :
-function Welcome(props) {
-return &lth1>Hello, {props.name}&lt/h1>;
-}`
-		},
-		{title:"Components types",
-		body:
-` 1- containers/<h7>stateful components</h7>:
-does the work of rendering child components
-and 2- <h7>stateless components</h7> :
-A stateless component's work is to handle the
-data,event,..receives from its parent component`
-		}
-	]
-},
-{GrpTitle:"props and	state ",
-	items:[
-		{title:"prop",
-		body:
-`This is how you pass props to a component:`,
-code:
-`ReactDOM.render(
-    <Hello message="my friend" />, 
-    document.getElementById("root")
-);
-//This prop is called message and has the value “my friend”. 
-//We can access this prop inside the Hello component 
-//by referencing this.props.message, like this:
-
-class Hello extends React.Component {
+                },
+                {	title:"Expression in an attribute",
+                    code:`const element =
+    &ltimg src={user.avatarUrl}>
+    &lt/img>;`
+                },
+                {	title:"JavaScript Expressions",
+                    body:`JavaScript expressions can be used inside of JSX.
+    We just need to wrap it with curly brackets {} :`,
+    code:`import React from 'react';
+    
+    class App extends React.Component {
+        render() {
+            return (
+                &ltdiv>
+                &lth1>{1+1}&lt/h1>
+                &lt/div>
+            );
+        }
+    }
+    export default App;`
+                },
+                {	title:"conditional (ternary) expressions"
+                    ,code:`import React from 'react';
+    class App extends React.Component {
+        render() {
+            var i = 1;
+            return (
+                &ltdiv>
+                &lth1>{i == 1 ? 'True!' : 'False'}&lt/h1>
+                &lt/div>
+            );
+        }
+    }
+    export default App;`
+                },
+                {title:"Styling",
+                    body:`React recommends using inline styles. 
+    (with camelCase syntax)
+    it will automatically append px after 
+    the number value on specific elements.
+    <a href="https://codepen.io/ciptohadi/pen/qaHgj">example link</a> ,<h7>Example:</h7>`,
+    code:`import React from 'react';
+    class App extends React.Component {
+        render() {
+            var myStyle = { fontSize: 100,
+                color: '#FF0000'  }
+            return (
+                &ltdiv>
+                &lth1 style = {myStyle}>Header&lt/h1>
+                &lt/div>
+            );
+        }
+    }
+    export default App;`
+                },
+                {title:"Naming Convention",
+                    body:`<h7>HTML tags</h7> always use <h7>lowercase tag</h7> names, while <h7>React components start with Uppercase.</h7>
+                    <b>Note</b> − You should use <h7>className</h7> and <h7>htmlFor</h7> as XML attribute names instead of <h7>class</h7> and <h7>for</h7>.`
+                },
+                {title:"Reference",
+                    body:`
+        <br/><a href='https://reactjs.org/docs/react-api.html'>react api</a>
+        <br/><a href='https://reactjs.org/docs/react-component.html'>components</a>
+        <br/><a href='https://reactjs.org/docs/react-dom.html'>ReactDOM</a>
+        <br/><a href='https://reactjs.org/docs/react-dom-server.html'>DomServer</a>
+        <br/><a href='https://reactjs.org/docs/dom-elements.html'>Dom Elements</a>
+        <br/><a href='https://reactjs.org/docs/events.html'>SyntheticEvents</a>
+        <br/><a href='https://reactjs.org/docs/test-utils.html'>TestUtils</a>
+        <br/><a href='https://reactjs.org/docs/glossary.html'>Glossary</a>
+        <br/><a href='https://reactjs.org/docs/jsx-in-depth.html'>jsx-in-depth</a>
+        <br/><a href='https://github.com/mikechau/react-primer-draft'>primer-draft</a>
+        <br/><a href='https://github.com/enaqx/awesome-react'>awesome-react</a>
+        <br/><a href='https://www.codecademy.com/courses/react-101/lessons/react-jsx-intro/exercises/why-react?action=resume_content_item'>why-react<\a>
+        <br/><a href='https://devhints.io/redux'>redux</a>`
+                }
+            ]
+    },
+    {GrpTitle:"Components",
+    items:
+        [
+            {title:"What are components?",
+            body:
+     ` <p>Components seperate <h7>concerns</h7>, instead of seperating markup and  logic.
+    React components are  <h7>written</h7> using <b>JSX</b> or <b>javascript</b>.<a href="https://babeljs.io/repl/#?presets=react&code_lz=GYVwdgxgLglg9mABACwKYBt1wBQEpEDeAUIogE6pQhlIA8AJjAG4B8AEhlogO5xnr0AhLQD0jVgG4iAXyJA"> play converting them here</a>
+    <h3>Sample components:`,
+    code:`React.createElement(
+    MyButton,
+    {color:'blue',shadowSize:2}
+    ,'Click Me'
+    )`},
+    {title:"sample(javascript syntax)",
+        code:`React.createElement(
+        MyButton,
+        {color:'blue',shadowSize:2}
+        ,'Click Me'
+      )`
+            },
+            {title:"sample(jsx syntax)",
+                code:`&ltMyButton color="blue"
+                shadowSize={2}>
+      Click Me
+    &lt/MyButton>`
+    
+            },
+            {title:"Class components",
+                code:
+     `const Username = React.createClass({
     render() {
-        return &lt;h1>Hello {this.props.message}!&lt;/h1>;
-    }
-}`
-		},
-		{title:"State",
-			body:
-`The other way of storing data in React is in the component’s state. 
-And unlike props — which can’t be changed directly by the component — the state can.
-State is the place where the data comes from.
-State is similar to props, but it is private and fully controlled by the component.
-<a href="https://codepen.io/gaearon/pen/KgQpJd?editors=0010">
- <img alt="Edit new" src="https://codesandbox.io/static/img/play-codesandbox.svg">
-</a>`
-		},
-		{title:"Initializing state",
-		body:
-`To initialize the state, simply set this.state in the constructor() method of the class. 
-Our state is an object which in our case only has one key called message.`,
-		code:			
-`class Hello extends React.Component {
-	
-	constructor(){
-		super();
-		this.state = {
-			message: "my friend (from state)!"
-		};
-	}
-	
-	render() {
-		return <h1>Hello {this.state.message}!</h1>;
-	}
-}`
-
-	}
-
-	]
-},
-{GrpTitle:"Stateless Example",
-items:
-	[
-		{title:"App.jsx",
-		code:
-`import React from 'react';
-class App extends React.Component {
-   render() { return ( &ltdiv>  &ltHeader/> &ltContent/>  &lt/div> ); }
-}
-class Header extends React.Component {
-   render() {return (  &ltdiv> &lth1>Header &lt/h1> &lt/div> );  }
-}
-class Content extends React.Component {
-   render() {  return ( &ltdiv> &lth2>
-			Content&lt/h2> &ltp>The content
-			text!!!&lt/p> &lt/div>  );  }
-}
-export default App;`
-		},
-		{title:"main.js",
-			code:
-`import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App.jsx';
-ReactDOM.render(<App />, document.getElementById('app'));
-`,
-			imageSrc:'https://www.tutorialspoint.com/reactjs/images/react_components_stateless.jpg'
-		}
-	]
-},
-{GrpTitle:"Statefull Example",
-items:
-	[
-		{title:"App.jsx",
-		code:
-`import React from 'react';
-class App extends React.Component {
-constructor() {
-	super();
-	this.state = {
-		data:    [{ "id":1,"name":"Foo","age":"20" },
-				{ "id":2,"name":"Bar","age":"30" },
-				{ "id":3,"name":"Baz","age":"40"}
-				]  }
-}
-render() { return (
-		&ltdiv> &ltHeader/>
-			&lttable> &lttbody>
-				{this.state.data.map((person, i) => &ltTableRow key = {i} 
-					data = {person} />)}
-			&lt/tbody>&lt/table>
-		&lt/div>
-	);   }
-}
-class Header extends React.Component {
-render() {return ( &ltdiv>&lth1>Header&lt/h1>&lt/div> ); }
-}
-class TableRow extends React.Component {
-render() {return (&lttr>
-			&lttd>{this.props.data.id}&lt/td>
-			&lttd>{this.props.data.name}&lt/td>
-			&lttd>{this.props.data.age}&lt/td>
-		&lt/tr>  );   }
-}
-export default App;`
-		},
-		{title:'main.js',
-			code:`import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App.jsx';
-ReactDOM.render(<App/>, document.getElementById('app'));
-`,
-imageSrc:"https://www.tutorialspoint.com/reactjs/images/react_components_statefull.jpg"
-
-		},
-	]
-},
-{	GrpTitle:"Handling Events",
-	items:[
-		{title:"Event Handling",
-		body:
-`Handling events with React elements is very similar to handling events on DOM elements. 
-There are some syntactic differences:
-
-React events are named using camelCase, rather than lowercase.
-With JSX you pass a function as the event handler, rather than a string.
-`,
-code:
-`function ActionLink() {
-    function handleClick(e) {
-       e.preventDefault();
-       console.log('The link was clicked.');
-    }
-  return (
-    &lta href="#" onClick={handleClick}>
-      Click me
-    &lt/a>
-  );
-}`
-		},
-		{title:"Event example2",
-			body:`<a href="http://codepen.io/gaearon/pen/xEmzGg?editors=0010">Try it on codePen</a>`,
-			code:
-`class Toggle extends React.Component {
-  constructor(props) {
-	super(props);
-	this.state = {isToggleOn: true};
-
-	// This binding is necessary to make 'this' work in the callback
-	this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick() {
-	this.setState(state => ({
-	  isToggleOn: !state.isToggleOn
-	}));
-  }
-
-  render() {
-	return (
-	  &ltbutton onClick={this.handleClick}>
-		{this.state.isToggleOn ? 'ON' : 'OFF'}
-	  &lt/button>
-	);
-  }
-}
-
-ReactDOM.render(
-  &ltToggle />,
-  document.getElementById('root')
-);`
-
-		}
-	]
-},
-{GrpTitle:"Environment Setup",
-items:[		
-    {
-        title:`Create the Root Folder`,
-        code:`C:\\>mkdir reactApp
-C:\\reactApp>npm init`,
-        codetype:"html"
+        return &ltp>The logged in user is: 
+        {this.props.username}&lt/p>;
     },
-    {			title:"Install Node.js then Global Packages(babel plugins)",
-        code:`C:\\reactApp>npm install -g babel
-C:\\reactApp>npm install -g babel-cli`,
-        codetype:"html"
+    });
+    // OR:
+    class Username extends React.Component {
+        render() {
+            return &ltp>The logged in user is: 
+            {this.props.username}&lt/p>;
+        }
+    }`
+            },
+            {title:"functional stateless component(FSC)",
+                body:"<a href='https://codepen.io/nhab/pen/zJaEMR'>see the code in action</a>",
+                code:
+     `const Username = function(props) {
+    return &ltp>The logged in user is:
+    {props.username}&lt/p>;
+    };
+    // OR :
+    function Welcome(props) {
+    return &lth1>Hello, {props.name}&lt/h1>;
+    }`
+            },
+            {title:"Components types",
+            body:
+    ` 1- containers/<h7>stateful components</h7>:
+    does the work of rendering child components
+    and 2- <h7>stateless components</h7> :
+    A stateless component's work is to handle the
+    data,event,..receives from its parent component`
+            }
+        ]
     },
-    {	title:"Add Dependencies and Plugins",
-        code:`C:\\reactApp>npm install webpack --save
-C:\\reactApp>npm install webpack-dev-server --save`,
-        codetype:"html"
-    },
-    {
-        title:"Add packages to package.json",
-           body:"The --save command will add these packages to package.json file.",
-           code:`C:\\reactApp>npm install react --save
-C:\\reactApp>npm install react-dom --save`,
-        codetype:"php"
-    },
-    {
-        title:"Create the Files",
-        body:"The touch command is the easiest way to create new, empty files:",
-        code:`C:\\reactApp>touch index.html
-C:\\reactApp>touch App.jsx
-C:\\reactApp>touch main.js
-C:\\reactApp>touch webpack.config.js`,
-        codetype:"html"
-    },
-    {
-        title:"Install webpack-dev-server",
-        body:`The webpack-dev-server is a little
-Node.js Express server, 
-which uses the webpack-dev-middleware
-to serve a webpack bundle`,
-        code:`npm install webpack-dev-server -g`,
-        codetype:"javascript"
-    },
-    {
-        title:"Set Compiler, Server and Loaders",
-        body:`Edit <b>webpack.config.js</b> . 
-set webpack entry point to be main.js`,
-        code: `var config = {
-entry: './main.js',
-output: {      path:'/',      filename: 'index.js',   },
-devServer: {   inline: true,      port: 8080   },
-module: {      loaders: [         {
-   test: /\.jsx?$/,
-   exclude: /node_modules/,
-   loader: 'babel-loader',
-   query: {
-      presets: ['es2015', 'react']     }     }
-]   }}
-module.exports = config;`,
-codetype:   "javascript"
-    },
-    {
-        title:"Edit package.json",
-        body:`Open the package.json and 
-delete test echo Error: 
-no test specified & & exit 1 inside scripts
-object.and add the start command instead.`,
-        code:`"start": "webpack-dev-server --hot"`,
-        codetype:"javascript"
-    },
-    {
-        title:"index.html",
-        body:"div id = 'app' as a root element",
-        code:`&lt!DOCTYPE html>
-&lthtml lang = "en">
-&lthead>
-&ltmeta charset = "UTF-8">
-&lttitle>React App&lt/title>
-&lt/head>
-&ltbody>
-&ltdiv id = "app">&lt/div>
-&ltscript src = "index.js">&lt/script>
-&lt/body>
-&lt/html>`,
-        codetype:"html"
-    },
-    {
-        title:"App.jsx and main.js",
-        code:`//App.jsx
-import React from 'react';
-class App extends React.Component {
-render() {
-    return (
-        &ltdiv>
-            Hello World!!!
-        &lt/div>
+    {GrpTitle:"props and	state ",
+        items:[
+            {title:"prop",
+            body:
+    `This is how you pass props to a component:`,
+    code:
+    `ReactDOM.render(
+        <Hello message="my friend" />, 
+        document.getElementById("root")
     );
+    //This prop is called message and has the value “my friend”. 
+    //We can access this prop inside the Hello component 
+    //by referencing this.props.message, like this:
+    
+    class Hello extends React.Component {
+        render() {
+            return &lt;h1>Hello {this.props.message}!&lt;/h1>;
+        }
+    }`
+            },
+            {title:"State",
+                body:
+    `The other way of storing data in React is in the component’s state. 
+    And unlike props — which can’t be changed directly by the component — the state can.
+    State is the place where the data comes from.
+    State is similar to props, but it is private and fully controlled by the component.
+    <a href="https://codepen.io/gaearon/pen/KgQpJd?editors=0010">
+     <img alt="Edit new" src="https://codesandbox.io/static/img/play-codesandbox.svg">
+    </a>`
+            },
+            {title:"Initializing state",
+            body:
+    `To initialize the state, simply set this.state in the constructor() method of the class. 
+    Our state is an object which in our case only has one key called message.`,
+            code:			
+    `class Hello extends React.Component {
+        
+        constructor(){
+            super();
+            this.state = {
+                message: "my friend (from state)!"
+            };
+        }
+        
+        render() {
+            return <h1>Hello {this.state.message}!</h1>;
+        }
+    }`
+    
+        }
+    
+        ]
+    },
+    {GrpTitle:"Stateless Example",
+    items:
+        [
+            {title:"App.jsx",
+            code:
+    `import React from 'react';
+    class App extends React.Component {
+       render() { return ( &ltdiv>  &ltHeader/> &ltContent/>  &lt/div> ); }
     }
-}
-export default App;`,
-        codetype:"javascript"
-    },
-    {
-        title:"main.js",
-        code:`import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App.jsx';
-ReactDOM.render(&ltApp />, 
-document.getElementById('app'));`,
-        codetype:"html"
-    },
-    {
-        title:"Running the Server",
-        body:"run the following command line and see the result on http://localhost:8080/",
-        code:"C:\\reactApp>npm start",
-        codetype:"javascript"
-    },
-    {title:"more examples",
-        body:`<a href="https://codesandbox.io/s/r5w8zk8qzn"><br>
-<img alt="Edit r5w8zk8qzn" src="https://codesandbox.io/static/img/play-codesandbox.svg">
-</a>&nbsp
-<a href="https://codepen.io/bradleyboy/pen/OPBpGw">2nd Example</a> `
-
+    class Header extends React.Component {
+       render() {return (  &ltdiv> &lth1>Header &lt/h1> &lt/div> );  }
     }
-]	
-}
-]
+    class Content extends React.Component {
+       render() {  return ( &ltdiv> &lth2>
+                Content&lt/h2> &ltp>The content
+                text!!!&lt/p> &lt/div>  );  }
+    }
+    export default App;`
+            },
+            {title:"main.js",
+                code:
+    `import React from 'react';
+    import ReactDOM from 'react-dom';
+    import App from './App.jsx';
+    ReactDOM.render(<App />, document.getElementById('app'));
+    `,
+                imageSrc:'https://www.tutorialspoint.com/reactjs/images/react_components_stateless.jpg'
+            }
+        ]
+    },
+    {GrpTitle:"Statefull Example",
+    items:
+        [
+            {title:"App.jsx",
+            code:
+    `import React from 'react';
+    class App extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            data:    [{ "id":1,"name":"Foo","age":"20" },
+                    { "id":2,"name":"Bar","age":"30" },
+                    { "id":3,"name":"Baz","age":"40"}
+                    ]  }
+    }
+    render() { return (
+            &ltdiv> &ltHeader/>
+                &lttable> &lttbody>
+                    {this.state.data.map((person, i) => &ltTableRow key = {i} 
+                        data = {person} />)}
+                &lt/tbody>&lt/table>
+            &lt/div>
+        );   }
+    }
+    class Header extends React.Component {
+    render() {return ( &ltdiv>&lth1>Header&lt/h1>&lt/div> ); }
+    }
+    class TableRow extends React.Component {
+    render() {return (&lttr>
+                &lttd>{this.props.data.id}&lt/td>
+                &lttd>{this.props.data.name}&lt/td>
+                &lttd>{this.props.data.age}&lt/td>
+            &lt/tr>  );   }
+    }
+    export default App;`
+            },
+            {title:'main.js',
+                code:`import React from 'react';
+    import ReactDOM from 'react-dom';
+    import App from './App.jsx';
+    ReactDOM.render(<App/>, document.getElementById('app'));
+    `,
+    imageSrc:"https://www.tutorialspoint.com/reactjs/images/react_components_statefull.jpg"
+    
+            },
+        ]
+    },
+    {	GrpTitle:"Handling Events",
+        items:[
+            {title:"Event Handling",
+            body:
+    `Handling events with React elements is very similar to handling events on DOM elements. 
+    There are some syntactic differences:
+    
+    React events are named using camelCase, rather than lowercase.
+    With JSX you pass a function as the event handler, rather than a string.
+    `,
+    code:
+    `function ActionLink() {
+        function handleClick(e) {
+           e.preventDefault();
+           console.log('The link was clicked.');
+        }
+      return (
+        &lta href="#" onClick={handleClick}>
+          Click me
+        &lt/a>
+      );
+    }`
+            },
+            {title:"Event example2",
+                body:`<a href="http://codepen.io/gaearon/pen/xEmzGg?editors=0010">Try it on codePen</a>`,
+                code:
+    `class Toggle extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {isToggleOn: true};
+    
+        // This binding is necessary to make 'this' work in the callback
+        this.handleClick = this.handleClick.bind(this);
+      }
+    
+      handleClick() {
+        this.setState(state => ({
+          isToggleOn: !state.isToggleOn
+        }));
+      }
+    
+      render() {
+        return (
+          &ltbutton onClick={this.handleClick}>
+            {this.state.isToggleOn ? 'ON' : 'OFF'}
+          &lt/button>
+        );
+      }
+    }
+    
+    ReactDOM.render(
+      &ltToggle />,
+      document.getElementById('root')
+    );`
+    
+            }
+        ]
+    },
+    {GrpTitle:"Environment Setup",
+    items:[		
+        {
+            title:`Create the Root Folder`,
+            code:`C:\\>mkdir reactApp
+    C:\\reactApp>npm init`,
+            codetype:"html"
+        },
+        {			title:"Install Node.js then Global Packages(babel plugins)",
+            code:`C:\\reactApp>npm install -g babel
+    C:\\reactApp>npm install -g babel-cli`,
+            codetype:"html"
+        },
+        {	title:"Add Dependencies and Plugins",
+            code:`C:\\reactApp>npm install webpack --save
+    C:\\reactApp>npm install webpack-dev-server --save`,
+            codetype:"html"
+        },
+        {
+            title:"Add packages to package.json",
+               body:"The --save command will add these packages to package.json file.",
+               code:`C:\\reactApp>npm install react --save
+    C:\\reactApp>npm install react-dom --save`,
+            codetype:"php"
+        },
+        {
+            title:"Create the Files",
+            body:"The touch command is the easiest way to create new, empty files:",
+            code:`C:\\reactApp>touch index.html
+    C:\\reactApp>touch App.jsx
+    C:\\reactApp>touch main.js
+    C:\\reactApp>touch webpack.config.js`,
+            codetype:"html"
+        },
+        {
+            title:"Install webpack-dev-server",
+            body:`The webpack-dev-server is a little
+    Node.js Express server, 
+    which uses the webpack-dev-middleware
+    to serve a webpack bundle`,
+            code:`npm install webpack-dev-server -g`,
+            codetype:"javascript"
+        },
+        {
+            title:"Set Compiler, Server and Loaders",
+            body:`Edit <b>webpack.config.js</b> . 
+    set webpack entry point to be main.js`,
+            code: `var config = {
+    entry: './main.js',
+    output: {      path:'/',      filename: 'index.js',   },
+    devServer: {   inline: true,      port: 8080   },
+    module: {      loaders: [         {
+       test: /\.jsx?$/,
+       exclude: /node_modules/,
+       loader: 'babel-loader',
+       query: {
+          presets: ['es2015', 'react']     }     }
+    ]   }}
+    module.exports = config;`,
+    codetype:   "javascript"
+        },
+        {
+            title:"Edit package.json",
+            body:`Open the package.json and 
+    delete test echo Error: 
+    no test specified & & exit 1 inside scripts
+    object.and add the start command instead.`,
+            code:`"start": "webpack-dev-server --hot"`,
+            codetype:"javascript"
+        },
+        {
+            title:"index.html",
+            body:"div id = 'app' as a root element",
+            code:`&lt!DOCTYPE html>
+    &lthtml lang = "en">
+    &lthead>
+    &ltmeta charset = "UTF-8">
+    &lttitle>React App&lt/title>
+    &lt/head>
+    &ltbody>
+    &ltdiv id = "app">&lt/div>
+    &ltscript src = "index.js">&lt/script>
+    &lt/body>
+    &lt/html>`,
+            codetype:"html"
+        },
+        {
+            title:"App.jsx and main.js",
+            code:`//App.jsx
+    import React from 'react';
+    class App extends React.Component {
+    render() {
+        return (
+            &ltdiv>
+                Hello World!!!
+            &lt/div>
+        );
+        }
+    }
+    export default App;`,
+            codetype:"javascript"
+        },
+        {
+            title:"main.js",
+            code:`import React from 'react';
+    import ReactDOM from 'react-dom';
+    import App from './App.jsx';
+    ReactDOM.render(&ltApp />, 
+    document.getElementById('app'));`,
+            codetype:"html"
+        },
+        {
+            title:"Running the Server",
+            body:"run the following command line and see the result on http://localhost:8080/",
+            code:"C:\\reactApp>npm start",
+            codetype:"javascript"
+        },
+        {title:"more examples",
+            body:`<a href="https://codesandbox.io/s/r5w8zk8qzn"><br>
+    <img alt="Edit r5w8zk8qzn" src="https://codesandbox.io/static/img/play-codesandbox.svg">
+    </a>&nbsp
+    <a href="https://codepen.io/bradleyboy/pen/OPBpGw">2nd Example</a> `
+    
+        }
+    ]	
+    }
+    ]
+    
