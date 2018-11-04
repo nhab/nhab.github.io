@@ -166,6 +166,34 @@ class App extends React.Component {
 }  }
 export default App;`
                 },
+                {title:"Style In React",
+                    body:`React recommends using inline styles. 
+    (with camelCase syntax)
+    it will automatically append px after 
+    the number value on specific elements.
+    <a href="https://codepen.io/ciptohadi/pen/qaHgj">example link</a> ,<h7>Example:</h7>`,
+    code:`import React from 'react';
+    class App extends React.Component {
+        render() {
+            var myStyle = { fontSize: 100,
+                color: '#FF0000'  }
+            return (
+                &ltdiv>
+                &lth1 style = {myStyle}>Header&lt/h1>
+                &lt/div>
+            );
+        }
+    }
+    export default App;`
+                },
+                {title:"Naming Convention",
+                    body:`<h7>HTML tags</h7> always use <h7>lowercase tag</h7> names, while <h7>React components start with Uppercase.</h7>
+                    <b>Note</b> − You should use <h7>className</h7> and <h7>htmlFor</h7> as XML attribute names instead of <h7>class</h7> and <h7>for</h7>.`
+                }
+            ]
+        },
+        {GrpTitle:"Expressions",
+        items:[
                 {	title:"Expression in an attribute",
                     code:`const element =
     &ltimg src={user.avatarUrl}>
@@ -200,46 +228,6 @@ export default App;`
         }
     }
     export default App;`
-                },
-                {title:"Style In React",
-                    body:`React recommends using inline styles. 
-    (with camelCase syntax)
-    it will automatically append px after 
-    the number value on specific elements.
-    <a href="https://codepen.io/ciptohadi/pen/qaHgj">example link</a> ,<h7>Example:</h7>`,
-    code:`import React from 'react';
-    class App extends React.Component {
-        render() {
-            var myStyle = { fontSize: 100,
-                color: '#FF0000'  }
-            return (
-                &ltdiv>
-                &lth1 style = {myStyle}>Header&lt/h1>
-                &lt/div>
-            );
-        }
-    }
-    export default App;`
-                },
-                {title:"Naming Convention",
-                    body:`<h7>HTML tags</h7> always use <h7>lowercase tag</h7> names, while <h7>React components start with Uppercase.</h7>
-                    <b>Note</b> − You should use <h7>className</h7> and <h7>htmlFor</h7> as XML attribute names instead of <h7>class</h7> and <h7>for</h7>.`
-                },
-                {title:"Reference",
-                    body:`
-        <br/><a href='https://reactjs.org/docs/react-api.html'>react api</a>
-        <br/><a href='https://reactjs.org/docs/react-component.html'>components</a>
-        <br/><a href='https://reactjs.org/docs/react-dom.html'>ReactDOM</a>
-        <br/><a href='https://reactjs.org/docs/react-dom-server.html'>DomServer</a>
-        <br/><a href='https://reactjs.org/docs/dom-elements.html'>Dom Elements</a>
-        <br/><a href='https://reactjs.org/docs/events.html'>SyntheticEvents</a>
-        <br/><a href='https://reactjs.org/docs/test-utils.html'>TestUtils</a>
-        <br/><a href='https://reactjs.org/docs/glossary.html'>Glossary</a>
-        <br/><a href='https://reactjs.org/docs/jsx-in-depth.html'>jsx-in-depth</a>
-        <br/><a href='https://github.com/mikechau/react-primer-draft'>primer-draft</a>
-        <br/><a href='https://github.com/enaqx/awesome-react'>awesome-react</a>
-        <br/><a href='https://www.codecademy.com/courses/react-101/lessons/react-jsx-intro/exercises/why-react?action=resume_content_item'>why-react<\a>
-        <br/><a href='https://devhints.io/redux'>redux</a>`
                 }
             ]
     },
@@ -621,6 +609,34 @@ export default App;`
     
         }
     ]	
+    },
+    {GrpTitle:"Other resources",
+    items:
+    [
+        {title:"Reference",
+            body:
+`<a href="https://reactjs.org/docs/conditional-rendering.html">-  Read more..</a>
+<br/><a href="https://www.taniarascia.com/getting-started-with-react/">Another good resource..</a>
+<br/><a href="https://medium.freecodecamp.org/learn-react-js-in-5-minutes-526472d292f4">and another..</a>
+
+<br/><a href='https://reactjs.org/docs/react-api.html'>react api</a>
+<br/><a href='https://reactjs.org/docs/react-component.html'>components</a>
+<br/><a href='https://reactjs.org/docs/react-dom.html'>ReactDOM</a>
+<br/><a href='https://reactjs.org/docs/react-dom-server.html'>DomServer</a>
+<br/><a href='https://reactjs.org/docs/dom-elements.html'>Dom Elements</a>
+<br/><a href='https://reactjs.org/docs/events.html'>SyntheticEvents</a>
+<br/><a href='https://reactjs.org/docs/test-utils.html'>TestUtils</a>
+<br/><a href='https://reactjs.org/docs/glossary.html'>Glossary</a>
+<br/><a href='https://reactjs.org/docs/jsx-in-depth.html'>jsx-in-depth</a>
+<br/><a href='https://github.com/mikechau/react-primer-draft'>primer-draft</a>
+<br/><a href='https://github.com/enaqx/awesome-react'>awesome-react</a>
+<br/><a href='https://www.codecademy.com/courses/react-101/lessons/react-jsx-intro/exercises/why-react?action=resume_content_item'>why-react<\a>
+<br/><a href='https://devhints.io/redux'>redux</a>`
+        }
+    ]
+
+     }
+    ]
     }
     ]
     
