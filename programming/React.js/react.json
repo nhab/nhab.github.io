@@ -334,16 +334,16 @@ export default App;`
       
         render() {
           return (
-            <div>
-              <h1>Hello, world!</h1>
-              <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
-            </div>
+            &lt;div>
+              &lt;h1>Hello, world!&lt;/h1>
+              &lt;h2>It is {this.state.date.toLocaleTimeString()}.&lt;/h2>
+            &lt;/div>
           );
         }
       }
       
       ReactDOM.render(
-        <Clock />,
+        &lt;Clock />,
         document.getElementById('root')
       );
       `
@@ -363,7 +363,7 @@ export default App;`
         }
         
         render() {
-            return <h1>Hello {this.state.message}!</h1>;
+            return &lt;h1>Hello {this.state.message}!&lt;/h1>;
         }
     }`
     
@@ -395,7 +395,7 @@ export default App;`
     `import React from 'react';
     import ReactDOM from 'react-dom';
     import App from './App.jsx';
-    ReactDOM.render(<App />, document.getElementById('app'));
+    ReactDOM.render(&lt;App />, document.getElementById('app'));
     `,
                 imageSrc:'https://www.tutorialspoint.com/reactjs/images/react_components_stateless.jpg'
             }
