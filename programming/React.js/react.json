@@ -324,7 +324,29 @@ export default App;`
     State is similar to props, but it is private and fully controlled by the component.
     <a href="https://codepen.io/gaearon/pen/KgQpJd?editors=0010">
      <img alt="Edit new" src="https://codesandbox.io/static/img/play-codesandbox.svg">
-    </a>`
+    </a>`,
+    code:
+    `class Clock extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {date: new Date()};
+        }
+      
+        render() {
+          return (
+            <div>
+              <h1>Hello, world!</h1>
+              <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+            </div>
+          );
+        }
+      }
+      
+      ReactDOM.render(
+        <Clock />,
+        document.getElementById('root')
+      );
+      `
             },
             {title:"Initializing state",
             body:
