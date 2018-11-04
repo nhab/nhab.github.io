@@ -60,8 +60,7 @@ includes everything needed to code in react.`,
 	items:[	
 			{title:"ReactDOM",
 			body:
-`ReactDOM is the glue between React and the DOM.
-Often, you will only use it <h7>for one single thing</h7>:
+`Often, you will only use it <h7>for one single thing</h7>:
   - mounting with <h7>ReactDOM.render()</h7>
 Another useful feature of ReactDOM is:
   - <h7>ReactDOM.findDOMNode()</h7>
