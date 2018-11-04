@@ -201,7 +201,7 @@ export default App;`
     }
     export default App;`
                 },
-                {title:"Styling",
+                {title:"Style In React",
                     body:`React recommends using inline styles. 
     (with camelCase syntax)
     it will automatically append px after 
