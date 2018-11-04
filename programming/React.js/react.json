@@ -1,11 +1,13 @@
 options=[
-{	GrpTitle:"React.js basics",
+{GrpTitle:"React.js basics",
 	items:[
 		{title:"What is React",
-		body:`React is a library for building user interfaces
-through creation of UI components.Unlike more complete
-frameworks such as Angular or Vue, React deals only
-with the view layer.( V in MVC. )
+		body:
+`React is a library for building user interfaces
+through creation of UI components.
+
+Unlike more complete frameworks such as Angular or Vue,
+ React deals only with the view layer.( V in MVC. )
 
 React can also render on the server using Node,
 and native apps using React Native.
@@ -54,139 +56,15 @@ includes everything needed to code in react.`,
 		}
 	]
 },
-{GrpTitle:"Environment Setup",
-	items:[		
-		{
-			title:`Create the Root Folder`,
-			code:`C:\\>mkdir reactApp
-C:\\reactApp>npm init`,
-			codetype:"html"
-		},
-		{			title:"Install Node.js then Global Packages(babel plugins)",
-			code:`C:\\reactApp>npm install -g babel
-C:\\reactApp>npm install -g babel-cli`,
-			codetype:"html"
-		},
-		{	title:"Add Dependencies and Plugins",
-			code:`C:\\reactApp>npm install webpack --save
-C:\\reactApp>npm install webpack-dev-server --save`,
-			codetype:"html"
-		},
-		{
-			title:"Add packages to package.json",
-   			body:"The --save command will add these packages to package.json file.",
-   			code:`C:\\reactApp>npm install react --save
- C:\\reactApp>npm install react-dom --save`,
-			codetype:"php"
-		},
-		{
-			title:"Create the Files",
-			body:"The touch command is the easiest way to create new, empty files:",
-			code:`C:\\reactApp>touch index.html
-C:\\reactApp>touch App.jsx
-C:\\reactApp>touch main.js
-C:\\reactApp>touch webpack.config.js`,
-			codetype:"html"
-		},
-		{
-			title:"Install webpack-dev-server",
-			body:`The webpack-dev-server is a little
-Node.js Express server, 
-which uses the webpack-dev-middleware
-to serve a webpack bundle`,
-			code:`npm install webpack-dev-server -g`,
-			codetype:"javascript"
-		},
-		{
-			title:"Set Compiler, Server and Loaders",
-			body:`Edit <b>webpack.config.js</b> . 
-set webpack entry point to be main.js`,
-			code: `var config = {
- entry: './main.js',
- output: {      path:'/',      filename: 'index.js',   },
-devServer: {   inline: true,      port: 8080   },
- module: {      loaders: [         {
-	   test: /\.jsx?$/,
-	   exclude: /node_modules/,
-	   loader: 'babel-loader',
-	   query: {
-		  presets: ['es2015', 'react']     }     }
- ]   }}
-  module.exports = config;`,
-codetype:   "javascript"
-		},
-		{
-			title:"Edit package.json",
-			body:`Open the package.json and 
-delete test echo Error: 
-no test specified & & exit 1 inside scripts
-object.and add the start command instead.`,
-			code:`"start": "webpack-dev-server --hot"`,
-			codetype:"javascript"
-		},
-		{
-			title:"index.html",
-			body:"div id = 'app' as a root element",
-			code:`&lt!DOCTYPE html>
-&lthtml lang = "en">
-&lthead>
-&ltmeta charset = "UTF-8">
-	&lttitle>React App&lt/title>
-&lt/head>
-&ltbody>
-	&ltdiv id = "app">&lt/div>
-	&ltscript src = "index.js">&lt/script>
-&lt/body>
-&lt/html>`,
-			codetype:"html"
-		},
-		{
-			title:"App.jsx and main.js",
-			code:`//App.jsx
-import React from 'react';
-class App extends React.Component {
-	render() {
-		return (
-			&ltdiv>
-				Hello World!!!
-			&lt/div>
-		);
-		}
-	}
-export default App;`,
-			codetype:"javascript"
-		},
-		{
-			title:"main.js",
-			code:`import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App.jsx';
-ReactDOM.render(&ltApp />, 
-document.getElementById('app'));`,
-			codetype:"html"
-		},
-		{
-			title:"Running the Server",
-			body:"run the following command line and see the result on http://localhost:8080/",
-			code:"C:\\reactApp>npm start",
-			codetype:"javascript"
-		},
-		{title:"more examples",
-			body:`<a href="https://codesandbox.io/s/r5w8zk8qzn"><br>
- <img alt="Edit r5w8zk8qzn" src="https://codesandbox.io/static/img/play-codesandbox.svg">
-</a>&nbsp
-<a href="https://codepen.io/bradleyboy/pen/OPBpGw">2nd Example</a> `
-
-		}
-	]	
-},
 {GrpTitle:"ReactDOM",
 	items:[	
 			{title:"ReactDOM",
 			body:
-`ReactDOM is the <h7>glue between React and the DOM</h7>.
-Often, you will only use it <h7>for one single thing</h7>: mounting with <h7>ReactDOM.render()</h7>
-Another useful feature of ReactDOM is<h7>ReactDOM.findDOMNode()</h7>
+`ReactDOM is the glue between React and the DOM.
+Often, you will only use it <h7>for one single thing</h7>:
+  - mounting with <h7>ReactDOM.render()</h7>
+Another useful feature of ReactDOM is:
+  - <h7>ReactDOM.findDOMNode()</h7>
 which you can use to gain direct access to a DOM element.`,
 			code: 
 `var React = require('react'); /* importing react */
@@ -430,7 +308,7 @@ data,event,..receives from its parent component`
 		}
 	]
 },
-{	GrpTitle:"props and	state ",
+{GrpTitle:"props and	state ",
 	items:[
 		{title:"prop",
 		body:
@@ -560,8 +438,7 @@ imageSrc:"https://www.tutorialspoint.com/reactjs/images/react_components_statefu
 		},
 	]
 },
-{
-	GrpTitle:"Handling Events",
+{	GrpTitle:"Handling Events",
 	items:[
 		{title:"Event Handling",
 		body:
@@ -618,5 +495,131 @@ ReactDOM.render(
 
 		}
 	]
+},
+{GrpTitle:"Environment Setup",
+items:[		
+    {
+        title:`Create the Root Folder`,
+        code:`C:\\>mkdir reactApp
+C:\\reactApp>npm init`,
+        codetype:"html"
+    },
+    {			title:"Install Node.js then Global Packages(babel plugins)",
+        code:`C:\\reactApp>npm install -g babel
+C:\\reactApp>npm install -g babel-cli`,
+        codetype:"html"
+    },
+    {	title:"Add Dependencies and Plugins",
+        code:`C:\\reactApp>npm install webpack --save
+C:\\reactApp>npm install webpack-dev-server --save`,
+        codetype:"html"
+    },
+    {
+        title:"Add packages to package.json",
+           body:"The --save command will add these packages to package.json file.",
+           code:`C:\\reactApp>npm install react --save
+C:\\reactApp>npm install react-dom --save`,
+        codetype:"php"
+    },
+    {
+        title:"Create the Files",
+        body:"The touch command is the easiest way to create new, empty files:",
+        code:`C:\\reactApp>touch index.html
+C:\\reactApp>touch App.jsx
+C:\\reactApp>touch main.js
+C:\\reactApp>touch webpack.config.js`,
+        codetype:"html"
+    },
+    {
+        title:"Install webpack-dev-server",
+        body:`The webpack-dev-server is a little
+Node.js Express server, 
+which uses the webpack-dev-middleware
+to serve a webpack bundle`,
+        code:`npm install webpack-dev-server -g`,
+        codetype:"javascript"
+    },
+    {
+        title:"Set Compiler, Server and Loaders",
+        body:`Edit <b>webpack.config.js</b> . 
+set webpack entry point to be main.js`,
+        code: `var config = {
+entry: './main.js',
+output: {      path:'/',      filename: 'index.js',   },
+devServer: {   inline: true,      port: 8080   },
+module: {      loaders: [         {
+   test: /\.jsx?$/,
+   exclude: /node_modules/,
+   loader: 'babel-loader',
+   query: {
+      presets: ['es2015', 'react']     }     }
+]   }}
+module.exports = config;`,
+codetype:   "javascript"
+    },
+    {
+        title:"Edit package.json",
+        body:`Open the package.json and 
+delete test echo Error: 
+no test specified & & exit 1 inside scripts
+object.and add the start command instead.`,
+        code:`"start": "webpack-dev-server --hot"`,
+        codetype:"javascript"
+    },
+    {
+        title:"index.html",
+        body:"div id = 'app' as a root element",
+        code:`&lt!DOCTYPE html>
+&lthtml lang = "en">
+&lthead>
+&ltmeta charset = "UTF-8">
+&lttitle>React App&lt/title>
+&lt/head>
+&ltbody>
+&ltdiv id = "app">&lt/div>
+&ltscript src = "index.js">&lt/script>
+&lt/body>
+&lt/html>`,
+        codetype:"html"
+    },
+    {
+        title:"App.jsx and main.js",
+        code:`//App.jsx
+import React from 'react';
+class App extends React.Component {
+render() {
+    return (
+        &ltdiv>
+            Hello World!!!
+        &lt/div>
+    );
+    }
+}
+export default App;`,
+        codetype:"javascript"
+    },
+    {
+        title:"main.js",
+        code:`import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.jsx';
+ReactDOM.render(&ltApp />, 
+document.getElementById('app'));`,
+        codetype:"html"
+    },
+    {
+        title:"Running the Server",
+        body:"run the following command line and see the result on http://localhost:8080/",
+        code:"C:\\reactApp>npm start",
+        codetype:"javascript"
+    },
+    {title:"more examples",
+        body:`<a href="https://codesandbox.io/s/r5w8zk8qzn"><br>
+<img alt="Edit r5w8zk8qzn" src="https://codesandbox.io/static/img/play-codesandbox.svg">
+</a>&nbsp
+<a href="https://codepen.io/bradleyboy/pen/OPBpGw">2nd Example</a> `
+
+    }
+]	
 }
 ]
