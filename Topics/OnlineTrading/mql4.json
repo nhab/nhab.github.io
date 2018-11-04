@@ -192,7 +192,7 @@ options=[
   </td>
   </tr>
   <tr>
-  <td style="width:131px;"><p   ><span   ><a href="/predefined/_point" class="topiclink">_Point</a></span></p>
+  <td style="width:131px;background-color:#999999"><p   ><span   ><a href="/predefined/_point" class="topiclink">_Point</a></span></p>
   </td>
   <td><p   ><span   >Size of the current symbol point in the quote currency</span></p>
   </td>
