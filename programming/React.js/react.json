@@ -60,7 +60,7 @@ includes everything needed to code in react.`,
 	items:[	
 			{title:"ReactDOM",
 			body:
-`Often, you will only use it <h7>for one single thing</h7>:
+`Often, it is used for  <h7>1 </h7> single thing:
   - mounting with <h7>ReactDOM.render()</h7>
 Another useful feature of ReactDOM is:
   - <h7>ReactDOM.findDOMNode()</h7>
