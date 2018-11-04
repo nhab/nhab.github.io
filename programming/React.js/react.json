@@ -78,12 +78,15 @@ ReactDOM.render(&ltMyComponent />, node);`
 	items:[	
 			{title:"jsx is a syntax",
 			body:
-`React uses JSX for templating and components instead of regular JavaScript.
-<b>JavaScript XML (JSX)</b> is an extension to the JavaScript language <h7>syntax</h7>.
+`<b>JavaScript XML (JSX)</b> is an extension to the JavaScript language <h7>syntax</h7>
+for templating and components instead of regular JavaScript.
 
 JSX tags are the same as Html tags,so there is no learning curve for tags.
+
 and all HTML DOM properties and attributes (including event handlers)
- should be camelCased,In React.Some of them are a bit different. For example:
+ should be camelCased,In React.
+
+Some of them are a bit different. For example:
 	<table style="background-color:lightgray;border-collapse: collapse;">
 	<tr style="background-color:gray"><td> HTML attribute</td><td> corresponding attribute  in React</td></tr>
 	<tr><td> tabindex      </td><td>tabIndex                     </td>	</tr>
