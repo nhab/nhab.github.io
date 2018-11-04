@@ -637,9 +637,8 @@ export default App;`
     [
         {title:"Reference",
             body:
-`<a href="https://reactjs.org/docs/conditional-rendering.html">-  Read more..</a>
-<br/><a href="https://www.taniarascia.com/getting-started-with-react/">Another good resource..</a>
-<br/><a href="https://medium.freecodecamp.org/learn-react-js-in-5-minutes-526472d292f4">and another..</a>
+`<br/><a href="https://www.taniarascia.com/getting-started-with-react/">getting-started-with-react</a>
+<br/><a href="https://medium.freecodecamp.org/learn-react-js-in-5-minutes-526472d292f4">react-js-in-5-minutes-</a>
 
 <br/><a href='https://reactjs.org/docs/react-api.html'>react api</a>
 <br/><a href='https://reactjs.org/docs/react-component.html'>components</a>
