@@ -7,9 +7,9 @@ options=[
       depending to the current market situation, ticks may be received more or less frequently, 
        each of them brings a new quote`
       },
-      {title:"A Quote",
+      {title:"Quote",
   
-      body:`the cost of one currency expressed in terms of another currency.`
+      body:`Is the cost of one currency expressed in terms of another currency.`
       },
       {title:"Data types",
         body:
@@ -176,6 +176,130 @@ return;              //returns void   `
    Indicators are considered in detail in Usage of technical indicators and Creation of custom indicators.
 
 `
+      },
+      {title:"Predefined variables",
+body:`<table  cellpadding="5" border="1">
+<tbody><tr>
+<td style="width:131px; background-color:#DBE9F9;"><p   ><span   >Variable</span></p>
+</td>
+<td style="background-color:#DBE9F9;"><p   ><span   >Value</span></p>
+</td>
+</tr>
+<tr>
+<td style="width:131px;"><p   ><span   ><a href="/predefined/_digits" class="topiclink">_Digits</a></span></p>
+</td>
+<td><p   ><span   >Number of decimal places</span></p>
+</td>
+</tr>
+<tr>
+<td style="width:131px;"><p   ><span   ><a href="/predefined/_point" class="topiclink">_Point</a></span></p>
+</td>
+<td><p   ><span   >Size of the current symbol point in the quote currency</span></p>
+</td>
+</tr>
+<tr>
+<td style="width:131px;"><p   ><span   ><a href="/predefined/_lasterror" class="topiclink">_LastError</a></span></p>
+</td>
+<td><p   ><span   >The last error code</span></p>
+</td>
+</tr>
+<tr>
+<td style="width:131px;"><p   ><span   ><a href="/predefined/_period" class="topiclink">_Period</a></span></p>
+</td>
+<td><p   ><span   >Timeframe of the current chart</span></p>
+</td>
+</tr>
+<tr>
+<td style="width:131px;"><p   ><span   ><a href="/predefined/_randomseed" class="topiclink">_RandomSeed</a></span></p>
+</td>
+<td><p   ><span   >Current status of the generator of pseudo-random integers</span></p>
+</td>
+</tr>
+<tr>
+<td style="width:131px;"><p   ><span   ><a href="/predefined/_stopflag" class="topiclink">_StopFlag</a></span></p>
+</td>
+<td><p   ><span   >Program stop flag</span></p>
+</td>
+</tr>
+<tr>
+<td style="width:131px;"><p   ><span   ><a href="/predefined/_symbol" class="topiclink">_Symbol</a></span></p>
+</td>
+<td><p   ><span   >Symbol name of the current chart</span></p>
+</td>
+</tr>
+<tr>
+<td style="width:131px;"><p   ><span   ><a href="/predefined/_uninitreason" class="topiclink">_UninitReason</a></span></p>
+</td>
+<td><p   ><span   >Uninitialization reason code</span></p>
+</td>
+</tr>
+<tr>
+<td style="width:131px;"><p   ><span   ><a href="/predefined/ask" class="topiclink">Ask</a></span></p>
+</td>
+<td><p   ><span   >The latest known seller's price (ask price) of the current symbol</span></p>
+</td>
+</tr>
+<tr>
+<td style="width:131px;"><p   ><span   ><a href="/predefined/bars" class="topiclink">Bars</a></span></p>
+</td>
+<td><p   ><span   >Number of bars in the current chart</span></p>
+</td>
+</tr>
+<tr>
+<td style="width:131px;"><p   ><span   ><a href="/predefined/bid" class="topiclink">Bid</a></span></p>
+</td>
+<td><p   ><span   >The latest known buyer's price (offer price, bid price) of the current symbol</span></p>
+</td>
+</tr>
+<tr>
+<td style="width:131px;"><p   ><span   ><a href="/predefined/close" class="topiclink">Close</a></span></p>
+</td>
+<td><p   ><span   >Series array that contains close prices for each bar of the current chart</span></p>
+</td>
+</tr>
+<tr>
+<td style="width:131px;"><p   ><span   ><a href="/predefined/digitsvar" class="topiclink">Digits</a></span></p>
+</td>
+<td><p   ><span   >Number of digits after decimal point for the current symbol prices</span></p>
+</td>
+</tr>
+<tr>
+<td style="width:131px;"><p   ><span   ><a href="/predefined/high" class="topiclink">High</a></span></p>
+</td>
+<td><p   ><span   >Series array that contains the highest prices of each bar of the current chart</span></p>
+</td>
+</tr>
+<tr>
+<td style="width:131px;"><p   ><span   ><a href="/predefined/low" class="topiclink">Low</a></span></p>
+</td>
+<td><p   ><span   >Series array that contains the lowest prices of each bar of the current chart</span></p>
+</td>
+</tr>
+<tr>
+<td style="width:131px;"><p   ><span   ><a href="/predefined/open" class="topiclink">Open</a></span></p>
+</td>
+<td><p   ><span   >Series array that contains open prices of each bar of the current chart</span></p>
+</td>
+</tr>
+<tr>
+<td style="width:131px;"><p   ><span   ><a href="/predefined/pointvar" class="topiclink">Point</a></span></p>
+</td>
+<td><p   ><span   >The current symbol point value in the quote currency</span></p>
+</td>
+</tr>
+<tr>
+<td style="width:131px;"><p   ><span   ><a href="/predefined/time" class="topiclink">Time</a></span></p>
+</td>
+<td><p   ><span   >Series array that contains open time of each bar of the current chart</span></p>
+</td>
+</tr>
+<tr>
+<td style="width:131px;"><p   ><span   ><a href="/predefined/volume" class="topiclink">Volume</a></span></p>
+</td>
+<td><p   ><span   >Series array that contains tick volumes of each bar of the current chart</span></p>
+</td>
+</tr>
+</tbody></table>'
       }
     ]
   },
