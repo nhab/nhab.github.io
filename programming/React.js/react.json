@@ -503,7 +503,137 @@ export default App;`
       document.getElementById('root')
     );`
     
-            }
+            },
+            {title:"Child Events",
+            body:
+`When we need to update the state of the parent component from its child,
+ we can create an event handler (updateState) in the parent component 
+ and pass it as a prop (updateStateProp) to the child component where we can just call it.`,
+        code:
+`//App.jsx
+import React from 'react';
+
+class App extends React.Component {
+   constructor(props) {
+      super(props);
+      
+      this.state = {
+         data: 'Initial data...'
+      }
+      this.updateState = this.updateState.bind(this);
+   };
+   updateState() {
+      this.setState({data: 'Data updated from the child component...'})
+   }
+   render() {
+      return (
+         <div>
+            <Content myDataProp = {this.state.data} 
+               updateStateProp = {this.updateState}></Content>
+         </div>
+      );
+   }
+}
+class Content extends React.Component {
+   render() {
+      return (
+         &lt;div>
+            &lt;button onClick = {this.props.updateStateProp}>CLICK&lt;/button>
+            &lt;h3>{this.props.myDataProp}&lt;/h3>
+         &lt;/div>
+      );
+   }
+}
+export default App;
+
+//----------------------------------------------
+//main.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.jsx';
+
+ReactDOM.render(&lt;App/>, document.getElementById('app'));
+
+`
+            },
+            {title:"ReactJS - Refs",
+            body:
+ `The ref is used to return a reference to the element. 
+ Refs should be avoided in most cases, however,
+  they can be useful when we need DOM measurements
+  or to add methods to the components.
+
+ Using Refs
+ The following example shows how to use refs to clear 
+ the input field.
+ClearInput function searches for element with
+ref = "myInput" value,
+resets the state, 
+and adds focus to it after the button is clicked.`  ,
+code:         
+  `//App.jsx
+  import React from 'react';
+  import ReactDOM from 'react-dom';
+  
+  class App extends React.Component {
+     constructor(props) {
+        super(props);
+          
+        this.state = {
+           data: ''
+        }
+        this.updateState = this.updateState.bind(this);
+        this.clearInput = this.clearInput.bind(this);
+     };
+     updateState(e) {
+        this.setState({data: e.target.value});
+     }
+     clearInput() {
+        this.setState({data: ''});
+        ReactDOM.findDOMNode(this.refs.myInput).focus();
+     }
+     render() {
+        return (
+           &lt;div>
+              &lt;input value = {this.state.data} onChange = {this.updateState} 
+                 ref = "myInput">&lt;/input>
+              &lt;button onClick = {this.clearInput}>CLEAR&lt;/button>
+              &lt;h4>{this.state.data}&lt;/h4>
+           &lt;/div>
+        );
+     }
+  }
+  export default App;
+  
+  //-------------------------------------
+  //main.js
+  import React from 'react';
+  import ReactDOM from 'react-dom';
+  import App from './App.jsx';
+  
+  ReactDOM.render(&lt;App/>, document.getElementById('app'));
+  Once the button is clicked, the input will be cleared and focused.
+  
+  `   
+        },
+        {title:"Keys",
+            body:"<a href='https://www.tutorialspoint.com/reactjs/reactjs_keys.htm'>keys</a>"
+        },
+        {title:"Router",
+        body:`<a href="https://www.tutorialspoint.com/reactjs/reactjs_router.htm">router</a>`
+        },
+        {title:"Flux",
+         body:`<a href="https://www.tutorialspoint.com/reactjs/reactjs_flux_concept.htm">flix concepts</a>`
+        },
+        {title:"Using flux",
+        body:`<a href="https://www.tutorialspoint.com/reactjs/reactjs_using_flux.htm">Using flux</a>`
+        },
+        {title:"Animation",
+        body:`<a href="https://www.tutorialspoint.com/reactjs/reactjs_animations.htm">animation</a>`
+        },
+        {title:"Higher order components",
+        body:`<a href="https://www.tutorialspoint.com/reactjs/reactjs_higher_order_components.htm">higher order components</a>`
+        }
         ]
     },
     {GrpTitle:"Environment Setup",
