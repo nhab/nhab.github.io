@@ -178,9 +178,9 @@ options=[
   `
         },
         {title:"Predefined variables",
-  body:`<table  cellpadding="5" border="1">
+  body:`<table  cellpadding="5" border="1" style=" background-color:#DBE9F9;">
   <tbody><tr>
-  <td style="width:131px; background-color:#DBE9F9;"><p   ><span   >Variable</span></p>
+  <td style="width:131px;"><p   ><span   >Variable</span></p>
   </td>
   <td style="background-color:#DBE9F9;"><p   ><span   >Value</span></p>
   </td>
