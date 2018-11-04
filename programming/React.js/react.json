@@ -183,25 +183,29 @@ document.getElementById('app'));`,
 {GrpTitle:"ReactDOM",
 	items:[	
 			{title:"ReactDOM",
-			body:`ReactDOM is the <h7>glue between React and the DOM</h7>.
-			Often, you will only use it <h7>for one single thing</h7>: mounting with <h7>ReactDOM.render()</h7>
-			Another useful feature of ReactDOM is<h7>ReactDOM.findDOMNode()</h7>
-			 which you can use to gain direct access to a DOM element.`,
-			code: `var React = require('react'); /* importing react */
-		   var ReactDOM = require('react-dom'); /* importing react-dom */
-		   
-		   var MyComponent = React.createClass({
-			 render: function() {
-			   return &ltdiv>Hello World&lt/div>;
-			 }
-		   });
-			 ReactDOM.render(&ltMyComponent />, node);`}
+			body:
+`ReactDOM is the <h7>glue between React and the DOM</h7>.
+Often, you will only use it <h7>for one single thing</h7>: mounting with <h7>ReactDOM.render()</h7>
+Another useful feature of ReactDOM is<h7>ReactDOM.findDOMNode()</h7>
+which you can use to gain direct access to a DOM element.`,
+			code: 
+`var React = require('react'); /* importing react */
+var ReactDOM = require('react-dom'); /* importing react-dom */
+
+var MyComponent = React.createClass({
+render: function() {
+   return &ltdiv>Hello World&lt/div>;
+}
+});
+ReactDOM.render(&ltMyComponent />, node);`
+			}
 		]
 },
 {GrpTitle:"JSX",
 	items:[	
 			{title:"jsx is a syntax",
-				body:`React uses JSX for templating and components instead of regular JavaScript.
+			body:
+`React uses JSX for templating and components instead of regular JavaScript.
 <b>JavaScript XML (JSX)</b> is an extension to the JavaScript language <h7>syntax</h7>.
 
 JSX tags are the same as Html tags,so there is no learning curve for tags.
