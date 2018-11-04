@@ -59,8 +59,8 @@ b{font-size:20px;font-weight:800;background-color: lightcyan;color:darkcyan;}
 code{background-color:#222222;color: lightcyan;
     padding-left: 2px;padding-right:2px;
     margin-left: 2px; margin-right: 2px;}
-a:{color:lightblue;background-color:black;}
-a:visited{color:pink;background-color:black;}
+a{color#8888aa;}
+a:visited{color:#885555;}
 /*-----------------------------------------------*/
 
 .imagesize{width:350px;height:350px;}
