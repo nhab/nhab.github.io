@@ -92,48 +92,114 @@ options=[
        {title:"Standard functions",
         body:
   `
-  Common Functions. 
+  <a href="https://docs.mql4.com/common">Common Functions</a> 
     are the following functions: Print(), Alert(), Comment(), MarketInfo(), Sleep(), etc.
+    
+  <a href="https://docs.mql4.com/array">Arrays</a> 
   
-  Graphical Objects. 
-    This group includes functions that are used for programmed creation such objects as well as for changing their properties, moving them and deleting.
+    <a href="https://docs.mql4.com/convert>Conversion functions</a>
+    This is a group of functions that provide conversion of data from one format into another.
+
+    <a href="https://docs.mql4.com/math">Mathematical Functions</a>
+    Standard set of mathematical and trigonometrical functions.
   
-  Operations with Charts.
-    A group of functions that are used for getting different information about a current chart,
-    to which a program in MQL4 (script, indicator or Expert Advisor) is attached.
-  
-  String Functions.
+    <a href="https://docs.mql4.com/strings">String Functions</a>
     String functions are used for processing variables of string type:
      searching value, concatenation of lines, retrieval of sub-lines, etc. 
      Conversion functions are used for converting a variable of one type into another type. 
      NormalizeDouble() function rounds off values of double type to a certain accuracy.
   
-  Date and Time.
-    This group of functions is used for getting time information in this or that form: 
-      LocalTime() shows the local time of a computer, TimeCurrent() shows server time of the last received quote. 
-    Besides, parameters like a weekday, month day, hour, minute, etc. can be obtained for an indicated time value.
-  
-  File Operations.
-    This group of functions is necessary for reading/recording data on a hard disk.
-  
-  Arrays and Timeseries.
+     <a href="https://docs.mql4.com/dateandtime">Date and Time</a>
+     This group of functions is used for getting time information in this or that form: 
+     LocalTime() shows the local time of a computer, TimeCurrent()
+     shows server time of the last received quote. 
+     Besides, parameters like a weekday, month day, hour, minute, etc. 
+     can be obtained for an indicated time value.
+   
+    <a href="https://docs.mql4.com/check"> State Checking</a>
+    Functions that return parameters of the current state of the client terminal
+    
+    <a href="https://docs.mql4.com/series"> Timeseries and Indicator Data</a> 
     They provide access to price data of any available symbol/period.
-  
-  Mathematical Functions.
-    Standard set of mathematical and trigonometrical functions.
-  
-  GlobalVariables.
-    Functions for working with GlobalVariables.
-  
-  Custom Indicators.
+    
+
+    <a href="https://docs.mql4.com/customind"> Custom Indicators</a>
     These functions can be used only when writing custom indicators.
+
+    <a href="https://docs.mql4.com/indicators">Technical Indicator Functions</a>
+    A group of functions intended for calculation of standard and custom indicators.
+For an Expert Advisor (or any other MQL4 program) to take up the value of any indicator, 
+it is not necessary that this indicator is present in the chart.
+ The requested indicator will be loaded and calculated in the thread of the module that has called it.
+Any indicator can be calculated on the data of not only current chart, 
+but also on the data of any available symbol/period. 
+If data (symbol name and/or timeframe differ from the current ones) are requested from another chart,
+ the situation is possible that the corresponding chart was not opened in the client terminal
+ and the necessary data must be requested from the server. In this case,
+ error ERR_HISTORY_WILL_UPDATED (4066 - the requested history data are under updating) 
+ will be placed in the last_error variable,
+ and one will has to re-request (see example of ArrayCopySeries()).
+
+All indicator functions have at least 2 parameters - symbol and period. The NULL value of the symbol means the current symbol, the 0 value of the period means the current timeframe
+    <a href="https://docs.mql4.com/chart_operations">Chart operations</a>
+    A group of functions that are used for 
+    getting information about the current chart,
+    to which a program in MQL4 (script, indicator or Expert Advisor) is attached.
+    The functions defining the chart properties 
+    are actually used for sending change commands to the chart.
+     If these functions are executed successfully, the command is included 
+     in the common queue of the chart events. 
+     The changes are implemented to the chart when handling the queue of the chart events.
+
+    <a href="https://docs.mql4.com/marketinformation"> Market Information</a>
+    functions intended for receiving information about the market state.
+
+    <a href="https://docs.mql4.com/objects">Graphical Objects</a>
+     This group includes functions that are used for programmed creation 
+     such objects as well as for changing their properties, moving them and deleting.
+    
+
+  <a href="https://docs.mql4.com/files">File Operations</a>
+    This group of functions is necessary for reading/recording data on a hard disk.
+    For security reasons, work with files is strictly controlled in the MQL4 language.
+    Files with which file operations are conducted using MQL4 means cannot be outside the file sandbox.
+    There are two directories (with subdirectories) in which working files can be located:
+    terminal_data_folder\MQL4\Files\ (in the terminal menu select to view "File" - "Open the data directory");
+    the common folder for all the terminals installed on a computer - usually located in the directory 
+     C:\Documents and Settings\All Users\Application Data\MetaQuotes\Terminal\Common\Files.
+    There is a program method to obtain names of these catalogs using the TerminalInfoString() function,
+     using the ENUM_TERMINAL_INFO_STRING enumeration:
+    
+    
   
-  Account Information.
+  <a href="https://docs.mql4.com/globals">GlobalVariables</a>
+    Functions for working with GlobalVariables.
+    Global variables of the client terminal should not be mixed up with variables 
+    declared in the global scope of the mql4 program.
+    Global variables are kept in the client terminal for 4 weeks since the last access,
+     then they will be deleted automatically. 
+     An access to a global variable is not only setting of a new value, 
+     but reading of the global variable value, as well.
+    Global variables of the client terminal are accessible simultaneously
+     from all mql4 programs launched in the client terminal.
+    When testing and optimizing the Expert Advisors that use global variables,
+     keep in mind that client terminal and the Strategy Tester share common global variables. 
+     Therefore, the names of the global variables must be different from
+     the names of the global variables used by other mql4 programs.
+     Otherwise, it may lead to incorrect work of mql4 programs and inaccurate testing results.
+
+  <a href="https://docs.mql4.com/account">Account Information</a>
     Functions show information about a client terminal, account and check the current state of a client terminal 
     (including the state of environment of MQL4-program being executed).
   
-  Trade Functions.
+   <a href="https://docs.mql4.com/trading >Trade Functions</a>
     Functions for conducting trade operations.
+
+    <a href="https://docs.mql4.com/signals">Trade signals</a>
+    This is the group of functions intended for managing trade signals. The functions allow:
+        get information about trade signals, available for copying,
+        get and set the signal copy settings,
+        subscribe and unsubscribe to the signal copying using MQL4 language functions.
   `
        },
        {title:"formal parameters",
@@ -301,6 +367,7 @@ options=[
   </tr>
   </tbody></table>`
         }
+  
       ]
     },
     {   GrpTitle:"MetaEditor",
