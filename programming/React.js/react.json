@@ -53,13 +53,9 @@ includes everything needed to code in react.`,
 &lt/body>
 &lt/html>`,
 			codetype:"html"
-		}
-	]
-},
-{GrpTitle:"ReactDOM",
-	items:[	
-			{title:"ReactDOM",
-			body:
+		},
+		{title:"ReactDOM",
+		body:
 `Often, it is used for  <h7>1 </h7> single thing:
   - mounting with <h7>ReactDOM.render()</h7>
 Another useful feature of ReactDOM is:
