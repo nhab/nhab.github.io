@@ -350,24 +350,116 @@ export default App;`
             },
             {title:"Initializing state",
             body:
-    `To initialize the state, simply set this.state in the constructor() method of the class. 
-    Our state is an object which in our case only has one key called message.`,
-            code:			
-    `class Hello extends React.Component {
-        
-        constructor(){
-            super();
-            this.state = {
-                message: "my friend (from state)!"
-            };
-        }
-        
-        render() {
-            return &lt;h1>Hello {this.state.message}!&lt;/h1>;
-        }
-    }`
+`To initialize the state, simply set this.state in the constructor() method of the class. 
+Our state is an object which in our case only has one key called message.`,
+        code:			
+`class Hello extends React.Component {
     
+    constructor(){
+        super();
+        this.state = {
+            message: "my friend (from state)!"
+        };
+    }
+    
+    render() {
+        return &lt;h1>Hello {this.state.message}!&lt;/h1>;
+    }
+}`   
+            },
+            {title:"Set State",
+            body:`setState() method is used to update the state of the component. 
+    This method will not replace the state, but only add changes to the original state.`,
+            code:
+    `import React from 'react';
+
+    class App extends React.Component {
+    constructor() {
+        super();
+        
+        this.state = {
+            data: []
         }
+
+        this.setStateHandler = this.setStateHandler.bind(this);
+    };
+    setStateHandler() {
+        var item = "setState..."
+        var myArray = this.state.data.slice();
+        myArray.push(item);
+        this.setState({data: myArray})
+    };
+    render() {
+        return (
+            &lt;div>
+            &lt;button onClick = {this.setStateHandler}>SET STATE&lt;/button>
+            &lt;h4>State Array: {this.state.data}&lt;/h4>
+            &lt;/div>
+        );
+    }
+    }
+    export default App;`
+            },
+            {title:"Validating Props",
+            body:`In this example, we are creating App component with all the props that we need.
+    App.propTypes is used for props validation. 
+    If some of the props aren't using the correct type that we assigned, 
+    we will get a console warning. After we specify validation patterns,
+    we will set App.defaultProps.`,
+            code:
+    `//App.jsx
+    import React from 'react';
+
+    class App extends React.Component {
+    render() {
+        return (
+            &lt;div>
+            &lt;h3>Array: {this.props.propArray}&lt;/h3>
+            &lt;h3>Bool: {this.props.propBool ? "True..." : "False..."}&lt;/h3>
+            &lt;h3>Func: {this.props.propFunc(3)}&lt;/h3>
+            &lt;h3>Number: {this.props.propNumber}&lt;/h3>
+            &lt;h3>String: {this.props.propString}&lt;/h3>
+            &lt;h3>Object: {this.props.propObject.objectName1}&lt;/h3>
+            &lt;h3>Object: {this.props.propObject.objectName2}&lt;/h3>
+            &lt;h3>Object: {this.props.propObject.objectName3}&lt;/h3>
+            &lt;/div>
+        );
+    }
+    }
+
+    App.propTypes = {
+    propArray: React.PropTypes.array.isRequired,
+    propBool: React.PropTypes.bool.isRequired,
+    propFunc: React.PropTypes.func,
+    propNumber: React.PropTypes.number,
+    propString: React.PropTypes.string,
+    propObject: React.PropTypes.object
+    }
+
+    App.defaultProps = {
+    propArray: [1,2,3,4,5],
+    propBool: true,
+    propFunc: function(e){return e},
+    propNumber: 1,
+    propString: "String value...",
+
+    propObject: {
+        objectName1:"objectValue1",
+        objectName2: "objectValue2",
+        objectName3: "objectValue3"
+    }
+    }
+    export default App;
+
+    //main.js
+    import React from 'react';
+    import ReactDOM from 'react-dom';
+    import App from './App.jsx';
+
+    ReactDOM.render(&lt;App/>, document.getElementById('app'));`
+                
+
+            }
     
         ]
     },
