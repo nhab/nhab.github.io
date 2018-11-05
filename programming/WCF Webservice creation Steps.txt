@@ -1,0 +1,14 @@
+﻿1-create INPUT ,OUTPUT  classes of related stored procedure
+2-Creation of related function in adminmanager class,Including
+	these Checks:
+	1-Mandatory fields
+	2- Validations
+	!Validator.IsValidCellPho
+	done valid repeate		
+3-Creation of the header of the service in the IAdminWebService
+4-Creation of the service itself in the AdminWebService.svc
+5-publish it.
+6-test it with different values in the postman tool.
+------
+
+
