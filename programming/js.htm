@@ -238,7 +238,35 @@ myArray0.slice( 1, 4); // = [false,"js",12]
 myArray0.splice( 2, 4, "hi", "wr", "ld");
 // = ["js",12,56,90]
 // myArray0 === [32,false,"hi","wr","ld"]`);
-
+options1={title:"Module pattern",
+code:
+`var myModule = (function() {
+    'use strict';
+ 
+    var _privateProperty = 'Hello World';
+    var publicProperty = 'I am a public property';
+  
+    function _privateMethod() {
+        console.log(_privateProperty);
+    }
+  
+  	function publicMethod() {
+    	_privateMethod();
+  	}
+     
+    return {
+        publicMethod: publicMethod,
+        publicProperty: publicProperty
+    };
+}());
+  
+myModule.publicMethod();    		        // outputs 'Hello World'   
+console.log(myModule.publicProperty);       // outputs 'I am a public property'
+console.log(myModule._privateProperty);     // is undefined protected by the module closure
+myModule._privateMethod();                  // is TypeError protected by the module closure
+`
+};
+Block(options1);
 const blkObjets=new BlockFrame("Objets");
 blkObjets.AddBody(
 `JavaScript's objects are equivalent to
@@ -1065,34 +1093,7 @@ doFirst.then(doSecond);`
 }
 options[ind++]={title:"built-in objects",body:"<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects'>built-ins</a>"};
 
-option[ind++]={title:"Module pattern",
-code:
-`var myModule = (function() {
-    'use strict';
- 
-    var _privateProperty = 'Hello World';
-    var publicProperty = 'I am a public property';
-  
-    function _privateMethod() {
-        console.log(_privateProperty);
-    }
-  
-  	function publicMethod() {
-    	_privateMethod();
-  	}
-     
-    return {
-        publicMethod: publicMethod,
-        publicProperty: publicProperty
-    };
-}());
-  
-myModule.publicMethod();    		        // outputs 'Hello World'   
-console.log(myModule.publicProperty);       // outputs 'I am a public property'
-console.log(myModule._privateProperty);     // is undefined protected by the module closure
-myModule._privateMethod();                  // is TypeError protected by the module closure
-`
-};
+
 for(i=0;i<options.length;i++)
     Block(options[i]);
 
