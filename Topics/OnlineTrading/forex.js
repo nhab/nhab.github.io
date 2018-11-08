@@ -1,14 +1,36 @@
 options=[
         {GrpTitle:"Basic Terminology",
             items:[
+                {title:"quotation",
+            body:
+`Currencies are quoted in pairs, 
+for example the EUR/USD is the euro/U.S. Dollar pair. 
+Using this quotation, the value of a currency is determined by its comparison to another currency.
+The first currency of a currency pair is called the base currency, and the second currency is called the quote currency.`
+            },
+            {title:"Ask and Bid Quotes",
+            body:`There are two parts to a forex quote, an ask and a bid.
+Here's another forex quote that helps make clear the meaning  of these terms in the forex market:
+    EUR/USD = 1.3600/05
+Here the bid is 1.3600, and the ask is 1.3605. 
+Since the difference between a bid and an ask price in normal circumstances is a very small fraction
+ -- less than 1/100th of the currency unit -- the convention is that only the last two digits (05)
+  of the four trailing digits are shown. 
+  If you spelled this out, it would look like this:
+    EUR/USD  = 1.3600/1.3605
+Here the bid price is 1.3600, and the ask is 1.3605. `
+            },
                 {title:"What is Spread",
-                body:
-`The spread is the difference between the BID and the ASK price in the market quotes. 
+                body:`The spread is the difference between the BID and the ASK price in the market quotes. 
 The ASK price is applicable to a BUY order and the BID price is applicable to a SELL order.
-
 Pepperstone operates using variable spreads, 
 which are spreads that don’t have the same constant value. 
 A variable spread will condense and widen as market conditions and liquidity change.`
+},
+{ title:"Long and short",
+body:`you are long of that from which you will profit if it rises in relative value, 
+and short of that from which you will profit if it falls in relative value.`
+
 },
                 {title:"Leverage",
                 body:
