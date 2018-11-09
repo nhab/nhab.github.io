@@ -370,6 +370,43 @@ All indicator functions have at least 2 parameters - symbol and period. The NULL
   
       ]
     },
+    {GrpTitle:"Deatails",
+      items:
+      [
+      {title:"Order magic number",
+      body:`MQL4 Reference:
+      int OrderSend( string symbol, int cmd, double volume, double price, int slippage,
+       double stoploss, double takeprofit, string comment=NULL, int magic=0,
+        datetime expiration=0, color arrow_color=CLR_NONE)
+      …
+      magic - Order magic number. May be used as user defined identifier
+      
+      I.e., when an order is being placed (a position is being opened), 
+      one can assign a unique number to it. This number will consequently 
+      be used to distinguish the above order from others.
+       There is no use (or even possibility) applying this feature when trading manually, 
+       but it is really unexpendable when trading using an expert (automated trading).
+      
+      
+      Example 1: A human trader and an expert are trading 
+      in the client terminal at the same time. 
+      Task: The expert must trade according to its algorithm and 
+      may not do anything with positions opened manually.
+      Solution: The expert must assign a unique, non-zero MagicNumber
+       to the position being opened. In future, it must manage only positions, 
+       the MagicNumber of which is equal to the preset one.
+      
+      Example 2: Two experts with different algorithms 
+      are trading in the client terminal at the same time.
+      Task: The expert must manage only "their" orders.
+      Solution: Each expert must use its unique non-zero MagicNumber 
+      when opening positions. 
+      In future, they must manage only positions,
+       the MagicNumber of which is equal to the preset one.
+      `}  
+      ]
+
+    }
     {   GrpTitle:"MetaEditor",
       items:
       [
