@@ -140,7 +140,8 @@ If data (symbol name and/or timeframe differ from the current ones) are requeste
  will be placed in the last_error variable,
  and one will has to re-request (see example of ArrayCopySeries()).
 
-All indicator functions have at least 2 parameters - symbol and period. The NULL value of the symbol means the current symbol, the 0 value of the period means the current timeframe
+All indicator functions have at least 2 parameters - symbol and period. 
+The NULL value of the symbol means the current symbol, the 0 value of the period means the current timeframe
     <a href="https://docs.mql4.com/chart_operations">Chart operations</a>
     A group of functions that are used for 
     getting information about the current chart,
