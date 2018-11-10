@@ -65,6 +65,14 @@ short -> will profit if it falls in relative value.
     The larger your position size, the larger your pip value will be and therefore, 
     the greater the impact on your profit/loss (P/L).`
                 },
+                    {title:"Lot",
+                    body:
+`In the past, spot forex was only traded in specific amounts called lots, 
+or basically the number of currency units you will buy or sell.				
+The standard size for a lot is 100,000 units of currency, 
+and now, there are also a mini, micro, and nano lot sizes 
+that are 10,000, 1,000, and 100 units respectively.
+`},
                 {title:"Margin",
                 body:
     `Margin is the amount of money required in your account in order to open a trade.
