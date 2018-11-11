@@ -106,7 +106,7 @@ th{margin: 0 auto;}
 .ClimateCol{	width:480px;}
 .gridContainer {
   display: grid;
-  grid-template-columns: 400px 400px 400px 400px 400px; 
+  grid-template-columns: 300px 300px 300px 300px 300px; 
   grid-column-gap: 25px;
   grid-row-gap: 25px;
 }
