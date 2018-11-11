@@ -61,10 +61,7 @@ th{margin: 0 auto;}
 .font25x{font-size: 25px;}
 .width100{width:100%}
 .colorWhite{color:white;}
-.blockContainer{
- display:block;
-  flloat:left;
-}
+
 /*------------------------------- */
 .pageHeader{
   font-size: xx-large;
@@ -114,8 +111,18 @@ th{margin: 0 auto;}
   grid-column-gap: 25px;
   grid-row-gap: 25px;
 }
-.Linkblock{
-width:400px;
+.blockContainer{
+ display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row-reverse wrap;
+  justify-content: space-around;
+}
+.LinkBlock{
+   width:400px;
   padding-left:5px;
+   text-align: left;
 }
 
