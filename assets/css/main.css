@@ -45,7 +45,7 @@ th{margin: 0 auto;}
 .tableColored thead th:first-child {  border-left: none;}
 .tableColored th {padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #29559b; color: white;}
 
-.CenterMe-H {display: flex;  justify-content: center;}
+.CenterMe-H {display: flex;  justify-content: center;text-align: center;}
 .CenterChildren-H {  text-align: center;}
 .CenterMe-V-1Line{  padding-top: 30px;  padding-bottom: 30px;}
 .CenterMe-V-multiLine {  display: flex;  justify-content: center;  flex-direction: column;}
