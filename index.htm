@@ -66,9 +66,7 @@
                                         <a href="https://www.wunderlist.com/#/lists/inbox">WunderList</a>
                                         <a href="https://www.airbnb.com/s/experiences?refinement_paths%5B%5D=%2Fexperiences">airbnb</a>
                     </div>
-                    <div class="header indent">Selected<br>tools</div>
-                    <div class="indent"> <a href="Topics\Tools\TidyTabs.gif">TidyTabs </a>
-                    </div>
+                  
                     
             </div>
 	    <div class="LinkBlock bordered"  > 
@@ -89,28 +87,35 @@
 			<a href="https://docs.microsoft.com/en-us/dotnet/core/tutorials/with-visual-studio-code">C# project in VSCode</a>
                 </div>   
             </div>
-		
+	     <div class="LinkBlock bordered" >
+                    <div class="header indent">Lazy News</div>
+                    <script>
+                        for(i=0;i<LazyNews.length;i++)
+                            document.write("<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='"+LazyNews[i].lnk+"'>"+LazyNews[i].title+"</a>");
+                    </script>
+             </div>
+	    <div class="LinkBlock bordered"  >
+		  <div class="header indent">Selected<br>tools</div>
+                    <div class="indent"> <a href="Topics\Tools\TidyTabs.gif">TidyTabs </a>
+                    </div>
+	    </div>
             <div class="LinkBlock bordered"  > 
                 <div class="header indent">Refrences</div>
                 <div class="indent"> <a href="shortcutkeys.htm">Shortcut keys </a>
                 </div>
-                <div class="header indent">Markets</div>
+                
+            </div>
+ 	    <div class="LinkBlock bordered"  >
+		   <div class="header indent">Markets</div>
                 <div class="indent">
                     <div id="btc" >
                         <script>document.write(getprice());</script>
                     </div>
                     <a href="http://www.tgju.org/currency">$</a> &nbsp
                     <a href="http://www.iranjib.ir/showgroup/23/realtime_price/">$</a>
-                </div>
-            </div>
+                </div> 
+	    </div>
 
-            <div class="LinkBlock bordered"  style="width:420px;">
-                    <div class="header indent">Lazy News</div>
-                    <script>
-                        for(i=0;i<LazyNews.length;i++)
-                            document.write("<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='"+LazyNews[i].lnk+"'>"+LazyNews[i].title+"</a>");
-                    </script>
-                </div>
         
             
             
