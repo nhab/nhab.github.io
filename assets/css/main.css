@@ -121,8 +121,9 @@ th{margin: 0 auto;}
   justify-content: space-around;
 }
 .LinkBlock{
-   width:400px;
+   width:350px;
   padding-left:5px;
+  padding-top:10px;
    text-align: left;
 }
 
