@@ -164,7 +164,44 @@ So instead of <h7>node app.js</h7> use <code>node bin/www</code>`});
 //-------------------------------------------------------
 BlockFrame.BlockGroup("Modules");  
 BlockFrame.Block({title:"Modules (or packages or libraries)",
-body:`Node implements the CommonJS interface for modules. `});
+body:`
+The module system allows you to organize your code, 
+hide information and only expose the public interface of a component using <h7>module.exports</h7>.
+
+Every time you use the <h7>require</h7> call, you are loading another module.
+
+Node implements the <h7>CommonJS interface</h7> for modules. 
+
+The simplest example can be the following using CommonJS:
+`,
+code:
+`// add.js
+function add (a, b) {
+  return a + b
+}
+
+module.exports = add
+//-------------------------------------------------------------
+//To use the add module we have just created, we have to require it.
+
+// index.js
+const add = require('./add')
+
+console.log(add(4, 5))
+//-------------------------------------------------------------
+Under the hood, add.js is wrapped by Node.js this way:
+
+(function (exports, require, module, __filename, __dirname) {
+  function add (a, b) {
+    return a + b
+  }
+
+  module.exports = add
+})
+//-------------------------------------------------------------
+This is why you can access the global-like variables like require and module.
+It also ensures that your variables are scoped to your module rather than the global object.
+`});
 
 BlockFrame.Block({title:"Installing modules from npm",
 body:`either search for them on the website or on Github. 
