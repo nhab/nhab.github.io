@@ -307,28 +307,25 @@ escape: function(html) {
 };
 ....`});
 //-----------------------------------------------
-BlockFrame.BlockGroup("Other concepts");
+var blkOther=BlockFrame.BlockGroup("Other concepts");
 BlockFrame.Block({title:"CallBack",
 body:`-you are telling it to do something and <h7>when 
 it is done</h7> it will call your function(callback).
 
 -In asynchronous programming we do not return values
  when our functions are done,but instead 
- we use the continuation-passing style (CPS)`});
+ we use the continuation-passing style (CPS)`,
+parent:"blkOther"});
 
-BlockFrame.Block({title:`Events`,
-body:`The standard callback pattern works well for 
-the use cases where we want to be notified when
-the async function finishes. 
-However, there are situations that require being
-notified of different events that do not occur 
-at the same time.`});
+
 
 BlockFrame.Block({title:`Streams`, 
 body:`represent an abstract interface for asynchronously 
 manipulating a continuous flow of data.
 They can be classified into 5 types: 
-<h7>readable, writable, transform, duplex and classic</h7>.`});
+<h7>readable, writable, transform, duplex and classic</h7>.`,
+parent:"blkOther"});
+	
 BlockFrame.Block({title:"file operations",
 body:`readFile : 
 	takes a file path and a callback.
@@ -365,7 +362,8 @@ body:`readFile :
 		results[letter] += parseInt(count);
 	});
 	console.log(results);	// { A: 2, B: 14, C: 6 }
-	});`});
+	});`,
+parent:"blkOther"});
 BlockFrame.Block(
 {title:`blocking vs non-blocking software development`,
 body:`Blocking methods execute synchronously and 
@@ -462,7 +460,8 @@ socket.on('visit', function(visit) {
 	});
 &lt/script>
 &lt/body>
-&lt/html>`});
+&lt/html>`,
+parent:"blkOther"});
 
 BlockFrame.Block({title:"Resources",
 body:`<a href='https://nodejs.org/docs/latest/api/'>Main reference</a>
