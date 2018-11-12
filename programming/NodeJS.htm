@@ -314,7 +314,21 @@ it is done</h7> it will call your function(callback).
 
 -In asynchronous programming we do not return values
  when our functions are done,but instead 
- we use the continuation-passing style (CPS)`,
+ we use the continuation-passing style (CPS)
+Continuation Passing Style (CPS for short) is a style of programming
+in which functions do not return values; 
+rather, they pass control onto a continuation,
+which specifies what happens next. 
+`,
+code:
+`//Direct style:
+function direct(x){ 
+    return x*x;
+}
+//CPS (unnecessary because code is not asynchronous, example only):
+function cps(x,done){
+    done(x*x); //call done instead of returning. 
+}`,
 parent:"blkOther"});
 
 
