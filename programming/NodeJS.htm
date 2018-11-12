@@ -328,8 +328,7 @@ function direct(x){
 //CPS (unnecessary because code is not asynchronous, example only):
 function cps(x,done){
     done(x*x); //call done instead of returning. 
-}`,
-parent:"blkOther"});
+}`});
 
 
 
@@ -337,8 +336,8 @@ BlockFrame.Block({title:`Streams`,
 body:`represent an abstract interface for asynchronously 
 manipulating a continuous flow of data.
 They can be classified into 5 types: 
-<h7>readable, writable, transform, duplex and classic</h7>.`,
-parent:"blkOther"});
+<h7>readable, writable, transform, duplex and classic</h7>.`
+		 });
 	
 BlockFrame.Block({title:"file operations",
 body:`readFile : 
@@ -376,8 +375,7 @@ body:`readFile :
 		results[letter] += parseInt(count);
 	});
 	console.log(results);	// { A: 2, B: 14, C: 6 }
-	});`,
-parent:"blkOther"});
+	});`});
 BlockFrame.Block(
 {title:`blocking vs non-blocking software development`,
 body:`Blocking methods execute synchronously and 
@@ -474,8 +472,7 @@ socket.on('visit', function(visit) {
 	});
 &lt/script>
 &lt/body>
-&lt/html>`,
-parent:"blkOther"});
+&lt/html>`});
 
 BlockFrame.Block({title:"Resources",
 body:`<a href='https://nodejs.org/docs/latest/api/'>Main reference</a>
