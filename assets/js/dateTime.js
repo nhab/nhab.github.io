@@ -21,3 +21,11 @@ function checkTime(i) {
     if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
     return i;
 }
+function getUTCNow()
+{
+    var now = new Date();
+    var time = now.getTime();
+    var offset = now.getTimezoneOffset();
+    offset = offset * 60000;
+    return time - offset;
+}
