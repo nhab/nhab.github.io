@@ -15,11 +15,12 @@
   
   var options=[];
   var i=0;
-  options[i++]={title:"How to Create bitcoin wallet?",
+  options[i++]={title:"Creating a Paper Wallet",
 body:`the papere walet is nothing more than  2 values:
 
 1- the publickey(username)  2-private key(password) 
-using <a href="https://bitcoinpaperwallet.com/bitcoinpaperwallet/generate-wallet.html">this script</a your paper wallet can be created offline.
+using <a href="https://bitcoinpaperwallet.com/bitcoinpaperwallet/generate-wallet.html">this script</a> or <a href="https://www.bitaddress.org/">this one</a>
+your paper wallet can be created offline.
 result message is like this:
 
 Your public key is: 18r2AuxdEhXEbqPw6wiciseYakym2qgJKK 
@@ -27,24 +28,56 @@ Receive bitcoin to your wallet using your PUBLIC key.
 
 Your private key is: 5KTX9aENNJaFfxqEShkxbNELRbiexTUaERSvUyytH**********
 Access bitcoin in your wallet using your PRIVATE key.`,parent:grp1};
-options[i++]={title:"How to add funds to your wallet?",
-body:`give your "PUBLIC ADDRESS" (or QR code) . `,parent:grp1};
 
-options[i++]={title:"How to withdraw funds from your wallet?",
-body:`common way to withdraw the entire balance of the wallet by importing it (or "sweeping" it) to a live wallet,
-e.g. a Bitcoin wallet application or online service like blockchain.info or coinbase.com. 
 
-If you elected to BIP38-encrypt your wallet, you may need to recover your unencrypted WIF "Wallet Import Format" private key 
-by using the "validate" tab on this web page. `,parent:grp1};
-
-options[i++]={title:"How to check balance of your (paper) wallet?",
-body:`You can just look up your address on a block explorer like blockchain.info`,
-parent:grp1};
-
-options[i++]={title:"How to keep my paper wallet in a safe place?",
+options[i++]={title:"Securing the paper wallet",
 body:`some of the way are:
 1.write prite key and public key on a paper and store in your safe.
 2.write in a file and store it in a flash disk dedicated for that.
 3.store it in a hardware wallet.`};
+
+options[i++]={title:"Checking balance",
+body:`by going to <a href="https:\\blockchain.info">blockchain.info</a> or <a href="http:\\blockexplorer.com">blockexplorer.com</a> 
+and entering your Bitcoin (public) address.`,
+parent:grp1};
+
+options[i++]={title:"Adding funds",
+body:`by instructing others to send bitcoins 
+to your Bitcoin public address (or QR code).`,parent:grp1};
+
+options[i++]={title:"Withdrawing funds",
+body:`-one way is to withdraw the balance of the wallet 
+by importing it (or "sweeping" it) to a live wallet,
+e.g. a Bitcoin wallet application or online service like 
+blockchain.info or coinbase.com. 
+
+If you elected to BIP38-encrypt your wallet, 
+you may need to recover your unencrypted WIF
+ "Wallet Import Format" private key 
+by using the "validate" tab on this web page. 
+
+-by downloading one of the popular bitcoin p2p clients 
+and importing your private key to the p2p client wallet.
+
+ Keep in mind when you import your single key to a bitcoin p2p client 
+ and spend funds your key will be bundled with other private keys
+  in the p2p client wallet.
+
+ When you perform a transaction your change will be sent 
+ to another bitcoin address within the p2p client wallet.
+ You must then backup the p2p client wallet and keep it safe
+ as your remaining bitcoins will be stored there. 
+ Satoshi advised that one should never delete a wallet.
+
+face to face trades:
+  1.you show them your wallet has sufficent bitcoins by checking your balance.
+  2.they pay the amount in cash or banking money transfer
+  3.you transfer the money to their public key
+`,parent:grp1};
+
+options[i++]={title:"Transfering bitcoins",body:`-one way is to go to blockchain.info > send mony`,parent:grp1};
+options[i++]={title:"Developement API",
+body:`To build bitcoin app or website: <a href="https://www.blockchain.com/api">https://www.blockchain.com/api</a>`
+}
 BlockFrame.Render(options);
 </script>
