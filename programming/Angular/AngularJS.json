@@ -43,13 +43,210 @@ Example:
 `are extend HTML attributes with the prefix ng- . Like :`,
         code:` ng-init="firstName='John'"`
         },
+        {title:"Controller",
+            body:
+`controller	: a place for setting model properties and function.
+- is a regulare JavaScript object which :
+- is attached to the DOM via the 'ng-controller' directive. 
+created by a standard JS object 'constructor',
+accepts '$scope' as a parameter,
+containing attributes/properties and functions.
+Example:`,
+code:`
+//definition in javascript :
+app.controller('BookController', ['$scope', function($scope) {  
+    $scope.book = {
+        id: 1,
+        name: 'Harry Potter',
+        author: 'J. K. Rowling',
+        stores: [
+            { id: 1, name: 'Barnes & Noble', quantity: 3},
+            { id: 2, name: 'Waterstones', quantity: 2},
+            { id: 3, name: 'Book Depository', quantity: 5}
+        ]
+    };
+}]);
+
+//or by gttting data from backend :
+app.controller('BookController', ['$scope', '$http', function($scope, $http) {  
+    var bookId = 1;
+    $http.get('ourserver/books/' + bookId).success(
+        function(bookData) {
+            $scope.book = bookData;
+        });
+}]);
+
+//usage in html template :
+<div ng-controller="BookController">  
+    Id: <span ng-bind="book.id"></span>
+    <br/>
+    Name:<input type="text" ng-model="book.name" />
+    <br/>
+    Author: <input type="text" ng-model="book.author" />
+</div>
+`},
+{title:"Definig a Controller ",
+    body:`
+ng-controller=:"Ctl"
+Role:
+The role of controllers in Angular is to expose data to our view via $scope, 
+and to add functions to $scope that contain business logic to enhance view behavior. 
+`                
+        },
+        {title:"scope",
+        body:`
+
+        scope 		: context where the MODEL is stored so that controllers, directives and expressions can access it
+        -every controller has an associated $scope object.
+        -only methods defined on this $scope object are accessible from HTML/view.
+        -scopes are hierarcical and follow DOM hierarcy.
+        
+        -AngularJS has 2 scope objects :
+        1- $rootScope 
+        -root scope (parent of alll scopes)
+        -an app can have only one $rootScope
+        -it acts like a global variable.
+        
+        2- $scope
+        -The scope "data life cycle" phases
+        1-creation
+            The root scope is created during the "application bootstrap" by the $injector.
+            During template linking,some directives create new child scopes.
+        
+        2-"watcher registration"
+            during template linking directives register watcher on the scope.
+            -these watches will be used to propaginate model values to DOM.
+        
+        3-Model mutation
+        4-mutation observation
+        5-scope destruction
+        service	and built-in services	: is a global object that is available for  your  application.(:X $Injector ,$http )
+        AngularJS has about 30 built-in services.
+        {:
+        - $location : return information about the location of the current web page
+
+        Example:
+`,code:`       
+        var app = angular.module('myApp', []);
+        app.controller('customersCtrl', function($scope, $location) {
+            $scope.myUrl = $location.absUrl();
+        });
+        
+      //  - $http		: handles  request/ response  to/from the server .
+      //example:
+            var app = angular.module('myApp', []);
+            app.controller('myCtrl', function($scope, $http) {
+                $http.get("welcome.htm").then(function (response) {
+                    $scope.myWelcome = response.data;
+                });
+            });
+        // $timeout  : to get or set timeout of waiting for response from server
+        // $interval : AngularJS version of the window.setInterval function.
+        Example:
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope, $interval) {
+            $scope.theTime = new Date().toLocaleTimeString();
+            $interval(function () {
+                $scope.theTime = new Date().toLocaleTimeString();
+            }, 1000);
+        });	
+        // $injector : retrieve object instances as defined by provider, instantiate types, invoke methods, and load modules.
+        Example:
+        var $injector = angular.injector();
+        expect($injector.get('$injector')).toBe($injector);
+        expect($injector.invoke(function($injector) {
+        return $injector;
+        })).toBe($injector);
+        
+       // -Module methods such as factory, service, directive, etc. register these items with the injector.
+        //When you inject something (e.g., a service into a controller), the injector will lookup and then instantiate the service
+        //-custom made services:
+        //Example
+        //definition:
+        app.service('hexafy', function() {
+            this.myFunc = function (x) {
+                return x.toString(16);
+            }
+        });
+        //usage:
+        app.controller('myCtrl', function($scope, hexafy) {
+            $scope.hex = hexafy.myFunc(255);
+        });
+        //Example2:(complete)
+        <!DOCTYPE html>
+        <html>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <body>
+        <div ng-app="myApp" ng-controller="myCtrl">
+        
+        <p>The hexadecimal value of 255 is:</p>
+        
+        <h1>{{hex}}</h1>
+        
+        </div>
+        
+        <p>A custom service whith a method that converts a given number into a hexadecimal number.</p>
+        
+        <script>
+        var app = angular.module('myApp', []);
+        
+        app.service('hexafy', function() {
+        this.myFunc = function (x) {
+            return x.toString(16);
+        }
+        });
+        app.controller('myCtrl', function($scope, hexafy) {
+        $scope.hex = hexafy.myFunc(255);
+        });
+        </script>
+                
+        `
+
+        }
+	  ]
+	},
+	{	GrpTitle:"Hello world Example",
+		items:
+		[
+			{title:"the controller file(script.js)",
+			code:
+`\\\\script.js
+var app = angular.module("app", []);
+app.controller("HelloController", function($scope) {
+  $scope.message = "Hello, AngularJS";	
+});
+`
+			},
+			{title:"the main page(html)",
+            body:"shows the 'Hello, AngularJS'", 
+			code:
+`&lt!DOCTYPE html>
+&lthtml lang="en">
+&lthead>
+&lttitle>AngularJS&lt/title>
+&ltscript type="text/javascript" src="resources/js/angular.js">&lt/script>
+&ltscript type="text/javascript" src="resources/js/script.js">&lt/script>
+&lt/head>
+&ltbody ng-app="app">
+	&ltdiv ng-controller="HelloController">
+		&lth2>{{message}}&lt/h2>
+	&lt/div>
+&lt/body>
+&lt/html>
+
+`
+			}
+		]
+	},
+	{  GrpTitle:"Directives",
+		items:
+		[
         {title:"Directive Types",
             body:
-`Element directives - Activated when matching HTML element attribute found. (E)
-Attribute directives - Activated when matching HTML element in the HTML template found.
-CSS class directives - Activated when matching CSS Class found.
-Comment directives - Activated when matching HTML comment found.
-`
+    `Element directives - Activated when matching HTML element attribute found. (E)
+    Attribute directives - Activated when matching HTML element in the HTML template found.
+    CSS class directives - Activated when matching CSS Class found.
+    Comment directives - Activated when matching HTML comment found.`
         },
         {title:"Native directives",
         body:
@@ -187,236 +384,117 @@ return directive;
 
 `
 
-        },
-        {title:"Other concepts",
-        body:
-`
-Module      : is a js object which contain services, directives, controllers, filters, and configs.
-(like: var app = angular.module("myApp", []);) 
--angular.module is used to configure the $injector.
--it is defined by a angular.module javascript function which have 2 parameter
-1.module name: a namespace like string  
-2.collection of services,directives,controllers,configs,filters,...
--angular.module is used to configure the $injector.
-// Create a new module
-var myModule = angular.module('myModule', []);
+        }
+	]
+    },
+    {  GrpTitle:"Module",
+        items:
+        [
+            {  title:"what are modules",
+                body:
+    ` Module      : is a js object which contain services, directives, controllers, filters, and configs.
+    Example:<pre><code> var app = angular.module("myApp", []);</code></pre>
+    - It is defined by a <h7>angular.module function</h7> which have 2 parameter
+    1. <b>module name</b>: a namespace like string  
+    2. <b> a collection</b> of services,directives,controllers,configs,filters,...
 
-// register a new service
-myModule.value('appName', 'MyCoolApp');
+    -angular.module is used to configure the $injector.`,
+                code:
+    `// Create a new module
+    var myModule = angular.module('myModule', []);
 
-// configure existing services inside initialization blocks.
-myModule.config(['$locationProvider', function($locationProvider) {
-// Configure existing providers
-$locationProvider.hashPrefix('!');
-}]);
+    // register a new service
+    myModule.value('appName', 'MyCoolApp');
 
-Then you can create an injector and load your modules like this:
+    // configure existing services inside initialization blocks.
+    myModule.config(['$locationProvider', function($locationProvider) {
+    // Configure existing providers
+    $locationProvider.hashPrefix('!');
 
-var injector = angular.injector(['ng', 'myModule'])
+    //Then you can create an injector and load your modules like this:
 
--Module vs namespace: despite namespaces, modules also have methods on them	for initializations and
-for creation of controllers, services, etc.  
-X:
-<div ng-app="myApp">...</div>
-<script>
-//module definition:
-var app = angular.module("myApp", []);
-//the second parameter  is a list of strings that refer to other module names
-//and allows your new module to inherit the controllers, services, etc. from those modules. 
-</script>
-
--a simple module consists of a collection of two kinds of blocks:
-{:
-Configuration blocks 
-- get executed during the provider registrations and configuration phase. 
-Only providers and constants can be injected into configuration blocks.
-This is to prevent accidental instantiation of services before they have been fully configured.
-Run blocks 
-- get executed after the injector is created and are used to kickstart the application.
-- Only instances and constants can be injected into run blocks.
-This is to prevent further system configuration during application run time.
-
--Run blocks are the closest thing in Angular to the main method. 
-A run block is the code which needs to run to kickstart the application. 
-It is executed after all of the services have been configured and the injector has been created. 
-Run blocks typically contain code which is hard to unit-test, and for this reason should be declared 
-in isolated modules, so that they can be ignored in the unit-tests.
-X:
-angular.module('myModule', []).
-config(function(injectables) { // provider-injector
-// This is an example of config block.
-// You can have as many of these as you want.
-// You can only inject Providers (not instances)
-// into config blocks.
-}).
-run(function(injectables) { // instance-injector
-// This is an example of a run block.
-// You can have as many of these as you want.
-// You can only inject instances (not Providers)
-// into run blocks
-});
-
-
-controller	: a place for setting model properties and function.
-- is a regulare JavaScript object which :
-- is attached to the DOM via the 'ng-controller' directive. 
-created by a standard JS object 'constructor',
-accepts '$scope' as a parameter,
-containing attributes/properties and functions.
-X:
-definition in javascript :
-app.controller('BookController', ['$scope', function($scope) {  
-    $scope.book = {
-        id: 1,
-        name: 'Harry Potter',
-        author: 'J. K. Rowling',
-        stores: [
-            { id: 1, name: 'Barnes & Noble', quantity: 3},
-            { id: 2, name: 'Waterstones', quantity: 2},
-            { id: 3, name: 'Book Depository', quantity: 5}
-        ]
-    };
-}]);
-
-or by gttting data from backend :
-app.controller('BookController', ['$scope', '$http', function($scope, $http) {  
-    var bookId = 1;
-    $http.get('ourserver/books/' + bookId).success(
-        function(bookData) {
-            $scope.book = bookData;
-        });
-}]);
-
-usage in html template :
-<div ng-controller="BookController">  
-    Id: <span ng-bind="book.id"></span>
-    <br/>
-    Name:<input type="text" ng-model="book.name" />
-    <br/>
-    Author: <input type="text" ng-model="book.author" />
-</div>
-
--Definig a Controller :
-ng-controller=:"Ctl"
-Role:
-The role of controllers in Angular is to expose data to our view via $scope, 
-and to add functions to $scope that contain business logic to enhance view behavior. 
-
-scope 		: context where the MODEL is stored so that controllers, directives and expressions can access it
--every controller has an associated $scope object.
--only methods defined on this $scope object are accessible from HTML/view.
--scopes are hierarcical and follow DOM hierarcy.
-
--AngularJS has 2 scope objects :
-1- $rootScope 
--root scope (parent of alll scopes)
--an app can have only one $rootScope
--it acts like a global variable.
-
-2- $scope
--The scope "data life cycle" phases
-1-creation
-    The root scope is created during the "application bootstrap" by the $injector.
-    During template linking,some directives create new child scopes.
-
-2-"watcher registration"
-    during template linking directives register watcher on the scope.
-    -these watches will be used to propaginate model values to DOM.
-
-3-Model mutation
-4-mutation observation
-5-scope destruction
-service	and built-in services	: is a global object that is available for  your  application.(:X $Injector ,$http )
-AngularJS has about 30 built-in services.
-{:
-- $location : return information about the location of the current web page
-:x
-var app = angular.module('myApp', []);
-app.controller('customersCtrl', function($scope, $location) {
-    $scope.myUrl = $location.absUrl();
-});
-
-- $http		: handles  request/ response  to/from the server .
-x:
-    var app = angular.module('myApp', []);
-    app.controller('myCtrl', function($scope, $http) {
-        $http.get("welcome.htm").then(function (response) {
-            $scope.myWelcome = response.data;
-        });
-    });
-- $timeout  : to get or set timeout of waiting for response from server
-- $interval : AngularJS version of the window.setInterval function.
-:X
-var app = angular.module('myApp', []);
-app.controller('myCtrl', function($scope, $interval) {
-    $scope.theTime = new Date().toLocaleTimeString();
-    $interval(function () {
-        $scope.theTime = new Date().toLocaleTimeString();
-    }, 1000);
-});	
-- $injector : retrieve object instances as defined by provider, instantiate types, invoke methods, and load modules.
-:X
-var $injector = angular.injector();
-expect($injector.get('$injector')).toBe($injector);
-expect($injector.invoke(function($injector) {
-return $injector;
-})).toBe($injector);
-
--Module methods such as factory, service, directive, etc. register these items with the injector.
-When you inject something (e.g., a service into a controller), the injector will lookup and then instantiate the service
--custom made services:
-x:
-definition:
-app.service('hexafy', function() {
-    this.myFunc = function (x) {
-        return x.toString(16);
-    }
-});
-usage:
-app.controller('myCtrl', function($scope, hexafy) {
-    $scope.hex = hexafy.myFunc(255);
-});
-x2:(complete)
-<!DOCTYPE html>
-<html>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<body>
-<div ng-app="myApp" ng-controller="myCtrl">
-
-<p>The hexadecimal value of 255 is:</p>
-
-<h1>{{hex}}</h1>
-
-</div>
-
-<p>A custom service whith a method that converts a given number into a hexadecimal number.</p>
-
-<script>
-var app = angular.module('myApp', []);
-
-app.service('hexafy', function() {
-this.myFunc = function (x) {
-    return x.toString(16);
+    //var injector = angular.injector(['ng', 'myModule'])
+`                 
+    },
+{title:"-Module vs namespace:",
+body:` despite namespaces, modules also have methods on them	for initializations and
+    for creation of controllers, services, etc. 
+    Example: `,
+    code:`    <div ng-app="myApp">...</div>
+    <script>
+ `
 }
-});
-app.controller('myCtrl', function($scope, hexafy) {
-$scope.hex = hexafy.myFunc(255);
-});
-</script>
-filter		: formats the value of an expression (data) for display to the user.
--They can be used anywhere(in view templates, controllers or services)
-:syntax: Filters can be added to expressions by using the pipe character |, followed by a filter.
-:X:	 	<p>The name is {{ lastName | uppercase }}</p>
-:x2:
-<div ng-app="myApp" ng-controller="namesCtrl">
-<ul>
-    <li ng-repeat="x in names | orderBy:'country'">
+,
+{title:"module definition",
+    body:       
+`//module definition:
+    var app = angular.module("myApp", []);
+    //the second parameter  is a list of strings that refer to other module names
+    //and allows your new module to inherit the controllers, services, etc. from those modules. 
+    </script>
+    
+    -a simple module consists of a collection of two kinds of blocks:
+    {:
+    Configuration blocks 
+    - get executed during the provider registrations and configuration phase. 
+    Only providers and constants can be injected into configuration blocks.
+    This is to prevent accidental instantiation of services before they have been fully configured.
+    Run blocks 
+    - get executed after the injector is created and are used to kickstart the application.
+    - Only instances and constants can be injected into run blocks.
+    This is to prevent further system configuration during application run time.
+    
+    -Run blocks are the closest thing in Angular to the main method. 
+    A run block is the code which needs to run to kickstart the application. 
+    It is executed after all of the services have been configured and the injector has been created. 
+    Run blocks typically contain code which is hard to unit-test, and for this reason should be declared 
+    in isolated modules, so that they can be ignored in the unit-tests.
+    Example:`,
+    code:`
+    angular.module('myModule', []).
+    config(function(injectables) { // provider-injector
+    // This is an example of config block.
+    // You can have as many of these as you want.
+    // You can only inject Providers (not instances)
+    // into config blocks.
+    }).
+    run(function(injectables) { // instance-injector
+    // This is an example of a run block.
+    // You can have as many of these as you want.
+    // You can only inject instances (not Providers)
+    // into run blocks
+    });
+    `
+}           
+        ]
+
+    },
+    {GrpTitle:"filters",
+        items:
+        [
+            {title:"Definition and example",
+               body:
+`The filter	, formats the value of an expression (data) for display to the user.
+
+- filters can be used anywhere(in view templates, controllers or services)
+- syntax: Filters can be added to expressions by using the pipe character |, followed by a filter.
+`,
+code:`
+//Example:	
+ 	&lt;p>The name is {{ lastName | uppercase }}&lt;/p>
+//Example2:
+&lt;div ng-app="myApp" ng-controller="namesCtrl">
+&lt;ul>
+    &lt;li ng-repeat="x in names | orderBy:'country'">
         {{ x.name + ', ' + x.country }}
-    </li>
-</ul>
-</div> 
-:{
-currency 
+    &lt;/li>
+&lt;/ul>
+&lt;/div> 
+`                   
+            },
+            {title:"filter types",
+            body:
+`currency 
 Format a number to a currency format.
 date
 Format a date to a specified format.
@@ -433,19 +511,24 @@ Format a number to a string.
 orderBy
 Orders an array by an expression.
 uppercase
-Format a string to upper case.
-:x
-Adding Filters to Expressions
-<p>The name is {{ lastName | uppercase }}</p>
-Adding Filters to Directives
-<ul>
-<li ng-repeat="x in names | orderBy:'country'">
+Format a string to upper case.`
+        },
+        {title:"filter xamples"
+,body:`:x
+//Adding Filters to Expressions
+&lt;p>The name is {{ lastName | uppercase }}&lt;/p>
+//Adding Filters to Directives
+&lt;ul>
+&lt;li ng-repeat="x in names | orderBy:'country'">
     {{ x.name + ', ' + x.country }}
-</li>
-</ul>
-Custom Filters
-definition
-<script>
+&lt;/li>
+&lt;/ul>
+`
+        },
+        {title:"Custom filters",
+code:`
+//Custom Filters definition
+&lt;script>
     var app = angular.module('myApp', []);
     app.filter('myFormat', function() {
         return function(x) {
@@ -463,144 +546,154 @@ definition
     app.controller('namesCtrl', function($scope) {
         $scope.names = ['Jani', 'Carl', 'Margareth', 'Hege', 'Joe', 'Gustav', 'Birgit', 'Mary', 'Kai'];
     });
-</script>
-usage:
-<ul ng-app="myApp" ng-controller="namesCtrl">
-    <li ng-repeat="x in names">
+    &lt;/script>
+
+//usage:
+
+&lt;ul ng-app="myApp" ng-controller="namesCtrl">
+    &lt;li ng-repeat="x in names">
         {{x | myFormat}}
-    </li>
-</ul>
+    &lt;/li>
+&lt;/ul>
+`
+        }
+        ]
 
-factory		:
-Values are great, but wouldn't it be nice if we could inject a function instead of a variable?
-This is the purpose of the factory recipe. Factories are declared using the following syntax.
-angular.module("services", [])
-.factory("myFactory", [function () {
-// Logic goes here.
-}]);
-
-rout        : creates different URLs for different content (bookmarked url).
-:X:
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>AngularJS Routes example</title>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
-</head>
-
-<body ng-app="sampleApp">
-
-<a href="#/route1">Route 1</a><br/>
-<a href="#/route2">Route 2</a><br/>
-
-
-<div ng-view></div>
-
-<script>
-var module = angular.module("sampleApp", ['ngRoute']);
-
-module.config(['$routeProvider',
-function($routeProvider) {
-    $routeProvider.
-        when('/route1', {
-            templateUrl: 'angular-route-template-1.jsp',
-            controller: 'RouteController'
-        }).
-        when('/route2', {
-            templateUrl: 'angular-route-template-2.jsp',
-            controller: 'RouteController'
-        }).
-        otherwise({
-            redirectTo: '/'
-        });
-}]);
-
-module.controller("RouteController", function($scope) {
-
-})
-</script>
-Routing
-:is a mechanism used to navigate through the deep link.
-:{
-1.Inbuilt Router
-ngRoute is an inbuilt Router which is provided by Angular using a hash and history.
+    },
+{GrpTitle:"Rout and routing",
+    items:
+    [
+        {title:"what is a rout",
+            body:`creates different URLs for different content (bookmarked url).
+            Example:`,
+        code:`
+        &lt;!DOCTYPE html>
+        &lt;html lang="en">
+        &lt;head>
+        &lt;title>AngularJS Routes example&lt;/title>
+        &lt;script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js">&lt;/script>
+        &lt;script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js">&lt;/script>
+        &lt;/head>
+        
+        &lt;body ng-app="sampleApp">
+        
+        &lt;a href="#/route1">Route 1&lt;/a>&lt;br/>
+        &lt;a href="#/route2">Route 2&lt;/a>&lt;br/>
+        
+        
+        &lt;div ng-view>&lt;/div>
+        
+        &lt;script>
+        var module = angular.module("sampleApp", ['ngRoute']);
+        
+        module.config(['$routeProvider',
+        function($routeProvider) {
+            $routeProvider.
+                when('/route1', {
+                    templateUrl: 'angular-route-template-1.jsp',
+                    controller: 'RouteController'
+                }).
+                when('/route2', {
+                    templateUrl: 'angular-route-template-2.jsp',
+                    controller: 'RouteController'
+                }).
+                otherwise({
+                    redirectTo: '/'
+                });
+        }]);
+        
+        module.controller("RouteController", function($scope) {
+        
+        })
+        &lt;/script>`
+    },
+    {title:"Routing",
+     body:`is a mechanism used to navigate through the deep link.`
+    },
+    {title:"1.Inbuilt Router",
+        body:
+`ngRoute is an inbuilt Router which is provided by Angular using a hash and history.
 
 In Built ngRoute is simply routing a single URL which you can bind to the single controller
 with the single template.
 ngRoute is a separate module which contains following:
-    :{
-        $route 
-            :it is used for getting matched route, routing events such as access the current route controller and 
-            to provide property access
+:{
+$route 
+    :it is used for getting matched route, routing events such as access the current route controller and 
+    to provide property access
 
-        $routeProvider 
-            :It is used to define a routing table that the address bar and map the view template.
-            Using $routeProvider Service, You can allow to save the API browsing history and
-            allows users to save a bookmark of the current path for future use
+$routeProvider 
+    :It is used to define a routing table that the address bar and map the view template.
+    Using $routeProvider Service, You can allow to save the API browsing history and
+    allows users to save a bookmark of the current path for future use
 
-        $routeParams 
-            :It saves the parameter in address bar.
+$routeParams 
+    :It saves the parameter in address bar.
 
-        $routeProvider 
-            : routing table has two core methods
-    There are two ways to achieve the ngRoute.
-        :{
-            1.when (path, route)
-                This method takes two parameters:
-                Path is a string type which match with routing path rule.
-                It will work with the address bar contents ($location.path) values to match.
-                To match the parameters, you can use the colon in the path name.
-                :X		
-                    angular.module('myApp', []).
-                    config(['$routeProvider', function($routeProvider) {
-                        $routeProvider.when('/', {
-                        controller: 'HomeController',
-                        template: '<h2>We are home</h2>'
-                    })
-                    }]);
-
-                when the method of $routeProvider can also handle the query string or id passed in the URL which you can pass after the /:number.$routeProvider will match URL id and the id as a key service used in the $routeParams
-                    
-                    $routeProvider.when('/person/:id', {
-                    controller: 'PersonController',
-                    template: '<div>Person Name is: {{ name }}</div>'
-                    })
-            2.2. otherwise (params)
-                :The otherwise method is useful to redirect to the user on the specific page if
-                your routed page not found.
-                
-                angular.module('myApp', []).
-                config(['$routeProvider', function($routeProvider) {
+$routeProvider 
+    : routing table has two core methods
+There are two ways to achieve the ngRoute.
+:{
+    1.when (path, route)
+        This method takes two parameters:
+        Path is a string type which match with routing path rule.
+        It will work with the address bar contents ($location.path) values to match.
+        To match the parameters, you can use the colon in the path name.
+        :X		
+            angular.module('myApp', []).
+            config(['$routeProvider', function($routeProvider) {
                 $routeProvider.when('/', {
-                    controller: 'HomeController',
-                    template: '<h2>We are home</h2>'
-                })
-                .otherwise({redirectTo: '/'});
-                }]);
-                
+                controller: 'HomeController',
+                template: '&lt;h2>We are home&lt;/h2>'
+            })
+            }]);
 
-                SYNTAX:
-                    $routeProvider(current,single level)
-                
-2.UI Router
-:UI-Router in angular js is basically based on the state machine which provides the routing mechanism and nested functions.
-:process
+        when the method of $routeProvider can also handle the query string or id passed in the URL which you can pass after the /:number.$routeProvider will match URL id and the id as a key service used in the $routeParams
+            
+            $routeProvider.when('/person/:id', {
+            controller: 'PersonController',
+            template: '&lt;div>Person Name is: {{ name }}&lt;/div>'
+            })
+    2.2. otherwise (params)
+        :The otherwise method is useful to redirect to the user on the specific page if
+        your routed page not found.
+        
+        angular.module('myApp', []).
+        config(['$routeProvider', function($routeProvider) {
+        $routeProvider.when('/', {
+            controller: 'HomeController',
+            template: '&lt;h2>We are home&lt;/h2>'
+        })
+        .otherwise({redirectTo: '/'});
+        }]);
+        
+
+        SYNTAX:
+            $routeProvider(current,single level)
+        
+ `       
+    },
+    {title:"2.UI Router",
+    body:`UI-Router in angular js is basically based on the state machine which provides
+     the routing mechanism and nested functions.
+
     installation
+
         For Installation of UI Router library, you can either use Bower or you can choose to download the release version.
             $ bower install angular-ui-router --save
         Also you need the source file that contains the page:
-            <script type = "text/javascript" 
+            &lt;script type = "text/javascript" 
             src = "app/bower_components/angular-ui-router/release/angular-ui-router.js">
-            </ script>
-    using
+            &lt;/ script>
+    
+    usage:
         1.It is necessary to inject the UI Router in your app to use it.
             Basic SYNTAX:
                 module(‘myapp’,[‘ui.router’]).controller
             HTML Syntax for UI Router
-                <div ng-controller = "DemoController">
-                    <div ui-view></div>
-                </div>
+                &lt;div ng-controller = "DemoController">
+                    &lt;div ui-view>&lt;/div>
+                &lt;/div>
         2.Your content will be injected in between ui-view div.
             Content Syntax for UI Router:
             After body tag, add the above tag.
@@ -616,154 +709,215 @@ ngRoute is a separate module which contains following:
             }
             
 
-            $urlRouterProvider otherwise method is used to check if state not found, redirect user to the page passed in the otherwise() method.														<a ui-sref="admin">Admin</a> 
-state
-: is just a state machine which acts like state machine in the top of the ngRoute.
-Internally, It will manage state and based on state it will provide.
+            $urlRouterProvider otherwise method is used to check if state not found, redirect user to the page passed in the otherwise() method.
+            &lt;a ui-sref="admin">Admin&lt;/a> 
+`
+    }
+    ]
 
-$StateProvider (service provider)
-is used to configure the routing in Angular JS.
+},
+{GrpTitle:"Dependency Injection(DI)",
+    items:
+    [
+        {title:"what is dependency injectino?",
+        body:`-When applying DI, the objects are given their dependencies at creation time,by some external entity . 
+        In other words, dependencies are injected into objects
+        
+        The Angular injector subsystem is in charge of creating components, 
+        resolving their dependencies, and providing them to other components as requested.
+        
+        -DI is pushing out dependencies to the calling objects.
+        -Dependency Injection was originally called Inversion of Control (IoC) because
+        the normal control sequence would be the object finds the objects it depends on by itself
+        and then calls them. 
+        Here, this is reversed: The dependencies are handed to the object when it's created. 
+        This also illustrates the Hollywood Principle at work: Don't call around for your dependencies,
+        we'll give them to you when we need you.
+        `
+        },
+        {title:"DI roles",
+        body:`Dependency injection involves four roles:
+        the service object(s) to be used
+        the client object that is depending on the services it uses
+        the interfaces that define how the client may use the services
+        the injector, which is responsible for constructing the services and injecting them into the client
+        `
+        },
+        {title:"standalone working example",
+         code:`&lt;!DOCTYPE html>
+            &lt;html>
+            &lt;head>
+            &lt;meta charset="utf-8"/>
+            &lt;title>Learn AngularJS - Inline Editor&lt;/title>
+            &lt;link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
+            &lt;link href="style.css" rel="stylesheet" />
+            &lt;/head>
+            &lt;body ng-app ng-controller="InlineEditorController">
+            &lt;button ng-click="count = count + 1" ng-init="count=0">
+            Increment
+            &lt;/button>
+            &lt;span>
+            count: {{count}}
+            &lt;/span>
+            &lt;script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js">&lt;/script>
+            &lt;script>
+            function InlineEditorController($scope){
+                $scope.showtooltip = false;
+                $scope.value = 'Edit me.';
+                $scope.hideTooltip = function(){
+                    $scope.showtooltip = false;
+                }
+            
+                $scope.toggleTooltip = function(e){
+                    e.stopPropagation();
+                    $scope.showtooltip = !$scope.showtooltip;
+                }
+            }
+            &lt;/script>
+            &lt;/body>
+            &lt;/html>`
+        }
+    ]
 
-State V/S Route
-diffrences 
-State						Route
----------------------------------------------------------
-A Place within App 			A URL within App
-Nested Hierarchy 			Flat Hierarchy
-Names are just names 		Names are URLs
-Multiple Views(ui-view) 	Single view (ng-view)
-Populate any view 			Populate specific view
-State populates ‘parts’ 	Directive populates ‘parts’
-
-Similarities
------------------------------------------------------------
-1. Associate a URL(optional in ui router)
-2. You can apply a template/templateUrl
-3. Can assign controller
-4. Can resolve dependencies before controller initiates
-5. Redirects using when()
-
-Nesting (Nested Views)
-:X
-<div ng-controller="parentcontroller">
-<p>{{name}}</p>
-<p ng-controller="childcontroller">{{address}}</p>
-</div>
-How to 
-How child state made
+},
+	{GrpTitle:"Other Concepts",
+		items:
+		[
+            {title:`state`,
+    body:`is just a state machine which acts like state machine in the top of the ngRoute.
+    Internally, It will manage state and based on state it will provide.
+    
+    $StateProvider (service provider)
+    is used to configure the routing in Angular JS.
+    
+    State V/S Route
+    diffrences 
+    State						Route
+    ---------------------------------------------------------
+    A Place within App 			A URL within App
+    Nested Hierarchy 			Flat Hierarchy
+    Names are just names 		Names are URLs
+    Multiple Views(ui-view) 	Single view (ng-view)
+    Populate any view 			Populate specific view
+    State populates ‘parts’ 	Directive populates ‘parts’
+    
+    Similarities
+    -----------------------------------------------------------
+    1. Associate a URL(optional in ui router)
+    2. You can apply a template/templateUrl
+    3. Can assign controller
+    4. Can resolve dependencies before controller initiates
+    5. Redirects using when()
+    `
+            },
+    {title:"Nesting (Nested Views)",
+        body:"example:",
+        code:`
+        &lt;div ng-controller="parentcontroller">
+        &lt;p>{{name}}&lt;/p>
+        &lt;p ng-controller="childcontroller">{{address}}&lt;/p>
+        &lt;/div>`
+    },
+    {title:"How tos",
+code:`//How child state made
 $StateProvider.state ('contacts.list', {});
-How to activate State?
-1.	$state.go()
-2.ui-sref Navigate to the state URLs
+//How to activate State?
+//1.
+	$state.go()
+//2.ui-sref Navigate to the state URLs
     $state.go('destination.state');
-    <a ui-sref="">
-Abstract States
-Abstract means a state. It is not get activated by itself.
-It will be activated when any child of state will be activated.
-
-Providers   : are the only service you can pass into your .config() function.
-- Use a provider when you want to provide module-wide configuration for your service object before making it available.
-templates   : are written with HTML that contains Angular-specific elements and attribute
-:X
-<html ng-app>
-<!-- Body tag augmented with ngController directive  -->
-<body ng-controller="MyController">
-<input ng-model="foo" value="bar">
-<!-- Button tag with ng-click directive, and
+    &lt;a ui-sref="">
+`
+    },
+    {title:"Abstract States"
+    ,body:`Abstract means a state, It is not get activated by itself.
+    It will be activated when any child of state will be activated.
+    `},
+    {title:"provider",
+    body:`are the only service you can pass into your .config() function.
+    - Use a provider when you want to provide module-wide 
+    configuration for your service object before making it available.`
+    },
+    {title:"templates",
+    body:`are written with HTML that contains Angular-specific elements and attribute.
+    Example:`,
+code:`&lt;html ng-app>
+&lt;!-- Body tag augmented with ngController directive  -->
+&lt;body ng-controller="MyController">
+&lt;input ng-model="foo" value="bar">
+&lt;!-- Button tag with ng-click directive, and
 string expression 'buttonText'
 wrapped in "{{ }}" markup -->
-<button ng-click="changeFoo()">{{buttonText}}</button>
-<script src="angular.js">
-</body>
-</html> 
-#Dependency Injection(DI) :
-:
--When applying DI, the objects are given their dependencies at creation time,by some external entity . 
-In other words, dependencies are injected into objects
+&lt;button ng-click="changeFoo()">{{buttonText}}&lt;/button>
+&lt;script src="angular.js">
+&lt;/body>
+&lt;/html> 
+`},
+{title:"debugging",
+body:`debuging
+1.Checking these check list?
+-view source code of html
+-is there any ng-app and ng-controller inside the body 
+or (its elements) of html?
 
-The Angular injector subsystem is in charge of creating components, 
-resolving their dependencies, and providing them to other components as requested.
+-is the name of ng-controller in html element ,
+the same as one in javascript ?
 
--DI is pushing out dependencies to the calling objects.
--Dependency Injection was originally called Inversion of Control (IoC) because
-the normal control sequence would be the object finds the objects it depends on by itself
-and then calls them. 
-Here, this is reversed: The dependencies are handed to the object when it's created. 
-This also illustrates the Hollywood Principle at work: Don't call around for your dependencies,
-we'll give them to you when we need you.
-:{
-Dependency injection involves four roles:
-the service object(s) to be used
-the client object that is depending on the services it uses
-the interfaces that define how the client may use the services
-the injector, which is responsible for constructing the services and injecting them into the client
-:X standalone working example
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8"/>
-<title>Learn AngularJS - Inline Editor</title>
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
-<link href="style.css" rel="stylesheet" />
-</head>
-<body ng-app ng-controller="InlineEditorController">
-<button ng-click="count = count + 1" ng-init="count=0">
-Increment
-</button>
-<span>
-count: {{count}}
-</span>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-<script>
-function InlineEditorController($scope){
-    $scope.showtooltip = false;
-    $scope.value = 'Edit me.';
-    $scope.hideTooltip = function(){
-        $scope.showtooltip = false;
-    }
-
-    $scope.toggleTooltip = function(e){
-        e.stopPropagation();
-        $scope.showtooltip = !$scope.showtooltip;
-    }
-}
-</script>
-</body>
-</html>
-:process (and Mechnisms)
-creating angular application,regular aproach:
+-are  'ng-click=' are bound to the right $cope function in Controller?  
+2.Debugging from the DOM
+-by coding in chrome>console
+we can get access to the Angular properties that are attached to any DOM element.
+we can use the jQuery selector syntax in debugger of browser : $("selector")
+or document.querySelector() method in javascript
+in chrome console we can run this code and in sources,watch the values
+var rootEle = document.querySelector("html");
+var ele = angular.element(rootEle);
+var scope = ele.scope(); //scope
+var ctrl = ele.controller();//controller
+var d=ele.inheritedData();
+3.by debugger in chrome > debugger and stop watch on functions body
+4.Angular Batarang
+is a Chrome extension developed by the Angular team at Google that
+integrates as a debugging tool for Angular apps. `
+},
+    {title:"creating angular application,regular aproach",
+        body:
+`
 javascript part:
 1-defining module 
-x:	var mainApp = angular.module("mainApp", []);
+example:<pre><code>	var mainApp = angular.module("mainApp", []);</code></pre>
 2-defining controlers and defining models fields in its function  
-x: mainApp.controller("shapeController", function($scope) {
+example:
+<pre><code> mainApp.controller("shapeController", function($scope) {
 $scope.message = "In shape controller";
 $scope.type = "Shape";
-});
+});</code></pre>
 
 Html Part:
 1-defining 'module' :
 we start by adding ng-app="myApp" to a <div> or <html> on which myApp is name of a module.
 //we can also add ng-app with no parameter like <html ng-app>
 2- using 'controlers' within module
-<div ng-controller = "circleController">
+<pre><code>&lt;div ng-controller = "circleController"></code></pre>
 3-using 'expressions' to show data within controller
-<p>{{message}} <br/> 
-Referencing:
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+<pre><code><p>{{message}} <br/> </code></pre>
+
+
 Custom directives
+<pre><code>
 angular.module('yourApp',  [])  
 .directive('myDirective',  function()  {  
 return  {  
 restrict: 'E',  
-template:  '<a href="http://www.techstrikers.com">click here</a>'  
+template:  '&lt;a href="http://www.techstrikers.com">click here&lt;/a>'  
 }  
 }); 
-Change tracking
+</code></pre>
+<b>Change tracking</b>
 Your application does not have to expose any events or trigger any callbacks.
 Instead, you can simply add methods to your model classes which 
 perform the necessary data combination and/or retrieval:
-
+<pre><code>
 function UserController($scope) {
 $scope.currentUser = {
 firstName: "John",
@@ -774,15 +928,19 @@ $scope.getFullName = function() {
 return $scope.currentUser.firstName + " " + $scope.currentUser.lastName;
 };
 }
-You can then change the HTML markup to directly bind to the result of this method:
+</code></pre>
 
-<div ng-app ng-controller="UserController">
-First Name: <input type=text ng-model="currentUser.firstName"> <br>
-Last Name: <input type=text ng-model="currentUser.lastName"><br>
+You can then change the HTML markup to directly bind to the result of this method:
+<pre><code>
+&lt;div ng-app ng-controller="UserController">
+First Name: &lt;input type=text ng-model="currentUser.firstName"> &lt;br>
+Last Name: &lt;input type=text ng-model="currentUser.lastName">&lt;br>
 Full Name: {{getFullName()}}
-</div>
-defining routes
-x:
+&lt;/div>
+</code></pre>
+<b>Defining routes</b>
+Example:
+<pre><code>
 // script.js
 // create the module and name it scotchApp
 // also include ngRoute for all our routing needs
@@ -825,37 +983,14 @@ $scope.message = 'Look! I am an about page.';
 scotchApp.controller('contactController', function($scope) {
 $scope.message = 'Contact us! JK. This is just a demo.';
 });
-debuging
-1.Checking these check list?
--view source code of html
--is there any ng-app and ng-controller inside the body 
-or (its elements) of html?
-
--is the name of ng-controller in html element ,
-the same as one in javascript ?
-
--are  'ng-click=' are bound to the right $cope function in Controller?  
-2.Debugging from the DOM
--by coding in chrome>console
-we can get access to the Angular properties that are attached to any DOM element.
-we can use the jQuery selector syntax in debugger of browser : $("selector")
-or document.querySelector() method in javascript
-in chrome console we can run this code and in sources,watch the values
-var rootEle = document.querySelector("html");
-var ele = angular.element(rootEle);
-var scope = ele.scope(); //scope
-var ctrl = ele.controller();//controller
-var d=ele.inheritedData();
-3.by debugger in chrome > debugger and stop watch on functions body
-4.Angular Batarang
-is a Chrome extension developed by the Angular team at Google that
-integrates as a debugging tool for Angular apps. 
-:res:
--tutorial resources :
-https://www.quora.com/Which-is-the-best-AngularJS-tutorial-with-a-step-by-step-project
-
+</code></pre>
 `
-        }
+        },
+        {title:`Other resources`,
+        body:`:res:
+        -tutorial resources :
+        https://www.quora.com/Which-is-the-best-AngularJS-tutorial-with-a-step-by-step-project
+        `}
       ]
     }
 ]
