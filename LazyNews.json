@@ -1,4 +1,8 @@
 var LazyNews=[
+	{
+		"title":"Searching components and lib for .net",
+		"lnk":"https://marketplace.visualstudio.com/search?term=PDF%20Viewer%20WPF&target=VS&category=All%20categories&vsVersion=&sortBy=Relevance"
+	},
     {
         "title":"Canadian Statup visa",
         "lnk":"https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/start-visa/designated-organizations.html"
