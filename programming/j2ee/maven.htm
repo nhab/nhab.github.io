@@ -1,0 +1,64 @@
+
+<pre>
+0- prerequest :  you must have Java installed in order to proceed.
+1- <a href='https://maven.apache.org/download.html'>download</a> and install maven
+2- make sure you installed by showing the version and other info of it: <pre><code>mvn --version</code></pre>
+3- Creating a Project:
+ <pre><code>mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false</code></pre>
+4- <pre><code>cd my-app</code></pre>
+5- you will see standard project structure there:
+my-app
+|-- pom.xml
+`-- src
+    |-- main
+    |   `-- java
+    |       `-- com
+    |           `-- mycompany
+    |               `-- app
+    |                   `-- App.java
+    `-- test
+        `-- java
+            `-- com
+                `-- mycompany
+                    `-- app
+                        `-- AppTest.java
+ 6. The POM 
+ The pom.xml file is the core of a project's configuration in Maven.
+ It is a single configuration file that contains the majority of information required to build a project 
+ Example:
+ <pre><code>
+ <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+ 
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <!-- packaging>jar</packaging -->
+ 
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+ 
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>
+</code>
+</pre>
+
+7. Build the Project
+<pre><code>mvn package</code></pre>
+
+8. test the newly compiled and packaged JAR with the following command:
+<pre><code>java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App</code></pre>
+Which will print the quintessential:
+  Hello World!
+  
+</pre>
