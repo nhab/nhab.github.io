@@ -1,5 +1,9 @@
 var LazyNews=[
 	{
+	"title":"Free Cloud Hosting Services & Developer Tools",
+	"lnk":"https://iwantmyname.com/services/developer/"
+	},
+	{
 		"title":"Searching components and lib for .net",
 		"lnk":"https://marketplace.visualstudio.com/search?term=PDF%20Viewer%20WPF&target=VS&category=All%20categories&vsVersion=&sortBy=Relevance"
 	},
