@@ -1,0 +1,38 @@
+<pre>
+-what is ASP.NET Web API?
+	it is a framework from 	Microsoft for building HTTP (or WCF) services,
+	through the ASP.NET MVC programming model.
+
+- When the resources of an application can be manipulated over HTTP using the standard HTTP methods of GET, POST, PUT, and DELETE,
+you can say that the application supports a web API for other applications to use.
+
+-Resource and URI:
+A central concept of HTTP services is the existence of resources that can be identified through a uniform
+resource identifier (URI).
+
+For example,for an application that deals with the
+employees of an organization, each employee is a resource. The URI is http://server/hrapp/employees/12345. 
+It includes the employee ID and serves as an identifier to the resource,
+which is an employee in this case. Actions on this resource are accomplished through the HTTP verbs.
+
+Similarly, to delete this employee, the
+request will be an HTTP DELETE request, again on the same URI. To create a new employee, the request will be an
+HTTP POST to the URI without any identifier (http://server/hrapp/employees).
+
+
+In the case of POST and PUT, the service must be passed the employee data or the resource representation. It is
+typically XML or JSON that is sent as the HTTP request message body. An HTTP service sends responses in XML or
+JSON, similar to the request. For example, a GET to http://server/hrapp/employees/12345 results in a response
+containing JSON representing the employee with an ID of 12345.
+
+-Status codes:
+HTTP service responds with the HTTP status code indicating success or failure. For example, if the employee
+with identifier 12345 does not exist, the HTTP status code of 404 - Not found will be returned. If the request is
+successful, the HTTP status code of 200 - OK will be returned.
+
+-ApiController:
+All you need to do is to create a subclass of ApiController, say EmployeesController, with a method
+Get(int id) to retrieve the data of the employee and return the employee object in form of JSON or XML.
+
+for post,you need to implement the Post(Employee employee) with a parameter of type Employee.
+</pre>
