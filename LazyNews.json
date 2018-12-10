@@ -1,5 +1,26 @@
 var LazyNews=[
     {
+        title:"What is Google Tag Manager(GTM)?",
+        "tooltip":`Tags, in a general sense, are bits of code you embed in your website’s javascript or HTML to extract certain information.
+
+        For marketers, necessary tag information typically includes how long users visit a page on your site, form submissions,
+         how they arrived on your site, which links they clicked, or even what products they removed from their shopping cart.
+         Each tag tracks something different. For instance, you might create a tag just to see how many people fill out the form on your “Contact Us” page.
+          That tag can then send more precise information to Google Analytics, or AdWords, or another third party.`,
+        "lnk":"https://blog.hubspot.com/marketing/google-tag-manager-guide"
+    },
+    {
+        "title":"Some of differences Between CSS,CSS 2 & 3,HTML4 & 5",
+        "lnk":"https://www.besanttechnologies.com/difference-html-html5-css-css3",
+        "tooltip":
+        `CSS released in 1996 ,CSS2 released in 1998 with added styles for other media types,CSS3 released in 1999 .
+        CSS3: - Unlike CSS2, which was comprised of a single document, CSS3 document can be divided into individual modules.
+              - special fonts, like those available in Google Fonts and Typecast. 
+                Earlier, with CSS and CSS2, designers could only use “web safe fonts”.
+             - ‘simple selectors’, CSS3 calls the components as ‘a sequence of simple selectors’.
+             - rounded borders,capability to split text sections into multiple columns so that it can be read as a newspaper.`
+    },
+    {
         "title":"PTE or IELTS english tests?",
         "lnk":"https://pearsonpte.com/why-pte-academic/"
     },
