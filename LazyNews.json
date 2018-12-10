@@ -1,5 +1,10 @@
 var LazyNews=[
     {
+        "title":"21 Conversion Rate Optimization Best Practices",
+        "lnk":"https://vwo.com/blog/conversion-optimization-best-practices/",
+        "tooltip":"converting visitor/lead to customer"
+    },
+    {
         "title":"Delivery manager and project manager differences",
         "lnk":"http://itsadeliverything.com/delivery-manager-a-new-role-for-an-agile-world"
     },
