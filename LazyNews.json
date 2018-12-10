@@ -1,13 +1,17 @@
 var LazyNews=[
     {
-        title:"what is webpack",
-        "tooltip:`DescriptionWebpack is an open-source JavaScript module bundler.
+        "title":"Delivery manager and project manager differences",
+        "lnk":"http://itsadeliverything.com/delivery-manager-a-new-role-for-an-agile-world"
+    },
+    {
+        "title":"what is webpack",
+        "tooltip":`DescriptionWebpack is an open-source JavaScript module bundler.
          Its main purpose is to bundle JavaScript files (along with other needed files)
         for usage in a browser.
          Webpack takes modules with dependencies and generates static assets representing those modules.`
     },
     {
-        title:"What is Google Tag Manager(GTM)?",
+        "title":"What is Google Tag Manager(GTM)?",
         "tooltip":`Tags, in a general sense, are bits of code you embed in your website’s javascript or HTML to extract certain information.
 
         For marketers, necessary tag information typically includes how long users visit a page on your site, form submissions,
