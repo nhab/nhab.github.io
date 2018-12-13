@@ -1,0 +1,25 @@
+options={
+  header:
+  [
+    {title:"Data center",tooltip:"is it a reseller or main company having datacenter?\r\nhas internal datacenter?\r\nwhere is the datacenter?national datacenter?"},
+    {title:"Reliablity?", tooltip:"How safe is your source codes on thier servers?"},
+    {title:"Security?"},
+    {title:"Relatively Cheap and Extra/free features",tooltip:"Space/bandwidth/price balance\r\nFree ssl?\r\n unlimited features like number of databases and email acounts\r\nNumber of hostable sites on the space\r\ndedicated IP?"}, 
+    {title:"Speed"        ,tooltip:"like :speed of your site,\r\n use of NVMe SSD hard to speed up?"},
+    {title:"Support"      , tooltip:"like: 24hour tel/office hour telphone /chat/ email or their internal ticketing\r\nTechnical knowledg of support?"},
+    {title:"company's city",tooltip:"where is physical place the company?"},
+    {title:"customization flexibility", tooltip:" being flexible to our customizations and changes\r\n port 80 for panels?"},
+    {title:"Authurization",tooltip:"free access to all control panels and adminstrational settings?\r\n domain records mangement?"},
+    {title:"Extensibility",tooltip:"host space and other features extensibility?"},
+    {title:"Uptodate",tooltip:" os and its version\r\nversions of  web application server software and its version and control panel software?\r\n php /mysql/ asp.net/sql server version?"},
+    {title:" writen contract?",tooltip:"we should trust them or they can provide writen contract for their service?"},
+    {title:"reputation",tooltip:"age of the company and its reputation"},
+    {title:" backuping"},
+    {title:"persistancy",tooltip:"service uptime percentage?"},
+    {title:"file manager",tooltip:"online file manager /ftp"}
+  ],        
+  items:
+  [
+    []
+  ]
+};  

@@ -723,22 +723,23 @@ class BlockFrame{
     static RenderTable(options)
     {
         
-	   document.write("<table id='tb1' class='tableColored' >");
+	   document.write("<table id='tb1' class='tableColored' style='table-layout: auto;border-collapse: collapse;'>");
        document.write("<tr style='width:3000;border-size:1px;background-color:cyan;' >");
        var clss="",styl="";
        
 	   for(var r=0;r<options.header.length;r++)
 	   {
-		   var clss="",styl="";
+		   var clss="",styl="",tooltip="";
 		   if(options.header[r].style) styl=options.header[r].style;
 		   if(options.header[r].class) clss=options.header[r].class;
-		   
+           if(options.header[r].tooltip) tooltip=options.header[r].tooltip;
+           
 			var s;
 
 			if(!options.header[r].link)	
-				s="<td "+"style='"+styl+"' class='"+clss+"' >"+options.header[r].title+"</td>";
+				s="<td "+"style='width:auto; overflow: visible;white-space: nowrap;" + styl + "' class='" + clss + "' title='" + tooltip + "' >"+options.header[r].title+"</td>";
 			else
-				s="<td "+"style='"+styl+"' class='"+clss+"' ><a href='"+options.header[r].link+"'>" +options.header[r].title+"</a></td>";
+				s="<td "+"style='" + styl + "' class='" + clss + "' ><a href='"+options.header[r].link+"'>" +options.header[r].title+"</a></td>";
 			document.write(s);
        }
        
@@ -749,11 +750,12 @@ class BlockFrame{
 		for(var c=0;c<options.header.length;c++)
 		{
 				document.write("<td style='border: 1px solid black;'>"+options.items[r][c]+"</td>\r\n");
-			
+                overflow: visible;
 		}
 		document.write("</tr>\r\n");
 	  }
     }
+
     static  getRandomID()
     {
         return ( "_"+Math.random()*20 ).replace(".","");
