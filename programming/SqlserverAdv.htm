@@ -1,0 +1,32 @@
+<pre>
+<b>What are Common Table Expressions (CTEs)?</b>
+
+A Common Table Expression (CTE) is the result set of a query which exists temporarily and
+for use only within the context of a larger query. 
+(Much like a derived table, the result of a CTE is not stored and exists only for the duration of the query)
+
+<b>Example use cases include:</b>
+
+- Needing to reference a derived table multiple times in a single query
+- An alternative to creating a view in the database
+- Performing the same calculation multiple times over across multiple query components
+
+<b>Example:</b>
+<code>
+-- define CTE:
+WITH Cost_by_Month AS
+(SELECT campaign_id AS campaign,
+       TO_CHAR(created_date, 'YYYY-MM') AS month,
+       SUM(cost) AS monthly_cost
+FROM marketing
+WHERE created_date BETWEEN NOW() - INTERVAL '3 MONTH' AND NOW()
+GROUP BY 1, 2
+ORDER BY 1, 2)
+
+-- use CTE in subsequent query:
+SELECT campaign, avg(monthly_cost) as "Avg Monthly Cost"
+FROM Cost_by_Month
+GROUP BY campaign
+ORDER BY campaign
+</code>
+</pre>
