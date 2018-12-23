@@ -750,7 +750,7 @@ class BlockFrame{
 		for(var c=0;c<options.header.length;c++)
 		{
 				document.write("<td style='border: 1px solid black;'>"+options.items[r][c]+"</td>\r\n");
-                overflow: visible;
+               // overflow: visible;
 		}
 		document.write("</tr>\r\n");
 	  }
