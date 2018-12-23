@@ -10,7 +10,35 @@ BEGIN
 END
 </code>
 
+<b>Creating A Temporary Table Example -method 1</b>
+<code>
+SELECT name, age, gender
+INTO #MaleStudents
+FROM student
+WHERE gender = 'Male'
+</code>
 
+<b>Creating A Temporary Table Example -method 2</b>
+<code>
+CREATE TABLE #MaleStudents
+(
+	name VARCHAR(50),
+	age int,
+	gender VARCHAR (50)
+ 
+)
+ 
+INSERT INTO #MaleStudents
+SELECT name, age, gender
+FROM student
+WHERE gender = 'Male'
+</code>
+
+<b>Global Temporary Tables</b>
+They are accessible to the other connections.
+The name of the global temporary table starts with a double hash symbol (##). 
+
+<h2>Common Table Expressions</h2>
 <b>What are Common Table Expressions (CTEs)?</b>
 
 A Common Table Expression (CTE) is the result set of a query which exists temporarily and
