@@ -1,7 +1,7 @@
 var LazyNews=[
 	{
 	"title":"what is KAFKA?",
-	"lnk","https://kafka.apache.org/intro"
+	"lnk":"https://kafka.apache.org/intro"
 	},
     {
         "title":"21 Conversion Rate Optimization Best Practices",
