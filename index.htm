@@ -121,14 +121,7 @@
                 </div>
 		    <div class="indent"> <a href="Topics/Tech/usefulsettings.htm">Useful Settings</a></div>
             </div>
-	    <div class="LinkBlock bordered">
-		 <div class="header indent">curiosities</div>
-		 <div class="indent">
-			<a href="https://www.google.com/search?q=tymus+tapping&oq=timus+tapping">tymus tapping</a>
-		 </div>
-		  
-	   </div>
-
+	   
  	    <div class="LinkBlock bordered"  >
 		   <div class="header indent">Markets</div>
                 <div class="indent">
@@ -139,28 +132,47 @@
                     <a href="http://www.iranjib.ir/showgroup/23/realtime_price/">$</a>
                 </div> 
 	    </div>
-	     <div class="LinkBlock bordered" style="width:800px">
-                    <div class="header indent" style="width:700px;">Lazy News</div>
-                    <div style="height:200px;overflow-y: scroll;">
-                    <script>
-                        
-                        for(i=0;i<LazyNews.length;i++)
+	    <script>
+		    function LoadJson(jsn)
+		    {
+			for(i=0;i<jsn.length;i++)
                           {
                               var s1="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
                               s1 += "<a target='_blank'";
                               
-                              if(LazyNews[i].lnk)
-                                s1 +=" href='" + LazyNews[i].lnk + "'" ;
-                              if(LazyNews[i].tooltip)
-                                s1= s1+" title='" + LazyNews[i].tooltip + "'";
-                              s1  = s1+ ">"       + LazyNews[i].title   + "</a><br>";
+                              if(jsn[i].lnk)
+                                s1 +=" href='" + jsn[i].lnk + "'" ;
+                              if(jsn[i].tooltip)
+                                s1= s1+" title='" + jsn[i].tooltip + "'";
+                              s1  = s1+ ">"       + jsn[i].title   + "</a><br>";
                               
                               document.write( s1 );
                           }
-                    </script>
+    
+		    }
+	    </script>
+	     <div class="LinkBlock bordered" style="width:800px">
+                    <div class="header indent" style="width:700px;">Lazy News</div>
+                    <div style="height:200px;overflow-y: scroll;">
+                    <script>
+                        Loadjson(LazyNews);
+                     </script>
                     </div>
                     <br/>
              </div>
+		
+		 <div class="LinkBlock bordered">
+		    <div class="header indent">curiosities</div>
+		    <div class="indent">
+			<a href="https://www.google.com/search?q=tymus+tapping&oq=timus+tapping">tymus tapping</a>
+			<script>
+                        Loadjson(LazyNews);
+
+			</script>
+		    </div>
+
+	         </div>
+
              <br/>
  <br/> <br/>
         
