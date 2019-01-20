@@ -35,7 +35,7 @@ var LazyNews=[
         "lnk":"https://blog.hubspot.com/marketing/google-tag-manager-guide"
     },
     {
-        "title":"Some of differences Between CSS,CSS 2 & 3,HTML4 & 5",
+        "title":"CSS,CSS 2 & 3,HTML4 & 5 differences",
         "lnk":"https://www.besanttechnologies.com/difference-html-html5-css-css3",
         "tooltip":
         `CSS released in 1996 ,CSS2 released in 1998 with added styles for other media types,CSS3 released in 1999 .
