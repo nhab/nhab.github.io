@@ -1,0 +1,63 @@
+<pre>
+<h2> Create A New Database ( or connects to existing one)</h2>
+ At a shell command prompt, enter: "sqlite3 test.db"
+
+<h2> Examples for Create,insert and select Table</h2>
+     $ sqlite3 ex1 
+     SQLite version 3.8.5 2014-05-29 12:36:14 
+     Enter ".help" for usage hints. 
+     sqlite> create table tbl1(one varchar(10)  primary key, two smallint, f2 text, f3 real); 
+     sqlite> insert into tbl1 (one,two) values('hello!',10); 
+     sqlite> insert into tbl1 values('goodbye', 20); 
+     sqlite> select * from tbl1; 
+     hello!|10 
+     goodbye|20 
+<h2>Show list of the tables</h2>
+    .tables
+<h2> Show the structure of a table</h2>
+    .schema table
+<h2> Add column in table</h2>
+    ALTER TABLE table_name
+     ADD new_column_name column_definition;
+<h2> Modify column in table</h2>
+  You can not use the ALTER TABLE statement to modify a column in SQLite. 
+  Instead you will need to rename the table, create a new table, and copy the data into the new table.
+<h2> Syntax</h2>
+    PRAGMA foreign_keys=off;
+    BEGIN TRANSACTION;
+    ALTER TABLE table1 RENAME TO _table1_old;
+    CREATE TABLE table1 (
+    ( column1 datatype [ NULL | NOT NULL ],
+     column2 datatype [ NULL | NOT NULL ],
+     ...
+    );
+    INSERT INTO table1 (column1, column2, ... column_n)
+    SELECT column1, column2, ... column_n
+    FROM _table1_old;
+    COMMIT;
+    PRAGMA foreign_keys=on;
+<h2> Rename table , delete  Table </h2>
+    ALTER TABLE table_name
+     RENAME TO new_table_name;
+
+    drop Table tbl1;
+<h2> Insert DateTime</h2>
+    insert into tbl1(id, enterDate) values (1,DateTime());           // Now
+    insert into tbl1(id, enterDate) values (2,'2007-01-01 10:00:00');// the right format of DateTime
+    
+<h2>File I/O</h2>
+    sqlite> CREATE TABLE images(name TEXT, type TEXT, img BLOB); 
+    sqlite> INSERT INTO images(name,type,img) 
+    ...>   VALUES('icon','jpeg',readfile('icon.jpg')); 
+    sqlite> SELECT writefile('icon.jpg',img) FROM images WHERE name='icon'; 
+<h2> Querying the database schema</h2>
+    SELECT name FROM sqlite_master 
+    WHERE type IN ('table','view') AND name NOT LIKE 'sqlite_%'
+    ORDER BY 1
+<h2> CSV Export /Import</h2>
+    sqlite> SELECT * FROM tab1;
+    sqlite> .system c:/work/dataout.csv 
+    
+    sqlite> .mode csv
+    sqlite> .import C:/work/somedata.csv tab1
+</pre>
