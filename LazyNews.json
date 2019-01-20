@@ -1,4 +1,6 @@
 var LazyNews=[
+	{"title":"tab grouping in chrome",
+	       "lnk":"https://mspoweruser.com/this-is-how-tab-grouping-will-work-on-google-chrome/amp/"},
 	{
 	"title":"what is KAFKA?",
 	"lnk":"https://kafka.apache.org/intro"
