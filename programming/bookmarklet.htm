@@ -1,0 +1,30 @@
+<p>Is a bookmark in the web browser that contains JavaScript commands that add new features to the browser. </p>
+
+<h3 id="concept">Concept</h3>
+
+<p>The executing script has access to inspect or change the current page,without reload.</p>
+
+<p>An anonymous function that does not return a value, define a function, etc., 
+can be used to force the script to return an undefined type:</p>
+
+<pre><code class="javascript language-javascript">    javascript:(function(){
+        //Statements returning a non-undefined type, e.g. assignments
+    })();
+</code></pre>
+
+<pre><code class="javascript language-javascript">    //Example: to change font of the current page
+    javascript:(
+      function(){
+      document.getElementsByTagName('body')[0].style.setProperty('font-family',%20'serif',%20'important');
+      }
+    )();
+</code></pre>
+
+<p>Resources :</p>
+
+<pre><code>tones of it http://marklets.com/
+
+Steve Kangas of http://bookmarklets.com
+
+Tantek Çelik called these scripts favelets
+</code></pre>
