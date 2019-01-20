@@ -9,6 +9,10 @@ var LazyNews=[
         "lnk":"https://vwo.com/blog/conversion-optimization-best-practices/",
         "tooltip":"converting visitor/lead to customer"
     },
+	{
+	"title":"StackOverflow reputation",
+	"lnk":"https://www.polidea.com/blog/Best_ways_to_gain_Stack_Overflow_reputation/""
+	},
     {
         "title":"Delivery manager and project manager differences",
         "lnk":"http://itsadeliverything.com/delivery-manager-a-new-role-for-an-agile-world"
