@@ -1,0 +1,43 @@
+<h2><center>Responsive web design principals</center></h2>
+<ul>
+<li><strong>Built on a Fluid Grid</strong> 
+<br>A website built on a fluid grid will be based on percentages instead of on pixels.
+</li>
+<li><strong>Responsive Images &amp; Video</strong> 
+<br>Images should scale depending on the resolution of the screen they are being viewed on.
+</li>
+<li><strong>Media Queries Define Breakpoints</strong>
+<pre> 
+Media queries in CSS are used to alter the layout at various break-points in the design.
+
+Example:
+</pre>
+<code>
+&lt;link rel="stylesheet" type="text/css"
+  media="screen and (max-device-width: 480px)"
+  href="shetland.css" />
+</code>
+<pre>
+This media query is fairly self-explanatory: 
+if the browser displays this page on a screen (rather than print, etc.),
+ and if the width of the screen (not necessarily the viewport) is 480 pixels or less, then load shetland.css.
+</pre>
+</li>
+<li><strong>Non-Essential Content is Removed</strong> 
+<pre>
+At smaller screen sizes none essential content is hidden to remove clutter and improve the user experience. 
+Be careful when deciding what to remove as all of the core content should still be accessible on smaller screens.
+</pre>
+</li>
+<li><strong>Responsive Navigation</strong>
+<pre> 
+While not every website will require responsive navigation techniques, 
+those with extensive menus would benefit from using various techniques designed for smaller screen resolutions.</li>
+</pre>
+</ul>
+<pre>
+more resources:
+<a href='http://mediaqueri.es/'>gallery of responsive design examples</a>
+<a href='http://echosurgemarketing.com/key-responsive-web-design-principles/'>principles</a>
+<a href='https://www.smashingmagazine.com/2011/01/guidelines-for-responsive-web-design/'>guidelines</a>
+</pre>
