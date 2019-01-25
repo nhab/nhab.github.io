@@ -1,0 +1,10 @@
+how to unroot a rooted android device? 
+the following routine worked my android 4.4:
+1.uninstall every rooting app on the device.
+2.install <a href="https://drive.google.com/file/d/0B2p4gSY1HD7rb0JKcVFWa2Z3SzA/view" >this</a> version of "super su" app.
+3.run it.
+4. click on continue button for the first question it asks
+5.for the second question click "normal".
+6. upgrade the app to latest version and answer the question as befor.
+7.on setting section click on "fully unroot..."
+8.wait until finish and restart
