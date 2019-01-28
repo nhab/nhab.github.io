@@ -14,6 +14,10 @@ var LazyNews=[{"title":"10seo tools 2019",
         "tooltip":"converting visitor/lead to customer"
     },
 	{
+	  "title":"ERPs comparison",
+	lnk":"https://www.odoo.com/page/odoo-white-paper"
+	},
+	{
 	"title":"StackOverflow reputation",
 	"lnk":"https://www.polidea.com/blog/Best_ways_to_gain_Stack_Overflow_reputation/"
 	},
