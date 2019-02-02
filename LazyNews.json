@@ -1,4 +1,7 @@
-var LazyNews=[{"title":"10seo tools 2019",
+var LazyNews=[{"title":"laravel Homestead",
+	       "lnk":"https://laravel.com/docs/5.7/homestead",
+	       "tooltip":"Laravel Homestead is an official, pre-packaged Vagrant box that provides you a development environment without requiring you to install PHP, a web server, and any other server software on your local machine"},
+	{"title":"10seo tools 2019",
 	       "lnk":"https://www.business2community.com/seo/the-top-10-seo-tools-marketers-want-in-2019-02160206/amp"},
 	      {"title":"How to use $.ajax()","lnk":"https://dev.to/williamragstad/how-to-use-ajax-3b5e"},
 	{"title":"tab grouping in chrome",
