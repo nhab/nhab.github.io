@@ -14,7 +14,6 @@ Linux Commands
 	<tr valign="top">
 		<td>
 			<h2>Getting Help :</h2>
-			
 			<br/> &nbsp <a href=""  title="can answer all of your questions.usage: man grep">'man' command </a>  
 			<br/> &nbsp &nbsp <a href=""  title=" If you know what you want to do but dont know the command, apropos will give you list of related commands. &#10 usage :apropos make directory">'apropos' command </a>
 			<br/> &nbsp &nbsp<a href="" title="If you just want a quick idea of what a command does, use the whatis command. &#10 example: whatis grep">whatis</a> 
@@ -29,8 +28,8 @@ Linux Commands
 			
 		</td>
 		<td>
-			<br/><b><h2>Uninstall/installing packages:</h2><br/>
-			<br> </b>&nbsp To remove package called mplayer, enter:
+			<br/><h2>Uninstall/installing packages:</h2>
+			<br> &nbsp To remove package called mplayer, enter:
 			<pre>
 			<i> &nbsp $ sudo apt-get remove mplayer</i>
 			</pre>
@@ -41,8 +40,7 @@ Linux Commands
 			<br/>sh ./configure
 		</td>
 		<td>
-			<a href="" title="printf '\EC'">real clear screen</a>
-			<br/><b>Directory operations ::</b>
+			<br/><h2>Directory operations ::</h2>
 			<br/>- to <b>list</b> the names of the directories and files in the current directory:
 			ls </b> 
 			<br/>- to <b>copy</b> all contents of dir1 to dir2 recurcievly:cp -r dir1 dir22  .
@@ -51,17 +49,19 @@ Linux Commands
 			<br/><a href="http://www.ahinc.com/linux101/permission.htm">linux permissions</a>
 			<br/>
 			<pre>
-Backup MBR with dd command
-dd the old good command which now backup partition tables even writes CDs ;).
- Backing up partition is nothing but actually backing up MBR (master boot record). 
-The command is as follows for backing up MBR stored on /dev/sdX or /dev/hdX :
+			<h2>Backup MBR with dd command</h2>
+			dd the old good command which now backup partition tables even writes CDs ;).
+			 Backing up partition is nothing but actually backing up MBR (master boot record). 
+			The command is as follows for backing up MBR stored on /dev/sdX or /dev/hdX :
 
-# dd if=/dev/sdX of=/tmp/sda-mbr.bin bs=512 count=1
-Replace X with actual device name such as /dev/sda.
+			# dd if=/dev/sdX of=/tmp/sda-mbr.bin bs=512 count=1
+			Replace X with actual device name such as /dev/sda.
 
-Now to restore partition table to disk, all you need to do is use dd command:
-# dd if= sda-mbr.bin of=/dev/sdX bs=1 count=64 skip=446 seek=446
+			Now to restore partition table to disk, all you need to do is use dd command:
+			# dd if= sda-mbr.bin of=/dev/sdX bs=1 count=64 skip=446 seek=446
 			</pre>
+	
+			<br/> <a href="" title="printf '\EC'">real clear screen</a>
 		</td>
 	</tr>
 </table>
