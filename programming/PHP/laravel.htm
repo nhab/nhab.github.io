@@ -1,6 +1,7 @@
-laravel
+<pre>
+<h2>laravel</h2>
 installation
-	composer create-project laravel/laravel –-prefer-dist
+	composer create-project laravel/laravel â€“-prefer-dist
 	for complete installation:
 	composer create-project laravel/laravel test dev-develop
 starting laravel service
@@ -10,7 +11,7 @@ running:
 Basic config:
 	1. set the write permission for the directory "storage" and "bootstrap/cache".
 	2. Generate Application key to secure session and other encrypted data.
-	 If the root directory doesn’t contain the .env file then rename the .env.example to .env file
+	 If the root directory doesnâ€™t contain the .env file then rename the .env.example to .env file
 	 and execute the following command where you have installed Laravel:
     
     php artisan key:generate 
@@ -59,4 +60,4 @@ BasicRouting
 	Route::get('/user/{name?}',function($name = 'Virat'){
 		echo "Name: ".$name;
 	});
-	
+</pre>
