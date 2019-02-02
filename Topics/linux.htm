@@ -50,18 +50,18 @@ Linux Commands
                         <br/>Where,     -f: Forcefully remove file and     -r: Remove the contents of directories recursively
 			<br/><a href="http://www.ahinc.com/linux101/permission.htm">linux permissions</a>
 			<br/>
-			<pre>
-			<h2>Backup MBR with dd command</h2>
-			dd the old good command which now backup partition tables even writes CDs ;).
-			 Backing up partition is nothing but actually backing up MBR (master boot record). 
-			The command is as follows for backing up MBR stored on /dev/sdX or /dev/hdX :
+<pre>
+<h2>Backup MBR with dd command</h2>
+dd the old good command which now backup partition tables even writes CDs ;).
+ Backing up partition is nothing but actually backing up MBR (master boot record). 
+The command is as follows for backing up MBR stored on /dev/sdX or /dev/hdX :
 
-			# dd if=/dev/sdX of=/tmp/sda-mbr.bin bs=512 count=1
-			Replace X with actual device name such as /dev/sda.
+# dd if=/dev/sdX of=/tmp/sda-mbr.bin bs=512 count=1
+Replace X with actual device name such as /dev/sda.
 
-			Now to restore partition table to disk, all you need to do is use dd command:
-			# dd if= sda-mbr.bin of=/dev/sdX bs=1 count=64 skip=446 seek=446
-			</pre>
+Now to restore partition table to disk, all you need to do is use dd command:
+# dd if= sda-mbr.bin of=/dev/sdX bs=1 count=64 skip=446 seek=446
+</pre>
 	
 			<br/> <a href="" title="printf '\EC'">real clear screen</a>
 		</td>
