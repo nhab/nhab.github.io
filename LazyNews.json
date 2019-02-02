@@ -6,7 +6,9 @@ var LazyNews=[{"title":"10seo tools 2019",
 	{
 	"title":"what is KAFKA?",
 	"lnk":"https://kafka.apache.org/intro"
-	},{title:"فوروم. کسب درآمد",lnk:"http://iradsense.com/forums/topic/%D9%BE%D8%A7%D8%B3%D8%AE-%D8%A8%D9%87-%D8%B3%D9%88%D8%A7%D9%84%D8%A7%D8%AA-%D8%AF%D8%B1-%D9%85%D9%88%D8%B1%D8%AF-%DA%AF%D9%88%DA%AF%D9%84-%D8%A7%D8%AF%D8%B3%D9%86%D8%B3-%D8%A8%D9%87-%D9%85%D8%AF%D8%AA/"
+	},
+	{"title":"فوروم. کسب درآمد",
+	 "lnk":"http://iradsense.com/forums/topic/%D9%BE%D8%A7%D8%B3%D8%AE-%D8%A8%D9%87-%D8%B3%D9%88%D8%A7%D9%84%D8%A7%D8%AA-%D8%AF%D8%B1-%D9%85%D9%88%D8%B1%D8%AF-%DA%AF%D9%88%DA%AF%D9%84-%D8%A7%D8%AF%D8%B3%D9%86%D8%B3-%D8%A8%D9%87-%D9%85%D8%AF%D8%AA/"
 	},
     {
         "title":"Conversion Rate Optimization Best Practices",
@@ -15,7 +17,7 @@ var LazyNews=[{"title":"10seo tools 2019",
     },
 	{
 	  "title":"ERPs comparison",
-	lnk":"https://www.odoo.com/page/odoo-white-paper"
+	"lnk":"https://www.odoo.com/page/odoo-white-paper"
 	},
 	{
 	"title":"StackOverflow reputation",
