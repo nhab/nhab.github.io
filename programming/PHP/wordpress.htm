@@ -1,0 +1,155 @@
+<pre>
+				Open-source free cms  platform by community volunteers for building a website .  
+			:{
+				Dashboard
+					Posts 		 	  : to manage your posts
+					Media 			: to uploaded all images, documents or files are stored.
+					Pages 			: to manage your pages.  ( Pages are static content such as “About Us” pages)
+					Comments		: to manage all your comments (including replying to comments or marking them as spam)		
+					Appearance	: to control your site looks.
+								:{
+									- theme
+									- site widgets 
+									- menus 
+
+					Plugins			: to manage plugins (Plugins extend and expand the functionality of WordPress)
+								:opts{
+									-basic
+										WordPress.com stats (like Google Analytics)
+										Essential SEO 		(Search Engine Optimization)
+										Security scanning
+										Akismet				 (advanced anti-spam security)
+										Advanced galleries (tiled, mosaic, slideshows, and more)
+										Social Media		 (add social media buttons to your posts and pages)
+										Form builder 		(contact forms)
+										Extended Customizer
+										Extended Widgets 	(Flickr, Eventbrite, Google Calendar, Twitter, and more)
+										
+										Backup & Export (24/7 backup of your entire site)
+										Importer
+										Extended Shortcodes (video, audio, and more)
+										Infinite scroll
+										Related posts
+										Email subscriptions (follow button)
+										Advanced Commenting (comment likes, user mentions, notifications, and more)
+										Markdown
+										Likes (for Posts)
+										Embeds (Facebook, Twitter, Instagram, and more)
+
+					Users			: manage users and their roles for your site.
+					Tools			: This section gives you access to various tools that help manage your WordPress site. 
+								You can also import data to your WordPress site
+									export all your WordPress data to a file from this section.
+				Plugins
+					wordpress with sql lite
+					https://wordpress.org/plugins/sqlite-integration/
+				
+				termoprocs:
+					installation
+					SQLite Integration
+
+						SQLite Integration is the plugin that enables WordPress to use SQLite. If you want to build a WordPress website with it, this plugin is for you.
+
+						Download Version 1.8.1
+
+							Description
+							Installation
+							FAQ
+							Screenshots
+							Other Note
+							Changelog
+							Stats
+							Support
+							Reviews
+							Developers
+
+						For more detailed instruction, please visit SQLite Integration.
+						Preparation
+
+							Download the latest WordPress archive and this plugin. And expand them on your machine.
+							Move sqlite-integration folder to wordpress/wp-content/plugins folder.
+							Copy db.php file in sqlite-integratin folder to wordpress/wp-content folder.
+							Rename wordpress/wp-config-sample.php to wordpress/wp-config.php.
+
+						Basic settings
+
+						Open wp-config.php and edit the section below:
+
+							Authentication Unique keys and Salts
+							WordPress Database Table prefix
+							WordPress Localized Language
+
+						See also Editing wp-config.php in the Codex. Note that you don't have to write your database server, user name, user password or etc...
+						Less than 5 minutes installation
+
+						Upload everything (keeping the directory structure) to your server and access the wp-admin/install.php with your favorite browser, and WordPress installation process will begin. Enjoy your blogging!
+						Optional settings
+
+						You can change some default settings with the directives in wp-config.php.If you change the SQLite database file name (default is .ht.sqlite) to others, add the next line in your wp-config.php.
+
+						define('DB_FILE', 'your_database_name');
+
+						If you change the directory where the SQLite database is put, add the next line in your wp-config.php.
+
+						define('DB_DIR', '/home/youraccount/database_directory/');
+
+						You can change either of them or both of them.
+						Use MySQL without uninstalling this plugins
+
+						If you want to use MySQL, add the next line in your wp-config.php.
+
+						define('USE_MYSQL', true);
+
+						Of course, this is not enough. You must give your database server address, user name, passowrd or etc... in the same file. After you add that line and access your web site for the first time, WordPress installer will begin. Then you must finish setting MySQL database. As you know, data in the SQLite database is not automatically migrated to MySQL.
+
+						If you want to use SQLite again, change the line in wp-config.php as below or just remove this line.
+
+						define('USE_MYSQL', false);
+
+						For PDO for WordPress users
+
+						If you are using PDO for WordPress now, you can migrate your database to SQLite Integration. I recommend the way below. See more detailed instruction SQLite Integration.
+
+							Export your data from current database.
+							Install latest WordPress with SQLite Integration.
+							Import the old data.
+
+						If export or import fails for some reason, please visit our site and try another way described there.
+
+						Requires: 3.3 or higher
+						Compatible up to: 4.1.13
+						Last Updated: 2 years ago
+						Active Installs: 10,000+
+						Ratings
+						5 out of 5 stars
+						5 stars 21
+						4 stars 1
+						3 stars 0
+						2 stars 0
+						1 star 0
+
+						Author
+						kjmtsh
+						1 plugin
+						Support
+
+						Got something to say? Need help?
+						View support forum
+						Translations
+
+							Español
+							Suomi
+							日本語
+
+						Translate SQLite Integration
+						Compatibility
+							WordPress 	
+						+ 	Plugin 	
+						= 	
+						Not enough data
+
+						1 person says it works.
+						0 people say it's broken.
+
+						Log in to vote.
+</pre>
