@@ -13,15 +13,54 @@ var blk1= BlockFrame.BlockGroup("JQuery");
 
 var options=[];
 var i=0;
+
+option[i++]={title:"What is jquery",
+	     body:` javascript library to find and and manipulate HTML elements  
+The dollar function, $(), is used as shorthand for the getElementBy... function.
+`
+	    };
 options[i++]={title:"1. Selectors",
 body:" Selectors in jQuery are used to select an element ",
 code:` var   page   =   $  (  window  );   // Selects the whole viewport 
 
- // Selectors can also be CSS selector 
+// Tag selector
+
+$("someElement") : Selects all HTML elements with the given tag name. 		
+ for example:
+	x  $( "div" )
+another example:
+	$(document).ready(function(){
+		$("button").click(function(){
+			$("p").hide();
+		});
+	});
+
+// CSS selector 
  var   paragraph   =   $  (  'p'  );   // Selects all paragraph elements 
+
+//id selector:
  var   table1   =   $  (  '#table1'  );   // Selects element with id 'table1' 
- var   squares   =   $  (  '.square'  );   // Selects all elements with the class 'square' 
+ $("#someId")	: Selects a single element with the given id attribute. 	:x  $( "#myDiv" ).
+					
+ //class selector :
+ var   squares   =   $  (  '.square'  );   // Selects all elements with the class 'square'
+ $(".someClass")	: Selects all elements with the given class attribute. for example  $( ".myClass" ).
  var   square_p   =   $  (  'p.square'  )   // Selects paragraphs with the 'square' class 
+
+//multiple: selector1, selectorN, ...	
+ for example:
+   $( "div, span, p.myClass" ).
+
+//Combined selection:
+ for example:
+	$("p.intro")	Selects all <p> elements with class="intro"
+	$("p:first")	Selects the first <p> element
+	$("ul li:first")	Selects the first <li> element of the first <ul>	
+	$("ul li:first-child")	Selects the first <li> element of every <ul>	
+	$("[href]")	Selects all elements with an href attribute
+	$("a[target='_blank']")	Selects all <a> elements with a target attribute value equal to "_blank"
+	$(":button")	Selects all <button> elements and <input> elements of type="button"
+	$("tr:even")	Selects all even <tr> elements
 `};
 
 options[i++]={title:"2. Events and Effects",
