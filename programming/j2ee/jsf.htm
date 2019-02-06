@@ -1,0 +1,36 @@
+﻿<pre>
+ JSF
+	. Event based programming model
+	. Abstracts away from http : no need to understand Request-response cycle
+	. Abstracts away from HTML : no need to decode request .work with components instead of markups
+	. Abstracts from JSP       
+
+Anatomy
+	. A Standard J2ee 1.3+ web application
+		. WEB-INF/lib     : jsf and common jar files 
+		. web.xml         : faces controller servlet configuration
+		.Faces-config.xml : containing(cnt:)
+			. managed beans
+			. Navigation model
+	. JSP Pages  (cnt:) UI Components : encapsulated in jsp tag libraries :Core,HTML
+	. Managed Beans : facilates UI logic of Application
+
+Life Cycle of Pages
+	. A JSF page represented by a tree of UI components called a view
+	. Start of lifecycle    	 : a cleint mmakes a request for the page
+	. During the life cycle 	 : Implementation must build the view while considering state saved from previous postback
+	. On client postback of the page : Implementation must perform lifecycle steps 
+					. Validation
+					. Conversion
+UI Cmoponents
+	. Can be assosiated to model data objects trough Value binding 
+	. Use helper objects : validators , converters ,listeners/events
+	.(xmp:)
+		<h:InputText id="userId" value="#{Login.userid}">
+			<f:validateLength minimum="4" />
+		</InputText>
+		<h:messages for="userid">
+		<h:InputSecret value="#{Login.password}">
+		<h:commandButtion action="#{Login.loginAction}" />
+	
+</pre>
