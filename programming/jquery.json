@@ -10,9 +10,9 @@ The dollar function, $(), is used as shorthand for the getElementBy... function.
 options[i++]={title:"1. Selectors",
 body:" Selectors in jQuery are used to select an element ",
 code:` var   page   =   $  (  window  );   // Selects the whole viewport 
-
-// Tag selector
-
+`};
+options[i++]={title:"Tag selector",
+code:`
 $("someElement") : Selects all HTML elements with the given tag name. 		
  for example:
 	x  $( "div" )
@@ -22,25 +22,29 @@ another example:
 			$("p").hide();
 		});
 	});
-
-// CSS selector 
+`};
+options[i++]={title:"CSS selector ",
+code:`
  var   paragraph   =   $  (  'p'  );   // Selects all paragraph elements 
-
-//id selector:
+`};
+options[i++]={title:"id selector",
+	      code:`
  var   table1   =   $  (  '#table1'  );   // Selects element with id 'table1' 
  $("#someId")	: Selects a single element with the given id attribute. 	:x  $( "#myDiv" ).
-					
- //class selector :
+`};
+options[i++]={title:"class selector",
+code:`
  var   squares   =   $  (  '.square'  );   // Selects all elements with the class 'square'
  $(".someClass")	: Selects all elements with the given class attribute. for example  $( ".myClass" ).
  var   square_p   =   $  (  'p.square'  )   // Selects paragraphs with the 'square' class 
+`};
+options[i++]={title:"multiple: selector1, selectorN, ...",	
+ body:"for example:",
+code:`   $( "div, span, p.myClass" ).`};
 
-//multiple: selector1, selectorN, ...	
- for example:
-   $( "div, span, p.myClass" ).
-
-//Combined selection:
- for example:
+options[i++]={title:"Combined selection",
+ body:" for example:",
+code:`
 	$("p.intro")	Selects all < p> elements with class="intro"
 	$("p:first")	Selects the first < p > element
 	$("ul li:first")	Selects the first < li > element of the first < ul >	
@@ -49,13 +53,19 @@ another example:
 	$("a[target='_blank']")	Selects all < a > elements with a target attribute value equal to "_blank"
 	$(":button")	Selects all < button > elements and < input > elements of type="button"
 	$("tr:even")	Selects all even < tr > elements
-
-//Hierarchy selection
-	Child Selector		: (“parent > child”)		for example: $( "ul.topnav > li" ).
-	Descendant Selector 	: (“ancestor descendant”)	for example: $( "form fieldset input" ).
-	Next Adjacent Selector 	: (“prev + next”)		for example: $( "label + input" ).
-	Next Siblings Selector	: (“prev ~ siblings”)		for example: $( "#prev ~ div" ).
 `};
+options[i++]={title:"Hierarchy selection",
+code:`
+	//Child Selector		: 
+		(“parent > child”)		// for example: $( "ul.topnav > li" ).
+	//Descendant Selector 		:
+		(“ancestor descendant”)		// for example: $( "form fieldset input" ).
+	//Next Adjacent Selector 	: 
+		(“prev + next”)			// for example: $( "label + input" ).
+	//Next Siblings Selector	:
+		(“prev ~ siblings”)		// for example: $( "#prev ~ div" ).
+`};
+
 options[i++]={title:"filtered selection",
 	      code:`-filter (by colon)
 -Basic Filters 
