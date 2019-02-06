@@ -1,0 +1,18 @@
+<pre>
+--------------Overview of the EL  -------------------------------------------------
+
+The EL allows page authors to use simple expressions to dynamically access data from JavaBeans components. 
+For example, the test attribute of the following conditional tag is supplied with an EL expression that compares 0 with the number of items in the session-scoped bean named cart.
+
+<c:if test="${sessionScope.cart.numberOfItems > 0}">
+  ...
+</c:if>
+-------------Immediate and Deferred Evaluation Syntax------------------------------
+
+The EL supports both immediate and deferred evaluation of expressions.
+ Immediate evaluation means that the expression is evaluated and the result returned as soon as the page is first rendered. 
+Deferred evaluation means that the technology using the expression language can use its own machinery to evaluate the expression sometime later during the page’s lifecycle, whenever it is appropriate to do so.
+Those expressions that are evaluated immediately use the ${} syntax. Expressions whose evaluation is deferred use the #{} syntax.
+------------Managed beans ------------------------------
+https://docs.oracle.com/javaee/6/tutorial/doc/bnaqm.html#bnaqp
+</pre>
