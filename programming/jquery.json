@@ -26,13 +26,13 @@ another example:
 	});
 `};
 
-options[i++]={title:"id selector",
+options[i++]={title:"id selector #",
 	      code:`
  var   table1   =   $  (  '#table1'  );   // Selects element with id 'table1' 
  $("#someId")	: Selects a single element with the given id attribute. 	:x  $( "#myDiv" ).
 `};
 
-options[i++]={title:"class selector",
+options[i++]={title:"class selector .",
 code:` var   squares   =   $  (  '.square'  );   // Selects all elements with the class 'square'
  $(".someClass")	: Selects all elements with the given class attribute. for example  $( ".myClass" ).
  var   square_p   =   $  (  'p.square'  )   // Selects paragraphs with the 'square' class 
