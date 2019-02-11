@@ -9,49 +9,9 @@ Linux Commands
 <table border="1" >
 	<tr valign="top">
 		<td>
-			<h2>Getting Help :</h2>
-			<br/> &nbsp <a href=""  title="can answer all of your questions.usage: man grep">'man' command </a>  
-			<br/> &nbsp &nbsp <a href=""  title=" If you know what you want to do but dont know the command, apropos will give you list of related commands. &#10 usage :apropos make directory">'apropos' command </a>
-			<br/> &nbsp &nbsp<a href="" title="If you just want a quick idea of what a command does, use the whatis command. &#10 example: whatis grep">whatis</a> 
-			<br/> &nbsp &nbsp<a href="" title="Many of the utilities included with Linux, especially those created by the GNU Project, have documentation in the form of info pages. Info pages look similar to man pages, but there is a lot more to them. Like the man pages, info documents are intended to act as your online “manual”, your guide to the GNU/Linux system. But info documents are integrated with each other in a hypertext database that can be read like a book (it even has a table of contents) and accessed from your terminal.&#10example :  info grep">info command</a>
-			<br/> &nbsp &nbsp<a href="" title="Many programs are just too complex to store all their help information in a man page. The /usr/doc directory is where these programs will store their information. Sometimes there will just be a text file, sometimes a program will have an entire subdirectory devoted to it. Also in this folder you may find copies of the Linux How-To’s to help you with common tasks. Take these with a grain of salt. The information in the How-To’s is usually very technical and oriented more toward system administrators than novice users. (Part of the purpose of Control-Escape is to translate some of that knowledge into plain English).
-			">/usr/doc/* (or /usr/share/doc/*)</a>
-			<br/> - By typing the first few characters of a command,
-			you can see posibilites by pressing 'tab' key 2 times
-
-			<br/> Any operation can be found by 'apropos' command 
-			and learned by 'man' command described above.
-			<br/> <a href="http://tldp.org" title="a wealth of knowledge about linux OS">linux documentation project</a>
-			<br/><a href="http://www.er.uqam.ca/nobel/r10735/unixcomm.html">reference</a>
-			
 		</td>
 		<td>
-			<h2>Uninstall/installing packages:</h2>
-			<br> &nbsp To remove package called mplayer, enter:
-			<pre>
-			<i> &nbsp $ sudo apt-get remove mplayer</i>
-			</pre>
-			<br/>
-			<b>Uncompressing content of a file  :</b>
-			<br/>tar -xvzf Komodo
-			<br /><b>make a program from its source files:</b>
-			<br/>sh ./configure
-			
-			
-			
-			
-			<h2>Directory operations ::</h2>
-			<br/>- to <b>list</b> the names of the directories and files in the current directory:
-			ls </b> 
-			<br/>- to <b>copy</b> all contents of dir1 to dir2 recurcievly:cp -r dir1 dir22  .
-                        <br/>- To <b>remove</b> a file or directory :rm -f -r {file-name} 
-                        <br/>Where,     -f: Forcefully remove file and     -r: Remove the contents of directories recursively
-			<br/><a href="http://www.ahinc.com/linux101/permission.htm">linux permissions</a>
-			<br/>
-			<b>Check os version in Linux: </b>$ hostnamectl
-			<br><b>Add toggle language feature to the keyboard: </b>   
-        		<br>$ setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll ir,us
-	
+		
 	<pre>
 <h2>Backup MBR with dd command</h2>
 dd the old good command which now backup partition tables even writes CDs ;).
@@ -78,7 +38,44 @@ Shell Commands
 </a>
 </h1>
 <pre>
-<h2>1 – SYSTEM INFORMATION</h2>
+	<h2>Getting Help :</h2>
+	 &nbsp <a href=""  title="can answer all of your questions.usage: man grep">'man' command </a>  
+	 &nbsp &nbsp <a href=""  title=" If you know what you want to do but dont know the command, apropos will give you list of related commands. &#10 usage :apropos make directory">'apropos' command </a>
+	 &nbsp &nbsp<a href="" title="If you just want a quick idea of what a command does, use the whatis command. &#10 example: whatis grep">whatis</a> 
+	&nbsp &nbsp<a href="" title="Many of the utilities included with Linux, especially those created by the GNU Project, have documentation in the form of info pages. Info pages look similar to man pages, but there is a lot more to them. Like the man pages, info documents are intended to act as your online “manual”, your guide to the GNU/Linux system. But info documents are integrated with each other in a hypertext database that can be read like a book (it even has a table of contents) and accessed from your terminal.&#10example :  info grep">info command</a>
+	 &nbsp &nbsp<a href="" title="Many programs are just too complex to store all their help information in a man page. The /usr/doc directory is where these programs will store their information. Sometimes there will just be a text file, sometimes a program will have an entire subdirectory devoted to it. Also in this folder you may find copies of the Linux How-To’s to help you with common tasks. Take these with a grain of salt. The information in the How-To’s is usually very technical and oriented more toward system administrators than novice users. (Part of the purpose of Control-Escape is to translate some of that knowledge into plain English).
+	">/usr/doc/* (or /usr/share/doc/*)</a>
+	- By typing the first few characters of a command,
+	you can see posibilites by pressing 'tab' key 2 times
+
+	Any operation can be found by 'apropos' command 
+	and learned by 'man' command described above.
+	<a href="http://tldp.org" title="a wealth of knowledge about linux OS">linux documentation project</a>
+	<a href="http://www.er.uqam.ca/nobel/r10735/unixcomm.html">reference</a>
+
+	<h2>Uninstall/installing packages:</h2>
+	 &nbsp To remove package called mplayer, enter:
+
+	<i> &nbsp $ sudo apt-get remove mplayer</i>
+
+	<b>Uncompressing content of a file  :</b>
+	tar -xvzf Komodo
+	<b>make a program from its source files:</b>
+	sh ./configure
+
+	<h2>Directory operations ::</h2>
+	- to <b>list</b> the names of the directories and files in the current directory:
+	ls </b> 
+	- to <b>copy</b> all contents of dir1 to dir2 recurcievly:cp -r dir1 dir22  .
+	- To <b>remove</b> a file or directory :rm -f -r {file-name} 
+	Where,     -f: Forcefully remove file and     -r: Remove the contents of directories recursively
+	<a href="http://www.ahinc.com/linux101/permission.htm">linux permissions</a>
+
+	<b>Check os version in Linux: </b>$ hostnamectl
+	<b>Add toggle language feature to the keyboard: </b>   
+	$ setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll ir,us
+
+<h2>SYSTEM INFORMATION</h2>
 
 # Display Linux system information
 uname -a
@@ -113,7 +110,7 @@ w
 # Who you are logged in as
 whoami
 
-<h2>2 – HARDWARE INFORMATION</h2>
+<h2> HARDWARE INFORMATION</h2>
 
 # Display messages in kernel ring buffer
 dmesg
@@ -145,7 +142,7 @@ hdparm -tT /dev/sda
 # Test for unreadable blocks on disk sda
 badblocks -s /dev/sda
 
-<h2>3 – PERFORMANCE MONITORING AND STATISTICS</h2>
+<h2> PERFORMANCE MONITORING AND STATISTICS</h2>
 
 # Display and manage the top processes
 top
@@ -183,7 +180,7 @@ free -h
 # Execute "df -h", showing periodic updates
 watch df -h
 
-<h2>4 – USER INFORMATION AND MANAGEMENT</h2>
+<h2> USER INFORMATION AND MANAGEMENT</h2>
 
 # Display the user and group ids of your current user.
 id
@@ -262,7 +259,7 @@ tail file
 # Display the last 10 lines of file and "follow" the file as it grows.
 tail -f file
 
-<h2>6 – PROCESS MANAGEMENT</h2>
+<h2>PROCESS MANAGEMENT</h2>
 
 # Display your currently running processes
 ps
@@ -297,7 +294,7 @@ fg
 # Brings job n to the foreground
 fg n
 
-<h2>7 – FILE PERMISSIONS</h2>
+<h2> FILE PERMISSIONS</h2>
 
 Linux chmod example
         PERMISSION      EXAMPLE
@@ -321,7 +318,7 @@ Linux chmod example
         x = execute
         - = no access
 
-<h2>8 – NETWORKING</h2>
+<h2> NETWORKING</h2>
 
 # Display all network interfaces and ip address
 ifconfig -a
@@ -360,7 +357,7 @@ wget http://domain.com/file
 netstat -nutlp
 
  
-<h2>9 – ARCHIVES (TAR FILES)</h2>
+<h2> ARCHIVES (TAR FILES)</h2>
 
 # Create tar named archive.tar containing directory.
 tar cf archive.tar directory
@@ -380,7 +377,7 @@ tar cjf archive.tar.bz2 directory
 # Extract a bzip2 compressed tar file.
 tar xjf archive.tar.bz2
 
-<h2>10 – INSTALLING PACKAGES</h2>
+<h2> INSTALLING PACKAGES</h2>
 
 # Search for a package by keyword.
 yum search keyword
@@ -404,7 +401,7 @@ cd sourcecode
 make
 make install
 
-<h2>11 – SEARCH</h2>
+<h2>SEARCH</h2>
 
 # Search for pattern in file
 grep pattern file
@@ -421,7 +418,7 @@ find /home/john -name 'prefix*'
 # Find files larger than 100MB in /home
 find /home -size +100M
 
-<h2>12 – SSH LOGINS</h2>
+<h2> SSH LOGINS</h2>
 
 # Connect to host as your local username.
 ssh host
@@ -432,7 +429,7 @@ ssh user@host
 # Connect to host using port
 ssh -p port user@host
 
-<h2>13 – FILE TRANSFERS</h2>
+<h2>FILE TRANSFERS</h2>
 
 # Secure copy file.txt to the /tmp folder on server
 scp file.txt server:/tmp
@@ -449,7 +446,7 @@ rsync -a /home /backups/
 # Synchronize files/directories between the local and remote system with compression enabled
 rsync -avz /home server:/backups/
 
-<h2>14 – DISK USAGE</h2>
+<h2>DISK USAGE</h2>
 
 # Show free and used space on mounted filesystems
 df -h
@@ -466,7 +463,7 @@ du -ah
 # Display total disk usage off the current directory
 du -sh
 
-<h2>15 – DIRECTORY NAVIGATION</h2>
+<h2>DIRECTORY NAVIGATION</h2>
 
 # To go up one level of the directory tree.  (Change into the parent directory.)
 cd ..
@@ -481,5 +478,4 @@ cd /etc
 	</tr>
 	
 </table>
-
 
