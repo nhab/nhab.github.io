@@ -13,7 +13,15 @@ Linux Commands
 		<td>
 		
 	<pre>
-<h2>Backup MBR with dd command</h2>
+	<h1>frequently used 'How tos'</h1>
+<b>Check os version in Linux: </b>$ hostnamectl
+<b>Add toggle language feature to the keyboard: </b>   
+	$ setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll ir,us
+<b>Check os version in Linux: </b>$ hostnamectl
+<b>Add toggle language feature to the keyboard: </b>   
+	$ setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll ir,us
+
+<b>Backup MBR with dd command</b>
 dd the old good command which now backup partition tables even writes CDs ;).
  Backing up partition is nothing but actually backing up MBR (master boot record). 
 The command is as follows for backing up MBR stored on /dev/sdX or /dev/hdX :
@@ -24,8 +32,7 @@ Replace X with actual device name such as /dev/sda.
 Now to restore partition table to disk, all you need to do is use dd command:
 # dd if= sda-mbr.bin of=/dev/sdX bs=1 count=64 skip=446 seek=446
 </pre>
-	<br/><b>Hibernate:</b>   $sudo systemctl hibernate
-	<br/> <a href="" title="printf '\EC'">real clear screen</a>
+			
 	<br>Reference:
 			<br><a href="http://etutorials.org/Linux+systems/how+linux+works/Chapter+1+The+Basics/1.5+Intermediate+Commands/">
 			how linux works
@@ -74,10 +81,7 @@ Shell Commands
 	Where,     -f: Forcefully remove file and     -r: Remove the contents of directories recursively
 	<a href="http://www.ahinc.com/linux101/permission.htm">linux permissions</a>
 
-	<b>Check os version in Linux: </b>$ hostnamectl
-	<b>Add toggle language feature to the keyboard: </b>   
-	$ setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll ir,us
-
+	
 <h2>SYSTEM INFORMATION</h2>
 
 # Display Linux system information
