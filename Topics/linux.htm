@@ -13,24 +13,26 @@ Linux Commands
 		<td>
 		
 	<pre>
-	<h1>frequently used 'How tos'</h1>
-<b>Check os version in Linux: </b>$ hostnamectl
-<b>Add toggle language feature to the keyboard: </b>   
+	<h1>Frequently used 'How tos'</h1>
+<b> - Check os version in Linux: </b>$ hostnamectl
+
+<b>- Add toggle language feature to the keyboard: </b>   
 	$ setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll ir,us
-<b>Check os version in Linux: </b>$ hostnamectl
-<b>Add toggle language feature to the keyboard: </b>   
+	
+<b>- Check os version in Linux: </b>$ hostnamectl
+
+<b> - Add toggle language feature to the keyboard: </b>   
 	$ setxkbmap -option grp:switch,grp:alt_shift_toggle,grp_led:scroll ir,us
 
-<b>Backup MBR with dd command</b>
-dd the old good command which now backup partition tables even writes CDs ;).
- Backing up partition is nothing but actually backing up MBR (master boot record). 
-The command is as follows for backing up MBR stored on /dev/sdX or /dev/hdX :
+<b>- Backup MBR with dd command</b>
+      Backing up partition is nothing but actually backing up MBR (master boot record). 
+      The command is as follows for backing up MBR stored on /dev/sdX or /dev/hdX :
 
-# dd if=/dev/sdX of=/tmp/sda-mbr.bin bs=512 count=1
-Replace X with actual device name such as /dev/sda.
+      # dd if=/dev/sdX of=/tmp/sda-mbr.bin bs=512 count=1
+        ( Replace X with actual device name such as /dev/sda.)
 
-Now to restore partition table to disk, all you need to do is use dd command:
-# dd if= sda-mbr.bin of=/dev/sdX bs=1 count=64 skip=446 seek=446
+     To restore partition table to disk, all you need to do is use dd command:
+       # dd if= sda-mbr.bin of=/dev/sdX bs=1 count=64 skip=446 seek=446
 </pre>
 			
 	<br>Reference:
