@@ -63,7 +63,7 @@ Linux Commands">
 Shell Commands
 </a>
 </h1>
-<pre>
+
 	<h2>Getting Help :</h2>
 	 &nbsp <a href=""  title="can answer all of your questions.usage: man grep">'man' command </a>  
 	 &nbsp &nbsp <a href=""  title=" If you know what you want to do but dont know the command, apropos will give you list of related commands. &#10 usage :apropos make directory">'apropos' command </a>
@@ -84,242 +84,246 @@ Shell Commands
 
 	<i> &nbsp $ sudo apt-get remove mplayer</i>
 
-	<b>Uncompressing content of a file  :</b>
+	<h3>Uncompressing content of a file  :</h3>
 	tar -xvzf Komodo
-	<b>make a program from its source files:</b>
+	<h3>make a program from its source files:</h3>
 	sh ./configure
 
 	<h2>Directory operations ::</h2>
-	- to <b>list</b> the names of the directories and files in the current directory:
-	ls </b> 
-	- to <b>copy</b> all contents of dir1 to dir2 recurcievly:cp -r dir1 dir22  .
-	- To <b>remove</b> a file or directory :rm -f -r {file-name} 
-	Where,     -f: Forcefully remove file and     -r: Remove the contents of directories recursively
-	<a href="http://www.ahinc.com/linux101/permission.htm">linux permissions</a>
-
+		<h3>- to <b>list</b> the names of the directories and files in the current directory:</h3>
+		ls </b> 
+		<h3>- to <b>copy</b> all contents of dir1 to dir2 recurcievly:</h3> cp -r dir1 dir22  .
+		<h3>- To <b>remove</b> a file or directory :</h3> rm -f -r {file-name} 
+		<br>Where,     -f: Forcefully remove file and     -r: Remove the contents of directories recursively
+		<a href="http://www.ahinc.com/linux101/permission.htm">linux permissions</a>
 	
 <h2>SYSTEM INFORMATION</h2>
 
-# Display Linux system information
+<h3> Display Linux system information</h3>
 uname -a
 
-# Display kernel release information
+<h3>Display kernel release information</h3>
 uname -r
 
-# Show which version of redhat installed
+<h3>Show which version of redhat installed</h3>
 cat /etc/redhat-release
 
-# Show how long the system has been running + load
+<h3>Show how long the system has been running + load</h3>
 uptime
 
-# Show system host name
+<h3>Show system host name</h3>
 hostname
 
-# Display the IP addresses of the host
+<h3>Display the IP addresses of the host</h3>
 hostname -I
 
-# Show system reboot history
+<h3>Show system reboot history</h3>
 last reboot
 
-# Show the current date and time
+<h3>Show the current date and time</h3>
 date
 
-# Show this month's calendar
+<h3>Show this month's calendar</h3>
 cal
 
-# Display who is online
+<h3>Display who is online</h3>
 w
 
-# Who you are logged in as
+<h3>Who you are logged in as</h3>
 whoami
 
 <h2> HARDWARE INFORMATION</h2>
 
-# Display messages in kernel ring buffer
+<h3>Display messages in kernel ring buffer</h3>
 dmesg
 
-# Display CPU information
+<h3>Display CPU information</h3>
 cat /proc/cpuinfo
 
-# Display memory information
+<h3>Display memory information</h3>
 cat /proc/meminfo
 
-# Display free and used memory ( -h for human readable, -m for MB, -g for GB.)
+<h3>Display free and used memory ( -h for human readable, -m for MB, -g for GB.)</h3>
 free -h
 
-# Display PCI devices
+<h3>Display PCI devices</h3>
 lspci -tv
 
-# Display USB devices
+<h3>Display USB devices</h3>
 lsusb -tv
 
-# Display DMI/SMBIOS (hardware info) from the BIOS
+<h3>Display DMI/SMBIOS (hardware info) from the BIOS</h3>
 dmidecode
 
-# Show info about disk sda
+<h3>Show info about disk sda</h3>
 hdparm -i /dev/sda
 
-# Perform a read speed test on disk sda
+<h3>Perform a read speed test on disk sda</h3>
 hdparm -tT /dev/sda
 
-# Test for unreadable blocks on disk sda
+<h3>Test for unreadable blocks on disk sda</h3>
 badblocks -s /dev/sda
 
 <h2> PERFORMANCE MONITORING AND STATISTICS</h2>
 
-# Display and manage the top processes
+<h3>Display and manage the top processes</h3>
 top
 
-# Interactive process viewer (top alternative)
+<h3>Interactive process viewer (top alternative)</h3>
 htop
 
-# Display processor related statistics
+<h3>Display processor related statistics</h3>
 mpstat 1
 
-# Display virtual memory statistics
+<h3>Display virtual memory statistics</h3>
 vmstat 1
 
-# Display I/O statistics
+<h3>Display I/O statistics</h3>
 iostat 1
 
-# Display the last 100 syslog messages  (Use /var/log/syslog for Debian based systems.)
+<h3>Display the last 100 syslog messages  (Use /var/log/syslog for Debian based systems.)</h3>
 tail 100 /var/log/messages
 
-# Capture and display all packets on interface eth0
+<h3>Capture and display all packets on interface eth0</h3>
 tcpdump -i eth0
 
-# Monitor all traffic on port 80 ( HTTP )
+<h3>Monitor all traffic on port 80 ( HTTP )</h3>
 tcpdump -i eth0 'port 80'
 
-# List all open files on the system
+<h3>List all open files on the system</h3>
 lsof
 
-# List files opened by user
+<h3>List files opened by user</h3>
 lsof -u user
 
-# Display free and used memory ( -h for human readable, -m for MB, -g for GB.)
+<h3>Display free and used memory ( -h for human readable, -m for MB, -g for GB.)</h3>
 free -h
 
-# Execute "df -h", showing periodic updates
+<h3>Execute "df -h", showing periodic updates</h3>
 watch df -h
 
 <h2> USER INFORMATION AND MANAGEMENT</h2>
 
-# Display the user and group ids of your current user.
+<h3>Display the user and group ids of your current user.</h3>
 id
 
-# Display the last users who have logged onto the system.
+<h3>Display the last users who have logged onto the system.</h3>
 last
 
-# Show who is logged into the system.
+<h3>Show who is logged into the system.</h3>
 who
 
-# Show who is logged in and what they are doing.
+<h3>Show who is logged in and what they are doing.</h3>
 w
 
-# Create a group named "test".
+<h3>Create a group named "test".</h3>
 groupadd test
 
-# Create an account named john, with a comment of "John Smith" and create the user's home directory.
+<h3>Create an account named john, with a comment of "John Smith" and
+ create the user's home directory.</h3>
 useradd -c "John Smith" -m john
 
-# Delete the john account.
+<h3>Delete the john account.</h3>
 userdel john
 
-# Add the john account to the sales group
+<h3>Add the john account to the sales group</h3>
 usermod -aG sales john
 
 <h2>5 – FILE AND DIRECTORY COMMANDS</h2>
 
-# List all files in a long listing (detailed) format
+<h3>List all files in a long listing (detailed) format</h3>
 ls -al
 
-# Display the present working directory
+<h3>Display the present working directory</h3>
 pwd
 
-# Create a directory
+<h3>Create a directory</h3>
 mkdir directory
 
-# Remove (delete) file
+<h3>Remove (delete) file</h3>
 rm file
 
-# Remove the directory and its contents recursively
+<h3>Remove the directory and its contents recursively</h3>
 rm -r directory
 
-# Force removal of file without prompting for confirmation
+<h3>Force removal of file without prompting for confirmation</h3>
 rm -f file
 
-# Forcefully remove directory recursively
+<h3>Forcefully remove directory recursively</h3>
 rm -rf directory
 
-# Copy file1 to file2
+<h3>Copy file1 to file2</h3>
 cp file1 file2
 
-# Copy source_directory recursively to destination. If destination exists, copy source_directory into destination, otherwise create destination with the contents of source_directory.
+<h3>Copy source_directory recursively to destination. 
+If destination exists, copy source_directory into destination,
+ otherwise create destination with the contents of source_directory.</h3>
 cp -r source_directory destination
 
-# Rename or move file1 to file2. If file2 is an existing directory, move file1 into directory file2
+<h3>Rename or move file1 to file2. If file2 is an existing directory, 
+move file1 into directory file2</h3>
 mv file1 file2
 
-# Create symbolic link to linkname
+<h3>Create symbolic link to linkname</h3>
 ln -s /path/to/file linkname
 
-# Create an empty file or update the access and modification times of file.
+<h3>Create an empty file or update the access and modification times of file.</h3>
 touch file
 
-# View the contents of file
+<h3>View the contents of file</h3>
 cat file
 
-# Browse through a text file
+<h3>Browse through a text file</h3>
 less file
 
-# Display the first 10 lines of file
+<h3>Display the first 10 lines of file</h3>
 head file
 
-# Display the last 10 lines of file
+<h3>Display the last 10 lines of file</h3>
 tail file
 
-# Display the last 10 lines of file and "follow" the file as it grows.
+<h3>Display the last 10 lines of file and "follow" the file as it grows.</h3>
 tail -f file
 
 <h2>PROCESS MANAGEMENT</h2>
 
-# Display your currently running processes
+<h3>Display your currently running processes</h3>
 ps
 
-# Display all the currently running processes on the system.
+<h3>Display all the currently running processes on the system.</h3>
 ps -ef
 
-# Display process information for processname
+<h3>Display process information for processname</h3>
 ps -ef | grep processname
 
-# Display and manage the top processes
+<h3>Display and manage the top processes</h3>
 top
 
-# Interactive process viewer (top alternative)
+<h3>Interactive process viewer (top alternative)</h3>
 htop
 
-# Kill process with process ID of pid
+<h3>Kill process with process ID of pid</h3>
 kill pid
 
-# Kill all processes named processname
+<h3>Kill all processes named processname</h3>
 killall processname
 
-# Start program in the background
+<h3>Start program in the background</h3>
 program &
 
-# Display stopped or background jobs
+<h3>Display stopped or background jobs</h3>
 bg
 
-# Brings the most recent background job to foreground
+<h3>Brings the most recent background job to foreground</h3>
 fg
 
-# Brings job n to the foreground
+<h3>Brings job n to the foreground</h3>
 fg n
 
 <h2> FILE PERMISSIONS</h2>
 
 Linux chmod example
+<pre>
         PERMISSION      EXAMPLE
 
          U   G   W
@@ -328,9 +332,9 @@ Linux chmod example
         rwx r-x r-x     chmod 755 filename
         rw- rw- r--     chmod 664 filename
         rw- r-- r--     chmod 644 filename
-
-# NOTE: Use 777 sparingly!
-
+</pre>
+<h3>NOTE: Use 777 sparingly!
+<pre>
         LEGEND
         U = User
         G = Group
@@ -340,84 +344,84 @@ Linux chmod example
         w = write
         x = execute
         - = no access
-
+</pre>
 <h2> NETWORKING</h2>
 
-# Display all network interfaces and ip address
+<h3>Display all network interfaces and ip address</h3>
 ifconfig -a
 
-# Display eth0 address and details
+<h3>Display eth0 address and details</h3>
 ifconfig eth0
 
-# Query or control network driver and hardware settings
+<h3>Query or control network driver and hardware settings</h3>
 ethtool eth0
 
-# Send ICMP echo request to host
+<h3>Send ICMP echo request to host</h3>
 ping host
 
-# Display whois information for domain
+<h3>Display whois information for domain</h3>
 whois domain
 
-# Display DNS information for domain
+<h3>Display DNS information for domain</h3>
 dig domain
 
-# Reverse lookup of IP_ADDRESS
+<h3>Reverse lookup of IP_ADDRESS</h3>
 dig -x IP_ADDRESS
 
-# Display DNS ip address for domain
+<h3>Display DNS ip address for domain</h3>
 host domain
 
-# Display the network address of the host name.
+<h3>Display the network address of the host name.</h3>
 hostname -i
 
-# Display all local ip addresses
+<h3>Display all local ip addresses</h3>
 hostname -I
 
-# Download http://domain.com/file
+<h3>Download http://domain.com/file</h3>
 wget http://domain.com/file
 
-# Display listening tcp and udp ports and corresponding programs
+<h3>Display listening tcp and udp ports and corresponding programs</h3>
 netstat -nutlp
 
  
 <h2> ARCHIVES (TAR FILES)</h2>
 
-# Create tar named archive.tar containing directory.
+<h3>Create tar named archive.tar containing directory.</h3>
 tar cf archive.tar directory
 
-# Extract the contents from archive.tar.
+<h3>Extract the contents from archive.tar.</h3>
 tar xf archive.tar
 
-# Create a gzip compressed tar file name archive.tar.gz.
+<h3>Create a gzip compressed tar file name archive.tar.gz.</h3>
 tar czf archive.tar.gz directory
 
-# Extract a gzip compressed tar file.
+<h3>Extract a gzip compressed tar file.</h3>
 tar xzf archive.tar.gz
 
-# Create a tar file with bzip2 compression
+<h3>Create a tar file with bzip2 compression</h3>
 tar cjf archive.tar.bz2 directory
 
-# Extract a bzip2 compressed tar file.
+<h3>Extract a bzip2 compressed tar file.</h3>
 tar xjf archive.tar.bz2
 
 <h2> INSTALLING PACKAGES</h2>
 
-# Search for a package by keyword.
+<h3>Search for a package by keyword.</h3>
 yum search keyword
 
-# Install package.
+<h3>Install package.</h3>
 yum install package
 
-# Display description and summary information about package.
+<h3>Display description and summary information about package.</h3>
 yum info package
 
-# Install package from local file named package.rpm
+<h3>Install package from local file named package.rpm</h3>
 rpm -i package.rpm
 
-# Remove/uninstall package.
+<h3>Remove/uninstall package.</h3>
 yum remove package
 
-# Install software from source code.
+<h3>Install software from source code.</h3>
 tar zxvf sourcecode.tar.gz
 cd sourcecode
 ./configure
@@ -426,77 +430,79 @@ make install
 
 <h2>SEARCH</h2>
 
-# Search for pattern in file
+<h3>Search for pattern in file</h3>
 grep pattern file
 
-# Search recursively for pattern in directory
+<h3>Search recursively for pattern in directory</h3>
 grep -r pattern directory
 
-# Find files and directories by name
+<h3>Find files and directories by name</h3>
 locate name
 
-# Find files in /home/john that start with "prefix".
+<h3>Find files in /home/john that start with "prefix".</h3>
 find /home/john -name 'prefix*'
 
-# Find files larger than 100MB in /home
+<h3>Find files larger than 100MB in /home</h3>
 find /home -size +100M
 
 <h2> SSH LOGINS</h2>
 
-# Connect to host as your local username.
+<h3>Connect to host as your local username.</h3>
 ssh host
 
-# Connect to host as user
+<h3>Connect to host as user</h3>
 ssh user@host
 
-# Connect to host using port
+<h3>Connect to host using port</h3>
 ssh -p port user@host
 
 <h2>FILE TRANSFERS</h2>
 
-# Secure copy file.txt to the /tmp folder on server
+<h3>Secure copy file.txt to the /tmp folder on server</h3>
 scp file.txt server:/tmp
 
-# Copy *.html files from server to the local /tmp folder.
+<h3>Copy *.html files from server to the local /tmp folder.</h3>
 scp server:/var/www/*.html /tmp
 
-# Copy all files and directories recursively from server to the current system's /tmp folder.
+<h3>Copy all files and directories recursively from server to the 
+current system's /tmp folder.</h3>
 scp -r server:/var/www /tmp
 
-# Synchronize /home to /backups/home
+<h3>Synchronize /home to /backups/home</h3>
 rsync -a /home /backups/
 
-# Synchronize files/directories between the local and remote system with compression enabled
+<h3>Synchronize files/directories between the local and remote system 
+with compression enabled</h3>
 rsync -avz /home server:/backups/
 
 <h2>DISK USAGE</h2>
 
-# Show free and used space on mounted filesystems
+<h3>Show free and used space on mounted filesystems</h3>
 df -h
 
-# Show free and used inodes on mounted filesystems
+<h3>Show free and used inodes on mounted filesystems</h3>
 df -i
 
-# Display disks partitions sizes and types
+<h3>Display disks partitions sizes and types</h3>
 fdisk -l
 
-# Display disk usage for all files and directories in human readable format
+<h3>Display disk usage for all files and directories in human readable format</h3>
 du -ah
 
-# Display total disk usage off the current directory
+<h3>Display total disk usage off the current directory</h3>
 du -sh
 
 <h2>DIRECTORY NAVIGATION</h2>
 
-# To go up one level of the directory tree.  (Change into the parent directory.)
+<h3>To go up one level of the directory tree.  (Change into the parent directory.)</h3>
 cd ..
 
-# Go to the $HOME directory
+<h3>Go to the $HOME directory</h3>
 cd
 
-# Change to the /etc directory
+<h3>Change to the /etc directory</h3>
 cd /etc
-</pre>
+
 		</td>
 	</tr>
 	
