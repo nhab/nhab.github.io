@@ -42,12 +42,12 @@ Linux Commands
 <h3>- Backup MBR with dd command</h3>
       Backing up partition is nothing but actually backing up MBR (master boot record). 
       The command is as follows for backing up MBR stored on /dev/sdX or /dev/hdX :
-
+<br>
       # dd if=/dev/sdX of=/tmp/sda-mbr.bin bs=512 count=1
-        ( Replace X with actual device name such as /dev/sda.)
-
+<br>        ( Replace X with actual device name such as /dev/sda.)
+<br>
      To restore partition table to disk, all you need to do is use dd command:
-       # dd if= sda-mbr.bin of=/dev/sdX bs=1 count=64 skip=446 seek=446
+<br>       # dd if= sda-mbr.bin of=/dev/sdX bs=1 count=64 skip=446 seek=446
 </pre>
 			
 	<br>Reference:
