@@ -33,6 +33,35 @@ how linux works
 			you are shown a list of the packages within the repositories available to your system.
 			A sofware repository can store its files on one server or across different servers known as mirrors.
 			<h2><a href="https://www.tldp.org/LDP/intro-linux/html/sect_03_01.html">File system</a></h2>
+			/             This directory is called superuser home directory.It is the top of file system structure.All other directory are mounted under it.
+ 
+
+/boot      This directory contain the kernal image file.This also contain the files related to booting the system such as bootloader.
+   <br/>
+
+/etc         It contain the whole system configuration file.
+ <br/>
+
+/home    This is the all users home directory.
+ 
+<br/>
+/mnt       This is a generic mount point under which you mount your filesystems such as cdrom,floppy.
+ 
+<br/>
+/proc      It is not a real file system, it is a virtual file system.This directory is empty until the proc  file system is mounted.
+ 
+<br/>
+/sys        Modern Linux distributions include a /sys directory as a virtual filesystem (sysfs, comparable to /proc, which is a procfs), which stores and allows modification of the devices connected to the system.
+ 
+<br/>
+/dev       This directory contain the devices nodes through which the operating system can access hardware and software devices on the system.
+ <br/>
+
+/bin        This directory contain the command used by superuser and normal user.
+ 
+<br/>
+/sbin      This directory contain the command used by superuser only
+	
 		</td>
 		<td  style="33%">
 		
