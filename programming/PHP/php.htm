@@ -50,7 +50,16 @@ body:`<a href='https://www.ideone.com/ryTuHp'>ideone </a>
     
     Block({title:"writing a statement", body:"  'Echo' and 'PRINT' :",code:sCode,parent:objPHP});
 
+	
+Block({title:"Debugging",
+       Body:`Add this code to top of your php code to show error messages"`,
+       code:`<?php 
+       ini_set("display_errors",1);
+       error_reporting(E_ALL);
+        //code goes here
+?>`});
     sCode="&lt?php<br>$like=\"I like it\"<br>print $like ?>";
+
 Block({title:"Variables",
 body:`- Don't need definition.
 - They begin with $ 
