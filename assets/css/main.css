@@ -61,7 +61,7 @@ th{margin: 0 auto;}
 .font25x{font-size: 25px;}
 .width100{width:100%}
 .colorWhite{color:white;}
-
+.pre  {white-space: pre;}
 /*------------------------------- */
 .pageHeader{
   font-size: xx-large;
