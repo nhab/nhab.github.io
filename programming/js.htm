@@ -1071,11 +1071,13 @@ doFirst(doSecond);`
 };
 options[ind++]={
     title:"promise",
-    body:`Promises represent the 
-<h7>completion of an asynchronous function</h7>.
-They can be used as an alternative to 
-chaining functions.`,
+    body:`Promise represent the 
+<h7>completion (or failiure) of an asynchronous function</h7>.
+(it can be used as an alternative to 
+chaining functions)`,
  code:`//ES6 Promise                :
+//-------------------------------------------------------------
+// Example 1:
 let doSecond = () => {
     console.log('Do second.');
 }
@@ -1088,7 +1090,25 @@ let doFirst = new Promise((resolve, reject) => {
     }, 500);
 });
 
-doFirst.then(doSecond);`
+doFirst.then(doSecond);
+//-------------------------------------------------------------
+// Example 2:
+
+var promise1 = new Promise(function(resolve, reject) {
+  setTimeout(function() {
+    resolve('foo');
+  }, 300);
+});
+
+promise1.then(function(value) {
+  console.log(value);
+  // expected output: "foo"
+});
+
+console.log(promise1);
+// expected output: [object Promise]
+
+`
  , parent:objES6
 }
 options[ind++]={title:"built-in objects",body:"<a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects'>built-ins</a>"};
