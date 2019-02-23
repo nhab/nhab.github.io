@@ -55,6 +55,7 @@ th{margin: 0 auto;}
 .bordered{  border: 1px solid #333333;}
 .padding5{padding:5px;}
 .padding10{padding:10px;}
+.paddings{padding:10px 10px 10px 10px;}
 .indent{margin-left: 10px;}
 .top  {   display: inline-block;vertical-align:top; }
 .textCenter{text-align: center;}
