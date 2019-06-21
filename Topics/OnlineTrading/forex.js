@@ -5,7 +5,7 @@ options=[
                 {title:"quotation(offers)",
             body:
 `
-Currencies are quoted in pairs.
+Currencies are quoted (offered) in pairs.
 
 For example:
      the <h7>EUR/USD</h7> is the <h7>euro/U.S. Dollar</h7> pair. 
@@ -32,14 +32,13 @@ and the ask is 1.3605.
 <img src='1-bid-ask_spread.png' />
 `
                 },
-                {title:"What is Spread",
+                {title:"What is Spread,BID and ask",
                     body:`The spread is the difference between 
     the BID and the ASK price in the market quotes. 
     The ASK price is applicable to a BUY order and the BID price
     is applicable to a SELL order.
-    Pepperstone operates using variable spreads, 
-    which are spreads that don’t have the same constant value. 
-    A variable spread will condense and widen as market conditions 
+    some brokers operates using variable spreads, 
+    which will condense and widen as market conditions 
     and liquidity change.`
                 },
                 { title:"Long and short",
@@ -50,24 +49,14 @@ short -> will profit if it falls in relative value.
                 },
                 {title:"Leverage",
                 body:
-    `Leverage is the ability to control a large amount of money in the forex markets.
+    `Leverage is the ability to control a larger amount of money than our capital in the forex markets.
     For example: Pepperstone offers up to 500:1 leverage, 
     which means for every $1 that you have in your trading account; 
     you can trade $500 on the forex market. 
-    The same principal applies to all base currencies and leverage amounts.
-
-    Leverage gives the trader the ability to make meaningful profits
-    on the normally miniscule daily currency movements,
-    and, at the same time, risk only minimal capital on a given position.
-
-    Leverage can exponentially increase your profits as well as
-    your losses so it is crucial that traders take care when using leverage. 
-    The larger your position size, the larger your pip value will be and therefore, 
-    the greater the impact on your profit/loss (P/L).`
-                },
+               },
                     {title:"Lot",
                     body:
-`In the past, spot forex was only traded in specific amounts called lots, 
+`Minimum volume amount of a trade.In the past, spot forex was only traded in specific amounts called lots, 
 or basically the number of currency units you will buy or sell.				
 The standard size for a lot is 100,000 units of currency, 
 and now, there are also a mini, micro, and nano lot sizes 
